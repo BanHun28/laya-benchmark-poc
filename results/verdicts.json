@@ -1,0 +1,222 @@
+{
+  "H1": {
+    "verdict": "지지",
+    "run_ids": [
+      "K2_intent20_ko_multilingual",
+      "K2_intent20_ko_english",
+      "K2_intent20_en_multilingual",
+      "K2_intent20_en_english"
+    ],
+    "source": [
+      "results/A/README.md",
+      "results/korean_support/K2_intent20_ko_multilingual.json",
+      "results/korean_support/K2_intent20_ko_english.json",
+      "results/korean_support/K2_intent20_en_multilingual.json",
+      "results/korean_support/K2_intent20_en_english.json"
+    ],
+    "note": "ko/en × multilingual/english 4칸 모두 upstream과 Δ 0.000 (ko ml 0.470, ko en 0.110, en ml 0.710, en en 0.820). ECE도 일치(ko ml 0.3108)"
+  },
+  "H2": {
+    "verdict": "부분 지지",
+    "run_ids": [
+      "20261002-1643_english_ko_massive_domain_8",
+      "20261002-1643_multilingual_ko_massive_domain_8",
+      "20261002-1645_english_ko_klue_ynat_7",
+      "20261002-1645_multilingual_ko_klue_ynat_7",
+      "20261002-1645_router_ko_massive_domain_8",
+      "20261002-1647_multilingual_ko_massive_scenario_18",
+      "20261002-1647_router_ko_klue_ynat_7",
+      "20261002-1648_english_ko_massive_scenario_18",
+      "20261002-1648_router_ko_massive_scenario_18",
+      "20261002-1650_english_ko_massive_intent_20opt",
+      "20261002-1650_multilingual_ko_massive_intent_20opt",
+      "20261002-1651_router_ko_massive_intent_20opt",
+      "20261002-1652_english_ko_klue_nli_3",
+      "20261002-1652_multilingual_ko_klue_nli_3",
+      "20261002-1654_english_ko_nsmc_sentiment",
+      "20261002-1654_multilingual_ko_nsmc_sentiment",
+      "20261002-1654_router_ko_klue_nli_3",
+      "20261002-1657_multilingual_ko_kmhas_hate",
+      "20261002-1657_router_ko_nsmc_sentiment",
+      "20261002-1658_english_ko_kmhas_hate",
+      "20261002-1659_router_ko_kmhas_hate",
+      "20261002-1700_english_ko_kmhas_type_8",
+      "20261002-1700_multilingual_ko_kmhas_type_8",
+      "20261002-1703_english_ko_3i4k_speechact_7",
+      "20261002-1703_multilingual_ko_3i4k_speechact_7",
+      "20261002-1703_router_ko_kmhas_type_8",
+      "20261002-1705_router_ko_3i4k_speechact_7"
+    ],
+    "source": [
+      "results/B/summary_20261002.md",
+      "results/B/metrics/summary_all.json"
+    ],
+    "note": "ko qid 10개 중 7개에서 multilingual − english ≥ +0.20 (예외: NSMC noul +0.122, K-MHaS hate +0.082, 3i4K +0.004). Router: 한글 행 100% multilingual, case 기준 NSMC 0.996, K-MHaS type 0.998 (한글 없는 행 3개가 english)"
+  },
+  "H3": {
+    "verdict": "전반부 지지 / 후반부 미결",
+    "run_ids": [
+      "20261002-1643_multilingual_ko_massive_domain_8",
+      "20261002-1645_multilingual_ko_klue_ynat_7",
+      "20261002-1647_multilingual_ko_massive_scenario_18",
+      "20261002-1650_multilingual_ko_massive_intent_20opt",
+      "20261002-1652_multilingual_ko_klue_nli_3",
+      "20261002-1654_multilingual_ko_nsmc_sentiment",
+      "20261002-1657_multilingual_ko_kmhas_hate",
+      "20261002-1700_multilingual_ko_kmhas_type_8",
+      "20261002-1703_multilingual_ko_3i4k_speechact_7"
+    ],
+    "source": [
+      "results/B/summary_20261002.md",
+      "results/B/metrics/summary_all.json",
+      "results/P4/metrics/full_20261003-1156_summary.md"
+    ],
+    "note": "choice 과제 8개 중 7개가 majority + 0.20 이상(+0.250~+0.490), 3i4K만 +0.034. noul 2개 미달(NSMC +0.138, K-MHaS hate +0.082, always-false 편향). 후반부(supervised 문헌값 미만)는 F3 문헌값 미조회로 미결 추가(2026-10-03): 파인튜닝 ft-v1은 전체 MASSIVE ko test 2,917행 domain_8에서 0.913 [0.902, 0.923]로, 지도학습 MASSIVE scenario 분류기들의 수준대에 들어온다(문헌 수치는 인용하지 않음, 후반부 판정은 미결 유지)."
+  },
+  "H4": {
+    "verdict": "전반부 부분 / 후반부 지지(경계)",
+    "run_ids": [
+      "20261002-1733_calibration_multilingual",
+      "20261002-1643_multilingual_ko_massive_domain_8",
+      "20261002-1645_multilingual_ko_klue_ynat_7"
+    ],
+    "source": [
+      "results/E/E_summary_20261002.md",
+      "results/E/20261002-1733_calibration_multilingual.json",
+      "results/B/metrics/summary_all.json"
+    ],
+    "note": "as-shipped test ECE: domain_8 0.263 (> 0.25), ynat_7 0.148 (< 0.25). B split all 기준으로는 ko qid 10개 중 6개 > 0.25 (scenario_18 0.2501 경계 포함). refit(pooled T=1.9161) 후 test ECE domain_8 0.098 [0.081, 0.162], ynat_7 0.063: ≤ 0.10이지만 CI 상한이 기준 위라 비강건"
+  },
+  "H5": {
+    "verdict": "지지",
+    "run_ids": [
+      "C1_option_order_20261002"
+    ],
+    "source": [
+      "results/C/C1_option_order_20261002.json",
+      "results/C/C1_option_order_20261002.md",
+      "results/P4/metrics/full_20261003-1156_option_order_dev.md"
+    ],
+    "note": "per-permutation flip (dev): domain_8 0.270 [0.230, 0.310], ynat_7 0.168 [0.135, 0.206], scenario_18 0.241 [0.159, 0.327]. 세 세트 모두 0.10~0.30 범위 파인튜닝 후(옵션 순서 셔플 증강, ft-v1) domain_8 dev 순열당 flip 0.037 [0.022, 0.057], any-flip 0.084 (results/P4/metrics/full_20261003-1156_option_order_dev.md). H5는 zero-shot 가설이라 판정은 그대로 지지."
+  },
+  "H6": {
+    "verdict": "미결",
+    "run_ids": [
+      "P0b_V0_v1_multilingual",
+      "P0b_V3a_choice_ab_multilingual",
+      "20261002-1654_multilingual_ko_nsmc_sentiment"
+    ],
+    "source": [
+      "results/poc/P0b_ablation_summary.md",
+      "results/B/summary_20261002.md"
+    ],
+    "note": "C3(NSMC 중립 키 2-choice vs noul) 미실행. P0b(n=30) 조기 신호는 반대 방향: A/B 2-choice(V3a) binary 합계 68/120 < noul(V0) 93/120. 참고: NSMC 의미 key choice 0.774 > noul 0.638 (McNemar p=6.5e-10)은 중립 키 조건이 아님"
+  },
+  "H7": {
+    "verdict": "미결",
+    "run_ids": [
+      "20261002-1733_multilingual_router_v2a_dev"
+    ],
+    "source": [
+      "results/C/C_schema_v2_20261002.md"
+    ],
+    "note": "C4 미실행(ko_negation_probe 미구축). 간접 신호만: router v2a의 smart_home 제외 문구가 audio 6행 오답을 바꾸지 못함(직접 검정 아님)"
+  },
+  "H8": {
+    "verdict": "기각",
+    "run_ids": [
+      "20261003-1249_latency_matrix"
+    ],
+    "source": [
+      "results/D/D_summary_20261003.md",
+      "results/D/20261003-1249_latency_matrix.json"
+    ],
+    "note": "MPS 1q가 CPU 10 threads 대비 2.33~2.80배(기준 3~6배 미달). 10q/1q 비는 MPS 4.52~9.05, CPU 3.22~8.65로 MPS가 분명히 sub-linear하지 않고, 문항 수가 늘어도 CPU/MPS 속도비는 1.9~2.8배로 일정. fp16 autocast 이득은 최대 8%(D1b), 간헐 호출에서 MPS 2.2~3.6배 둔화(D1c)."
+  },
+  "H9": {
+    "verdict": "지지",
+    "run_ids": [
+      "20261003-1314_batch"
+    ],
+    "source": [
+      "results/D/D_summary_20261003.md",
+      "results/D/20261003-1314_batch.json"
+    ],
+    "note": "CPU fp32, 혼합 길이 한국어 n=256: sort_by_length가 같은 batch size의 unsorted 대비 1.67 / 1.83 / 2.08배(bs 8/16/32), loop 대비 1.39 / 1.42 / 1.29배; n=64 unsorted 대비 1.46~1.56배. argmax flip 0, max |Δp| 0.0001. 정렬 없는 배치는 loop보다 느림(0.62~0.93배)."
+  },
+  "H10": {
+    "verdict": "기각",
+    "run_ids": [
+      "20261003-1347_torch_cpu_ynat",
+      "20261003-1347_onnx_fp32_ynat",
+      "20261003-1347_onnx_int8_ynat",
+      "20261003-1351_onnx_parity"
+    ],
+    "source": [
+      "results/D/D_summary_20261003.md",
+      "results/D/20261003-1347_onnx_int8_ynat.json",
+      "results/D/20261003-1351_onnx_parity.json"
+    ],
+    "note": "ko_klue_ynat_7 500행, batch 16, CPU: int8 p50 525.9 ms vs torch 302.2 ms(1.74배 느림, 기준 ≤ 0.6배), ΔECE +0.0154(기준 ≤ 0.01), Δacc −0.012(기준 ≤ 0.01), argmax 일치 0.930(35 flip). fp32 ONNX는 지표 동일(argmax 500/500)이나 1.51배 느림. ORT 10스레드 고정에도 변화 없음. 이 Apple silicon에서는 torch fp32가 ONNX보다 빠름."
+  },
+  "notes": {
+    "jev_manual_comparison_20261006": {
+      "n": 24,
+      "jev_accuracy": 0.833,
+      "laya_zero_shot_accuracy": 0.417,
+      "laya_ft_v1_accuracy": 0.917,
+      "mcnemar_jev_vs_zero_shot_p": 0.002,
+      "mcnemar_jev_vs_ft_v1_p": 0.5,
+      "jev_latency_displayed_median_ms": 249.5,
+      "local_p2_roundtrip_p50_ms": 20.1,
+      "source": "results/F/jev_playground_manual_20261006.md",
+      "note": "공개 플레이그라운드 수동 소표본, 단일 패스. ft-v1 대비 우열 판정 불가(Jev 24/24여도 p=0.5)."
+    },
+    "jev_comparison_20261007": {
+      "date": "2026-10-07",
+      "scope": "Laya 0.3.23 zero-shot(english, multilingual, Router) vs Jev(typesafe-ai/jev, 독립 공개 플레이그라운드 경유, API 아님). 같은 state·질문·옵션 문자열, 8과제 T1~T8, 과제당 n=40(T1 120 decision, T7 100행)",
+      "verdict": "zero-shot에서는 Jev가 Laya보다 정확하고(8과제 중 Laya 유의 우세 0, Holm 후 Jev 유의 우세 2), 특히 지시형·다국어 과제에서 격차가 크다. Laya는 로컬 실행·지연·비용과 파인튜닝으로 격차를 메울 수 있다는 점에서 경쟁력이 있다.",
+      "verdict_counts": {
+        "jev_better": 4,
+        "not_significant": 4,
+        "laya_better": 0
+      },
+      "verdict_counts_holm": {
+        "jev_better": 2,
+        "not_significant": 6,
+        "laya_better": 0
+      },
+      "holm_significant_tasks": [
+        "T1",
+        "T7"
+      ],
+      "macro_accuracy": {
+        "jev": 0.828,
+        "laya_english": 0.646,
+        "laya_multilingual": 0.598,
+        "laya_router": 0.661,
+        "laya_best_per_task": 0.675
+      },
+      "pooled_mcnemar_best_laya": {
+        "n": 240,
+        "b": 39,
+        "c": 21,
+        "p": 0.0273
+      },
+      "jev_latency_displayed_median_ms": 226.0,
+      "jev_browser_post_median_ms": 465.0,
+      "jev_cost_per_1k_decisions_usd": 0.0197,
+      "t1_finetuned_reference": {
+        "correct": 104,
+        "n": 120,
+        "mcnemar_vs_jev_p": 1.0
+      },
+      "site_requests": 438,
+      "note": "G0~G7과 H1~H10 판정(한국어 라우팅 PoC 기준)은 바꾸지 않는다. Jev 단가는 upstream README가 인용한 제3자 값($0.042/1M 토큰)이라 확인이 필요하다.",
+      "source": [
+        "results/F/jev_cmp/summary.json",
+        "results/F/jev_cmp/summary.md"
+      ]
+    }
+  }
+}

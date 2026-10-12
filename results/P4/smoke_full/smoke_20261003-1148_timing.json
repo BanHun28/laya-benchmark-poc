@@ -1,0 +1,239 @@
+{
+ "script": "third_party/laya/notebooks/laya_finetune_typed_decisions_mps.py",
+ "script_args": [
+  "models/laya-multilingual",
+  "results/P4/smoke_full/ckpt_20261003-1148",
+  "--items",
+  "results/P4/smoke_full/smoke_20261003-1148_items.pt",
+  "--calib-max",
+  "7",
+  "--epochs",
+  "1",
+  "--micro-batch",
+  "8",
+  "--grad-accum",
+  "4",
+  "--no-checkpointing",
+  "--device",
+  "mps"
+ ],
+ "seed": 13,
+ "keep_epoch_checkpoints": true,
+ "started_at": "2026-10-03T11:48:29+0900",
+ "versions": {
+  "torch": "2.14.1",
+  "python": "3.12.12",
+  "laya": "0.3.23"
+ },
+ "threads": {
+  "intra": 10,
+  "interop": 14
+ },
+ "load_before": {
+  "gpu_util_pct": 0,
+  "mps_fp32_matmul_tflops": 6.89,
+  "cotenant": [],
+  "sys_mem_used_gb": 19.1
+ },
+ "status": "ok",
+ "wall_s": 9.81,
+ "load_after": {
+  "gpu_util_pct": 0,
+  "mps_fp32_matmul_tflops": 6.86
+ },
+ "micro_batch": 8,
+ "grad_accum": 4,
+ "epochs": 1,
+ "n_train_items": 64,
+ "micro_batches": 8,
+ "optimizer_steps": 2,
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 1.15,
+  "train_loop": 4.26,
+  "epoch_checkpoint_saves": 0.75,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 0.41,
+  "calibration (forward + fit_temperature)": 0.12,
+  "export (final save + configs)": 0.83,
+  "train() total": 7.52
+ },
+ "throughput": {
+  "train_items_per_s": 15.03,
+  "s_per_optimizer_step": 2.129,
+  "s_per_micro_batch_mean": 0.5323
+ },
+ "micro_batch_s": {
+  "median_all": 0.3919,
+  "median_repeat_shape_no_step": 0.3757,
+  "median_repeat_shape_with_step": null,
+  "optimizer_step_overhead": null,
+  "median_first_shape": 0.3951,
+  "first_shape_count": 7,
+  "repeat_shape_count": 1,
+  "first_shape_extra_total_s": 1.3
+ },
+ "memory_gb": {
+  "ru_maxrss": 2.99,
+  "rss_peak_sampled": 2.18,
+  "mps_current_allocated_peak": 5.2,
+  "mps_driver_allocated_peak": 10.65,
+  "mps_recommended_max": 40.2
+ },
+ "loss_log_script": [
+  "Epoch 1/1 complete; avg_loss=1.0674"
+ ],
+ "train_ce_windows": [
+  2.2236,
+  1.3373,
+  1.4258,
+  0.5159,
+  1.1824,
+  1.4454,
+  0.5321,
+  0.3756
+ ],
+ "train_acc_windows": [
+  0.25,
+  0.5,
+  0.5,
+  0.875,
+  0.625,
+  0.5,
+  0.625,
+  0.875
+ ],
+ "calibration_rows": {
+  "n": 7,
+  "ce_before_T": 1.0492,
+  "accuracy": 0.5714
+ },
+ "temperature_fits": [
+  {
+   "start": 8.914,
+   "end": 8.914,
+   "samples": 7
+  }
+ ],
+ "item_sources": {
+  "train": {
+   "train": 64
+  },
+  "calibration": {
+   "validation": 7
+  }
+ },
+ "cotenant_found": false,
+ "load_series": [
+  {
+   "t": 3.2,
+   "rss_gb": 1.896,
+   "mps_alloc_gb": 0.0,
+   "mps_driver_gb": 0.0,
+   "gpu_util_pct": 96,
+   "sys_cpu_pct": 12.8,
+   "sys_mem_used_gb": 19.0,
+   "cotenant": []
+  }
+ ],
+ "events": [
+  [
+   2.226,
+   "Using legacy cached training items without metadata: results/P4/smoke_full/smoke_20261003-1148_items.pt"
+  ],
+  [
+   3.381,
+   "Device: mps"
+  ],
+  [
+   3.381,
+   "Training items: 64; calibration items: 7"
+  ],
+  [
+   3.381,
+   "micro_batch=8; grad_accum=4; epochs=1"
+  ],
+  [
+   7.639,
+   "Epoch 1/1 complete; avg_loss=1.0674"
+  ],
+  [
+   8.799,
+   "Running temperature calibration ..."
+  ],
+  [
+   9.742,
+   "Model saved to results/P4/smoke_full/ckpt_20261003-1148"
+  ],
+  [
+   9.743,
+   "Temperatures: [1.0, 1.2, 1.2]"
+  ]
+ ],
+ "micro_batch_trace": [
+  [
+   3.3809,
+   8,
+   223,
+   0.4259,
+   2.2236,
+   0.25
+  ],
+  [
+   3.8068,
+   8,
+   228,
+   0.3951,
+   1.33729,
+   0.5
+  ],
+  [
+   4.2019,
+   8,
+   226,
+   0.3887,
+   1.42575,
+   0.5
+  ],
+  [
+   4.5906,
+   8,
+   225,
+   0.9641,
+   0.51589,
+   0.875
+  ],
+  [
+   5.5547,
+   8,
+   229,
+   0.3789,
+   1.18235,
+   0.625
+  ],
+  [
+   5.9336,
+   8,
+   222,
+   0.3782,
+   1.44536,
+   0.5
+  ],
+  [
+   6.3118,
+   8,
+   225,
+   0.3757,
+   0.53207,
+   0.625
+  ],
+  [
+   6.6875,
+   8,
+   227,
+   0.9515,
+   0.37561,
+   0.875
+  ]
+ ]
+}

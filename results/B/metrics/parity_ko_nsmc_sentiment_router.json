@@ -1,0 +1,67 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "parity",
+   "results/B/20261002-1654_multilingual_ko_nsmc_sentiment.json",
+   "results/B/20261002-1657_router_ko_nsmc_sentiment.json",
+   "--out",
+   "results/B/metrics/parity_ko_nsmc_sentiment_router.md",
+   "--json",
+   "results/B/metrics/parity_ko_nsmc_sentiment_router.json"
+  ],
+  "generated_at": "2026-10-02T17:05:33+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1654_multilingual_ko_nsmc_sentiment.json",
+    "dataset": "data/evals/ko_nsmc_sentiment.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "68efeccdcbcc93d8856be721af93e4275e344293b00ef8eb6646b12e40639f1d",
+    "questions_sha256": "c76e85a04f5bbbc4d45f27a81ec2d7a6bdf76cfc958d27be0ef78c0f07668a98",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 251,
+     "dev": 249
+    }
+   },
+   {
+    "report": "results/B/20261002-1657_router_ko_nsmc_sentiment.json",
+    "dataset": "data/evals/ko_nsmc_sentiment.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "68efeccdcbcc93d8856be721af93e4275e344293b00ef8eb6646b12e40639f1d",
+    "questions_sha256": "c76e85a04f5bbbc4d45f27a81ec2d7a6bdf76cfc958d27be0ef78c0f07668a98",
+    "revisions": {
+     "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "router (auto)",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 251,
+     "dev": 249
+    }
+   }
+  ]
+ },
+ "reference": "results/B/20261002-1654_multilingual_ko_nsmc_sentiment.json",
+ "results": [
+  {
+   "other": "results/B/20261002-1657_router_ko_nsmc_sentiment.json",
+   "n": 1000,
+   "agreement": 0.998,
+   "flips": 2,
+   "max_abs_dp": 0.9274,
+   "mean_abs_dconf": 0.00048029999999999997
+  }
+ ]
+}

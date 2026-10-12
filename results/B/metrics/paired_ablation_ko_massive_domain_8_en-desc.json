@@ -1,0 +1,77 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+   "results/B/20261002-1649_multilingual_ko_massive_domain_8_en-desc_dev.json",
+   "--split",
+   "dev",
+   "--out",
+   "results/B/metrics/paired_ablation_ko_massive_domain_8_en-desc.md",
+   "--json",
+   "results/B/metrics/paired_ablation_ko_massive_domain_8_en-desc.json"
+  ],
+  "generated_at": "2026-10-02T17:05:34+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+    "dataset": "data/evals/ko_massive_domain_8.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "edf33079033640fa9656c3b583a422c1ededc4bcd75eaafbfb84c5adf613f46b",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 500,
+    "split_rows": {
+     "dev": 250,
+     "test": 250
+    }
+   },
+   {
+    "report": "results/B/20261002-1649_multilingual_ko_massive_domain_8_en-desc_dev.json",
+    "dataset": "results/B/dev/ko_massive_domain_8_en-desc.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "4be87d318fe5a933eb08f35c6c667541e68a8ebb0ab8ec3fd1944196715ecd77",
+    "questions_sha256": "c3ab76c59d099b54016d035d4a6092ccdf81af32802542b368d7bf7121784264",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 250,
+    "split_rows": {
+     "dev": 250
+    }
+   }
+  ]
+ },
+ "a": "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+ "b": "results/B/20261002-1649_multilingual_ko_massive_domain_8_en-desc_dev.json",
+ "results": [
+  {
+   "qid": "domain",
+   "split": "dev",
+   "n": 250,
+   "acc_a": 0.56,
+   "acc_b": 0.532,
+   "delta": -0.028,
+   "delta_ci": [
+    -0.0768375996789359,
+    0.020837599678935895
+   ],
+   "b": 23,
+   "c": 16,
+   "p": 0.3367836351899314,
+   "agreement": 0.692,
+   "same_state": 1.0
+  }
+ ]
+}

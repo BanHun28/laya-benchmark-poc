@@ -1,0 +1,6321 @@
+{
+  "cases": [
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8196,
+        "choice": "refund",
+        "confidence": 0.6446,
+        "probabilities": {
+          "billing_question": 0.0283,
+          "cancellation": 0.0017,
+          "information": 0.0017,
+          "other": 0.1234,
+          "refund": 0.8196,
+          "technical_help": 0.0253
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8196,
+      "correct": true,
+      "expected": "refund",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.8196,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9858,
+        "confidence": 0.9858,
+        "noul": 0.0142,
+        "type": "noul"
+      },
+      "confidence": 0.9858,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9858,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4383,
+        "confidence": 0.1787,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0176,
+          "1": 0.246,
+          "2": 0.4383,
+          "3": 0.298
+        },
+        "score": 2.0167,
+        "type": "score"
+      },
+      "confidence": 0.4383,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4383,
+        "noul_accuracy": null,
+        "score_mae": 1.0167000000000002
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8472,
+        "confidence": 0.8472,
+        "noul": 0.8472,
+        "type": "noul"
+      },
+      "confidence": 0.8472,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8472,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9796,
+        "confidence": 0.9796,
+        "noul": 0.0204,
+        "type": "noul"
+      },
+      "confidence": 0.9796,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9796,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7262,
+        "confidence": 0.7262,
+        "noul": 0.7262,
+        "type": "noul"
+      },
+      "confidence": 0.7262,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7262,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9539,
+        "choice": "structured",
+        "confidence": 0.8023,
+        "probabilities": {
+          "canned": 0.0294,
+          "complex": 0.0167,
+          "structured": 0.9539
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9539,
+      "correct": true,
+      "expected": "structured",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9539,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6879,
+        "choice": "refund",
+        "confidence": 0.652,
+        "probabilities": {
+          "billing_question": 0.0001,
+          "cancellation": 0.3118,
+          "information": 0.0,
+          "other": 0.0002,
+          "refund": 0.6879,
+          "technical_help": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.6879,
+      "correct": true,
+      "expected": "refund",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.6879,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.998,
+        "confidence": 0.998,
+        "noul": 0.002,
+        "type": "noul"
+      },
+      "confidence": 0.998,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.998,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5113,
+        "confidence": 0.2045,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0207,
+          "1": 0.5113,
+          "2": 0.2253,
+          "3": 0.2426
+        },
+        "score": 1.6898,
+        "type": "score"
+      },
+      "confidence": 0.5113,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5113,
+        "noul_accuracy": null,
+        "score_mae": 0.6898
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.576,
+        "confidence": 0.576,
+        "noul": 0.576,
+        "type": "noul"
+      },
+      "confidence": 0.576,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.576,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5778,
+        "confidence": 0.5778,
+        "noul": 0.4222,
+        "type": "noul"
+      },
+      "confidence": 0.5778,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5778,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7484,
+        "confidence": 0.7484,
+        "noul": 0.2516,
+        "type": "noul"
+      },
+      "confidence": 0.7484,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7484,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5349,
+        "choice": "canned",
+        "confidence": 0.0779,
+        "probabilities": {
+          "canned": 0.5349,
+          "complex": 0.2295,
+          "structured": 0.2356
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5349,
+      "correct": false,
+      "expected": "structured",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5349,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9996,
+        "choice": "cancellation",
+        "confidence": 0.998,
+        "probabilities": {
+          "billing_question": 0.0,
+          "cancellation": 0.9996,
+          "information": 0.0,
+          "other": 0.0,
+          "refund": 0.0004,
+          "technical_help": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9996,
+      "correct": false,
+      "expected": "refund",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.9996,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.957,
+        "confidence": 0.957,
+        "noul": 0.043,
+        "type": "noul"
+      },
+      "confidence": 0.957,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.957,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.411,
+        "confidence": 0.144,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0325,
+          "1": 0.2542,
+          "2": 0.3022,
+          "3": 0.411
+        },
+        "score": 2.0918,
+        "type": "score"
+      },
+      "confidence": 0.411,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.411,
+        "noul_accuracy": null,
+        "score_mae": 0.9081999999999999
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.935,
+        "confidence": 0.935,
+        "noul": 0.935,
+        "type": "noul"
+      },
+      "confidence": 0.935,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.935,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8612,
+        "confidence": 0.8612,
+        "noul": 0.8612,
+        "type": "noul"
+      },
+      "confidence": 0.8612,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8612,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6835,
+        "confidence": 0.6835,
+        "noul": 0.6835,
+        "type": "noul"
+      },
+      "confidence": 0.6835,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6835,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5472,
+        "choice": "canned",
+        "confidence": 0.1035,
+        "probabilities": {
+          "canned": 0.5472,
+          "complex": 0.2892,
+          "structured": 0.1637
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5472,
+      "correct": false,
+      "expected": "structured",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5472,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.72,
+        "choice": "cancellation",
+        "confidence": 0.5813,
+        "probabilities": {
+          "billing_question": 0.0026,
+          "cancellation": 0.72,
+          "information": 0.0011,
+          "other": 0.0153,
+          "refund": 0.2386,
+          "technical_help": 0.0224
+        },
+        "type": "choice"
+      },
+      "confidence": 0.72,
+      "correct": false,
+      "expected": "refund",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.72,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9658,
+        "confidence": 0.9658,
+        "noul": 0.0342,
+        "type": "noul"
+      },
+      "confidence": 0.9658,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9658,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4914,
+        "confidence": 0.1965,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0262,
+          "1": 0.4914,
+          "2": 0.1782,
+          "3": 0.3042
+        },
+        "score": 1.7605,
+        "type": "score"
+      },
+      "confidence": 0.4914,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4914,
+        "noul_accuracy": null,
+        "score_mae": 0.7605
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7824,
+        "confidence": 0.7824,
+        "noul": 0.7824,
+        "type": "noul"
+      },
+      "confidence": 0.7824,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7824,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9731,
+        "confidence": 0.9731,
+        "noul": 0.0269,
+        "type": "noul"
+      },
+      "confidence": 0.9731,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9731,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7796,
+        "confidence": 0.7796,
+        "noul": 0.2204,
+        "type": "noul"
+      },
+      "confidence": 0.7796,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7796,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5811,
+        "choice": "canned",
+        "confidence": 0.1176,
+        "probabilities": {
+          "canned": 0.5811,
+          "complex": 0.1959,
+          "structured": 0.2231
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5811,
+      "correct": false,
+      "expected": "complex",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5811,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9998,
+        "choice": "refund",
+        "confidence": 0.9987,
+        "probabilities": {
+          "billing_question": 0.0001,
+          "cancellation": 0.0,
+          "information": 0.0,
+          "other": 0.0001,
+          "refund": 0.9998,
+          "technical_help": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9998,
+      "correct": true,
+      "expected": "refund",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9998,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9931,
+        "confidence": 0.9931,
+        "noul": 0.0069,
+        "type": "noul"
+      },
+      "confidence": 0.9931,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9931,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3319,
+        "confidence": 0.0615,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0919,
+          "1": 0.309,
+          "2": 0.2673,
+          "3": 0.3319
+        },
+        "score": 1.8391,
+        "type": "score"
+      },
+      "confidence": 0.3319,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3319,
+        "noul_accuracy": null,
+        "score_mae": 1.8391
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8901,
+        "confidence": 0.8901,
+        "noul": 0.8901,
+        "type": "noul"
+      },
+      "confidence": 0.8901,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8901,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8681,
+        "confidence": 0.8681,
+        "noul": 0.1319,
+        "type": "noul"
+      },
+      "confidence": 0.8681,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8681,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6181,
+        "confidence": 0.6181,
+        "noul": 0.3819,
+        "type": "noul"
+      },
+      "confidence": 0.6181,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6181,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5621,
+        "choice": "canned",
+        "confidence": 0.1353,
+        "probabilities": {
+          "canned": 0.5621,
+          "complex": 0.1279,
+          "structured": 0.31
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5621,
+      "correct": false,
+      "expected": "structured",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5621,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4689,
+        "choice": "technical_help",
+        "confidence": 0.2717,
+        "probabilities": {
+          "billing_question": 0.0137,
+          "cancellation": 0.2559,
+          "information": 0.0433,
+          "other": 0.1949,
+          "refund": 0.0233,
+          "technical_help": 0.4689
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4689,
+      "correct": true,
+      "expected": "technical_help",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.4689,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.985,
+        "confidence": 0.985,
+        "noul": 0.015,
+        "type": "noul"
+      },
+      "confidence": 0.985,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.985,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5371,
+        "confidence": 0.2521,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0644,
+          "1": 0.5371,
+          "2": 0.3436,
+          "3": 0.0549
+        },
+        "score": 1.3891,
+        "type": "score"
+      },
+      "confidence": 0.5371,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5371,
+        "noul_accuracy": null,
+        "score_mae": 1.3891
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5058,
+        "confidence": 0.5058,
+        "noul": 0.4942,
+        "type": "noul"
+      },
+      "confidence": 0.5058,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5058,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9704,
+        "confidence": 0.9704,
+        "noul": 0.0296,
+        "type": "noul"
+      },
+      "confidence": 0.9704,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9704,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7079,
+        "confidence": 0.7079,
+        "noul": 0.7079,
+        "type": "noul"
+      },
+      "confidence": 0.7079,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7079,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4424,
+        "choice": "canned",
+        "confidence": 0.0256,
+        "probabilities": {
+          "canned": 0.4424,
+          "complex": 0.3055,
+          "structured": 0.2521
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4424,
+      "correct": true,
+      "expected": "canned",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.4424,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9912,
+        "choice": "technical_help",
+        "confidence": 0.9707,
+        "probabilities": {
+          "billing_question": 0.0001,
+          "cancellation": 0.0083,
+          "information": 0.0001,
+          "other": 0.0001,
+          "refund": 0.0001,
+          "technical_help": 0.9912
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9912,
+      "correct": true,
+      "expected": "technical_help",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9912,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9793,
+        "confidence": 0.9793,
+        "noul": 0.9793,
+        "type": "noul"
+      },
+      "confidence": 0.9793,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9793,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5537,
+        "confidence": 0.204,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0488,
+          "1": 0.5537,
+          "2": 0.1475,
+          "3": 0.25
+        },
+        "score": 1.5988,
+        "type": "score"
+      },
+      "confidence": 0.5537,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5537,
+        "noul_accuracy": null,
+        "score_mae": 0.4012
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9262,
+        "confidence": 0.9262,
+        "noul": 0.9262,
+        "type": "noul"
+      },
+      "confidence": 0.9262,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9262,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9821,
+        "confidence": 0.9821,
+        "noul": 0.9821,
+        "type": "noul"
+      },
+      "confidence": 0.9821,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9821,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9082,
+        "confidence": 0.9082,
+        "noul": 0.9082,
+        "type": "noul"
+      },
+      "confidence": 0.9082,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9082,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9977,
+        "choice": "structured",
+        "confidence": 0.9841,
+        "probabilities": {
+          "canned": 0.0007,
+          "complex": 0.0015,
+          "structured": 0.9977
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9977,
+      "correct": false,
+      "expected": "complex",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.9977,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.912,
+        "choice": "cancellation",
+        "confidence": 0.8285,
+        "probabilities": {
+          "billing_question": 0.0001,
+          "cancellation": 0.912,
+          "information": 0.0008,
+          "other": 0.0006,
+          "refund": 0.0001,
+          "technical_help": 0.0865
+        },
+        "type": "choice"
+      },
+      "confidence": 0.912,
+      "correct": false,
+      "expected": "technical_help",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.912,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9783,
+        "confidence": 0.9783,
+        "noul": 0.0217,
+        "type": "noul"
+      },
+      "confidence": 0.9783,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9783,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5918,
+        "confidence": 0.2515,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0279,
+          "1": 0.5918,
+          "2": 0.2174,
+          "3": 0.1629
+        },
+        "score": 1.5153,
+        "type": "score"
+      },
+      "confidence": 0.5918,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5918,
+        "noul_accuracy": null,
+        "score_mae": 0.5153000000000001
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5956,
+        "confidence": 0.5956,
+        "noul": 0.4044,
+        "type": "noul"
+      },
+      "confidence": 0.5956,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5956,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7823,
+        "confidence": 0.7823,
+        "noul": 0.2177,
+        "type": "noul"
+      },
+      "confidence": 0.7823,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7823,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7245,
+        "confidence": 0.7245,
+        "noul": 0.2755,
+        "type": "noul"
+      },
+      "confidence": 0.7245,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7245,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7356,
+        "choice": "structured",
+        "confidence": 0.3925,
+        "probabilities": {
+          "canned": 0.2362,
+          "complex": 0.0282,
+          "structured": 0.7356
+        },
+        "type": "choice"
+      },
+      "confidence": 0.7356,
+      "correct": false,
+      "expected": "complex",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.7356,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8628,
+        "choice": "technical_help",
+        "confidence": 0.6969,
+        "probabilities": {
+          "billing_question": 0.0067,
+          "cancellation": 0.0225,
+          "information": 0.0095,
+          "other": 0.0919,
+          "refund": 0.0067,
+          "technical_help": 0.8628
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8628,
+      "correct": true,
+      "expected": "technical_help",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.8628,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9993,
+        "confidence": 0.9993,
+        "noul": 0.0007,
+        "type": "noul"
+      },
+      "confidence": 0.9993,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9993,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5952,
+        "confidence": 0.2431,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0463,
+          "1": 0.5952,
+          "2": 0.2356,
+          "3": 0.123
+        },
+        "score": 1.4353,
+        "type": "score"
+      },
+      "confidence": 0.5952,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5952,
+        "noul_accuracy": null,
+        "score_mae": 1.4353
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9531,
+        "confidence": 0.9531,
+        "noul": 0.0469,
+        "type": "noul"
+      },
+      "confidence": 0.9531,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9531,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9766,
+        "confidence": 0.9766,
+        "noul": 0.0234,
+        "type": "noul"
+      },
+      "confidence": 0.9766,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9766,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7045,
+        "confidence": 0.7045,
+        "noul": 0.2955,
+        "type": "noul"
+      },
+      "confidence": 0.7045,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7045,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7846,
+        "choice": "canned",
+        "confidence": 0.3904,
+        "probabilities": {
+          "canned": 0.7846,
+          "complex": 0.116,
+          "structured": 0.0994
+        },
+        "type": "choice"
+      },
+      "confidence": 0.7846,
+      "correct": false,
+      "expected": "complex",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.7846,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8074,
+        "choice": "cancellation",
+        "confidence": 0.6816,
+        "probabilities": {
+          "billing_question": 0.0007,
+          "cancellation": 0.8074,
+          "information": 0.0007,
+          "other": 0.0216,
+          "refund": 0.0007,
+          "technical_help": 0.1691
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8074,
+      "correct": false,
+      "expected": "technical_help",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.8074,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9997,
+        "confidence": 0.9997,
+        "noul": 0.0003,
+        "type": "noul"
+      },
+      "confidence": 0.9997,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9997,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4168,
+        "confidence": 0.1163,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0548,
+          "1": 0.4168,
+          "2": 0.2405,
+          "3": 0.2879
+        },
+        "score": 1.7616,
+        "type": "score"
+      },
+      "confidence": 0.4168,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4168,
+        "noul_accuracy": null,
+        "score_mae": 0.23839999999999995
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9833,
+        "confidence": 0.9833,
+        "noul": 0.0167,
+        "type": "noul"
+      },
+      "confidence": 0.9833,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9833,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9981,
+        "confidence": 0.9981,
+        "noul": 0.0019,
+        "type": "noul"
+      },
+      "confidence": 0.9981,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9981,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6832,
+        "confidence": 0.6832,
+        "noul": 0.3168,
+        "type": "noul"
+      },
+      "confidence": 0.6832,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6832,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5429,
+        "choice": "complex",
+        "confidence": 0.1107,
+        "probabilities": {
+          "canned": 0.1476,
+          "complex": 0.5429,
+          "structured": 0.3095
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5429,
+      "correct": true,
+      "expected": "complex",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.5429,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8448,
+        "choice": "cancellation",
+        "confidence": 0.7415,
+        "probabilities": {
+          "billing_question": 0.149,
+          "cancellation": 0.8448,
+          "information": 0.0002,
+          "other": 0.0035,
+          "refund": 0.0025,
+          "technical_help": 0.0001
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8448,
+      "correct": false,
+      "expected": "billing_question",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.8448,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9985,
+        "confidence": 0.9985,
+        "noul": 0.0015,
+        "type": "noul"
+      },
+      "confidence": 0.9985,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9985,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5332,
+        "confidence": 0.1987,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0675,
+          "1": 0.5332,
+          "2": 0.2973,
+          "3": 0.102
+        },
+        "score": 1.4338,
+        "type": "score"
+      },
+      "confidence": 0.5332,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5332,
+        "noul_accuracy": null,
+        "score_mae": 1.4338
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6516,
+        "confidence": 0.6516,
+        "noul": 0.6516,
+        "type": "noul"
+      },
+      "confidence": 0.6516,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6516,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6638,
+        "confidence": 0.6638,
+        "noul": 0.3362,
+        "type": "noul"
+      },
+      "confidence": 0.6638,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6638,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5288,
+        "confidence": 0.5288,
+        "noul": 0.4712,
+        "type": "noul"
+      },
+      "confidence": 0.5288,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5288,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3825,
+        "choice": "canned",
+        "confidence": 0.0122,
+        "probabilities": {
+          "canned": 0.3825,
+          "complex": 0.3585,
+          "structured": 0.259
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3825,
+      "correct": true,
+      "expected": "canned",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.3825,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9821,
+        "choice": "refund",
+        "confidence": 0.942,
+        "probabilities": {
+          "billing_question": 0.0056,
+          "cancellation": 0.0117,
+          "information": 0.0,
+          "other": 0.0005,
+          "refund": 0.9821,
+          "technical_help": 0.0001
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9821,
+      "correct": false,
+      "expected": "billing_question",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.9821,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9782,
+        "confidence": 0.9782,
+        "noul": 0.0218,
+        "type": "noul"
+      },
+      "confidence": 0.9782,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9782,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3979,
+        "confidence": 0.0764,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0894,
+          "1": 0.3979,
+          "2": 0.2518,
+          "3": 0.261
+        },
+        "score": 1.6843,
+        "type": "score"
+      },
+      "confidence": 0.3979,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3979,
+        "noul_accuracy": null,
+        "score_mae": 1.6843
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7565,
+        "confidence": 0.7565,
+        "noul": 0.7565,
+        "type": "noul"
+      },
+      "confidence": 0.7565,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7565,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.924,
+        "confidence": 0.924,
+        "noul": 0.924,
+        "type": "noul"
+      },
+      "confidence": 0.924,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.924,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5615,
+        "confidence": 0.5615,
+        "noul": 0.5615,
+        "type": "noul"
+      },
+      "confidence": 0.5615,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5615,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4041,
+        "choice": "structured",
+        "confidence": 0.0116,
+        "probabilities": {
+          "canned": 0.3215,
+          "complex": 0.2744,
+          "structured": 0.4041
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4041,
+      "correct": false,
+      "expected": "canned",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4041,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "billing_question",
+        "confidence": 1.0,
+        "probabilities": {
+          "billing_question": 1.0,
+          "cancellation": 0.0,
+          "information": 0.0,
+          "other": 0.0,
+          "refund": 0.0,
+          "technical_help": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "billing_question",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9993,
+        "confidence": 0.9993,
+        "noul": 0.0007,
+        "type": "noul"
+      },
+      "confidence": 0.9993,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9993,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.433,
+        "confidence": 0.0993,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0784,
+          "1": 0.2221,
+          "2": 0.433,
+          "3": 0.2666
+        },
+        "score": 1.8877,
+        "type": "score"
+      },
+      "confidence": 0.433,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.433,
+        "noul_accuracy": null,
+        "score_mae": 0.8876999999999999
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9966,
+        "confidence": 0.9966,
+        "noul": 0.0034,
+        "type": "noul"
+      },
+      "confidence": 0.9966,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9966,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9995,
+        "confidence": 0.9995,
+        "noul": 0.0005,
+        "type": "noul"
+      },
+      "confidence": 0.9995,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9995,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5002,
+        "confidence": 0.5002,
+        "noul": 0.4998,
+        "type": "noul"
+      },
+      "confidence": 0.5002,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5002,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7141,
+        "choice": "canned",
+        "confidence": 0.352,
+        "probabilities": {
+          "canned": 0.7141,
+          "complex": 0.247,
+          "structured": 0.0388
+        },
+        "type": "choice"
+      },
+      "confidence": 0.7141,
+      "correct": false,
+      "expected": "structured",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.7141,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9999,
+        "choice": "billing_question",
+        "confidence": 0.9992,
+        "probabilities": {
+          "billing_question": 0.9999,
+          "cancellation": 0.0,
+          "information": 0.0,
+          "other": 0.0001,
+          "refund": 0.0,
+          "technical_help": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9999,
+      "correct": true,
+      "expected": "billing_question",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9999,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7051,
+        "confidence": 0.7051,
+        "noul": 0.7051,
+        "type": "noul"
+      },
+      "confidence": 0.7051,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7051,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3285,
+        "confidence": 0.053,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.1014,
+          "1": 0.3285,
+          "2": 0.2975,
+          "3": 0.2725
+        },
+        "score": 1.7411,
+        "type": "score"
+      },
+      "confidence": 0.3285,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3285,
+        "noul_accuracy": null,
+        "score_mae": 1.7411
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7061,
+        "confidence": 0.7061,
+        "noul": 0.7061,
+        "type": "noul"
+      },
+      "confidence": 0.7061,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7061,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9977,
+        "confidence": 0.9977,
+        "noul": 0.0023,
+        "type": "noul"
+      },
+      "confidence": 0.9977,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9977,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5259,
+        "confidence": 0.5259,
+        "noul": 0.4741,
+        "type": "noul"
+      },
+      "confidence": 0.5259,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5259,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5255,
+        "choice": "structured",
+        "confidence": 0.1335,
+        "probabilities": {
+          "canned": 0.1127,
+          "complex": 0.3617,
+          "structured": 0.5255
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5255,
+      "correct": true,
+      "expected": "structured",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.5255,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7649,
+        "choice": "technical_help",
+        "confidence": 0.5406,
+        "probabilities": {
+          "billing_question": 0.0031,
+          "cancellation": 0.0439,
+          "information": 0.0048,
+          "other": 0.0991,
+          "refund": 0.0842,
+          "technical_help": 0.7649
+        },
+        "type": "choice"
+      },
+      "confidence": 0.7649,
+      "correct": false,
+      "expected": "billing_question",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.7649,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9914,
+        "confidence": 0.9914,
+        "noul": 0.0086,
+        "type": "noul"
+      },
+      "confidence": 0.9914,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9914,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4999,
+        "confidence": 0.2245,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0163,
+          "1": 0.1644,
+          "2": 0.3194,
+          "3": 0.4999
+        },
+        "score": 2.3029,
+        "type": "score"
+      },
+      "confidence": 0.4999,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4999,
+        "noul_accuracy": null,
+        "score_mae": 0.30290000000000017
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7364,
+        "confidence": 0.7364,
+        "noul": 0.2636,
+        "type": "noul"
+      },
+      "confidence": 0.7364,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7364,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8372,
+        "confidence": 0.8372,
+        "noul": 0.1628,
+        "type": "noul"
+      },
+      "confidence": 0.8372,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8372,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5227,
+        "confidence": 0.5227,
+        "noul": 0.5227,
+        "type": "noul"
+      },
+      "confidence": 0.5227,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5227,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5452,
+        "choice": "canned",
+        "confidence": 0.1757,
+        "probabilities": {
+          "canned": 0.5452,
+          "complex": 0.0833,
+          "structured": 0.3715
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5452,
+      "correct": true,
+      "expected": "canned",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.5452,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3638,
+        "choice": "information",
+        "confidence": 0.2682,
+        "probabilities": {
+          "billing_question": 0.2915,
+          "cancellation": 0.0133,
+          "information": 0.3638,
+          "other": 0.2872,
+          "refund": 0.0235,
+          "technical_help": 0.0206
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3638,
+      "correct": true,
+      "expected": "information",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.3638,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9762,
+        "confidence": 0.9762,
+        "noul": 0.0238,
+        "type": "noul"
+      },
+      "confidence": 0.9762,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9762,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4465,
+        "confidence": 0.1009,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.4465,
+          "1": 0.2694,
+          "2": 0.0876,
+          "3": 0.1965
+        },
+        "score": 1.0341,
+        "type": "score"
+      },
+      "confidence": 0.4465,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4465,
+        "noul_accuracy": null,
+        "score_mae": 1.0341
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8353,
+        "confidence": 0.8353,
+        "noul": 0.1647,
+        "type": "noul"
+      },
+      "confidence": 0.8353,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8353,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9729,
+        "confidence": 0.9729,
+        "noul": 0.0271,
+        "type": "noul"
+      },
+      "confidence": 0.9729,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9729,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9784,
+        "confidence": 0.9784,
+        "noul": 0.0216,
+        "type": "noul"
+      },
+      "confidence": 0.9784,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9784,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8408,
+        "choice": "canned",
+        "confidence": 0.5007,
+        "probabilities": {
+          "canned": 0.8408,
+          "complex": 0.0822,
+          "structured": 0.0769
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8408,
+      "correct": true,
+      "expected": "canned",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.8408,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8678,
+        "choice": "technical_help",
+        "confidence": 0.7266,
+        "probabilities": {
+          "billing_question": 0.0007,
+          "cancellation": 0.0009,
+          "information": 0.0468,
+          "other": 0.083,
+          "refund": 0.0008,
+          "technical_help": 0.8678
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8678,
+      "correct": false,
+      "expected": "information",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.8678,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9928,
+        "confidence": 0.9928,
+        "noul": 0.0072,
+        "type": "noul"
+      },
+      "confidence": 0.9928,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9928,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.362,
+        "confidence": 0.0457,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.362,
+          "1": 0.3097,
+          "2": 0.1503,
+          "3": 0.178
+        },
+        "score": 1.1442,
+        "type": "score"
+      },
+      "confidence": 0.362,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.362,
+        "noul_accuracy": null,
+        "score_mae": 1.1442
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6259,
+        "confidence": 0.6259,
+        "noul": 0.3741,
+        "type": "noul"
+      },
+      "confidence": 0.6259,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6259,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9954,
+        "confidence": 0.9954,
+        "noul": 0.0046,
+        "type": "noul"
+      },
+      "confidence": 0.9954,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9954,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.792,
+        "confidence": 0.792,
+        "noul": 0.208,
+        "type": "noul"
+      },
+      "confidence": 0.792,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.792,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9732,
+        "choice": "structured",
+        "confidence": 0.8744,
+        "probabilities": {
+          "canned": 0.0064,
+          "complex": 0.0204,
+          "structured": 0.9732
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9732,
+      "correct": false,
+      "expected": "canned",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.9732,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4024,
+        "choice": "technical_help",
+        "confidence": 0.145,
+        "probabilities": {
+          "billing_question": 0.0682,
+          "cancellation": 0.0669,
+          "information": 0.1424,
+          "other": 0.0635,
+          "refund": 0.2565,
+          "technical_help": 0.4024
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4024,
+      "correct": false,
+      "expected": "information",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4024,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6832,
+        "confidence": 0.6832,
+        "noul": 0.3168,
+        "type": "noul"
+      },
+      "confidence": 0.6832,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6832,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4475,
+        "confidence": 0.0847,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.111,
+          "1": 0.4475,
+          "2": 0.2411,
+          "3": 0.2004
+        },
+        "score": 1.531,
+        "type": "score"
+      },
+      "confidence": 0.4475,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4475,
+        "noul_accuracy": null,
+        "score_mae": 1.531
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6962,
+        "confidence": 0.6962,
+        "noul": 0.6962,
+        "type": "noul"
+      },
+      "confidence": 0.6962,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6962,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.989,
+        "confidence": 0.989,
+        "noul": 0.011,
+        "type": "noul"
+      },
+      "confidence": 0.989,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.989,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.812,
+        "confidence": 0.812,
+        "noul": 0.812,
+        "type": "noul"
+      },
+      "confidence": 0.812,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.812,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6964,
+        "choice": "canned",
+        "confidence": 0.3019,
+        "probabilities": {
+          "canned": 0.6964,
+          "complex": 0.0615,
+          "structured": 0.242
+        },
+        "type": "choice"
+      },
+      "confidence": 0.6964,
+      "correct": false,
+      "expected": "complex",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.6964,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4393,
+        "choice": "other",
+        "confidence": 0.3616,
+        "probabilities": {
+          "billing_question": 0.0074,
+          "cancellation": 0.0312,
+          "information": 0.0963,
+          "other": 0.4393,
+          "refund": 0.0105,
+          "technical_help": 0.4154
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4393,
+      "correct": false,
+      "expected": "information",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4393,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9575,
+        "confidence": 0.9575,
+        "noul": 0.0425,
+        "type": "noul"
+      },
+      "confidence": 0.9575,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9575,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.32,
+        "confidence": 0.0203,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.1597,
+          "1": 0.32,
+          "2": 0.2635,
+          "3": 0.2568
+        },
+        "score": 1.6175,
+        "type": "score"
+      },
+      "confidence": 0.32,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.32,
+        "noul_accuracy": null,
+        "score_mae": 1.6175
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6592,
+        "confidence": 0.6592,
+        "noul": 0.3408,
+        "type": "noul"
+      },
+      "confidence": 0.6592,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6592,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9387,
+        "confidence": 0.9387,
+        "noul": 0.0613,
+        "type": "noul"
+      },
+      "confidence": 0.9387,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9387,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5456,
+        "confidence": 0.5456,
+        "noul": 0.5456,
+        "type": "noul"
+      },
+      "confidence": 0.5456,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5456,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7331,
+        "choice": "structured",
+        "confidence": 0.3058,
+        "probabilities": {
+          "canned": 0.1517,
+          "complex": 0.1152,
+          "structured": 0.7331
+        },
+        "type": "choice"
+      },
+      "confidence": 0.7331,
+      "correct": false,
+      "expected": "canned",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.7331,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.474,
+        "choice": "information",
+        "confidence": 0.4317,
+        "probabilities": {
+          "billing_question": 0.0119,
+          "cancellation": 0.0177,
+          "information": 0.474,
+          "other": 0.4449,
+          "refund": 0.0113,
+          "technical_help": 0.0402
+        },
+        "type": "choice"
+      },
+      "confidence": 0.474,
+      "correct": true,
+      "expected": "information",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.474,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9694,
+        "confidence": 0.9694,
+        "noul": 0.0306,
+        "type": "noul"
+      },
+      "confidence": 0.9694,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9694,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4338,
+        "confidence": 0.1386,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0851,
+          "1": 0.4338,
+          "2": 0.3612,
+          "3": 0.12
+        },
+        "score": 1.516,
+        "type": "score"
+      },
+      "confidence": 0.4338,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4338,
+        "noul_accuracy": null,
+        "score_mae": 1.516
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5352,
+        "confidence": 0.5352,
+        "noul": 0.5352,
+        "type": "noul"
+      },
+      "confidence": 0.5352,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5352,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9801,
+        "confidence": 0.9801,
+        "noul": 0.0199,
+        "type": "noul"
+      },
+      "confidence": 0.9801,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9801,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5006,
+        "confidence": 0.5006,
+        "noul": 0.4994,
+        "type": "noul"
+      },
+      "confidence": 0.5006,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5006,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.837,
+        "choice": "structured",
+        "confidence": 0.5459,
+        "probabilities": {
+          "canned": 0.1462,
+          "complex": 0.0169,
+          "structured": 0.837
+        },
+        "type": "choice"
+      },
+      "confidence": 0.837,
+      "correct": false,
+      "expected": "canned",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.837,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9996,
+        "choice": "cancellation",
+        "confidence": 0.9977,
+        "probabilities": {
+          "billing_question": 0.0002,
+          "cancellation": 0.9996,
+          "information": 0.0,
+          "other": 0.0,
+          "refund": 0.0001,
+          "technical_help": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9996,
+      "correct": true,
+      "expected": "cancellation",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9996,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7278,
+        "confidence": 0.7278,
+        "noul": 0.2722,
+        "type": "noul"
+      },
+      "confidence": 0.7278,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7278,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3713,
+        "confidence": 0.0752,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.1123,
+          "1": 0.3713,
+          "2": 0.3462,
+          "3": 0.1702
+        },
+        "score": 1.5743,
+        "type": "score"
+      },
+      "confidence": 0.3713,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3713,
+        "noul_accuracy": null,
+        "score_mae": 1.5743
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6903,
+        "confidence": 0.6903,
+        "noul": 0.6903,
+        "type": "noul"
+      },
+      "confidence": 0.6903,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6903,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.882,
+        "confidence": 0.882,
+        "noul": 0.882,
+        "type": "noul"
+      },
+      "confidence": 0.882,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.882,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.669,
+        "confidence": 0.669,
+        "noul": 0.331,
+        "type": "noul"
+      },
+      "confidence": 0.669,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.669,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7601,
+        "choice": "structured",
+        "confidence": 0.3785,
+        "probabilities": {
+          "canned": 0.1826,
+          "complex": 0.0573,
+          "structured": 0.7601
+        },
+        "type": "choice"
+      },
+      "confidence": 0.7601,
+      "correct": true,
+      "expected": "structured",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.7601,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9906,
+        "choice": "cancellation",
+        "confidence": 0.968,
+        "probabilities": {
+          "billing_question": 0.0002,
+          "cancellation": 0.9906,
+          "information": 0.0002,
+          "other": 0.0002,
+          "refund": 0.0085,
+          "technical_help": 0.0003
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9906,
+      "correct": true,
+      "expected": "cancellation",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9906,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7979,
+        "confidence": 0.7979,
+        "noul": 0.2021,
+        "type": "noul"
+      },
+      "confidence": 0.7979,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7979,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4509,
+        "confidence": 0.1426,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0449,
+          "1": 0.4509,
+          "2": 0.2863,
+          "3": 0.2179
+        },
+        "score": 1.6771,
+        "type": "score"
+      },
+      "confidence": 0.4509,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4509,
+        "noul_accuracy": null,
+        "score_mae": 0.32289999999999996
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8576,
+        "confidence": 0.8576,
+        "noul": 0.8576,
+        "type": "noul"
+      },
+      "confidence": 0.8576,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8576,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9572,
+        "confidence": 0.9572,
+        "noul": 0.9572,
+        "type": "noul"
+      },
+      "confidence": 0.9572,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9572,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5038,
+        "confidence": 0.5038,
+        "noul": 0.5038,
+        "type": "noul"
+      },
+      "confidence": 0.5038,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5038,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9676,
+        "choice": "canned",
+        "confidence": 0.8496,
+        "probabilities": {
+          "canned": 0.9676,
+          "complex": 0.0149,
+          "structured": 0.0174
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9676,
+      "correct": false,
+      "expected": "complex",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.9676,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7025,
+        "choice": "cancellation",
+        "confidence": 0.4583,
+        "probabilities": {
+          "billing_question": 0.0116,
+          "cancellation": 0.7025,
+          "information": 0.0094,
+          "other": 0.1475,
+          "refund": 0.088,
+          "technical_help": 0.041
+        },
+        "type": "choice"
+      },
+      "confidence": 0.7025,
+      "correct": true,
+      "expected": "cancellation",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.7025,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9571,
+        "confidence": 0.9571,
+        "noul": 0.0429,
+        "type": "noul"
+      },
+      "confidence": 0.9571,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9571,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4374,
+        "confidence": 0.1034,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0937,
+          "1": 0.4374,
+          "2": 0.3037,
+          "3": 0.1652
+        },
+        "score": 1.5404,
+        "type": "score"
+      },
+      "confidence": 0.4374,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4374,
+        "noul_accuracy": null,
+        "score_mae": 1.5404
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5615,
+        "confidence": 0.5615,
+        "noul": 0.5615,
+        "type": "noul"
+      },
+      "confidence": 0.5615,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5615,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6322,
+        "confidence": 0.6322,
+        "noul": 0.6322,
+        "type": "noul"
+      },
+      "confidence": 0.6322,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6322,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6856,
+        "confidence": 0.6856,
+        "noul": 0.3144,
+        "type": "noul"
+      },
+      "confidence": 0.6856,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6856,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4316,
+        "choice": "structured",
+        "confidence": 0.0856,
+        "probabilities": {
+          "canned": 0.4252,
+          "complex": 0.1432,
+          "structured": 0.4316
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4316,
+      "correct": true,
+      "expected": "structured",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.4316,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9922,
+        "choice": "cancellation",
+        "confidence": 0.9707,
+        "probabilities": {
+          "billing_question": 0.0051,
+          "cancellation": 0.9922,
+          "information": 0.0001,
+          "other": 0.0004,
+          "refund": 0.0001,
+          "technical_help": 0.0021
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9922,
+      "correct": true,
+      "expected": "cancellation",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9922,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9874,
+        "confidence": 0.9874,
+        "noul": 0.0126,
+        "type": "noul"
+      },
+      "confidence": 0.9874,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9874,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5441,
+        "confidence": 0.3648,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.4041,
+          "1": 0.5441,
+          "2": 0.0379,
+          "3": 0.0138
+        },
+        "score": 0.6615,
+        "type": "score"
+      },
+      "confidence": 0.5441,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5441,
+        "noul_accuracy": null,
+        "score_mae": 1.3385
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8759,
+        "confidence": 0.8759,
+        "noul": 0.8759,
+        "type": "noul"
+      },
+      "confidence": 0.8759,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8759,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6821,
+        "confidence": 0.6821,
+        "noul": 0.6821,
+        "type": "noul"
+      },
+      "confidence": 0.6821,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6821,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5003,
+        "confidence": 0.5003,
+        "noul": 0.4997,
+        "type": "noul"
+      },
+      "confidence": 0.5003,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5003,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.635,
+        "choice": "canned",
+        "confidence": 0.2443,
+        "probabilities": {
+          "canned": 0.635,
+          "complex": 0.067,
+          "structured": 0.298
+        },
+        "type": "choice"
+      },
+      "confidence": 0.635,
+      "correct": false,
+      "expected": "structured",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.635,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9955,
+        "choice": "cancellation",
+        "confidence": 0.9836,
+        "probabilities": {
+          "billing_question": 0.0,
+          "cancellation": 0.9955,
+          "information": 0.0,
+          "other": 0.0,
+          "refund": 0.0044,
+          "technical_help": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9955,
+      "correct": true,
+      "expected": "cancellation",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9955,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5764,
+        "confidence": 0.5764,
+        "noul": 0.5764,
+        "type": "noul"
+      },
+      "confidence": 0.5764,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5764,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4013,
+        "confidence": 0.147,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0285,
+          "1": 0.4013,
+          "2": 0.3009,
+          "3": 0.2693
+        },
+        "score": 1.811,
+        "type": "score"
+      },
+      "confidence": 0.4013,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4013,
+        "noul_accuracy": null,
+        "score_mae": 1.811
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9035,
+        "confidence": 0.9035,
+        "noul": 0.9035,
+        "type": "noul"
+      },
+      "confidence": 0.9035,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9035,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.962,
+        "confidence": 0.962,
+        "noul": 0.962,
+        "type": "noul"
+      },
+      "confidence": 0.962,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.962,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6262,
+        "confidence": 0.6262,
+        "noul": 0.3738,
+        "type": "noul"
+      },
+      "confidence": 0.6262,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6262,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5792,
+        "choice": "canned",
+        "confidence": 0.1284,
+        "probabilities": {
+          "canned": 0.5792,
+          "complex": 0.1552,
+          "structured": 0.2656
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5792,
+      "correct": false,
+      "expected": "structured",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5792,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6015,
+        "choice": "technical_help",
+        "confidence": 0.3232,
+        "probabilities": {
+          "billing_question": 0.0249,
+          "cancellation": 0.0502,
+          "information": 0.0334,
+          "other": 0.1095,
+          "refund": 0.1805,
+          "technical_help": 0.6015
+        },
+        "type": "choice"
+      },
+      "confidence": 0.6015,
+      "correct": false,
+      "expected": "other",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.6015,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9952,
+        "confidence": 0.9952,
+        "noul": 0.0048,
+        "type": "noul"
+      },
+      "confidence": 0.9952,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9952,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.524,
+        "confidence": 0.1756,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.1052,
+          "1": 0.524,
+          "2": 0.286,
+          "3": 0.0848
+        },
+        "score": 1.3505,
+        "type": "score"
+      },
+      "confidence": 0.524,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.524,
+        "noul_accuracy": null,
+        "score_mae": 1.3505
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5457,
+        "confidence": 0.5457,
+        "noul": 0.5457,
+        "type": "noul"
+      },
+      "confidence": 0.5457,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5457,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9778,
+        "confidence": 0.9778,
+        "noul": 0.0222,
+        "type": "noul"
+      },
+      "confidence": 0.9778,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9778,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6493,
+        "confidence": 0.6493,
+        "noul": 0.6493,
+        "type": "noul"
+      },
+      "confidence": 0.6493,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6493,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9195,
+        "choice": "structured",
+        "confidence": 0.7408,
+        "probabilities": {
+          "canned": 0.0797,
+          "complex": 0.0009,
+          "structured": 0.9195
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9195,
+      "correct": false,
+      "expected": "canned",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.9195,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4178,
+        "choice": "cancellation",
+        "confidence": 0.1671,
+        "probabilities": {
+          "billing_question": 0.0911,
+          "cancellation": 0.4178,
+          "information": 0.0618,
+          "other": 0.2342,
+          "refund": 0.0271,
+          "technical_help": 0.168
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4178,
+      "correct": false,
+      "expected": "other",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4178,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9703,
+        "confidence": 0.9703,
+        "noul": 0.0297,
+        "type": "noul"
+      },
+      "confidence": 0.9703,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9703,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.569,
+        "confidence": 0.22,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0367,
+          "1": 0.1819,
+          "2": 0.2124,
+          "3": 0.569
+        },
+        "score": 2.3136,
+        "type": "score"
+      },
+      "confidence": 0.569,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.569,
+        "noul_accuracy": null,
+        "score_mae": 2.3136
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6573,
+        "confidence": 0.6573,
+        "noul": 0.6573,
+        "type": "noul"
+      },
+      "confidence": 0.6573,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6573,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9956,
+        "confidence": 0.9956,
+        "noul": 0.0044,
+        "type": "noul"
+      },
+      "confidence": 0.9956,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9956,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6735,
+        "confidence": 0.6735,
+        "noul": 0.6735,
+        "type": "noul"
+      },
+      "confidence": 0.6735,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6735,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6554,
+        "choice": "structured",
+        "confidence": 0.1984,
+        "probabilities": {
+          "canned": 0.1925,
+          "complex": 0.1522,
+          "structured": 0.6554
+        },
+        "type": "choice"
+      },
+      "confidence": 0.6554,
+      "correct": false,
+      "expected": "canned",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.6554,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2962,
+        "choice": "other",
+        "confidence": 0.1302,
+        "probabilities": {
+          "billing_question": 0.0785,
+          "cancellation": 0.2039,
+          "information": 0.0111,
+          "other": 0.2962,
+          "refund": 0.1333,
+          "technical_help": 0.2771
+        },
+        "type": "choice"
+      },
+      "confidence": 0.2962,
+      "correct": true,
+      "expected": "other",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.2962,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9961,
+        "confidence": 0.9961,
+        "noul": 0.0039,
+        "type": "noul"
+      },
+      "confidence": 0.9961,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9961,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5447,
+        "confidence": 0.2633,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0248,
+          "1": 0.1021,
+          "2": 0.3284,
+          "3": 0.5447
+        },
+        "score": 2.3929,
+        "type": "score"
+      },
+      "confidence": 0.5447,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5447,
+        "noul_accuracy": null,
+        "score_mae": 0.6071
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7831,
+        "confidence": 0.7831,
+        "noul": 0.2169,
+        "type": "noul"
+      },
+      "confidence": 0.7831,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7831,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8895,
+        "confidence": 0.8895,
+        "noul": 0.1105,
+        "type": "noul"
+      },
+      "confidence": 0.8895,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8895,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7067,
+        "confidence": 0.7067,
+        "noul": 0.2933,
+        "type": "noul"
+      },
+      "confidence": 0.7067,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7067,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9652,
+        "choice": "canned",
+        "confidence": 0.8469,
+        "probabilities": {
+          "canned": 0.9652,
+          "complex": 0.0278,
+          "structured": 0.0069
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9652,
+      "correct": false,
+      "expected": "complex",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.9652,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9901,
+        "choice": "information",
+        "confidence": 0.9614,
+        "probabilities": {
+          "billing_question": 0.004,
+          "cancellation": 0.0004,
+          "information": 0.9901,
+          "other": 0.0033,
+          "refund": 0.001,
+          "technical_help": 0.0011
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9901,
+      "correct": false,
+      "expected": "other",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.9901,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.982,
+        "confidence": 0.982,
+        "noul": 0.018,
+        "type": "noul"
+      },
+      "confidence": 0.982,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.982,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4576,
+        "confidence": 0.1694,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.039,
+          "1": 0.4576,
+          "2": 0.1696,
+          "3": 0.3338
+        },
+        "score": 1.7982,
+        "type": "score"
+      },
+      "confidence": 0.4576,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4576,
+        "noul_accuracy": null,
+        "score_mae": 1.7982
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5717,
+        "confidence": 0.5717,
+        "noul": 0.5717,
+        "type": "noul"
+      },
+      "confidence": 0.5717,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5717,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8543,
+        "confidence": 0.8543,
+        "noul": 0.8543,
+        "type": "noul"
+      },
+      "confidence": 0.8543,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8543,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5193,
+        "confidence": 0.5193,
+        "noul": 0.4807,
+        "type": "noul"
+      },
+      "confidence": 0.5193,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5193,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5695,
+        "choice": "canned",
+        "confidence": 0.1902,
+        "probabilities": {
+          "canned": 0.5695,
+          "complex": 0.0796,
+          "structured": 0.3509
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5695,
+      "correct": true,
+      "expected": "canned",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.5695,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9969,
+        "choice": "cancellation",
+        "confidence": 0.9868,
+        "probabilities": {
+          "billing_question": 0.0,
+          "cancellation": 0.9969,
+          "information": 0.0,
+          "other": 0.0015,
+          "refund": 0.0015,
+          "technical_help": 0.0001
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9969,
+      "correct": false,
+      "expected": "other",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.9969,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9997,
+        "confidence": 0.9997,
+        "noul": 0.0003,
+        "type": "noul"
+      },
+      "confidence": 0.9997,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "is_urgent",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9997,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3162,
+        "confidence": 0.022,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.1983,
+          "1": 0.3056,
+          "2": 0.3162,
+          "3": 0.1799
+        },
+        "score": 1.4776,
+        "type": "score"
+      },
+      "confidence": 0.3162,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "frustration",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3162,
+        "noul_accuracy": null,
+        "score_mae": 1.4776
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5452,
+        "confidence": 0.5452,
+        "noul": 0.4548,
+        "type": "noul"
+      },
+      "confidence": 0.5452,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "refund_requested",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5452,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7659,
+        "confidence": 0.7659,
+        "noul": 0.2341,
+        "type": "noul"
+      },
+      "confidence": 0.7659,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7659,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6885,
+        "confidence": 0.6885,
+        "noul": 0.3115,
+        "type": "noul"
+      },
+      "confidence": 0.6885,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_llm",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6885,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6392,
+        "choice": "canned",
+        "confidence": 0.1947,
+        "probabilities": {
+          "canned": 0.6392,
+          "complex": 0.2389,
+          "structured": 0.1219
+        },
+        "type": "choice"
+      },
+      "confidence": 0.6392,
+      "correct": true,
+      "expected": "canned",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "complexity",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.6392,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "p0_probe_en"
+      ]
+    }
+  ],
+  "config": {
+    "dataset": "results/korean_support/K2_probe_en_v1b.jsonl",
+    "dataset_sha256": "6c17d2dbd973ba80f8279c9403f418c96fd874491f465cafe1c5ea8d7d8fcd0d",
+    "device": "cpu",
+    "laya_version": "0.3.23",
+    "model": "multilingual",
+    "questions_sha256": "8ea18279f62ef606f642930f91c81350e5c2c0a20713a6fb5fc3b60660100819",
+    "revisions": {
+      "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "schema": "laya-evals-report/1",
+    "thresholds": {
+      "baseline_tolerance": {},
+      "max": {},
+      "min": {}
+    },
+    "timing": {
+      "batch_form": "states",
+      "batch_size": 8,
+      "chunks": 4,
+      "cost_metric": "per decision: that call divided by its own chunk size",
+      "latency_metric": "per request: the wall time of the call that returned it, unsplit",
+      "max_chunk": 8,
+      "min_confidence": null,
+      "min_confidence_sent": false,
+      "rows_alone": 0,
+      "rows_grouped": 30,
+      "sort_by_length": false,
+      "sort_by_length_sent": false
+    }
+  },
+  "overall": {
+    "choice_accuracy": 0.45,
+    "cost_per_decision_p50_ms": 150.12081250006304,
+    "cost_per_decision_p95_ms": 621.6607134997503,
+    "ece": 0.22510888888888886,
+    "latency_p50_ms": 1200.9665000005043,
+    "latency_p95_ms": 4973.285707998002,
+    "mean_confidence": 0.7354928571428571,
+    "noul_accuracy": 0.7083333333333334,
+    "score_mae": 1.2073433333333334
+  },
+  "slices": {
+    "language": {
+      "en": {
+        "choice_accuracy": 0.45,
+        "ece": 0.22510888888888886,
+        "mean_confidence": 0.7354928571428571,
+        "noul_accuracy": 0.7083333333333334,
+        "score_mae": 1.2073433333333334
+      }
+    },
+    "model": {
+      "multilingual": {
+        "choice_accuracy": 0.45,
+        "ece": 0.22510888888888886,
+        "mean_confidence": 0.7354928571428571,
+        "noul_accuracy": 0.7083333333333334,
+        "score_mae": 1.2073433333333334
+      }
+    },
+    "qid": {
+      "churn_risk": {
+        "ece": 0.14166666666666672,
+        "mean_confidence": 0.89554,
+        "noul_accuracy": 0.8333333333333334
+      },
+      "complexity": {
+        "choice_accuracy": 0.36666666666666664,
+        "ece": 0.4361466666666667,
+        "mean_confidence": 0.6818866666666668
+      },
+      "frustration": {
+        "mean_confidence": 0.4565766666666667,
+        "score_mae": 1.2073433333333334
+      },
+      "intent": {
+        "choice_accuracy": 0.5333333333333333,
+        "ece": 0.40617666666666663,
+        "mean_confidence": 0.7797033333333334
+      },
+      "is_urgent": {
+        "ece": 0.14182666666666666,
+        "mean_confidence": 0.9360933333333333,
+        "noul_accuracy": 0.8666666666666667
+      },
+      "needs_llm": {
+        "ece": 0.2462133333333334,
+        "mean_confidence": 0.6591333333333333,
+        "noul_accuracy": 0.5666666666666667
+      },
+      "refund_requested": {
+        "ece": 0.21459666666666669,
+        "mean_confidence": 0.7395166666666667,
+        "noul_accuracy": 0.5666666666666667
+      }
+    },
+    "tag": {
+      "p0_probe_en": {
+        "choice_accuracy": 0.45,
+        "ece": 0.22510888888888886,
+        "mean_confidence": 0.7354928571428571,
+        "noul_accuracy": 0.7083333333333334,
+        "score_mae": 1.2073433333333334
+      }
+    }
+  }
+}

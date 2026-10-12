@@ -1,0 +1,91 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/P4/20261002-2014_multilingual_ko_klue_ynat_7_dev.json",
+   "results/P4/20261002-2014_ft-probe_ko_klue_ynat_7_dev.json",
+   "--out",
+   "results/P4/metrics/probe_20261002-2014_paired_ko_klue_ynat_7_dev.md",
+   "--json",
+   "results/P4/metrics/probe_20261002-2014_paired_ko_klue_ynat_7_dev.json"
+  ],
+  "generated_at": "2026-10-02T20:19:28+0900",
+  "reports": [
+   {
+    "report": "results/P4/20261002-2014_multilingual_ko_klue_ynat_7_dev.json",
+    "dataset": "results/P4/dev/ko_klue_ynat_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "e47494226f0464463ec0dfbf8352bf6884a8297581b5283efd3803c8769d16ae",
+    "questions_sha256": "2eec39b823fd3a6eec8d54cb1bfb8caafccd93375fe2ef33c608d232ad37f260",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 245,
+    "split_rows": {
+     "dev": 245
+    }
+   },
+   {
+    "report": "results/P4/20261002-2014_ft-probe_ko_klue_ynat_7_dev.json",
+    "dataset": "results/P4/dev/ko_klue_ynat_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "e47494226f0464463ec0dfbf8352bf6884a8297581b5283efd3803c8769d16ae",
+    "questions_sha256": "2eec39b823fd3a6eec8d54cb1bfb8caafccd93375fe2ef33c608d232ad37f260",
+    "revisions": {
+     "ft-probe": "local:poc/finetune/ckpt_probe (base 55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851)"
+    },
+    "model": "ft-probe",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 245,
+    "split_rows": {
+     "dev": 245
+    }
+   }
+  ]
+ },
+ "a": "results/P4/20261002-2014_multilingual_ko_klue_ynat_7_dev.json",
+ "b": "results/P4/20261002-2014_ft-probe_ko_klue_ynat_7_dev.json",
+ "results": [
+  {
+   "qid": "topic",
+   "split": "all",
+   "n": 245,
+   "acc_a": 0.6122448979591837,
+   "acc_b": 0.6244897959183674,
+   "delta": 0.012244897959183673,
+   "delta_ci": [
+    -0.029296033416892096,
+    0.053785829335259445
+   ],
+   "b": 12,
+   "c": 15,
+   "p": 0.7011080384254456,
+   "agreement": 0.8285714285714286,
+   "same_state": 1.0
+  },
+  {
+   "qid": "topic",
+   "split": "dev",
+   "n": 245,
+   "acc_a": 0.6122448979591837,
+   "acc_b": 0.6244897959183674,
+   "delta": 0.012244897959183673,
+   "delta_ci": [
+    -0.029296033416892096,
+    0.053785829335259445
+   ],
+   "b": 12,
+   "c": 15,
+   "p": 0.7011080384254456,
+   "agreement": 0.8285714285714286,
+   "same_state": 1.0
+  }
+ ]
+}

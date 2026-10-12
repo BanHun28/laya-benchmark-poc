@@ -1,0 +1,1504 @@
+{
+ "version": 1,
+ "builder": "scripts/build_jev_cmp_sets.py 0.1.0",
+ "laya_version": "0.3.23",
+ "created_at": "2026-10-08T09:02:15+09:00",
+ "limits": {
+  "options": 10,
+  "state_chars": 8000,
+  "choice_input_chars": 80
+ },
+ "files": {
+  "T10_support_tickets_queue_40.jsonl": {
+   "path": "data/evals/jev_cmp/T10_support_tickets_queue_40.jsonl",
+   "sha256": "e2c573561b8336dc4ba282f015c56617eb1c2aafd3042d7ad470833104236f40",
+   "questions_sha256": "8fadd3f6b2a4436087c97e0538a2d2f3a37e82051f090d83b19ee11868952a60",
+   "n": 40,
+   "decisions": 40,
+   "task": "T10",
+   "source": {
+    "dataset": "Tobi-Bueck/customer-support-tickets",
+    "config": null,
+    "split": "train",
+    "revision": "ddf1c81a5475992c4fa6752bf1e8b4e31f07bbeb"
+   },
+   "license": "cc-by-nc-4.0 (HF card license field) (확인 필요)",
+   "in_training_mix": "yes (upstream BENCHMARKS.md Themes: in training)",
+   "in_training_mix_evidence": "BENCHMARKS.md:147 Themes 'Support triage (10-way queue) ... | in training'; bench_apps.py:155 in_training=True",
+   "question_source": "research/scripts/bench_apps.py:130-152 (language en, the 10 queues, state subject + body[:3000])",
+   "build_args": {
+    "seed": 13,
+    "n": 40,
+    "partition": "int(sha256(normalized state text), 16) % 10: 0-1 test, 2 dev, 3-9 train"
+   },
+   "pool": {
+    "source_rows": 5694,
+    "pool_rows": 4217,
+    "dropped": {
+     "duplicate": 763,
+     "length": 714
+    },
+    "sample": {
+     "per_label": {
+      "Technical Support": 4,
+      "Product Support": 4,
+      "Customer Service": 4,
+      "IT Support": 4,
+      "Billing and Payments": 4,
+      "Returns and Exchanges": 4,
+      "Service Outages and Maintenance": 4,
+      "Sales and Pre-Sales": 4,
+      "Human Resources": 4,
+      "General Inquiry": 4
+     },
+     "top_up": 0
+    }
+   },
+   "label_distribution": {
+    "Billing and Payments": 4,
+    "Customer Service": 4,
+    "General Inquiry": 4,
+    "Human Resources": 4,
+    "IT Support": 4,
+    "Product Support": 4,
+    "Returns and Exchanges": 4,
+    "Sales and Pre-Sales": 4,
+    "Service Outages and Maintenance": 4,
+    "Technical Support": 4
+   },
+   "majority_rate": 0.1,
+   "duplicates": 0,
+   "limits": {
+    "options_max": 10,
+    "state_chars_max": 781,
+    "choice_items_with_option_over_80_chars": 0
+   },
+   "playground": {
+    "path": "data/evals/jev_cmp/T10_support_tickets_queue_40_playground.json",
+    "sha256": "a075d6ac0fc96029deb2e7d326ad62a0152553a5a8f39d4f50459e72c240962d",
+    "items": 40,
+    "dataset_sha256_matches": true
+   },
+   "jev_comparable_n": 40,
+   "jev_excluded": []
+  },
+  "T1_typed_decisions_40.jsonl": {
+   "path": "data/evals/jev_cmp/T1_typed_decisions_40.jsonl",
+   "sha256": "749a24c4c0db977686f29eeecd41201e16b97629a9fbd641a6ffb5dfe6163834",
+   "questions_sha256": "d46ef26a6ec2f2f8c6fc0cfa1e81715751dda05f173cd028ae3eaaa4b9d519cb",
+   "n": 40,
+   "decisions": 200,
+   "task": "T1",
+   "source": {
+    "dataset": "LocalLLaMA/typed-decisions",
+    "config": "all",
+    "split": "test",
+    "revision": "d0e2f0c42fef86cc15d1688d25a19f5ba7c85b18"
+   },
+   "license": "apache-2.0 (HF card license field) (확인 필요)",
+   "in_training_mix": "no",
+   "in_training_mix_evidence": "english/multilingual: 'Neither checkpoint trained on typed-decisions' (research/scripts/build_benchmark_nb.py:762). laya-typed-decisions is fine-tuned on this benchmark's train split (BENCHMARKS.md:332), so its line is not zero-shot",
+   "question_source": "dataset's own questions (research/scripts/bench_local.py:225-253)",
+   "build_args": {
+    "seed": 13,
+    "n_cases": 40,
+    "stratify_by": "workflow",
+    "expected": "choice/score: argmax of the teacher distribution (first maximum); noul: p(true) >= 0.5"
+   },
+   "pool": {
+    "source_rows": 400,
+    "excluded_over_10_options": [],
+    "sample": {
+     "per_label": {
+      "agent_trace_observability": 10,
+      "customer_service": 10,
+      "invoice_processing": 10,
+      "security_incidents": 10
+     },
+     "top_up": 0
+    }
+   },
+   "label_distribution": {
+    "action": {
+     "continue": 4,
+     "escalate_to_human": 4,
+     "human_review": 3,
+     "observe": 3,
+     "answer_directly": 2,
+     "execute_refund": 2,
+     "request_information": 2
+    },
+    "needs_review": {
+     "false": 6,
+     "true": 4
+    },
+    "outcome": {
+     "success": 4,
+     "partial": 3,
+     "harmful": 2,
+     "failure": 1
+    },
+    "risk": {
+     "0": 6,
+     "1": 2,
+     "3": 2
+    },
+    "urgency": {
+     "2": 17,
+     "1": 10,
+     "3": 8,
+     "0": 5
+    },
+    "category": {
+     "billing": 4,
+     "delivery": 4,
+     "account": 1,
+     "technical": 1
+    },
+    "churn_risk": {
+     "2": 6,
+     "1": 2,
+     "0": 1,
+     "3": 1
+    },
+    "needs_human": {
+     "true": 7,
+     "false": 3
+    },
+    "discrepancy_severity": {
+     "3": 8,
+     "0": 2
+    },
+    "disposition": {
+     "investigate": 9,
+     "manual_review": 7,
+     "approve": 2,
+     "close_benign": 1,
+     "hold": 1
+    },
+    "duplicate": {
+     "false": 10
+    },
+    "matches_order": {
+     "false": 8,
+     "true": 2
+    },
+    "credential_compromise": {
+     "false": 6,
+     "true": 4
+    },
+    "severity": {
+     "3": 5,
+     "2": 4,
+     "1": 1
+    },
+    "true_positive": {
+     "true": 6,
+     "false": 4
+    }
+   },
+   "majority_rate": {
+    "action": 0.2,
+    "needs_review": 0.6,
+    "outcome": 0.4,
+    "risk": 0.6,
+    "urgency": 0.425,
+    "category": 0.4,
+    "churn_risk": 0.6,
+    "needs_human": 0.7,
+    "discrepancy_severity": 0.8,
+    "disposition": 0.45,
+    "duplicate": 1.0,
+    "matches_order": 0.8,
+    "credential_compromise": 0.6,
+    "severity": 0.5,
+    "true_positive": 0.6
+   },
+   "duplicates": 0,
+   "limits": {
+    "options_max": 5,
+    "state_chars_max": 1613,
+    "choice_items_with_option_over_80_chars": 10
+   },
+   "playground": {
+    "path": "data/evals/jev_cmp/T1_typed_decisions_40_playground.json",
+    "sha256": "b0eacae8e2ee78fe8372d910da3a1d6c7cad7be4e4a623c101db4fe1c3a6af65",
+    "items": 200,
+    "dataset_sha256_matches": true
+   },
+   "jev_comparable_n": 120,
+   "jev_excluded": [
+    "T1_typed_decisions_40/agent_trace_observability_000018/risk",
+    "T1_typed_decisions_40/agent_trace_observability_000018/urgency",
+    "T1_typed_decisions_40/agent_trace_observability_000023/risk",
+    "T1_typed_decisions_40/agent_trace_observability_000023/urgency",
+    "T1_typed_decisions_40/agent_trace_observability_000028/risk",
+    "T1_typed_decisions_40/agent_trace_observability_000028/urgency",
+    "T1_typed_decisions_40/agent_trace_observability_000029/risk",
+    "T1_typed_decisions_40/agent_trace_observability_000029/urgency",
+    "T1_typed_decisions_40/agent_trace_observability_000033/risk",
+    "T1_typed_decisions_40/agent_trace_observability_000033/urgency",
+    "T1_typed_decisions_40/agent_trace_observability_000037/risk",
+    "T1_typed_decisions_40/agent_trace_observability_000037/urgency",
+    "T1_typed_decisions_40/agent_trace_observability_000082/risk",
+    "T1_typed_decisions_40/agent_trace_observability_000082/urgency",
+    "T1_typed_decisions_40/agent_trace_observability_000083/risk",
+    "T1_typed_decisions_40/agent_trace_observability_000083/urgency",
+    "T1_typed_decisions_40/agent_trace_observability_000085/risk",
+    "T1_typed_decisions_40/agent_trace_observability_000085/urgency",
+    "T1_typed_decisions_40/agent_trace_observability_000087/risk",
+    "T1_typed_decisions_40/agent_trace_observability_000087/urgency",
+    "T1_typed_decisions_40/customer_service_000003/action",
+    "T1_typed_decisions_40/customer_service_000003/churn_risk",
+    "T1_typed_decisions_40/customer_service_000003/urgency",
+    "T1_typed_decisions_40/customer_service_000009/action",
+    "T1_typed_decisions_40/customer_service_000009/churn_risk",
+    "T1_typed_decisions_40/customer_service_000009/urgency",
+    "T1_typed_decisions_40/customer_service_000016/action",
+    "T1_typed_decisions_40/customer_service_000016/churn_risk",
+    "T1_typed_decisions_40/customer_service_000016/urgency",
+    "T1_typed_decisions_40/customer_service_000023/action",
+    "T1_typed_decisions_40/customer_service_000023/churn_risk",
+    "T1_typed_decisions_40/customer_service_000023/urgency",
+    "T1_typed_decisions_40/customer_service_000027/action",
+    "T1_typed_decisions_40/customer_service_000027/churn_risk",
+    "T1_typed_decisions_40/customer_service_000027/urgency",
+    "T1_typed_decisions_40/customer_service_000037/action",
+    "T1_typed_decisions_40/customer_service_000037/churn_risk",
+    "T1_typed_decisions_40/customer_service_000037/urgency",
+    "T1_typed_decisions_40/customer_service_000055/action",
+    "T1_typed_decisions_40/customer_service_000055/churn_risk",
+    "T1_typed_decisions_40/customer_service_000055/urgency",
+    "T1_typed_decisions_40/customer_service_000068/action",
+    "T1_typed_decisions_40/customer_service_000068/churn_risk",
+    "T1_typed_decisions_40/customer_service_000068/urgency",
+    "T1_typed_decisions_40/customer_service_000093/action",
+    "T1_typed_decisions_40/customer_service_000093/churn_risk",
+    "T1_typed_decisions_40/customer_service_000093/urgency",
+    "T1_typed_decisions_40/customer_service_000095/action",
+    "T1_typed_decisions_40/customer_service_000095/churn_risk",
+    "T1_typed_decisions_40/customer_service_000095/urgency",
+    "T1_typed_decisions_40/invoice_processing_000001/discrepancy_severity",
+    "T1_typed_decisions_40/invoice_processing_000001/urgency",
+    "T1_typed_decisions_40/invoice_processing_000010/discrepancy_severity",
+    "T1_typed_decisions_40/invoice_processing_000010/urgency",
+    "T1_typed_decisions_40/invoice_processing_000016/discrepancy_severity",
+    "T1_typed_decisions_40/invoice_processing_000016/urgency",
+    "T1_typed_decisions_40/invoice_processing_000018/discrepancy_severity",
+    "T1_typed_decisions_40/invoice_processing_000018/urgency",
+    "T1_typed_decisions_40/invoice_processing_000033/discrepancy_severity",
+    "T1_typed_decisions_40/invoice_processing_000033/urgency",
+    "T1_typed_decisions_40/invoice_processing_000035/discrepancy_severity",
+    "T1_typed_decisions_40/invoice_processing_000035/urgency",
+    "T1_typed_decisions_40/invoice_processing_000057/discrepancy_severity",
+    "T1_typed_decisions_40/invoice_processing_000057/urgency",
+    "T1_typed_decisions_40/invoice_processing_000077/discrepancy_severity",
+    "T1_typed_decisions_40/invoice_processing_000077/urgency",
+    "T1_typed_decisions_40/invoice_processing_000087/discrepancy_severity",
+    "T1_typed_decisions_40/invoice_processing_000087/urgency",
+    "T1_typed_decisions_40/invoice_processing_000095/discrepancy_severity",
+    "T1_typed_decisions_40/invoice_processing_000095/urgency",
+    "T1_typed_decisions_40/security_incidents_000017/urgency",
+    "T1_typed_decisions_40/security_incidents_000029/urgency",
+    "T1_typed_decisions_40/security_incidents_000032/urgency",
+    "T1_typed_decisions_40/security_incidents_000045/urgency",
+    "T1_typed_decisions_40/security_incidents_000054/urgency",
+    "T1_typed_decisions_40/security_incidents_000055/urgency",
+    "T1_typed_decisions_40/security_incidents_000062/urgency",
+    "T1_typed_decisions_40/security_incidents_000070/urgency",
+    "T1_typed_decisions_40/security_incidents_000072/urgency",
+    "T1_typed_decisions_40/security_incidents_000096/urgency"
+   ],
+   "jev_exclusion_rule": "score 레벨 수 ≠ 5 제외, 옵션 > 80자 제외 (playground Score는 5레벨만, choice 입력 maxlength 80; coordinator 결정 2026-10-06)"
+  },
+  "T1_typed_decisions_40_noulnocrit.jsonl": {
+   "path": "data/evals/jev_cmp/T1_typed_decisions_40_noulnocrit.jsonl",
+   "sha256": "2508b8172b70cd65f02d1e7ba21dca97ebd7d6603b3ee9f7ad8a057e06b50283",
+   "questions_sha256": "7b7f5dac86a48ee9fc492bbb9b29e1a406444c311578f902e6d93097c08dbd25",
+   "n": 40,
+   "decisions": 60,
+   "task": "T1",
+   "source": {
+    "dataset": "LocalLLaMA/typed-decisions",
+    "config": "all",
+    "split": "test",
+    "revision": "d0e2f0c42fef86cc15d1688d25a19f5ba7c85b18"
+   },
+   "license": "apache-2.0 (HF card license field) (확인 필요)",
+   "in_training_mix": "no",
+   "in_training_mix_evidence": "english/multilingual: 'Neither checkpoint trained on typed-decisions' (research/scripts/build_benchmark_nb.py:762). laya-typed-decisions is fine-tuned on this benchmark's train split (BENCHMARKS.md:332), so its line is not zero-shot",
+   "question_source": null,
+   "build_args": {
+    "command": "t1_noulnocrit"
+   },
+   "pool": null,
+   "label_distribution": {
+    "needs_review": {
+     "false": 6,
+     "true": 4
+    },
+    "needs_human": {
+     "true": 7,
+     "false": 3
+    },
+    "duplicate": {
+     "false": 10
+    },
+    "matches_order": {
+     "false": 8,
+     "true": 2
+    },
+    "credential_compromise": {
+     "false": 6,
+     "true": 4
+    },
+    "true_positive": {
+     "true": 6,
+     "false": 4
+    }
+   },
+   "majority_rate": {
+    "needs_review": 0.6,
+    "needs_human": 0.7,
+    "duplicate": 1.0,
+    "matches_order": 0.8,
+    "credential_compromise": 0.6,
+    "true_positive": 0.6
+   },
+   "duplicates": 0,
+   "limits": {
+    "options_max": 2,
+    "state_chars_max": 1613,
+    "choice_items_with_option_over_80_chars": 0
+   },
+   "playground": {
+    "path": "data/evals/jev_cmp/T1_typed_decisions_40_noulnocrit_playground.json",
+    "sha256": "3c6ac525ba8761e4e467db848d273e6ad30fab9fb1110af4afe436358fd3d07d",
+    "items": 60,
+    "dataset_sha256_matches": true
+   },
+   "jev_comparable_n": 60,
+   "jev_excluded": [],
+   "comparison_only": true,
+   "derived_from": {
+    "path": "data/evals/jev_cmp/T1_typed_decisions_40.jsonl",
+    "sha256": "749a24c4c0db977686f29eeecd41201e16b97629a9fbd641a6ffb5dfe6163834"
+   },
+   "variant": "the 60 noul questions only, `criteria` (true/false descriptions) removed; 20 of them (duplicate, credential_compromise) had none already"
+  },
+  "T2_ag_news_40.jsonl": {
+   "path": "data/evals/jev_cmp/T2_ag_news_40.jsonl",
+   "sha256": "555c7cd7d38c78d183fe884c62e1bbb102d040871bf6e66a8911269eba20fd21",
+   "questions_sha256": "c472cb1cb971dab3d01c811ccc0f997d39516555fd43f513a8c59654e0457be1",
+   "n": 40,
+   "decisions": 40,
+   "task": "T2",
+   "source": {
+    "dataset": "fancyzhx/ag_news",
+    "config": null,
+    "split": "test",
+    "revision": "eb185aade064a813bc0b7f42de02595523103ca4"
+   },
+   "license": "unknown (HF card license field) (확인 필요)",
+   "in_training_mix": "yes",
+   "in_training_mix_evidence": "README.md:1352 'in training mix'; build_benchmark_nb.py:760; bench_apps.py:94 in_training=True",
+   "question_source": "research/scripts/bench_apps.py:85-92",
+   "build_args": {
+    "seed": 13,
+    "n": 40
+   },
+   "pool": {
+    "source_rows": 7600,
+    "pool_rows": 7600,
+    "dropped": {},
+    "sample": {
+     "per_label": {
+      "world": 10,
+      "sports": 10,
+      "business": 10,
+      "sci_tech": 10
+     },
+     "top_up": 0
+    }
+   },
+   "label_distribution": {
+    "business": 10,
+    "sci_tech": 10,
+    "sports": 10,
+    "world": 10
+   },
+   "majority_rate": 0.25,
+   "duplicates": 0,
+   "limits": {
+    "options_max": 4,
+    "state_chars_max": 561,
+    "choice_items_with_option_over_80_chars": 0
+   },
+   "playground": {
+    "path": "data/evals/jev_cmp/T2_ag_news_40_playground.json",
+    "sha256": "1da0f5494068650edbcc6a23bf26f46790ef6592339f28f46d922f32370191d9",
+    "items": 40,
+    "dataset_sha256_matches": true
+   },
+   "jev_comparable_n": 40,
+   "jev_excluded": []
+  },
+  "T3_emotion_40.jsonl": {
+   "path": "data/evals/jev_cmp/T3_emotion_40.jsonl",
+   "sha256": "2246b5f04b1ed714ef9789548d6e0cf932db1fa40aed95a4b9a3f616a11510cb",
+   "questions_sha256": "bd7cc49e3561bf50d45db8c2d35820b8ddea855c9dfbc081303636596b4b4c97",
+   "n": 40,
+   "decisions": 40,
+   "task": "T3",
+   "source": {
+    "dataset": "dair-ai/emotion",
+    "config": "split",
+    "split": "test",
+    "revision": "cab853a1dbdf4c42c2b3ef2173804746df8825fe"
+   },
+   "license": "other (HF card license field; research/educational use) (확인 필요)",
+   "in_training_mix": "no",
+   "in_training_mix_evidence": "README.md:1354 'held out'; build_benchmark_nb.py:761; bench_apps.py:110 in_training=False",
+   "question_source": "research/scripts/bench_apps.py:101-107 (criteria values None: options are the bare keys)",
+   "build_args": {
+    "seed": 13,
+    "n": 40
+   },
+   "pool": {
+    "source_rows": 2000,
+    "pool_rows": 2000,
+    "dropped": {},
+    "sample": {
+     "per_label": {
+      "sadness": 7,
+      "joy": 7,
+      "love": 7,
+      "anger": 7,
+      "fear": 6,
+      "surprise": 6
+     },
+     "top_up": 0
+    }
+   },
+   "label_distribution": {
+    "anger": 7,
+    "joy": 7,
+    "love": 7,
+    "sadness": 7,
+    "fear": 6,
+    "surprise": 6
+   },
+   "majority_rate": 0.175,
+   "duplicates": 0,
+   "limits": {
+    "options_max": 6,
+    "state_chars_max": 273,
+    "choice_items_with_option_over_80_chars": 0
+   },
+   "playground": {
+    "path": "data/evals/jev_cmp/T3_emotion_40_playground.json",
+    "sha256": "4b0becf94e58d6b6e221028f4783bbdca8c2b953f0ab3120c90bac111fa65356",
+    "items": 40,
+    "dataset_sha256_matches": true
+   },
+   "jev_comparable_n": 40,
+   "jev_excluded": []
+  },
+  "T4_banking77_10opt_40.jsonl": {
+   "path": "data/evals/jev_cmp/T4_banking77_10opt_40.jsonl",
+   "sha256": "b124b7fb685abe85de45689984013d9b012c7e0e361d1b29ee55eb12dd2d23bc",
+   "questions_sha256": "3c4b9b99f9cc5adcd3a2930f1fd99613bd115873234f06d8e5b6176ab5bc7074",
+   "n": 40,
+   "decisions": 40,
+   "task": "T4",
+   "source": {
+    "dataset": "mteb/banking77",
+    "config": null,
+    "split": "test",
+    "revision": "18072d2685ea682290f7b8924d94c62acc19c0b2"
+   },
+   "license": "mit (HF card license field of the mteb mirror; PolyAI original CC BY 4.0) (확인 필요)",
+   "in_training_mix": "held out (upstream build_benchmark_nb.py:760-762)",
+   "in_training_mix_evidence": "build_benchmark_nb.py:761 'sst5, emotion, prompt_injections, banking77 were held out'; bench_apps.py:126 in_training=False. Was 'unknown' until 2026-10-07; the frozen jsonl headers keep that build-time value",
+   "question_source": "research/scripts/bench_apps.py:116-122 (instructions and key-only option rendering)",
+   "build_args": {
+    "seed": 13,
+    "n": 40,
+    "labels": 77,
+    "options": 10,
+    "label_order": "random.Random(13).shuffle(sorted labels)",
+    "distractors": "random.Random(13), one stream in row order: sample 9 of the other labels, shuffle"
+   },
+   "pool": {
+    "source_rows": 3076,
+    "pool_rows": 3076,
+    "dropped": {},
+    "sample": {
+     "per_label": {
+      "card_swallowed": 1,
+      "contactless_not_working": 1,
+      "atm_support": 1,
+      "top_up_failed": 1,
+      "activate_my_card": 1,
+      "card_delivery_estimate": 1,
+      "visa_or_mastercard": 1,
+      "card_about_to_expire": 1,
+      "card_not_working": 1,
+      "transfer_into_account": 1,
+      "lost_or_stolen_card": 1,
+      "getting_virtual_card": 1,
+      "country_support": 1,
+      "age_limit": 1,
+      "virtual_card_not_working": 1,
+      "card_arrival": 1,
+      "top_up_limits": 1,
+      "transfer_not_received_by_recipient": 1,
+      "top_up_reverted": 1,
+      "disposable_card_limits": 1,
+      "exchange_charge": 1,
+      "card_acceptance": 1,
+      "exchange_via_app": 1,
+      "declined_card_payment": 1,
+      "balance_not_updated_after_bank_transfer": 1,
+      "top_up_by_bank_transfer_charge": 1,
+      "transfer_fee_charged": 1,
+      "top_up_by_cash_or_cheque": 1,
+      "order_physical_card": 1,
+      "get_physical_card": 1,
+      "cash_withdrawal_not_recognised": 1,
+      "wrong_exchange_rate_for_cash_withdrawal": 1,
+      "pending_transfer": 1,
+      "supported_cards_and_currencies": 1,
+      "pending_card_payment": 1,
+      "passcode_forgotten": 1,
+      "balance_not_updated_after_cheque_or_cash_deposit": 1,
+      "cash_withdrawal_charge": 1,
+      "getting_spare_card": 1,
+      "verify_source_of_funds": 1,
+      "pending_top_up": 0,
+      "failed_transfer": 0,
+      "extra_charge_on_statement": 0,
+      "edit_personal_details": 0,
+      "card_linking": 0,
+      "change_pin": 0,
+      "request_refund": 0,
+      "beneficiary_not_allowed": 0,
+      "transfer_timing": 0,
+      "pending_cash_withdrawal": 0,
+      "verify_top_up": 0,
+      "transaction_charged_twice": 0,
+      "top_up_by_card_charge": 0,
+      "receiving_money": 0,
+      "pin_blocked": 0,
+      "automatic_top_up": 0,
+      "unable_to_verify_identity": 0,
+      "topping_up_by_card": 0,
+      "card_payment_not_recognised": 0,
+      "Refund_not_showing_up": 0,
+      "get_disposable_virtual_card": 0,
+      "lost_or_stolen_phone": 0,
+      "reverted_card_payment?": 0,
+      "verify_my_identity": 0,
+      "terminate_account": 0,
+      "apple_pay_or_google_pay": 0,
+      "wrong_amount_of_cash_received": 0,
+      "declined_cash_withdrawal": 0,
+      "cancel_transfer": 0,
+      "card_payment_fee_charged": 0,
+      "why_verify_identity": 0,
+      "declined_transfer": 0,
+      "card_payment_wrong_exchange_rate": 0,
+      "direct_debit_payment_not_recognised": 0,
+      "compromised_card": 0,
+      "fiat_currency_support": 0,
+      "exchange_rate": 0
+     },
+     "top_up": 0
+    }
+   },
+   "label_distribution": {
+    "activate my card": 1,
+    "age limit": 1,
+    "atm support": 1,
+    "balance not updated after bank transfer": 1,
+    "balance not updated after cheque or cash deposit": 1,
+    "card about to expire": 1,
+    "card acceptance": 1,
+    "card arrival": 1,
+    "card delivery estimate": 1,
+    "card not working": 1,
+    "card swallowed": 1,
+    "cash withdrawal charge": 1,
+    "cash withdrawal not recognised": 1,
+    "contactless not working": 1,
+    "country support": 1,
+    "declined card payment": 1,
+    "disposable card limits": 1,
+    "exchange charge": 1,
+    "exchange via app": 1,
+    "get physical card": 1,
+    "getting spare card": 1,
+    "getting virtual card": 1,
+    "lost or stolen card": 1,
+    "order physical card": 1,
+    "passcode forgotten": 1,
+    "pending card payment": 1,
+    "pending transfer": 1,
+    "supported cards and currencies": 1,
+    "top up by bank transfer charge": 1,
+    "top up by cash or cheque": 1,
+    "top up failed": 1,
+    "top up limits": 1,
+    "top up reverted": 1,
+    "transfer fee charged": 1,
+    "transfer into account": 1,
+    "transfer not received by recipient": 1,
+    "verify source of funds": 1,
+    "virtual card not working": 1,
+    "visa or mastercard": 1,
+    "wrong exchange rate for cash withdrawal": 1
+   },
+   "majority_rate": 0.025,
+   "duplicates": 0,
+   "limits": {
+    "options_max": 10,
+    "state_chars_max": 383,
+    "choice_items_with_option_over_80_chars": 0
+   },
+   "playground": {
+    "path": "data/evals/jev_cmp/T4_banking77_10opt_40_playground.json",
+    "sha256": "f91e53ca31e0ae9351bc9ed8d6f45a5002dfb4bf10174333a4bfabafd69549e3",
+    "items": 40,
+    "dataset_sha256_matches": true
+   },
+   "jev_comparable_n": 40,
+   "jev_excluded": [],
+   "options_rendering": "key-only",
+   "rebuild_reason": "v0 rendered each option as `key: key spaced`; balance_not_updated_after_cheque_or_cash_deposit became 98 chars and 8 of 40 items could not be typed into the playground's 80-char choice input. Coordinator decision (b) 2026-10-06: upstream key-only rendering k.replace('_', ' '), max 48 chars. Same rows, options and option order as v0; only the option text and expected key changed",
+   "previous_version": {
+    "path": "data/evals/jev_cmp/T4_banking77_10opt_40_v0.jsonl",
+    "sha256": "df700caa098332eaaf6bd6fc4c0609413db85656fc96dd13bb5f43fda804786c"
+   }
+  },
+  "T4_banking77_10opt_40_v0.jsonl": {
+   "path": "data/evals/jev_cmp/T4_banking77_10opt_40_v0.jsonl",
+   "sha256": "df700caa098332eaaf6bd6fc4c0609413db85656fc96dd13bb5f43fda804786c",
+   "questions_sha256": "a3ef71c9cbdb5ac7a79571d1efa5c7bfe22ab4863204d7d674ffda409366a34a",
+   "n": 40,
+   "decisions": 40,
+   "task": "T4",
+   "source": {
+    "dataset": "mteb/banking77",
+    "config": null,
+    "split": "test",
+    "revision": "18072d2685ea682290f7b8924d94c62acc19c0b2"
+   },
+   "license": "mit (HF card license field of the mteb mirror; PolyAI original CC BY 4.0) (확인 필요)",
+   "in_training_mix": "held out (upstream build_benchmark_nb.py:760-762)",
+   "in_training_mix_evidence": "build_benchmark_nb.py:761 'sst5, emotion, prompt_injections, banking77 were held out'; bench_apps.py:126 in_training=False. Was 'unknown' until 2026-10-07; the frozen jsonl headers keep that build-time value",
+   "question_source": "research/scripts/bench_apps.py:116-122 (instructions)",
+   "build_args": {
+    "seed": 13,
+    "n": 40,
+    "labels": 77,
+    "options": 10,
+    "label_order": "random.Random(13).shuffle(sorted labels)",
+    "distractors": "random.Random(13), one stream in row order: sample 9 of the other labels, shuffle"
+   },
+   "pool": {
+    "source_rows": 3076,
+    "pool_rows": 3076,
+    "dropped": {},
+    "sample": {
+     "per_label": {
+      "card_swallowed": 1,
+      "contactless_not_working": 1,
+      "atm_support": 1,
+      "top_up_failed": 1,
+      "activate_my_card": 1,
+      "card_delivery_estimate": 1,
+      "visa_or_mastercard": 1,
+      "card_about_to_expire": 1,
+      "card_not_working": 1,
+      "transfer_into_account": 1,
+      "lost_or_stolen_card": 1,
+      "getting_virtual_card": 1,
+      "country_support": 1,
+      "age_limit": 1,
+      "virtual_card_not_working": 1,
+      "card_arrival": 1,
+      "top_up_limits": 1,
+      "transfer_not_received_by_recipient": 1,
+      "top_up_reverted": 1,
+      "disposable_card_limits": 1,
+      "exchange_charge": 1,
+      "card_acceptance": 1,
+      "exchange_via_app": 1,
+      "declined_card_payment": 1,
+      "balance_not_updated_after_bank_transfer": 1,
+      "top_up_by_bank_transfer_charge": 1,
+      "transfer_fee_charged": 1,
+      "top_up_by_cash_or_cheque": 1,
+      "order_physical_card": 1,
+      "get_physical_card": 1,
+      "cash_withdrawal_not_recognised": 1,
+      "wrong_exchange_rate_for_cash_withdrawal": 1,
+      "pending_transfer": 1,
+      "supported_cards_and_currencies": 1,
+      "pending_card_payment": 1,
+      "passcode_forgotten": 1,
+      "balance_not_updated_after_cheque_or_cash_deposit": 1,
+      "cash_withdrawal_charge": 1,
+      "getting_spare_card": 1,
+      "verify_source_of_funds": 1,
+      "pending_top_up": 0,
+      "failed_transfer": 0,
+      "extra_charge_on_statement": 0,
+      "edit_personal_details": 0,
+      "card_linking": 0,
+      "change_pin": 0,
+      "request_refund": 0,
+      "beneficiary_not_allowed": 0,
+      "transfer_timing": 0,
+      "pending_cash_withdrawal": 0,
+      "verify_top_up": 0,
+      "transaction_charged_twice": 0,
+      "top_up_by_card_charge": 0,
+      "receiving_money": 0,
+      "pin_blocked": 0,
+      "automatic_top_up": 0,
+      "unable_to_verify_identity": 0,
+      "topping_up_by_card": 0,
+      "card_payment_not_recognised": 0,
+      "Refund_not_showing_up": 0,
+      "get_disposable_virtual_card": 0,
+      "lost_or_stolen_phone": 0,
+      "reverted_card_payment?": 0,
+      "verify_my_identity": 0,
+      "terminate_account": 0,
+      "apple_pay_or_google_pay": 0,
+      "wrong_amount_of_cash_received": 0,
+      "declined_cash_withdrawal": 0,
+      "cancel_transfer": 0,
+      "card_payment_fee_charged": 0,
+      "why_verify_identity": 0,
+      "declined_transfer": 0,
+      "card_payment_wrong_exchange_rate": 0,
+      "direct_debit_payment_not_recognised": 0,
+      "compromised_card": 0,
+      "fiat_currency_support": 0,
+      "exchange_rate": 0
+     },
+     "top_up": 0
+    }
+   },
+   "label_distribution": {
+    "activate_my_card": 1,
+    "age_limit": 1,
+    "atm_support": 1,
+    "balance_not_updated_after_bank_transfer": 1,
+    "balance_not_updated_after_cheque_or_cash_deposit": 1,
+    "card_about_to_expire": 1,
+    "card_acceptance": 1,
+    "card_arrival": 1,
+    "card_delivery_estimate": 1,
+    "card_not_working": 1,
+    "card_swallowed": 1,
+    "cash_withdrawal_charge": 1,
+    "cash_withdrawal_not_recognised": 1,
+    "contactless_not_working": 1,
+    "country_support": 1,
+    "declined_card_payment": 1,
+    "disposable_card_limits": 1,
+    "exchange_charge": 1,
+    "exchange_via_app": 1,
+    "get_physical_card": 1,
+    "getting_spare_card": 1,
+    "getting_virtual_card": 1,
+    "lost_or_stolen_card": 1,
+    "order_physical_card": 1,
+    "passcode_forgotten": 1,
+    "pending_card_payment": 1,
+    "pending_transfer": 1,
+    "supported_cards_and_currencies": 1,
+    "top_up_by_bank_transfer_charge": 1,
+    "top_up_by_cash_or_cheque": 1,
+    "top_up_failed": 1,
+    "top_up_limits": 1,
+    "top_up_reverted": 1,
+    "transfer_fee_charged": 1,
+    "transfer_into_account": 1,
+    "transfer_not_received_by_recipient": 1,
+    "verify_source_of_funds": 1,
+    "virtual_card_not_working": 1,
+    "visa_or_mastercard": 1,
+    "wrong_exchange_rate_for_cash_withdrawal": 1
+   },
+   "majority_rate": 0.025,
+   "duplicates": 0,
+   "limits": {
+    "options_max": 10,
+    "state_chars_max": 383,
+    "choice_items_with_option_over_80_chars": 8
+   },
+   "playground": {
+    "path": "data/evals/jev_cmp/T4_banking77_10opt_40_v0_playground.json",
+    "sha256": "bca6a289a83a90d40b02158a3effd5e1f914e1331012a4ab15ddbbbbc7723276",
+    "items": 40,
+    "dataset_sha256_matches": true
+   },
+   "jev_comparable_n": 32,
+   "jev_excluded": [
+    "T4_banking77_10opt_40/856/intent",
+    "T4_banking77_10opt_40/1076/intent",
+    "T4_banking77_10opt_40/1289/intent",
+    "T4_banking77_10opt_40/1539/intent",
+    "T4_banking77_10opt_40/1805/intent",
+    "T4_banking77_10opt_40/2424/intent",
+    "T4_banking77_10opt_40/2524/intent",
+    "T4_banking77_10opt_40/2743/intent"
+   ],
+   "status": "superseded",
+   "superseded_by": "T4_banking77_10opt_40.jsonl"
+  },
+  "T5_boolq_40.jsonl": {
+   "path": "data/evals/jev_cmp/T5_boolq_40.jsonl",
+   "sha256": "2b140a293790121b93dce29fb5c2804054570ee23238618b43a7915a6fe0786a",
+   "questions_sha256": "d8699dd37a63aa7bfbc74dd05ad250872384751ff635e5aeaaaf84cc5d69cebe",
+   "n": 40,
+   "decisions": 40,
+   "task": "T5",
+   "source": {
+    "dataset": "google/boolq",
+    "config": null,
+    "split": "validation",
+    "revision": "35b264d03638db9f4ce671b711558bf7ff0f80d5"
+   },
+   "license": "cc-by-sa-3.0 (HF card license field) (확인 필요)",
+   "in_training_mix": "yes",
+   "in_training_mix_evidence": "README.md:1353 'in training mix'; build_benchmark_nb.py:760",
+   "question_source": "research/scripts/build_benchmark_nb.py:484-487 (no criteria)",
+   "build_args": {
+    "seed": 13,
+    "n": 40
+   },
+   "pool": {
+    "source_rows": 3270,
+    "pool_rows": 3255,
+    "dropped": {
+     "length": 15
+    },
+    "sample": {
+     "per_label": {
+      "true": 20,
+      "false": 20
+     },
+     "top_up": 0
+    }
+   },
+   "label_distribution": {
+    "false": 20,
+    "true": 20
+   },
+   "majority_rate": 0.5,
+   "duplicates": 0,
+   "limits": {
+    "options_max": 2,
+    "state_chars_max": 1194,
+    "choice_items_with_option_over_80_chars": 0
+   },
+   "playground": {
+    "path": "data/evals/jev_cmp/T5_boolq_40_playground.json",
+    "sha256": "5512be765fe3407b087c05c1501c75af6b2c469cad5efd04a285e9de19de2425",
+    "items": 40,
+    "dataset_sha256_matches": true
+   },
+   "jev_comparable_n": 40,
+   "jev_excluded": []
+  },
+  "T6_sst5_40.jsonl": {
+   "path": "data/evals/jev_cmp/T6_sst5_40.jsonl",
+   "sha256": "f56ebc3bb73ed687db54f3f273645911ee0727bdd2806664e2b86cd9e01904f0",
+   "questions_sha256": "9f4cb5fe47389ccf726aafb6656db26bc69fcc587fdd9ee55dac025d89cfd94f",
+   "n": 40,
+   "decisions": 40,
+   "task": "T6",
+   "source": {
+    "dataset": "SetFit/sst5",
+    "config": null,
+    "split": "test",
+    "revision": "e51bdcd8cd3a30da231967c1a249ba59361279a3"
+   },
+   "license": "HF card has no license field (확인 필요)",
+   "in_training_mix": "no",
+   "in_training_mix_evidence": "README.md:1356 'held out'; build_benchmark_nb.py:761",
+   "question_source": "research/scripts/build_benchmark_nb.py:417-422",
+   "build_args": {
+    "seed": 13,
+    "n": 40
+   },
+   "pool": {
+    "source_rows": 2210,
+    "pool_rows": 2210,
+    "dropped": {},
+    "sample": {
+     "per_label": {
+      "0": 8,
+      "1": 8,
+      "2": 8,
+      "3": 8,
+      "4": 8
+     },
+     "top_up": 0
+    }
+   },
+   "label_distribution": {
+    "0": 8,
+    "1": 8,
+    "2": 8,
+    "3": 8,
+    "4": 8
+   },
+   "majority_rate": 0.2,
+   "duplicates": 0,
+   "limits": {
+    "options_max": 5,
+    "state_chars_max": 209,
+    "choice_items_with_option_over_80_chars": 0
+   },
+   "playground": {
+    "path": "data/evals/jev_cmp/T6_sst5_40_playground.json",
+    "sha256": "dd9c56ea8db2d920408528557696528be74b440626d7a8f5e3cea9e0eaeb5037",
+    "items": 40,
+    "dataset_sha256_matches": true
+   },
+   "jev_comparable_n": 40,
+   "jev_excluded": []
+  },
+  "T7_massive_intent_10opt_de_20.jsonl": {
+   "path": "data/evals/jev_cmp/T7_massive_intent_10opt_de_20.jsonl",
+   "sha256": "56e7943c697a3bc551d4750d0789b60c8730f3c8e003c876d936da8d79372f72",
+   "questions_sha256": "e587cdad8d85f48539a25ced8f19cde1c21f63319692e2aaacb6650dafe19588",
+   "n": 20,
+   "decisions": 20,
+   "task": "T7",
+   "source": {
+    "dataset": "mteb/amazon_massive_intent",
+    "config": "de",
+    "split": "test",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+   },
+   "license": "CC BY 4.0 (원 저장소 alexa/massive 기준; HF 미러 mteb/amazon_massive_intent·_scenario 카드의 license 필드는 apache-2.0, 2026-10-02 확인) (확인 필요)",
+   "in_training_mix": "held out (upstream build_benchmark_nb.py:760-762)",
+   "in_training_mix_evidence": "build_benchmark_nb.py:762 'Neither checkpoint trained on typed-decisions, MASSIVE or XNLI'. Was 'unknown' (docs/04 §1 rule 2) until 2026-10-07; the frozen jsonl headers keep that build-time value",
+   "question_source": "research/scripts/bench_local.py:173-180 (9 distractors, not 19)",
+   "build_args": {
+    "seed": 13,
+    "n": 20,
+    "options": 10,
+    "labels": 59,
+    "ids": [
+     0,
+     3,
+     8,
+     14,
+     19,
+     27,
+     31,
+     41,
+     46,
+     47,
+     50,
+     59,
+     61,
+     63,
+     71,
+     80,
+     85,
+     86,
+     89,
+     100
+    ],
+    "distractors": "random.Random(13), one stream over the ids: sample 9 of the other labels, shuffle"
+   },
+   "pool": {
+    "selection": "first 20 test ids present in en, de, ja, zh-CN, ko"
+   },
+   "label_distribution": {
+    "datetime_query": 3,
+    "alarm_query": 2,
+    "iot_cleaning": 2,
+    "alarm_remove": 1,
+    "alarm_set": 1,
+    "audio_volume_mute": 1,
+    "datetime_convert": 1,
+    "general_greet": 1,
+    "general_quirky": 1,
+    "iot_hue_lightchange": 1,
+    "iot_hue_lightoff": 1,
+    "iot_hue_lighton": 1,
+    "iot_hue_lightup": 1,
+    "music_likeness": 1,
+    "takeaway_order": 1,
+    "weather_query": 1
+   },
+   "majority_rate": 0.15,
+   "duplicates": 0,
+   "limits": {
+    "options_max": 10,
+    "state_chars_max": 80,
+    "choice_items_with_option_over_80_chars": 0
+   },
+   "playground": {
+    "path": "data/evals/jev_cmp/T7_massive_intent_10opt_de_20_playground.json",
+    "sha256": "94794de84b3c8eb4fcb15a1870e9a8e67b1e3a98ef71177469aff99b97d20955",
+    "items": 20,
+    "dataset_sha256_matches": true
+   },
+   "jev_comparable_n": 20,
+   "jev_excluded": []
+  },
+  "T7_massive_intent_10opt_en_20.jsonl": {
+   "path": "data/evals/jev_cmp/T7_massive_intent_10opt_en_20.jsonl",
+   "sha256": "034e2c88a730463215407fc1f3883093f08bde494dc5bd933be44834913bf04f",
+   "questions_sha256": "e587cdad8d85f48539a25ced8f19cde1c21f63319692e2aaacb6650dafe19588",
+   "n": 20,
+   "decisions": 20,
+   "task": "T7",
+   "source": {
+    "dataset": "mteb/amazon_massive_intent",
+    "config": "en",
+    "split": "test",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+   },
+   "license": "CC BY 4.0 (원 저장소 alexa/massive 기준; HF 미러 mteb/amazon_massive_intent·_scenario 카드의 license 필드는 apache-2.0, 2026-10-02 확인) (확인 필요)",
+   "in_training_mix": "held out (upstream build_benchmark_nb.py:760-762)",
+   "in_training_mix_evidence": "build_benchmark_nb.py:762 'Neither checkpoint trained on typed-decisions, MASSIVE or XNLI'. Was 'unknown' (docs/04 §1 rule 2) until 2026-10-07; the frozen jsonl headers keep that build-time value",
+   "question_source": "research/scripts/bench_local.py:173-180 (9 distractors, not 19)",
+   "build_args": {
+    "seed": 13,
+    "n": 20,
+    "options": 10,
+    "labels": 59,
+    "ids": [
+     0,
+     3,
+     8,
+     14,
+     19,
+     27,
+     31,
+     41,
+     46,
+     47,
+     50,
+     59,
+     61,
+     63,
+     71,
+     80,
+     85,
+     86,
+     89,
+     100
+    ],
+    "distractors": "random.Random(13), one stream over the ids: sample 9 of the other labels, shuffle"
+   },
+   "pool": {
+    "selection": "first 20 test ids present in en, de, ja, zh-CN, ko"
+   },
+   "label_distribution": {
+    "datetime_query": 3,
+    "alarm_query": 2,
+    "iot_cleaning": 2,
+    "alarm_remove": 1,
+    "alarm_set": 1,
+    "audio_volume_mute": 1,
+    "datetime_convert": 1,
+    "general_greet": 1,
+    "general_quirky": 1,
+    "iot_hue_lightchange": 1,
+    "iot_hue_lightoff": 1,
+    "iot_hue_lighton": 1,
+    "iot_hue_lightup": 1,
+    "music_likeness": 1,
+    "takeaway_order": 1,
+    "weather_query": 1
+   },
+   "majority_rate": 0.15,
+   "duplicates": 0,
+   "limits": {
+    "options_max": 10,
+    "state_chars_max": 60,
+    "choice_items_with_option_over_80_chars": 0
+   },
+   "playground": {
+    "path": "data/evals/jev_cmp/T7_massive_intent_10opt_en_20_playground.json",
+    "sha256": "a2756ef8a3655fce45f82e41a4beee59bdfc1c289c91aa5a83ae5b6a14e5919d",
+    "items": 20,
+    "dataset_sha256_matches": true
+   },
+   "jev_comparable_n": 20,
+   "jev_excluded": []
+  },
+  "T7_massive_intent_10opt_ja_20.jsonl": {
+   "path": "data/evals/jev_cmp/T7_massive_intent_10opt_ja_20.jsonl",
+   "sha256": "dd2169a2ce4d50d6da036241ae7d19e13c46a8dbf12192cbb9fdbbaecedac9d8",
+   "questions_sha256": "e587cdad8d85f48539a25ced8f19cde1c21f63319692e2aaacb6650dafe19588",
+   "n": 20,
+   "decisions": 20,
+   "task": "T7",
+   "source": {
+    "dataset": "mteb/amazon_massive_intent",
+    "config": "ja",
+    "split": "test",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+   },
+   "license": "CC BY 4.0 (원 저장소 alexa/massive 기준; HF 미러 mteb/amazon_massive_intent·_scenario 카드의 license 필드는 apache-2.0, 2026-10-02 확인) (확인 필요)",
+   "in_training_mix": "held out (upstream build_benchmark_nb.py:760-762)",
+   "in_training_mix_evidence": "build_benchmark_nb.py:762 'Neither checkpoint trained on typed-decisions, MASSIVE or XNLI'. Was 'unknown' (docs/04 §1 rule 2) until 2026-10-07; the frozen jsonl headers keep that build-time value",
+   "question_source": "research/scripts/bench_local.py:173-180 (9 distractors, not 19)",
+   "build_args": {
+    "seed": 13,
+    "n": 20,
+    "options": 10,
+    "labels": 59,
+    "ids": [
+     0,
+     3,
+     8,
+     14,
+     19,
+     27,
+     31,
+     41,
+     46,
+     47,
+     50,
+     59,
+     61,
+     63,
+     71,
+     80,
+     85,
+     86,
+     89,
+     100
+    ],
+    "distractors": "random.Random(13), one stream over the ids: sample 9 of the other labels, shuffle"
+   },
+   "pool": {
+    "selection": "first 20 test ids present in en, de, ja, zh-CN, ko"
+   },
+   "label_distribution": {
+    "datetime_query": 3,
+    "alarm_query": 2,
+    "iot_cleaning": 2,
+    "alarm_remove": 1,
+    "alarm_set": 1,
+    "audio_volume_mute": 1,
+    "datetime_convert": 1,
+    "general_greet": 1,
+    "general_quirky": 1,
+    "iot_hue_lightchange": 1,
+    "iot_hue_lightoff": 1,
+    "iot_hue_lighton": 1,
+    "iot_hue_lightup": 1,
+    "music_likeness": 1,
+    "takeaway_order": 1,
+    "weather_query": 1
+   },
+   "majority_rate": 0.15,
+   "duplicates": 0,
+   "limits": {
+    "options_max": 10,
+    "state_chars_max": 37,
+    "choice_items_with_option_over_80_chars": 0
+   },
+   "playground": {
+    "path": "data/evals/jev_cmp/T7_massive_intent_10opt_ja_20_playground.json",
+    "sha256": "a5ecb8ea67b99ac121aa94254ce42600cc7b559ae21a8a0f0e83633cd49c559e",
+    "items": 20,
+    "dataset_sha256_matches": true
+   },
+   "jev_comparable_n": 20,
+   "jev_excluded": []
+  },
+  "T7_massive_intent_10opt_ko_20.jsonl": {
+   "path": "data/evals/jev_cmp/T7_massive_intent_10opt_ko_20.jsonl",
+   "sha256": "e17bfac7605ad315c0727b80632010b60ec864b81268ab7e53c1a3164deb95d2",
+   "questions_sha256": "e587cdad8d85f48539a25ced8f19cde1c21f63319692e2aaacb6650dafe19588",
+   "n": 20,
+   "decisions": 20,
+   "task": "T7",
+   "source": {
+    "dataset": "mteb/amazon_massive_intent",
+    "config": "ko",
+    "split": "test",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+   },
+   "license": "CC BY 4.0 (원 저장소 alexa/massive 기준; HF 미러 mteb/amazon_massive_intent·_scenario 카드의 license 필드는 apache-2.0, 2026-10-02 확인) (확인 필요)",
+   "in_training_mix": "held out (upstream build_benchmark_nb.py:760-762)",
+   "in_training_mix_evidence": "build_benchmark_nb.py:762 'Neither checkpoint trained on typed-decisions, MASSIVE or XNLI'. Was 'unknown' (docs/04 §1 rule 2) until 2026-10-07; the frozen jsonl headers keep that build-time value",
+   "question_source": "research/scripts/bench_local.py:173-180 (9 distractors, not 19)",
+   "build_args": {
+    "seed": 13,
+    "n": 20,
+    "options": 10,
+    "labels": 59,
+    "ids": [
+     0,
+     3,
+     8,
+     14,
+     19,
+     27,
+     31,
+     41,
+     46,
+     47,
+     50,
+     59,
+     61,
+     63,
+     71,
+     80,
+     85,
+     86,
+     89,
+     100
+    ],
+    "distractors": "random.Random(13), one stream over the ids: sample 9 of the other labels, shuffle"
+   },
+   "pool": {
+    "selection": "first 20 test ids present in en, de, ja, zh-CN, ko"
+   },
+   "label_distribution": {
+    "datetime_query": 3,
+    "alarm_query": 2,
+    "iot_cleaning": 2,
+    "alarm_remove": 1,
+    "alarm_set": 1,
+    "audio_volume_mute": 1,
+    "datetime_convert": 1,
+    "general_greet": 1,
+    "general_quirky": 1,
+    "iot_hue_lightchange": 1,
+    "iot_hue_lightoff": 1,
+    "iot_hue_lighton": 1,
+    "iot_hue_lightup": 1,
+    "music_likeness": 1,
+    "takeaway_order": 1,
+    "weather_query": 1
+   },
+   "majority_rate": 0.15,
+   "duplicates": 0,
+   "limits": {
+    "options_max": 10,
+    "state_chars_max": 45,
+    "choice_items_with_option_over_80_chars": 0
+   },
+   "playground": {
+    "path": "data/evals/jev_cmp/T7_massive_intent_10opt_ko_20_playground.json",
+    "sha256": "09df4ff228e818eeac49bc1c5385559de8016af266929b048e18faed8a40627d",
+    "items": 20,
+    "dataset_sha256_matches": true
+   },
+   "jev_comparable_n": 20,
+   "jev_excluded": []
+  },
+  "T7_massive_intent_10opt_zh-CN_20.jsonl": {
+   "path": "data/evals/jev_cmp/T7_massive_intent_10opt_zh-CN_20.jsonl",
+   "sha256": "0dfe24d6f0fb09aa0331a8854cf182a9faaea97abeaf5582bacbeff74a74b7ef",
+   "questions_sha256": "e587cdad8d85f48539a25ced8f19cde1c21f63319692e2aaacb6650dafe19588",
+   "n": 20,
+   "decisions": 20,
+   "task": "T7",
+   "source": {
+    "dataset": "mteb/amazon_massive_intent",
+    "config": "zh-CN",
+    "split": "test",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+   },
+   "license": "CC BY 4.0 (원 저장소 alexa/massive 기준; HF 미러 mteb/amazon_massive_intent·_scenario 카드의 license 필드는 apache-2.0, 2026-10-02 확인) (확인 필요)",
+   "in_training_mix": "held out (upstream build_benchmark_nb.py:760-762)",
+   "in_training_mix_evidence": "build_benchmark_nb.py:762 'Neither checkpoint trained on typed-decisions, MASSIVE or XNLI'. Was 'unknown' (docs/04 §1 rule 2) until 2026-10-07; the frozen jsonl headers keep that build-time value",
+   "question_source": "research/scripts/bench_local.py:173-180 (9 distractors, not 19)",
+   "build_args": {
+    "seed": 13,
+    "n": 20,
+    "options": 10,
+    "labels": 59,
+    "ids": [
+     0,
+     3,
+     8,
+     14,
+     19,
+     27,
+     31,
+     41,
+     46,
+     47,
+     50,
+     59,
+     61,
+     63,
+     71,
+     80,
+     85,
+     86,
+     89,
+     100
+    ],
+    "distractors": "random.Random(13), one stream over the ids: sample 9 of the other labels, shuffle"
+   },
+   "pool": {
+    "selection": "first 20 test ids present in en, de, ja, zh-CN, ko"
+   },
+   "label_distribution": {
+    "datetime_query": 3,
+    "alarm_query": 2,
+    "iot_cleaning": 2,
+    "alarm_remove": 1,
+    "alarm_set": 1,
+    "audio_volume_mute": 1,
+    "datetime_convert": 1,
+    "general_greet": 1,
+    "general_quirky": 1,
+    "iot_hue_lightchange": 1,
+    "iot_hue_lightoff": 1,
+    "iot_hue_lighton": 1,
+    "iot_hue_lightup": 1,
+    "music_likeness": 1,
+    "takeaway_order": 1,
+    "weather_query": 1
+   },
+   "majority_rate": 0.15,
+   "duplicates": 0,
+   "limits": {
+    "options_max": 10,
+    "state_chars_max": 36,
+    "choice_items_with_option_over_80_chars": 0
+   },
+   "playground": {
+    "path": "data/evals/jev_cmp/T7_massive_intent_10opt_zh-CN_20_playground.json",
+    "sha256": "478157c108af88346f88d1807a80d5ec6075ba92003dbec95b045bc76e3e819d",
+    "items": 20,
+    "dataset_sha256_matches": true
+   },
+   "jev_comparable_n": 20,
+   "jev_excluded": []
+  },
+  "T8_prompt_injections_40.jsonl": {
+   "path": "data/evals/jev_cmp/T8_prompt_injections_40.jsonl",
+   "sha256": "ced9111cc7f717749e8acb5e7fff9f1873d2cfc673349f30cea0c4638c7347eb",
+   "questions_sha256": "ba5538b67233d0c619a115c56b97a2fdc41573b8ef92f72c5089ef14b972f7b4",
+   "n": 40,
+   "decisions": 40,
+   "task": "T8",
+   "source": {
+    "dataset": "deepset/prompt-injections",
+    "config": null,
+    "split": "test",
+    "revision": "4f61ecb038e9c3fb77e21034b22511b523772cdd"
+   },
+   "license": "apache-2.0 (HF card license field) (확인 필요)",
+   "in_training_mix": "no",
+   "in_training_mix_evidence": "README.md:1355 'held out, n=116'; build_benchmark_nb.py:761",
+   "question_source": "research/scripts/build_benchmark_nb.py:446-448 (no criteria)",
+   "build_args": {
+    "seed": 13,
+    "n": 40
+   },
+   "pool": {
+    "source_rows": 116,
+    "pool_rows": 116,
+    "dropped": {},
+    "sample": {
+     "per_label": {
+      "true": 20,
+      "false": 20
+     },
+     "top_up": 0
+    }
+   },
+   "label_distribution": {
+    "false": 20,
+    "true": 20
+   },
+   "majority_rate": 0.5,
+   "duplicates": 0,
+   "limits": {
+    "options_max": 2,
+    "state_chars_max": 639,
+    "choice_items_with_option_over_80_chars": 0
+   },
+   "playground": {
+    "path": "data/evals/jev_cmp/T8_prompt_injections_40_playground.json",
+    "sha256": "69f1918b3fa4abf820a4bd027b6b44a1c1ccc8db4d869c2e19a5c12ce8595ed7",
+    "items": 40,
+    "dataset_sha256_matches": true
+   },
+   "jev_comparable_n": 40,
+   "jev_excluded": []
+  },
+  "T9_enron_spam_40.jsonl": {
+   "path": "data/evals/jev_cmp/T9_enron_spam_40.jsonl",
+   "sha256": "3ba26d0895e28f0a856e997c27103cbda88b6bc3c4252649d1d69f36cd6b8303",
+   "questions_sha256": "efe610280673d5f90948552b0428277c6a9ab25434e447e62eedcaa1610fb318",
+   "n": 40,
+   "decisions": 40,
+   "task": "T9",
+   "source": {
+    "dataset": "SetFit/enron_spam",
+    "config": null,
+    "split": "test",
+    "revision": "1916f66c89d52221ae33eb57d44498b4f3a5df22"
+   },
+   "license": "HF card has no metadata block / license field (확인 필요)",
+   "in_training_mix": "yes (upstream BENCHMARKS.md Themes: in training)",
+   "in_training_mix_evidence": "BENCHMARKS.md:142 Themes 'Email spam ... | in training'; bench_apps.py:168 in_training=True",
+   "question_source": "research/scripts/bench_apps.py:163-166 (state laya.email_state(subject, message[:3000]); no criteria)",
+   "build_args": {
+    "seed": 13,
+    "n": 40
+   },
+   "pool": {
+    "source_rows": 2000,
+    "pool_rows": 1599,
+    "dropped": {
+     "duplicate": 17,
+     "length": 384
+    },
+    "train_overlap_excluded": 261,
+    "sample": {
+     "per_label": {
+      "true": 20,
+      "false": 20
+     },
+     "top_up": 0
+    }
+   },
+   "label_distribution": {
+    "false": 20,
+    "true": 20
+   },
+   "majority_rate": 0.5,
+   "duplicates": 0,
+   "limits": {
+    "options_max": 2,
+    "state_chars_max": 2117,
+    "choice_items_with_option_over_80_chars": 0
+   },
+   "playground": {
+    "path": "data/evals/jev_cmp/T9_enron_spam_40_playground.json",
+    "sha256": "d3a597c223e3b2321d989548118dc56aa9378644f1585ee6255f112fb604ce7d",
+    "items": 40,
+    "dataset_sha256_matches": true
+   },
+   "jev_comparable_n": 40,
+   "jev_excluded": []
+  }
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/B/20261002-1647_multilingual_ko_massive_scenario_18.json",
+   "results/B/20261002-1650_multilingual_ko_massive_scenario_18_en-desc_dev.json",
+   "--split",
+   "dev",
+   "--out",
+   "results/B/metrics/paired_ablation_ko_massive_scenario_18_en-desc.md",
+   "--json",
+   "results/B/metrics/paired_ablation_ko_massive_scenario_18_en-desc.json"
+  ],
+  "generated_at": "2026-10-02T17:05:34+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1647_multilingual_ko_massive_scenario_18.json",
+    "dataset": "data/evals/ko_massive_scenario_18.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "28694e08bfed61ee6e4cf5a02bb024c33ffb7c3228012267d4a022f3de0ac03e",
+    "questions_sha256": "7bf1c9b1b314f6bdd03e49cbcd471106c2a7209c06407698e82bcdb182f30a44",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 100,
+    "split_rows": {
+     "test": 51,
+     "dev": 49
+    }
+   },
+   {
+    "report": "results/B/20261002-1650_multilingual_ko_massive_scenario_18_en-desc_dev.json",
+    "dataset": "results/B/dev/ko_massive_scenario_18_en-desc.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "fbd46b83f67a2f981121c3dcf6d258a825593d0f8a2eb149ce7708335c3f6715",
+    "questions_sha256": "233520130f429820bf54b950d333db61a991e637addf592f3925b18c0245e85e",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 49,
+    "split_rows": {
+     "dev": 49
+    }
+   }
+  ]
+ },
+ "a": "results/B/20261002-1647_multilingual_ko_massive_scenario_18.json",
+ "b": "results/B/20261002-1650_multilingual_ko_massive_scenario_18_en-desc_dev.json",
+ "results": [
+  {
+   "qid": "scenario",
+   "split": "dev",
+   "n": 49,
+   "acc_a": 0.5510204081632653,
+   "acc_b": 0.42857142857142855,
+   "delta": -0.12244897959183673,
+   "delta_ci": [
+    -0.24420484103562257,
+    -0.0006931181480509113
+   ],
+   "b": 8,
+   "c": 2,
+   "p": 0.109375,
+   "agreement": 0.6326530612244898,
+   "same_state": 1.0
+  }
+ ]
+}

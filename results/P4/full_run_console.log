@@ -1,0 +1,47 @@
+2026-10-03 11:56:25 RUN_FULL START full_20261003-1156 (SMOKE=0) ckpt poc/finetune/ckpt_domain8_v1 items poc/finetune/data/items_full.pt epochs 3 calib 400
+2026-10-03 11:56:25 STEP preflight ...
+2026-10-03 11:56:25 STEP preflight OK (0 s)
+2026-10-03 11:56:25 expected: train loop (11094 rows x 3 epochs) 3.07 h at 3.01 items/s (probe D, GPU co-tenant at ~100%), 1.09 h at 8.45 items/s (smoke, idle GPU) + calibration/export ~1 min + evaluation ~9 min
+2026-10-03 11:56:25 STEP train ...
+2026-10-03 12:32:17 STEP train OK (2152 s)
+2026-10-03 12:32:17 STEP eval_dev_epoch1 ...
+2026-10-03 12:33:15 STEP eval_dev_epoch1 OK (58 s)
+2026-10-03 12:33:15 STEP eval_dev_epoch2 ...
+2026-10-03 12:34:11 STEP eval_dev_epoch2 OK (56 s)
+2026-10-03 12:34:11 STEP eval_dev_epoch3 ...
+2026-10-03 12:35:07 STEP eval_dev_epoch3 OK (56 s)
+2026-10-03 12:35:07 STEP eval_dev ...
+2026-10-03 12:36:04 STEP eval_dev OK (57 s)
+2026-10-03 12:36:04 STEP epoch_select ...
+2026-10-03 12:36:04 STEP epoch_select OK (0 s)
+2026-10-03 12:36:04 STEP eval_500 ...
+2026-10-03 12:36:21 STEP eval_500 OK (17 s)
+2026-10-03 12:36:21 STEP eval_2917_base ...
+2026-10-03 12:37:41 STEP eval_2917_base OK (80 s)
+2026-10-03 12:37:41 STEP eval_2917 ...
+2026-10-03 12:39:01 STEP eval_2917 OK (80 s)
+2026-10-03 12:39:01 STEP eval_ynat_dev ...
+2026-10-03 12:39:10 STEP eval_ynat_dev OK (8 s)
+2026-10-03 12:39:10 STEP flip_dev ...
+2026-10-03 12:40:27 STEP flip_dev OK (77 s)
+2026-10-03 12:40:27 STEP metrics ...
+2026-10-03 12:40:28 STEP metrics OK (1 s)
+2026-10-03 12:40:28 STEP overlap ...
+2026-10-03 12:40:29 STEP overlap OK (1 s)
+Rows whose state appears verbatim in `poc/finetune/data/domain8_train.jsonl` (11094 rows) vs the rest; dev/test halves only where `results/B/B_splits.json` defines them for the same file.
+
+| report | split | n | acc | n overlap | acc overlap | n clean | acc clean |
+|---|---|---|---|---|---|---|---|
+| results/B/20261002-1643_multilingual_ko_massive_domain_8.json | all | 500 | 0.526 | 33 | 0.576 | 467 | 0.522 |
+| results/B/20261002-1643_multilingual_ko_massive_domain_8.json | dev | 250 | 0.560 | 17 | 0.706 | 233 | 0.549 |
+| results/B/20261002-1643_multilingual_ko_massive_domain_8.json | test | 250 | 0.492 | 16 | 0.438 | 234 | 0.496 |
+| results/P4/full_20261003-1156_ft-v1_ko_massive_domain_8.json | all | 500 | 0.894 | 33 | 1.000 | 467 | 0.887 |
+| results/P4/full_20261003-1156_ft-v1_ko_massive_domain_8.json | dev | 250 | 0.888 | 17 | 1.000 | 233 | 0.880 |
+| results/P4/full_20261003-1156_ft-v1_ko_massive_domain_8.json | test | 250 | 0.900 | 16 | 1.000 | 234 | 0.893 |
+| results/P4/full_20261003-1156_multilingual_ko_massive_domain_8_full.json | all | 2917 | 0.475 | 155 | 0.490 | 2762 | 0.474 |
+| results/P4/full_20261003-1156_ft-v1_ko_massive_domain_8_full.json | all | 2917 | 0.913 | 155 | 0.994 | 2762 | 0.908 |
+| results/P4/20261002-2014_multilingual_domain8_dev.json | all | 2012 | 0.462 | 116 | 0.578 | 1896 | 0.455 |
+| results/P4/full_20261003-1156_ft-v1_domain8_dev.json | all | 2012 | 0.918 | 116 | 0.991 | 1896 | 0.914 |
+epoch rule: v1 = final export (dev acc 0.9185); no epoch is more accurate on dev with p < 0.05
+2026-10-03 12:40:29 summary results/P4/metrics/full_20261003-1156_summary.md, flip results/P4/metrics/full_20261003-1156_option_order_dev.md, status results/P4/full_run_status.log
+2026-10-03 12:40:29 RUN_FULL FINISHED full_20261003-1156

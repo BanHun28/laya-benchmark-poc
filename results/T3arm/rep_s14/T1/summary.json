@@ -1,0 +1,170 @@
+[
+ {
+  "n": 600,
+  "correct": 219,
+  "accuracy": 0.365,
+  "wilson": [
+   0.3274495556246712,
+   0.40426816637394575
+  ],
+  "macro_f1": null,
+  "ece": 0.17157933333333336,
+  "brier": 0.76129006915,
+  "nll": 1.3801657371040517,
+  "mean_confidence": 0.5365793333333334,
+  "acc_at_50_coverage": 0.3933333333333333,
+  "report": "results/T3arm/rep_s14/T1/dev_ep0.json",
+  "dataset": "poc/finetune/data/t3arm/T1_dev.jsonl",
+  "dataset_sha256": "940048577c7a99d111a058fc8938917c0efb8d07ace9ad5d47b780e62e50d12b",
+  "model": "english",
+  "answered_by": {
+   "laya-rl-agent": 600
+  },
+  "by_type": {
+   "choice": 0.25,
+   "noul": 0.4722222222222222,
+   "score": 0.37083333333333335
+  },
+  "score_mae_expected_level": 0.8373474999999999,
+  "within_1_level": 0.625,
+  "laya_evals_score_mae": 0.8373483333333334
+ },
+ {
+  "n": 600,
+  "correct": 421,
+  "accuracy": 0.7016666666666667,
+  "wilson": [
+   0.6638680212177496,
+   0.7368993323398721
+  ],
+  "macro_f1": null,
+  "ece": 0.19442166666666663,
+  "brier": 0.4715339320333334,
+  "nll": 0.8264442448594432,
+  "mean_confidence": 0.5080993333333333,
+  "acc_at_50_coverage": 0.7866666666666666,
+  "report": "results/T3arm/rep_s14/T1/dev_ep1.json",
+  "dataset": "poc/finetune/data/t3arm/T1_dev.jsonl",
+  "dataset_sha256": "940048577c7a99d111a058fc8938917c0efb8d07ace9ad5d47b780e62e50d12b",
+  "model": "t3arm-T1-ep1",
+  "answered_by": {
+   "laya-rl-agent": 600
+  },
+  "by_type": {
+   "choice": 0.7055555555555556,
+   "noul": 0.7555555555555555,
+   "score": 0.6583333333333333
+  },
+  "score_mae_expected_level": 0.5814729166666666,
+  "within_1_level": 0.8791666666666667,
+  "laya_evals_score_mae": 0.581475
+ },
+ {
+  "n": 600,
+  "correct": 450,
+  "accuracy": 0.75,
+  "wilson": [
+   0.713835073270128,
+   0.7829839600657669
+  ],
+  "macro_f1": null,
+  "ece": 0.1550948333333333,
+  "brier": 0.40671122491666667,
+  "nll": 0.7160532547581092,
+  "mean_confidence": 0.5949291666666666,
+  "acc_at_50_coverage": 0.8533333333333334,
+  "report": "results/T3arm/rep_s14/T1/dev_final.json",
+  "dataset": "poc/finetune/data/t3arm/T1_dev.jsonl",
+  "dataset_sha256": "940048577c7a99d111a058fc8938917c0efb8d07ace9ad5d47b780e62e50d12b",
+  "model": "t3arm-T1-final",
+  "answered_by": {
+   "laya-rl-agent": 600
+  },
+  "by_type": {
+   "choice": 0.7777777777777778,
+   "noul": 0.8,
+   "score": 0.6916666666666667
+  },
+  "score_mae_expected_level": 0.5045020833333334,
+  "within_1_level": 0.9,
+  "laya_evals_score_mae": 0.5045016666666666
+ },
+ {
+  "n": 2000,
+  "correct": 1470,
+  "accuracy": 0.735,
+  "wilson": [
+   0.7152204952053289,
+   0.7538784595224299
+  ],
+  "macro_f1": null,
+  "ece": 0.14430125000000002,
+  "brier": 0.390959918705,
+  "nll": 0.6768809138433532,
+  "mean_confidence": 0.5915254500000001,
+  "acc_at_50_coverage": 0.877,
+  "report": "results/T3arm/rep_s14/T1/ext_T1_typed_decisions_test400.json",
+  "dataset": "data/evals/jev_cmp_ext/T1_typed_decisions_test400.jsonl",
+  "dataset_sha256": "1c241c8b1084d0ecf5dcedf074f91570d302edcad9894116b27f5f1c1a66b3ae",
+  "model": "t3arm-T1",
+  "answered_by": {
+   "laya-rl-agent": 2000
+  },
+  "by_type": {
+   "choice": 0.7216666666666667,
+   "noul": 0.8283333333333334,
+   "score": 0.675
+  },
+  "soft_accuracy": 0.49078570250397197,
+  "brier_vs_soft": 0.06259370927141093,
+  "score_mae": 0.26151356,
+  "within_1_level": 0.995,
+  "accuracy_vs_upstream_label": 0.735,
+  "per_question_majority": 0.4615,
+  "per_workflow_question_majority": 0.5235,
+  "by_question_type": {
+   "choice": 0.7216666666666667,
+   "noul": 0.8283333333333334,
+   "score": 0.675
+  }
+ },
+ {
+  "n": 200,
+  "correct": 156,
+  "accuracy": 0.78,
+  "wilson": [
+   0.7176107720803744,
+   0.8318354646053661
+  ],
+  "macro_f1": null,
+  "ece": 0.189999,
+  "brier": 0.37014485794999996,
+  "nll": 0.6518857141910565,
+  "mean_confidence": 0.595943,
+  "acc_at_50_coverage": 0.9,
+  "report": "results/T3arm/rep_s14/T1/jev_T1_typed_decisions_40.json",
+  "dataset": "data/evals/jev_cmp/T1_typed_decisions_40.jsonl",
+  "dataset_sha256": "749a24c4c0db977686f29eeecd41201e16b97629a9fbd641a6ffb5dfe6163834",
+  "model": "t3arm-T1",
+  "answered_by": {
+   "laya-rl-agent": 200
+  },
+  "by_type": {
+   "choice": 0.7666666666666667,
+   "noul": 0.9166666666666666,
+   "score": 0.6875
+  },
+  "soft_accuracy": 0.4969035269995264,
+  "brier_vs_soft": 0.05960678971288015,
+  "score_mae": 0.24120918749999998,
+  "within_1_level": 1.0,
+  "accuracy_vs_upstream_label": 0.775,
+  "per_question_majority": 0.53,
+  "per_workflow_question_majority": 0.605,
+  "by_question_type": {
+   "choice": 0.7666666666666667,
+   "noul": 0.9166666666666666,
+   "score": 0.6875
+  }
+ }
+]

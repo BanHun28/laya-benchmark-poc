@@ -1,0 +1,17 @@
+RUN_ALL START 20261008-1523 SMOKE=1 TASKS=T8
+STEP global:preflight OK
+STEP T8:disk OK (42 GB free)
+STEP T8:items OK
+STEP T8:preflight OK
+STEP T8:train OK
+STEP T8:dev_ep0 OK
+STEP T8:dev_final OK
+STEP T8:select OK
+STEP T8:jev_T8_prompt_injections_40 OK
+STEP T8:ext_T8_prompt_injections_test116 OK
+STEP T8:vanilla_T8_prompt_injections_40 OK
+STEP T8:vanilla_T8_prompt_injections_test116 OK
+STEP T8:diagnostics OK
+STEP T8:metrics OK
+STEP T8:cleanup OK
+RUN_ALL FINISHED

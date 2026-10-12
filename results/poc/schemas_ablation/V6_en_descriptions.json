@@ -1,0 +1,52 @@
+{
+  "state_key": "message",
+  "questions": {
+    "intent": {
+      "type": "choice",
+      "instructions": "What does the customer want in `message`?",
+      "criteria": {
+        "refund": "request for a refund, a payment cancellation, or reimbursement of a duplicate charge",
+        "technical_help": "request for technical help with bugs, errors, access failures, or integration problems",
+        "billing_question": "question about invoices, pricing plans, payment methods, or amounts charged",
+        "information": "question about general information, prices, or how to use the product",
+        "cancellation": "request to cancel, close the account, or downgrade",
+        "other": "none of the above applies"
+      }
+    },
+    "is_urgent": {
+      "type": "noul",
+      "instructions": "Does `message` communicate time pressure or a deadline?"
+    },
+    "frustration": {
+      "type": "score",
+      "instructions": "How frustrated does the customer sound in `message`?",
+      "criteria": [
+        "차분하고 중립적",
+        "걱정하지만 정중함",
+        "분명히 짜증남",
+        "매우 화남 또는 강한 표현 사용"
+      ]
+    },
+    "refund_requested": {
+      "type": "noul",
+      "instructions": "Does the customer ask for money back?"
+    },
+    "churn_risk": {
+      "type": "noul",
+      "instructions": "Does `message` suggest the customer may leave for a competitor or cancel?"
+    },
+    "needs_llm": {
+      "type": "noul",
+      "instructions": "Does answering `message` require a free-form generated reply rather than a templated action?"
+    },
+    "complexity": {
+      "type": "choice",
+      "instructions": "How complex is the request in `message`?",
+      "criteria": {
+        "canned": "greetings, standard FAQs, simple status checks",
+        "structured": "a request that can be handled deterministically with an API or a template",
+        "complex": "a request that needs a generated reply, multi-step reasoning, or compound analysis"
+      }
+    }
+  }
+}

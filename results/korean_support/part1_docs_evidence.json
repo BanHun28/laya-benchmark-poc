@@ -1,0 +1,494 @@
+{
+ "cards": {
+  "convaiinnovations/laya-multilingual": {
+   "sha": "e4e9ddf21a7b1903b7acffd8814ad4307bf63a67",
+   "lastModified": "2026-09-24T05:39:24.000Z",
+   "n_tags": 67,
+   "ko_in_tags": true,
+   "cardData_language_n": 51,
+   "ko_in_cardData_language": true,
+   "front_matter_lines": 7,
+   "korean_lines_in_body": [
+    [
+     117,
+     "0.080 → **0.290**, Azerbaijani 0.100 → **0.300**, Hindi 0.100 → **0.387**, Korean 0.110 →"
+    ]
+   ]
+  },
+  "convaiinnovations/laya": {
+   "sha": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+   "lastModified": "2026-09-24T05:39:22.000Z",
+   "n_tags": 17,
+   "ko_in_tags": false,
+   "cardData_language_n": null,
+   "ko_in_cardData_language": false,
+   "front_matter_lines": 6,
+   "korean_lines_in_body": []
+  },
+  "convaiinnovations/laya-typed-decisions": {
+   "sha": "1a793eb568e6718f15941d08f85432581df534e3",
+   "lastModified": "2026-09-24T04:08:17.000Z",
+   "n_tags": 18,
+   "ko_in_tags": false,
+   "cardData_language_n": 1,
+   "ko_in_cardData_language": false,
+   "front_matter_lines": 7,
+   "korean_lines_in_body": []
+  },
+  "jhu-clsp/mmBERT-base": {
+   "sha": "c5955035435e2bf121cde7f3c8863ef52ff35d82",
+   "lastModified": "2025-10-07T14:08:42.000Z",
+   "n_tags": 1824,
+   "ko_in_tags": true,
+   "cardData_language_n": 1811,
+   "ko_in_cardData_language": true,
+   "front_matter_lines": 1823,
+   "korean_lines_in_body": []
+  }
+ },
+ "encoders": {
+  "laya-multilingual": {
+   "model_type": "modernbert",
+   "_name_or_path": null,
+   "architectures": [
+    "ModernBertForMaskedLM"
+   ],
+   "vocab_size": 256000,
+   "max_position_embeddings": 8192,
+   "hidden_size": 768,
+   "num_hidden_layers": 22,
+   "rl_encoder": "jhu-clsp/mmBERT-base",
+   "max_len": 1024,
+   "head_max_len": 256,
+   "temperature": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "training": {
+    "updates": 15987,
+    "epochs_completed": 4,
+    "hours": 4.97,
+    "world_size": 1,
+    "fine_tuned_from_checkpoint": false
+   }
+  },
+  "laya": {
+   "model_type": "modernbert",
+   "_name_or_path": null,
+   "architectures": [
+    "ModernBertForMaskedLM"
+   ],
+   "vocab_size": 50368,
+   "max_position_embeddings": 8192,
+   "hidden_size": 1024,
+   "num_hidden_layers": 28,
+   "rl_encoder": "answerdotai/ModernBERT-large",
+   "max_len": 512,
+   "head_max_len": 192,
+   "temperature": [
+    1.6369030475616455,
+    1.2514300346374512,
+    1.983399510383606
+   ],
+   "training": {
+    "updates": 7313,
+    "epochs_completed": 1,
+    "hours": 1.96,
+    "world_size": 1,
+    "fine_tuned_from_checkpoint": true
+   }
+  },
+  "laya-typed-decisions": {
+   "model_type": "modernbert",
+   "_name_or_path": null,
+   "architectures": [
+    "ModernBertForMaskedLM"
+   ],
+   "vocab_size": 50368,
+   "max_position_embeddings": 8192,
+   "hidden_size": 1024,
+   "num_hidden_layers": 28,
+   "rl_encoder": "answerdotai/ModernBERT-large",
+   "max_len": 1024,
+   "head_max_len": 256,
+   "temperature": [
+    1.0148024559020996,
+    1.0374259948730469,
+    1.0575125217437744
+   ],
+   "training": {
+    "updates": 7313,
+    "epochs_completed": 1,
+    "hours": 1.96,
+    "world_size": 1,
+    "fine_tuned_from_checkpoint": true
+   }
+  },
+  "standalone_vs_bundle_multilingual": {
+   "model.safetensors": {
+    "standalone": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204",
+    "bundle_55cf4c4": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204",
+    "identical": true
+   },
+   "tokenizer/tokenizer.json": {
+    "standalone": "609d8f4c067cd3950f88594c5a802616cea245823836ef5848ee4fc40aab5b6f",
+    "bundle_55cf4c4": "609d8f4c067cd3950f88594c5a802616cea245823836ef5848ee4fc40aab5b6f",
+    "identical": true
+   },
+   "encoder/config.json": {
+    "standalone": "0de0e2d30638873790cf962def52e2acf4db3eef",
+    "bundle_55cf4c4": "0de0e2d30638873790cf962def52e2acf4db3eef",
+    "identical": true
+   },
+   "rl_agent_config.json": {
+    "standalone": "00e35f88bb731bb9126a914666ab1cdac8a204c8",
+    "bundle_55cf4c4": "00e35f88bb731bb9126a914666ab1cdac8a204c8",
+    "identical": true
+   },
+   "tokenizer/tokenizer_config.json": {
+    "standalone": "eea1ed61121530d74c1722dc2aab6ec917a75909",
+    "bundle_55cf4c4": "c255ac0c8cb34a37d066cd0dafe313fd769d27ae",
+    "identical": false
+   }
+  }
+ },
+ "mmbert_paper": {
+  "table9_rows": 90,
+  "kor": {
+   "pretrain_B": "28.4",
+   "pretrain_pct": "1.43%",
+   "mid_B": "11.1",
+   "mid_pct": "1.84%",
+   "decay_eng_B": "1.5",
+   "decay_eng_pct": "1.39%",
+   "decay_cont_B": "1.5",
+   "decay_cont_pct": "1.47%",
+   "decay_all_B": "1.5",
+   "decay_all_pct": "1.31%",
+   "total_B": "43.9"
+  },
+  "kor_rank_by_pretrain_tokens": 13,
+  "kor_rank_by_total_tokens": 13,
+  "languages_in_table9": 89,
+  "top15_by_pretrain": [
+   "eng",
+   "rus",
+   "cmn",
+   "spa",
+   "deu",
+   "fra",
+   "jpn",
+   "ita",
+   "por",
+   "nld",
+   "pol",
+   "ind",
+   "kor",
+   "tur",
+   "fas"
+  ],
+  "quotes": [
+   "We use an identical architecture to ModernBERT, but employ the Gemma 2 tokenizer11",
+   "We follow the Ettin recipe (Weller et al., 2025) as the only open-data ModernBERT equivalent. Crucially though, we change the source of web crawl to account for more multilingual data. Previous work such as XLM-R and mT5 (Xue et al., 2020) used a very low percentage of Engish content (5.7% for mT5). However, the highest quality data (filtered DCLM (Li et al., 2024a; OLMo et al., 2025)) only exists in English. Thus we choose to use a significantly higher percentage of English comparative to previous work (from 10% to 34% depending on the stage, see Table 9). Nonetheless, a significant portion of our training data was non-English: for this we gathered data from FineWeb2 (Penedo et al., 2025) and a filtered version of 20 langauges from FineWeb2 called FineWeb2-HQ (Messmer et al., 2025). We also use and filter MegaWika v2 (Barham et al., 2023; Barham et al., 2025) for Multilingual Wikipedia, which covers 60 languages (those in our first stage).",
+   "We start with a set of 60 languages (as well as code) that cover a broad range of language families and scripts. We then increase this to 110 languages, covering more “mid-resource\" languages (greater than 200 million tokens of data). Finally, we include all languages/scripts included in FineWeb2 (1833 languages, 1895 language/script variants). Our temperature for sampling languages goes from 0.7 to 0.5 to 0.3 (see Figure 1). Including all the languages at the very end allows us to take advantage of the decay phase learning to rapidly increase performance. We see this validated in Section 4.4.",
+   "This stage encompasses the warmup and stable phase of the trapezoidal learning rate, training for 2.3T tokens. We use both learning rate and batch size warmup. The data in this stage does not include the filtered FineWeb2 data or the higher quality DCLM. We use just 60 languages (plus code languages) in this stage of training and a 30% masking rate44"
+  ],
+  "korean_mentions_in_text": []
+ },
+ "fineweb2_hq": {
+  "sha": "c0c06e94fd3a44ae9e802b2b0fc533817601eb5e",
+  "languages": [
+   "ru",
+   "zh",
+   "de",
+   "ja",
+   "es",
+   "fr",
+   "it",
+   "pt",
+   "pl",
+   "nl",
+   "id",
+   "tr",
+   "cs",
+   "vi",
+   "sv",
+   "fa",
+   "ar",
+   "el",
+   "da",
+   "hu"
+  ],
+  "ko_included": false
+ },
+ "benchmarks_51": {
+  "ko": {
+   "laya": 0.11,
+   "ml": 0.47,
+   "delta": 0.36,
+   "laya_ece": 0.68,
+   "ml_ece": 0.311
+  },
+  "en": {
+   "laya": 0.82,
+   "ml": 0.71,
+   "delta": -0.11,
+   "laya_ece": 0.138,
+   "ml_ece": 0.233
+  },
+  "ko_rank_ml_accuracy": {
+   "rank": 18,
+   "ties_with": 1,
+   "of": 51
+  },
+  "ko_rank_ml_ece_lower_better": {
+   "rank": 10,
+   "ties_with": 0,
+   "of": 51
+  },
+  "ko_rank_delta": {
+   "rank": 4,
+   "ties_with": 1,
+   "of": 51
+  },
+  "ml_accuracy_median": 0.4,
+  "ml_accuracy_macro": 0.4007843137254902,
+  "ml_ece_median": 0.397,
+  "ml_ece_macro": 0.3910980392156863,
+  "ml_accuracy_macro_non_en": 0.3946,
+  "ko_over_en_ml_accuracy": 0.6619718309859155,
+  "ko_over_en_english_checkpoint_on_en": 0.573170731707317,
+  "random_baseline": 0.05,
+  "ko_over_random": 9.399999999999999,
+  "cases_per_language": 100,
+  "ko_95ci_wilson": [
+   0.375,
+   0.567
+  ],
+  "cjk_neighbours": {
+   "ja": {
+    "laya": 0.53,
+    "ml": 0.64,
+    "delta": 0.11,
+    "laya_ece": 0.366,
+    "ml_ece": 0.234
+   },
+   "zh-CN": {
+    "laya": 0.62,
+    "ml": 0.65,
+    "delta": 0.03,
+    "laya_ece": 0.32,
+    "ml_ece": 0.219
+   },
+   "zh-TW": {
+    "laya": 0.46,
+    "ml": 0.61,
+    "delta": 0.15,
+    "laya_ece": 0.434,
+    "ml_ece": 0.266
+   }
+  },
+  "card_language_codes_vs_massive": {
+   "card": 50,
+   "massive_51_locales_as_codes": 50,
+   "card_minus_massive": [],
+   "massive_minus_card": []
+  }
+ },
+ "korean_numbers_provenance": {
+  "t4_massive_intent.ko": {
+   "laya": {
+    "n": 300,
+    "accuracy": 0.10333333333333333,
+    "ece": 0.8496262680408053,
+    "mean_confidence": 0.9529596013741385
+   },
+   "laya-multilingual": {
+    "n": 300,
+    "accuracy": 0.49,
+    "ece": 0.3084237491405182,
+    "mean_confidence": 0.7984237491405181
+   }
+  },
+  "t4_massive_scenario.ko": {
+   "laya": {
+    "n": 300,
+    "accuracy": 0.12666666666666668,
+    "ece": 0.840051417707468,
+    "mean_confidence": 0.9667180843741346
+   },
+   "laya-multilingual": {
+    "n": 300,
+    "accuracy": 0.42333333333333334,
+    "ece": 0.384623058336728,
+    "mean_confidence": 0.8079563916700613
+   }
+  },
+  "cpu_committed_laya0.2.0": {
+   "english": {
+    "n": 100,
+    "accuracy": 0.11,
+    "macro_f1": 0.0943,
+    "ece": 0.8498,
+    "brier": 1.7193,
+    "nll": 22.1195,
+    "mean_confidence": 0.9598,
+    "acc_at_50_coverage": 0.14,
+    "seconds": 20.1,
+    "dropped": 0
+   },
+   "multilingual": {
+    "n": 100,
+    "accuracy": 0.45,
+    "macro_f1": 0.3927,
+    "ece": 0.3293,
+    "brier": 0.8278,
+    "nll": 2.5605,
+    "mean_confidence": 0.7297,
+    "acc_at_50_coverage": 0.6,
+    "seconds": 8.5,
+    "dropped": 0
+   }
+  },
+  "cpu_refreshed_laya0.3.20": {
+   "english": {
+    "accuracy": 0.11,
+    "macro_f1": 0.0943,
+    "ece": 0.6804,
+    "mean_confidence": 0.7904,
+    "acc_at_50_coverage": 0.14,
+    "n": 100
+   },
+   "multilingual": {
+    "accuracy": 0.47,
+    "macro_f1": 0.4428,
+    "ece": 0.3108,
+    "mean_confidence": 0.7773,
+    "acc_at_50_coverage": 0.68,
+    "n": 100
+   }
+  },
+  "calibration_repair_ko": {
+   "laya": {
+    "n_heldout": 150,
+    "fitted_temperatures": {
+     "choice:11+": 5.2745
+    },
+    "ece_shipped": 0.8638654472702805,
+    "ece_refit": 0.012764949526979565,
+    "nll_shipped": 21.82418989141709,
+    "nll_refit": 2.948163107719538,
+    "accuracy": 0.09333333333333334
+   },
+   "laya-multilingual": {
+    "n_heldout": 150,
+    "fitted_temperatures": {
+     "choice:11+": 2.0708
+    },
+    "ece_shipped": 0.32002650648667197,
+    "ece_refit": 0.10080463213987816,
+    "nll_shipped": 2.6602817717599048,
+    "nll_refit": 1.9099858554110467,
+    "accuracy": 0.48
+   }
+  }
+ },
+ "upstream_grep": {
+  "files_with_korean_or_hangul": {
+   "./research/results/presentation_checks_langs.json": 21,
+   "./research/results/presentation_checks_choice.json": 25,
+   "./research/eval/presentation_checks.py": 14,
+   "./research/eval/README.md": 6,
+   "./laya/lang.py": 2,
+   "./laya/router.py": 1,
+   "./tests/test_local_e2e.py": 1,
+   "./tests/test_router.py": 7,
+   "./laya-ts/tests/tokenizer-parity.test.ts": 1,
+   "./laya-ts/src/lang.ts": 1,
+   "./examples/21_routing_without_running.py": 1
+  },
+  "ko_code_lines_in_docs": [
+   "BENCHMARKS.md:71:| `ko` | 0.110 | 0.470 | +0.360 | 0.680 | 0.311 |",
+   "research/eval/README.md:302:    --subfolder multilingual --lang ja,ko,hi,tr --out langs.json",
+   "research/eval/README.md:312:| `ko` | **−0.570** (−0.622 .. −0.506) FAIL | **0.050** (0.019 .. 0.056) FAIL | 4.97e-5 |",
+   "research/eval/README.md:342:| `laya-multilingual` | `ko` | +0.096 (−0.025 .. +0.204) PASS | −0.147 | 4.87e-5 |"
+  ],
+  "lang_bench_dirs": [
+   "es_phone_turns",
+   "feishu_zh",
+   "zh_short_commands"
+  ],
+  "research_evals_files": [
+   "README.md",
+   "act_head_eval.py",
+   "check_regression.py",
+   "dataset.template.jsonl",
+   "fixture.jsonl",
+   "massive_route_comparison.md",
+   "massive_route_comparison.py",
+   "test_act_head_eval.py",
+   "thresholds.json",
+   "zh_decision_bench.jsonl"
+  ]
+ },
+ "lang_py": {
+  "stopword_languages": [
+   "az",
+   "bn",
+   "de",
+   "en",
+   "es",
+   "fr",
+   "it",
+   "nl",
+   "pt",
+   "ro",
+   "sv"
+  ],
+  "script_ranges": [
+   "greek",
+   "cyrillic",
+   "armenian",
+   "hebrew",
+   "arabic",
+   "devanagari",
+   "bengali",
+   "gurmukhi",
+   "gujarati",
+   "oriya",
+   "tamil",
+   "telugu",
+   "kannada",
+   "malayalam",
+   "sinhala",
+   "thai",
+   "lao",
+   "tibetan",
+   "myanmar",
+   "georgian",
+   "ethiopic",
+   "khmer",
+   "hangul",
+   "kana",
+   "han"
+  ],
+  "hangul_ranges": [
+   [
+    "0x1100",
+    "0x11ff"
+   ],
+   [
+    "0x3130",
+    "0x318f"
+   ],
+   [
+    "0xac00",
+    "0xd7af"
+   ]
+  ],
+  "NON_LATIN_FRACTION": 0.2,
+  "NON_LATIN_MIN_FRACTION": 0.1,
+  "NON_LATIN_MIN_LETTERS": 10
+ }
+}

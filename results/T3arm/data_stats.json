@@ -1,0 +1,3311 @@
+{
+ "created": "2026-10-08",
+ "builder": "scripts/build_train_sets.py 0.1.0",
+ "eval_items": {
+  "files": {
+   "data/evals/jev_cmp/T10_support_tickets_queue_40.jsonl": 40,
+   "data/evals/jev_cmp/T1_typed_decisions_40.jsonl": 40,
+   "data/evals/jev_cmp/T1_typed_decisions_40_noulnocrit.jsonl": 40,
+   "data/evals/jev_cmp/T2_ag_news_40.jsonl": 40,
+   "data/evals/jev_cmp/T3_emotion_40.jsonl": 40,
+   "data/evals/jev_cmp/T4_banking77_10opt_40.jsonl": 40,
+   "data/evals/jev_cmp/T4_banking77_10opt_40_v0.jsonl": 40,
+   "data/evals/jev_cmp/T5_boolq_40.jsonl": 40,
+   "data/evals/jev_cmp/T6_sst5_40.jsonl": 40,
+   "data/evals/jev_cmp/T7_massive_intent_10opt_de_20.jsonl": 20,
+   "data/evals/jev_cmp/T7_massive_intent_10opt_en_20.jsonl": 20,
+   "data/evals/jev_cmp/T7_massive_intent_10opt_ja_20.jsonl": 20,
+   "data/evals/jev_cmp/T7_massive_intent_10opt_ko_20.jsonl": 20,
+   "data/evals/jev_cmp/T7_massive_intent_10opt_zh-CN_20.jsonl": 20,
+   "data/evals/jev_cmp/T8_prompt_injections_40.jsonl": 40,
+   "data/evals/jev_cmp/T9_enron_spam_40.jsonl": 40,
+   "data/evals/jev_cmp_ext/T10_support_tickets_queue_ext500.jsonl": 500,
+   "data/evals/jev_cmp_ext/T1_typed_decisions_test400.jsonl": 400,
+   "data/evals/jev_cmp_ext/T2_ag_news_ext500.jsonl": 500,
+   "data/evals/jev_cmp_ext/T3_emotion_ext500.jsonl": 500,
+   "data/evals/jev_cmp_ext/T4_banking77_10opt_ext500.jsonl": 500,
+   "data/evals/jev_cmp_ext/T5_boolq_ext500.jsonl": 500,
+   "data/evals/jev_cmp_ext/T6_sst5_ext500.jsonl": 500,
+   "data/evals/jev_cmp_ext/T7_massive_intent_10opt_de_ext100.jsonl": 100,
+   "data/evals/jev_cmp_ext/T7_massive_intent_10opt_en_ext100.jsonl": 100,
+   "data/evals/jev_cmp_ext/T7_massive_intent_10opt_ja_ext100.jsonl": 100,
+   "data/evals/jev_cmp_ext/T7_massive_intent_10opt_ko_ext100.jsonl": 100,
+   "data/evals/jev_cmp_ext/T7_massive_intent_10opt_zh-CN_ext100.jsonl": 100,
+   "data/evals/jev_cmp_ext/T8_prompt_injections_test116.jsonl": 116,
+   "data/evals/jev_cmp_ext/T9_enron_spam_ext500.jsonl": 500
+  },
+  "exact_texts": 4775,
+  "normalized_texts": 4775
+ },
+ "tasks": {
+  "T1": {
+   "task": "T1",
+   "base": "english",
+   "jev_rows_reproduced": 40,
+   "split_disjoint": {
+    "train&dev": 0,
+    "train&calib": 0,
+    "dev&calib": 0
+   },
+   "files": {
+    "train": {
+     "path": "poc/finetune/data/t3arm/T1_train.jsonl",
+     "sha256": "4e744ba0976d1db3d7b9e9c4d568d3ea2de12816c896aa7bc27fcc70b2f6d529",
+     "rows": 1000,
+     "decisions": 5000,
+     "questions_sha256": "d46ef26a6ec2f2f8c6fc0cfa1e81715751dda05f173cd028ae3eaaa4b9d519cb",
+     "label_distribution": {
+      "False": 758,
+      "True": 742,
+      "3": 599,
+      "2": 597,
+      "1": 526,
+      "0": 250,
+      "investigate": 176,
+      "escalate_to_human": 143,
+      "human_review": 118,
+      "partial": 118,
+      "observe": 99,
+      "approve": 98,
+      "manual_review": 97,
+      "success": 66,
+      "account": 65,
+      "billing": 61,
+      "answer_directly": 56,
+      "technical": 55,
+      "harmful": 52,
+      "delivery": 47,
+      "hold": 42,
+      "request_information": 42,
+      "contain": 31,
+      "continue": 30,
+      "4": 28,
+      "close_benign": 24,
+      "refund": 22,
+      "monitor": 19,
+      "failure": 14,
+      "reject": 13,
+      "execute_refund": 9,
+      "stop": 3
+     }
+    },
+    "dev": {
+     "path": "poc/finetune/data/t3arm/T1_dev.jsonl",
+     "sha256": "940048577c7a99d111a058fc8938917c0efb8d07ace9ad5d47b780e62e50d12b",
+     "rows": 120,
+     "decisions": 600,
+     "questions_sha256": "d46ef26a6ec2f2f8c6fc0cfa1e81715751dda05f173cd028ae3eaaa4b9d519cb",
+     "label_distribution": {
+      "True": 94,
+      "False": 86,
+      "2": 79,
+      "3": 66,
+      "1": 60,
+      "0": 32,
+      "investigate": 22,
+      "human_review": 18,
+      "escalate_to_human": 16,
+      "approve": 13,
+      "partial": 12,
+      "manual_review": 10,
+      "delivery": 9,
+      "success": 9,
+      "harmful": 8,
+      "request_information": 8,
+      "hold": 7,
+      "observe": 7,
+      "technical": 7,
+      "account": 6,
+      "answer_directly": 6,
+      "close_benign": 6,
+      "billing": 5,
+      "continue": 5,
+      "4": 3,
+      "refund": 3,
+      "contain": 1,
+      "failure": 1,
+      "monitor": 1
+     }
+    },
+    "calib": {
+     "path": "poc/finetune/data/t3arm/T1_calib.jsonl",
+     "sha256": "c1dc3b8500861b84bb79d2a69d99110108ccc6f2f7d36e79a7d5278ccc963567",
+     "rows": 80,
+     "decisions": 400,
+     "questions_sha256": "d46ef26a6ec2f2f8c6fc0cfa1e81715751dda05f173cd028ae3eaaa4b9d519cb",
+     "label_distribution": {
+      "True": 62,
+      "False": 58,
+      "2": 52,
+      "3": 47,
+      "1": 37,
+      "0": 22,
+      "investigate": 16,
+      "escalate_to_human": 11,
+      "partial": 11,
+      "approve": 9,
+      "hold": 8,
+      "observe": 8,
+      "success": 7,
+      "account": 6,
+      "continue": 6,
+      "human_review": 6,
+      "technical": 6,
+      "request_information": 5,
+      "answer_directly": 4,
+      "delivery": 4,
+      "contain": 3,
+      "manual_review": 3,
+      "4": 2,
+      "billing": 2,
+      "harmful": 2,
+      "refund": 2,
+      "monitor": 1
+     }
+    }
+   },
+   "sampling": {
+    "all": {
+     "train_split": "train",
+     "pool": {
+      "source_rows": 1200,
+      "pool_rows": 1200,
+      "dropped": {}
+     },
+     "eval_overlap_removed": {
+      "train_pool": {
+       "exact": 0,
+       "normalized_only": 0
+      }
+     },
+     "train_pool_removed_as_dev_calib_twin": 0,
+     "sample": {
+      "calib": {
+       "per_label": {
+        "agent_trace_observability": 20,
+        "customer_service": 20,
+        "invoice_processing": 20,
+        "security_incidents": 20
+       },
+       "top_up": 0
+      },
+      "dev": {
+       "per_label": {
+        "agent_trace_observability": 30,
+        "customer_service": 30,
+        "invoice_processing": 30,
+        "security_incidents": 30
+       },
+       "top_up": 0
+      },
+      "train": {
+       "per_label": {
+        "agent_trace_observability": 250,
+        "customer_service": 250,
+        "invoice_processing": 250,
+        "security_incidents": 250
+       },
+       "top_up": 0
+      }
+     }
+    }
+   },
+   "overlap_removed_total": {
+    "exact": 0,
+    "normalized_only": 0
+   }
+  },
+  "T2": {
+   "task": "T2",
+   "base": "english",
+   "jev_rows_reproduced": 40,
+   "split_disjoint": {
+    "train&dev": 0,
+    "train&calib": 0,
+    "dev&calib": 0
+   },
+   "files": {
+    "train": {
+     "path": "poc/finetune/data/t3arm/T2_train.jsonl",
+     "sha256": "0c58ae550a8e31f632ea84dffb78ef13f3c01faf21d83a84c47e9c2a6547bd56",
+     "rows": 5000,
+     "decisions": 5000,
+     "questions_sha256": "c472cb1cb971dab3d01c811ccc0f997d39516555fd43f513a8c59654e0457be1",
+     "label_distribution": {
+      "business": 1250,
+      "sci_tech": 1250,
+      "sports": 1250,
+      "world": 1250
+     }
+    },
+    "dev": {
+     "path": "poc/finetune/data/t3arm/T2_dev.jsonl",
+     "sha256": "cbbf01bf5f6e27f933478c116bc4c450552c5b458a26e565c45564629607b0e5",
+     "rows": 1000,
+     "decisions": 1000,
+     "questions_sha256": "c472cb1cb971dab3d01c811ccc0f997d39516555fd43f513a8c59654e0457be1",
+     "label_distribution": {
+      "business": 250,
+      "sci_tech": 250,
+      "sports": 250,
+      "world": 250
+     }
+    },
+    "calib": {
+     "path": "poc/finetune/data/t3arm/T2_calib.jsonl",
+     "sha256": "bf2e7df35f73ed71c9204cff4c12a61be331f4158395ce9516f6427c3bdbfc5b",
+     "rows": 400,
+     "decisions": 400,
+     "questions_sha256": "c472cb1cb971dab3d01c811ccc0f997d39516555fd43f513a8c59654e0457be1",
+     "label_distribution": {
+      "business": 100,
+      "sci_tech": 100,
+      "sports": 100,
+      "world": 100
+     }
+    }
+   },
+   "sampling": {
+    "all": {
+     "train_split": "train",
+     "pool": {
+      "source_rows": 120000,
+      "pool_rows": 120000,
+      "dropped": {}
+     },
+     "eval_overlap_removed": {
+      "train_pool": {
+       "exact": 0,
+       "normalized_only": 0
+      }
+     },
+     "train_pool_removed_as_dev_calib_twin": 5,
+     "sample": {
+      "calib": {
+       "per_label": {
+        "world": 100,
+        "sports": 100,
+        "business": 100,
+        "sci_tech": 100
+       },
+       "top_up": 0
+      },
+      "dev": {
+       "per_label": {
+        "world": 250,
+        "sports": 250,
+        "business": 250,
+        "sci_tech": 250
+       },
+       "top_up": 0
+      },
+      "train": {
+       "per_label": {
+        "world": 1250,
+        "sports": 1250,
+        "business": 1250,
+        "sci_tech": 1250
+       },
+       "top_up": 0
+      }
+     }
+    }
+   },
+   "overlap_removed_total": {
+    "exact": 0,
+    "normalized_only": 0
+   }
+  },
+  "T3": {
+   "task": "T3",
+   "base": "english",
+   "jev_rows_reproduced": 40,
+   "split_disjoint": {
+    "train&dev": 0,
+    "train&calib": 0,
+    "dev&calib": 0
+   },
+   "files": {
+    "train": {
+     "path": "poc/finetune/data/t3arm/T3_train.jsonl",
+     "sha256": "7efc73c7a5d3e96e30ded3613d96705041d4b5121f0606467df3917490efaa2c",
+     "rows": 5000,
+     "decisions": 5000,
+     "questions_sha256": "bd7cc49e3561bf50d45db8c2d35820b8ddea855c9dfbc081303636596b4b4c97",
+     "label_distribution": {
+      "joy": 942,
+      "sadness": 915,
+      "anger": 877,
+      "fear": 857,
+      "love": 841,
+      "surprise": 568
+     }
+    },
+    "dev": {
+     "path": "poc/finetune/data/t3arm/T3_dev.jsonl",
+     "sha256": "c4a1ba1aa62ab0d1567c1fdd24b8301fa4fb148fa08255ca9ec251b8cf8ff773",
+     "rows": 1000,
+     "decisions": 1000,
+     "questions_sha256": "bd7cc49e3561bf50d45db8c2d35820b8ddea855c9dfbc081303636596b4b4c97",
+     "label_distribution": {
+      "joy": 296,
+      "sadness": 255,
+      "anger": 177,
+      "fear": 146,
+      "love": 111,
+      "surprise": 15
+     }
+    },
+    "calib": {
+     "path": "poc/finetune/data/t3arm/T3_calib.jsonl",
+     "sha256": "e8a16eb61ce72bc96cbdf41771954012c07bc58235999dac148aa5887743020c",
+     "rows": 400,
+     "decisions": 400,
+     "questions_sha256": "bd7cc49e3561bf50d45db8c2d35820b8ddea855c9dfbc081303636596b4b4c97",
+     "label_distribution": {
+      "anger": 67,
+      "joy": 67,
+      "love": 67,
+      "sadness": 67,
+      "fear": 66,
+      "surprise": 66
+     }
+    }
+   },
+   "sampling": {
+    "all": {
+     "train_split": "train",
+     "pool": {
+      "source_rows": 16000,
+      "pool_rows": 15969,
+      "dropped": {
+       "duplicate": 31
+      }
+     },
+     "eval_overlap_removed": {
+      "train_pool": {
+       "exact": 1,
+       "normalized_only": 0
+      },
+      "holdout_pool": {
+       "exact": 0,
+       "normalized_only": 0
+      }
+     },
+     "holdout_split": "validation",
+     "holdout_pool": {
+      "source_rows": 2000,
+      "pool_rows": 1998,
+      "dropped": {
+       "duplicate": 2
+      }
+     },
+     "train_pool_removed_as_dev_calib_twin": 5,
+     "sample": {
+      "calib": {
+       "per_label": {
+        "sadness": 67,
+        "joy": 67,
+        "love": 67,
+        "anger": 67,
+        "fear": 66,
+        "surprise": 66
+       },
+       "top_up": 0
+      },
+      "dev": {
+       "per_label": {
+        "sadness": 167,
+        "joy": 167,
+        "love": 111,
+        "anger": 167,
+        "fear": 146,
+        "surprise": 15
+       },
+       "top_up": 227
+      },
+      "train": {
+       "per_label": {
+        "sadness": 834,
+        "joy": 834,
+        "love": 833,
+        "anger": 833,
+        "fear": 833,
+        "surprise": 568
+       },
+       "top_up": 265
+      }
+     }
+    }
+   },
+   "overlap_removed_total": {
+    "exact": 1,
+    "normalized_only": 0
+   }
+  },
+  "T4": {
+   "task": "T4",
+   "base": "english",
+   "jev_rows_reproduced": 40,
+   "split_disjoint": {
+    "train&dev": 0,
+    "train&calib": 0,
+    "dev&calib": 0
+   },
+   "files": {
+    "train": {
+     "path": "poc/finetune/data/t3arm/T4_train.jsonl",
+     "sha256": "2fa1220d3da17894cfc2a48f4aa9c725dd74c480da50058ef5dda0d5168c23dc",
+     "rows": 5000,
+     "decisions": 5000,
+     "questions_sha256": null,
+     "label_distribution": {
+      "card payment not recognised": 72,
+      "request refund": 71,
+      "transfer not received by recipient": 71,
+      "wrong amount of cash received": 71,
+      "card payment wrong exchange rate": 70,
+      "getting spare card": 70,
+      "reverted card payment?": 70,
+      "transaction charged twice": 70,
+      "balance not updated after cheque or cash deposit": 69,
+      "card arrival": 69,
+      "cash withdrawal not recognised": 69,
+      "declined cash withdrawal": 69,
+      "exchange charge": 69,
+      "extra charge on statement": 69,
+      "pending card payment": 69,
+      "pending cash withdrawal": 69,
+      "activate my card": 68,
+      "automatic top up": 68,
+      "card delivery estimate": 68,
+      "card not working": 68,
+      "direct debit payment not recognised": 68,
+      "edit personal details": 68,
+      "top up reverted": 68,
+      "apple pay or google pay": 67,
+      "beneficiary not allowed": 67,
+      "card about to expire": 67,
+      "card linking": 67,
+      "declined card payment": 67,
+      "pending transfer": 67,
+      "top up by card charge": 67,
+      "top up by cash or cheque": 67,
+      "Refund not showing up": 66,
+      "balance not updated after bank transfer": 66,
+      "card payment fee charged": 66,
+      "cash withdrawal charge": 66,
+      "declined transfer": 66,
+      "disposable card limits": 66,
+      "exchange rate": 66,
+      "exchange via app": 66,
+      "get disposable virtual card": 66,
+      "lost or stolen phone": 66,
+      "order physical card": 66,
+      "pin blocked": 66,
+      "terminate account": 66,
+      "top up by bank transfer charge": 66,
+      "top up failed": 66,
+      "top up limits": 66,
+      "topping up by card": 66,
+      "transfer fee charged": 66,
+      "transfer into account": 66,
+      "unable to verify identity": 66,
+      "verify top up": 66,
+      "visa or mastercard": 66,
+      "wrong exchange rate for cash withdrawal": 66,
+      "age limit": 65,
+      "atm support": 65,
+      "cancel transfer": 65,
+      "change pin": 65,
+      "country support": 65,
+      "failed transfer": 65,
+      "fiat currency support": 65,
+      "get physical card": 65,
+      "getting virtual card": 65,
+      "passcode forgotten": 65,
+      "pending top up": 65,
+      "receiving money": 65,
+      "supported cards and currencies": 65,
+      "transfer timing": 65,
+      "verify my identity": 65,
+      "verify source of funds": 65,
+      "why verify identity": 65,
+      "compromised card": 64,
+      "lost or stolen card": 63,
+      "card swallowed": 42,
+      "card acceptance": 41,
+      "virtual card not working": 22,
+      "contactless not working": 16
+     }
+    },
+    "dev": {
+     "path": "poc/finetune/data/t3arm/T4_dev.jsonl",
+     "sha256": "6e4bc01f4bf494559a5e678e35ffd9981bbc5a97db25a9efed831def46a585e8",
+     "rows": 1000,
+     "decisions": 1000,
+     "questions_sha256": null,
+     "label_distribution": {
+      "Refund not showing up": 13,
+      "activate my card": 13,
+      "age limit": 13,
+      "apple pay or google pay": 13,
+      "atm support": 13,
+      "automatic top up": 13,
+      "balance not updated after bank transfer": 13,
+      "balance not updated after cheque or cash deposit": 13,
+      "beneficiary not allowed": 13,
+      "cancel transfer": 13,
+      "card about to expire": 13,
+      "card acceptance": 13,
+      "card arrival": 13,
+      "card delivery estimate": 13,
+      "card linking": 13,
+      "card not working": 13,
+      "card payment fee charged": 13,
+      "card payment not recognised": 13,
+      "card payment wrong exchange rate": 13,
+      "card swallowed": 13,
+      "cash withdrawal charge": 13,
+      "cash withdrawal not recognised": 13,
+      "change pin": 13,
+      "compromised card": 13,
+      "contactless not working": 13,
+      "country support": 13,
+      "declined card payment": 13,
+      "declined cash withdrawal": 13,
+      "declined transfer": 13,
+      "direct debit payment not recognised": 13,
+      "disposable card limits": 13,
+      "edit personal details": 13,
+      "exchange charge": 13,
+      "exchange via app": 13,
+      "extra charge on statement": 13,
+      "failed transfer": 13,
+      "fiat currency support": 13,
+      "get disposable virtual card": 13,
+      "get physical card": 13,
+      "getting spare card": 13,
+      "getting virtual card": 13,
+      "lost or stolen card": 13,
+      "lost or stolen phone": 13,
+      "order physical card": 13,
+      "passcode forgotten": 13,
+      "pending card payment": 13,
+      "pending cash withdrawal": 13,
+      "pending top up": 13,
+      "pending transfer": 13,
+      "pin blocked": 13,
+      "receiving money": 13,
+      "request refund": 13,
+      "reverted card payment?": 13,
+      "supported cards and currencies": 13,
+      "terminate account": 13,
+      "top up by bank transfer charge": 13,
+      "top up by card charge": 13,
+      "top up by cash or cheque": 13,
+      "top up failed": 13,
+      "top up limits": 13,
+      "top up reverted": 13,
+      "topping up by card": 13,
+      "transaction charged twice": 13,
+      "transfer fee charged": 13,
+      "transfer into account": 13,
+      "transfer not received by recipient": 13,
+      "transfer timing": 13,
+      "unable to verify identity": 13,
+      "verify my identity": 13,
+      "verify source of funds": 13,
+      "verify top up": 13,
+      "virtual card not working": 13,
+      "visa or mastercard": 13,
+      "why verify identity": 13,
+      "wrong amount of cash received": 13,
+      "wrong exchange rate for cash withdrawal": 13,
+      "exchange rate": 12
+     }
+    },
+    "calib": {
+     "path": "poc/finetune/data/t3arm/T4_calib.jsonl",
+     "sha256": "1178454fbbd4ce97368688d9eaff66b6ab672cf677c7eef22ecf0ecfb65f240d",
+     "rows": 400,
+     "decisions": 400,
+     "questions_sha256": null,
+     "label_distribution": {
+      "activate my card": 6,
+      "age limit": 6,
+      "atm support": 6,
+      "card about to expire": 6,
+      "card delivery estimate": 6,
+      "card not working": 6,
+      "card swallowed": 6,
+      "contactless not working": 6,
+      "country support": 6,
+      "getting virtual card": 6,
+      "lost or stolen card": 6,
+      "top up failed": 6,
+      "transfer into account": 6,
+      "virtual card not working": 6,
+      "visa or mastercard": 6,
+      "Refund not showing up": 5,
+      "apple pay or google pay": 5,
+      "automatic top up": 5,
+      "balance not updated after bank transfer": 5,
+      "balance not updated after cheque or cash deposit": 5,
+      "beneficiary not allowed": 5,
+      "cancel transfer": 5,
+      "card acceptance": 5,
+      "card arrival": 5,
+      "card linking": 5,
+      "card payment fee charged": 5,
+      "card payment not recognised": 5,
+      "card payment wrong exchange rate": 5,
+      "cash withdrawal charge": 5,
+      "cash withdrawal not recognised": 5,
+      "change pin": 5,
+      "compromised card": 5,
+      "declined card payment": 5,
+      "declined cash withdrawal": 5,
+      "declined transfer": 5,
+      "direct debit payment not recognised": 5,
+      "disposable card limits": 5,
+      "edit personal details": 5,
+      "exchange charge": 5,
+      "exchange rate": 5,
+      "exchange via app": 5,
+      "extra charge on statement": 5,
+      "failed transfer": 5,
+      "fiat currency support": 5,
+      "get disposable virtual card": 5,
+      "get physical card": 5,
+      "getting spare card": 5,
+      "lost or stolen phone": 5,
+      "order physical card": 5,
+      "passcode forgotten": 5,
+      "pending card payment": 5,
+      "pending cash withdrawal": 5,
+      "pending top up": 5,
+      "pending transfer": 5,
+      "pin blocked": 5,
+      "receiving money": 5,
+      "request refund": 5,
+      "reverted card payment?": 5,
+      "supported cards and currencies": 5,
+      "terminate account": 5,
+      "top up by bank transfer charge": 5,
+      "top up by card charge": 5,
+      "top up by cash or cheque": 5,
+      "top up limits": 5,
+      "top up reverted": 5,
+      "topping up by card": 5,
+      "transaction charged twice": 5,
+      "transfer fee charged": 5,
+      "transfer not received by recipient": 5,
+      "transfer timing": 5,
+      "unable to verify identity": 5,
+      "verify my identity": 5,
+      "verify source of funds": 5,
+      "verify top up": 5,
+      "why verify identity": 5,
+      "wrong amount of cash received": 5,
+      "wrong exchange rate for cash withdrawal": 5
+     }
+    }
+   },
+   "sampling": {
+    "all": {
+     "train_split": "train",
+     "pool": {
+      "source_rows": 9993,
+      "pool_rows": 9993,
+      "dropped": {}
+     },
+     "eval_overlap_removed": {
+      "train_pool": {
+       "exact": 0,
+       "normalized_only": 0
+      }
+     },
+     "train_pool_removed_as_dev_calib_twin": 0,
+     "sample": {
+      "calib": {
+       "per_label": {
+        "card_swallowed": 6,
+        "contactless_not_working": 6,
+        "atm_support": 6,
+        "top_up_failed": 6,
+        "activate_my_card": 6,
+        "card_delivery_estimate": 6,
+        "visa_or_mastercard": 6,
+        "card_about_to_expire": 6,
+        "card_not_working": 6,
+        "transfer_into_account": 6,
+        "lost_or_stolen_card": 6,
+        "getting_virtual_card": 6,
+        "country_support": 6,
+        "age_limit": 6,
+        "virtual_card_not_working": 6,
+        "card_arrival": 5,
+        "top_up_limits": 5,
+        "transfer_not_received_by_recipient": 5,
+        "top_up_reverted": 5,
+        "disposable_card_limits": 5,
+        "exchange_charge": 5,
+        "card_acceptance": 5,
+        "exchange_via_app": 5,
+        "declined_card_payment": 5,
+        "balance_not_updated_after_bank_transfer": 5,
+        "top_up_by_bank_transfer_charge": 5,
+        "transfer_fee_charged": 5,
+        "top_up_by_cash_or_cheque": 5,
+        "order_physical_card": 5,
+        "get_physical_card": 5,
+        "cash_withdrawal_not_recognised": 5,
+        "wrong_exchange_rate_for_cash_withdrawal": 5,
+        "pending_transfer": 5,
+        "supported_cards_and_currencies": 5,
+        "pending_card_payment": 5,
+        "passcode_forgotten": 5,
+        "balance_not_updated_after_cheque_or_cash_deposit": 5,
+        "cash_withdrawal_charge": 5,
+        "getting_spare_card": 5,
+        "verify_source_of_funds": 5,
+        "pending_top_up": 5,
+        "failed_transfer": 5,
+        "extra_charge_on_statement": 5,
+        "edit_personal_details": 5,
+        "card_linking": 5,
+        "change_pin": 5,
+        "request_refund": 5,
+        "beneficiary_not_allowed": 5,
+        "transfer_timing": 5,
+        "pending_cash_withdrawal": 5,
+        "verify_top_up": 5,
+        "transaction_charged_twice": 5,
+        "top_up_by_card_charge": 5,
+        "receiving_money": 5,
+        "pin_blocked": 5,
+        "automatic_top_up": 5,
+        "unable_to_verify_identity": 5,
+        "topping_up_by_card": 5,
+        "card_payment_not_recognised": 5,
+        "Refund_not_showing_up": 5,
+        "get_disposable_virtual_card": 5,
+        "lost_or_stolen_phone": 5,
+        "reverted_card_payment?": 5,
+        "verify_my_identity": 5,
+        "terminate_account": 5,
+        "apple_pay_or_google_pay": 5,
+        "wrong_amount_of_cash_received": 5,
+        "declined_cash_withdrawal": 5,
+        "cancel_transfer": 5,
+        "card_payment_fee_charged": 5,
+        "why_verify_identity": 5,
+        "declined_transfer": 5,
+        "card_payment_wrong_exchange_rate": 5,
+        "direct_debit_payment_not_recognised": 5,
+        "compromised_card": 5,
+        "fiat_currency_support": 5,
+        "exchange_rate": 5
+       },
+       "top_up": 0
+      },
+      "dev": {
+       "per_label": {
+        "card_swallowed": 13,
+        "contactless_not_working": 13,
+        "atm_support": 13,
+        "top_up_failed": 13,
+        "activate_my_card": 13,
+        "card_delivery_estimate": 13,
+        "visa_or_mastercard": 13,
+        "card_about_to_expire": 13,
+        "card_not_working": 13,
+        "transfer_into_account": 13,
+        "lost_or_stolen_card": 13,
+        "getting_virtual_card": 13,
+        "country_support": 13,
+        "age_limit": 13,
+        "virtual_card_not_working": 13,
+        "card_arrival": 13,
+        "top_up_limits": 13,
+        "transfer_not_received_by_recipient": 13,
+        "top_up_reverted": 13,
+        "disposable_card_limits": 13,
+        "exchange_charge": 13,
+        "card_acceptance": 13,
+        "exchange_via_app": 13,
+        "declined_card_payment": 13,
+        "balance_not_updated_after_bank_transfer": 13,
+        "top_up_by_bank_transfer_charge": 13,
+        "transfer_fee_charged": 13,
+        "top_up_by_cash_or_cheque": 13,
+        "order_physical_card": 13,
+        "get_physical_card": 13,
+        "cash_withdrawal_not_recognised": 13,
+        "wrong_exchange_rate_for_cash_withdrawal": 13,
+        "pending_transfer": 13,
+        "supported_cards_and_currencies": 13,
+        "pending_card_payment": 13,
+        "passcode_forgotten": 13,
+        "balance_not_updated_after_cheque_or_cash_deposit": 13,
+        "cash_withdrawal_charge": 13,
+        "getting_spare_card": 13,
+        "verify_source_of_funds": 13,
+        "pending_top_up": 13,
+        "failed_transfer": 13,
+        "extra_charge_on_statement": 13,
+        "edit_personal_details": 13,
+        "card_linking": 13,
+        "change_pin": 13,
+        "request_refund": 13,
+        "beneficiary_not_allowed": 13,
+        "transfer_timing": 13,
+        "pending_cash_withdrawal": 13,
+        "verify_top_up": 13,
+        "transaction_charged_twice": 13,
+        "top_up_by_card_charge": 13,
+        "receiving_money": 13,
+        "pin_blocked": 13,
+        "automatic_top_up": 13,
+        "unable_to_verify_identity": 13,
+        "topping_up_by_card": 13,
+        "card_payment_not_recognised": 13,
+        "Refund_not_showing_up": 13,
+        "get_disposable_virtual_card": 13,
+        "lost_or_stolen_phone": 13,
+        "reverted_card_payment?": 13,
+        "verify_my_identity": 13,
+        "terminate_account": 13,
+        "apple_pay_or_google_pay": 13,
+        "wrong_amount_of_cash_received": 13,
+        "declined_cash_withdrawal": 13,
+        "cancel_transfer": 13,
+        "card_payment_fee_charged": 13,
+        "why_verify_identity": 13,
+        "declined_transfer": 13,
+        "card_payment_wrong_exchange_rate": 13,
+        "direct_debit_payment_not_recognised": 13,
+        "compromised_card": 13,
+        "fiat_currency_support": 13,
+        "exchange_rate": 12
+       },
+       "top_up": 0
+      },
+      "train": {
+       "per_label": {
+        "card_swallowed": 42,
+        "contactless_not_working": 16,
+        "atm_support": 65,
+        "top_up_failed": 65,
+        "activate_my_card": 65,
+        "card_delivery_estimate": 65,
+        "visa_or_mastercard": 65,
+        "card_about_to_expire": 65,
+        "card_not_working": 65,
+        "transfer_into_account": 65,
+        "lost_or_stolen_card": 63,
+        "getting_virtual_card": 65,
+        "country_support": 65,
+        "age_limit": 65,
+        "virtual_card_not_working": 22,
+        "card_arrival": 65,
+        "top_up_limits": 65,
+        "transfer_not_received_by_recipient": 65,
+        "top_up_reverted": 65,
+        "disposable_card_limits": 65,
+        "exchange_charge": 65,
+        "card_acceptance": 41,
+        "exchange_via_app": 65,
+        "declined_card_payment": 65,
+        "balance_not_updated_after_bank_transfer": 65,
+        "top_up_by_bank_transfer_charge": 65,
+        "transfer_fee_charged": 65,
+        "top_up_by_cash_or_cheque": 65,
+        "order_physical_card": 65,
+        "get_physical_card": 65,
+        "cash_withdrawal_not_recognised": 65,
+        "wrong_exchange_rate_for_cash_withdrawal": 65,
+        "pending_transfer": 65,
+        "supported_cards_and_currencies": 65,
+        "pending_card_payment": 65,
+        "passcode_forgotten": 65,
+        "balance_not_updated_after_cheque_or_cash_deposit": 65,
+        "cash_withdrawal_charge": 65,
+        "getting_spare_card": 65,
+        "verify_source_of_funds": 65,
+        "pending_top_up": 65,
+        "failed_transfer": 65,
+        "extra_charge_on_statement": 65,
+        "edit_personal_details": 65,
+        "card_linking": 65,
+        "change_pin": 65,
+        "request_refund": 65,
+        "beneficiary_not_allowed": 65,
+        "transfer_timing": 65,
+        "pending_cash_withdrawal": 65,
+        "verify_top_up": 65,
+        "transaction_charged_twice": 65,
+        "top_up_by_card_charge": 65,
+        "receiving_money": 65,
+        "pin_blocked": 65,
+        "automatic_top_up": 65,
+        "unable_to_verify_identity": 65,
+        "topping_up_by_card": 65,
+        "card_payment_not_recognised": 65,
+        "Refund_not_showing_up": 65,
+        "get_disposable_virtual_card": 65,
+        "lost_or_stolen_phone": 65,
+        "reverted_card_payment?": 65,
+        "verify_my_identity": 65,
+        "terminate_account": 65,
+        "apple_pay_or_google_pay": 65,
+        "wrong_amount_of_cash_received": 65,
+        "declined_cash_withdrawal": 65,
+        "cancel_transfer": 65,
+        "card_payment_fee_charged": 65,
+        "why_verify_identity": 65,
+        "declined_transfer": 65,
+        "card_payment_wrong_exchange_rate": 64,
+        "direct_debit_payment_not_recognised": 64,
+        "compromised_card": 64,
+        "fiat_currency_support": 64,
+        "exchange_rate": 64
+       },
+       "top_up": 141
+      }
+     }
+    }
+   },
+   "overlap_removed_total": {
+    "exact": 0,
+    "normalized_only": 0
+   }
+  },
+  "T5": {
+   "task": "T5",
+   "base": "english",
+   "jev_rows_reproduced": 40,
+   "split_disjoint": {
+    "train&dev": 0,
+    "train&calib": 0,
+    "dev&calib": 0
+   },
+   "files": {
+    "train": {
+     "path": "poc/finetune/data/t3arm/T5_train.jsonl",
+     "sha256": "c8e653673f672fedf679c110435ee17f0c0fa6f07e1f5da0bb60aaec5d2398d0",
+     "rows": 5000,
+     "decisions": 5000,
+     "questions_sha256": "d8699dd37a63aa7bfbc74dd05ad250872384751ff635e5aeaaaf84cc5d69cebe",
+     "label_distribution": {
+      "False": 2500,
+      "True": 2500
+     }
+    },
+    "dev": {
+     "path": "poc/finetune/data/t3arm/T5_dev.jsonl",
+     "sha256": "829aaa693e4cc033bfe46e1a32ef6cb3a1706cf23fbbad622dcd80c18fa543a1",
+     "rows": 1000,
+     "decisions": 1000,
+     "questions_sha256": "d8699dd37a63aa7bfbc74dd05ad250872384751ff635e5aeaaaf84cc5d69cebe",
+     "label_distribution": {
+      "False": 500,
+      "True": 500
+     }
+    },
+    "calib": {
+     "path": "poc/finetune/data/t3arm/T5_calib.jsonl",
+     "sha256": "d1f66fde720218790cd28c15b4ed535df29e84e8d854ba033c279625c7be13cd",
+     "rows": 400,
+     "decisions": 400,
+     "questions_sha256": "d8699dd37a63aa7bfbc74dd05ad250872384751ff635e5aeaaaf84cc5d69cebe",
+     "label_distribution": {
+      "False": 200,
+      "True": 200
+     }
+    }
+   },
+   "sampling": {
+    "all": {
+     "train_split": "train",
+     "pool": {
+      "source_rows": 9427,
+      "pool_rows": 9399,
+      "dropped": {
+       "length": 28
+      }
+     },
+     "eval_overlap_removed": {
+      "train_pool": {
+       "exact": 0,
+       "normalized_only": 0
+      }
+     },
+     "train_pool_removed_as_dev_calib_twin": 0,
+     "sample": {
+      "calib": {
+       "per_label": {
+        "true": 200,
+        "false": 200
+       },
+       "top_up": 0
+      },
+      "dev": {
+       "per_label": {
+        "true": 500,
+        "false": 500
+       },
+       "top_up": 0
+      },
+      "train": {
+       "per_label": {
+        "true": 2500,
+        "false": 2500
+       },
+       "top_up": 0
+      }
+     }
+    }
+   },
+   "overlap_removed_total": {
+    "exact": 0,
+    "normalized_only": 0
+   }
+  },
+  "T6": {
+   "task": "T6",
+   "base": "english",
+   "jev_rows_reproduced": 40,
+   "split_disjoint": {
+    "train&dev": 0,
+    "train&calib": 0,
+    "dev&calib": 0
+   },
+   "files": {
+    "train": {
+     "path": "poc/finetune/data/t3arm/T6_train.jsonl",
+     "sha256": "70db1ae28e3a81a182350614d40447a14d083acbc843d6e1156e10d0ce80a93e",
+     "rows": 5000,
+     "decisions": 5000,
+     "questions_sha256": "9f4cb5fe47389ccf726aafb6656db26bc69fcc587fdd9ee55dac025d89cfd94f",
+     "label_distribution": {
+      "0": 1000,
+      "1": 1000,
+      "2": 1000,
+      "3": 1000,
+      "4": 1000
+     }
+    },
+    "dev": {
+     "path": "poc/finetune/data/t3arm/T6_dev.jsonl",
+     "sha256": "0e91b2473e2d57fdecea790dd99c2d7a8aa2c48938360c66eaf8f9dc29721a4b",
+     "rows": 700,
+     "decisions": 700,
+     "questions_sha256": "9f4cb5fe47389ccf726aafb6656db26bc69fcc587fdd9ee55dac025d89cfd94f",
+     "label_distribution": {
+      "1": 209,
+      "3": 199,
+      "2": 148,
+      "4": 85,
+      "0": 59
+     }
+    },
+    "calib": {
+     "path": "poc/finetune/data/t3arm/T6_calib.jsonl",
+     "sha256": "b046e6b7722dbacde738fc2fa93f7f6038e244599f82dba0f10d739bebd7b68f",
+     "rows": 400,
+     "decisions": 400,
+     "questions_sha256": "9f4cb5fe47389ccf726aafb6656db26bc69fcc587fdd9ee55dac025d89cfd94f",
+     "label_distribution": {
+      "0": 80,
+      "1": 80,
+      "2": 80,
+      "3": 80,
+      "4": 80
+     }
+    }
+   },
+   "sampling": {
+    "all": {
+     "train_split": "train",
+     "pool": {
+      "source_rows": 8544,
+      "pool_rows": 8534,
+      "dropped": {
+       "duplicate": 10
+      }
+     },
+     "eval_overlap_removed": {
+      "train_pool": {
+       "exact": 0,
+       "normalized_only": 0
+      },
+      "holdout_pool": {
+       "exact": 0,
+       "normalized_only": 0
+      }
+     },
+     "holdout_split": "validation",
+     "holdout_pool": {
+      "source_rows": 1101,
+      "pool_rows": 1100,
+      "dropped": {
+       "duplicate": 1
+      }
+     },
+     "train_pool_removed_as_dev_calib_twin": 1,
+     "sample": {
+      "calib": {
+       "per_label": {
+        "0": 80,
+        "1": 80,
+        "2": 80,
+        "3": 80,
+        "4": 80
+       },
+       "top_up": 0
+      },
+      "dev": {
+       "per_label": {
+        "0": 59,
+        "1": 200,
+        "2": 148,
+        "3": 199,
+        "4": 85
+       },
+       "top_up": 9
+      },
+      "train": {
+       "per_label": {
+        "0": 1000,
+        "1": 1000,
+        "2": 1000,
+        "3": 1000,
+        "4": 1000
+       },
+       "top_up": 0
+      }
+     }
+    }
+   },
+   "overlap_removed_total": {
+    "exact": 0,
+    "normalized_only": 0
+   }
+  },
+  "T7": {
+   "task": "T7",
+   "base": "multilingual",
+   "jev_rows_reproduced": 100,
+   "split_disjoint": {
+    "train&dev": 0,
+    "train&calib": 0,
+    "dev&calib": 0
+   },
+   "files": {
+    "train": {
+     "path": "poc/finetune/data/t3arm/T7_train.jsonl",
+     "sha256": "c097061e6ffeba55824b60cc81aa30a4befd828fa0416d2d148575619aa7eb0b",
+     "rows": 5000,
+     "decisions": 5000,
+     "questions_sha256": null,
+     "label_distribution": {
+      "datetime_query": 87,
+      "news_query": 87,
+      "alarm_set": 86,
+      "audio_volume_up": 86,
+      "calendar_query": 86,
+      "calendar_remove": 86,
+      "email_query": 86,
+      "email_sendemail": 86,
+      "general_quirky": 86,
+      "iot_hue_lightoff": 86,
+      "lists_query": 86,
+      "music_settings": 86,
+      "play_podcasts": 86,
+      "qa_maths": 86,
+      "recommendation_events": 86,
+      "social_post": 86,
+      "alarm_query": 85,
+      "alarm_remove": 85,
+      "audio_volume_down": 85,
+      "audio_volume_mute": 85,
+      "calendar_set": 85,
+      "cooking_recipe": 85,
+      "datetime_convert": 85,
+      "email_addcontact": 85,
+      "email_querycontact": 85,
+      "general_greet": 85,
+      "general_joke": 85,
+      "iot_cleaning": 85,
+      "iot_coffee": 85,
+      "iot_hue_lightchange": 85,
+      "iot_hue_lightdim": 85,
+      "iot_hue_lighton": 85,
+      "iot_hue_lightup": 85,
+      "iot_wemo_off": 85,
+      "iot_wemo_on": 85,
+      "lists_createoradd": 85,
+      "lists_remove": 85,
+      "music_likeness": 85,
+      "music_query": 85,
+      "play_audiobook": 85,
+      "play_game": 85,
+      "play_music": 85,
+      "play_radio": 85,
+      "qa_currency": 85,
+      "qa_definition": 85,
+      "qa_factoid": 85,
+      "qa_stock": 85,
+      "recommendation_locations": 85,
+      "recommendation_movies": 85,
+      "social_query": 85,
+      "takeaway_order": 85,
+      "takeaway_query": 85,
+      "transport_query": 85,
+      "transport_taxi": 85,
+      "audio_volume_other": 82,
+      "weather_query": 81,
+      "transport_ticket": 80,
+      "transport_traffic": 80,
+      "music_dislikeness": 69
+     }
+    },
+    "dev": {
+     "path": "poc/finetune/data/t3arm/T7_dev.jsonl",
+     "sha256": "99d0061404c8958cce1174de73112507479afe45ff0e9728f5c9b2bc919c4862",
+     "rows": 1000,
+     "decisions": 1000,
+     "questions_sha256": null,
+     "label_distribution": {
+      "calendar_query": 25,
+      "calendar_set": 25,
+      "datetime_query": 24,
+      "general_quirky": 24,
+      "calendar_remove": 22,
+      "cooking_recipe": 22,
+      "general_joke": 22,
+      "datetime_convert": 21,
+      "iot_hue_lightchange": 21,
+      "alarm_query": 20,
+      "alarm_remove": 20,
+      "alarm_set": 20,
+      "audio_volume_down": 20,
+      "audio_volume_mute": 20,
+      "audio_volume_up": 20,
+      "email_query": 20,
+      "email_querycontact": 20,
+      "email_sendemail": 20,
+      "iot_cleaning": 20,
+      "iot_coffee": 20,
+      "play_music": 20,
+      "play_radio": 20,
+      "lists_query": 18,
+      "weather_query": 18,
+      "news_query": 17,
+      "play_audiobook": 17,
+      "play_podcasts": 17,
+      "lists_createoradd": 16,
+      "lists_remove": 16,
+      "qa_factoid": 16,
+      "qa_maths": 16,
+      "social_post": 16,
+      "social_query": 16,
+      "transport_taxi": 16,
+      "email_addcontact": 15,
+      "iot_hue_lightdim": 15,
+      "iot_hue_lightoff": 15,
+      "iot_hue_lighton": 15,
+      "iot_hue_lightup": 15,
+      "iot_wemo_off": 15,
+      "iot_wemo_on": 15,
+      "music_likeness": 15,
+      "music_query": 15,
+      "music_settings": 15,
+      "play_game": 15,
+      "qa_currency": 15,
+      "qa_definition": 15,
+      "qa_stock": 15,
+      "recommendation_events": 15,
+      "recommendation_locations": 15,
+      "recommendation_movies": 15,
+      "takeaway_order": 15,
+      "takeaway_query": 15,
+      "transport_query": 15,
+      "transport_ticket": 15,
+      "transport_traffic": 15,
+      "music_dislikeness": 5
+     }
+    },
+    "calib": {
+     "path": "poc/finetune/data/t3arm/T7_calib.jsonl",
+     "sha256": "e5589c32dd5e4c7f1f53fb5d44ba6ff6cabdd8a5dd5e0bfd99605053bf263f8e",
+     "rows": 400,
+     "decisions": 400,
+     "questions_sha256": null,
+     "label_distribution": {
+      "calendar_query": 15,
+      "datetime_query": 12,
+      "alarm_query": 10,
+      "alarm_remove": 10,
+      "alarm_set": 10,
+      "audio_volume_down": 10,
+      "audio_volume_mute": 10,
+      "audio_volume_up": 10,
+      "calendar_remove": 10,
+      "calendar_set": 10,
+      "cooking_recipe": 10,
+      "datetime_convert": 10,
+      "email_addcontact": 10,
+      "email_query": 10,
+      "email_querycontact": 10,
+      "email_sendemail": 10,
+      "general_joke": 10,
+      "general_quirky": 10,
+      "iot_cleaning": 10,
+      "general_greet": 9,
+      "iot_hue_lightchange": 6,
+      "recommendation_events": 6,
+      "takeaway_query": 6,
+      "weather_query": 6,
+      "iot_coffee": 5,
+      "iot_hue_lightdim": 5,
+      "iot_hue_lightoff": 5,
+      "iot_hue_lighton": 5,
+      "iot_hue_lightup": 5,
+      "iot_wemo_off": 5,
+      "iot_wemo_on": 5,
+      "lists_createoradd": 5,
+      "lists_query": 5,
+      "lists_remove": 5,
+      "music_dislikeness": 5,
+      "music_likeness": 5,
+      "music_query": 5,
+      "music_settings": 5,
+      "news_query": 5,
+      "play_audiobook": 5,
+      "play_game": 5,
+      "play_music": 5,
+      "play_podcasts": 5,
+      "play_radio": 5,
+      "qa_currency": 5,
+      "qa_definition": 5,
+      "qa_factoid": 5,
+      "qa_maths": 5,
+      "qa_stock": 5,
+      "recommendation_locations": 5,
+      "recommendation_movies": 5,
+      "social_post": 5,
+      "social_query": 5,
+      "takeaway_order": 5,
+      "transport_query": 5,
+      "transport_taxi": 5,
+      "transport_ticket": 5,
+      "transport_traffic": 5
+     }
+    }
+   },
+   "sampling": {
+    "en": {
+     "train_split": "train",
+     "pool": {
+      "source_rows": 11514,
+      "pool_rows": 11468,
+      "dropped": {
+       "duplicate": 46
+      },
+      "dropped_label_not_in_eval_set": 4
+     },
+     "eval_overlap_removed": {
+      "train_pool": {
+       "exact": 1,
+       "normalized_only": 0
+      },
+      "holdout_pool": {
+       "exact": 0,
+       "normalized_only": 0
+      }
+     },
+     "holdout_split": "validation",
+     "holdout_pool": {
+      "source_rows": 2033,
+      "pool_rows": 2031,
+      "dropped": {
+       "duplicate": 2
+      }
+     },
+     "train_pool_removed_as_dev_calib_twin": 3,
+     "sample": {
+      "calib": {
+       "per_label": {
+        "alarm_query": 2,
+        "alarm_remove": 2,
+        "alarm_set": 2,
+        "audio_volume_down": 2,
+        "audio_volume_mute": 2,
+        "audio_volume_other": 0,
+        "audio_volume_up": 2,
+        "calendar_query": 2,
+        "calendar_remove": 2,
+        "calendar_set": 2,
+        "cooking_recipe": 2,
+        "datetime_convert": 2,
+        "datetime_query": 2,
+        "email_addcontact": 2,
+        "email_query": 2,
+        "email_querycontact": 2,
+        "email_sendemail": 2,
+        "general_greet": 2,
+        "general_joke": 2,
+        "general_quirky": 2,
+        "iot_cleaning": 2,
+        "iot_coffee": 1,
+        "iot_hue_lightchange": 1,
+        "iot_hue_lightdim": 1,
+        "iot_hue_lightoff": 1,
+        "iot_hue_lighton": 1,
+        "iot_hue_lightup": 1,
+        "iot_wemo_off": 1,
+        "iot_wemo_on": 1,
+        "lists_createoradd": 1,
+        "lists_query": 1,
+        "lists_remove": 1,
+        "music_dislikeness": 1,
+        "music_likeness": 1,
+        "music_query": 1,
+        "music_settings": 1,
+        "news_query": 1,
+        "play_audiobook": 1,
+        "play_game": 1,
+        "play_music": 1,
+        "play_podcasts": 1,
+        "play_radio": 1,
+        "qa_currency": 1,
+        "qa_definition": 1,
+        "qa_factoid": 1,
+        "qa_maths": 1,
+        "qa_stock": 1,
+        "recommendation_events": 1,
+        "recommendation_locations": 1,
+        "recommendation_movies": 1,
+        "social_post": 1,
+        "social_query": 1,
+        "takeaway_order": 1,
+        "takeaway_query": 1,
+        "transport_query": 1,
+        "transport_taxi": 1,
+        "transport_ticket": 1,
+        "transport_traffic": 1,
+        "weather_query": 1
+       },
+       "top_up": 2
+      },
+      "dev": {
+       "per_label": {
+        "alarm_query": 4,
+        "alarm_remove": 4,
+        "alarm_set": 4,
+        "audio_volume_down": 4,
+        "audio_volume_mute": 4,
+        "audio_volume_other": 0,
+        "audio_volume_up": 4,
+        "calendar_query": 4,
+        "calendar_remove": 4,
+        "calendar_set": 4,
+        "cooking_recipe": 4,
+        "datetime_convert": 4,
+        "datetime_query": 4,
+        "email_addcontact": 3,
+        "email_query": 4,
+        "email_querycontact": 4,
+        "email_sendemail": 4,
+        "general_greet": 0,
+        "general_joke": 4,
+        "general_quirky": 4,
+        "iot_cleaning": 4,
+        "iot_coffee": 4,
+        "iot_hue_lightchange": 4,
+        "iot_hue_lightdim": 3,
+        "iot_hue_lightoff": 3,
+        "iot_hue_lighton": 3,
+        "iot_hue_lightup": 3,
+        "iot_wemo_off": 3,
+        "iot_wemo_on": 3,
+        "lists_createoradd": 3,
+        "lists_query": 3,
+        "lists_remove": 3,
+        "music_dislikeness": 1,
+        "music_likeness": 3,
+        "music_query": 3,
+        "music_settings": 3,
+        "news_query": 3,
+        "play_audiobook": 3,
+        "play_game": 3,
+        "play_music": 3,
+        "play_podcasts": 3,
+        "play_radio": 3,
+        "qa_currency": 3,
+        "qa_definition": 3,
+        "qa_factoid": 3,
+        "qa_maths": 3,
+        "qa_stock": 3,
+        "recommendation_events": 3,
+        "recommendation_locations": 3,
+        "recommendation_movies": 3,
+        "social_post": 3,
+        "social_query": 3,
+        "takeaway_order": 3,
+        "takeaway_query": 3,
+        "transport_query": 3,
+        "transport_taxi": 3,
+        "transport_ticket": 3,
+        "transport_traffic": 3,
+        "weather_query": 3
+       },
+       "top_up": 11
+      },
+      "train": {
+       "per_label": {
+        "alarm_query": 17,
+        "alarm_remove": 17,
+        "alarm_set": 17,
+        "audio_volume_down": 17,
+        "audio_volume_mute": 17,
+        "audio_volume_other": 17,
+        "audio_volume_up": 17,
+        "calendar_query": 17,
+        "calendar_remove": 17,
+        "calendar_set": 17,
+        "cooking_recipe": 17,
+        "datetime_convert": 17,
+        "datetime_query": 17,
+        "email_addcontact": 17,
+        "email_query": 17,
+        "email_querycontact": 17,
+        "email_sendemail": 17,
+        "general_greet": 17,
+        "general_joke": 17,
+        "general_quirky": 17,
+        "iot_cleaning": 17,
+        "iot_coffee": 17,
+        "iot_hue_lightchange": 17,
+        "iot_hue_lightdim": 17,
+        "iot_hue_lightoff": 17,
+        "iot_hue_lighton": 17,
+        "iot_hue_lightup": 17,
+        "iot_wemo_off": 17,
+        "iot_wemo_on": 17,
+        "lists_createoradd": 17,
+        "lists_query": 17,
+        "lists_remove": 17,
+        "music_dislikeness": 14,
+        "music_likeness": 17,
+        "music_query": 17,
+        "music_settings": 17,
+        "news_query": 17,
+        "play_audiobook": 17,
+        "play_game": 17,
+        "play_music": 17,
+        "play_podcasts": 17,
+        "play_radio": 17,
+        "qa_currency": 17,
+        "qa_definition": 17,
+        "qa_factoid": 17,
+        "qa_maths": 17,
+        "qa_stock": 17,
+        "recommendation_events": 17,
+        "recommendation_locations": 17,
+        "recommendation_movies": 17,
+        "social_post": 17,
+        "social_query": 17,
+        "takeaway_order": 17,
+        "takeaway_query": 17,
+        "transport_query": 17,
+        "transport_taxi": 17,
+        "transport_ticket": 16,
+        "transport_traffic": 16,
+        "weather_query": 16
+       },
+       "top_up": 3
+      }
+     }
+    },
+    "de": {
+     "train_split": "train",
+     "pool": {
+      "source_rows": 11514,
+      "pool_rows": 11267,
+      "dropped": {
+       "duplicate": 247
+      },
+      "dropped_label_not_in_eval_set": 4
+     },
+     "eval_overlap_removed": {
+      "train_pool": {
+       "exact": 3,
+       "normalized_only": 0
+      },
+      "holdout_pool": {
+       "exact": 0,
+       "normalized_only": 0
+      }
+     },
+     "holdout_split": "validation",
+     "holdout_pool": {
+      "source_rows": 2033,
+      "pool_rows": 2022,
+      "dropped": {
+       "duplicate": 11
+      }
+     },
+     "train_pool_removed_as_dev_calib_twin": 15,
+     "sample": {
+      "calib": {
+       "per_label": {
+        "alarm_query": 2,
+        "alarm_remove": 2,
+        "alarm_set": 2,
+        "audio_volume_down": 2,
+        "audio_volume_mute": 2,
+        "audio_volume_other": 0,
+        "audio_volume_up": 2,
+        "calendar_query": 2,
+        "calendar_remove": 2,
+        "calendar_set": 2,
+        "cooking_recipe": 2,
+        "datetime_convert": 2,
+        "datetime_query": 2,
+        "email_addcontact": 2,
+        "email_query": 2,
+        "email_querycontact": 2,
+        "email_sendemail": 2,
+        "general_greet": 2,
+        "general_joke": 2,
+        "general_quirky": 2,
+        "iot_cleaning": 2,
+        "iot_coffee": 1,
+        "iot_hue_lightchange": 1,
+        "iot_hue_lightdim": 1,
+        "iot_hue_lightoff": 1,
+        "iot_hue_lighton": 1,
+        "iot_hue_lightup": 1,
+        "iot_wemo_off": 1,
+        "iot_wemo_on": 1,
+        "lists_createoradd": 1,
+        "lists_query": 1,
+        "lists_remove": 1,
+        "music_dislikeness": 1,
+        "music_likeness": 1,
+        "music_query": 1,
+        "music_settings": 1,
+        "news_query": 1,
+        "play_audiobook": 1,
+        "play_game": 1,
+        "play_music": 1,
+        "play_podcasts": 1,
+        "play_radio": 1,
+        "qa_currency": 1,
+        "qa_definition": 1,
+        "qa_factoid": 1,
+        "qa_maths": 1,
+        "qa_stock": 1,
+        "recommendation_events": 1,
+        "recommendation_locations": 1,
+        "recommendation_movies": 1,
+        "social_post": 1,
+        "social_query": 1,
+        "takeaway_order": 1,
+        "takeaway_query": 1,
+        "transport_query": 1,
+        "transport_taxi": 1,
+        "transport_ticket": 1,
+        "transport_traffic": 1,
+        "weather_query": 1
+       },
+       "top_up": 2
+      },
+      "dev": {
+       "per_label": {
+        "alarm_query": 4,
+        "alarm_remove": 4,
+        "alarm_set": 4,
+        "audio_volume_down": 4,
+        "audio_volume_mute": 4,
+        "audio_volume_other": 0,
+        "audio_volume_up": 4,
+        "calendar_query": 4,
+        "calendar_remove": 4,
+        "calendar_set": 4,
+        "cooking_recipe": 4,
+        "datetime_convert": 4,
+        "datetime_query": 4,
+        "email_addcontact": 3,
+        "email_query": 4,
+        "email_querycontact": 4,
+        "email_sendemail": 4,
+        "general_greet": 0,
+        "general_joke": 4,
+        "general_quirky": 4,
+        "iot_cleaning": 4,
+        "iot_coffee": 4,
+        "iot_hue_lightchange": 4,
+        "iot_hue_lightdim": 3,
+        "iot_hue_lightoff": 3,
+        "iot_hue_lighton": 3,
+        "iot_hue_lightup": 3,
+        "iot_wemo_off": 3,
+        "iot_wemo_on": 3,
+        "lists_createoradd": 3,
+        "lists_query": 3,
+        "lists_remove": 3,
+        "music_dislikeness": 1,
+        "music_likeness": 3,
+        "music_query": 3,
+        "music_settings": 3,
+        "news_query": 3,
+        "play_audiobook": 3,
+        "play_game": 3,
+        "play_music": 3,
+        "play_podcasts": 3,
+        "play_radio": 3,
+        "qa_currency": 3,
+        "qa_definition": 3,
+        "qa_factoid": 3,
+        "qa_maths": 3,
+        "qa_stock": 3,
+        "recommendation_events": 3,
+        "recommendation_locations": 3,
+        "recommendation_movies": 3,
+        "social_post": 3,
+        "social_query": 3,
+        "takeaway_order": 3,
+        "takeaway_query": 3,
+        "transport_query": 3,
+        "transport_taxi": 3,
+        "transport_ticket": 3,
+        "transport_traffic": 3,
+        "weather_query": 3
+       },
+       "top_up": 11
+      },
+      "train": {
+       "per_label": {
+        "alarm_query": 17,
+        "alarm_remove": 17,
+        "alarm_set": 17,
+        "audio_volume_down": 17,
+        "audio_volume_mute": 17,
+        "audio_volume_other": 17,
+        "audio_volume_up": 17,
+        "calendar_query": 17,
+        "calendar_remove": 17,
+        "calendar_set": 17,
+        "cooking_recipe": 17,
+        "datetime_convert": 17,
+        "datetime_query": 17,
+        "email_addcontact": 17,
+        "email_query": 17,
+        "email_querycontact": 17,
+        "email_sendemail": 17,
+        "general_greet": 17,
+        "general_joke": 17,
+        "general_quirky": 17,
+        "iot_cleaning": 17,
+        "iot_coffee": 17,
+        "iot_hue_lightchange": 17,
+        "iot_hue_lightdim": 17,
+        "iot_hue_lightoff": 17,
+        "iot_hue_lighton": 17,
+        "iot_hue_lightup": 17,
+        "iot_wemo_off": 17,
+        "iot_wemo_on": 17,
+        "lists_createoradd": 17,
+        "lists_query": 17,
+        "lists_remove": 17,
+        "music_dislikeness": 14,
+        "music_likeness": 17,
+        "music_query": 17,
+        "music_settings": 17,
+        "news_query": 17,
+        "play_audiobook": 17,
+        "play_game": 17,
+        "play_music": 17,
+        "play_podcasts": 17,
+        "play_radio": 17,
+        "qa_currency": 17,
+        "qa_definition": 17,
+        "qa_factoid": 17,
+        "qa_maths": 17,
+        "qa_stock": 17,
+        "recommendation_events": 17,
+        "recommendation_locations": 17,
+        "recommendation_movies": 17,
+        "social_post": 17,
+        "social_query": 17,
+        "takeaway_order": 17,
+        "takeaway_query": 17,
+        "transport_query": 17,
+        "transport_taxi": 17,
+        "transport_ticket": 16,
+        "transport_traffic": 16,
+        "weather_query": 16
+       },
+       "top_up": 3
+      }
+     }
+    },
+    "ja": {
+     "train_split": "train",
+     "pool": {
+      "source_rows": 11514,
+      "pool_rows": 11019,
+      "dropped": {
+       "duplicate": 489,
+       "length": 6
+      },
+      "dropped_label_not_in_eval_set": 4
+     },
+     "eval_overlap_removed": {
+      "train_pool": {
+       "exact": 6,
+       "normalized_only": 0
+      },
+      "holdout_pool": {
+       "exact": 4,
+       "normalized_only": 0
+      }
+     },
+     "holdout_split": "validation",
+     "holdout_pool": {
+      "source_rows": 2033,
+      "pool_rows": 2013,
+      "dropped": {
+       "duplicate": 18,
+       "length": 2
+      }
+     },
+     "train_pool_removed_as_dev_calib_twin": 32,
+     "sample": {
+      "calib": {
+       "per_label": {
+        "alarm_query": 2,
+        "alarm_remove": 2,
+        "alarm_set": 2,
+        "audio_volume_down": 2,
+        "audio_volume_mute": 2,
+        "audio_volume_other": 0,
+        "audio_volume_up": 2,
+        "calendar_query": 2,
+        "calendar_remove": 2,
+        "calendar_set": 2,
+        "cooking_recipe": 2,
+        "datetime_convert": 2,
+        "datetime_query": 2,
+        "email_addcontact": 2,
+        "email_query": 2,
+        "email_querycontact": 2,
+        "email_sendemail": 2,
+        "general_greet": 2,
+        "general_joke": 2,
+        "general_quirky": 2,
+        "iot_cleaning": 2,
+        "iot_coffee": 1,
+        "iot_hue_lightchange": 1,
+        "iot_hue_lightdim": 1,
+        "iot_hue_lightoff": 1,
+        "iot_hue_lighton": 1,
+        "iot_hue_lightup": 1,
+        "iot_wemo_off": 1,
+        "iot_wemo_on": 1,
+        "lists_createoradd": 1,
+        "lists_query": 1,
+        "lists_remove": 1,
+        "music_dislikeness": 1,
+        "music_likeness": 1,
+        "music_query": 1,
+        "music_settings": 1,
+        "news_query": 1,
+        "play_audiobook": 1,
+        "play_game": 1,
+        "play_music": 1,
+        "play_podcasts": 1,
+        "play_radio": 1,
+        "qa_currency": 1,
+        "qa_definition": 1,
+        "qa_factoid": 1,
+        "qa_maths": 1,
+        "qa_stock": 1,
+        "recommendation_events": 1,
+        "recommendation_locations": 1,
+        "recommendation_movies": 1,
+        "social_post": 1,
+        "social_query": 1,
+        "takeaway_order": 1,
+        "takeaway_query": 1,
+        "transport_query": 1,
+        "transport_taxi": 1,
+        "transport_ticket": 1,
+        "transport_traffic": 1,
+        "weather_query": 1
+       },
+       "top_up": 2
+      },
+      "dev": {
+       "per_label": {
+        "alarm_query": 4,
+        "alarm_remove": 4,
+        "alarm_set": 4,
+        "audio_volume_down": 4,
+        "audio_volume_mute": 4,
+        "audio_volume_other": 0,
+        "audio_volume_up": 4,
+        "calendar_query": 4,
+        "calendar_remove": 4,
+        "calendar_set": 4,
+        "cooking_recipe": 4,
+        "datetime_convert": 4,
+        "datetime_query": 4,
+        "email_addcontact": 3,
+        "email_query": 4,
+        "email_querycontact": 4,
+        "email_sendemail": 4,
+        "general_greet": 0,
+        "general_joke": 4,
+        "general_quirky": 4,
+        "iot_cleaning": 4,
+        "iot_coffee": 4,
+        "iot_hue_lightchange": 4,
+        "iot_hue_lightdim": 3,
+        "iot_hue_lightoff": 3,
+        "iot_hue_lighton": 3,
+        "iot_hue_lightup": 3,
+        "iot_wemo_off": 3,
+        "iot_wemo_on": 3,
+        "lists_createoradd": 3,
+        "lists_query": 3,
+        "lists_remove": 3,
+        "music_dislikeness": 1,
+        "music_likeness": 3,
+        "music_query": 3,
+        "music_settings": 3,
+        "news_query": 3,
+        "play_audiobook": 3,
+        "play_game": 3,
+        "play_music": 3,
+        "play_podcasts": 3,
+        "play_radio": 3,
+        "qa_currency": 3,
+        "qa_definition": 3,
+        "qa_factoid": 3,
+        "qa_maths": 3,
+        "qa_stock": 3,
+        "recommendation_events": 3,
+        "recommendation_locations": 3,
+        "recommendation_movies": 3,
+        "social_post": 3,
+        "social_query": 3,
+        "takeaway_order": 3,
+        "takeaway_query": 3,
+        "transport_query": 3,
+        "transport_taxi": 3,
+        "transport_ticket": 3,
+        "transport_traffic": 3,
+        "weather_query": 3
+       },
+       "top_up": 11
+      },
+      "train": {
+       "per_label": {
+        "alarm_query": 17,
+        "alarm_remove": 17,
+        "alarm_set": 17,
+        "audio_volume_down": 17,
+        "audio_volume_mute": 17,
+        "audio_volume_other": 14,
+        "audio_volume_up": 17,
+        "calendar_query": 17,
+        "calendar_remove": 17,
+        "calendar_set": 17,
+        "cooking_recipe": 17,
+        "datetime_convert": 17,
+        "datetime_query": 17,
+        "email_addcontact": 17,
+        "email_query": 17,
+        "email_querycontact": 17,
+        "email_sendemail": 17,
+        "general_greet": 17,
+        "general_joke": 17,
+        "general_quirky": 17,
+        "iot_cleaning": 17,
+        "iot_coffee": 17,
+        "iot_hue_lightchange": 17,
+        "iot_hue_lightdim": 17,
+        "iot_hue_lightoff": 17,
+        "iot_hue_lighton": 17,
+        "iot_hue_lightup": 17,
+        "iot_wemo_off": 17,
+        "iot_wemo_on": 17,
+        "lists_createoradd": 17,
+        "lists_query": 17,
+        "lists_remove": 17,
+        "music_dislikeness": 14,
+        "music_likeness": 17,
+        "music_query": 17,
+        "music_settings": 17,
+        "news_query": 17,
+        "play_audiobook": 17,
+        "play_game": 17,
+        "play_music": 17,
+        "play_podcasts": 17,
+        "play_radio": 17,
+        "qa_currency": 17,
+        "qa_definition": 17,
+        "qa_factoid": 17,
+        "qa_maths": 17,
+        "qa_stock": 17,
+        "recommendation_events": 17,
+        "recommendation_locations": 17,
+        "recommendation_movies": 17,
+        "social_post": 17,
+        "social_query": 17,
+        "takeaway_order": 17,
+        "takeaway_query": 17,
+        "transport_query": 17,
+        "transport_taxi": 17,
+        "transport_ticket": 16,
+        "transport_traffic": 16,
+        "weather_query": 16
+       },
+       "top_up": 6
+      }
+     }
+    },
+    "zh-CN": {
+     "train_split": "train",
+     "pool": {
+      "source_rows": 11514,
+      "pool_rows": 11014,
+      "dropped": {
+       "duplicate": 492,
+       "length": 8
+      },
+      "dropped_label_not_in_eval_set": 4
+     },
+     "eval_overlap_removed": {
+      "train_pool": {
+       "exact": 4,
+       "normalized_only": 0
+      },
+      "holdout_pool": {
+       "exact": 2,
+       "normalized_only": 0
+      }
+     },
+     "holdout_split": "validation",
+     "holdout_pool": {
+      "source_rows": 2033,
+      "pool_rows": 2018,
+      "dropped": {
+       "duplicate": 15
+      }
+     },
+     "train_pool_removed_as_dev_calib_twin": 29,
+     "sample": {
+      "calib": {
+       "per_label": {
+        "alarm_query": 2,
+        "alarm_remove": 2,
+        "alarm_set": 2,
+        "audio_volume_down": 2,
+        "audio_volume_mute": 2,
+        "audio_volume_other": 0,
+        "audio_volume_up": 2,
+        "calendar_query": 2,
+        "calendar_remove": 2,
+        "calendar_set": 2,
+        "cooking_recipe": 2,
+        "datetime_convert": 2,
+        "datetime_query": 2,
+        "email_addcontact": 2,
+        "email_query": 2,
+        "email_querycontact": 2,
+        "email_sendemail": 2,
+        "general_greet": 2,
+        "general_joke": 2,
+        "general_quirky": 2,
+        "iot_cleaning": 2,
+        "iot_coffee": 1,
+        "iot_hue_lightchange": 1,
+        "iot_hue_lightdim": 1,
+        "iot_hue_lightoff": 1,
+        "iot_hue_lighton": 1,
+        "iot_hue_lightup": 1,
+        "iot_wemo_off": 1,
+        "iot_wemo_on": 1,
+        "lists_createoradd": 1,
+        "lists_query": 1,
+        "lists_remove": 1,
+        "music_dislikeness": 1,
+        "music_likeness": 1,
+        "music_query": 1,
+        "music_settings": 1,
+        "news_query": 1,
+        "play_audiobook": 1,
+        "play_game": 1,
+        "play_music": 1,
+        "play_podcasts": 1,
+        "play_radio": 1,
+        "qa_currency": 1,
+        "qa_definition": 1,
+        "qa_factoid": 1,
+        "qa_maths": 1,
+        "qa_stock": 1,
+        "recommendation_events": 1,
+        "recommendation_locations": 1,
+        "recommendation_movies": 1,
+        "social_post": 1,
+        "social_query": 1,
+        "takeaway_order": 1,
+        "takeaway_query": 1,
+        "transport_query": 1,
+        "transport_taxi": 1,
+        "transport_ticket": 1,
+        "transport_traffic": 1,
+        "weather_query": 1
+       },
+       "top_up": 2
+      },
+      "dev": {
+       "per_label": {
+        "alarm_query": 4,
+        "alarm_remove": 4,
+        "alarm_set": 4,
+        "audio_volume_down": 4,
+        "audio_volume_mute": 4,
+        "audio_volume_other": 0,
+        "audio_volume_up": 4,
+        "calendar_query": 4,
+        "calendar_remove": 4,
+        "calendar_set": 4,
+        "cooking_recipe": 4,
+        "datetime_convert": 4,
+        "datetime_query": 4,
+        "email_addcontact": 3,
+        "email_query": 4,
+        "email_querycontact": 4,
+        "email_sendemail": 4,
+        "general_greet": 0,
+        "general_joke": 4,
+        "general_quirky": 4,
+        "iot_cleaning": 4,
+        "iot_coffee": 4,
+        "iot_hue_lightchange": 4,
+        "iot_hue_lightdim": 3,
+        "iot_hue_lightoff": 3,
+        "iot_hue_lighton": 3,
+        "iot_hue_lightup": 3,
+        "iot_wemo_off": 3,
+        "iot_wemo_on": 3,
+        "lists_createoradd": 3,
+        "lists_query": 3,
+        "lists_remove": 3,
+        "music_dislikeness": 1,
+        "music_likeness": 3,
+        "music_query": 3,
+        "music_settings": 3,
+        "news_query": 3,
+        "play_audiobook": 3,
+        "play_game": 3,
+        "play_music": 3,
+        "play_podcasts": 3,
+        "play_radio": 3,
+        "qa_currency": 3,
+        "qa_definition": 3,
+        "qa_factoid": 3,
+        "qa_maths": 3,
+        "qa_stock": 3,
+        "recommendation_events": 3,
+        "recommendation_locations": 3,
+        "recommendation_movies": 3,
+        "social_post": 3,
+        "social_query": 3,
+        "takeaway_order": 3,
+        "takeaway_query": 3,
+        "transport_query": 3,
+        "transport_taxi": 3,
+        "transport_ticket": 3,
+        "transport_traffic": 3,
+        "weather_query": 3
+       },
+       "top_up": 11
+      },
+      "train": {
+       "per_label": {
+        "alarm_query": 17,
+        "alarm_remove": 17,
+        "alarm_set": 17,
+        "audio_volume_down": 17,
+        "audio_volume_mute": 17,
+        "audio_volume_other": 17,
+        "audio_volume_up": 17,
+        "calendar_query": 17,
+        "calendar_remove": 17,
+        "calendar_set": 17,
+        "cooking_recipe": 17,
+        "datetime_convert": 17,
+        "datetime_query": 17,
+        "email_addcontact": 17,
+        "email_query": 17,
+        "email_querycontact": 17,
+        "email_sendemail": 17,
+        "general_greet": 17,
+        "general_joke": 17,
+        "general_quirky": 17,
+        "iot_cleaning": 17,
+        "iot_coffee": 17,
+        "iot_hue_lightchange": 17,
+        "iot_hue_lightdim": 17,
+        "iot_hue_lightoff": 17,
+        "iot_hue_lighton": 17,
+        "iot_hue_lightup": 17,
+        "iot_wemo_off": 17,
+        "iot_wemo_on": 17,
+        "lists_createoradd": 17,
+        "lists_query": 17,
+        "lists_remove": 17,
+        "music_dislikeness": 13,
+        "music_likeness": 17,
+        "music_query": 17,
+        "music_settings": 17,
+        "news_query": 17,
+        "play_audiobook": 17,
+        "play_game": 17,
+        "play_music": 17,
+        "play_podcasts": 17,
+        "play_radio": 17,
+        "qa_currency": 17,
+        "qa_definition": 17,
+        "qa_factoid": 17,
+        "qa_maths": 17,
+        "qa_stock": 17,
+        "recommendation_events": 17,
+        "recommendation_locations": 17,
+        "recommendation_movies": 17,
+        "social_post": 17,
+        "social_query": 17,
+        "takeaway_order": 17,
+        "takeaway_query": 17,
+        "transport_query": 17,
+        "transport_taxi": 17,
+        "transport_ticket": 16,
+        "transport_traffic": 16,
+        "weather_query": 16
+       },
+       "top_up": 4
+      }
+     }
+    },
+    "ko": {
+     "train_split": "train",
+     "pool": {
+      "source_rows": 11514,
+      "pool_rows": 11094,
+      "dropped": {
+       "duplicate": 414,
+       "length": 6
+      },
+      "dropped_label_not_in_eval_set": 4
+     },
+     "eval_overlap_removed": {
+      "train_pool": {
+       "exact": 4,
+       "normalized_only": 0
+      },
+      "holdout_pool": {
+       "exact": 0,
+       "normalized_only": 0
+      }
+     },
+     "holdout_split": "validation",
+     "holdout_pool": {
+      "source_rows": 2033,
+      "pool_rows": 2012,
+      "dropped": {
+       "duplicate": 19,
+       "length": 2
+      }
+     },
+     "train_pool_removed_as_dev_calib_twin": 20,
+     "sample": {
+      "calib": {
+       "per_label": {
+        "alarm_query": 2,
+        "alarm_remove": 2,
+        "alarm_set": 2,
+        "audio_volume_down": 2,
+        "audio_volume_mute": 2,
+        "audio_volume_other": 0,
+        "audio_volume_up": 2,
+        "calendar_query": 2,
+        "calendar_remove": 2,
+        "calendar_set": 2,
+        "cooking_recipe": 2,
+        "datetime_convert": 2,
+        "datetime_query": 2,
+        "email_addcontact": 2,
+        "email_query": 2,
+        "email_querycontact": 2,
+        "email_sendemail": 2,
+        "general_greet": 1,
+        "general_joke": 2,
+        "general_quirky": 2,
+        "iot_cleaning": 2,
+        "iot_coffee": 1,
+        "iot_hue_lightchange": 1,
+        "iot_hue_lightdim": 1,
+        "iot_hue_lightoff": 1,
+        "iot_hue_lighton": 1,
+        "iot_hue_lightup": 1,
+        "iot_wemo_off": 1,
+        "iot_wemo_on": 1,
+        "lists_createoradd": 1,
+        "lists_query": 1,
+        "lists_remove": 1,
+        "music_dislikeness": 1,
+        "music_likeness": 1,
+        "music_query": 1,
+        "music_settings": 1,
+        "news_query": 1,
+        "play_audiobook": 1,
+        "play_game": 1,
+        "play_music": 1,
+        "play_podcasts": 1,
+        "play_radio": 1,
+        "qa_currency": 1,
+        "qa_definition": 1,
+        "qa_factoid": 1,
+        "qa_maths": 1,
+        "qa_stock": 1,
+        "recommendation_events": 1,
+        "recommendation_locations": 1,
+        "recommendation_movies": 1,
+        "social_post": 1,
+        "social_query": 1,
+        "takeaway_order": 1,
+        "takeaway_query": 1,
+        "transport_query": 1,
+        "transport_taxi": 1,
+        "transport_ticket": 1,
+        "transport_traffic": 1,
+        "weather_query": 1
+       },
+       "top_up": 3
+      },
+      "dev": {
+       "per_label": {
+        "alarm_query": 4,
+        "alarm_remove": 4,
+        "alarm_set": 4,
+        "audio_volume_down": 4,
+        "audio_volume_mute": 4,
+        "audio_volume_other": 0,
+        "audio_volume_up": 4,
+        "calendar_query": 4,
+        "calendar_remove": 4,
+        "calendar_set": 4,
+        "cooking_recipe": 4,
+        "datetime_convert": 4,
+        "datetime_query": 4,
+        "email_addcontact": 3,
+        "email_query": 4,
+        "email_querycontact": 4,
+        "email_sendemail": 4,
+        "general_greet": 0,
+        "general_joke": 4,
+        "general_quirky": 4,
+        "iot_cleaning": 4,
+        "iot_coffee": 4,
+        "iot_hue_lightchange": 4,
+        "iot_hue_lightdim": 3,
+        "iot_hue_lightoff": 3,
+        "iot_hue_lighton": 3,
+        "iot_hue_lightup": 3,
+        "iot_wemo_off": 3,
+        "iot_wemo_on": 3,
+        "lists_createoradd": 3,
+        "lists_query": 3,
+        "lists_remove": 3,
+        "music_dislikeness": 1,
+        "music_likeness": 3,
+        "music_query": 3,
+        "music_settings": 3,
+        "news_query": 3,
+        "play_audiobook": 3,
+        "play_game": 3,
+        "play_music": 3,
+        "play_podcasts": 3,
+        "play_radio": 3,
+        "qa_currency": 3,
+        "qa_definition": 3,
+        "qa_factoid": 3,
+        "qa_maths": 3,
+        "qa_stock": 3,
+        "recommendation_events": 3,
+        "recommendation_locations": 3,
+        "recommendation_movies": 3,
+        "social_post": 3,
+        "social_query": 3,
+        "takeaway_order": 3,
+        "takeaway_query": 3,
+        "transport_query": 3,
+        "transport_taxi": 3,
+        "transport_ticket": 3,
+        "transport_traffic": 3,
+        "weather_query": 3
+       },
+       "top_up": 11
+      },
+      "train": {
+       "per_label": {
+        "alarm_query": 17,
+        "alarm_remove": 17,
+        "alarm_set": 17,
+        "audio_volume_down": 17,
+        "audio_volume_mute": 17,
+        "audio_volume_other": 17,
+        "audio_volume_up": 17,
+        "calendar_query": 17,
+        "calendar_remove": 17,
+        "calendar_set": 17,
+        "cooking_recipe": 17,
+        "datetime_convert": 17,
+        "datetime_query": 17,
+        "email_addcontact": 17,
+        "email_query": 17,
+        "email_querycontact": 17,
+        "email_sendemail": 17,
+        "general_greet": 17,
+        "general_joke": 17,
+        "general_quirky": 17,
+        "iot_cleaning": 17,
+        "iot_coffee": 17,
+        "iot_hue_lightchange": 17,
+        "iot_hue_lightdim": 17,
+        "iot_hue_lightoff": 17,
+        "iot_hue_lighton": 17,
+        "iot_hue_lightup": 17,
+        "iot_wemo_off": 17,
+        "iot_wemo_on": 17,
+        "lists_createoradd": 17,
+        "lists_query": 17,
+        "lists_remove": 17,
+        "music_dislikeness": 14,
+        "music_likeness": 17,
+        "music_query": 17,
+        "music_settings": 17,
+        "news_query": 17,
+        "play_audiobook": 17,
+        "play_game": 17,
+        "play_music": 17,
+        "play_podcasts": 17,
+        "play_radio": 17,
+        "qa_currency": 17,
+        "qa_definition": 17,
+        "qa_factoid": 17,
+        "qa_maths": 17,
+        "qa_stock": 17,
+        "recommendation_events": 17,
+        "recommendation_locations": 17,
+        "recommendation_movies": 17,
+        "social_post": 17,
+        "social_query": 17,
+        "takeaway_order": 17,
+        "takeaway_query": 17,
+        "transport_query": 17,
+        "transport_taxi": 17,
+        "transport_ticket": 16,
+        "transport_traffic": 16,
+        "weather_query": 16
+       },
+       "top_up": 3
+      }
+     }
+    }
+   },
+   "overlap_removed_total": {
+    "exact": 24,
+    "normalized_only": 0
+   }
+  },
+  "T8": {
+   "task": "T8",
+   "base": "english",
+   "jev_rows_reproduced": 40,
+   "split_disjoint": {
+    "train&dev": 0,
+    "train&calib": 0,
+    "dev&calib": 0
+   },
+   "files": {
+    "train": {
+     "path": "poc/finetune/data/t3arm/T8_train.jsonl",
+     "sha256": "ad24fda98abb15cc1977a8de15e01f8dfefcfc261bc91f3191f0b5b3fad53416",
+     "rows": 444,
+     "decisions": 444,
+     "questions_sha256": "ba5538b67233d0c619a115c56b97a2fdc41573b8ef92f72c5089ef14b972f7b4",
+     "label_distribution": {
+      "False": 293,
+      "True": 151
+     }
+    },
+    "dev": {
+     "path": "poc/finetune/data/t3arm/T8_dev.jsonl",
+     "sha256": "7fb38171bbaf7a2fadba83ad1c83ad2516db51a5a763eec97951a4f72678d8c0",
+     "rows": 60,
+     "decisions": 60,
+     "questions_sha256": "ba5538b67233d0c619a115c56b97a2fdc41573b8ef92f72c5089ef14b972f7b4",
+     "label_distribution": {
+      "False": 30,
+      "True": 30
+     }
+    },
+    "calib": {
+     "path": "poc/finetune/data/t3arm/T8_calib.jsonl",
+     "sha256": "f03eece864473668e9255cbc9c2e6b15c9813d78a22c0f8423779a3f82522609",
+     "rows": 40,
+     "decisions": 40,
+     "questions_sha256": "ba5538b67233d0c619a115c56b97a2fdc41573b8ef92f72c5089ef14b972f7b4",
+     "label_distribution": {
+      "False": 20,
+      "True": 20
+     }
+    }
+   },
+   "sampling": {
+    "all": {
+     "train_split": "train",
+     "pool": {
+      "source_rows": 546,
+      "pool_rows": 544,
+      "dropped": {
+       "length": 2
+      }
+     },
+     "eval_overlap_removed": {
+      "train_pool": {
+       "exact": 0,
+       "normalized_only": 0
+      }
+     },
+     "train_pool_removed_as_dev_calib_twin": 0,
+     "sample": {
+      "calib": {
+       "per_label": {
+        "true": 20,
+        "false": 20
+       },
+       "top_up": 0
+      },
+      "dev": {
+       "per_label": {
+        "true": 30,
+        "false": 30
+       },
+       "top_up": 0
+      },
+      "train": {
+       "all": 444
+      }
+     }
+    }
+   },
+   "overlap_removed_total": {
+    "exact": 0,
+    "normalized_only": 0
+   }
+  },
+  "T9": {
+   "task": "T9",
+   "base": "english",
+   "jev_rows_reproduced": 40,
+   "split_disjoint": {
+    "train&dev": 0,
+    "train&calib": 0,
+    "dev&calib": 0
+   },
+   "files": {
+    "train": {
+     "path": "poc/finetune/data/t3arm/T9_train.jsonl",
+     "sha256": "738176915b40568ce8489b793c9862ff4ea12a82aacfe8caab34328002064aeb",
+     "rows": 5000,
+     "decisions": 5000,
+     "questions_sha256": "efe610280673d5f90948552b0428277c6a9ab25434e447e62eedcaa1610fb318",
+     "label_distribution": {
+      "False": 2500,
+      "True": 2500
+     }
+    },
+    "dev": {
+     "path": "poc/finetune/data/t3arm/T9_dev.jsonl",
+     "sha256": "56818b4c8566b12e65ba84ae5b5cf326e6568ff58969ce402bb36b636845db15",
+     "rows": 1000,
+     "decisions": 1000,
+     "questions_sha256": "efe610280673d5f90948552b0428277c6a9ab25434e447e62eedcaa1610fb318",
+     "label_distribution": {
+      "False": 500,
+      "True": 500
+     }
+    },
+    "calib": {
+     "path": "poc/finetune/data/t3arm/T9_calib.jsonl",
+     "sha256": "a702af7d9ef8de9a98775db984cb029fd721fba62ea169c88a23e40fe8893003",
+     "rows": 400,
+     "decisions": 400,
+     "questions_sha256": "efe610280673d5f90948552b0428277c6a9ab25434e447e62eedcaa1610fb318",
+     "label_distribution": {
+      "False": 200,
+      "True": 200
+     }
+    }
+   },
+   "sampling": {
+    "all": {
+     "train_split": "train",
+     "pool": {
+      "source_rows": 31716,
+      "pool_rows": 23291,
+      "dropped": {
+       "duplicate": 2280,
+       "length": 6145
+      }
+     },
+     "eval_overlap_removed": {
+      "train_pool": {
+       "exact": 0,
+       "normalized_only": 0
+      }
+     },
+     "train_pool_removed_as_dev_calib_twin": 0,
+     "sample": {
+      "calib": {
+       "per_label": {
+        "true": 200,
+        "false": 200
+       },
+       "top_up": 0
+      },
+      "dev": {
+       "per_label": {
+        "true": 500,
+        "false": 500
+       },
+       "top_up": 0
+      },
+      "train": {
+       "per_label": {
+        "true": 2500,
+        "false": 2500
+       },
+       "top_up": 0
+      }
+     }
+    }
+   },
+   "overlap_removed_total": {
+    "exact": 0,
+    "normalized_only": 0
+   }
+  },
+  "T10": {
+   "task": "T10",
+   "base": "english",
+   "jev_rows_reproduced": 40,
+   "split_disjoint": {
+    "train&dev": 0,
+    "train&calib": 0,
+    "dev&calib": 0
+   },
+   "files": {
+    "train": {
+     "path": "poc/finetune/data/t3arm/T10_train.jsonl",
+     "sha256": "df91d3181cff05dec585d8b878fe477573d8e9ae4bae967523bb94cabca97f12",
+     "rows": 5000,
+     "decisions": 5000,
+     "questions_sha256": "8fadd3f6b2a4436087c97e0538a2d2f3a37e82051f090d83b19ee11868952a60",
+     "label_distribution": {
+      "Technical Support": 728,
+      "Product Support": 625,
+      "Customer Service": 597,
+      "IT Support": 575,
+      "Billing and Payments": 559,
+      "Returns and Exchanges": 509,
+      "Service Outages and Maintenance": 503,
+      "Sales and Pre-Sales": 428,
+      "Human Resources": 274,
+      "General Inquiry": 202
+     }
+    },
+    "dev": {
+     "path": "poc/finetune/data/t3arm/T10_dev.jsonl",
+     "sha256": "faeebed5d58aa7aaa23778257f08ac64f3acdff4e007ca63e85bc5dfd3306e0d",
+     "rows": 1000,
+     "decisions": 1000,
+     "questions_sha256": "8fadd3f6b2a4436087c97e0538a2d2f3a37e82051f090d83b19ee11868952a60",
+     "label_distribution": {
+      "Technical Support": 262,
+      "Product Support": 185,
+      "Customer Service": 181,
+      "IT Support": 131,
+      "Billing and Payments": 121,
+      "Returns and Exchanges": 68,
+      "Service Outages and Maintenance": 34,
+      "Sales and Pre-Sales": 18
+     }
+    },
+    "calib": {
+     "path": "poc/finetune/data/t3arm/T10_calib.jsonl",
+     "sha256": "572269675ed1850f619e109d37e5bb25a81eeb788128ca3b3af145206d191451",
+     "rows": 400,
+     "decisions": 400,
+     "questions_sha256": "8fadd3f6b2a4436087c97e0538a2d2f3a37e82051f090d83b19ee11868952a60",
+     "label_distribution": {
+      "Technical Support": 49,
+      "Customer Service": 44,
+      "Product Support": 43,
+      "Billing and Payments": 41,
+      "IT Support": 41,
+      "Returns and Exchanges": 41,
+      "Sales and Pre-Sales": 40,
+      "Service Outages and Maintenance": 40,
+      "Human Resources": 36,
+      "General Inquiry": 25
+     }
+    }
+   },
+   "sampling": {
+    "all": {
+     "train_split": "train",
+     "pool": {
+      "source_rows": 19751,
+      "pool_rows": 14600,
+      "dropped": {
+       "duplicate": 2563,
+       "length": 2588
+      }
+     },
+     "eval_overlap_removed": {
+      "train_pool": {
+       "exact": 0,
+       "normalized_only": 0
+      },
+      "holdout_pool": {
+       "exact": 0,
+       "normalized_only": 0
+      }
+     },
+     "holdout_split": "dev",
+     "holdout_pool": {
+      "source_rows": 2815,
+      "pool_rows": 2103,
+      "dropped": {
+       "duplicate": 375,
+       "length": 337
+      }
+     },
+     "train_pool_removed_as_dev_calib_twin": 0,
+     "sample": {
+      "calib": {
+       "per_label": {
+        "Technical Support": 40,
+        "Product Support": 40,
+        "Customer Service": 40,
+        "IT Support": 40,
+        "Billing and Payments": 40,
+        "Returns and Exchanges": 40,
+        "Service Outages and Maintenance": 40,
+        "Sales and Pre-Sales": 40,
+        "Human Resources": 36,
+        "General Inquiry": 25
+       },
+       "top_up": 19
+      },
+      "dev": {
+       "per_label": {
+        "Technical Support": 100,
+        "Product Support": 100,
+        "Customer Service": 100,
+        "IT Support": 100,
+        "Billing and Payments": 100,
+        "Returns and Exchanges": 68,
+        "Service Outages and Maintenance": 34,
+        "Sales and Pre-Sales": 18,
+        "Human Resources": 0,
+        "General Inquiry": 0
+       },
+       "top_up": 380
+      },
+      "train": {
+       "per_label": {
+        "Technical Support": 500,
+        "Product Support": 500,
+        "Customer Service": 500,
+        "IT Support": 500,
+        "Billing and Payments": 500,
+        "Returns and Exchanges": 500,
+        "Service Outages and Maintenance": 500,
+        "Sales and Pre-Sales": 428,
+        "Human Resources": 274,
+        "General Inquiry": 202
+       },
+       "top_up": 596
+      }
+     }
+    }
+   },
+   "overlap_removed_total": {
+    "exact": 0,
+    "normalized_only": 0
+   }
+  }
+ },
+ "ext": {
+  "T1": {
+   "T1_typed_decisions_test400": {
+    "n": 400,
+    "decisions": 2000,
+    "train_overlap_normalized": 0
+   }
+  },
+  "T2": {
+   "T2_ag_news_ext500": {
+    "n": 500,
+    "source_rows": 7600,
+    "pool_rows": 7600,
+    "dropped": {},
+    "train_overlap_excluded": 8,
+    "train_overlap_kept_in_ext": null
+   }
+  },
+  "T3": {
+   "T3_emotion_ext500": {
+    "n": 500,
+    "source_rows": 2000,
+    "pool_rows": 2000,
+    "dropped": {},
+    "train_overlap_excluded": 11,
+    "train_overlap_kept_in_ext": null
+   }
+  },
+  "T4": {
+   "T4_banking77_10opt_ext500": {
+    "n": 500,
+    "source_rows": 3076,
+    "pool_rows": 3076,
+    "dropped": {},
+    "train_overlap_excluded": 1,
+    "train_overlap_kept_in_ext": null
+   }
+  },
+  "T5": {
+   "T5_boolq_ext500": {
+    "n": 500,
+    "source_rows": 3270,
+    "pool_rows": 3255,
+    "dropped": {
+     "length": 15
+    },
+    "train_overlap_excluded": 0,
+    "train_overlap_kept_in_ext": null
+   }
+  },
+  "T6": {
+   "T6_sst5_ext500": {
+    "n": 500,
+    "source_rows": 2210,
+    "pool_rows": 2210,
+    "dropped": {},
+    "train_overlap_excluded": 2,
+    "train_overlap_kept_in_ext": null
+   }
+  },
+  "T7": {
+   "T7_massive_intent_10opt_en_ext100": {
+    "n": 100,
+    "train_overlap_excluded_ids": 486,
+    "sample": {
+     "per_label": {
+      "alarm_query": 2,
+      "alarm_remove": 2,
+      "alarm_set": 2,
+      "audio_volume_down": 2,
+      "audio_volume_mute": 2,
+      "audio_volume_other": 2,
+      "audio_volume_up": 2,
+      "calendar_query": 2,
+      "calendar_remove": 2,
+      "calendar_set": 2,
+      "cooking_recipe": 2,
+      "datetime_convert": 2,
+      "datetime_query": 2,
+      "email_addcontact": 2,
+      "email_query": 2,
+      "email_querycontact": 2,
+      "email_sendemail": 2,
+      "general_greet": 1,
+      "general_joke": 2,
+      "general_quirky": 2,
+      "iot_cleaning": 2,
+      "iot_coffee": 2,
+      "iot_hue_lightchange": 2,
+      "iot_hue_lightdim": 2,
+      "iot_hue_lightoff": 2,
+      "iot_hue_lighton": 1,
+      "iot_hue_lightup": 2,
+      "iot_wemo_off": 2,
+      "iot_wemo_on": 2,
+      "lists_createoradd": 2,
+      "lists_query": 2,
+      "lists_remove": 2,
+      "music_dislikeness": 2,
+      "music_likeness": 2,
+      "music_query": 2,
+      "music_settings": 2,
+      "news_query": 2,
+      "play_audiobook": 2,
+      "play_game": 2,
+      "play_music": 2,
+      "play_podcasts": 2,
+      "play_radio": 1,
+      "qa_currency": 1,
+      "qa_definition": 1,
+      "qa_factoid": 1,
+      "qa_maths": 1,
+      "qa_stock": 1,
+      "recommendation_events": 1,
+      "recommendation_locations": 1,
+      "recommendation_movies": 1,
+      "social_post": 1,
+      "social_query": 1,
+      "takeaway_order": 1,
+      "takeaway_query": 1,
+      "transport_query": 1,
+      "transport_taxi": 1,
+      "transport_ticket": 1,
+      "transport_traffic": 1,
+      "weather_query": 1
+     },
+     "top_up": 2
+    }
+   },
+   "T7_massive_intent_10opt_de_ext100": {
+    "n": 100,
+    "train_overlap_excluded_ids": 486,
+    "sample": {
+     "per_label": {
+      "alarm_query": 2,
+      "alarm_remove": 2,
+      "alarm_set": 2,
+      "audio_volume_down": 2,
+      "audio_volume_mute": 2,
+      "audio_volume_other": 2,
+      "audio_volume_up": 2,
+      "calendar_query": 2,
+      "calendar_remove": 2,
+      "calendar_set": 2,
+      "cooking_recipe": 2,
+      "datetime_convert": 2,
+      "datetime_query": 2,
+      "email_addcontact": 2,
+      "email_query": 2,
+      "email_querycontact": 2,
+      "email_sendemail": 2,
+      "general_greet": 1,
+      "general_joke": 2,
+      "general_quirky": 2,
+      "iot_cleaning": 2,
+      "iot_coffee": 2,
+      "iot_hue_lightchange": 2,
+      "iot_hue_lightdim": 2,
+      "iot_hue_lightoff": 2,
+      "iot_hue_lighton": 1,
+      "iot_hue_lightup": 2,
+      "iot_wemo_off": 2,
+      "iot_wemo_on": 2,
+      "lists_createoradd": 2,
+      "lists_query": 2,
+      "lists_remove": 2,
+      "music_dislikeness": 2,
+      "music_likeness": 2,
+      "music_query": 2,
+      "music_settings": 2,
+      "news_query": 2,
+      "play_audiobook": 2,
+      "play_game": 2,
+      "play_music": 2,
+      "play_podcasts": 2,
+      "play_radio": 1,
+      "qa_currency": 1,
+      "qa_definition": 1,
+      "qa_factoid": 1,
+      "qa_maths": 1,
+      "qa_stock": 1,
+      "recommendation_events": 1,
+      "recommendation_locations": 1,
+      "recommendation_movies": 1,
+      "social_post": 1,
+      "social_query": 1,
+      "takeaway_order": 1,
+      "takeaway_query": 1,
+      "transport_query": 1,
+      "transport_taxi": 1,
+      "transport_ticket": 1,
+      "transport_traffic": 1,
+      "weather_query": 1
+     },
+     "top_up": 2
+    }
+   },
+   "T7_massive_intent_10opt_ja_ext100": {
+    "n": 100,
+    "train_overlap_excluded_ids": 486,
+    "sample": {
+     "per_label": {
+      "alarm_query": 2,
+      "alarm_remove": 2,
+      "alarm_set": 2,
+      "audio_volume_down": 2,
+      "audio_volume_mute": 2,
+      "audio_volume_other": 2,
+      "audio_volume_up": 2,
+      "calendar_query": 2,
+      "calendar_remove": 2,
+      "calendar_set": 2,
+      "cooking_recipe": 2,
+      "datetime_convert": 2,
+      "datetime_query": 2,
+      "email_addcontact": 2,
+      "email_query": 2,
+      "email_querycontact": 2,
+      "email_sendemail": 2,
+      "general_greet": 1,
+      "general_joke": 2,
+      "general_quirky": 2,
+      "iot_cleaning": 2,
+      "iot_coffee": 2,
+      "iot_hue_lightchange": 2,
+      "iot_hue_lightdim": 2,
+      "iot_hue_lightoff": 2,
+      "iot_hue_lighton": 1,
+      "iot_hue_lightup": 2,
+      "iot_wemo_off": 2,
+      "iot_wemo_on": 2,
+      "lists_createoradd": 2,
+      "lists_query": 2,
+      "lists_remove": 2,
+      "music_dislikeness": 2,
+      "music_likeness": 2,
+      "music_query": 2,
+      "music_settings": 2,
+      "news_query": 2,
+      "play_audiobook": 2,
+      "play_game": 2,
+      "play_music": 2,
+      "play_podcasts": 2,
+      "play_radio": 1,
+      "qa_currency": 1,
+      "qa_definition": 1,
+      "qa_factoid": 1,
+      "qa_maths": 1,
+      "qa_stock": 1,
+      "recommendation_events": 1,
+      "recommendation_locations": 1,
+      "recommendation_movies": 1,
+      "social_post": 1,
+      "social_query": 1,
+      "takeaway_order": 1,
+      "takeaway_query": 1,
+      "transport_query": 1,
+      "transport_taxi": 1,
+      "transport_ticket": 1,
+      "transport_traffic": 1,
+      "weather_query": 1
+     },
+     "top_up": 2
+    }
+   },
+   "T7_massive_intent_10opt_zh-CN_ext100": {
+    "n": 100,
+    "train_overlap_excluded_ids": 486,
+    "sample": {
+     "per_label": {
+      "alarm_query": 2,
+      "alarm_remove": 2,
+      "alarm_set": 2,
+      "audio_volume_down": 2,
+      "audio_volume_mute": 2,
+      "audio_volume_other": 2,
+      "audio_volume_up": 2,
+      "calendar_query": 2,
+      "calendar_remove": 2,
+      "calendar_set": 2,
+      "cooking_recipe": 2,
+      "datetime_convert": 2,
+      "datetime_query": 2,
+      "email_addcontact": 2,
+      "email_query": 2,
+      "email_querycontact": 2,
+      "email_sendemail": 2,
+      "general_greet": 1,
+      "general_joke": 2,
+      "general_quirky": 2,
+      "iot_cleaning": 2,
+      "iot_coffee": 2,
+      "iot_hue_lightchange": 2,
+      "iot_hue_lightdim": 2,
+      "iot_hue_lightoff": 2,
+      "iot_hue_lighton": 1,
+      "iot_hue_lightup": 2,
+      "iot_wemo_off": 2,
+      "iot_wemo_on": 2,
+      "lists_createoradd": 2,
+      "lists_query": 2,
+      "lists_remove": 2,
+      "music_dislikeness": 2,
+      "music_likeness": 2,
+      "music_query": 2,
+      "music_settings": 2,
+      "news_query": 2,
+      "play_audiobook": 2,
+      "play_game": 2,
+      "play_music": 2,
+      "play_podcasts": 2,
+      "play_radio": 1,
+      "qa_currency": 1,
+      "qa_definition": 1,
+      "qa_factoid": 1,
+      "qa_maths": 1,
+      "qa_stock": 1,
+      "recommendation_events": 1,
+      "recommendation_locations": 1,
+      "recommendation_movies": 1,
+      "social_post": 1,
+      "social_query": 1,
+      "takeaway_order": 1,
+      "takeaway_query": 1,
+      "transport_query": 1,
+      "transport_taxi": 1,
+      "transport_ticket": 1,
+      "transport_traffic": 1,
+      "weather_query": 1
+     },
+     "top_up": 2
+    }
+   },
+   "T7_massive_intent_10opt_ko_ext100": {
+    "n": 100,
+    "train_overlap_excluded_ids": 486,
+    "sample": {
+     "per_label": {
+      "alarm_query": 2,
+      "alarm_remove": 2,
+      "alarm_set": 2,
+      "audio_volume_down": 2,
+      "audio_volume_mute": 2,
+      "audio_volume_other": 2,
+      "audio_volume_up": 2,
+      "calendar_query": 2,
+      "calendar_remove": 2,
+      "calendar_set": 2,
+      "cooking_recipe": 2,
+      "datetime_convert": 2,
+      "datetime_query": 2,
+      "email_addcontact": 2,
+      "email_query": 2,
+      "email_querycontact": 2,
+      "email_sendemail": 2,
+      "general_greet": 1,
+      "general_joke": 2,
+      "general_quirky": 2,
+      "iot_cleaning": 2,
+      "iot_coffee": 2,
+      "iot_hue_lightchange": 2,
+      "iot_hue_lightdim": 2,
+      "iot_hue_lightoff": 2,
+      "iot_hue_lighton": 1,
+      "iot_hue_lightup": 2,
+      "iot_wemo_off": 2,
+      "iot_wemo_on": 2,
+      "lists_createoradd": 2,
+      "lists_query": 2,
+      "lists_remove": 2,
+      "music_dislikeness": 2,
+      "music_likeness": 2,
+      "music_query": 2,
+      "music_settings": 2,
+      "news_query": 2,
+      "play_audiobook": 2,
+      "play_game": 2,
+      "play_music": 2,
+      "play_podcasts": 2,
+      "play_radio": 1,
+      "qa_currency": 1,
+      "qa_definition": 1,
+      "qa_factoid": 1,
+      "qa_maths": 1,
+      "qa_stock": 1,
+      "recommendation_events": 1,
+      "recommendation_locations": 1,
+      "recommendation_movies": 1,
+      "social_post": 1,
+      "social_query": 1,
+      "takeaway_order": 1,
+      "takeaway_query": 1,
+      "transport_query": 1,
+      "transport_taxi": 1,
+      "transport_ticket": 1,
+      "transport_traffic": 1,
+      "weather_query": 1
+     },
+     "top_up": 2
+    }
+   }
+  },
+  "T8": {
+   "T8_prompt_injections_test116": {
+    "n": 116,
+    "source_rows": 116,
+    "pool_rows": 116,
+    "dropped": {},
+    "train_overlap_excluded": 0,
+    "train_overlap_kept_in_ext": null
+   }
+  },
+  "T9": {
+   "T9_enron_spam_ext500": {
+    "n": 500,
+    "source_rows": 2000,
+    "pool_rows": 1599,
+    "dropped": {
+     "duplicate": 17,
+     "length": 384
+    },
+    "train_overlap_excluded": 261,
+    "train_overlap_kept_in_ext": null
+   }
+  },
+  "T10": {
+   "T10_support_tickets_queue_ext500": {
+    "n": 500,
+    "source_rows": 5694,
+    "pool_rows": 4217,
+    "dropped": {
+     "duplicate": 763,
+     "length": 714
+    },
+    "train_overlap_excluded": 0,
+    "train_overlap_kept_in_ext": null
+   }
+  }
+ }
+}

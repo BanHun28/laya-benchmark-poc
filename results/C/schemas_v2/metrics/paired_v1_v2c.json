@@ -1,0 +1,76 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/C/schemas_v2/20261002-1732_multilingual_router_v1_dev.json",
+   "results/C/schemas_v2/20261002-1733_multilingual_router_v2c_dev.json",
+   "--split",
+   "dev",
+   "--out",
+   "results/C/schemas_v2/metrics/paired_v1_v2c.md",
+   "--json",
+   "results/C/schemas_v2/metrics/paired_v1_v2c.json"
+  ],
+  "generated_at": "2026-10-02T17:35:26+0900",
+  "reports": [
+   {
+    "report": "results/C/schemas_v2/20261002-1732_multilingual_router_v1_dev.json",
+    "dataset": "results/C/schemas_v2/router_v1_dev.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "a8223a39cd879c94a60eb0bd9c30fa56813065d255a3ddd54593debab3102536",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 250,
+    "split_rows": {
+     "dev": 250
+    }
+   },
+   {
+    "report": "results/C/schemas_v2/20261002-1733_multilingual_router_v2c_dev.json",
+    "dataset": "results/C/schemas_v2/router_v2c_dev.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "4c1a473e414e59cb683d8c36f5289147c4932f1658b788ec71b5ff72b95f38b4",
+    "questions_sha256": "c26e216fda3fd2057ae3ed4baaf68a885267d65ad57a21a00e98a3dccf95a073",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 250,
+    "split_rows": {
+     "dev": 250
+    }
+   }
+  ]
+ },
+ "a": "results/C/schemas_v2/20261002-1732_multilingual_router_v1_dev.json",
+ "b": "results/C/schemas_v2/20261002-1733_multilingual_router_v2c_dev.json",
+ "results": [
+  {
+   "qid": "domain",
+   "split": "dev",
+   "n": 250,
+   "acc_a": 0.56,
+   "acc_b": 0.54,
+   "delta": -0.02,
+   "delta_ci": [
+    -0.0701392365318819,
+    0.030139236531881896
+   ],
+   "b": 23,
+   "c": 18,
+   "p": 0.5327092552361137,
+   "agreement": 0.684,
+   "same_state": 1.0
+  }
+ ]
+}

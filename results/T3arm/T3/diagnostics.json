@@ -1,0 +1,162 @@
+{
+ "task": "T3",
+ "timing_report": "results/T3arm/T3/train_timing.json",
+ "status": "ok",
+ "throughput": {
+  "train_items_per_s": 16.528,
+  "s_per_optimizer_step": 1.927,
+  "s_per_micro_batch_mean": 0.484
+ },
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 0.4,
+  "train_loop": 605.02,
+  "epoch_checkpoint_saves": 1.22,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 0.87,
+  "calibration (forward + fit_temperature)": 4.86,
+  "export (final save + configs)": 0.25,
+  "train() total": 612.63
+ },
+ "memory_gb": {
+  "ru_maxrss": 3.19,
+  "rss_peak_sampled": 2.43,
+  "mps_current_allocated_peak": 8.82,
+  "mps_driver_allocated_peak": 16.25,
+  "mps_recommended_max": 40.2
+ },
+ "optimizer_steps": 314,
+ "n_train_items": 5000,
+ "loss_log_script": [
+  "epoch 1/2, step 100, loss=0.4225",
+  "epoch 1/2, step 200, loss=1.0349",
+  "epoch 1/2, step 300, loss=0.9326",
+  "epoch 1/2, step 400, loss=0.0243",
+  "epoch 1/2, step 500, loss=0.9165",
+  "epoch 1/2, step 600, loss=0.1607",
+  "Epoch 1/2 complete; avg_loss=0.5811",
+  "epoch 2/2, step 100, loss=0.9258",
+  "epoch 2/2, step 200, loss=2.1245",
+  "epoch 2/2, step 300, loss=0.0059",
+  "epoch 2/2, step 400, loss=3.0292",
+  "epoch 2/2, step 500, loss=-0.0034",
+  "epoch 2/2, step 600, loss=0.0537",
+  "Epoch 2/2 complete; avg_loss=0.7627"
+ ],
+ "train_ce_windows": [
+  1.0646,
+  0.7403,
+  0.6119,
+  0.4783,
+  0.427,
+  0.4944,
+  0.8916,
+  0.8805,
+  0.7967,
+  0.8545
+ ],
+ "train_acc_windows": [
+  0.629,
+  0.741,
+  0.806,
+  0.846,
+  0.872,
+  0.924,
+  0.923,
+  0.928,
+  0.928,
+  0.931
+ ],
+ "calibration_rows": {
+  "n": 400,
+  "ce_before_T": 1.2344,
+  "accuracy": 0.9125
+ },
+ "temperature_fits_script": [
+  {
+   "start": 614.77,
+   "end": 614.794,
+   "samples": 400
+  }
+ ],
+ "dev": {
+  "epoch0_vanilla": {
+   "report": "results/T3arm/T3/dev_ep0.json",
+   "accuracy": 0.612
+  },
+  "reports": [
+   "results/T3arm/T3/dev_ep1.json",
+   "results/T3arm/T3/dev_final.json"
+  ],
+  "accuracy": [
+   0.864,
+   0.897
+  ],
+  "selected": "results/T3arm/T3/dev_final.json",
+  "rule": "highest dev accuracy; a tie goes to the earlier epoch (docs/11 §4)"
+ },
+ "training_failed": false,
+ "class_recall_dev": {
+  "epoch0_vanilla": {
+   "anger": 0.5763,
+   "fear": 0.4178,
+   "joy": 0.6959,
+   "love": 0.3964,
+   "sadness": 0.7647,
+   "surprise": 0.2667
+  },
+  "selected": {
+   "anger": 0.9153,
+   "fear": 0.8288,
+   "joy": 0.8716,
+   "love": 0.9099,
+   "sadness": 0.949,
+   "surprise": 0.8667
+  }
+ },
+ "train_vs_dev_gap": {
+  "train_acc_last_window": 0.931,
+  "dev_acc_selected": 0.897,
+  "gap": 0.034,
+  "note": "train acc = argmax vs target on each micro-batch's training forward (dropout on), last 10%"
+ },
+ "selected_ckpt": "poc/finetune/ckpt_t3arm/T3_run",
+ "selected_temperature": [
+  4.527103424072266,
+  1.2,
+  1.2
+ ],
+ "temperature_clamp": {
+  "script_fit_range": [
+   0.1,
+   10.0
+  ],
+  "load_range": [
+   0.5,
+   5.0
+  ],
+  "outside_load_range": [],
+  "at_script_bound": [],
+  "default_1.2_for_types_without_calibration_rows": [
+   1,
+   2
+  ]
+ },
+ "selected_temperature_by_options": null,
+ "selected_max_len": [
+  512,
+  192
+ ],
+ "option_order_flip_dev40": {
+  "n_items": 40,
+  "n_options": 6,
+  "orig_accuracy": 0.925,
+  "flip_rate_per_perm": 0.015000000000000003,
+  "flip_rate_per_perm_ci": [
+   0.0,
+   0.04
+  ],
+  "any_flip_rate": 0.05,
+  "perm_accuracy_mean": 0.92
+ }
+}

@@ -1,0 +1,79 @@
+{
+ "items": "poc/finetune/data/items_probe200.pt",
+ "items_sha256": "3f1d38d1f4a81581200147edb5412a996e27032b6e55ae1dc82b0ccb2fb66f63",
+ "script": "third_party/laya/notebooks/laya_finetune_typed_decisions_mps.py",
+ "script_sha256": "22ffb2bea0bb24a48650783336a77ead0acd0c111730b6005277c96ee6897dc5",
+ "model_dir": "/Users/banhun/.cache/huggingface/hub/models--convaiinnovations--laya/snapshots/55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851/multilingual",
+ "budget": {
+  "max_len": 1024,
+  "head_max_len": 256
+ },
+ "seed": 13,
+ "calib_max": 20,
+ "n_items": 220,
+ "n_train": 200,
+ "n_calib": 20,
+ "sources": {
+  "train": {
+   "path": "poc/finetune/data/domain8_train.jsonl",
+   "sha256": "8b1b1c30e7a36a57e901b81106df3fb419be350c48bcf993b095303c648220ec",
+   "rows": 11094,
+   "picked": 200,
+   "label_distribution": {
+    "general": 25,
+    "lifestyle": 25,
+    "info_qa": 25,
+    "productivity": 25,
+    "media": 25,
+    "smart_home": 25,
+    "transport": 25,
+    "communication": 25
+   }
+  },
+  "validation": {
+   "path": "poc/finetune/data/domain8_dev.jsonl",
+   "sha256": "957359aa686f099d04df0e9996150f3e75133252da40fed2bd1eb9818b993907",
+   "rows": 2012,
+   "picked": 20,
+   "label_distribution": {
+    "smart_home": 3,
+    "info_qa": 3,
+    "media": 3,
+    "productivity": 3,
+    "general": 2,
+    "lifestyle": 2,
+    "transport": 2,
+    "communication": 2
+   }
+  }
+ },
+ "calib_rows": [
+  77,
+  173,
+  232,
+  361,
+  400,
+  711,
+  760,
+  832,
+  907,
+  942,
+  1142,
+  1343,
+  1351,
+  1400,
+  1451,
+  1509,
+  1678,
+  1738,
+  1801,
+  1816
+ ],
+ "seq_len": {
+  "min": 208,
+  "p50": 217,
+  "max": 234,
+  "distinct": 23
+ },
+ "run_with": "--items poc/finetune/data/items_probe200.pt --calib-max 20 (never --force-preprocess)"
+}

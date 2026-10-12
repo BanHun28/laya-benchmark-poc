@@ -1,0 +1,71 @@
+load before: {"gpu_util_pct": 5, "mps_fp32_matmul_tflops": 6.8, "cotenant": [], "sys_mem_used_gb": 15.8}
+[     2.5s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T1_english.pt
+[     3.4s] Device: mps
+[     3.4s] Training items: 5000; calibration items: 400
+[     3.4s] micro_batch=8; grad_accum=4; epochs=2
+[   206.0s] epoch 1/2, step 100, loss=0.7208
+[   413.2s] epoch 1/2, step 200, loss=0.4551
+[   619.8s] epoch 1/2, step 300, loss=1.2382
+[   841.9s] epoch 1/2, step 400, loss=1.1716
+[  1049.7s] epoch 1/2, step 500, loss=0.6793
+[  1249.1s] epoch 1/2, step 600, loss=1.0656
+[  1301.6s] Epoch 1/2 complete; avg_loss=0.7489
+[  1504.4s] epoch 2/2, step 100, loss=1.5761
+[  1701.4s] epoch 2/2, step 200, loss=1.1202
+[  1902.1s] epoch 2/2, step 300, loss=0.6668
+[  2097.2s] epoch 2/2, step 400, loss=0.0355
+[  2290.3s] epoch 2/2, step 500, loss=1.1476
+[  2485.5s] epoch 2/2, step 600, loss=0.6853
+[  2533.6s] Epoch 2/2 complete; avg_loss=0.7625
+[  2535.3s] Running temperature calibration ...
+[  2559.2s] Model saved to poc/finetune/ckpt_t3arm/_v2_T1
+[  2559.2s] Temperatures: [1.087946891784668, 1.1246908903121948, 1.1941457986831665]
+{
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 0.87,
+  "train_loop": 2528.71,
+  "epoch_checkpoint_saves": 2.31,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 0.94,
+  "calibration (forward + fit_temperature)": 23.17,
+  "export (final save + configs)": 0.73,
+  "train() total": 2556.77
+ },
+ "throughput": {
+  "train_items_per_s": 3.955,
+  "s_per_optimizer_step": 8.053,
+  "s_per_micro_batch_mean": 2.023
+ },
+ "micro_batch_s": {
+  "median_all": 1.9282,
+  "median_repeat_shape_no_step": 1.7231,
+  "median_repeat_shape_with_step": 2.4627,
+  "optimizer_step_overhead": 0.7396,
+  "median_first_shape": 2.037,
+  "first_shape_count": 188,
+  "repeat_shape_count": 1062,
+  "first_shape_extra_total_s": 39.7
+ },
+ "memory_gb": {
+  "ru_maxrss": 3.68,
+  "rss_peak_sampled": 1.57,
+  "mps_current_allocated_peak": 20.7,
+  "mps_driver_allocated_peak": 29.11,
+  "mps_recommended_max": 40.2
+ },
+ "calibration_rows": {
+  "n": 400,
+  "ce_before_T": 0.8968,
+  "accuracy": 0.7175
+ },
+ "item_sources": {
+  "train": {
+   "train": 10000
+  },
+  "calibration": {
+   "calib": 400
+  }
+ }
+}
+report: results/T3arm/validity/V2_T1_timing.json (wall 2559.9s, status ok)

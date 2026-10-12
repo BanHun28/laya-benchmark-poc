@@ -1,0 +1,71 @@
+load before: {"gpu_util_pct": 79, "mps_fp32_matmul_tflops": 5.85, "cotenant": ["uv run python experiments/poc_output_hopfield.py --capture --model gpt2", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_output_hopfield.py --capture --model gpt2", "uv run python experiments/poc_output_hopfield.py --capture --model pythia-160m", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_output_hopfield.py --capture --model pythia-160m", "uv run python experiments/poc_output_hopfield.py --capture --model Qwen3-0.6B", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_output_hopfield.py --capture --model Qwen3-0.6B", "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1791356222128-5vm37w.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'rm -f results/poc_fixedpoint_ladder_2026-10-08/logs/stage1_*.log && (for m in gpt2 pythia-160m-step2000 pythia-160m-step143000; do uv run python experiments/poc_fixedpoint_ladder.py --stage 1 --model $m 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage1_$m.log; done; echo ALL_STAGE1_DONE >> results/poc_fixedpoint_ladder_2026-10-08/logs/stage1_pythia-160m-step143000.log)' < /dev/null && pwd -P >| /tmp/claude-160b-cwd", "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1791356222128-5vm37w.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'rm -f results/poc_fixedpoint_ladder_2026-10-08/logs/stage1_*.log && (for m in gpt2 pythia-160m-step2000 pythia-160m-step143000; do uv run python experiments/poc_fixedpoint_ladder.py --stage 1 --model $m 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage1_$m.log; done; echo ALL_STAGE1_DONE >> results/poc_fixedpoint_ladder_2026-10-08/logs/stage1_pythia-160m-step143000.log)' < /dev/null && pwd -P >| /tmp/claude-160b-cwd", "uv run python experiments/poc_fixedpoint_ladder.py --stage 1 --model gpt2", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_fixedpoint_ladder.py --stage 1 --model gpt2"], "sys_mem_used_gb": 25.5}
+[     3.8s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T6_english.pt
+[     4.4s] Device: mps
+[     4.4s] Training items: 5000; calibration items: 400
+[     4.4s] micro_batch=8; grad_accum=4; epochs=2
+[    74.1s] epoch 1/2, step 100, loss=0.6596
+[   143.1s] epoch 1/2, step 200, loss=1.1491
+[   218.2s] epoch 1/2, step 300, loss=1.1664
+[   299.3s] epoch 1/2, step 400, loss=0.8980
+[   381.7s] epoch 1/2, step 500, loss=0.7969
+[   463.6s] epoch 1/2, step 600, loss=0.7394
+[   485.6s] Epoch 1/2 complete; avg_loss=0.9059
+[   570.6s] epoch 2/2, step 100, loss=1.1119
+[   653.8s] epoch 2/2, step 200, loss=0.3880
+[   736.5s] epoch 2/2, step 300, loss=0.3784
+[   817.7s] epoch 2/2, step 400, loss=0.8490
+[   911.4s] epoch 2/2, step 500, loss=1.0692
+[  1015.2s] epoch 2/2, step 600, loss=0.3203
+[  1042.1s] Epoch 2/2 complete; avg_loss=0.7374
+[  1045.3s] Running temperature calibration ...
+[  1060.4s] Model saved to poc/finetune/ckpt_t3arm_rep_s14/T6_run
+[  1060.4s] Temperatures: [1.2, 1.5095261335372925, 1.2]
+{
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 0.62,
+  "train_loop": 1035.74,
+  "epoch_checkpoint_saves": 3.24,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 1.9,
+  "calibration (forward + fit_temperature)": 13.38,
+  "export (final save + configs)": 1.71,
+  "train() total": 1056.62
+ },
+ "throughput": {
+  "train_items_per_s": 9.655,
+  "s_per_optimizer_step": 3.299,
+  "s_per_micro_batch_mean": 0.8286
+ },
+ "micro_batch_s": {
+  "median_all": 0.6005,
+  "median_repeat_shape_no_step": 0.5665,
+  "median_repeat_shape_with_step": 1.5641,
+  "optimizer_step_overhead": 0.9976,
+  "median_first_shape": 0.52,
+  "first_shape_count": 47,
+  "repeat_shape_count": 1203,
+  "first_shape_extra_total_s": 2.2
+ },
+ "memory_gb": {
+  "ru_maxrss": 3.19,
+  "rss_peak_sampled": 2.12,
+  "mps_current_allocated_peak": 9.27,
+  "mps_driver_allocated_peak": 18.71,
+  "mps_recommended_max": 40.2
+ },
+ "calibration_rows": {
+  "n": 400,
+  "ce_before_T": 1.0495,
+  "accuracy": 0.56
+ },
+ "item_sources": {
+  "train": {
+   "train": 10000
+  },
+  "calibration": {
+   "calib": 400
+  }
+ }
+}
+report: results/T3arm/rep_s14/T6/train_timing.json (wall 1060.5s, status ok)

@@ -1,0 +1,110 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/B/20261002-1703_english_ko_3i4k_speechact_7.json",
+   "results/B/20261002-1703_multilingual_ko_3i4k_speechact_7.json",
+   "--out",
+   "results/B/metrics/paired_ko_3i4k_speechact_7_english_vs_ml.md",
+   "--json",
+   "results/B/metrics/paired_ko_3i4k_speechact_7_english_vs_ml.json"
+  ],
+  "generated_at": "2026-10-02T17:05:34+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1703_english_ko_3i4k_speechact_7.json",
+    "dataset": "data/evals/ko_3i4k_speechact_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "88e47bec5b3966b5b2747b385744ecb1d738b2e3fb2b7a186755c85d48c6f741",
+    "questions_sha256": "bc89af6329eca2b09e2ac19c4d6f6deea507e7fb01b964bf5067822f213274e7",
+    "revisions": {
+     "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "english",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 259,
+     "dev": 241
+    }
+   },
+   {
+    "report": "results/B/20261002-1703_multilingual_ko_3i4k_speechact_7.json",
+    "dataset": "data/evals/ko_3i4k_speechact_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "88e47bec5b3966b5b2747b385744ecb1d738b2e3fb2b7a186755c85d48c6f741",
+    "questions_sha256": "bc89af6329eca2b09e2ac19c4d6f6deea507e7fb01b964bf5067822f213274e7",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 259,
+     "dev": 241
+    }
+   }
+  ]
+ },
+ "a": "results/B/20261002-1703_english_ko_3i4k_speechact_7.json",
+ "b": "results/B/20261002-1703_multilingual_ko_3i4k_speechact_7.json",
+ "results": [
+  {
+   "qid": "speech_act",
+   "split": "all",
+   "n": 500,
+   "acc_a": 0.174,
+   "acc_b": 0.178,
+   "delta": 0.004,
+   "delta_ci": [
+    -0.04238074027869758,
+    0.05038074027869757
+   ],
+   "b": 69,
+   "c": 71,
+   "p": 0.9326867554513671,
+   "agreement": 0.216,
+   "same_state": 1.0
+  },
+  {
+   "qid": "speech_act",
+   "split": "dev",
+   "n": 241,
+   "acc_a": 0.17427385892116182,
+   "acc_b": 0.1950207468879668,
+   "delta": 0.02074688796680498,
+   "delta_ci": [
+    -0.04773105540498329,
+    0.08922483133859324
+   ],
+   "b": 33,
+   "c": 38,
+   "p": 0.6353076420876662,
+   "agreement": 0.21161825726141079,
+   "same_state": 1.0
+  },
+  {
+   "qid": "speech_act",
+   "split": "test",
+   "n": 259,
+   "acc_a": 0.17374517374517376,
+   "acc_b": 0.16216216216216217,
+   "delta": -0.011583011583011582,
+   "delta_ci": [
+    -0.07442811825748535,
+    0.051262095091462186
+   ],
+   "b": 36,
+   "c": 33,
+   "p": 0.8099490529189247,
+   "agreement": 0.22007722007722008,
+   "same_state": 1.0
+  }
+ ]
+}

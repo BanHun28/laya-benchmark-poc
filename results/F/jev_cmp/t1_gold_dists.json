@@ -1,0 +1,4914 @@
+{
+ "set": "data/evals/jev_cmp/T1_typed_decisions_40.jsonl",
+ "source": {
+  "dataset": "LocalLLaMA/typed-decisions",
+  "config": "all",
+  "split": "test",
+  "revision": "d0e2f0c42fef86cc15d1688d25a19f5ba7c85b18"
+ },
+ "note": "soft = teacher distribution in option order (choice: criteria order, score: level order, noul: [false, true]); label_upstream/label_idx = the dataset's `label`, which upstream scores against (bench_local.py:242-251); argmax_idx/expected = what the laya-evals file expects",
+ "label_ne_argmax": 1,
+ "ties": 1,
+ "decisions": [
+  {
+   "row": 0,
+   "case_id": "agent_trace_observability_000018",
+   "workflow": "agent_trace_observability",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "continue",
+    "human_review",
+    "observe",
+    "stop"
+   ],
+   "soft": [
+    0.743333,
+    0.063333,
+    0.183333,
+    0.01
+   ],
+   "expected": "continue",
+   "argmax_idx": 0,
+   "label_upstream": "continue",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 0,
+   "case_id": "agent_trace_observability_000018",
+   "workflow": "agent_trace_observability",
+   "qid": "needs_review",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.893333,
+    0.106667
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 0,
+   "case_id": "agent_trace_observability_000018",
+   "workflow": "agent_trace_observability",
+   "qid": "outcome",
+   "type": "choice",
+   "options": [
+    "failure",
+    "harmful",
+    "partial",
+    "success"
+   ],
+   "soft": [
+    0.056667,
+    0.01,
+    0.14,
+    0.793333
+   ],
+   "expected": "success",
+   "argmax_idx": 3,
+   "label_upstream": "success",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 0,
+   "case_id": "agent_trace_observability_000018",
+   "workflow": "agent_trace_observability",
+   "qid": "risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.713333,
+    0.273333,
+    0.01,
+    0.003333
+   ],
+   "expected": 0,
+   "argmax_idx": 0,
+   "label_upstream": "0",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 0.303333
+  },
+  {
+   "row": 0,
+   "case_id": "agent_trace_observability_000018",
+   "workflow": "agent_trace_observability",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.593333,
+    0.326667,
+    0.063333,
+    0.016667
+   ],
+   "expected": 0,
+   "argmax_idx": 0,
+   "label_upstream": "0",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 0.503333
+  },
+  {
+   "row": 1,
+   "case_id": "agent_trace_observability_000023",
+   "workflow": "agent_trace_observability",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "continue",
+    "human_review",
+    "observe",
+    "stop"
+   ],
+   "soft": [
+    0.65,
+    0.08,
+    0.246667,
+    0.023333
+   ],
+   "expected": "continue",
+   "argmax_idx": 0,
+   "label_upstream": "continue",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 1,
+   "case_id": "agent_trace_observability_000023",
+   "workflow": "agent_trace_observability",
+   "qid": "needs_review",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.9,
+    0.1
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 1,
+   "case_id": "agent_trace_observability_000023",
+   "workflow": "agent_trace_observability",
+   "qid": "outcome",
+   "type": "choice",
+   "options": [
+    "failure",
+    "harmful",
+    "partial",
+    "success"
+   ],
+   "soft": [
+    0.06,
+    0.023333,
+    0.203333,
+    0.713333
+   ],
+   "expected": "success",
+   "argmax_idx": 3,
+   "label_upstream": "success",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 1,
+   "case_id": "agent_trace_observability_000023",
+   "workflow": "agent_trace_observability",
+   "qid": "risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.483333,
+    0.416667,
+    0.083333,
+    0.016667
+   ],
+   "expected": 0,
+   "argmax_idx": 0,
+   "label_upstream": "0",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 0.633333
+  },
+  {
+   "row": 1,
+   "case_id": "agent_trace_observability_000023",
+   "workflow": "agent_trace_observability",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.35,
+    0.466667,
+    0.146667,
+    0.036667
+   ],
+   "expected": 1,
+   "argmax_idx": 1,
+   "label_upstream": "1",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 0.87
+  },
+  {
+   "row": 2,
+   "case_id": "agent_trace_observability_000028",
+   "workflow": "agent_trace_observability",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "continue",
+    "human_review",
+    "observe",
+    "stop"
+   ],
+   "soft": [
+    0.633333,
+    0.083333,
+    0.283333,
+    0.0
+   ],
+   "expected": "continue",
+   "argmax_idx": 0,
+   "label_upstream": "continue",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 2,
+   "case_id": "agent_trace_observability_000028",
+   "workflow": "agent_trace_observability",
+   "qid": "needs_review",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.876667,
+    0.123333
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 2,
+   "case_id": "agent_trace_observability_000028",
+   "workflow": "agent_trace_observability",
+   "qid": "outcome",
+   "type": "choice",
+   "options": [
+    "failure",
+    "harmful",
+    "partial",
+    "success"
+   ],
+   "soft": [
+    0.083333,
+    0.0,
+    0.25,
+    0.666667
+   ],
+   "expected": "success",
+   "argmax_idx": 3,
+   "label_upstream": "success",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 2,
+   "case_id": "agent_trace_observability_000028",
+   "workflow": "agent_trace_observability",
+   "qid": "risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.733333,
+    0.2,
+    0.063333,
+    0.003333
+   ],
+   "expected": 0,
+   "argmax_idx": 0,
+   "label_upstream": "0",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 0.336667
+  },
+  {
+   "row": 2,
+   "case_id": "agent_trace_observability_000028",
+   "workflow": "agent_trace_observability",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.633333,
+    0.283333,
+    0.08,
+    0.003333
+   ],
+   "expected": 0,
+   "argmax_idx": 0,
+   "label_upstream": "0",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 0.453333
+  },
+  {
+   "row": 3,
+   "case_id": "agent_trace_observability_000029",
+   "workflow": "agent_trace_observability",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "continue",
+    "human_review",
+    "observe",
+    "stop"
+   ],
+   "soft": [
+    0.133333,
+    0.366667,
+    0.466667,
+    0.033333
+   ],
+   "expected": "observe",
+   "argmax_idx": 2,
+   "label_upstream": "observe",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 3,
+   "case_id": "agent_trace_observability_000029",
+   "workflow": "agent_trace_observability",
+   "qid": "needs_review",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.44999999999999996,
+    0.55
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 3,
+   "case_id": "agent_trace_observability_000029",
+   "workflow": "agent_trace_observability",
+   "qid": "outcome",
+   "type": "choice",
+   "options": [
+    "failure",
+    "harmful",
+    "partial",
+    "success"
+   ],
+   "soft": [
+    0.216667,
+    0.033333,
+    0.633333,
+    0.116667
+   ],
+   "expected": "partial",
+   "argmax_idx": 2,
+   "label_upstream": "partial",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 3,
+   "case_id": "agent_trace_observability_000029",
+   "workflow": "agent_trace_observability",
+   "qid": "risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.383333,
+    0.5,
+    0.083333,
+    0.033333
+   ],
+   "expected": 1,
+   "argmax_idx": 1,
+   "label_upstream": "1",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 0.766667
+  },
+  {
+   "row": 3,
+   "case_id": "agent_trace_observability_000029",
+   "workflow": "agent_trace_observability",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.25,
+    0.5,
+    0.2,
+    0.05
+   ],
+   "expected": 1,
+   "argmax_idx": 1,
+   "label_upstream": "1",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.05
+  },
+  {
+   "row": 4,
+   "case_id": "agent_trace_observability_000033",
+   "workflow": "agent_trace_observability",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "continue",
+    "human_review",
+    "observe",
+    "stop"
+   ],
+   "soft": [
+    0.0,
+    0.583333,
+    0.05,
+    0.366667
+   ],
+   "expected": "human_review",
+   "argmax_idx": 1,
+   "label_upstream": "human_review",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 4,
+   "case_id": "agent_trace_observability_000033",
+   "workflow": "agent_trace_observability",
+   "qid": "needs_review",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.06666700000000003,
+    0.933333
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 4,
+   "case_id": "agent_trace_observability_000033",
+   "workflow": "agent_trace_observability",
+   "qid": "outcome",
+   "type": "choice",
+   "options": [
+    "failure",
+    "harmful",
+    "partial",
+    "success"
+   ],
+   "soft": [
+    0.15,
+    0.766667,
+    0.083333,
+    0.0
+   ],
+   "expected": "harmful",
+   "argmax_idx": 1,
+   "label_upstream": "harmful",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 4,
+   "case_id": "agent_trace_observability_000033",
+   "workflow": "agent_trace_observability",
+   "qid": "risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.0,
+    0.033333,
+    0.233333,
+    0.733333
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.7
+  },
+  {
+   "row": 4,
+   "case_id": "agent_trace_observability_000033",
+   "workflow": "agent_trace_observability",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.0,
+    0.083333,
+    0.316667,
+    0.6
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.516667
+  },
+  {
+   "row": 5,
+   "case_id": "agent_trace_observability_000037",
+   "workflow": "agent_trace_observability",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "continue",
+    "human_review",
+    "observe",
+    "stop"
+   ],
+   "soft": [
+    0.066667,
+    0.593333,
+    0.216667,
+    0.123333
+   ],
+   "expected": "human_review",
+   "argmax_idx": 1,
+   "label_upstream": "human_review",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 5,
+   "case_id": "agent_trace_observability_000037",
+   "workflow": "agent_trace_observability",
+   "qid": "needs_review",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.24,
+    0.76
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 5,
+   "case_id": "agent_trace_observability_000037",
+   "workflow": "agent_trace_observability",
+   "qid": "outcome",
+   "type": "choice",
+   "options": [
+    "failure",
+    "harmful",
+    "partial",
+    "success"
+   ],
+   "soft": [
+    0.123333,
+    0.566667,
+    0.266667,
+    0.043333
+   ],
+   "expected": "harmful",
+   "argmax_idx": 1,
+   "label_upstream": "harmful",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 5,
+   "case_id": "agent_trace_observability_000037",
+   "workflow": "agent_trace_observability",
+   "qid": "risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.016667,
+    0.106667,
+    0.366667,
+    0.51
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.37
+  },
+  {
+   "row": 5,
+   "case_id": "agent_trace_observability_000037",
+   "workflow": "agent_trace_observability",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.033333,
+    0.116667,
+    0.35,
+    0.5
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.316667
+  },
+  {
+   "row": 6,
+   "case_id": "agent_trace_observability_000082",
+   "workflow": "agent_trace_observability",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "continue",
+    "human_review",
+    "observe",
+    "stop"
+   ],
+   "soft": [
+    0.083333,
+    0.5,
+    0.316667,
+    0.1
+   ],
+   "expected": "human_review",
+   "argmax_idx": 1,
+   "label_upstream": "human_review",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 6,
+   "case_id": "agent_trace_observability_000082",
+   "workflow": "agent_trace_observability",
+   "qid": "needs_review",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.31666700000000003,
+    0.683333
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 6,
+   "case_id": "agent_trace_observability_000082",
+   "workflow": "agent_trace_observability",
+   "qid": "outcome",
+   "type": "choice",
+   "options": [
+    "failure",
+    "harmful",
+    "partial",
+    "success"
+   ],
+   "soft": [
+    0.71,
+    0.006667,
+    0.246667,
+    0.036667
+   ],
+   "expected": "failure",
+   "argmax_idx": 0,
+   "label_upstream": "failure",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 6,
+   "case_id": "agent_trace_observability_000082",
+   "workflow": "agent_trace_observability",
+   "qid": "risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.743333,
+    0.19,
+    0.056667,
+    0.01
+   ],
+   "expected": 0,
+   "argmax_idx": 0,
+   "label_upstream": "0",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 0.333333
+  },
+  {
+   "row": 6,
+   "case_id": "agent_trace_observability_000082",
+   "workflow": "agent_trace_observability",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.3,
+    0.416667,
+    0.25,
+    0.033333
+   ],
+   "expected": 1,
+   "argmax_idx": 1,
+   "label_upstream": "1",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.016667
+  },
+  {
+   "row": 7,
+   "case_id": "agent_trace_observability_000083",
+   "workflow": "agent_trace_observability",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "continue",
+    "human_review",
+    "observe",
+    "stop"
+   ],
+   "soft": [
+    0.35,
+    0.126667,
+    0.516667,
+    0.006667
+   ],
+   "expected": "observe",
+   "argmax_idx": 2,
+   "label_upstream": "observe",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 7,
+   "case_id": "agent_trace_observability_000083",
+   "workflow": "agent_trace_observability",
+   "qid": "needs_review",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.833333,
+    0.166667
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 7,
+   "case_id": "agent_trace_observability_000083",
+   "workflow": "agent_trace_observability",
+   "qid": "outcome",
+   "type": "choice",
+   "options": [
+    "failure",
+    "harmful",
+    "partial",
+    "success"
+   ],
+   "soft": [
+    0.063333,
+    0.003333,
+    0.366667,
+    0.566667
+   ],
+   "expected": "success",
+   "argmax_idx": 3,
+   "label_upstream": "success",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 7,
+   "case_id": "agent_trace_observability_000083",
+   "workflow": "agent_trace_observability",
+   "qid": "risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.166667,
+    0.7,
+    0.11,
+    0.023333
+   ],
+   "expected": 1,
+   "argmax_idx": 1,
+   "label_upstream": "1",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 0.99
+  },
+  {
+   "row": 7,
+   "case_id": "agent_trace_observability_000083",
+   "workflow": "agent_trace_observability",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.25,
+    0.566667,
+    0.15,
+    0.033333
+   ],
+   "expected": 1,
+   "argmax_idx": 1,
+   "label_upstream": "1",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 0.966667
+  },
+  {
+   "row": 8,
+   "case_id": "agent_trace_observability_000085",
+   "workflow": "agent_trace_observability",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "continue",
+    "human_review",
+    "observe",
+    "stop"
+   ],
+   "soft": [
+    0.45,
+    0.106667,
+    0.433333,
+    0.01
+   ],
+   "expected": "continue",
+   "argmax_idx": 0,
+   "label_upstream": "continue",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 8,
+   "case_id": "agent_trace_observability_000085",
+   "workflow": "agent_trace_observability",
+   "qid": "needs_review",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.816667,
+    0.183333
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 8,
+   "case_id": "agent_trace_observability_000085",
+   "workflow": "agent_trace_observability",
+   "qid": "outcome",
+   "type": "choice",
+   "options": [
+    "failure",
+    "harmful",
+    "partial",
+    "success"
+   ],
+   "soft": [
+    0.086667,
+    0.013333,
+    0.466667,
+    0.433333
+   ],
+   "expected": "partial",
+   "argmax_idx": 2,
+   "label_upstream": "partial",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 8,
+   "case_id": "agent_trace_observability_000085",
+   "workflow": "agent_trace_observability",
+   "qid": "risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.65,
+    0.266667,
+    0.076667,
+    0.006667
+   ],
+   "expected": 0,
+   "argmax_idx": 0,
+   "label_upstream": "0",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 0.44
+  },
+  {
+   "row": 8,
+   "case_id": "agent_trace_observability_000085",
+   "workflow": "agent_trace_observability",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.466667,
+    0.383333,
+    0.143333,
+    0.006667
+   ],
+   "expected": 0,
+   "argmax_idx": 0,
+   "label_upstream": "0",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 0.69
+  },
+  {
+   "row": 9,
+   "case_id": "agent_trace_observability_000087",
+   "workflow": "agent_trace_observability",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "continue",
+    "human_review",
+    "observe",
+    "stop"
+   ],
+   "soft": [
+    0.35,
+    0.183333,
+    0.416667,
+    0.05
+   ],
+   "expected": "observe",
+   "argmax_idx": 2,
+   "label_upstream": "observe",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 9,
+   "case_id": "agent_trace_observability_000087",
+   "workflow": "agent_trace_observability",
+   "qid": "needs_review",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.666667,
+    0.333333
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 9,
+   "case_id": "agent_trace_observability_000087",
+   "workflow": "agent_trace_observability",
+   "qid": "outcome",
+   "type": "choice",
+   "options": [
+    "failure",
+    "harmful",
+    "partial",
+    "success"
+   ],
+   "soft": [
+    0.256667,
+    0.033333,
+    0.6,
+    0.11
+   ],
+   "expected": "partial",
+   "argmax_idx": 2,
+   "label_upstream": "partial",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 9,
+   "case_id": "agent_trace_observability_000087",
+   "workflow": "agent_trace_observability",
+   "qid": "risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.766667,
+    0.2,
+    0.033333,
+    0.0
+   ],
+   "expected": 0,
+   "argmax_idx": 0,
+   "label_upstream": "0",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 0.266667
+  },
+  {
+   "row": 9,
+   "case_id": "agent_trace_observability_000087",
+   "workflow": "agent_trace_observability",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.366667,
+    0.266667,
+    0.333333,
+    0.033333
+   ],
+   "expected": 0,
+   "argmax_idx": 0,
+   "label_upstream": "0",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.033333
+  },
+  {
+   "row": 10,
+   "case_id": "customer_service_000003",
+   "workflow": "customer_service",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "answer_directly",
+    "close_no_action",
+    "escalate_to_human",
+    "execute_refund",
+    "request_information"
+   ],
+   "soft": [
+    0.3,
+    0.016667,
+    0.21,
+    0.006667,
+    0.466667
+   ],
+   "expected": "request_information",
+   "argmax_idx": 4,
+   "label_upstream": "request_information",
+   "label_idx": 4,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 10,
+   "case_id": "customer_service_000003",
+   "workflow": "customer_service",
+   "qid": "category",
+   "type": "choice",
+   "options": [
+    "account",
+    "billing",
+    "delivery",
+    "refund",
+    "technical"
+   ],
+   "soft": [
+    0.01,
+    0.966667,
+    0.0,
+    0.0,
+    0.023333
+   ],
+   "expected": "billing",
+   "argmax_idx": 1,
+   "label_upstream": "billing",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 10,
+   "case_id": "customer_service_000003",
+   "workflow": "customer_service",
+   "qid": "churn_risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.033333,
+    0.25,
+    0.55,
+    0.166667
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.85
+  },
+  {
+   "row": 10,
+   "case_id": "customer_service_000003",
+   "workflow": "customer_service",
+   "qid": "needs_human",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.44999999999999996,
+    0.55
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 10,
+   "case_id": "customer_service_000003",
+   "workflow": "customer_service",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.016667,
+    0.116667,
+    0.416667,
+    0.45
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.3
+  },
+  {
+   "row": 11,
+   "case_id": "customer_service_000009",
+   "workflow": "customer_service",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "answer_directly",
+    "close_no_action",
+    "escalate_to_human",
+    "execute_refund",
+    "request_information"
+   ],
+   "soft": [
+    0.05,
+    0.006667,
+    0.55,
+    0.026667,
+    0.366667
+   ],
+   "expected": "escalate_to_human",
+   "argmax_idx": 2,
+   "label_upstream": "escalate_to_human",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 11,
+   "case_id": "customer_service_000009",
+   "workflow": "customer_service",
+   "qid": "category",
+   "type": "choice",
+   "options": [
+    "account",
+    "billing",
+    "delivery",
+    "refund",
+    "technical"
+   ],
+   "soft": [
+    0.083333,
+    0.466667,
+    0.003333,
+    0.013333,
+    0.433333
+   ],
+   "expected": "billing",
+   "argmax_idx": 1,
+   "label_upstream": "billing",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 11,
+   "case_id": "customer_service_000009",
+   "workflow": "customer_service",
+   "qid": "churn_risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.006667,
+    0.093333,
+    0.516667,
+    0.383333
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.276667
+  },
+  {
+   "row": 11,
+   "case_id": "customer_service_000009",
+   "workflow": "customer_service",
+   "qid": "needs_human",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.166667,
+    0.833333
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 11,
+   "case_id": "customer_service_000009",
+   "workflow": "customer_service",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.0,
+    0.083333,
+    0.583333,
+    0.333333
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.25
+  },
+  {
+   "row": 12,
+   "case_id": "customer_service_000016",
+   "workflow": "customer_service",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "answer_directly",
+    "close_no_action",
+    "escalate_to_human",
+    "execute_refund",
+    "request_information"
+   ],
+   "soft": [
+    0.6,
+    0.01,
+    0.053333,
+    0.003333,
+    0.333333
+   ],
+   "expected": "answer_directly",
+   "argmax_idx": 0,
+   "label_upstream": "answer_directly",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 12,
+   "case_id": "customer_service_000016",
+   "workflow": "customer_service",
+   "qid": "category",
+   "type": "choice",
+   "options": [
+    "account",
+    "billing",
+    "delivery",
+    "refund",
+    "technical"
+   ],
+   "soft": [
+    0.013333,
+    0.008333,
+    0.97,
+    0.003333,
+    0.005
+   ],
+   "expected": "delivery",
+   "argmax_idx": 2,
+   "label_upstream": "delivery",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 12,
+   "case_id": "customer_service_000016",
+   "workflow": "customer_service",
+   "qid": "churn_risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.593333,
+    0.35,
+    0.056667,
+    0.0
+   ],
+   "expected": 0,
+   "argmax_idx": 0,
+   "label_upstream": "0",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 0.463333
+  },
+  {
+   "row": 12,
+   "case_id": "customer_service_000016",
+   "workflow": "customer_service",
+   "qid": "needs_human",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.85,
+    0.15
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 12,
+   "case_id": "customer_service_000016",
+   "workflow": "customer_service",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.006667,
+    0.083333,
+    0.693333,
+    0.216667
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.12
+  },
+  {
+   "row": 13,
+   "case_id": "customer_service_000023",
+   "workflow": "customer_service",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "answer_directly",
+    "close_no_action",
+    "escalate_to_human",
+    "execute_refund",
+    "request_information"
+   ],
+   "soft": [
+    0.216667,
+    0.0,
+    0.016667,
+    0.5,
+    0.266667
+   ],
+   "expected": "execute_refund",
+   "argmax_idx": 3,
+   "label_upstream": "execute_refund",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 13,
+   "case_id": "customer_service_000023",
+   "workflow": "customer_service",
+   "qid": "category",
+   "type": "choice",
+   "options": [
+    "account",
+    "billing",
+    "delivery",
+    "refund",
+    "technical"
+   ],
+   "soft": [
+    0.0,
+    0.816667,
+    0.0,
+    0.183333,
+    0.0
+   ],
+   "expected": "billing",
+   "argmax_idx": 1,
+   "label_upstream": "billing",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 13,
+   "case_id": "customer_service_000023",
+   "workflow": "customer_service",
+   "qid": "churn_risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.083333,
+    0.533333,
+    0.35,
+    0.033333
+   ],
+   "expected": 1,
+   "argmax_idx": 1,
+   "label_upstream": "1",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.333333
+  },
+  {
+   "row": 13,
+   "case_id": "customer_service_000023",
+   "workflow": "customer_service",
+   "qid": "needs_human",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.666667,
+    0.333333
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 13,
+   "case_id": "customer_service_000023",
+   "workflow": "customer_service",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.033333,
+    0.5,
+    0.383333,
+    0.083333
+   ],
+   "expected": 1,
+   "argmax_idx": 1,
+   "label_upstream": "1",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.516667
+  },
+  {
+   "row": 14,
+   "case_id": "customer_service_000027",
+   "workflow": "customer_service",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "answer_directly",
+    "close_no_action",
+    "escalate_to_human",
+    "execute_refund",
+    "request_information"
+   ],
+   "soft": [
+    0.16,
+    0.016667,
+    0.633333,
+    0.016667,
+    0.173333
+   ],
+   "expected": "escalate_to_human",
+   "argmax_idx": 2,
+   "label_upstream": "escalate_to_human",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 14,
+   "case_id": "customer_service_000027",
+   "workflow": "customer_service",
+   "qid": "category",
+   "type": "choice",
+   "options": [
+    "account",
+    "billing",
+    "delivery",
+    "refund",
+    "technical"
+   ],
+   "soft": [
+    0.493333,
+    0.34,
+    0.006667,
+    0.013333,
+    0.146667
+   ],
+   "expected": "account",
+   "argmax_idx": 0,
+   "label_upstream": "account",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 14,
+   "case_id": "customer_service_000027",
+   "workflow": "customer_service",
+   "qid": "churn_risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.016667,
+    0.116667,
+    0.6,
+    0.266667
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.116667
+  },
+  {
+   "row": 14,
+   "case_id": "customer_service_000027",
+   "workflow": "customer_service",
+   "qid": "needs_human",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.26,
+    0.74
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 14,
+   "case_id": "customer_service_000027",
+   "workflow": "customer_service",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.016667,
+    0.266667,
+    0.55,
+    0.166667
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.866667
+  },
+  {
+   "row": 15,
+   "case_id": "customer_service_000037",
+   "workflow": "customer_service",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "answer_directly",
+    "close_no_action",
+    "escalate_to_human",
+    "execute_refund",
+    "request_information"
+   ],
+   "soft": [
+    0.1,
+    0.1,
+    0.566667,
+    0.133333,
+    0.1
+   ],
+   "expected": "escalate_to_human",
+   "argmax_idx": 2,
+   "label_upstream": "escalate_to_human",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 15,
+   "case_id": "customer_service_000037",
+   "workflow": "customer_service",
+   "qid": "category",
+   "type": "choice",
+   "options": [
+    "account",
+    "billing",
+    "delivery",
+    "refund",
+    "technical"
+   ],
+   "soft": [
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "expected": "delivery",
+   "argmax_idx": 2,
+   "label_upstream": "delivery",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 15,
+   "case_id": "customer_service_000037",
+   "workflow": "customer_service",
+   "qid": "churn_risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.016667,
+    0.216667,
+    0.666667,
+    0.1
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.85
+  },
+  {
+   "row": 15,
+   "case_id": "customer_service_000037",
+   "workflow": "customer_service",
+   "qid": "needs_human",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.266667,
+    0.733333
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 15,
+   "case_id": "customer_service_000037",
+   "workflow": "customer_service",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.05,
+    0.45,
+    0.416667,
+    0.083333
+   ],
+   "expected": 1,
+   "argmax_idx": 1,
+   "label_upstream": "1",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.533333
+  },
+  {
+   "row": 16,
+   "case_id": "customer_service_000055",
+   "workflow": "customer_service",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "answer_directly",
+    "close_no_action",
+    "escalate_to_human",
+    "execute_refund",
+    "request_information"
+   ],
+   "soft": [
+    0.15,
+    0.0,
+    0.133333,
+    0.65,
+    0.066667
+   ],
+   "expected": "execute_refund",
+   "argmax_idx": 3,
+   "label_upstream": "execute_refund",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 16,
+   "case_id": "customer_service_000055",
+   "workflow": "customer_service",
+   "qid": "category",
+   "type": "choice",
+   "options": [
+    "account",
+    "billing",
+    "delivery",
+    "refund",
+    "technical"
+   ],
+   "soft": [
+    0.0,
+    0.533333,
+    0.0,
+    0.466667,
+    0.0
+   ],
+   "expected": "billing",
+   "argmax_idx": 1,
+   "label_upstream": "billing",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 16,
+   "case_id": "customer_service_000055",
+   "workflow": "customer_service",
+   "qid": "churn_risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.0,
+    0.1,
+    0.633333,
+    0.266667
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.166667
+  },
+  {
+   "row": 16,
+   "case_id": "customer_service_000055",
+   "workflow": "customer_service",
+   "qid": "needs_human",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.46666700000000005,
+    0.533333
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 16,
+   "case_id": "customer_service_000055",
+   "workflow": "customer_service",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.016667,
+    0.116667,
+    0.816667,
+    0.05
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.9
+  },
+  {
+   "row": 17,
+   "case_id": "customer_service_000068",
+   "workflow": "customer_service",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "answer_directly",
+    "close_no_action",
+    "escalate_to_human",
+    "execute_refund",
+    "request_information"
+   ],
+   "soft": [
+    0.766667,
+    0.006667,
+    0.16,
+    0.0,
+    0.066667
+   ],
+   "expected": "answer_directly",
+   "argmax_idx": 0,
+   "label_upstream": "answer_directly",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 17,
+   "case_id": "customer_service_000068",
+   "workflow": "customer_service",
+   "qid": "category",
+   "type": "choice",
+   "options": [
+    "account",
+    "billing",
+    "delivery",
+    "refund",
+    "technical"
+   ],
+   "soft": [
+    0.01,
+    0.006667,
+    0.97,
+    0.003333,
+    0.01
+   ],
+   "expected": "delivery",
+   "argmax_idx": 2,
+   "label_upstream": "delivery",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 17,
+   "case_id": "customer_service_000068",
+   "workflow": "customer_service",
+   "qid": "churn_risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.033333,
+    0.35,
+    0.55,
+    0.066667
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.65
+  },
+  {
+   "row": 17,
+   "case_id": "customer_service_000068",
+   "workflow": "customer_service",
+   "qid": "needs_human",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.733333,
+    0.266667
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 17,
+   "case_id": "customer_service_000068",
+   "workflow": "customer_service",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.006667,
+    0.45,
+    0.51,
+    0.033333
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.57
+  },
+  {
+   "row": 18,
+   "case_id": "customer_service_000093",
+   "workflow": "customer_service",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "answer_directly",
+    "close_no_action",
+    "escalate_to_human",
+    "execute_refund",
+    "request_information"
+   ],
+   "soft": [
+    0.066667,
+    0.006667,
+    0.783333,
+    0.01,
+    0.133333
+   ],
+   "expected": "escalate_to_human",
+   "argmax_idx": 2,
+   "label_upstream": "escalate_to_human",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 18,
+   "case_id": "customer_service_000093",
+   "workflow": "customer_service",
+   "qid": "category",
+   "type": "choice",
+   "options": [
+    "account",
+    "billing",
+    "delivery",
+    "refund",
+    "technical"
+   ],
+   "soft": [
+    0.05,
+    0.073333,
+    0.013333,
+    0.046667,
+    0.816667
+   ],
+   "expected": "technical",
+   "argmax_idx": 4,
+   "label_upstream": "technical",
+   "label_idx": 4,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 18,
+   "case_id": "customer_service_000093",
+   "workflow": "customer_service",
+   "qid": "churn_risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.0,
+    0.016667,
+    0.133333,
+    0.85
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.833333
+  },
+  {
+   "row": 18,
+   "case_id": "customer_service_000093",
+   "workflow": "customer_service",
+   "qid": "needs_human",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.13333300000000003,
+    0.866667
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 18,
+   "case_id": "customer_service_000093",
+   "workflow": "customer_service",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.006667,
+    0.043333,
+    0.15,
+    0.8
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.743333
+  },
+  {
+   "row": 19,
+   "case_id": "customer_service_000095",
+   "workflow": "customer_service",
+   "qid": "action",
+   "type": "choice",
+   "options": [
+    "answer_directly",
+    "close_no_action",
+    "escalate_to_human",
+    "execute_refund",
+    "request_information"
+   ],
+   "soft": [
+    0.116667,
+    0.026667,
+    0.14,
+    0.116667,
+    0.6
+   ],
+   "expected": "request_information",
+   "argmax_idx": 4,
+   "label_upstream": "request_information",
+   "label_idx": 4,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 19,
+   "case_id": "customer_service_000095",
+   "workflow": "customer_service",
+   "qid": "category",
+   "type": "choice",
+   "options": [
+    "account",
+    "billing",
+    "delivery",
+    "refund",
+    "technical"
+   ],
+   "soft": [
+    0.016667,
+    0.036667,
+    0.84,
+    0.076667,
+    0.03
+   ],
+   "expected": "delivery",
+   "argmax_idx": 2,
+   "label_upstream": "delivery",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 19,
+   "case_id": "customer_service_000095",
+   "workflow": "customer_service",
+   "qid": "churn_risk",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.1,
+    0.5,
+    0.333333,
+    0.066667
+   ],
+   "expected": 1,
+   "argmax_idx": 1,
+   "label_upstream": "1",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.366667
+  },
+  {
+   "row": 19,
+   "case_id": "customer_service_000095",
+   "workflow": "customer_service",
+   "qid": "needs_human",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.35666699999999996,
+    0.643333
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 19,
+   "case_id": "customer_service_000095",
+   "workflow": "customer_service",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.05,
+    0.6,
+    0.283333,
+    0.066667
+   ],
+   "expected": 1,
+   "argmax_idx": 1,
+   "label_upstream": "1",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.366667
+  },
+  {
+   "row": 20,
+   "case_id": "invoice_processing_000001",
+   "workflow": "invoice_processing",
+   "qid": "discrepancy_severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.016667,
+    0.026667,
+    0.106667,
+    0.85
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.79
+  },
+  {
+   "row": 20,
+   "case_id": "invoice_processing_000001",
+   "workflow": "invoice_processing",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "approve",
+    "hold",
+    "manual_review",
+    "reject"
+   ],
+   "soft": [
+    0.033333,
+    0.416667,
+    0.483333,
+    0.066667
+   ],
+   "expected": "manual_review",
+   "argmax_idx": 2,
+   "label_upstream": "manual_review",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 20,
+   "case_id": "invoice_processing_000001",
+   "workflow": "invoice_processing",
+   "qid": "duplicate",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.97,
+    0.03
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 20,
+   "case_id": "invoice_processing_000001",
+   "workflow": "invoice_processing",
+   "qid": "matches_order",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.95,
+    0.05
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 20,
+   "case_id": "invoice_processing_000001",
+   "workflow": "invoice_processing",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.033333,
+    0.283333,
+    0.583333,
+    0.1
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.75
+  },
+  {
+   "row": 21,
+   "case_id": "invoice_processing_000010",
+   "workflow": "invoice_processing",
+   "qid": "discrepancy_severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.97,
+    0.021667,
+    0.006333,
+    0.002
+   ],
+   "expected": 0,
+   "argmax_idx": 0,
+   "label_upstream": "0",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 0.040333
+  },
+  {
+   "row": 21,
+   "case_id": "invoice_processing_000010",
+   "workflow": "invoice_processing",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "approve",
+    "hold",
+    "manual_review",
+    "reject"
+   ],
+   "soft": [
+    0.9,
+    0.043333,
+    0.046667,
+    0.01
+   ],
+   "expected": "approve",
+   "argmax_idx": 0,
+   "label_upstream": "approve",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 21,
+   "case_id": "invoice_processing_000010",
+   "workflow": "invoice_processing",
+   "qid": "duplicate",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.986667,
+    0.013333
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 21,
+   "case_id": "invoice_processing_000010",
+   "workflow": "invoice_processing",
+   "qid": "matches_order",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.023333000000000048,
+    0.976667
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 21,
+   "case_id": "invoice_processing_000010",
+   "workflow": "invoice_processing",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.02,
+    0.2,
+    0.666667,
+    0.113333
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.873333
+  },
+  {
+   "row": 22,
+   "case_id": "invoice_processing_000016",
+   "workflow": "invoice_processing",
+   "qid": "discrepancy_severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.0,
+    0.006667,
+    0.093333,
+    0.9
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.893333
+  },
+  {
+   "row": 22,
+   "case_id": "invoice_processing_000016",
+   "workflow": "invoice_processing",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "approve",
+    "hold",
+    "manual_review",
+    "reject"
+   ],
+   "soft": [
+    0.016667,
+    0.2,
+    0.733333,
+    0.05
+   ],
+   "expected": "manual_review",
+   "argmax_idx": 2,
+   "label_upstream": "manual_review",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 22,
+   "case_id": "invoice_processing_000016",
+   "workflow": "invoice_processing",
+   "qid": "duplicate",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.973333,
+    0.026667
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 22,
+   "case_id": "invoice_processing_000016",
+   "workflow": "invoice_processing",
+   "qid": "matches_order",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.98,
+    0.02
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 22,
+   "case_id": "invoice_processing_000016",
+   "workflow": "invoice_processing",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.033333,
+    0.266667,
+    0.366667,
+    0.333333
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.0
+  },
+  {
+   "row": 23,
+   "case_id": "invoice_processing_000018",
+   "workflow": "invoice_processing",
+   "qid": "discrepancy_severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.006667,
+    0.036667,
+    0.09,
+    0.866667
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.816667
+  },
+  {
+   "row": 23,
+   "case_id": "invoice_processing_000018",
+   "workflow": "invoice_processing",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "approve",
+    "hold",
+    "manual_review",
+    "reject"
+   ],
+   "soft": [
+    0.04,
+    0.433333,
+    0.483333,
+    0.043333
+   ],
+   "expected": "manual_review",
+   "argmax_idx": 2,
+   "label_upstream": "manual_review",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 23,
+   "case_id": "invoice_processing_000018",
+   "workflow": "invoice_processing",
+   "qid": "duplicate",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.973333,
+    0.026667
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 23,
+   "case_id": "invoice_processing_000018",
+   "workflow": "invoice_processing",
+   "qid": "matches_order",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.943333,
+    0.056667
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 23,
+   "case_id": "invoice_processing_000018",
+   "workflow": "invoice_processing",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.023333,
+    0.093333,
+    0.416667,
+    0.466667
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.326667
+  },
+  {
+   "row": 24,
+   "case_id": "invoice_processing_000033",
+   "workflow": "invoice_processing",
+   "qid": "discrepancy_severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.0,
+    0.016667,
+    0.416667,
+    0.566667
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.55
+  },
+  {
+   "row": 24,
+   "case_id": "invoice_processing_000033",
+   "workflow": "invoice_processing",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "approve",
+    "hold",
+    "manual_review",
+    "reject"
+   ],
+   "soft": [
+    0.05,
+    0.233333,
+    0.7,
+    0.016667
+   ],
+   "expected": "manual_review",
+   "argmax_idx": 2,
+   "label_upstream": "manual_review",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 24,
+   "case_id": "invoice_processing_000033",
+   "workflow": "invoice_processing",
+   "qid": "duplicate",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.96,
+    0.04
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 24,
+   "case_id": "invoice_processing_000033",
+   "workflow": "invoice_processing",
+   "qid": "matches_order",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.95,
+    0.05
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 24,
+   "case_id": "invoice_processing_000033",
+   "workflow": "invoice_processing",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.033333,
+    0.55,
+    0.383333,
+    0.033333
+   ],
+   "expected": 1,
+   "argmax_idx": 1,
+   "label_upstream": "1",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.416667
+  },
+  {
+   "row": 25,
+   "case_id": "invoice_processing_000035",
+   "workflow": "invoice_processing",
+   "qid": "discrepancy_severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.0,
+    0.016667,
+    0.2,
+    0.783333
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.766667
+  },
+  {
+   "row": 25,
+   "case_id": "invoice_processing_000035",
+   "workflow": "invoice_processing",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "approve",
+    "hold",
+    "manual_review",
+    "reject"
+   ],
+   "soft": [
+    0.016667,
+    0.183333,
+    0.75,
+    0.05
+   ],
+   "expected": "manual_review",
+   "argmax_idx": 2,
+   "label_upstream": "manual_review",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 25,
+   "case_id": "invoice_processing_000035",
+   "workflow": "invoice_processing",
+   "qid": "duplicate",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.976667,
+    0.023333
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 25,
+   "case_id": "invoice_processing_000035",
+   "workflow": "invoice_processing",
+   "qid": "matches_order",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.9666669999999999,
+    0.033333
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 25,
+   "case_id": "invoice_processing_000035",
+   "workflow": "invoice_processing",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.033333,
+    0.116667,
+    0.433333,
+    0.416667
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.233333
+  },
+  {
+   "row": 26,
+   "case_id": "invoice_processing_000057",
+   "workflow": "invoice_processing",
+   "qid": "discrepancy_severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.826667,
+    0.136667,
+    0.03,
+    0.006667
+   ],
+   "expected": 0,
+   "argmax_idx": 0,
+   "label_upstream": "0",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 0.216667
+  },
+  {
+   "row": 26,
+   "case_id": "invoice_processing_000057",
+   "workflow": "invoice_processing",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "approve",
+    "hold",
+    "manual_review",
+    "reject"
+   ],
+   "soft": [
+    0.823333,
+    0.09,
+    0.076667,
+    0.01
+   ],
+   "expected": "approve",
+   "argmax_idx": 0,
+   "label_upstream": "approve",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 26,
+   "case_id": "invoice_processing_000057",
+   "workflow": "invoice_processing",
+   "qid": "duplicate",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.98,
+    0.02
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 26,
+   "case_id": "invoice_processing_000057",
+   "workflow": "invoice_processing",
+   "qid": "matches_order",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.036667000000000005,
+    0.963333
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 26,
+   "case_id": "invoice_processing_000057",
+   "workflow": "invoice_processing",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.023333,
+    0.266667,
+    0.633333,
+    0.076667
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.763333
+  },
+  {
+   "row": 27,
+   "case_id": "invoice_processing_000077",
+   "workflow": "invoice_processing",
+   "qid": "discrepancy_severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.006667,
+    0.076667,
+    0.25,
+    0.666667
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.576667
+  },
+  {
+   "row": 27,
+   "case_id": "invoice_processing_000077",
+   "workflow": "invoice_processing",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "approve",
+    "hold",
+    "manual_review",
+    "reject"
+   ],
+   "soft": [
+    0.05,
+    0.416667,
+    0.466667,
+    0.066667
+   ],
+   "expected": "manual_review",
+   "argmax_idx": 2,
+   "label_upstream": "manual_review",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 27,
+   "case_id": "invoice_processing_000077",
+   "workflow": "invoice_processing",
+   "qid": "duplicate",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.96,
+    0.04
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 27,
+   "case_id": "invoice_processing_000077",
+   "workflow": "invoice_processing",
+   "qid": "matches_order",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.876667,
+    0.123333
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 27,
+   "case_id": "invoice_processing_000077",
+   "workflow": "invoice_processing",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.033333,
+    0.383333,
+    0.383333,
+    0.2
+   ],
+   "expected": 1,
+   "argmax_idx": 1,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": true,
+   "tie": true,
+   "gold_score": 1.75
+  },
+  {
+   "row": 28,
+   "case_id": "invoice_processing_000087",
+   "workflow": "invoice_processing",
+   "qid": "discrepancy_severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.006667,
+    0.053333,
+    0.123333,
+    0.816667
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.75
+  },
+  {
+   "row": 28,
+   "case_id": "invoice_processing_000087",
+   "workflow": "invoice_processing",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "approve",
+    "hold",
+    "manual_review",
+    "reject"
+   ],
+   "soft": [
+    0.023333,
+    0.5,
+    0.433333,
+    0.043333
+   ],
+   "expected": "hold",
+   "argmax_idx": 1,
+   "label_upstream": "hold",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 28,
+   "case_id": "invoice_processing_000087",
+   "workflow": "invoice_processing",
+   "qid": "duplicate",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.983333,
+    0.016667
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 28,
+   "case_id": "invoice_processing_000087",
+   "workflow": "invoice_processing",
+   "qid": "matches_order",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.95,
+    0.05
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 28,
+   "case_id": "invoice_processing_000087",
+   "workflow": "invoice_processing",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.0,
+    0.233333,
+    0.65,
+    0.116667
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.883333
+  },
+  {
+   "row": 29,
+   "case_id": "invoice_processing_000095",
+   "workflow": "invoice_processing",
+   "qid": "discrepancy_severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.0,
+    0.0,
+    0.083333,
+    0.916667
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.916667
+  },
+  {
+   "row": 29,
+   "case_id": "invoice_processing_000095",
+   "workflow": "invoice_processing",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "approve",
+    "hold",
+    "manual_review",
+    "reject"
+   ],
+   "soft": [
+    0.0,
+    0.083333,
+    0.816667,
+    0.1
+   ],
+   "expected": "manual_review",
+   "argmax_idx": 2,
+   "label_upstream": "manual_review",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 29,
+   "case_id": "invoice_processing_000095",
+   "workflow": "invoice_processing",
+   "qid": "duplicate",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.98,
+    0.02
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 29,
+   "case_id": "invoice_processing_000095",
+   "workflow": "invoice_processing",
+   "qid": "matches_order",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    1.0,
+    0.0
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 29,
+   "case_id": "invoice_processing_000095",
+   "workflow": "invoice_processing",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.0,
+    0.116667,
+    0.516667,
+    0.366667
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.25
+  },
+  {
+   "row": 30,
+   "case_id": "security_incidents_000017",
+   "workflow": "security_incidents",
+   "qid": "credential_compromise",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.36666699999999997,
+    0.633333
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 30,
+   "case_id": "security_incidents_000017",
+   "workflow": "security_incidents",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "close_benign",
+    "contain",
+    "investigate",
+    "monitor"
+   ],
+   "soft": [
+    0.06,
+    0.09,
+    0.666667,
+    0.183333
+   ],
+   "expected": "investigate",
+   "argmax_idx": 2,
+   "label_upstream": "investigate",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 30,
+   "case_id": "security_incidents_000017",
+   "workflow": "security_incidents",
+   "qid": "severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "soft": [
+    0.066667,
+    0.366667,
+    0.45,
+    0.11,
+    0.006667
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.623333
+  },
+  {
+   "row": 30,
+   "case_id": "security_incidents_000017",
+   "workflow": "security_incidents",
+   "qid": "true_positive",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.21999999999999997,
+    0.78
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 30,
+   "case_id": "security_incidents_000017",
+   "workflow": "security_incidents",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.05,
+    0.283333,
+    0.483333,
+    0.183333
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.8
+  },
+  {
+   "row": 31,
+   "case_id": "security_incidents_000029",
+   "workflow": "security_incidents",
+   "qid": "credential_compromise",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.266667,
+    0.733333
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 31,
+   "case_id": "security_incidents_000029",
+   "workflow": "security_incidents",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "close_benign",
+    "contain",
+    "investigate",
+    "monitor"
+   ],
+   "soft": [
+    0.083333,
+    0.25,
+    0.366667,
+    0.3
+   ],
+   "expected": "investigate",
+   "argmax_idx": 2,
+   "label_upstream": "investigate",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 31,
+   "case_id": "security_incidents_000029",
+   "workflow": "security_incidents",
+   "qid": "severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "soft": [
+    0.016667,
+    0.066667,
+    0.25,
+    0.5,
+    0.166667
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.733333
+  },
+  {
+   "row": 31,
+   "case_id": "security_incidents_000029",
+   "workflow": "security_incidents",
+   "qid": "true_positive",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.373333,
+    0.626667
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 31,
+   "case_id": "security_incidents_000029",
+   "workflow": "security_incidents",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.05,
+    0.15,
+    0.383333,
+    0.416667
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.166667
+  },
+  {
+   "row": 32,
+   "case_id": "security_incidents_000032",
+   "workflow": "security_incidents",
+   "qid": "credential_compromise",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.94,
+    0.06
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 32,
+   "case_id": "security_incidents_000032",
+   "workflow": "security_incidents",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "close_benign",
+    "contain",
+    "investigate",
+    "monitor"
+   ],
+   "soft": [
+    0.766667,
+    0.0,
+    0.066667,
+    0.166667
+   ],
+   "expected": "close_benign",
+   "argmax_idx": 0,
+   "label_upstream": "close_benign",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 32,
+   "case_id": "security_incidents_000032",
+   "workflow": "security_incidents",
+   "qid": "severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "soft": [
+    0.36,
+    0.156667,
+    0.416667,
+    0.066667,
+    0.0
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.19
+  },
+  {
+   "row": 32,
+   "case_id": "security_incidents_000032",
+   "workflow": "security_incidents",
+   "qid": "true_positive",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.91,
+    0.09
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 32,
+   "case_id": "security_incidents_000032",
+   "workflow": "security_incidents",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.463333,
+    0.453333,
+    0.066667,
+    0.016667
+   ],
+   "expected": 0,
+   "argmax_idx": 0,
+   "label_upstream": "0",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 0.636667
+  },
+  {
+   "row": 33,
+   "case_id": "security_incidents_000045",
+   "workflow": "security_incidents",
+   "qid": "credential_compromise",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.4,
+    0.6
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 33,
+   "case_id": "security_incidents_000045",
+   "workflow": "security_incidents",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "close_benign",
+    "contain",
+    "investigate",
+    "monitor"
+   ],
+   "soft": [
+    0.066667,
+    0.083333,
+    0.616667,
+    0.233333
+   ],
+   "expected": "investigate",
+   "argmax_idx": 2,
+   "label_upstream": "investigate",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 33,
+   "case_id": "security_incidents_000045",
+   "workflow": "security_incidents",
+   "qid": "severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "soft": [
+    0.066667,
+    0.233333,
+    0.5,
+    0.15,
+    0.05
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.883333
+  },
+  {
+   "row": 33,
+   "case_id": "security_incidents_000045",
+   "workflow": "security_incidents",
+   "qid": "true_positive",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.333333,
+    0.666667
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 33,
+   "case_id": "security_incidents_000045",
+   "workflow": "security_incidents",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.05,
+    0.216667,
+    0.5,
+    0.233333
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.916667
+  },
+  {
+   "row": 34,
+   "case_id": "security_incidents_000054",
+   "workflow": "security_incidents",
+   "qid": "credential_compromise",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.566667,
+    0.433333
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 34,
+   "case_id": "security_incidents_000054",
+   "workflow": "security_incidents",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "close_benign",
+    "contain",
+    "investigate",
+    "monitor"
+   ],
+   "soft": [
+    0.05,
+    0.15,
+    0.65,
+    0.15
+   ],
+   "expected": "investigate",
+   "argmax_idx": 2,
+   "label_upstream": "investigate",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 34,
+   "case_id": "security_incidents_000054",
+   "workflow": "security_incidents",
+   "qid": "severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "soft": [
+    0.003333,
+    0.08,
+    0.416667,
+    0.45,
+    0.05
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.463333
+  },
+  {
+   "row": 34,
+   "case_id": "security_incidents_000054",
+   "workflow": "security_incidents",
+   "qid": "true_positive",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.233333,
+    0.766667
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 34,
+   "case_id": "security_incidents_000054",
+   "workflow": "security_incidents",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.016667,
+    0.116667,
+    0.416667,
+    0.45
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.3
+  },
+  {
+   "row": 35,
+   "case_id": "security_incidents_000055",
+   "workflow": "security_incidents",
+   "qid": "credential_compromise",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.833333,
+    0.166667
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 35,
+   "case_id": "security_incidents_000055",
+   "workflow": "security_incidents",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "close_benign",
+    "contain",
+    "investigate",
+    "monitor"
+   ],
+   "soft": [
+    0.333333,
+    0.066667,
+    0.433333,
+    0.166667
+   ],
+   "expected": "investigate",
+   "argmax_idx": 2,
+   "label_upstream": "investigate",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 35,
+   "case_id": "security_incidents_000055",
+   "workflow": "security_incidents",
+   "qid": "severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "soft": [
+    0.066667,
+    0.45,
+    0.283333,
+    0.166667,
+    0.033333
+   ],
+   "expected": 1,
+   "argmax_idx": 1,
+   "label_upstream": "1",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.65
+  },
+  {
+   "row": 35,
+   "case_id": "security_incidents_000055",
+   "workflow": "security_incidents",
+   "qid": "true_positive",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.566667,
+    0.433333
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 35,
+   "case_id": "security_incidents_000055",
+   "workflow": "security_incidents",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.116667,
+    0.5,
+    0.3,
+    0.083333
+   ],
+   "expected": 1,
+   "argmax_idx": 1,
+   "label_upstream": "1",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.35
+  },
+  {
+   "row": 36,
+   "case_id": "security_incidents_000062",
+   "workflow": "security_incidents",
+   "qid": "credential_compromise",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.6066670000000001,
+    0.393333
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 36,
+   "case_id": "security_incidents_000062",
+   "workflow": "security_incidents",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "close_benign",
+    "contain",
+    "investigate",
+    "monitor"
+   ],
+   "soft": [
+    0.106667,
+    0.066667,
+    0.45,
+    0.376667
+   ],
+   "expected": "investigate",
+   "argmax_idx": 2,
+   "label_upstream": "investigate",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 36,
+   "case_id": "security_incidents_000062",
+   "workflow": "security_incidents",
+   "qid": "severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "soft": [
+    0.016667,
+    0.053333,
+    0.233333,
+    0.533333,
+    0.163333
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.773333
+  },
+  {
+   "row": 36,
+   "case_id": "security_incidents_000062",
+   "workflow": "security_incidents",
+   "qid": "true_positive",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.51,
+    0.49
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 36,
+   "case_id": "security_incidents_000062",
+   "workflow": "security_incidents",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.03,
+    0.106667,
+    0.433333,
+    0.43
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.263333
+  },
+  {
+   "row": 37,
+   "case_id": "security_incidents_000070",
+   "workflow": "security_incidents",
+   "qid": "credential_compromise",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.583333,
+    0.416667
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 37,
+   "case_id": "security_incidents_000070",
+   "workflow": "security_incidents",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "close_benign",
+    "contain",
+    "investigate",
+    "monitor"
+   ],
+   "soft": [
+    0.06,
+    0.09,
+    0.6,
+    0.25
+   ],
+   "expected": "investigate",
+   "argmax_idx": 2,
+   "label_upstream": "investigate",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 37,
+   "case_id": "security_incidents_000070",
+   "workflow": "security_incidents",
+   "qid": "severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "soft": [
+    0.04,
+    0.133333,
+    0.4,
+    0.376667,
+    0.05
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.263333
+  },
+  {
+   "row": 37,
+   "case_id": "security_incidents_000070",
+   "workflow": "security_incidents",
+   "qid": "true_positive",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.44999999999999996,
+    0.55
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 37,
+   "case_id": "security_incidents_000070",
+   "workflow": "security_incidents",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.033333,
+    0.15,
+    0.55,
+    0.266667
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.05
+  },
+  {
+   "row": 38,
+   "case_id": "security_incidents_000072",
+   "workflow": "security_incidents",
+   "qid": "credential_compromise",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.75,
+    0.25
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 38,
+   "case_id": "security_incidents_000072",
+   "workflow": "security_incidents",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "close_benign",
+    "contain",
+    "investigate",
+    "monitor"
+   ],
+   "soft": [
+    0.133333,
+    0.066667,
+    0.466667,
+    0.333333
+   ],
+   "expected": "investigate",
+   "argmax_idx": 2,
+   "label_upstream": "investigate",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 38,
+   "case_id": "security_incidents_000072",
+   "workflow": "security_incidents",
+   "qid": "severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "soft": [
+    0.26,
+    0.04,
+    0.183333,
+    0.333333,
+    0.183333
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.14
+  },
+  {
+   "row": 38,
+   "case_id": "security_incidents_000072",
+   "workflow": "security_incidents",
+   "qid": "true_positive",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.683333,
+    0.316667
+   ],
+   "expected": false,
+   "argmax_idx": 0,
+   "label_upstream": "false",
+   "label_idx": 0,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 38,
+   "case_id": "security_incidents_000072",
+   "workflow": "security_incidents",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.276667,
+    0.131667,
+    0.325,
+    0.266667
+   ],
+   "expected": 2,
+   "argmax_idx": 2,
+   "label_upstream": "2",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 1.581667
+  },
+  {
+   "row": 39,
+   "case_id": "security_incidents_000096",
+   "workflow": "security_incidents",
+   "qid": "credential_compromise",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.416667,
+    0.583333
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 39,
+   "case_id": "security_incidents_000096",
+   "workflow": "security_incidents",
+   "qid": "disposition",
+   "type": "choice",
+   "options": [
+    "close_benign",
+    "contain",
+    "investigate",
+    "monitor"
+   ],
+   "soft": [
+    0.036667,
+    0.25,
+    0.633333,
+    0.08
+   ],
+   "expected": "investigate",
+   "argmax_idx": 2,
+   "label_upstream": "investigate",
+   "label_idx": 2,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 39,
+   "case_id": "security_incidents_000096",
+   "workflow": "security_incidents",
+   "qid": "severity",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "soft": [
+    0.016667,
+    0.056667,
+    0.176667,
+    0.6,
+    0.15
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.81
+  },
+  {
+   "row": 39,
+   "case_id": "security_incidents_000096",
+   "workflow": "security_incidents",
+   "qid": "true_positive",
+   "type": "noul",
+   "options": [
+    "false",
+    "true"
+   ],
+   "soft": [
+    0.21666700000000005,
+    0.783333
+   ],
+   "expected": true,
+   "argmax_idx": 1,
+   "label_upstream": "true",
+   "label_idx": 1,
+   "label_ne_argmax": false,
+   "tie": false
+  },
+  {
+   "row": 39,
+   "case_id": "security_incidents_000096",
+   "workflow": "security_incidents",
+   "qid": "urgency",
+   "type": "score",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "soft": [
+    0.016667,
+    0.083333,
+    0.283333,
+    0.616667
+   ],
+   "expected": 3,
+   "argmax_idx": 3,
+   "label_upstream": "3",
+   "label_idx": 3,
+   "label_ne_argmax": false,
+   "tie": false,
+   "gold_score": 2.5
+  }
+ ]
+}

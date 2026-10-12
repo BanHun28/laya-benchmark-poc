@@ -1,0 +1,7439 @@
+{
+  "cases": [
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3845,
+        "choice": "observe",
+        "confidence": 0.0729,
+        "probabilities": {
+          "continue": 0.1822,
+          "human_review": 0.3237,
+          "observe": 0.3845,
+          "stop": 0.1096
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3845,
+      "correct": false,
+      "expected": "continue",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3845,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6029,
+        "confidence": 0.6029,
+        "noul": 0.3971,
+        "type": "noul"
+      },
+      "confidence": 0.6029,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6029,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5538,
+        "choice": "partial",
+        "confidence": 0.1731,
+        "probabilities": {
+          "failure": 0.2291,
+          "harmful": 0.1004,
+          "partial": 0.5538,
+          "success": 0.1166
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5538,
+      "correct": false,
+      "expected": "success",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5538,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3287,
+        "confidence": 0.0348,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.3197,
+          "1": 0.3287,
+          "2": 0.1508,
+          "3": 0.2008
+        },
+        "score": 1.2328,
+        "type": "score"
+      },
+      "confidence": 0.3287,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3287,
+        "noul_accuracy": null,
+        "score_mae": 1.2328
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3275,
+        "confidence": 0.0483,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1074,
+          "1": 0.2768,
+          "2": 0.2883,
+          "3": 0.3275
+        },
+        "score": 1.8359,
+        "type": "score"
+      },
+      "confidence": 0.3275,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3275,
+        "noul_accuracy": null,
+        "score_mae": 1.8359
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3973,
+        "choice": "observe",
+        "confidence": 0.0859,
+        "probabilities": {
+          "continue": 0.1598,
+          "human_review": 0.3342,
+          "observe": 0.3973,
+          "stop": 0.1086
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3973,
+      "correct": false,
+      "expected": "continue",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3973,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.615,
+        "confidence": 0.615,
+        "noul": 0.385,
+        "type": "noul"
+      },
+      "confidence": 0.615,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.615,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4121,
+        "choice": "partial",
+        "confidence": 0.064,
+        "probabilities": {
+          "failure": 0.2797,
+          "harmful": 0.1452,
+          "partial": 0.4121,
+          "success": 0.163
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4121,
+      "correct": false,
+      "expected": "success",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4121,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4475,
+        "confidence": 0.0768,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.4475,
+          "1": 0.2434,
+          "2": 0.1677,
+          "3": 0.1413
+        },
+        "score": 1.0029,
+        "type": "score"
+      },
+      "confidence": 0.4475,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4475,
+        "noul_accuracy": null,
+        "score_mae": 1.0029
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3767,
+        "confidence": 0.0554,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1262,
+          "1": 0.3767,
+          "2": 0.302,
+          "3": 0.1951
+        },
+        "score": 1.566,
+        "type": "score"
+      },
+      "confidence": 0.3767,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3767,
+        "noul_accuracy": null,
+        "score_mae": 0.5660000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4174,
+        "choice": "observe",
+        "confidence": 0.1074,
+        "probabilities": {
+          "continue": 0.158,
+          "human_review": 0.336,
+          "observe": 0.4174,
+          "stop": 0.0886
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4174,
+      "correct": false,
+      "expected": "continue",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4174,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000028"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5108,
+        "confidence": 0.5108,
+        "noul": 0.4892,
+        "type": "noul"
+      },
+      "confidence": 0.5108,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5108,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000028"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4447,
+        "choice": "partial",
+        "confidence": 0.1057,
+        "probabilities": {
+          "failure": 0.306,
+          "harmful": 0.1087,
+          "partial": 0.4447,
+          "success": 0.1406
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4447,
+      "correct": false,
+      "expected": "success",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4447,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000028"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4998,
+        "confidence": 0.1145,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.4998,
+          "1": 0.2214,
+          "2": 0.1571,
+          "3": 0.1216
+        },
+        "score": 0.9006,
+        "type": "score"
+      },
+      "confidence": 0.4998,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4998,
+        "noul_accuracy": null,
+        "score_mae": 0.9006
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000028"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4376,
+        "confidence": 0.0989,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1206,
+          "1": 0.4376,
+          "2": 0.3073,
+          "3": 0.1345
+        },
+        "score": 1.4556,
+        "type": "score"
+      },
+      "confidence": 0.4376,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4376,
+        "noul_accuracy": null,
+        "score_mae": 1.4556
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000028"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3485,
+        "choice": "human_review",
+        "confidence": 0.0429,
+        "probabilities": {
+          "continue": 0.1455,
+          "human_review": 0.3485,
+          "observe": 0.3172,
+          "stop": 0.1889
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3485,
+      "correct": false,
+      "expected": "observe",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3485,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6565,
+        "confidence": 0.6565,
+        "noul": 0.3435,
+        "type": "noul"
+      },
+      "confidence": 0.6565,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6565,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3633,
+        "choice": "partial",
+        "confidence": 0.0581,
+        "probabilities": {
+          "failure": 0.326,
+          "harmful": 0.1859,
+          "partial": 0.3633,
+          "success": 0.1248
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3633,
+      "correct": true,
+      "expected": "partial",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.3633,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3245,
+        "confidence": 0.0243,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.3245,
+          "1": 0.2978,
+          "2": 0.1656,
+          "3": 0.2121
+        },
+        "score": 1.2654,
+        "type": "score"
+      },
+      "confidence": 0.3245,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3245,
+        "noul_accuracy": null,
+        "score_mae": 0.2654000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3758,
+        "confidence": 0.0888,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0686,
+          "1": 0.3758,
+          "2": 0.2822,
+          "3": 0.2733
+        },
+        "score": 1.7603,
+        "type": "score"
+      },
+      "confidence": 0.3758,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3758,
+        "noul_accuracy": null,
+        "score_mae": 0.7603
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4208,
+        "choice": "human_review",
+        "confidence": 0.1719,
+        "probabilities": {
+          "continue": 0.0869,
+          "human_review": 0.4208,
+          "observe": 0.4097,
+          "stop": 0.0825
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4208,
+      "correct": true,
+      "expected": "human_review",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.4208,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5924,
+        "confidence": 0.5924,
+        "noul": 0.5924,
+        "type": "noul"
+      },
+      "confidence": 0.5924,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5924,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4421,
+        "choice": "partial",
+        "confidence": 0.1066,
+        "probabilities": {
+          "failure": 0.2841,
+          "harmful": 0.1938,
+          "partial": 0.4421,
+          "success": 0.0801
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4421,
+      "correct": false,
+      "expected": "harmful",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4421,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3733,
+        "confidence": 0.0595,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.1089,
+          "1": 0.2223,
+          "2": 0.2954,
+          "3": 0.3733
+        },
+        "score": 1.9331,
+        "type": "score"
+      },
+      "confidence": 0.3733,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3733,
+        "noul_accuracy": null,
+        "score_mae": 1.0669
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3567,
+        "confidence": 0.1093,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0489,
+          "1": 0.2737,
+          "2": 0.3567,
+          "3": 0.3207
+        },
+        "score": 1.9491,
+        "type": "score"
+      },
+      "confidence": 0.3567,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3567,
+        "noul_accuracy": null,
+        "score_mae": 1.0509
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4092,
+        "choice": "human_review",
+        "confidence": 0.1459,
+        "probabilities": {
+          "continue": 0.0906,
+          "human_review": 0.4092,
+          "observe": 0.3973,
+          "stop": 0.1029
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4092,
+      "correct": true,
+      "expected": "human_review",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.4092,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5242,
+        "confidence": 0.5242,
+        "noul": 0.4758,
+        "type": "noul"
+      },
+      "confidence": 0.5242,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5242,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4203,
+        "choice": "partial",
+        "confidence": 0.1067,
+        "probabilities": {
+          "failure": 0.2995,
+          "harmful": 0.2112,
+          "partial": 0.4203,
+          "success": 0.069
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4203,
+      "correct": false,
+      "expected": "harmful",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4203,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3182,
+        "confidence": 0.0369,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.1292,
+          "1": 0.2413,
+          "2": 0.3113,
+          "3": 0.3182
+        },
+        "score": 1.8185,
+        "type": "score"
+      },
+      "confidence": 0.3182,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3182,
+        "noul_accuracy": null,
+        "score_mae": 1.1815
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3595,
+        "confidence": 0.0987,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0592,
+          "1": 0.2566,
+          "2": 0.3595,
+          "3": 0.3247
+        },
+        "score": 1.9496,
+        "type": "score"
+      },
+      "confidence": 0.3595,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3595,
+        "noul_accuracy": null,
+        "score_mae": 1.0504
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3769,
+        "choice": "observe",
+        "confidence": 0.0826,
+        "probabilities": {
+          "continue": 0.1268,
+          "human_review": 0.3571,
+          "observe": 0.3769,
+          "stop": 0.1392
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3769,
+      "correct": false,
+      "expected": "human_review",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3769,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000082"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5774,
+        "confidence": 0.5774,
+        "noul": 0.4226,
+        "type": "noul"
+      },
+      "confidence": 0.5774,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5774,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000082"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4492,
+        "choice": "partial",
+        "confidence": 0.1165,
+        "probabilities": {
+          "failure": 0.314,
+          "harmful": 0.1391,
+          "partial": 0.4492,
+          "success": 0.0976
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4492,
+      "correct": false,
+      "expected": "failure",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4492,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000082"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3493,
+        "confidence": 0.0271,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.3493,
+          "1": 0.2786,
+          "2": 0.1768,
+          "3": 0.1953
+        },
+        "score": 1.2181,
+        "type": "score"
+      },
+      "confidence": 0.3493,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3493,
+        "noul_accuracy": null,
+        "score_mae": 1.2181
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000082"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.302,
+        "confidence": 0.02,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.155,
+          "1": 0.302,
+          "2": 0.2734,
+          "3": 0.2695
+        },
+        "score": 1.6575,
+        "type": "score"
+      },
+      "confidence": 0.302,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.302,
+        "noul_accuracy": null,
+        "score_mae": 0.6575
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000082"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3982,
+        "choice": "observe",
+        "confidence": 0.1213,
+        "probabilities": {
+          "continue": 0.1881,
+          "human_review": 0.3533,
+          "observe": 0.3982,
+          "stop": 0.0605
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3982,
+      "correct": true,
+      "expected": "observe",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.3982,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000083"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5282,
+        "confidence": 0.5282,
+        "noul": 0.4718,
+        "type": "noul"
+      },
+      "confidence": 0.5282,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5282,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000083"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4189,
+        "choice": "partial",
+        "confidence": 0.0575,
+        "probabilities": {
+          "failure": 0.2349,
+          "harmful": 0.1426,
+          "partial": 0.4189,
+          "success": 0.2036
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4189,
+      "correct": false,
+      "expected": "success",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4189,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000083"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3643,
+        "confidence": 0.0434,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.2939,
+          "1": 0.3643,
+          "2": 0.1404,
+          "3": 0.2013
+        },
+        "score": 1.2492,
+        "type": "score"
+      },
+      "confidence": 0.3643,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3643,
+        "noul_accuracy": null,
+        "score_mae": 0.2492000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000083"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3126,
+        "confidence": 0.0455,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1108,
+          "1": 0.3126,
+          "2": 0.2696,
+          "3": 0.307
+        },
+        "score": 1.7727,
+        "type": "score"
+      },
+      "confidence": 0.3126,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3126,
+        "noul_accuracy": null,
+        "score_mae": 0.7726999999999999
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000083"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3968,
+        "choice": "observe",
+        "confidence": 0.0889,
+        "probabilities": {
+          "continue": 0.1513,
+          "human_review": 0.3412,
+          "observe": 0.3968,
+          "stop": 0.1106
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3968,
+      "correct": false,
+      "expected": "continue",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3968,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000085"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5958,
+        "confidence": 0.5958,
+        "noul": 0.4042,
+        "type": "noul"
+      },
+      "confidence": 0.5958,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5958,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000085"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4844,
+        "choice": "partial",
+        "confidence": 0.0958,
+        "probabilities": {
+          "failure": 0.2077,
+          "harmful": 0.1486,
+          "partial": 0.4844,
+          "success": 0.1593
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4844,
+      "correct": true,
+      "expected": "partial",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.4844,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000085"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3928,
+        "confidence": 0.0412,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.3928,
+          "1": 0.2424,
+          "2": 0.2024,
+          "3": 0.1624
+        },
+        "score": 1.1345,
+        "type": "score"
+      },
+      "confidence": 0.3928,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3928,
+        "noul_accuracy": null,
+        "score_mae": 1.1345
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000085"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.362,
+        "confidence": 0.0543,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1284,
+          "1": 0.362,
+          "2": 0.3204,
+          "3": 0.1891
+        },
+        "score": 1.5703,
+        "type": "score"
+      },
+      "confidence": 0.362,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.362,
+        "noul_accuracy": null,
+        "score_mae": 1.5703
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000085"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.42,
+        "choice": "observe",
+        "confidence": 0.1173,
+        "probabilities": {
+          "continue": 0.1438,
+          "human_review": 0.3488,
+          "observe": 0.42,
+          "stop": 0.0874
+        },
+        "type": "choice"
+      },
+      "confidence": 0.42,
+      "correct": true,
+      "expected": "observe",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.42,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5006,
+        "confidence": 0.5006,
+        "noul": 0.4994,
+        "type": "noul"
+      },
+      "confidence": 0.5006,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5006,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3739,
+        "choice": "partial",
+        "confidence": 0.0747,
+        "probabilities": {
+          "failure": 0.3477,
+          "harmful": 0.1254,
+          "partial": 0.3739,
+          "success": 0.153
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3739,
+      "correct": true,
+      "expected": "partial",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.3739,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3512,
+        "confidence": 0.0194,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.3512,
+          "1": 0.2367,
+          "2": 0.2117,
+          "3": 0.2004
+        },
+        "score": 1.2613,
+        "type": "score"
+      },
+      "confidence": 0.3512,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3512,
+        "noul_accuracy": null,
+        "score_mae": 1.2613
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3608,
+        "confidence": 0.0395,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1486,
+          "1": 0.2921,
+          "2": 0.3608,
+          "3": 0.1985
+        },
+        "score": 1.6091,
+        "type": "score"
+      },
+      "confidence": 0.3608,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3608,
+        "noul_accuracy": null,
+        "score_mae": 1.6091
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2385,
+        "choice": "execute_refund",
+        "confidence": 0.0059,
+        "probabilities": {
+          "answer_directly": 0.2137,
+          "close_no_action": 0.1589,
+          "escalate_to_human": 0.2079,
+          "execute_refund": 0.2385,
+          "request_information": 0.181
+        },
+        "type": "choice"
+      },
+      "confidence": 0.2385,
+      "correct": false,
+      "expected": "request_information",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.2385,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000003"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3599,
+        "choice": "account",
+        "confidence": 0.0584,
+        "probabilities": {
+          "account": 0.3599,
+          "billing": 0.1918,
+          "delivery": 0.0882,
+          "refund": 0.169,
+          "technical": 0.1911
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3599,
+      "correct": false,
+      "expected": "billing",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3599,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000003"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3497,
+        "confidence": 0.0566,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.1034,
+          "1": 0.2429,
+          "2": 0.3497,
+          "3": 0.304
+        },
+        "score": 1.8543,
+        "type": "score"
+      },
+      "confidence": 0.3497,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3497,
+        "noul_accuracy": null,
+        "score_mae": 0.14569999999999994
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000003"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5817,
+        "confidence": 0.5817,
+        "noul": 0.5817,
+        "type": "noul"
+      },
+      "confidence": 0.5817,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5817,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000003"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3841,
+        "confidence": 0.0693,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0934,
+          "1": 0.2568,
+          "2": 0.2657,
+          "3": 0.3841
+        },
+        "score": 1.9405,
+        "type": "score"
+      },
+      "confidence": 0.3841,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3841,
+        "noul_accuracy": null,
+        "score_mae": 1.0595
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000003"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2542,
+        "choice": "answer_directly",
+        "confidence": 0.027,
+        "probabilities": {
+          "answer_directly": 0.2542,
+          "close_no_action": 0.1077,
+          "escalate_to_human": 0.2484,
+          "execute_refund": 0.1624,
+          "request_information": 0.2272
+        },
+        "type": "choice"
+      },
+      "confidence": 0.2542,
+      "correct": false,
+      "expected": "escalate_to_human",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.2542,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000009"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4279,
+        "choice": "billing",
+        "confidence": 0.1216,
+        "probabilities": {
+          "account": 0.1618,
+          "billing": 0.4279,
+          "delivery": 0.0452,
+          "refund": 0.1521,
+          "technical": 0.213
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4279,
+      "correct": true,
+      "expected": "billing",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.4279,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000009"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.325,
+        "confidence": 0.0329,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.1328,
+          "1": 0.2829,
+          "2": 0.325,
+          "3": 0.2592
+        },
+        "score": 1.7107,
+        "type": "score"
+      },
+      "confidence": 0.325,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.325,
+        "noul_accuracy": null,
+        "score_mae": 0.2892999999999999
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000009"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5954,
+        "confidence": 0.5954,
+        "noul": 0.5954,
+        "type": "noul"
+      },
+      "confidence": 0.5954,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5954,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000009"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3487,
+        "confidence": 0.055,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1023,
+          "1": 0.2664,
+          "2": 0.2826,
+          "3": 0.3487
+        },
+        "score": 1.8778,
+        "type": "score"
+      },
+      "confidence": 0.3487,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3487,
+        "noul_accuracy": null,
+        "score_mae": 0.12220000000000009
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000009"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3818,
+        "choice": "escalate_to_human",
+        "confidence": 0.1094,
+        "probabilities": {
+          "answer_directly": 0.2562,
+          "close_no_action": 0.0766,
+          "escalate_to_human": 0.3818,
+          "execute_refund": 0.0729,
+          "request_information": 0.2125
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3818,
+      "correct": false,
+      "expected": "answer_directly",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3818,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5263,
+        "choice": "delivery",
+        "confidence": 0.1637,
+        "probabilities": {
+          "account": 0.1147,
+          "billing": 0.1105,
+          "delivery": 0.5263,
+          "refund": 0.1094,
+          "technical": 0.139
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5263,
+      "correct": true,
+      "expected": "delivery",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.5263,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5418,
+        "confidence": 0.1427,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.1519,
+          "1": 0.5418,
+          "2": 0.1268,
+          "3": 0.1795
+        },
+        "score": 1.3338,
+        "type": "score"
+      },
+      "confidence": 0.5418,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5418,
+        "noul_accuracy": null,
+        "score_mae": 1.3338
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5577,
+        "confidence": 0.5577,
+        "noul": 0.5577,
+        "type": "noul"
+      },
+      "confidence": 0.5577,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5577,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.42,
+        "confidence": 0.1075,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.065,
+          "1": 0.2876,
+          "2": 0.2274,
+          "3": 0.42
+        },
+        "score": 2.0023,
+        "type": "score"
+      },
+      "confidence": 0.42,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.42,
+        "noul_accuracy": null,
+        "score_mae": 0.0022999999999999687
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2889,
+        "choice": "escalate_to_human",
+        "confidence": 0.0459,
+        "probabilities": {
+          "answer_directly": 0.2378,
+          "close_no_action": 0.0733,
+          "escalate_to_human": 0.2889,
+          "execute_refund": 0.2025,
+          "request_information": 0.1974
+        },
+        "type": "choice"
+      },
+      "confidence": 0.2889,
+      "correct": false,
+      "expected": "execute_refund",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.2889,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7062,
+        "choice": "billing",
+        "confidence": 0.4693,
+        "probabilities": {
+          "account": 0.0299,
+          "billing": 0.7062,
+          "delivery": 0.01,
+          "refund": 0.2146,
+          "technical": 0.0393
+        },
+        "type": "choice"
+      },
+      "confidence": 0.7062,
+      "correct": true,
+      "expected": "billing",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.7062,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3913,
+        "confidence": 0.0861,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.0792,
+          "1": 0.2294,
+          "2": 0.3001,
+          "3": 0.3913
+        },
+        "score": 2.0035,
+        "type": "score"
+      },
+      "confidence": 0.3913,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3913,
+        "noul_accuracy": null,
+        "score_mae": 1.0034999999999998
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5383,
+        "confidence": 0.5383,
+        "noul": 0.5383,
+        "type": "noul"
+      },
+      "confidence": 0.5383,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5383,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4264,
+        "confidence": 0.1196,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0538,
+          "1": 0.2473,
+          "2": 0.2726,
+          "3": 0.4264
+        },
+        "score": 2.0715,
+        "type": "score"
+      },
+      "confidence": 0.4264,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4264,
+        "noul_accuracy": null,
+        "score_mae": 1.0715
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2272,
+        "choice": "escalate_to_human",
+        "confidence": 0.0036,
+        "probabilities": {
+          "answer_directly": 0.1991,
+          "close_no_action": 0.1669,
+          "escalate_to_human": 0.2272,
+          "execute_refund": 0.2176,
+          "request_information": 0.1893
+        },
+        "type": "choice"
+      },
+      "confidence": 0.2272,
+      "correct": true,
+      "expected": "escalate_to_human",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.2272,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000027"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3096,
+        "choice": "account",
+        "confidence": 0.052,
+        "probabilities": {
+          "account": 0.3096,
+          "billing": 0.2014,
+          "delivery": 0.0775,
+          "refund": 0.1631,
+          "technical": 0.2483
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3096,
+      "correct": true,
+      "expected": "account",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.3096,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000027"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3478,
+        "confidence": 0.0502,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.114,
+          "1": 0.2339,
+          "2": 0.3478,
+          "3": 0.3043
+        },
+        "score": 1.8424,
+        "type": "score"
+      },
+      "confidence": 0.3478,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3478,
+        "noul_accuracy": null,
+        "score_mae": 0.15759999999999996
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000027"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5528,
+        "confidence": 0.5528,
+        "noul": 0.5528,
+        "type": "noul"
+      },
+      "confidence": 0.5528,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5528,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000027"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3787,
+        "confidence": 0.0655,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.097,
+          "1": 0.2744,
+          "2": 0.2498,
+          "3": 0.3787
+        },
+        "score": 1.9102,
+        "type": "score"
+      },
+      "confidence": 0.3787,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3787,
+        "noul_accuracy": null,
+        "score_mae": 0.0898000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000027"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2424,
+        "choice": "request_information",
+        "confidence": 0.0107,
+        "probabilities": {
+          "answer_directly": 0.2219,
+          "close_no_action": 0.1458,
+          "escalate_to_human": 0.2216,
+          "execute_refund": 0.1684,
+          "request_information": 0.2424
+        },
+        "type": "choice"
+      },
+      "confidence": 0.2424,
+      "correct": false,
+      "expected": "escalate_to_human",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.2424,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2927,
+        "choice": "account",
+        "confidence": 0.035,
+        "probabilities": {
+          "account": 0.2927,
+          "billing": 0.1925,
+          "delivery": 0.1069,
+          "refund": 0.1564,
+          "technical": 0.2516
+        },
+        "type": "choice"
+      },
+      "confidence": 0.2927,
+      "correct": false,
+      "expected": "delivery",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.2927,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2971,
+        "confidence": 0.0174,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.1613,
+          "1": 0.2624,
+          "2": 0.2792,
+          "3": 0.2971
+        },
+        "score": 1.712,
+        "type": "score"
+      },
+      "confidence": 0.2971,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2971,
+        "noul_accuracy": null,
+        "score_mae": 0.28800000000000003
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5682,
+        "confidence": 0.5682,
+        "noul": 0.5682,
+        "type": "noul"
+      },
+      "confidence": 0.5682,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5682,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3566,
+        "confidence": 0.0505,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1112,
+          "1": 0.2581,
+          "2": 0.2741,
+          "3": 0.3566
+        },
+        "score": 1.8761,
+        "type": "score"
+      },
+      "confidence": 0.3566,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3566,
+        "noul_accuracy": null,
+        "score_mae": 0.8761000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5693,
+        "choice": "escalate_to_human",
+        "confidence": 0.2338,
+        "probabilities": {
+          "answer_directly": 0.1855,
+          "close_no_action": 0.0654,
+          "escalate_to_human": 0.5693,
+          "execute_refund": 0.058,
+          "request_information": 0.1217
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5693,
+      "correct": false,
+      "expected": "execute_refund",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5693,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5898,
+        "choice": "billing",
+        "confidence": 0.3158,
+        "probabilities": {
+          "account": 0.0699,
+          "billing": 0.5898,
+          "delivery": 0.0127,
+          "refund": 0.247,
+          "technical": 0.0806
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5898,
+      "correct": true,
+      "expected": "billing",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.5898,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3729,
+        "confidence": 0.0844,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.0857,
+          "1": 0.2041,
+          "2": 0.3729,
+          "3": 0.3374
+        },
+        "score": 1.9619,
+        "type": "score"
+      },
+      "confidence": 0.3729,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3729,
+        "noul_accuracy": null,
+        "score_mae": 0.03810000000000002
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5303,
+        "confidence": 0.5303,
+        "noul": 0.5303,
+        "type": "noul"
+      },
+      "confidence": 0.5303,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5303,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5926,
+        "confidence": 0.2485,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0298,
+          "1": 0.1679,
+          "2": 0.2097,
+          "3": 0.5926
+        },
+        "score": 2.3652,
+        "type": "score"
+      },
+      "confidence": 0.5926,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5926,
+        "noul_accuracy": null,
+        "score_mae": 0.3652000000000002
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3164,
+        "choice": "escalate_to_human",
+        "confidence": 0.0839,
+        "probabilities": {
+          "answer_directly": 0.2296,
+          "close_no_action": 0.0952,
+          "escalate_to_human": 0.3164,
+          "execute_refund": 0.0726,
+          "request_information": 0.2862
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3164,
+      "correct": false,
+      "expected": "answer_directly",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3164,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000068"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3172,
+        "choice": "technical",
+        "confidence": 0.0289,
+        "probabilities": {
+          "account": 0.2101,
+          "billing": 0.1776,
+          "delivery": 0.1367,
+          "refund": 0.1583,
+          "technical": 0.3172
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3172,
+      "correct": false,
+      "expected": "delivery",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3172,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000068"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3086,
+        "confidence": 0.0264,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.142,
+          "1": 0.3086,
+          "2": 0.2801,
+          "3": 0.2693
+        },
+        "score": 1.6769,
+        "type": "score"
+      },
+      "confidence": 0.3086,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3086,
+        "noul_accuracy": null,
+        "score_mae": 0.32309999999999994
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000068"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5482,
+        "confidence": 0.5482,
+        "noul": 0.5482,
+        "type": "noul"
+      },
+      "confidence": 0.5482,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5482,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000068"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3977,
+        "confidence": 0.0759,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0901,
+          "1": 0.2484,
+          "2": 0.2638,
+          "3": 0.3977
+        },
+        "score": 1.9691,
+        "type": "score"
+      },
+      "confidence": 0.3977,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3977,
+        "noul_accuracy": null,
+        "score_mae": 0.030899999999999928
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000068"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3139,
+        "choice": "escalate_to_human",
+        "confidence": 0.0387,
+        "probabilities": {
+          "answer_directly": 0.2445,
+          "close_no_action": 0.1849,
+          "escalate_to_human": 0.3139,
+          "execute_refund": 0.1276,
+          "request_information": 0.1291
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3139,
+      "correct": true,
+      "expected": "escalate_to_human",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.3139,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000093"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.522,
+        "choice": "technical",
+        "confidence": 0.2175,
+        "probabilities": {
+          "account": 0.1619,
+          "billing": 0.093,
+          "delivery": 0.021,
+          "refund": 0.2021,
+          "technical": 0.522
+        },
+        "type": "choice"
+      },
+      "confidence": 0.522,
+      "correct": true,
+      "expected": "technical",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.522,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000093"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4467,
+        "confidence": 0.233,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.0254,
+          "1": 0.112,
+          "2": 0.4467,
+          "3": 0.4159
+        },
+        "score": 2.2532,
+        "type": "score"
+      },
+      "confidence": 0.4467,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4467,
+        "noul_accuracy": null,
+        "score_mae": 0.7467999999999999
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000093"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5364,
+        "confidence": 0.5364,
+        "noul": 0.5364,
+        "type": "noul"
+      },
+      "confidence": 0.5364,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5364,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000093"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5665,
+        "confidence": 0.2092,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.045,
+          "1": 0.1752,
+          "2": 0.2133,
+          "3": 0.5665
+        },
+        "score": 2.3013,
+        "type": "score"
+      },
+      "confidence": 0.5665,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5665,
+        "noul_accuracy": null,
+        "score_mae": 0.6987000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000093"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4492,
+        "choice": "escalate_to_human",
+        "confidence": 0.1313,
+        "probabilities": {
+          "answer_directly": 0.1716,
+          "close_no_action": 0.0654,
+          "escalate_to_human": 0.4492,
+          "execute_refund": 0.0971,
+          "request_information": 0.2167
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4492,
+      "correct": false,
+      "expected": "request_information",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4492,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2529,
+        "choice": "technical",
+        "confidence": 0.0068,
+        "probabilities": {
+          "account": 0.1897,
+          "billing": 0.166,
+          "delivery": 0.1811,
+          "refund": 0.2102,
+          "technical": 0.2529
+        },
+        "type": "choice"
+      },
+      "confidence": 0.2529,
+      "correct": false,
+      "expected": "delivery",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.2529,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.438,
+        "confidence": 0.0746,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.1544,
+          "1": 0.438,
+          "2": 0.2595,
+          "3": 0.1481
+        },
+        "score": 1.4012,
+        "type": "score"
+      },
+      "confidence": 0.438,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.438,
+        "noul_accuracy": null,
+        "score_mae": 0.4012
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5007,
+        "confidence": 0.5007,
+        "noul": 0.5007,
+        "type": "noul"
+      },
+      "confidence": 0.5007,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5007,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3684,
+        "confidence": 0.0665,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0925,
+          "1": 0.2838,
+          "2": 0.3684,
+          "3": 0.2553
+        },
+        "score": 1.7866,
+        "type": "score"
+      },
+      "confidence": 0.3684,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3684,
+        "noul_accuracy": null,
+        "score_mae": 0.7866
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2851,
+        "confidence": 0.0055,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.268,
+          "1": 0.2434,
+          "2": 0.2851,
+          "3": 0.2036
+        },
+        "score": 1.4243,
+        "type": "score"
+      },
+      "confidence": 0.2851,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2851,
+        "noul_accuracy": null,
+        "score_mae": 1.5757
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000001"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.446,
+        "choice": "approve",
+        "confidence": 0.0792,
+        "probabilities": {
+          "approve": 0.446,
+          "hold": 0.2299,
+          "manual_review": 0.2048,
+          "reject": 0.1193
+        },
+        "type": "choice"
+      },
+      "confidence": 0.446,
+      "correct": false,
+      "expected": "manual_review",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.446,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000001"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9446,
+        "confidence": 0.9446,
+        "noul": 0.0554,
+        "type": "noul"
+      },
+      "confidence": 0.9446,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9446,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000001"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6456,
+        "confidence": 0.6456,
+        "noul": 0.6456,
+        "type": "noul"
+      },
+      "confidence": 0.6456,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6456,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000001"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3312,
+        "confidence": 0.0533,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1012,
+          "1": 0.3312,
+          "2": 0.2914,
+          "3": 0.2762
+        },
+        "score": 1.7426,
+        "type": "score"
+      },
+      "confidence": 0.3312,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3312,
+        "noul_accuracy": null,
+        "score_mae": 0.2574000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000001"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2909,
+        "confidence": 0.0089,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.2741,
+          "1": 0.2453,
+          "2": 0.2909,
+          "3": 0.1897
+        },
+        "score": 1.3963,
+        "type": "score"
+      },
+      "confidence": 0.2909,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2909,
+        "noul_accuracy": null,
+        "score_mae": 1.3963
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000010"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4693,
+        "choice": "approve",
+        "confidence": 0.089,
+        "probabilities": {
+          "approve": 0.4693,
+          "hold": 0.203,
+          "manual_review": 0.2011,
+          "reject": 0.1265
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4693,
+      "correct": true,
+      "expected": "approve",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.4693,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000010"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.948,
+        "confidence": 0.948,
+        "noul": 0.052,
+        "type": "noul"
+      },
+      "confidence": 0.948,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.948,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000010"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5351,
+        "confidence": 0.5351,
+        "noul": 0.5351,
+        "type": "noul"
+      },
+      "confidence": 0.5351,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5351,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000010"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3564,
+        "confidence": 0.0474,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.116,
+          "1": 0.3564,
+          "2": 0.267,
+          "3": 0.2606
+        },
+        "score": 1.6723,
+        "type": "score"
+      },
+      "confidence": 0.3564,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3564,
+        "noul_accuracy": null,
+        "score_mae": 0.3277000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000010"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2858,
+        "confidence": 0.0035,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.2603,
+          "1": 0.2299,
+          "2": 0.2858,
+          "3": 0.224
+        },
+        "score": 1.4736,
+        "type": "score"
+      },
+      "confidence": 0.2858,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2858,
+        "noul_accuracy": null,
+        "score_mae": 1.5264
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4328,
+        "choice": "approve",
+        "confidence": 0.0685,
+        "probabilities": {
+          "approve": 0.4328,
+          "hold": 0.2283,
+          "manual_review": 0.2105,
+          "reject": 0.1284
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4328,
+      "correct": false,
+      "expected": "manual_review",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4328,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9045,
+        "confidence": 0.9045,
+        "noul": 0.0955,
+        "type": "noul"
+      },
+      "confidence": 0.9045,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9045,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5922,
+        "confidence": 0.5922,
+        "noul": 0.5922,
+        "type": "noul"
+      },
+      "confidence": 0.5922,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5922,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3205,
+        "confidence": 0.0369,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.124,
+          "1": 0.3205,
+          "2": 0.2752,
+          "3": 0.2803
+        },
+        "score": 1.7118,
+        "type": "score"
+      },
+      "confidence": 0.3205,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3205,
+        "noul_accuracy": null,
+        "score_mae": 0.2882
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2797,
+        "confidence": 0.0069,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.2777,
+          "1": 0.2467,
+          "2": 0.2797,
+          "3": 0.1958
+        },
+        "score": 1.3937,
+        "type": "score"
+      },
+      "confidence": 0.2797,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2797,
+        "noul_accuracy": null,
+        "score_mae": 1.6063
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3236,
+        "choice": "approve",
+        "confidence": 0.0162,
+        "probabilities": {
+          "approve": 0.3236,
+          "hold": 0.2394,
+          "manual_review": 0.2606,
+          "reject": 0.1764
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3236,
+      "correct": false,
+      "expected": "manual_review",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3236,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9605,
+        "confidence": 0.9605,
+        "noul": 0.0395,
+        "type": "noul"
+      },
+      "confidence": 0.9605,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9605,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5622,
+        "confidence": 0.5622,
+        "noul": 0.5622,
+        "type": "noul"
+      },
+      "confidence": 0.5622,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5622,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3518,
+        "confidence": 0.0605,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0955,
+          "1": 0.3518,
+          "2": 0.2691,
+          "3": 0.2837
+        },
+        "score": 1.741,
+        "type": "score"
+      },
+      "confidence": 0.3518,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3518,
+        "noul_accuracy": null,
+        "score_mae": 1.259
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2714,
+        "confidence": 0.003,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.2623,
+          "1": 0.2535,
+          "2": 0.2714,
+          "3": 0.2127
+        },
+        "score": 1.4346,
+        "type": "score"
+      },
+      "confidence": 0.2714,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2714,
+        "noul_accuracy": null,
+        "score_mae": 1.5654
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4157,
+        "choice": "approve",
+        "confidence": 0.0589,
+        "probabilities": {
+          "approve": 0.4157,
+          "hold": 0.2297,
+          "manual_review": 0.2223,
+          "reject": 0.1322
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4157,
+      "correct": false,
+      "expected": "manual_review",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4157,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8949,
+        "confidence": 0.8949,
+        "noul": 0.1051,
+        "type": "noul"
+      },
+      "confidence": 0.8949,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8949,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6274,
+        "confidence": 0.6274,
+        "noul": 0.6274,
+        "type": "noul"
+      },
+      "confidence": 0.6274,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6274,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3448,
+        "confidence": 0.0554,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1008,
+          "1": 0.3448,
+          "2": 0.2685,
+          "3": 0.2859
+        },
+        "score": 1.7396,
+        "type": "score"
+      },
+      "confidence": 0.3448,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3448,
+        "noul_accuracy": null,
+        "score_mae": 0.7396
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3136,
+        "confidence": 0.0087,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.2268,
+          "1": 0.2497,
+          "2": 0.3136,
+          "3": 0.2099
+        },
+        "score": 1.5067,
+        "type": "score"
+      },
+      "confidence": 0.3136,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3136,
+        "noul_accuracy": null,
+        "score_mae": 1.4933
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000035"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2828,
+        "choice": "manual_review",
+        "confidence": 0.0165,
+        "probabilities": {
+          "approve": 0.2809,
+          "hold": 0.2744,
+          "manual_review": 0.2828,
+          "reject": 0.1619
+        },
+        "type": "choice"
+      },
+      "confidence": 0.2828,
+      "correct": true,
+      "expected": "manual_review",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.2828,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000035"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9512,
+        "confidence": 0.9512,
+        "noul": 0.0488,
+        "type": "noul"
+      },
+      "confidence": 0.9512,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9512,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000035"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5581,
+        "confidence": 0.5581,
+        "noul": 0.5581,
+        "type": "noul"
+      },
+      "confidence": 0.5581,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5581,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000035"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3276,
+        "confidence": 0.0548,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0988,
+          "1": 0.3276,
+          "2": 0.2969,
+          "3": 0.2766
+        },
+        "score": 1.7514,
+        "type": "score"
+      },
+      "confidence": 0.3276,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3276,
+        "noul_accuracy": null,
+        "score_mae": 0.24859999999999993
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000035"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2937,
+        "confidence": 0.0112,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.2937,
+          "1": 0.2454,
+          "2": 0.2789,
+          "3": 0.182
+        },
+        "score": 1.3491,
+        "type": "score"
+      },
+      "confidence": 0.2937,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2937,
+        "noul_accuracy": null,
+        "score_mae": 1.3491
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000057"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4854,
+        "choice": "approve",
+        "confidence": 0.1065,
+        "probabilities": {
+          "approve": 0.4854,
+          "hold": 0.2081,
+          "manual_review": 0.1987,
+          "reject": 0.1078
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4854,
+      "correct": true,
+      "expected": "approve",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.4854,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000057"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9451,
+        "confidence": 0.9451,
+        "noul": 0.0549,
+        "type": "noul"
+      },
+      "confidence": 0.9451,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9451,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000057"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5536,
+        "confidence": 0.5536,
+        "noul": 0.5536,
+        "type": "noul"
+      },
+      "confidence": 0.5536,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5536,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000057"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4035,
+        "confidence": 0.0783,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0896,
+          "1": 0.4035,
+          "2": 0.2433,
+          "3": 0.2635
+        },
+        "score": 1.6807,
+        "type": "score"
+      },
+      "confidence": 0.4035,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4035,
+        "noul_accuracy": null,
+        "score_mae": 0.3192999999999999
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000057"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2751,
+        "confidence": 0.0035,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.2611,
+          "1": 0.2539,
+          "2": 0.2751,
+          "3": 0.2099
+        },
+        "score": 1.4338,
+        "type": "score"
+      },
+      "confidence": 0.2751,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2751,
+        "noul_accuracy": null,
+        "score_mae": 1.5662
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000077"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.293,
+        "choice": "approve",
+        "confidence": 0.0129,
+        "probabilities": {
+          "approve": 0.293,
+          "hold": 0.2663,
+          "manual_review": 0.2676,
+          "reject": 0.1731
+        },
+        "type": "choice"
+      },
+      "confidence": 0.293,
+      "correct": false,
+      "expected": "manual_review",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.293,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000077"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9258,
+        "confidence": 0.9258,
+        "noul": 0.0742,
+        "type": "noul"
+      },
+      "confidence": 0.9258,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9258,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000077"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.592,
+        "confidence": 0.592,
+        "noul": 0.592,
+        "type": "noul"
+      },
+      "confidence": 0.592,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.592,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000077"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3545,
+        "confidence": 0.0478,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1148,
+          "1": 0.3545,
+          "2": 0.26,
+          "3": 0.2708
+        },
+        "score": 1.6868,
+        "type": "score"
+      },
+      "confidence": 0.3545,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3545,
+        "noul_accuracy": null,
+        "score_mae": 0.6868000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000077"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2901,
+        "confidence": 0.0054,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.2901,
+          "1": 0.242,
+          "2": 0.2614,
+          "3": 0.2065
+        },
+        "score": 1.3844,
+        "type": "score"
+      },
+      "confidence": 0.2901,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2901,
+        "noul_accuracy": null,
+        "score_mae": 1.6156
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4033,
+        "choice": "approve",
+        "confidence": 0.0511,
+        "probabilities": {
+          "approve": 0.4033,
+          "hold": 0.237,
+          "manual_review": 0.22,
+          "reject": 0.1397
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4033,
+      "correct": false,
+      "expected": "hold",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4033,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9465,
+        "confidence": 0.9465,
+        "noul": 0.0535,
+        "type": "noul"
+      },
+      "confidence": 0.9465,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9465,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.582,
+        "confidence": 0.582,
+        "noul": 0.582,
+        "type": "noul"
+      },
+      "confidence": 0.582,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.582,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3334,
+        "confidence": 0.0492,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1081,
+          "1": 0.3334,
+          "2": 0.2963,
+          "3": 0.2622
+        },
+        "score": 1.7125,
+        "type": "score"
+      },
+      "confidence": 0.3334,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3334,
+        "noul_accuracy": null,
+        "score_mae": 0.2875000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2861,
+        "confidence": 0.006,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.2763,
+          "1": 0.2287,
+          "2": 0.2861,
+          "3": 0.2089
+        },
+        "score": 1.4276,
+        "type": "score"
+      },
+      "confidence": 0.2861,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2861,
+        "noul_accuracy": null,
+        "score_mae": 1.5724
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4493,
+        "choice": "approve",
+        "confidence": 0.0858,
+        "probabilities": {
+          "approve": 0.4493,
+          "hold": 0.2285,
+          "manual_review": 0.214,
+          "reject": 0.1082
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4493,
+      "correct": false,
+      "expected": "manual_review",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4493,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9124,
+        "confidence": 0.9124,
+        "noul": 0.0876,
+        "type": "noul"
+      },
+      "confidence": 0.9124,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9124,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6068,
+        "confidence": 0.6068,
+        "noul": 0.6068,
+        "type": "noul"
+      },
+      "confidence": 0.6068,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6068,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3374,
+        "confidence": 0.0494,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1077,
+          "1": 0.3374,
+          "2": 0.2693,
+          "3": 0.2856
+        },
+        "score": 1.7328,
+        "type": "score"
+      },
+      "confidence": 0.3374,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3374,
+        "noul_accuracy": null,
+        "score_mae": 0.2672000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8078,
+        "confidence": 0.8078,
+        "noul": 0.8078,
+        "type": "noul"
+      },
+      "confidence": 0.8078,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8078,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000017"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3305,
+        "choice": "investigate",
+        "confidence": 0.0725,
+        "probabilities": {
+          "close_benign": 0.0797,
+          "contain": 0.3185,
+          "investigate": 0.3305,
+          "monitor": 0.2713
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3305,
+      "correct": true,
+      "expected": "investigate",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.3305,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000017"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2496,
+        "confidence": 0.0327,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.0857,
+          "1": 0.2496,
+          "2": 0.2131,
+          "3": 0.207,
+          "4": 0.2446
+        },
+        "score": 2.2753,
+        "type": "score"
+      },
+      "confidence": 0.2496,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2496,
+        "noul_accuracy": null,
+        "score_mae": 0.2753000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000017"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7375,
+        "confidence": 0.7375,
+        "noul": 0.7375,
+        "type": "noul"
+      },
+      "confidence": 0.7375,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7375,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000017"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4148,
+        "confidence": 0.1396,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0626,
+          "1": 0.1521,
+          "2": 0.4148,
+          "3": 0.3705
+        },
+        "score": 2.0932,
+        "type": "score"
+      },
+      "confidence": 0.4148,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4148,
+        "noul_accuracy": null,
+        "score_mae": 0.09319999999999995
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000017"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.771,
+        "confidence": 0.771,
+        "noul": 0.771,
+        "type": "noul"
+      },
+      "confidence": 0.771,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.771,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3373,
+        "choice": "investigate",
+        "confidence": 0.0624,
+        "probabilities": {
+          "close_benign": 0.0981,
+          "contain": 0.2328,
+          "investigate": 0.3373,
+          "monitor": 0.3318
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3373,
+      "correct": true,
+      "expected": "investigate",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.3373,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2999,
+        "confidence": 0.0739,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.0425,
+          "1": 0.2121,
+          "2": 0.2999,
+          "3": 0.2479,
+          "4": 0.1977
+        },
+        "score": 2.3461,
+        "type": "score"
+      },
+      "confidence": 0.2999,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2999,
+        "noul_accuracy": null,
+        "score_mae": 0.6539000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5333,
+        "confidence": 0.5333,
+        "noul": 0.5333,
+        "type": "noul"
+      },
+      "confidence": 0.5333,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5333,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.411,
+        "confidence": 0.0901,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0779,
+          "1": 0.2598,
+          "2": 0.2513,
+          "3": 0.411
+        },
+        "score": 1.9955,
+        "type": "score"
+      },
+      "confidence": 0.411,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.411,
+        "noul_accuracy": null,
+        "score_mae": 1.0045
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7356,
+        "confidence": 0.7356,
+        "noul": 0.7356,
+        "type": "noul"
+      },
+      "confidence": 0.7356,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7356,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000032"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3475,
+        "choice": "monitor",
+        "confidence": 0.0489,
+        "probabilities": {
+          "close_benign": 0.1452,
+          "contain": 0.1748,
+          "investigate": 0.3324,
+          "monitor": 0.3475
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3475,
+      "correct": false,
+      "expected": "close_benign",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3475,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000032"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3833,
+        "confidence": 0.0915,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.054,
+          "1": 0.2195,
+          "2": 0.3833,
+          "3": 0.1602,
+          "4": 0.183
+        },
+        "score": 2.1987,
+        "type": "score"
+      },
+      "confidence": 0.3833,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3833,
+        "noul_accuracy": null,
+        "score_mae": 0.1987000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000032"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6548,
+        "confidence": 0.6548,
+        "noul": 0.6548,
+        "type": "noul"
+      },
+      "confidence": 0.6548,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6548,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000032"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3922,
+        "confidence": 0.0882,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0735,
+          "1": 0.2739,
+          "2": 0.2604,
+          "3": 0.3922
+        },
+        "score": 1.9714,
+        "type": "score"
+      },
+      "confidence": 0.3922,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3922,
+        "noul_accuracy": null,
+        "score_mae": 1.9714
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000032"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7411,
+        "confidence": 0.7411,
+        "noul": 0.7411,
+        "type": "noul"
+      },
+      "confidence": 0.7411,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7411,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000045"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3907,
+        "choice": "monitor",
+        "confidence": 0.0714,
+        "probabilities": {
+          "close_benign": 0.1159,
+          "contain": 0.1765,
+          "investigate": 0.3169,
+          "monitor": 0.3907
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3907,
+      "correct": false,
+      "expected": "investigate",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3907,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000045"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2853,
+        "confidence": 0.0939,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.0263,
+          "1": 0.1871,
+          "2": 0.2755,
+          "3": 0.2258,
+          "4": 0.2853
+        },
+        "score": 2.5567,
+        "type": "score"
+      },
+      "confidence": 0.2853,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2853,
+        "noul_accuracy": null,
+        "score_mae": 0.5567000000000002
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000045"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6111,
+        "confidence": 0.6111,
+        "noul": 0.6111,
+        "type": "noul"
+      },
+      "confidence": 0.6111,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6111,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000045"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4688,
+        "confidence": 0.1114,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0844,
+          "1": 0.2417,
+          "2": 0.2051,
+          "3": 0.4688
+        },
+        "score": 2.0583,
+        "type": "score"
+      },
+      "confidence": 0.4688,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4688,
+        "noul_accuracy": null,
+        "score_mae": 0.05830000000000002
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000045"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6096,
+        "confidence": 0.6096,
+        "noul": 0.6096,
+        "type": "noul"
+      },
+      "confidence": 0.6096,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6096,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000054"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3254,
+        "choice": "monitor",
+        "confidence": 0.0108,
+        "probabilities": {
+          "close_benign": 0.2253,
+          "contain": 0.2118,
+          "investigate": 0.2375,
+          "monitor": 0.3254
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3254,
+      "correct": false,
+      "expected": "investigate",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3254,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000054"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2815,
+        "confidence": 0.0296,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.1102,
+          "1": 0.2396,
+          "2": 0.2815,
+          "3": 0.2112,
+          "4": 0.1575
+        },
+        "score": 2.0661,
+        "type": "score"
+      },
+      "confidence": 0.2815,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2815,
+        "noul_accuracy": null,
+        "score_mae": 0.9339
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000054"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6014,
+        "confidence": 0.6014,
+        "noul": 0.3986,
+        "type": "noul"
+      },
+      "confidence": 0.6014,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6014,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000054"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2976,
+        "confidence": 0.0165,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1636,
+          "1": 0.2976,
+          "2": 0.267,
+          "3": 0.2718
+        },
+        "score": 1.6471,
+        "type": "score"
+      },
+      "confidence": 0.2976,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2976,
+        "noul_accuracy": null,
+        "score_mae": 1.3529
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000054"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8033,
+        "confidence": 0.8033,
+        "noul": 0.8033,
+        "type": "noul"
+      },
+      "confidence": 0.8033,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8033,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3251,
+        "choice": "monitor",
+        "confidence": 0.0335,
+        "probabilities": {
+          "close_benign": 0.1594,
+          "contain": 0.1919,
+          "investigate": 0.3236,
+          "monitor": 0.3251
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3251,
+      "correct": false,
+      "expected": "investigate",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3251,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2959,
+        "confidence": 0.0774,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.0398,
+          "1": 0.1856,
+          "2": 0.2257,
+          "3": 0.253,
+          "4": 0.2959
+        },
+        "score": 2.5795,
+        "type": "score"
+      },
+      "confidence": 0.2959,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2959,
+        "noul_accuracy": null,
+        "score_mae": 1.5795
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5284,
+        "confidence": 0.5284,
+        "noul": 0.5284,
+        "type": "noul"
+      },
+      "confidence": 0.5284,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5284,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4062,
+        "confidence": 0.0793,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0912,
+          "1": 0.2278,
+          "2": 0.2748,
+          "3": 0.4062
+        },
+        "score": 1.996,
+        "type": "score"
+      },
+      "confidence": 0.4062,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4062,
+        "noul_accuracy": null,
+        "score_mae": 0.996
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7889,
+        "confidence": 0.7889,
+        "noul": 0.7889,
+        "type": "noul"
+      },
+      "confidence": 0.7889,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7889,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000062"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3292,
+        "choice": "monitor",
+        "confidence": 0.0447,
+        "probabilities": {
+          "close_benign": 0.1131,
+          "contain": 0.2731,
+          "investigate": 0.2847,
+          "monitor": 0.3292
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3292,
+      "correct": false,
+      "expected": "investigate",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3292,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000062"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2678,
+        "confidence": 0.0639,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.049,
+          "1": 0.1972,
+          "2": 0.2678,
+          "3": 0.2633,
+          "4": 0.2228
+        },
+        "score": 2.4137,
+        "type": "score"
+      },
+      "confidence": 0.2678,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2678,
+        "noul_accuracy": null,
+        "score_mae": 0.5863
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000062"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5253,
+        "confidence": 0.5253,
+        "noul": 0.5253,
+        "type": "noul"
+      },
+      "confidence": 0.5253,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5253,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000062"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.39,
+        "confidence": 0.0802,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0886,
+          "1": 0.3059,
+          "2": 0.2156,
+          "3": 0.39
+        },
+        "score": 1.9068,
+        "type": "score"
+      },
+      "confidence": 0.39,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.39,
+        "noul_accuracy": null,
+        "score_mae": 0.09319999999999995
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000062"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6808,
+        "confidence": 0.6808,
+        "noul": 0.6808,
+        "type": "noul"
+      },
+      "confidence": 0.6808,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6808,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000070"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4255,
+        "choice": "monitor",
+        "confidence": 0.0981,
+        "probabilities": {
+          "close_benign": 0.1087,
+          "contain": 0.1461,
+          "investigate": 0.3197,
+          "monitor": 0.4255
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4255,
+      "correct": false,
+      "expected": "investigate",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4255,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000070"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3705,
+        "confidence": 0.112,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.0277,
+          "1": 0.1786,
+          "2": 0.3705,
+          "3": 0.2361,
+          "4": 0.1871
+        },
+        "score": 2.3764,
+        "type": "score"
+      },
+      "confidence": 0.3705,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3705,
+        "noul_accuracy": null,
+        "score_mae": 0.37639999999999985
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000070"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6581,
+        "confidence": 0.6581,
+        "noul": 0.6581,
+        "type": "noul"
+      },
+      "confidence": 0.6581,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6581,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000070"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5038,
+        "confidence": 0.1558,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0565,
+          "1": 0.2479,
+          "2": 0.1918,
+          "3": 0.5038
+        },
+        "score": 2.1428,
+        "type": "score"
+      },
+      "confidence": 0.5038,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5038,
+        "noul_accuracy": null,
+        "score_mae": 0.14279999999999982
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000070"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8354,
+        "confidence": 0.8354,
+        "noul": 0.8354,
+        "type": "noul"
+      },
+      "confidence": 0.8354,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8354,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000072"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3322,
+        "choice": "monitor",
+        "confidence": 0.0449,
+        "probabilities": {
+          "close_benign": 0.1138,
+          "contain": 0.2649,
+          "investigate": 0.2891,
+          "monitor": 0.3322
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3322,
+      "correct": false,
+      "expected": "investigate",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3322,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000072"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2982,
+        "confidence": 0.0295,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.1673,
+          "1": 0.2982,
+          "2": 0.2463,
+          "3": 0.1299,
+          "4": 0.1582
+        },
+        "score": 1.8136,
+        "type": "score"
+      },
+      "confidence": 0.2982,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2982,
+        "noul_accuracy": null,
+        "score_mae": 1.1864
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000072"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5691,
+        "confidence": 0.5691,
+        "noul": 0.5691,
+        "type": "noul"
+      },
+      "confidence": 0.5691,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5691,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000072"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3916,
+        "confidence": 0.0906,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0728,
+          "1": 0.3916,
+          "2": 0.2407,
+          "3": 0.2949
+        },
+        "score": 1.7578,
+        "type": "score"
+      },
+      "confidence": 0.3916,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3916,
+        "noul_accuracy": null,
+        "score_mae": 0.24219999999999997
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000072"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8245,
+        "confidence": 0.8245,
+        "noul": 0.8245,
+        "type": "noul"
+      },
+      "confidence": 0.8245,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8245,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000096"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4306,
+        "choice": "investigate",
+        "confidence": 0.0634,
+        "probabilities": {
+          "close_benign": 0.1446,
+          "contain": 0.1909,
+          "investigate": 0.4306,
+          "monitor": 0.2339
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4306,
+      "correct": true,
+      "expected": "investigate",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.4306,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000096"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3258,
+        "confidence": 0.0593,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.0672,
+          "1": 0.2009,
+          "2": 0.2262,
+          "3": 0.1799,
+          "4": 0.3258
+        },
+        "score": 2.4962,
+        "type": "score"
+      },
+      "confidence": 0.3258,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3258,
+        "noul_accuracy": null,
+        "score_mae": 0.5038
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000096"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7534,
+        "confidence": 0.7534,
+        "noul": 0.7534,
+        "type": "noul"
+      },
+      "confidence": 0.7534,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7534,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000096"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3595,
+        "confidence": 0.0674,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.089,
+          "1": 0.2904,
+          "2": 0.2611,
+          "3": 0.3595
+        },
+        "score": 1.8911,
+        "type": "score"
+      },
+      "confidence": 0.3595,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3595,
+        "noul_accuracy": null,
+        "score_mae": 1.1089
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000096"
+      ]
+    }
+  ],
+  "config": {
+    "checkpoint": {
+      "path": "poc/finetune/ckpt_t3arm/_v5_english",
+      "realpath": "/Users/banhun/banhun28/lab/benchmarkforLaya/poc/finetune/ckpt_t3arm/_v5_english",
+      "rl_agent_config_sha256": "4c166f4340a8135642a08fb76eb7516b84f48a4bd173e1216f751d00cd96fc76",
+      "temperature_applied": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "temperature_by_options": {},
+      "temperature_raw": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "weights_sha256": "0e88abe85951d1a66010a88677f327cc44ae14009db008fdf0ee4e2e68ce21a8"
+    },
+    "dataset": "data/evals/jev_cmp/T1_typed_decisions_40.jsonl",
+    "dataset_sha256": "749a24c4c0db977686f29eeecd41201e16b97629a9fbd641a6ffb5dfe6163834",
+    "device": "cpu",
+    "eval_s": 23.0,
+    "laya_version": "0.3.23",
+    "load_s": 3.36,
+    "model": "v5-english",
+    "questions_sha256": "d46ef26a6ec2f2f8c6fc0cfa1e81715751dda05f173cd028ae3eaaa4b9d519cb",
+    "revisions": {
+      "v5-english": "local"
+    },
+    "runner": "poc/finetune/eval_ckpt.py AgentRunner(laya.load(ckpt, device='cpu'))",
+    "schema": "laya-evals-report/1",
+    "threads": {
+      "interop": 1,
+      "intra": 10
+    },
+    "thresholds": {
+      "baseline_tolerance": {},
+      "max": {},
+      "min": {}
+    },
+    "timing": {
+      "batch_form": "states",
+      "batch_size": 8,
+      "chunks": 8,
+      "cost_metric": "per decision: that call divided by its own chunk size",
+      "latency_metric": "per request: the wall time of the call that returned it, unsplit",
+      "max_chunk": 8,
+      "min_confidence": null,
+      "min_confidence_sent": false,
+      "rows_alone": 0,
+      "rows_grouped": 40,
+      "sort_by_length": false,
+      "sort_by_length_sent": false
+    }
+  },
+  "overall": {
+    "choice_accuracy": 0.35,
+    "cost_per_decision_p50_ms": 603.0566145018383,
+    "cost_per_decision_p95_ms": 840.7440989976749,
+    "ece": 0.13884000000000002,
+    "latency_p50_ms": 4435.651457984932,
+    "latency_p95_ms": 6725.952791981399,
+    "mean_confidence": 0.46235750000000003,
+    "noul_accuracy": 0.5833333333333334,
+    "score_mae": 0.80667625
+  },
+  "slices": {
+    "language": {
+      "en": {
+        "choice_accuracy": 0.35,
+        "ece": 0.13884000000000002,
+        "mean_confidence": 0.46235750000000003,
+        "noul_accuracy": 0.5833333333333334,
+        "score_mae": 0.80667625
+      }
+    },
+    "model": {
+      "laya-rl-agent": {
+        "choice_accuracy": 0.35,
+        "ece": 0.13884000000000002,
+        "mean_confidence": 0.46235750000000003,
+        "noul_accuracy": 0.5833333333333334,
+        "score_mae": 0.80667625
+      }
+    },
+    "qid": {
+      "action": {
+        "choice_accuracy": 0.3,
+        "ece": 0.16276000000000002,
+        "mean_confidence": 0.36257
+      },
+      "category": {
+        "choice_accuracy": 0.6,
+        "ece": 0.29211000000000004,
+        "mean_confidence": 0.43045
+      },
+      "churn_risk": {
+        "mean_confidence": 0.38188999999999995,
+        "score_mae": 0.47271
+      },
+      "credential_compromise": {
+        "ece": 0.3598,
+        "mean_confidence": 0.7598,
+        "noul_accuracy": 0.4
+      },
+      "discrepancy_severity": {
+        "mean_confidence": 0.28715,
+        "score_mae": 1.52667
+      },
+      "disposition": {
+        "choice_accuracy": 0.3,
+        "ece": 0.18329,
+        "mean_confidence": 0.37876
+      },
+      "duplicate": {
+        "ece": 0.06664999999999999,
+        "mean_confidence": 0.9333500000000001,
+        "noul_accuracy": 1.0
+      },
+      "matches_order": {
+        "ece": 0.3855,
+        "mean_confidence": 0.5854999999999999,
+        "noul_accuracy": 0.2
+      },
+      "needs_human": {
+        "ece": 0.14903,
+        "mean_confidence": 0.5509700000000001,
+        "noul_accuracy": 0.7
+      },
+      "needs_review": {
+        "ece": 0.12961999999999996,
+        "mean_confidence": 0.57038,
+        "noul_accuracy": 0.7
+      },
+      "outcome": {
+        "choice_accuracy": 0.3,
+        "ece": 0.49194999999999994,
+        "mean_confidence": 0.43627000000000005
+      },
+      "risk": {
+        "mean_confidence": 0.37496,
+        "score_mae": 0.9513199999999999
+      },
+      "severity": {
+        "mean_confidence": 0.30578,
+        "score_mae": 0.68509
+      },
+      "true_positive": {
+        "ece": 0.21906000000000006,
+        "mean_confidence": 0.61724,
+        "noul_accuracy": 0.5
+      },
+      "urgency": {
+        "mean_confidence": 0.38268749999999996,
+        "score_mae": 0.7044050000000001
+      }
+    },
+    "tag": {
+      "id:agent_trace_observability_000018": {
+        "choice_accuracy": 0.0,
+        "ece": 0.44513333333333327,
+        "mean_confidence": 0.43948,
+        "noul_accuracy": 1.0,
+        "score_mae": 1.5343499999999999
+      },
+      "id:agent_trace_observability_000023": {
+        "choice_accuracy": 0.0,
+        "ece": 0.39813333333333334,
+        "mean_confidence": 0.44972,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.78445
+      },
+      "id:agent_trace_observability_000028": {
+        "choice_accuracy": 0.0,
+        "ece": 0.4504333333333333,
+        "mean_confidence": 0.46205999999999997,
+        "noul_accuracy": 1.0,
+        "score_mae": 1.1781
+      },
+      "id:agent_trace_observability_000029": {
+        "choice_accuracy": 0.5,
+        "ece": 0.31489999999999996,
+        "mean_confidence": 0.41372,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.51285
+      },
+      "id:agent_trace_observability_000033": {
+        "choice_accuracy": 0.5,
+        "ece": 0.18156666666666663,
+        "mean_confidence": 0.43706000000000006,
+        "noul_accuracy": 1.0,
+        "score_mae": 1.0589
+      },
+      "id:agent_trace_observability_000037": {
+        "choice_accuracy": 0.5,
+        "ece": 0.23156666666666664,
+        "mean_confidence": 0.40628000000000003,
+        "noul_accuracy": 0.0,
+        "score_mae": 1.11595
+      },
+      "id:agent_trace_observability_000082": {
+        "choice_accuracy": 0.0,
+        "ece": 0.4678333333333333,
+        "mean_confidence": 0.41096000000000005,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.9378
+      },
+      "id:agent_trace_observability_000083": {
+        "choice_accuracy": 0.5,
+        "ece": 0.4975,
+        "mean_confidence": 0.40443999999999997,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.51095
+      },
+      "id:agent_trace_observability_000085": {
+        "choice_accuracy": 0.5,
+        "ece": 0.4388666666666666,
+        "mean_confidence": 0.44636,
+        "noul_accuracy": 1.0,
+        "score_mae": 1.3524
+      },
+      "id:agent_trace_observability_000087": {
+        "choice_accuracy": 1.0,
+        "ece": 0.5685,
+        "mean_confidence": 0.4013,
+        "noul_accuracy": 1.0,
+        "score_mae": 1.4352
+      },
+      "id:customer_service_000003": {
+        "choice_accuracy": 0.0,
+        "ece": 0.3389,
+        "mean_confidence": 0.38278,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.6026
+      },
+      "id:customer_service_000009": {
+        "choice_accuracy": 0.5,
+        "ece": 0.41029999999999994,
+        "mean_confidence": 0.39024000000000003,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.20575
+      },
+      "id:customer_service_000016": {
+        "choice_accuracy": 0.5,
+        "ece": 0.47106666666666663,
+        "mean_confidence": 0.48552,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.66805
+      },
+      "id:customer_service_000023": {
+        "choice_accuracy": 0.5,
+        "ece": 0.37366666666666665,
+        "mean_confidence": 0.47022,
+        "noul_accuracy": 0.0,
+        "score_mae": 1.0374999999999999
+      },
+      "id:customer_service_000027": {
+        "choice_accuracy": 1.0,
+        "ece": 0.6367999999999999,
+        "mean_confidence": 0.36322,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.12370000000000003
+      },
+      "id:customer_service_000037": {
+        "choice_accuracy": 0.0,
+        "ece": 0.3223,
+        "mean_confidence": 0.35140000000000005,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.5820500000000001
+      },
+      "id:customer_service_000055": {
+        "choice_accuracy": 0.5,
+        "ece": 0.2096,
+        "mean_confidence": 0.53098,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.2016500000000001
+      },
+      "id:customer_service_000068": {
+        "choice_accuracy": 0.0,
+        "ece": 0.3939333333333333,
+        "mean_confidence": 0.37762,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.17699999999999994
+      },
+      "id:customer_service_000093": {
+        "choice_accuracy": 1.0,
+        "ece": 0.5425666666666666,
+        "mean_confidence": 0.47709999999999997,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.72275
+      },
+      "id:customer_service_000095": {
+        "choice_accuracy": 0.0,
+        "ece": 0.40046666666666664,
+        "mean_confidence": 0.40184,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.5939
+      },
+      "id:invoice_processing_000001": {
+        "choice_accuracy": 0.0,
+        "ece": 0.38233333333333336,
+        "mean_confidence": 0.5305,
+        "noul_accuracy": 0.5,
+        "score_mae": 0.9165500000000001
+      },
+      "id:invoice_processing_000010": {
+        "choice_accuracy": 1.0,
+        "ece": 0.3492,
+        "mean_confidence": 0.51994,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.8620000000000001
+      },
+      "id:invoice_processing_000016": {
+        "choice_accuracy": 0.0,
+        "ece": 0.37349999999999994,
+        "mean_confidence": 0.50716,
+        "noul_accuracy": 0.5,
+        "score_mae": 0.9073
+      },
+      "id:invoice_processing_000018": {
+        "choice_accuracy": 0.0,
+        "ece": 0.30843333333333334,
+        "mean_confidence": 0.49556000000000006,
+        "noul_accuracy": 0.5,
+        "score_mae": 1.43265
+      },
+      "id:invoice_processing_000033": {
+        "choice_accuracy": 0.0,
+        "ece": 0.3827333333333333,
+        "mean_confidence": 0.51084,
+        "noul_accuracy": 0.5,
+        "score_mae": 1.1524999999999999
+      },
+      "id:invoice_processing_000035": {
+        "choice_accuracy": 1.0,
+        "ece": 0.4413666666666667,
+        "mean_confidence": 0.48666,
+        "noul_accuracy": 0.5,
+        "score_mae": 0.87095
+      },
+      "id:invoice_processing_000057": {
+        "choice_accuracy": 1.0,
+        "ece": 0.3386333333333333,
+        "mean_confidence": 0.5362600000000001,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.8341999999999999
+      },
+      "id:invoice_processing_000077": {
+        "choice_accuracy": 0.0,
+        "ece": 0.31973333333333326,
+        "mean_confidence": 0.48807999999999996,
+        "noul_accuracy": 0.5,
+        "score_mae": 1.1265
+      },
+      "id:invoice_processing_000087": {
+        "choice_accuracy": 0.0,
+        "ece": 0.3462666666666666,
+        "mean_confidence": 0.51106,
+        "noul_accuracy": 0.5,
+        "score_mae": 0.95155
+      },
+      "id:invoice_processing_000095": {
+        "choice_accuracy": 0.0,
+        "ece": 0.3812333333333333,
+        "mean_confidence": 0.5184,
+        "noul_accuracy": 0.5,
+        "score_mae": 0.9198000000000001
+      },
+      "id:security_incidents_000017": {
+        "choice_accuracy": 1.0,
+        "ece": 0.3747333333333333,
+        "mean_confidence": 0.50804,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.18425000000000002
+      },
+      "id:security_incidents_000029": {
+        "choice_accuracy": 1.0,
+        "ece": 0.4528,
+        "mean_confidence": 0.47050000000000003,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.8292
+      },
+      "id:security_incidents_000032": {
+        "choice_accuracy": 0.0,
+        "ece": 0.5792999999999999,
+        "mean_confidence": 0.50268,
+        "noul_accuracy": 0.0,
+        "score_mae": 1.08505
+      },
+      "id:security_incidents_000045": {
+        "choice_accuracy": 0.0,
+        "ece": 0.3461666666666666,
+        "mean_confidence": 0.49939999999999996,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.3075000000000001
+      },
+      "id:security_incidents_000054": {
+        "choice_accuracy": 0.0,
+        "ece": 0.5121333333333333,
+        "mean_confidence": 0.4231,
+        "noul_accuracy": 0.0,
+        "score_mae": 1.1434
+      },
+      "id:security_incidents_000055": {
+        "choice_accuracy": 0.0,
+        "ece": 0.5522666666666667,
+        "mean_confidence": 0.47178000000000003,
+        "noul_accuracy": 0.0,
+        "score_mae": 1.28775
+      },
+      "id:security_incidents_000062": {
+        "choice_accuracy": 0.0,
+        "ece": 0.5478,
+        "mean_confidence": 0.46024000000000004,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.33975
+      },
+      "id:security_incidents_000070": {
+        "choice_accuracy": 0.0,
+        "ece": 0.4827333333333333,
+        "mean_confidence": 0.52774,
+        "noul_accuracy": 0.5,
+        "score_mae": 0.25959999999999983
+      },
+      "id:security_incidents_000072": {
+        "choice_accuracy": 0.0,
+        "ece": 0.5789,
+        "mean_confidence": 0.48529999999999995,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.7142999999999999
+      },
+      "id:security_incidents_000096": {
+        "choice_accuracy": 1.0,
+        "ece": 0.3305,
+        "mean_confidence": 0.53876,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.80635
+      },
+      "typed_decisions": {
+        "choice_accuracy": 0.35,
+        "ece": 0.13884000000000002,
+        "mean_confidence": 0.46235750000000003,
+        "noul_accuracy": 0.5833333333333334,
+        "score_mae": 0.80667625
+      },
+      "workflow:agent_trace_observability": {
+        "choice_accuracy": 0.35,
+        "ece": 0.10636333333333331,
+        "mean_confidence": 0.427138,
+        "noul_accuracy": 0.7,
+        "score_mae": 1.042095
+      },
+      "workflow:customer_service": {
+        "choice_accuracy": 0.4,
+        "ece": 0.12725999999999996,
+        "mean_confidence": 0.42309199999999997,
+        "noul_accuracy": 0.7,
+        "score_mae": 0.491495
+      },
+      "workflow:invoice_processing": {
+        "choice_accuracy": 0.3,
+        "ece": 0.26048333333333334,
+        "mean_confidence": 0.5104460000000001,
+        "noul_accuracy": 0.6,
+        "score_mae": 0.9974000000000001
+      },
+      "workflow:security_incidents": {
+        "choice_accuracy": 0.3,
+        "ece": 0.18774000000000002,
+        "mean_confidence": 0.48875399999999997,
+        "noul_accuracy": 0.45,
+        "score_mae": 0.6957150000000001
+      }
+    }
+  }
+}

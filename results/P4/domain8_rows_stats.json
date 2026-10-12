@@ -1,0 +1,100 @@
+{
+ "eval_questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+ "train": {
+  "path": "poc/finetune/data/domain8_train.jsonl",
+  "rows": 11094,
+  "pool": {
+   "source_rows": 11514,
+   "pool_rows": 11094,
+   "dropped": {
+    "duplicate": 414,
+    "length": 6
+   }
+  },
+  "sha256": "8b1b1c30e7a36a57e901b81106df3fb419be350c48bcf993b095303c648220ec",
+  "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+  "label_distribution": {
+   "productivity": 2917,
+   "info_qa": 2194,
+   "media": 1920,
+   "communication": 1332,
+   "lifestyle": 896,
+   "general": 640,
+   "smart_home": 638,
+   "transport": 557
+  },
+  "scenario_distribution": {
+   "calendar": 1659,
+   "play": 1341,
+   "qa": 1171,
+   "email": 942,
+   "general": 640,
+   "iot": 638,
+   "transport": 557,
+   "weather": 528,
+   "lists": 515,
+   "news": 495,
+   "recommendation": 431,
+   "social": 390,
+   "alarm": 380,
+   "datetime": 363,
+   "music": 324,
+   "audio": 255,
+   "takeaway": 255,
+   "cooking": 210
+  },
+  "utterance_overlap": {
+   "eval500": 33,
+   "test_pool": 155,
+   "validation": 116
+  }
+ },
+ "validation": {
+  "path": "poc/finetune/data/domain8_dev.jsonl",
+  "rows": 2012,
+  "pool": {
+   "source_rows": 2033,
+   "pool_rows": 2012,
+   "dropped": {
+    "duplicate": 19,
+    "length": 2
+   }
+  },
+  "sha256": "957359aa686f099d04df0e9996150f3e75133252da40fed2bd1eb9818b993907",
+  "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+  "label_distribution": {
+   "productivity": 527,
+   "info_qa": 417,
+   "media": 346,
+   "communication": 225,
+   "lifestyle": 156,
+   "general": 120,
+   "smart_home": 112,
+   "transport": 109
+  },
+  "scenario_distribution": {
+   "calendar": 280,
+   "play": 257,
+   "qa": 214,
+   "email": 157,
+   "weather": 121,
+   "general": 120,
+   "iot": 112,
+   "lists": 111,
+   "transport": 109,
+   "news": 82,
+   "datetime": 73,
+   "recommendation": 69,
+   "social": 68,
+   "alarm": 63,
+   "music": 55,
+   "takeaway": 44,
+   "cooking": 43,
+   "audio": 34
+  },
+  "utterance_overlap": {
+   "eval500": 7,
+   "test_pool": 42
+  }
+ }
+}

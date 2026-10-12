@@ -1,0 +1,76 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/P4/20261002-2014_multilingual_domain8_dev.json",
+   "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_domain8_dev.json",
+   "--split",
+   "all",
+   "--out",
+   "results/P4/smoke_full/metrics/smoke_20261003-1136_paired_domain8_dev.md",
+   "--json",
+   "results/P4/smoke_full/metrics/smoke_20261003-1136_paired_domain8_dev.json"
+  ],
+  "generated_at": "2026-10-03T11:43:34+0900",
+  "reports": [
+   {
+    "report": "results/P4/20261002-2014_multilingual_domain8_dev.json",
+    "dataset": "poc/finetune/data/domain8_dev.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "957359aa686f099d04df0e9996150f3e75133252da40fed2bd1eb9818b993907",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 2012,
+    "split_rows": {
+     "dev": 2012
+    }
+   },
+   {
+    "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_domain8_dev.json",
+    "dataset": "poc/finetune/data/domain8_dev.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "957359aa686f099d04df0e9996150f3e75133252da40fed2bd1eb9818b993907",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "ft-smoke": "local:results/P4/smoke_full/ckpt_20261003-1136 (base 55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851)"
+    },
+    "model": "ft-smoke",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 2012,
+    "split_rows": {
+     "dev": 2012
+    }
+   }
+  ]
+ },
+ "a": "results/P4/20261002-2014_multilingual_domain8_dev.json",
+ "b": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_domain8_dev.json",
+ "results": [
+  {
+   "qid": "domain",
+   "split": "all",
+   "n": 2012,
+   "acc_a": 0.4617296222664016,
+   "acc_b": 0.5695825049701789,
+   "delta": 0.10785288270377734,
+   "delta_ci": [
+    0.09121803535741363,
+    0.12448773005014105
+   ],
+   "b": 49,
+   "c": 266,
+   "p": 3.059032043872219e-37,
+   "agreement": 0.7102385685884692,
+   "same_state": 1.0
+  }
+ ]
+}

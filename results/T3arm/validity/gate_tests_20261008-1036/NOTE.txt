@@ -1,0 +1,5 @@
+Three PREFLIGHT_ONLY=1 runs of poc/finetune/run_all_tasks.sh in the same minute share this directory (status log order):
+1. 10:36:27 all tasks, real READY_T3ARM            -> 11 STEP OK, RUN_ALL FINISHED (gate passes)
+2. 10:36:40 TASKS=T3, READY_T3ARM moved away        -> STEP global:preflight FAILED, RUN_ALL FAILED (exit 1), as intended
+3. 10:36:40 TASKS=T3, READY_T3ARM with a wrong T3 sha -> STEP T3:gate FAILED, RUN_ALL FAILED (exit 1), as intended
+READY_T3ARM was restored from a byte-identical backup after runs 2 and 3 (cmp OK).

@@ -1,0 +1,22 @@
+$ curl -s localhost:8000/poc/ui/ | head
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laya Playground</title>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f6f7f9; --panel: #ffffff; --panel-2: #fafbfc; --line: #e3e6eb; --line-2: #cfd5dd;
+
+$ curl -s -o /dev/null -w "%{http_code}
+" -X POST localhost:8000/poc/decide -H "content-type: application/json" -d '{"utterance":"내일 아침 7시에 깨워줘"}'
+401
+$ (same with -H "Authorization: Bearer devkey")
+200
+$ curl -s localhost:8000/poc/decide -H "Authorization: Bearer devkey" ... | jq policy,thresholds,checkpoint
+{"policy": {"action": "ROUTE", "domain": "productivity", "handler": "calendar-svc", "p": 0.9236, "reason": "passed"}, "thresholds": {"T": 0.907}, "elapsed_ms": 21.3, "checkpoint": {"path": "poc/finetune/ckpt_domain8_v1", "sha256_of_rl_agent_config": "3270d480d05a68454004022b90e80f422c8b364ba1bd90ce43b004cde3ab9638", "base": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"}, "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54", "schema_version": "router_v1"}
+{"type": "choice", "choice": "productivity", "probabilities": {"productivity": 0.9236, "media": 0.0065, "smart_home": 0.0067, "info_qa": 0.0135, "communication": 0.0132, "lifestyle": 0.0122, "transport": 0.0065, "general": 0.0178}, "confidence": 0.8014, "answer_confidence": 0.9236, "action": {"act_probability": 1.0}, "abstention": "passed", "abstention_threshold": 0.907}
+{"model": "multilingual", "repo": "./poc/finetune/ckpt_domain8_v1", "reason": "explicit lang='ko'", "detection": null, "workflow": null}
+{'input_tokens': 218, 'output_tokens': 0, 'state_tokens': 18, 'state_tokens_dropped': 0, 'truncated': False, 'truncated_questions': []}

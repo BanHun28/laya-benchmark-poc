@@ -1,0 +1,11 @@
+2026-10-03 11:47:49 RUN_FULL START smoke_20261003-1147 (SMOKE=1) ckpt results/P4/smoke_full/ckpt_20261003-1147 items results/P4/smoke_full/smoke_20261003-1147_items.pt epochs 1 calib 7
+2026-10-03 11:47:49 STEP preflight ...
+2026-10-03 11:47:49 STEP preflight OK (0 s)
+2026-10-03 11:47:49 STEP items ...
+results/P4/smoke_full/smoke_20261003-1147_items.pt: 71 items (train 64 + calibration 7), seq_len {'min': 208, 'p50': 216, 'max': 229, 'distinct': 22}, sha256 6b8c08f16aab; run with --items results/P4/smoke_full/smoke_20261003-1147_items.pt --calib-max 7 (never --force-preprocess)
+option order (--shuffle-options all): reordered train 64/64, validation 0/7; gold slot {'train': {0: 8, 1: 8, 2: 6, 3: 6, 4: 8, 5: 13, 6: 13, 7: 2}, 'validation': {0: 1, 1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1}}
+decoded train:52 (gold smart_home -> slot 6 of ['productivity', 'lifestyle', 'info_qa', 'media', 'communication', 'general', 'smart_home', 'transport']): <bos> choice question: Which domain should handle the request in `utterance`?<eos><mask> productivity: 알람, 일정, 날짜와 시간, 할 일과 쇼핑 목록<mask> lifestyle: 음식 주문과 배달, 요리법, 장소·이벤트·영화 추천<mask> info_qa: 사실, 정의, 계산, 환율, 날씨, 뉴스 등 정보 질문<mask> media: 음악, 라디오, 팟캐스트, 오디오북 재생과 음량 조절<mask> communication: 이메일, 연락처, 소셜 미디어 게시와 확인<mask> general: 인사, 잡담, 농담, 위 어디에도 속하지 않는 일반 대화<mask> smart_home: 조명, 커피머신, 청소기, 플러그 등 스마트홈 기기 제어<mask> transport: 교통, 택시, 티켓, 길 안내<eos> {"utterance": "불 더 밝게 만들어 줘"}<eos>
+2026-10-03 11:47:53 STEP items OK (4 s)
+2026-10-03 11:47:53 expected: train loop (64 rows x 1 epochs) 0.01 h at 3.01 items/s (probe D, GPU co-tenant at ~100%), 0.00 h at 8.45 items/s (smoke, idle GPU) + calibration/export ~1 min + evaluation ~9 min
+2026-10-03 11:47:53 STEP train ...
+2026-10-03 11:47:56 RUN_FULL FAILED smoke_20261003-1147 at train (rc 1), see results/P4/smoke_full/smoke_20261003-1147_driver.log

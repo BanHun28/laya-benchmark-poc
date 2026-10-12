@@ -1,0 +1,58 @@
+load before: {"gpu_util_pct": 11, "mps_fp32_matmul_tflops": 6.46, "cotenant": [], "sys_mem_used_gb": 17.5}
+[     3.0s] Using legacy cached training items without metadata: /var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T/t3arm_smoke.E01Th9/T7_items.pt
+[     4.9s] Device: mps
+[     4.9s] Training items: 64; calibration items: 7
+[     4.9s] micro_batch=8; grad_accum=4; epochs=1
+[     8.4s] Epoch 1/1 complete; avg_loss=0.9375
+[     9.0s] Running temperature calibration ...
+[     9.5s] Model saved to /var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.E01Th9/ckpt/T7_run
+[     9.5s] Temperatures: [1.0, 1.2, 1.2]
+{
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 1.94,
+  "train_loop": 3.51,
+  "epoch_checkpoint_saves": 0.33,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 0.23,
+  "calibration (forward + fit_temperature)": 0.08,
+  "export (final save + configs)": 0.45,
+  "train() total": 6.56
+ },
+ "throughput": {
+  "train_items_per_s": 18.22,
+  "s_per_optimizer_step": 1.756,
+  "s_per_micro_batch_mean": 0.4391
+ },
+ "micro_batch_s": {
+  "median_all": 0.3031,
+  "median_repeat_shape_no_step": null,
+  "median_repeat_shape_with_step": null,
+  "optimizer_step_overhead": null,
+  "median_first_shape": 0.3031,
+  "first_shape_count": 8,
+  "repeat_shape_count": 0,
+  "first_shape_extra_total_s": 3.5
+ },
+ "memory_gb": {
+  "ru_maxrss": 2.99,
+  "rss_peak_sampled": 2.02,
+  "mps_current_allocated_peak": 5.29,
+  "mps_driver_allocated_peak": 9.18,
+  "mps_recommended_max": 40.2
+ },
+ "calibration_rows": {
+  "n": 7,
+  "ce_before_T": 0.835,
+  "accuracy": 0.8571
+ },
+ "item_sources": {
+  "train": {
+   "train": 64
+  },
+  "calibration": {
+   "calib": 7
+  }
+ }
+}
+report: results/T3arm/smoke_20261008-1021/T7/train_timing.json (wall 9.6s, status ok)

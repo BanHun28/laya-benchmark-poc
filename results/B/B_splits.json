@@ -1,0 +1,645 @@
+{
+ "splits": {
+  "ko_massive_domain_8": {
+   "rule": "index parity",
+   "rows": 500,
+   "dev": 250,
+   "test": 250,
+   "label_distribution": {
+    "dev": {
+     "domain": {
+      "communication": 30,
+      "general": 30,
+      "info_qa": 31,
+      "lifestyle": 27,
+      "media": 37,
+      "productivity": 33,
+      "smart_home": 30,
+      "transport": 32
+     }
+    },
+    "test": {
+     "domain": {
+      "communication": 32,
+      "general": 32,
+      "info_qa": 32,
+      "lifestyle": 35,
+      "media": 26,
+      "productivity": 30,
+      "smart_home": 33,
+      "transport": 30
+     }
+    }
+   }
+  },
+  "en_massive_domain_8": {
+   "rule": "index parity",
+   "rows": 500,
+   "dev": 250,
+   "test": 250,
+   "label_distribution": {
+    "dev": {
+     "domain": {
+      "communication": 30,
+      "general": 30,
+      "info_qa": 31,
+      "lifestyle": 27,
+      "media": 37,
+      "productivity": 33,
+      "smart_home": 30,
+      "transport": 32
+     }
+    },
+    "test": {
+     "domain": {
+      "communication": 32,
+      "general": 32,
+      "info_qa": 32,
+      "lifestyle": 35,
+      "media": 26,
+      "productivity": 30,
+      "smart_home": 33,
+      "transport": 30
+     }
+    }
+   }
+  },
+  "ko_klue_ynat_7": {
+   "rule": "state sha256 % 2",
+   "rows": 500,
+   "dev": 245,
+   "test": 255,
+   "label_distribution": {
+    "dev": {
+     "topic": {
+      "culture_life": 39,
+      "economy": 34,
+      "it_science": 30,
+      "politics": 38,
+      "society": 31,
+      "sports": 33,
+      "world": 40
+     }
+    },
+    "test": {
+     "topic": {
+      "culture_life": 32,
+      "economy": 38,
+      "it_science": 42,
+      "politics": 33,
+      "society": 41,
+      "sports": 38,
+      "world": 31
+     }
+    }
+   }
+  },
+  "ko_massive_scenario_18": {
+   "rule": "state sha256 % 2",
+   "rows": 100,
+   "dev": 49,
+   "test": 51,
+   "label_distribution": {
+    "dev": {
+     "scenario": {
+      "alarm": 5,
+      "audio": 4,
+      "datetime": 3,
+      "general": 3,
+      "iot": 9,
+      "music": 3,
+      "news": 5,
+      "play": 7,
+      "takeaway": 5,
+      "weather": 5
+     }
+    },
+    "test": {
+     "scenario": {
+      "alarm": 2,
+      "audio": 3,
+      "datetime": 6,
+      "general": 4,
+      "iot": 12,
+      "music": 1,
+      "news": 4,
+      "play": 10,
+      "takeaway": 1,
+      "weather": 8
+     }
+    }
+   }
+  },
+  "ko_massive_intent_20opt": {
+   "rule": "index parity",
+   "rows": 100,
+   "dev": 50,
+   "test": 50,
+   "label_distribution": {
+    "dev": {
+     "intent": {
+      "alarm_query": 1,
+      "alarm_remove": 1,
+      "alarm_set": 1,
+      "audio_volume_mute": 2,
+      "audio_volume_up": 2,
+      "datetime_convert": 1,
+      "datetime_query": 3,
+      "general_greet": 1,
+      "general_joke": 2,
+      "general_quirky": 1,
+      "iot_cleaning": 2,
+      "iot_hue_lightchange": 2,
+      "iot_hue_lightdim": 2,
+      "iot_hue_lightoff": 3,
+      "iot_wemo_on": 1,
+      "music_likeness": 2,
+      "news_query": 6,
+      "play_music": 7,
+      "takeaway_order": 1,
+      "takeaway_query": 2,
+      "weather_query": 7
+     }
+    },
+    "test": {
+     "intent": {
+      "alarm_query": 1,
+      "alarm_remove": 2,
+      "alarm_set": 1,
+      "audio_volume_mute": 2,
+      "audio_volume_up": 1,
+      "datetime_query": 5,
+      "general_joke": 2,
+      "general_quirky": 1,
+      "iot_cleaning": 2,
+      "iot_coffee": 1,
+      "iot_hue_lightchange": 1,
+      "iot_hue_lightoff": 1,
+      "iot_hue_lighton": 2,
+      "iot_hue_lightup": 1,
+      "iot_wemo_off": 1,
+      "iot_wemo_on": 2,
+      "music_likeness": 1,
+      "music_query": 1,
+      "news_query": 3,
+      "play_music": 10,
+      "takeaway_order": 1,
+      "takeaway_query": 2,
+      "weather_query": 6
+     }
+    }
+   }
+  },
+  "en_massive_intent_20opt": {
+   "rule": "index parity",
+   "rows": 100,
+   "dev": 50,
+   "test": 50,
+   "label_distribution": {
+    "dev": {
+     "intent": {
+      "alarm_query": 1,
+      "alarm_remove": 1,
+      "alarm_set": 1,
+      "audio_volume_mute": 2,
+      "audio_volume_up": 2,
+      "datetime_convert": 1,
+      "datetime_query": 3,
+      "general_greet": 1,
+      "general_joke": 2,
+      "general_quirky": 1,
+      "iot_cleaning": 2,
+      "iot_hue_lightchange": 2,
+      "iot_hue_lightdim": 2,
+      "iot_hue_lightoff": 3,
+      "iot_wemo_on": 1,
+      "music_likeness": 2,
+      "news_query": 6,
+      "play_music": 7,
+      "takeaway_order": 1,
+      "takeaway_query": 2,
+      "weather_query": 7
+     }
+    },
+    "test": {
+     "intent": {
+      "alarm_query": 1,
+      "alarm_remove": 2,
+      "alarm_set": 1,
+      "audio_volume_mute": 2,
+      "audio_volume_up": 1,
+      "datetime_query": 5,
+      "general_joke": 2,
+      "general_quirky": 1,
+      "iot_cleaning": 2,
+      "iot_coffee": 1,
+      "iot_hue_lightchange": 1,
+      "iot_hue_lightoff": 1,
+      "iot_hue_lighton": 2,
+      "iot_hue_lightup": 1,
+      "iot_wemo_off": 1,
+      "iot_wemo_on": 2,
+      "music_likeness": 1,
+      "music_query": 1,
+      "news_query": 3,
+      "play_music": 10,
+      "takeaway_order": 1,
+      "takeaway_query": 2,
+      "weather_query": 6
+     }
+    }
+   }
+  },
+  "ko_klue_nli_3": {
+   "rule": "state sha256 % 2",
+   "rows": 500,
+   "dev": 263,
+   "test": 237,
+   "label_distribution": {
+    "dev": {
+     "relation": {
+      "contradiction": 90,
+      "entailment": 83,
+      "neutral": 90
+     }
+    },
+    "test": {
+     "relation": {
+      "contradiction": 76,
+      "entailment": 84,
+      "neutral": 77
+     }
+    }
+   }
+  },
+  "ko_nsmc_sentiment": {
+   "rule": "state sha256 % 2",
+   "rows": 500,
+   "dev": 249,
+   "test": 251,
+   "label_distribution": {
+    "dev": {
+     "sentiment_noul": {
+      "False": 119,
+      "True": 130
+     },
+     "sentiment_choice": {
+      "negative": 119,
+      "positive": 130
+     }
+    },
+    "test": {
+     "sentiment_noul": {
+      "False": 131,
+      "True": 120
+     },
+     "sentiment_choice": {
+      "negative": 131,
+      "positive": 120
+     }
+    }
+   }
+  },
+  "ko_kmhas_hate": {
+   "rule": "state sha256 % 2",
+   "rows": 500,
+   "dev": 237,
+   "test": 263,
+   "label_distribution": {
+    "dev": {
+     "is_hate": {
+      "False": 119,
+      "True": 118
+     }
+    },
+    "test": {
+     "is_hate": {
+      "False": 131,
+      "True": 132
+     }
+    }
+   }
+  },
+  "ko_kmhas_type_8": {
+   "rule": "state sha256 % 2",
+   "rows": 500,
+   "dev": 244,
+   "test": 256,
+   "label_distribution": {
+    "dev": {
+     "hate_type": {
+      "age": 35,
+      "gender": 33,
+      "origin": 36,
+      "physical": 37,
+      "politics": 27,
+      "profanity": 35,
+      "race": 11,
+      "religion": 30
+     }
+    },
+    "test": {
+     "hate_type": {
+      "age": 30,
+      "gender": 33,
+      "origin": 34,
+      "physical": 31,
+      "politics": 45,
+      "profanity": 34,
+      "race": 16,
+      "religion": 33
+     }
+    }
+   }
+  },
+  "ko_3i4k_speechact_7": {
+   "rule": "state sha256 % 2",
+   "rows": 500,
+   "dev": 241,
+   "test": 259,
+   "label_distribution": {
+    "dev": {
+     "speech_act": {
+      "command": 34,
+      "fragment": 35,
+      "intonation_dependent": 36,
+      "question": 30,
+      "rhetorical_command": 30,
+      "rhetorical_question": 39,
+      "statement": 37
+     }
+    },
+    "test": {
+     "speech_act": {
+      "command": 37,
+      "fragment": 37,
+      "intonation_dependent": 35,
+      "question": 42,
+      "rhetorical_command": 41,
+      "rhetorical_question": 32,
+      "statement": 35
+     }
+    }
+   }
+  },
+  "ko_massive_domain_8_ko-instr": {
+   "rule": "index parity",
+   "rows": 500,
+   "dev": 250,
+   "test": 250,
+   "label_distribution": {
+    "dev": {
+     "domain": {
+      "communication": 30,
+      "general": 30,
+      "info_qa": 31,
+      "lifestyle": 27,
+      "media": 37,
+      "productivity": 33,
+      "smart_home": 30,
+      "transport": 32
+     }
+    },
+    "test": {
+     "domain": {
+      "communication": 32,
+      "general": 32,
+      "info_qa": 32,
+      "lifestyle": 35,
+      "media": 26,
+      "productivity": 30,
+      "smart_home": 33,
+      "transport": 30
+     }
+    }
+   }
+  },
+  "ko_massive_domain_8_en-desc": {
+   "rule": "index parity",
+   "rows": 500,
+   "dev": 250,
+   "test": 250,
+   "label_distribution": {
+    "dev": {
+     "domain": {
+      "communication": 30,
+      "general": 30,
+      "info_qa": 31,
+      "lifestyle": 27,
+      "media": 37,
+      "productivity": 33,
+      "smart_home": 30,
+      "transport": 32
+     }
+    },
+    "test": {
+     "domain": {
+      "communication": 32,
+      "general": 32,
+      "info_qa": 32,
+      "lifestyle": 35,
+      "media": 26,
+      "productivity": 30,
+      "smart_home": 33,
+      "transport": 30
+     }
+    }
+   }
+  },
+  "ko_klue_ynat_7_ko-instr": {
+   "rule": "state sha256 % 2",
+   "rows": 500,
+   "dev": 245,
+   "test": 255,
+   "label_distribution": {
+    "dev": {
+     "topic": {
+      "culture_life": 39,
+      "economy": 34,
+      "it_science": 30,
+      "politics": 38,
+      "society": 31,
+      "sports": 33,
+      "world": 40
+     }
+    },
+    "test": {
+     "topic": {
+      "culture_life": 32,
+      "economy": 38,
+      "it_science": 42,
+      "politics": 33,
+      "society": 41,
+      "sports": 38,
+      "world": 31
+     }
+    }
+   }
+  },
+  "ko_klue_ynat_7_en-desc": {
+   "rule": "state sha256 % 2",
+   "rows": 500,
+   "dev": 245,
+   "test": 255,
+   "label_distribution": {
+    "dev": {
+     "topic": {
+      "culture_life": 39,
+      "economy": 34,
+      "it_science": 30,
+      "politics": 38,
+      "society": 31,
+      "sports": 33,
+      "world": 40
+     }
+    },
+    "test": {
+     "topic": {
+      "culture_life": 32,
+      "economy": 38,
+      "it_science": 42,
+      "politics": 33,
+      "society": 41,
+      "sports": 38,
+      "world": 31
+     }
+    }
+   }
+  },
+  "ko_massive_scenario_18_en-desc": {
+   "rule": "state sha256 % 2",
+   "rows": 100,
+   "dev": 49,
+   "test": 51,
+   "label_distribution": {
+    "dev": {
+     "scenario": {
+      "alarm": 5,
+      "audio": 4,
+      "datetime": 3,
+      "general": 3,
+      "iot": 9,
+      "music": 3,
+      "news": 5,
+      "play": 7,
+      "takeaway": 5,
+      "weather": 5
+     }
+    },
+    "test": {
+     "scenario": {
+      "alarm": 2,
+      "audio": 3,
+      "datetime": 6,
+      "general": 4,
+      "iot": 12,
+      "music": 1,
+      "news": 4,
+      "play": 10,
+      "takeaway": 1,
+      "weather": 8
+     }
+    }
+   }
+  }
+ },
+ "pairs": {
+  "ko_massive_domain_8~en_massive_domain_8": {
+   "rows": 500,
+   "expected_and_scenario_tag_match": 500,
+   "same_state": 0
+  },
+  "ko_massive_intent_20opt~en_massive_intent_20opt": {
+   "rows": 100,
+   "expected_and_scenario_tag_match": 100,
+   "same_state": 0
+  }
+ },
+ "variants": {
+  "ko_massive_domain_8_ko-instr": {
+   "base": "ko_massive_domain_8",
+   "rows": 500,
+   "same_state_and_expected_in_order": true,
+   "questions_differ": true
+  },
+  "ko_massive_domain_8_en-desc": {
+   "base": "ko_massive_domain_8",
+   "rows": 500,
+   "same_state_and_expected_in_order": true,
+   "questions_differ": true
+  },
+  "ko_klue_ynat_7_ko-instr": {
+   "base": "ko_klue_ynat_7",
+   "rows": 500,
+   "same_state_and_expected_in_order": true,
+   "questions_differ": true
+  },
+  "ko_klue_ynat_7_en-desc": {
+   "base": "ko_klue_ynat_7",
+   "rows": 500,
+   "same_state_and_expected_in_order": true,
+   "questions_differ": true
+  },
+  "ko_massive_scenario_18_en-desc": {
+   "base": "ko_massive_scenario_18",
+   "rows": 100,
+   "same_state_and_expected_in_order": true,
+   "questions_differ": true
+  }
+ },
+ "dev_copies": {
+  "ko_massive_domain_8_ko-instr": {
+   "path": "results/B/dev/ko_massive_domain_8_ko-instr.jsonl",
+   "rows": 250,
+   "sha256": "23c194945d9536c606c8c201a376c745a9abf4b5b7a2a5570d41b3c940b6f686",
+   "questions_sha256": "e924d75af7fc83b50c5eeb2a446a757ed9484de5c596e05912f7d0a65b5d64f8"
+  },
+  "ko_massive_domain_8_en-desc": {
+   "path": "results/B/dev/ko_massive_domain_8_en-desc.jsonl",
+   "rows": 250,
+   "sha256": "4be87d318fe5a933eb08f35c6c667541e68a8ebb0ab8ec3fd1944196715ecd77",
+   "questions_sha256": "c3ab76c59d099b54016d035d4a6092ccdf81af32802542b368d7bf7121784264"
+  },
+  "ko_klue_ynat_7_ko-instr": {
+   "path": "results/B/dev/ko_klue_ynat_7_ko-instr.jsonl",
+   "rows": 245,
+   "sha256": "56df846e83b9986299bdd32c55f78613fff73f8fa57ffd697953a03bbf75eebd",
+   "questions_sha256": "da716935ac306caa48da5786cac233d7dabe4dbba8ff1bd957c9f7fa344c5c93"
+  },
+  "ko_klue_ynat_7_en-desc": {
+   "path": "results/B/dev/ko_klue_ynat_7_en-desc.jsonl",
+   "rows": 245,
+   "sha256": "8b8735f1fbbb4353a7bab7f2f9ed379ff6e86a6757807c35527be3deeea0d099",
+   "questions_sha256": "76a972f1309983a590e9a2c459a4645dea8fd9b34d86a9f4956d2114d741d1f9"
+  },
+  "ko_massive_scenario_18_en-desc": {
+   "path": "results/B/dev/ko_massive_scenario_18_en-desc.jsonl",
+   "rows": 49,
+   "sha256": "fbd46b83f67a2f981121c3dcf6d258a825593d0f8a2eb149ce7708335c3f6715",
+   "questions_sha256": "233520130f429820bf54b950d333db61a991e637addf592f3925b18c0245e85e"
+  }
+ },
+ "a3": {
+  "rows": [
+   100,
+   100
+  ],
+  "field_equal_rows": {
+   "state": 100,
+   "questions": 100,
+   "expected": 100,
+   "language": 100
+  },
+  "tags_only_in_k2": "101 distinct (id:<n>, k2_paired)",
+  "tags_only_in_builder": {},
+  "questions_sha256": {
+   "data/evals/ko_massive_intent_20opt.jsonl": "72baa7ba5b4d899bae87ce0b6cb67e9b6dce593e1ff5947e4957005554371e24",
+   "results/korean_support/K2_intent20_ko.jsonl": "72baa7ba5b4d899bae87ce0b6cb67e9b6dce593e1ff5947e4957005554371e24"
+  },
+  "manifest_questions_sha256": "72baa7ba5b4d899bae87ce0b6cb67e9b6dce593e1ff5947e4957005554371e24",
+  "dataset_sha256": {
+   "data/evals/ko_massive_intent_20opt.jsonl": "4e936ea663ba6072e8e7ab0cc5a4f22784824378ce74cb1266a8f955b4efb596",
+   "results/korean_support/K2_intent20_ko.jsonl": "38ebcd80736d95a7dec418b953264075c3fe25c48e5283005eeb62d83d261dbc"
+  }
+ }
+}

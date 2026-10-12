@@ -1,0 +1,66 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "parity",
+   "results/B/20261002-1657_multilingual_ko_kmhas_hate.json",
+   "results/B/20261002-1659_router_ko_kmhas_hate.json",
+   "--out",
+   "results/B/metrics/parity_ko_kmhas_hate_router.md",
+   "--json",
+   "results/B/metrics/parity_ko_kmhas_hate_router.json"
+  ],
+  "generated_at": "2026-10-02T17:05:33+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1657_multilingual_ko_kmhas_hate.json",
+    "dataset": "data/evals/ko_kmhas_hate.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "4e15c044a81e71fcad18f90a4d8cfd3452bdb6921a401f83ba012bc1f45e72c6",
+    "questions_sha256": "ae97133388aac00d0eb6b8707db941904acf249795e7c0b551c28adf41fec213",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 263,
+     "dev": 237
+    }
+   },
+   {
+    "report": "results/B/20261002-1659_router_ko_kmhas_hate.json",
+    "dataset": "data/evals/ko_kmhas_hate.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "4e15c044a81e71fcad18f90a4d8cfd3452bdb6921a401f83ba012bc1f45e72c6",
+    "questions_sha256": "ae97133388aac00d0eb6b8707db941904acf249795e7c0b551c28adf41fec213",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "router (auto)",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 263,
+     "dev": 237
+    }
+   }
+  ]
+ },
+ "reference": "results/B/20261002-1657_multilingual_ko_kmhas_hate.json",
+ "results": [
+  {
+   "other": "results/B/20261002-1659_router_ko_kmhas_hate.json",
+   "n": 500,
+   "agreement": 1.0,
+   "flips": 0,
+   "max_abs_dp": 0.0,
+   "mean_abs_dconf": 0.0
+  }
+ ]
+}

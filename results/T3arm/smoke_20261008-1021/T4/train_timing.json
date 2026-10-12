@@ -1,0 +1,241 @@
+{
+ "script": "poc/finetune/laya_finetune_mps_patched.py",
+ "script_sha256": "d8dc1eb92db72c0f577ec9cf6dc3ad80558e0e0ff79897bd92dc3f87399db642",
+ "zero_step": false,
+ "script_args": [
+  "models/laya",
+  "/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.E01Th9/ckpt/T4_run",
+  "--items",
+  "/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.E01Th9/T4_items.pt",
+  "--calib-max",
+  "7",
+  "--epochs",
+  "1",
+  "--micro-batch",
+  "8",
+  "--grad-accum",
+  "4",
+  "--no-checkpointing",
+  "--device",
+  "mps"
+ ],
+ "seed": 13,
+ "keep_epoch_checkpoints": true,
+ "started_at": "2026-10-08T10:26:13+0900",
+ "versions": {
+  "torch": "2.14.1",
+  "python": "3.12.12",
+  "laya": "0.3.23"
+ },
+ "threads": {
+  "intra": 10,
+  "interop": 14
+ },
+ "load_before": {
+  "gpu_util_pct": 5,
+  "mps_fp32_matmul_tflops": 6.59,
+  "cotenant": [],
+  "sys_mem_used_gb": 17.9
+ },
+ "status": "ok",
+ "wall_s": 10.01,
+ "load_after": {
+  "gpu_util_pct": 98,
+  "mps_fp32_matmul_tflops": 6.64
+ },
+ "micro_batch": 8,
+ "grad_accum": 4,
+ "epochs": 1,
+ "n_train_items": 64,
+ "micro_batches": 8,
+ "optimizer_steps": 2,
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 0.56,
+  "train_loop": 5.06,
+  "epoch_checkpoint_saves": 0.24,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 0.36,
+  "calibration (forward + fit_temperature)": 0.12,
+  "export (final save + configs)": 0.69,
+  "train() total": 7.04
+ },
+ "throughput": {
+  "train_items_per_s": 12.657,
+  "s_per_optimizer_step": 2.528,
+  "s_per_micro_batch_mean": 0.6321
+ },
+ "micro_batch_s": {
+  "median_all": 0.4626,
+  "median_repeat_shape_no_step": 0.3815,
+  "median_repeat_shape_with_step": null,
+  "optimizer_step_overhead": null,
+  "median_first_shape": 0.4959,
+  "first_shape_count": 7,
+  "repeat_shape_count": 1,
+  "first_shape_extra_total_s": 2.0
+ },
+ "memory_gb": {
+  "ru_maxrss": 3.19,
+  "rss_peak_sampled": 1.64,
+  "mps_current_allocated_peak": 8.73,
+  "mps_driver_allocated_peak": 10.9,
+  "mps_recommended_max": 40.2
+ },
+ "loss_log_script": [
+  "Epoch 1/1 complete; avg_loss=0.3681"
+ ],
+ "train_ce_windows": [
+  0.0455,
+  0.6472,
+  0.5428,
+  0.5046,
+  0.1697,
+  0.0245,
+  0.1542,
+  0.6155
+ ],
+ "train_acc_windows": [
+  1.0,
+  0.875,
+  0.75,
+  0.75,
+  1.0,
+  1.0,
+  1.0,
+  0.875
+ ],
+ "calibration_rows": {
+  "n": 7,
+  "ce_before_T": 0.0167,
+  "accuracy": 1.0
+ },
+ "temperature_fits": [
+  {
+   "start": 9.244,
+   "end": 9.244,
+   "samples": 7
+  }
+ ],
+ "item_sources": {
+  "train": {
+   "train": 64
+  },
+  "calibration": {
+   "calib": 7
+  }
+ },
+ "cotenant_found": false,
+ "load_series": [
+  {
+   "t": 3.9,
+   "rss_gb": 1.501,
+   "mps_alloc_gb": 3.387,
+   "mps_driver_gb": 5.518,
+   "gpu_util_pct": 92,
+   "sys_cpu_pct": 53.2,
+   "sys_mem_used_gb": 23.1,
+   "cotenant": []
+  }
+ ],
+ "events": [
+  [
+   2.897,
+   "Using legacy cached training items without metadata: /var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T/t3arm_smoke.E01Th9/T4_items.pt"
+  ],
+  [
+   3.461,
+   "Device: mps"
+  ],
+  [
+   3.461,
+   "Training items: 64; calibration items: 7"
+  ],
+  [
+   3.461,
+   "micro_batch=8; grad_accum=4; epochs=1"
+  ],
+  [
+   8.518,
+   "Epoch 1/1 complete; avg_loss=0.3681"
+  ],
+  [
+   9.12,
+   "Running temperature calibration ..."
+  ],
+  [
+   9.931,
+   "Model saved to /var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.E01Th9/ckpt/T4_run"
+  ],
+  [
+   9.932,
+   "Temperatures: [1.0, 1.2, 1.2]"
+  ]
+ ],
+ "micro_batch_trace": [
+  [
+   3.4614,
+   8,
+   92,
+   0.4959,
+   0.04546,
+   1.0
+  ],
+  [
+   3.9573,
+   8,
+   136,
+   0.5719,
+   0.64718,
+   0.875
+  ],
+  [
+   4.5292,
+   8,
+   84,
+   0.3796,
+   0.54276,
+   0.75
+  ],
+  [
+   4.9088,
+   8,
+   82,
+   1.1563,
+   0.50462,
+   0.75
+  ],
+  [
+   6.0651,
+   8,
+   101,
+   0.4292,
+   0.16973,
+   1.0
+  ],
+  [
+   6.4943,
+   8,
+   85,
+   0.3824,
+   0.02453,
+   1.0
+  ],
+  [
+   6.8767,
+   8,
+   92,
+   0.3815,
+   0.15415,
+   1.0
+  ],
+  [
+   7.2582,
+   8,
+   119,
+   1.2598,
+   0.6155,
+   0.875
+  ]
+ ]
+}

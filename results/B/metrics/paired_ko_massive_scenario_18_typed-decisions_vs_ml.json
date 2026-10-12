@@ -1,0 +1,110 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/B/20261002-1648_typed-decisions_ko_massive_scenario_18.json",
+   "results/B/20261002-1647_multilingual_ko_massive_scenario_18.json",
+   "--out",
+   "results/B/metrics/paired_ko_massive_scenario_18_typed-decisions_vs_ml.md",
+   "--json",
+   "results/B/metrics/paired_ko_massive_scenario_18_typed-decisions_vs_ml.json"
+  ],
+  "generated_at": "2026-10-02T17:05:32+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1648_typed-decisions_ko_massive_scenario_18.json",
+    "dataset": "data/evals/ko_massive_scenario_18.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "28694e08bfed61ee6e4cf5a02bb024c33ffb7c3228012267d4a022f3de0ac03e",
+    "questions_sha256": "7bf1c9b1b314f6bdd03e49cbcd471106c2a7209c06407698e82bcdb182f30a44",
+    "revisions": {
+     "typed-decisions": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "typed-decisions",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 100,
+    "split_rows": {
+     "test": 51,
+     "dev": 49
+    }
+   },
+   {
+    "report": "results/B/20261002-1647_multilingual_ko_massive_scenario_18.json",
+    "dataset": "data/evals/ko_massive_scenario_18.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "28694e08bfed61ee6e4cf5a02bb024c33ffb7c3228012267d4a022f3de0ac03e",
+    "questions_sha256": "7bf1c9b1b314f6bdd03e49cbcd471106c2a7209c06407698e82bcdb182f30a44",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 100,
+    "split_rows": {
+     "test": 51,
+     "dev": 49
+    }
+   }
+  ]
+ },
+ "a": "results/B/20261002-1648_typed-decisions_ko_massive_scenario_18.json",
+ "b": "results/B/20261002-1647_multilingual_ko_massive_scenario_18.json",
+ "results": [
+  {
+   "qid": "scenario",
+   "split": "all",
+   "n": 100,
+   "acc_a": 0.33,
+   "acc_b": 0.52,
+   "delta": 0.19,
+   "delta_ci": [
+    0.07674320152856166,
+    0.3032567984714383
+   ],
+   "b": 9,
+   "c": 28,
+   "p": 0.0025632079923525453,
+   "agreement": 0.24,
+   "same_state": 1.0
+  },
+  {
+   "qid": "scenario",
+   "split": "dev",
+   "n": 49,
+   "acc_a": 0.30612244897959184,
+   "acc_b": 0.5510204081632653,
+   "delta": 0.24489795918367346,
+   "delta_ci": [
+    0.07026131015583204,
+    0.4195346082115149
+   ],
+   "b": 5,
+   "c": 17,
+   "p": 0.01690053939819336,
+   "agreement": 0.20408163265306123,
+   "same_state": 1.0
+  },
+  {
+   "qid": "scenario",
+   "split": "test",
+   "n": 51,
+   "acc_a": 0.35294117647058826,
+   "acc_b": 0.49019607843137253,
+   "delta": 0.13725490196078433,
+   "delta_ci": [
+    -0.006743382583538848,
+    0.2812531865051075
+   ],
+   "b": 4,
+   "c": 11,
+   "p": 0.11846923828125,
+   "agreement": 0.27450980392156865,
+   "same_state": 1.0
+  }
+ ]
+}

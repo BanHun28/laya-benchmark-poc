@@ -1,0 +1,110 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+   "results/B/20261002-1648_multilingual_en_massive_domain_8.json",
+   "--out",
+   "results/B/metrics/paired_penalty_ko-ml_en-ml.md",
+   "--json",
+   "results/B/metrics/paired_penalty_ko-ml_en-ml.json"
+  ],
+  "generated_at": "2026-10-02T17:05:31+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+    "dataset": "data/evals/ko_massive_domain_8.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "edf33079033640fa9656c3b583a422c1ededc4bcd75eaafbfb84c5adf613f46b",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 500,
+    "split_rows": {
+     "dev": 250,
+     "test": 250
+    }
+   },
+   {
+    "report": "results/B/20261002-1648_multilingual_en_massive_domain_8.json",
+    "dataset": "data/evals/en_massive_domain_8.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "c52a5f4ef33ee2eca77424de6e6b466c175910e8096f3b095f249c6180362b0a",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 500,
+    "split_rows": {
+     "dev": 250,
+     "test": 250
+    }
+   }
+  ]
+ },
+ "a": "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+ "b": "results/B/20261002-1648_multilingual_en_massive_domain_8.json",
+ "results": [
+  {
+   "qid": "domain",
+   "split": "all",
+   "n": 500,
+   "acc_a": 0.526,
+   "acc_b": 0.51,
+   "delta": -0.016,
+   "delta_ci": [
+    -0.05357315399058216,
+    0.021573153990582163
+   ],
+   "b": 50,
+   "c": 42,
+   "p": 0.4657074457730625,
+   "agreement": 0.636,
+   "same_state": 0.0
+  },
+  {
+   "qid": "domain",
+   "split": "dev",
+   "n": 250,
+   "acc_a": 0.56,
+   "acc_b": 0.476,
+   "delta": -0.084,
+   "delta_ci": [
+    -0.1367300472368459,
+    -0.031269952763154106
+   ],
+   "b": 34,
+   "c": 13,
+   "p": 0.0030876764615186403,
+   "agreement": 0.636,
+   "same_state": 0.0
+  },
+  {
+   "qid": "domain",
+   "split": "test",
+   "n": 250,
+   "acc_a": 0.492,
+   "acc_b": 0.544,
+   "delta": 0.052,
+   "delta_ci": [
+    -0.00019579728675480496,
+    0.1041957972867548
+   ],
+   "b": 16,
+   "c": 29,
+   "p": 0.07245426016254441,
+   "agreement": 0.636,
+   "same_state": 0.0
+  }
+ ]
+}

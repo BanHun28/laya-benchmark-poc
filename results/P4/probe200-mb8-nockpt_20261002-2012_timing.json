@@ -1,0 +1,586 @@
+{
+ "script": "third_party/laya/notebooks/laya_finetune_typed_decisions_mps.py",
+ "script_args": [
+  "models/laya-multilingual",
+  "poc/finetune/ckpt_probe200_mb8_nockpt",
+  "--items",
+  "poc/finetune/data/items_probe200.pt",
+  "--calib-max",
+  "20",
+  "--epochs",
+  "1",
+  "--micro-batch",
+  "8",
+  "--grad-accum",
+  "4",
+  "--device",
+  "mps",
+  "--no-checkpointing"
+ ],
+ "seed": 13,
+ "keep_epoch_checkpoints": false,
+ "started_at": "2026-10-02T20:13:00+0900",
+ "versions": {
+  "torch": "2.14.1",
+  "python": "3.12.12",
+  "laya": "0.3.23"
+ },
+ "threads": {
+  "intra": 10,
+  "interop": 14
+ },
+ "load_before": {
+  "gpu_util_pct": 100,
+  "mps_fp32_matmul_tflops": 3.81,
+  "cotenant": [
+   "/opt/homebrew/Cellar/python@3.12/3.12.12/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python experiments/kt_scores.py --model Qwen/Qwen2.5-7B --run-id rmt-mixed-precision-20261002-ktscores-qwen25-7b",
+   "/opt/homebrew/Cellar/python@3.12/3.12.12/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python experiments/kt2_layer_sensitivity.py --model Qwen/Qwen2.5-7B --run-id rmt-mixed-precision-20261002-kt2-qwen25-7b",
+   "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1790924480641-s06bu1.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'cd /Users/banhun/banhun28/lab/spectral-compression; L=results/rmt-mixed-precision/kt_queue.log; until grep -qE \"STEP (OK|FAIL) kt2_qwen25-7b\" $L && grep -qE \"STEP (OK|FAIL) kt_scores_qwen25-7b\" $L; do sleep 60; done; grep -E \"STEP (OK|FAIL) (kt2|kt_scores)_qwen25-7b|STEP START kt1e2_qwen\" $L | cut -c1-110; echo \"--- two-model KT-2 analysis ---\"; .venv/bin/python experiments/kt_analysis.py 2>&1 | sed -n '\"'\"'/## KT-2/,$p'\"'\"'' < /dev/null && pwd -P >| /tmp/claude-c8d9-cwd"
+  ],
+  "sys_mem_used_gb": 24.4
+ },
+ "status": "ok",
+ "wall_s": 77.8,
+ "load_after": {
+  "gpu_util_pct": 100,
+  "mps_fp32_matmul_tflops": 3.25
+ },
+ "micro_batch": 8,
+ "grad_accum": 4,
+ "epochs": 1,
+ "n_train_items": 200,
+ "micro_batches": 25,
+ "optimizer_steps": 7,
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 2.13,
+  "train_loop": 66.49,
+  "epoch_checkpoint_saves": 1.33,
+  "calibration (forward + fit_temperature)": 1.95,
+  "export (final save + configs)": 1.38,
+  "train() total": 73.3
+ },
+ "throughput": {
+  "train_items_per_s": 3.008,
+  "s_per_optimizer_step": 9.499,
+  "s_per_micro_batch_mean": 2.6598
+ },
+ "micro_batch_s": {
+  "median_all": 2.7524,
+  "median_repeat_shape_no_step": 2.332,
+  "median_repeat_shape_with_step": 4.1563,
+  "optimizer_step_overhead": 1.8243,
+  "median_first_shape": 2.3977,
+  "first_shape_count": 11,
+  "repeat_shape_count": 14,
+  "first_shape_extra_total_s": -1.2
+ },
+ "memory_gb": {
+  "ru_maxrss": 2.99,
+  "rss_peak_sampled": 1.54,
+  "mps_current_allocated_peak": 7.87,
+  "mps_driver_allocated_peak": 11.68,
+  "mps_recommended_max": 40.2
+ },
+ "loss_log_script": [
+  "Epoch 1/1 complete; avg_loss=1.1651"
+ ],
+ "train_ce_windows": [
+  1.3148,
+  0.9783,
+  1.1058,
+  1.7795,
+  2.2183,
+  1.6474,
+  0.7771,
+  1.4123,
+  0.985,
+  1.2248,
+  1.6801,
+  0.8971,
+  0.6292
+ ],
+ "train_acc_windows": [
+  0.562,
+  0.688,
+  0.625,
+  0.375,
+  0.562,
+  0.375,
+  0.625,
+  0.438,
+  0.625,
+  0.562,
+  0.5,
+  0.75,
+  0.75
+ ],
+ "calibration_rows": {
+  "n": 20,
+  "ce_before_T": 1.0255,
+  "accuracy": 0.55
+ },
+ "temperature_fits": [
+  {
+   "start": 76.275,
+   "end": 76.289,
+   "samples": 20
+  }
+ ],
+ "item_sources": {
+  "train": {
+   "train": 200
+  },
+  "calibration": {
+   "validation": 20
+  }
+ },
+ "cotenant_found": true,
+ "load_series": [
+  {
+   "t": 5.6,
+   "rss_gb": 1.231,
+   "mps_alloc_gb": 0.0,
+   "mps_driver_gb": 0.0,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 22.5,
+   "sys_mem_used_gb": 25.5,
+   "cotenant": [
+    {
+     "pid": 63186,
+     "cpu_pct": 115.4,
+     "rss_gb": 6.36
+    },
+    {
+     "pid": 63187,
+     "cpu_pct": 9.9,
+     "rss_gb": 0.05
+    },
+    {
+     "pid": 64280,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    }
+   ]
+  },
+  {
+   "t": 15.8,
+   "rss_gb": 0.619,
+   "mps_alloc_gb": 5.219,
+   "mps_driver_gb": 9.303,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 25.5,
+   "sys_mem_used_gb": 28.4,
+   "cotenant": [
+    {
+     "pid": 63186,
+     "cpu_pct": 126.1,
+     "rss_gb": 5.78
+    },
+    {
+     "pid": 63187,
+     "cpu_pct": 22.8,
+     "rss_gb": 0.05
+    },
+    {
+     "pid": 64280,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    }
+   ]
+  },
+  {
+   "t": 26.1,
+   "rss_gb": 0.653,
+   "mps_alloc_gb": 5.216,
+   "mps_driver_gb": 10.891,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 20.6,
+   "sys_mem_used_gb": 31.7,
+   "cotenant": [
+    {
+     "pid": 63186,
+     "cpu_pct": 108.8,
+     "rss_gb": 4.01
+    },
+    {
+     "pid": 63187,
+     "cpu_pct": 26.9,
+     "rss_gb": 0.04
+    },
+    {
+     "pid": 64280,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    }
+   ]
+  },
+  {
+   "t": 36.2,
+   "rss_gb": 0.663,
+   "mps_alloc_gb": 5.213,
+   "mps_driver_gb": 10.892,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 16.0,
+   "sys_mem_used_gb": 30.2,
+   "cotenant": [
+    {
+     "pid": 63186,
+     "cpu_pct": 109.2,
+     "rss_gb": 3.95
+    },
+    {
+     "pid": 63187,
+     "cpu_pct": 8.2,
+     "rss_gb": 0.04
+    },
+    {
+     "pid": 64280,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    }
+   ]
+  },
+  {
+   "t": 46.3,
+   "rss_gb": 0.654,
+   "mps_alloc_gb": 5.213,
+   "mps_driver_gb": 11.678,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 23.8,
+   "sys_mem_used_gb": 32.4,
+   "cotenant": [
+    {
+     "pid": 63186,
+     "cpu_pct": 124.5,
+     "rss_gb": 4.95
+    },
+    {
+     "pid": 63187,
+     "cpu_pct": 31.7,
+     "rss_gb": 0.04
+    },
+    {
+     "pid": 64280,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    }
+   ]
+  },
+  {
+   "t": 56.5,
+   "rss_gb": 0.681,
+   "mps_alloc_gb": 5.279,
+   "mps_driver_gb": 11.679,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 18.1,
+   "sys_mem_used_gb": 29.9,
+   "cotenant": [
+    {
+     "pid": 63186,
+     "cpu_pct": 109.3,
+     "rss_gb": 4.94
+    },
+    {
+     "pid": 63187,
+     "cpu_pct": 15.2,
+     "rss_gb": 0.04
+    },
+    {
+     "pid": 64280,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    }
+   ]
+  },
+  {
+   "t": 66.6,
+   "rss_gb": 0.67,
+   "mps_alloc_gb": 7.777,
+   "mps_driver_gb": 11.679,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 20.4,
+   "sys_mem_used_gb": 31.1,
+   "cotenant": [
+    {
+     "pid": 63186,
+     "cpu_pct": 108.7,
+     "rss_gb": 4.37
+    },
+    {
+     "pid": 63187,
+     "cpu_pct": 25.4,
+     "rss_gb": 0.04
+    },
+    {
+     "pid": 64280,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    }
+   ]
+  },
+  {
+   "t": 76.7,
+   "rss_gb": 1.169,
+   "mps_alloc_gb": 3.913,
+   "mps_driver_gb": 11.679,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 21.1,
+   "sys_mem_used_gb": 29.8,
+   "cotenant": [
+    {
+     "pid": 63186,
+     "cpu_pct": 106.8,
+     "rss_gb": 5.66
+    },
+    {
+     "pid": 63187,
+     "cpu_pct": 32.4,
+     "rss_gb": 0.04
+    },
+    {
+     "pid": 64280,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    }
+   ]
+  }
+ ],
+ "events": [
+  [
+   4.384,
+   "Using legacy cached training items without metadata: poc/finetune/data/items_probe200.pt"
+  ],
+  [
+   6.512,
+   "Device: mps"
+  ],
+  [
+   6.513,
+   "Training items: 200; calibration items: 20"
+  ],
+  [
+   6.513,
+   "micro_batch=8; grad_accum=4; epochs=1"
+  ],
+  [
+   73.007,
+   "Epoch 1/1 complete; avg_loss=1.1651"
+  ],
+  [
+   74.34,
+   "Running temperature calibration ..."
+  ],
+  [
+   77.667,
+   "Model saved to poc/finetune/ckpt_probe200_mb8_nockpt"
+  ],
+  [
+   77.668,
+   "Temperatures: [0.8864181637763977, 1.2, 1.2]"
+  ]
+ ],
+ "micro_batch_trace": [
+  [
+   6.5128,
+   8,
+   220,
+   3.1274,
+   1.1247,
+   0.75
+  ],
+  [
+   9.6402,
+   8,
+   218,
+   1.8677,
+   1.50484,
+   0.375
+  ],
+  [
+   11.5079,
+   8,
+   220,
+   1.7487,
+   0.77825,
+   0.75
+  ],
+  [
+   13.2566,
+   8,
+   223,
+   3.7681,
+   1.17842,
+   0.625
+  ],
+  [
+   17.0247,
+   8,
+   226,
+   0.8132,
+   1.07552,
+   0.75
+  ],
+  [
+   17.8379,
+   8,
+   224,
+   2.3755,
+   1.13617,
+   0.5
+  ],
+  [
+   20.2134,
+   8,
+   220,
+   2.8657,
+   1.75557,
+   0.375
+  ],
+  [
+   23.0791,
+   8,
+   234,
+   4.9175,
+   1.80342,
+   0.375
+  ],
+  [
+   27.9966,
+   8,
+   223,
+   2.9907,
+   2.33236,
+   0.625
+  ],
+  [
+   30.9873,
+   8,
+   220,
+   2.7524,
+   2.1042,
+   0.5
+  ],
+  [
+   33.7397,
+   8,
+   229,
+   3.4142,
+   1.39465,
+   0.375
+  ],
+  [
+   37.1539,
+   8,
+   225,
+   3.8997,
+   1.90014,
+   0.375
+  ],
+  [
+   41.0536,
+   8,
+   226,
+   1.8971,
+   0.91935,
+   0.5
+  ],
+  [
+   42.9507,
+   8,
+   230,
+   0.8072,
+   0.63485,
+   0.75
+  ],
+  [
+   43.7579,
+   8,
+   226,
+   2.7547,
+   0.97372,
+   0.5
+  ],
+  [
+   46.5126,
+   8,
+   225,
+   4.4072,
+   1.85087,
+   0.375
+  ],
+  [
+   50.9198,
+   8,
+   227,
+   2.3977,
+   0.89933,
+   0.625
+  ],
+  [
+   53.3175,
+   8,
+   222,
+   1.7499,
+   1.07058,
+   0.625
+  ],
+  [
+   55.0674,
+   8,
+   224,
+   3.1755,
+   0.84711,
+   0.75
+  ],
+  [
+   58.2429,
+   8,
+   220,
+   4.537,
+   1.60259,
+   0.375
+  ],
+  [
+   62.7799,
+   8,
+   222,
+   0.8909,
+   1.81564,
+   0.375
+  ],
+  [
+   63.6708,
+   8,
+   224,
+   0.8085,
+   1.54465,
+   0.625
+  ],
+  [
+   64.4793,
+   8,
+   226,
+   1.9116,
+   1.33811,
+   0.625
+  ],
+  [
+   66.3909,
+   8,
+   223,
+   3.9055,
+   0.45613,
+   0.875
+  ],
+  [
+   70.2964,
+   8,
+   220,
+   2.7106,
+   0.62916,
+   0.75
+  ]
+ ]
+}

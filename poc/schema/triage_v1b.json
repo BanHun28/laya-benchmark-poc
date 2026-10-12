@@ -1,0 +1,46 @@
+{
+  "state_key": "message",
+  "questions": {
+    "intent": {
+      "type": "choice",
+      "instructions": "What does the customer want in `message`?",
+      "criteria": {
+        "refund": "환불, 결제 취소, 중복 결제 환급을 요구",
+        "technical_help": "버그, 오류, 접속 불가, 연동 문제 등 기술적 도움 요청",
+        "billing_question": "청구서, 요금제, 결제 수단, 금액에 대한 문의",
+        "information": "일반 정보, 가격, 사용 방법 문의",
+        "cancellation": "해지, 탈퇴, 다운그레이드 요청",
+        "other": "위 어느 것에도 해당하지 않음"
+      }
+    },
+    "is_urgent": {
+      "type": "noul",
+      "instructions": "Does `message` communicate time pressure or a deadline?",
+      "criteria": {
+        "true": "기한, 마감, 즉시 처리 요구, 서비스 중단 등 시간 압박이 있음",
+        "false": "시간 압박이 없음"
+      }
+    },
+    "frustration": {
+      "type": "score",
+      "instructions": "How frustrated does the customer sound in `message`?",
+      "criteria": ["차분하고 중립적", "걱정하지만 정중함", "분명히 짜증남", "매우 화남 또는 강한 표현 사용"]
+    },
+    "refund_requested": {
+      "type": "noul",
+      "instructions": "Does the customer ask for money back?",
+      "criteria": {
+        "true": "돈을 돌려달라고 명시적으로 요구함",
+        "false": "환불 요구가 없음"
+      }
+    },
+    "churn_risk": {
+      "type": "noul",
+      "instructions": "Does `message` suggest the customer may leave for a competitor or cancel?",
+      "criteria": {
+        "true": "해지, 타사 이동, 거래 중단 의사나 위협이 드러남",
+        "false": "이탈 신호가 없음"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+    "model": "laya-rl-agent",
+    "answers": {
+        "dept": {
+            "type": "choice",
+            "choice": "billing",
+            "probabilities": {
+                "billing": 0.999,
+                "technical": 0.0001,
+                "other": 0.0009
+            },
+            "confidence": 0.9929,
+            "answer_confidence": 0.999,
+            "action": {
+                "act_probability": 1.0
+            }
+        }
+    },
+    "usage": {
+        "input_tokens": 63,
+        "output_tokens": 0,
+        "state_tokens": 29,
+        "state_tokens_dropped": 0,
+        "truncated": false,
+        "truncated_questions": []
+    },
+    "routing": {
+        "model": "multilingual",
+        "repo": "convaiinnovations/laya/multilingual",
+        "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it",
+        "detection": {
+            "script": "hangul",
+            "script_profile": {
+                "hangul": 1.0
+            },
+            "language": null,
+            "is_english": false,
+            "language_undecided": true,
+            "diacritic_rate": 0.0,
+            "non_latin_fraction": 1.0,
+            "mixed_segment": null
+        },
+        "workflow": null
+    }
+}

@@ -1,0 +1,110 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/B/20261002-1650_typed-decisions_ko_massive_intent_20opt.json",
+   "results/B/20261002-1650_multilingual_ko_massive_intent_20opt.json",
+   "--out",
+   "results/B/metrics/paired_ko_massive_intent_20opt_typed-decisions_vs_ml.md",
+   "--json",
+   "results/B/metrics/paired_ko_massive_intent_20opt_typed-decisions_vs_ml.json"
+  ],
+  "generated_at": "2026-10-02T17:05:33+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1650_typed-decisions_ko_massive_intent_20opt.json",
+    "dataset": "data/evals/ko_massive_intent_20opt.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "4e936ea663ba6072e8e7ab0cc5a4f22784824378ce74cb1266a8f955b4efb596",
+    "questions_sha256": "72baa7ba5b4d899bae87ce0b6cb67e9b6dce593e1ff5947e4957005554371e24",
+    "revisions": {
+     "typed-decisions": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "typed-decisions",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 100,
+    "split_rows": {
+     "dev": 50,
+     "test": 50
+    }
+   },
+   {
+    "report": "results/B/20261002-1650_multilingual_ko_massive_intent_20opt.json",
+    "dataset": "data/evals/ko_massive_intent_20opt.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "4e936ea663ba6072e8e7ab0cc5a4f22784824378ce74cb1266a8f955b4efb596",
+    "questions_sha256": "72baa7ba5b4d899bae87ce0b6cb67e9b6dce593e1ff5947e4957005554371e24",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 100,
+    "split_rows": {
+     "dev": 50,
+     "test": 50
+    }
+   }
+  ]
+ },
+ "a": "results/B/20261002-1650_typed-decisions_ko_massive_intent_20opt.json",
+ "b": "results/B/20261002-1650_multilingual_ko_massive_intent_20opt.json",
+ "results": [
+  {
+   "qid": "intent",
+   "split": "all",
+   "n": 100,
+   "acc_a": 0.06,
+   "acc_b": 0.47,
+   "delta": 0.41,
+   "delta_ci": [
+    0.2987969856523664,
+    0.5212030143476336
+   ],
+   "b": 4,
+   "c": 45,
+   "p": 8.225455871979648e-10,
+   "agreement": 0.12,
+   "same_state": 1.0
+  },
+  {
+   "qid": "intent",
+   "split": "dev",
+   "n": 50,
+   "acc_a": 0.02,
+   "acc_b": 0.48,
+   "delta": 0.46,
+   "delta_ci": [
+    0.3218512801362242,
+    0.5981487198637758
+   ],
+   "b": 0,
+   "c": 23,
+   "p": 2.384185791015625e-07,
+   "agreement": 0.12,
+   "same_state": 1.0
+  },
+  {
+   "qid": "intent",
+   "split": "test",
+   "n": 50,
+   "acc_a": 0.1,
+   "acc_b": 0.46,
+   "delta": 0.36,
+   "delta_ci": [
+    0.18680873925050376,
+    0.5331912607494962
+   ],
+   "b": 4,
+   "c": 22,
+   "p": 0.0005335211753845215,
+   "agreement": 0.12,
+   "same_state": 1.0
+  }
+ ]
+}

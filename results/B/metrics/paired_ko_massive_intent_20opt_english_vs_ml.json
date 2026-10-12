@@ -1,0 +1,110 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/B/20261002-1650_english_ko_massive_intent_20opt.json",
+   "results/B/20261002-1650_multilingual_ko_massive_intent_20opt.json",
+   "--out",
+   "results/B/metrics/paired_ko_massive_intent_20opt_english_vs_ml.md",
+   "--json",
+   "results/B/metrics/paired_ko_massive_intent_20opt_english_vs_ml.json"
+  ],
+  "generated_at": "2026-10-02T17:05:32+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1650_english_ko_massive_intent_20opt.json",
+    "dataset": "data/evals/ko_massive_intent_20opt.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "4e936ea663ba6072e8e7ab0cc5a4f22784824378ce74cb1266a8f955b4efb596",
+    "questions_sha256": "72baa7ba5b4d899bae87ce0b6cb67e9b6dce593e1ff5947e4957005554371e24",
+    "revisions": {
+     "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "english",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 100,
+    "split_rows": {
+     "dev": 50,
+     "test": 50
+    }
+   },
+   {
+    "report": "results/B/20261002-1650_multilingual_ko_massive_intent_20opt.json",
+    "dataset": "data/evals/ko_massive_intent_20opt.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "4e936ea663ba6072e8e7ab0cc5a4f22784824378ce74cb1266a8f955b4efb596",
+    "questions_sha256": "72baa7ba5b4d899bae87ce0b6cb67e9b6dce593e1ff5947e4957005554371e24",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 100,
+    "split_rows": {
+     "dev": 50,
+     "test": 50
+    }
+   }
+  ]
+ },
+ "a": "results/B/20261002-1650_english_ko_massive_intent_20opt.json",
+ "b": "results/B/20261002-1650_multilingual_ko_massive_intent_20opt.json",
+ "results": [
+  {
+   "qid": "intent",
+   "split": "all",
+   "n": 100,
+   "acc_a": 0.11,
+   "acc_b": 0.47,
+   "delta": 0.36,
+   "delta_ci": [
+    0.23443755975611175,
+    0.4855624402438882
+   ],
+   "b": 9,
+   "c": 45,
+   "p": 7.288430776686283e-07,
+   "agreement": 0.11,
+   "same_state": 1.0
+  },
+  {
+   "qid": "intent",
+   "split": "dev",
+   "n": 50,
+   "acc_a": 0.06,
+   "acc_b": 0.48,
+   "delta": 0.42,
+   "delta_ci": [
+    0.26232046676882886,
+    0.577679533231171
+   ],
+   "b": 2,
+   "c": 23,
+   "p": 1.9431114196777344e-05,
+   "agreement": 0.14,
+   "same_state": 1.0
+  },
+  {
+   "qid": "intent",
+   "split": "test",
+   "n": 50,
+   "acc_a": 0.16,
+   "acc_b": 0.46,
+   "delta": 0.3,
+   "delta_ci": [
+    0.10596989924241135,
+    0.49403010075758863
+   ],
+   "b": 7,
+   "c": 22,
+   "p": 0.008130058646202087,
+   "agreement": 0.08,
+   "same_state": 1.0
+  }
+ ]
+}

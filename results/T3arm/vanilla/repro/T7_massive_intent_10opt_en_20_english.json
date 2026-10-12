@@ -1,0 +1,1070 @@
+{
+  "cases": [
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "alarm_set",
+        "confidence": 1.0,
+        "probabilities": {
+          "alarm_set": 1.0,
+          "datetime_query": 0.0,
+          "email_querycontact": 0.0,
+          "general_greet": 0.0,
+          "general_quirky": 0.0,
+          "qa_currency": 0.0,
+          "qa_definition": 0.0,
+          "qa_factoid": 0.0,
+          "takeaway_order": 0.0,
+          "transport_ticket": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "alarm_set",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:alarm",
+        "id:0"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7544,
+        "choice": "alarm_remove",
+        "confidence": 0.7333,
+        "probabilities": {
+          "alarm_query": 0.0013,
+          "alarm_remove": 0.7544,
+          "audio_volume_mute": 0.2367,
+          "calendar_set": 0.0009,
+          "cooking_recipe": 0.0008,
+          "general_joke": 0.0012,
+          "iot_wemo_on": 0.0013,
+          "play_music": 0.001,
+          "qa_factoid": 0.0015,
+          "transport_query": 0.0009
+        },
+        "type": "choice"
+      },
+      "confidence": 0.7544,
+      "correct": false,
+      "expected": "audio_volume_mute",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.7544,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:audio",
+        "id:3"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8817,
+        "choice": "music_dislikeness",
+        "confidence": 0.7525,
+        "probabilities": {
+          "iot_hue_lightchange": 0.0076,
+          "iot_hue_lightoff": 0.05,
+          "iot_wemo_on": 0.0269,
+          "music_dislikeness": 0.8817,
+          "news_query": 0.0052,
+          "play_audiobook": 0.0051,
+          "play_radio": 0.0067,
+          "qa_definition": 0.0055,
+          "recommendation_movies": 0.0064,
+          "transport_query": 0.0049
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8817,
+      "correct": false,
+      "expected": "iot_hue_lightchange",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.8817,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:iot",
+        "id:8"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3438,
+        "choice": "music_settings",
+        "confidence": 0.173,
+        "probabilities": {
+          "datetime_convert": 0.0442,
+          "datetime_query": 0.0831,
+          "general_joke": 0.2527,
+          "iot_hue_lighton": 0.0318,
+          "lists_createoradd": 0.0421,
+          "music_settings": 0.3438,
+          "qa_factoid": 0.0519,
+          "recommendation_events": 0.0595,
+          "takeaway_query": 0.0403,
+          "weather_query": 0.0505
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3438,
+      "correct": false,
+      "expected": "iot_hue_lighton",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3438,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:iot",
+        "id:14"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.945,
+        "choice": "iot_hue_lightoff",
+        "confidence": 0.9067,
+        "probabilities": {
+          "datetime_query": 0.0,
+          "email_querycontact": 0.0,
+          "iot_hue_lightdim": 0.0549,
+          "iot_hue_lightoff": 0.945,
+          "music_dislikeness": 0.0,
+          "news_query": 0.0,
+          "play_audiobook": 0.0,
+          "qa_maths": 0.0,
+          "transport_taxi": 0.0,
+          "weather_query": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.945,
+      "correct": true,
+      "expected": "iot_hue_lightoff",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.945,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:iot",
+        "id:19"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5631,
+        "choice": "music_dislikeness",
+        "confidence": 0.4864,
+        "probabilities": {
+          "alarm_set": 0.016,
+          "calendar_set": 0.0132,
+          "email_query": 0.0118,
+          "iot_cleaning": 0.3188,
+          "lists_createoradd": 0.0132,
+          "music_dislikeness": 0.5631,
+          "play_radio": 0.0238,
+          "qa_maths": 0.0141,
+          "takeaway_order": 0.014,
+          "transport_ticket": 0.012
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5631,
+      "correct": false,
+      "expected": "iot_cleaning",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5631,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:iot",
+        "id:27"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9512,
+        "choice": "iot_cleaning",
+        "confidence": 0.9136,
+        "probabilities": {
+          "calendar_remove": 0.0001,
+          "email_querycontact": 0.0,
+          "iot_cleaning": 0.9512,
+          "music_dislikeness": 0.0001,
+          "music_query": 0.0,
+          "play_music": 0.0001,
+          "qa_definition": 0.0001,
+          "qa_stock": 0.0001,
+          "recommendation_events": 0.0001,
+          "transport_traffic": 0.0483
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9512,
+      "correct": true,
+      "expected": "iot_cleaning",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9512,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:iot",
+        "id:31"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7053,
+        "choice": "audio_volume_mute",
+        "confidence": 0.7091,
+        "probabilities": {
+          "audio_volume_mute": 0.7053,
+          "calendar_query": 0.0012,
+          "cooking_recipe": 0.001,
+          "datetime_query": 0.0017,
+          "email_query": 0.0011,
+          "general_quirky": 0.2849,
+          "news_query": 0.001,
+          "qa_factoid": 0.0013,
+          "social_query": 0.0013,
+          "transport_traffic": 0.0012
+        },
+        "type": "choice"
+      },
+      "confidence": 0.7053,
+      "correct": false,
+      "expected": "general_quirky",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.7053,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:general",
+        "id:41"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9974,
+        "choice": "general_greet",
+        "confidence": 0.9895,
+        "probabilities": {
+          "audio_volume_mute": 0.0003,
+          "calendar_query": 0.0003,
+          "general_greet": 0.9974,
+          "general_joke": 0.0004,
+          "iot_cleaning": 0.0003,
+          "iot_wemo_off": 0.0003,
+          "lists_remove": 0.0002,
+          "play_audiobook": 0.0003,
+          "play_music": 0.0003,
+          "qa_maths": 0.0003
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9974,
+      "correct": true,
+      "expected": "general_greet",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9974,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:general",
+        "id:46"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9982,
+        "choice": "datetime_query",
+        "confidence": 0.9926,
+        "probabilities": {
+          "alarm_set": 0.0002,
+          "datetime_query": 0.9982,
+          "email_query": 0.0002,
+          "email_querycontact": 0.0002,
+          "general_quirky": 0.0003,
+          "iot_hue_lighton": 0.0002,
+          "music_likeness": 0.0002,
+          "qa_definition": 0.0003,
+          "qa_stock": 0.0002,
+          "takeaway_order": 0.0002
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9982,
+      "correct": true,
+      "expected": "datetime_query",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9982,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:datetime",
+        "id:47"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9999,
+        "choice": "datetime_convert",
+        "confidence": 0.9993,
+        "probabilities": {
+          "datetime_convert": 0.9999,
+          "email_query": 0.0,
+          "email_sendemail": 0.0,
+          "general_quirky": 0.0,
+          "iot_hue_lightdim": 0.0,
+          "iot_wemo_on": 0.0,
+          "play_game": 0.0,
+          "qa_currency": 0.0,
+          "social_post": 0.0,
+          "weather_query": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9999,
+      "correct": true,
+      "expected": "datetime_convert",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9999,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:datetime",
+        "id:50"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "alarm_remove",
+        "confidence": 1.0,
+        "probabilities": {
+          "alarm_remove": 1.0,
+          "email_addcontact": 0.0,
+          "iot_cleaning": 0.0,
+          "iot_hue_lightchange": 0.0,
+          "iot_hue_lighton": 0.0,
+          "lists_createoradd": 0.0,
+          "lists_remove": 0.0,
+          "news_query": 0.0,
+          "qa_currency": 0.0,
+          "social_post": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "alarm_remove",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:alarm",
+        "id:59"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9981,
+        "choice": "alarm_query",
+        "confidence": 0.9922,
+        "probabilities": {
+          "alarm_query": 0.9981,
+          "audio_volume_down": 0.0002,
+          "calendar_set": 0.0002,
+          "email_query": 0.0002,
+          "general_quirky": 0.0002,
+          "iot_cleaning": 0.0002,
+          "iot_hue_lightdim": 0.0002,
+          "iot_hue_lighton": 0.0004,
+          "play_music": 0.0002,
+          "transport_traffic": 0.0002
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9981,
+      "correct": true,
+      "expected": "alarm_query",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9981,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:alarm",
+        "id:61"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9945,
+        "choice": "alarm_query",
+        "confidence": 0.9809,
+        "probabilities": {
+          "alarm_query": 0.9945,
+          "audio_volume_mute": 0.0003,
+          "calendar_set": 0.0004,
+          "datetime_convert": 0.0003,
+          "general_quirky": 0.0027,
+          "iot_coffee": 0.0005,
+          "music_settings": 0.0004,
+          "recommendation_locations": 0.0003,
+          "takeaway_order": 0.0003,
+          "weather_query": 0.0003
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9945,
+      "correct": true,
+      "expected": "alarm_query",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9945,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:alarm",
+        "id:63"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8471,
+        "choice": "music_likeness",
+        "confidence": 0.6697,
+        "probabilities": {
+          "audio_volume_down": 0.0167,
+          "audio_volume_mute": 0.0149,
+          "email_addcontact": 0.0168,
+          "email_querycontact": 0.0191,
+          "email_sendemail": 0.0262,
+          "iot_hue_lightchange": 0.0134,
+          "music_likeness": 0.8471,
+          "qa_stock": 0.0168,
+          "takeaway_order": 0.0139,
+          "takeaway_query": 0.0153
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8471,
+      "correct": true,
+      "expected": "music_likeness",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.8471,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:music",
+        "id:71"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9957,
+        "choice": "iot_hue_lightdim",
+        "confidence": 0.9869,
+        "probabilities": {
+          "calendar_query": 0.0,
+          "calendar_remove": 0.0,
+          "iot_hue_lightdim": 0.9957,
+          "iot_hue_lighton": 0.0038,
+          "iot_hue_lightup": 0.0003,
+          "music_settings": 0.0001,
+          "play_podcasts": 0.0,
+          "recommendation_movies": 0.0,
+          "takeaway_order": 0.0,
+          "transport_taxi": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9957,
+      "correct": false,
+      "expected": "iot_hue_lightup",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.9957,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:iot",
+        "id:80"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9991,
+        "choice": "datetime_query",
+        "confidence": 0.9959,
+        "probabilities": {
+          "alarm_query": 0.0001,
+          "audio_volume_other": 0.0001,
+          "audio_volume_up": 0.0001,
+          "datetime_query": 0.9991,
+          "general_joke": 0.0001,
+          "iot_hue_lightchange": 0.0001,
+          "music_query": 0.0001,
+          "play_radio": 0.0001,
+          "qa_stock": 0.0001,
+          "recommendation_events": 0.0001
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9991,
+      "correct": true,
+      "expected": "datetime_query",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9991,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:datetime",
+        "id:85"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9995,
+        "choice": "datetime_query",
+        "confidence": 0.9975,
+        "probabilities": {
+          "calendar_set": 0.0001,
+          "datetime_query": 0.9995,
+          "general_joke": 0.0001,
+          "iot_cleaning": 0.0001,
+          "iot_hue_lighton": 0.0001,
+          "lists_createoradd": 0.0001,
+          "lists_remove": 0.0001,
+          "social_query": 0.0001,
+          "transport_query": 0.0001,
+          "weather_query": 0.0001
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9995,
+      "correct": true,
+      "expected": "datetime_query",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9995,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:datetime",
+        "id:86"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "takeaway_order",
+        "confidence": 1.0,
+        "probabilities": {
+          "cooking_recipe": 0.0,
+          "iot_hue_lightdim": 0.0,
+          "iot_hue_lightup": 0.0,
+          "lists_query": 0.0,
+          "recommendation_locations": 0.0,
+          "social_query": 0.0,
+          "takeaway_order": 1.0,
+          "transport_taxi": 0.0,
+          "transport_traffic": 0.0,
+          "weather_query": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "takeaway_order",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:takeaway",
+        "id:89"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9994,
+        "choice": "weather_query",
+        "confidence": 0.9975,
+        "probabilities": {
+          "alarm_remove": 0.0,
+          "alarm_set": 0.0,
+          "calendar_remove": 0.0,
+          "datetime_convert": 0.0,
+          "datetime_query": 0.0,
+          "lists_query": 0.0,
+          "music_dislikeness": 0.0,
+          "news_query": 0.0004,
+          "takeaway_query": 0.0,
+          "weather_query": 0.9994
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9994,
+      "correct": true,
+      "expected": "weather_query",
+      "language": "en",
+      "model": "laya-rl-agent",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9994,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "massive",
+        "intent10",
+        "scenario:weather",
+        "id:100"
+      ]
+    }
+  ],
+  "config": {
+    "checkpoint": {
+      "path": "/Users/banhun/.cache/huggingface/hub/models--convaiinnovations--laya/snapshots/55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+      "realpath": "/Users/banhun/.cache/huggingface/hub/models--convaiinnovations--laya/snapshots/55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+      "rl_agent_config_sha256": "ae287b56bbcf5f8c4f4541ae9dfd00c914c4c48b940b8398c3058af37ba92bbd",
+      "temperature_applied": [
+        1.6369030475616455,
+        1.2514300346374512,
+        1.983399510383606
+      ],
+      "temperature_by_options": {
+        "choice:11+": 0.5,
+        "choice:2": 1.9063563346862793,
+        "choice:3-5": 1.7601518630981445,
+        "choice:6-10": 1.0000158548355103,
+        "noul:2": 1.983399510383606,
+        "score:3-5": 1.2514300346374512
+      },
+      "temperature_raw": [
+        1.6369030475616455,
+        1.2514300346374512,
+        1.983399510383606
+      ],
+      "weights_sha256": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c"
+    },
+    "dataset": "data/evals/jev_cmp/T7_massive_intent_10opt_en_20.jsonl",
+    "dataset_sha256": "034e2c88a730463215407fc1f3883093f08bde494dc5bd933be44834913bf04f",
+    "device": "cpu",
+    "eval_s": 1.72,
+    "laya_version": "0.3.23",
+    "load_s": 2.43,
+    "model": "english",
+    "questions_sha256": "e587cdad8d85f48539a25ced8f19cde1c21f63319692e2aaacb6650dafe19588",
+    "revisions": {
+      "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "runner": "poc/finetune/eval_ckpt.py AgentRunner(laya.load(ckpt, device='cpu'))",
+    "schema": "laya-evals-report/1",
+    "threads": {
+      "interop": 1,
+      "intra": 10
+    },
+    "thresholds": {
+      "baseline_tolerance": {},
+      "max": {},
+      "min": {}
+    },
+    "timing": {
+      "batch_form": "states",
+      "batch_size": 8,
+      "chunks": 20,
+      "cost_metric": "per decision: that call divided by its own chunk size",
+      "latency_metric": "per request: the wall time of the call that returned it, unsplit",
+      "max_chunk": 1,
+      "min_confidence": null,
+      "min_confidence_sent": false,
+      "rows_alone": 20,
+      "rows_grouped": 0,
+      "sort_by_length": false,
+      "sort_by_length_sent": false
+    }
+  },
+  "overall": {
+    "choice_accuracy": 0.7,
+    "cost_per_decision_p50_ms": 83.65349998348393,
+    "cost_per_decision_p95_ms": 100.04704201128334,
+    "ece": 0.21395999999999998,
+    "latency_p50_ms": 83.65349998348393,
+    "latency_p95_ms": 100.04704201128334,
+    "mean_confidence": 0.8986700000000001
+  },
+  "slices": {
+    "language": {
+      "en": {
+        "choice_accuracy": 0.7,
+        "ece": 0.21395999999999998,
+        "mean_confidence": 0.8986700000000001
+      }
+    },
+    "model": {
+      "laya-rl-agent": {
+        "choice_accuracy": 0.7,
+        "ece": 0.21395999999999998,
+        "mean_confidence": 0.8986700000000001
+      }
+    },
+    "qid": {
+      "intent": {
+        "choice_accuracy": 0.7,
+        "ece": 0.21395999999999998,
+        "mean_confidence": 0.8986700000000001
+      }
+    },
+    "tag": {
+      "id:0": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0,
+        "mean_confidence": 1.0
+      },
+      "id:100": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0006000000000000449,
+        "mean_confidence": 0.9994
+      },
+      "id:14": {
+        "choice_accuracy": 0.0,
+        "ece": 0.3438,
+        "mean_confidence": 0.3438
+      },
+      "id:19": {
+        "choice_accuracy": 1.0,
+        "ece": 0.05500000000000005,
+        "mean_confidence": 0.945
+      },
+      "id:27": {
+        "choice_accuracy": 0.0,
+        "ece": 0.5631,
+        "mean_confidence": 0.5631
+      },
+      "id:3": {
+        "choice_accuracy": 0.0,
+        "ece": 0.7544,
+        "mean_confidence": 0.7544
+      },
+      "id:31": {
+        "choice_accuracy": 1.0,
+        "ece": 0.048799999999999955,
+        "mean_confidence": 0.9512
+      },
+      "id:41": {
+        "choice_accuracy": 0.0,
+        "ece": 0.7053,
+        "mean_confidence": 0.7053
+      },
+      "id:46": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0026000000000000467,
+        "mean_confidence": 0.9974
+      },
+      "id:47": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0018000000000000238,
+        "mean_confidence": 0.9982
+      },
+      "id:50": {
+        "choice_accuracy": 1.0,
+        "ece": 9.999999999998899e-05,
+        "mean_confidence": 0.9999
+      },
+      "id:59": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0,
+        "mean_confidence": 1.0
+      },
+      "id:61": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0019000000000000128,
+        "mean_confidence": 0.9981
+      },
+      "id:63": {
+        "choice_accuracy": 1.0,
+        "ece": 0.005499999999999949,
+        "mean_confidence": 0.9945
+      },
+      "id:71": {
+        "choice_accuracy": 1.0,
+        "ece": 0.15290000000000004,
+        "mean_confidence": 0.8471
+      },
+      "id:8": {
+        "choice_accuracy": 0.0,
+        "ece": 0.8817,
+        "mean_confidence": 0.8817
+      },
+      "id:80": {
+        "choice_accuracy": 0.0,
+        "ece": 0.9957,
+        "mean_confidence": 0.9957
+      },
+      "id:85": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0009000000000000119,
+        "mean_confidence": 0.9991
+      },
+      "id:86": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0004999999999999449,
+        "mean_confidence": 0.9995
+      },
+      "id:89": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0,
+        "mean_confidence": 1.0
+      },
+      "intent10": {
+        "choice_accuracy": 0.7,
+        "ece": 0.21395999999999998,
+        "mean_confidence": 0.8986700000000001
+      },
+      "massive": {
+        "choice_accuracy": 0.7,
+        "ece": 0.21395999999999998,
+        "mean_confidence": 0.8986700000000001
+      },
+      "scenario:alarm": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0018500000000000183,
+        "mean_confidence": 0.99815
+      },
+      "scenario:audio": {
+        "choice_accuracy": 0.0,
+        "ece": 0.7544,
+        "mean_confidence": 0.7544
+      },
+      "scenario:datetime": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0008250000000000757,
+        "mean_confidence": 0.999175
+      },
+      "scenario:general": {
+        "choice_accuracy": 0.5,
+        "ece": 0.35395000000000004,
+        "mean_confidence": 0.85135
+      },
+      "scenario:iot": {
+        "choice_accuracy": 0.3333333333333333,
+        "ece": 0.44675,
+        "mean_confidence": 0.7800833333333334
+      },
+      "scenario:music": {
+        "choice_accuracy": 1.0,
+        "ece": 0.15290000000000004,
+        "mean_confidence": 0.8471
+      },
+      "scenario:takeaway": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0,
+        "mean_confidence": 1.0
+      },
+      "scenario:weather": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0006000000000000449,
+        "mean_confidence": 0.9994
+      }
+    }
+  }
+}

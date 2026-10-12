@@ -1,0 +1,264 @@
+{
+ "task": "T7",
+ "timing_report": "results/T3arm/rep_s14/T7/train_timing.json",
+ "status": "ok",
+ "throughput": {
+  "train_items_per_s": 10.076,
+  "s_per_optimizer_step": 3.161,
+  "s_per_micro_batch_mean": 0.7939
+ },
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 2.31,
+  "train_loop": 992.43,
+  "epoch_checkpoint_saves": 3.58,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 1.5,
+  "calibration (forward + fit_temperature)": 9.7,
+  "export (final save + configs)": 2.13,
+  "train() total": 1011.85
+ },
+ "memory_gb": {
+  "ru_maxrss": 2.97,
+  "rss_peak_sampled": 1.85,
+  "mps_current_allocated_peak": 6.85,
+  "mps_driver_allocated_peak": 17.17,
+  "mps_recommended_max": 40.2
+ },
+ "optimizer_steps": 314,
+ "n_train_items": 5000,
+ "loss_log_script": [
+  "epoch 1/2, step 100, loss=0.4624",
+  "epoch 1/2, step 200, loss=1.1021",
+  "epoch 1/2, step 300, loss=-0.1628",
+  "epoch 1/2, step 400, loss=0.5798",
+  "epoch 1/2, step 500, loss=0.5887",
+  "epoch 1/2, step 600, loss=0.3890",
+  "Epoch 1/2 complete; avg_loss=0.5123",
+  "epoch 2/2, step 100, loss=1.8734",
+  "epoch 2/2, step 200, loss=2.7949",
+  "epoch 2/2, step 300, loss=-0.0277",
+  "epoch 2/2, step 400, loss=3.4144",
+  "epoch 2/2, step 500, loss=2.5347",
+  "epoch 2/2, step 600, loss=0.0101",
+  "Epoch 2/2 complete; avg_loss=0.5967"
+ ],
+ "train_ce_windows": [
+  0.6951,
+  0.4553,
+  0.4902,
+  0.4606,
+  0.6903,
+  0.484,
+  0.5157,
+  0.6962,
+  0.7002,
+  0.5713
+ ],
+ "train_acc_windows": [
+  0.772,
+  0.866,
+  0.859,
+  0.891,
+  0.883,
+  0.947,
+  0.949,
+  0.941,
+  0.944,
+  0.947
+ ],
+ "calibration_rows": {
+  "n": 400,
+  "ce_before_T": 1.5598,
+  "accuracy": 0.895
+ },
+ "temperature_fits_script": [
+  {
+   "start": 1012.825,
+   "end": 1013.016,
+   "samples": 400
+  }
+ ],
+ "dev": {
+  "epoch0_vanilla": {
+   "report": "results/T3arm/rep_s14/T7/dev_ep0.json",
+   "accuracy": 0.671
+  },
+  "reports": [
+   "results/T3arm/rep_s14/T7/dev_ep1.json",
+   "results/T3arm/rep_s14/T7/dev_final.json"
+  ],
+  "accuracy": [
+   0.85,
+   0.869
+  ],
+  "selected": "results/T3arm/rep_s14/T7/dev_final.json",
+  "rule": "highest dev accuracy; a tie goes to the earlier epoch (docs/11 §4)"
+ },
+ "training_failed": false,
+ "class_recall_dev": {
+  "epoch0_vanilla": {
+   "alarm_query": 0.45,
+   "alarm_remove": 0.7,
+   "alarm_set": 0.9,
+   "audio_volume_down": 0.6,
+   "audio_volume_mute": 0.9,
+   "audio_volume_up": 0.75,
+   "calendar_query": 0.44,
+   "calendar_remove": 0.8182,
+   "calendar_set": 0.52,
+   "cooking_recipe": 0.9091,
+   "datetime_convert": 0.8571,
+   "datetime_query": 0.375,
+   "email_addcontact": 0.8,
+   "email_query": 0.6,
+   "email_querycontact": 0.5,
+   "email_sendemail": 0.85,
+   "general_joke": 0.7273,
+   "general_quirky": 0.3333,
+   "iot_cleaning": 0.75,
+   "iot_coffee": 0.95,
+   "iot_hue_lightchange": 0.9524,
+   "iot_hue_lightdim": 0.6667,
+   "iot_hue_lightoff": 0.4667,
+   "iot_hue_lighton": 0.5333,
+   "iot_hue_lightup": 0.6667,
+   "iot_wemo_off": 0.6,
+   "iot_wemo_on": 0.7333,
+   "lists_createoradd": 0.875,
+   "lists_query": 0.5556,
+   "lists_remove": 1.0,
+   "music_dislikeness": 0.6,
+   "music_likeness": 0.6667,
+   "music_query": 0.6,
+   "music_settings": 0.2667,
+   "news_query": 0.2941,
+   "play_audiobook": 0.5882,
+   "play_game": 0.7333,
+   "play_music": 0.95,
+   "play_podcasts": 0.5882,
+   "play_radio": 0.5,
+   "qa_currency": 1.0,
+   "qa_definition": 0.6,
+   "qa_factoid": 0.1875,
+   "qa_maths": 0.875,
+   "qa_stock": 0.6667,
+   "recommendation_events": 0.2,
+   "recommendation_locations": 0.8667,
+   "recommendation_movies": 1.0,
+   "social_post": 0.875,
+   "social_query": 0.6875,
+   "takeaway_order": 0.6,
+   "takeaway_query": 0.2667,
+   "transport_query": 0.4667,
+   "transport_taxi": 0.875,
+   "transport_ticket": 0.8667,
+   "transport_traffic": 0.8667,
+   "weather_query": 0.7778
+  },
+  "selected": {
+   "alarm_query": 0.8,
+   "alarm_remove": 0.7,
+   "alarm_set": 1.0,
+   "audio_volume_down": 0.9,
+   "audio_volume_mute": 1.0,
+   "audio_volume_up": 0.9,
+   "calendar_query": 0.76,
+   "calendar_remove": 0.9091,
+   "calendar_set": 0.88,
+   "cooking_recipe": 0.8636,
+   "datetime_convert": 1.0,
+   "datetime_query": 0.9167,
+   "email_addcontact": 0.8,
+   "email_query": 0.95,
+   "email_querycontact": 0.8,
+   "email_sendemail": 0.95,
+   "general_joke": 0.9545,
+   "general_quirky": 0.6667,
+   "iot_cleaning": 0.9,
+   "iot_coffee": 0.95,
+   "iot_hue_lightchange": 1.0,
+   "iot_hue_lightdim": 0.8,
+   "iot_hue_lightoff": 0.9333,
+   "iot_hue_lighton": 0.9333,
+   "iot_hue_lightup": 0.8667,
+   "iot_wemo_off": 0.9333,
+   "iot_wemo_on": 1.0,
+   "lists_createoradd": 0.9375,
+   "lists_query": 0.8889,
+   "lists_remove": 1.0,
+   "music_dislikeness": 0.8,
+   "music_likeness": 1.0,
+   "music_query": 0.9333,
+   "music_settings": 0.5333,
+   "news_query": 0.7059,
+   "play_audiobook": 0.7059,
+   "play_game": 0.8667,
+   "play_music": 0.6,
+   "play_podcasts": 0.8235,
+   "play_radio": 0.9,
+   "qa_currency": 1.0,
+   "qa_definition": 0.6667,
+   "qa_factoid": 0.6875,
+   "qa_maths": 0.9375,
+   "qa_stock": 0.8667,
+   "recommendation_events": 0.8667,
+   "recommendation_locations": 0.9333,
+   "recommendation_movies": 1.0,
+   "social_post": 1.0,
+   "social_query": 0.9375,
+   "takeaway_order": 0.6,
+   "takeaway_query": 0.7333,
+   "transport_query": 0.9333,
+   "transport_taxi": 0.8125,
+   "transport_ticket": 1.0,
+   "transport_traffic": 1.0,
+   "weather_query": 0.7778
+  }
+ },
+ "train_vs_dev_gap": {
+  "train_acc_last_window": 0.947,
+  "dev_acc_selected": 0.869,
+  "gap": 0.078,
+  "note": "train acc = argmax vs target on each micro-batch's training forward (dropout on), last 10%"
+ },
+ "selected_ckpt": "poc/finetune/ckpt_t3arm_rep_s14/T7_run",
+ "selected_temperature": [
+  4.462158203125,
+  1.2,
+  1.2
+ ],
+ "temperature_clamp": {
+  "script_fit_range": [
+   0.1,
+   10.0
+  ],
+  "load_range": [
+   0.5,
+   5.0
+  ],
+  "outside_load_range": [],
+  "at_script_bound": [],
+  "default_1.2_for_types_without_calibration_rows": [
+   1,
+   2
+  ]
+ },
+ "selected_temperature_by_options": null,
+ "selected_max_len": [
+  1024,
+  256
+ ],
+ "option_order_flip_dev40": {
+  "n_items": 40,
+  "n_options": 10,
+  "orig_accuracy": 0.95,
+  "flip_rate_per_perm": 0.025,
+  "flip_rate_per_perm_ci": [
+   0.005,
+   0.045000000000000005
+  ],
+  "any_flip_rate": 0.125,
+  "perm_accuracy_mean": 0.94
+ }
+}

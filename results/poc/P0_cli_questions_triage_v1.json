@@ -1,0 +1,85 @@
+{
+  "model": "laya-rl-agent",
+  "answers": {
+    "intent": {
+      "type": "choice",
+      "choice": "billing_question",
+      "probabilities": {
+        "refund": 0.0,
+        "technical_help": 0.0,
+        "billing_question": 0.9998,
+        "information": 0.0,
+        "cancellation": 0.0,
+        "other": 0.0001
+      },
+      "confidence": 0.9988,
+      "answer_confidence": 0.9998,
+      "action": {
+        "act_probability": 1.0
+      }
+    },
+    "is_urgent": {
+      "type": "noul",
+      "noul": 0.0246,
+      "confidence": 0.9754,
+      "answer_confidence": 0.9754,
+      "action": {
+        "act_probability": 1.0
+      }
+    },
+    "frustration": {
+      "type": "score",
+      "score": 1.244,
+      "legend": {
+        "0": "차분하고 중립적",
+        "1": "걱정하지만 정중함",
+        "2": "분명히 짜증남",
+        "3": "매우 화남 또는 강한 표현 사용"
+      },
+      "probabilities": {
+        "0": 0.0377,
+        "1": 0.7336,
+        "2": 0.1756,
+        "3": 0.053
+      },
+      "confidence": 0.4142,
+      "answer_confidence": 0.7336,
+      "action": {
+        "act_probability": 1.0
+      }
+    },
+    "refund_requested": {
+      "type": "noul",
+      "noul": 0.0036,
+      "confidence": 0.9964,
+      "answer_confidence": 0.9964,
+      "action": {
+        "act_probability": 1.0
+      }
+    },
+    "churn_risk": {
+      "type": "noul",
+      "noul": 0.0003,
+      "confidence": 0.9997,
+      "answer_confidence": 0.9997,
+      "action": {
+        "act_probability": 1.0
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 403,
+    "output_tokens": 0,
+    "state_tokens": 19,
+    "state_tokens_dropped": 0,
+    "truncated": false,
+    "truncated_questions": []
+  },
+  "routing": {
+    "model": "multilingual",
+    "repo": "convaiinnovations/laya/multilingual",
+    "reason": "explicit model='multilingual'",
+    "detection": null,
+    "workflow": null
+  }
+}

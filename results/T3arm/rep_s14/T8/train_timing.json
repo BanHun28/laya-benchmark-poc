@@ -1,0 +1,5228 @@
+{
+ "script": "poc/finetune/laya_finetune_mps_patched.py",
+ "script_sha256": "d8dc1eb92db72c0f577ec9cf6dc3ad80558e0e0ff79897bd92dc3f87399db642",
+ "zero_step": false,
+ "script_args": [
+  "models/laya",
+  "poc/finetune/ckpt_t3arm_rep_s14/T8_run",
+  "--items",
+  "poc/finetune/data/t3arm/T8_english.pt",
+  "--calib-max",
+  "40",
+  "--epochs",
+  "2",
+  "--micro-batch",
+  "8",
+  "--grad-accum",
+  "4",
+  "--no-checkpointing",
+  "--device",
+  "mps"
+ ],
+ "seed": 14,
+ "keep_epoch_checkpoints": true,
+ "started_at": "2026-10-08T18:49:21+0900",
+ "versions": {
+  "torch": "2.14.1",
+  "python": "3.12.12",
+  "laya": "0.3.23"
+ },
+ "threads": {
+  "intra": 10,
+  "interop": 14
+ },
+ "load_before": {
+  "gpu_util_pct": 1,
+  "mps_fp32_matmul_tflops": 2.32,
+  "cotenant": [
+   "uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step143000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100",
+   "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step143000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100",
+   "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1791356222128-5vm37w.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model qwen3-1.7b --n-seq 300 --n-seq-layer 20 --n-seq-head 100 --n-ret 500 --n-seq-layer-shuf 10 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage2_qwen3-1.7b.log' < /dev/null && pwd -P >| /tmp/claude-5e1a-cwd",
+   "uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model qwen3-1.7b --n-seq 300 --n-seq-layer 20 --n-seq-head 100 --n-ret 500 --n-seq-layer-shuf 10",
+   "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_fixedpoint_ladder.py --stage 2 --model qwen3-1.7b --n-seq 300 --n-seq-layer 20 --n-seq-head 100 --n-ret 500 --n-seq-layer-shuf 10",
+   "uv run python experiments/poc_output_hopfield.py --capture --model gpt2",
+   "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_output_hopfield.py --capture --model gpt2",
+   "uv run python experiments/poc_output_hopfield.py --capture --model pythia-160m",
+   "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_output_hopfield.py --capture --model pythia-160m",
+   "uv run python experiments/poc_output_hopfield.py --capture --model Qwen3-0.6B",
+   "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_output_hopfield.py --capture --model Qwen3-0.6B",
+   "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1791356222128-5vm37w.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model gpt2 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage2_gpt2.log' < /dev/null && pwd -P >| /tmp/claude-714c-cwd",
+   "uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model gpt2 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100",
+   "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_fixedpoint_ladder.py --stage 2 --model gpt2 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100",
+   "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1791356222128-5vm37w.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval '(uv run python experiments/poc_fixedpoint_ladder.py --stage 1 --model pythia-160m-step143000 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage1_pythia-160m-step143000.log; uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step143000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage2_pythia-160m-step143000.log)' < /dev/null && pwd -P >| /tmp/claude-2b07-cwd",
+   "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1791356222128-5vm37w.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval '(uv run python experiments/poc_fixedpoint_ladder.py --stage 1 --model pythia-160m-step143000 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage1_pythia-160m-step143000.log; uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step143000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage2_pythia-160m-step143000.log)' < /dev/null && pwd -P >| /tmp/claude-2b07-cwd",
+   "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1791356222128-5vm37w.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step2000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage2_pythia-160m-step2000.log' < /dev/null && pwd -P >| /tmp/claude-4d8d-cwd",
+   "uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step2000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100",
+   "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step2000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100"
+  ],
+  "sys_mem_used_gb": 31.8
+ },
+ "status": "ok",
+ "wall_s": 391.28,
+ "load_after": {
+  "gpu_util_pct": 67,
+  "mps_fp32_matmul_tflops": 4.93
+ },
+ "micro_batch": 8,
+ "grad_accum": 4,
+ "epochs": 2,
+ "n_train_items": 444,
+ "micro_batches": 112,
+ "optimizer_steps": 28,
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 1.16,
+  "train_loop": 365.59,
+  "epoch_checkpoint_saves": 6.0,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 2.78,
+  "calibration (forward + fit_temperature)": 6.01,
+  "export (final save + configs)": 4.82,
+  "train() total": 386.41
+ },
+ "throughput": {
+  "train_items_per_s": 2.429,
+  "s_per_optimizer_step": 13.057,
+  "s_per_micro_batch_mean": 3.2642
+ },
+ "micro_batch_s": {
+  "median_all": 1.9857,
+  "median_repeat_shape_no_step": 1.5001,
+  "median_repeat_shape_with_step": 2.8993,
+  "optimizer_step_overhead": 1.3992,
+  "median_first_shape": 2.2442,
+  "first_shape_count": 59,
+  "repeat_shape_count": 53,
+  "first_shape_extra_total_s": 72.9
+ },
+ "memory_gb": {
+  "ru_maxrss": 3.19,
+  "rss_peak_sampled": 1.87,
+  "mps_current_allocated_peak": 20.76,
+  "mps_driver_allocated_peak": 25.86,
+  "mps_recommended_max": 40.2
+ },
+ "loss_log_script": [
+  "Epoch 1/2 complete; avg_loss=0.3800",
+  "Epoch 2/2 complete; avg_loss=0.0925"
+ ],
+ "train_ce_windows": [
+  1.2285,
+  0.4743,
+  0.2738,
+  0.135,
+  0.2685,
+  0.0781,
+  0.1777,
+  0.1392,
+  0.0559,
+  0.0062,
+  0.0004
+ ],
+ "train_acc_windows": [
+  0.841,
+  0.807,
+  0.886,
+  0.955,
+  0.943,
+  0.966,
+  0.955,
+  0.966,
+  0.977,
+  1.0,
+  1.0
+ ],
+ "calibration_rows": {
+  "n": 40,
+  "ce_before_T": 0.1206,
+  "accuracy": 0.975
+ },
+ "temperature_fits": [
+  {
+   "start": 384.986,
+   "end": 385.218,
+   "samples": 40
+  }
+ ],
+ "item_sources": {
+  "train": {
+   "train": 888
+  },
+  "calibration": {
+   "calib": 40
+  }
+ },
+ "cotenant_found": true,
+ "load_series": [
+  {
+   "t": 4.7,
+   "rss_gb": 1.871,
+   "mps_alloc_gb": 1.256,
+   "mps_driver_gb": 2.156,
+   "gpu_util_pct": 3,
+   "sys_cpu_pct": 29.4,
+   "sys_mem_used_gb": 34.2,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 29.0,
+     "rss_gb": 0.5
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.02
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 6.7,
+     "rss_gb": 0.86
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 29.5,
+     "rss_gb": 0.55
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 28.1,
+     "rss_gb": 0.54
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 26.5,
+     "rss_gb": 0.95
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 13.4,
+     "rss_gb": 0.53
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 13.1,
+     "rss_gb": 0.48
+    }
+   ]
+  },
+  {
+   "t": 14.8,
+   "rss_gb": 0.618,
+   "mps_alloc_gb": 8.076,
+   "mps_driver_gb": 12.953,
+   "gpu_util_pct": 5,
+   "sys_cpu_pct": 22.3,
+   "sys_mem_used_gb": 40.6,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 10.0,
+     "rss_gb": 0.18
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.02
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 5.2,
+     "rss_gb": 0.52
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 22.0,
+     "rss_gb": 0.27
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 22.3,
+     "rss_gb": 0.22
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 20.2,
+     "rss_gb": 0.26
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 10.1,
+     "rss_gb": 0.17
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 9.1,
+     "rss_gb": 0.38
+    }
+   ]
+  },
+  {
+   "t": 24.9,
+   "rss_gb": 0.725,
+   "mps_alloc_gb": 6.99,
+   "mps_driver_gb": 12.954,
+   "gpu_util_pct": 2,
+   "sys_cpu_pct": 19.2,
+   "sys_mem_used_gb": 40.8,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 9.6,
+     "rss_gb": 0.18
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.02
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 3.4,
+     "rss_gb": 0.52
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 22.1,
+     "rss_gb": 0.37
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 20.6,
+     "rss_gb": 0.37
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 20.4,
+     "rss_gb": 0.46
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 9.8,
+     "rss_gb": 0.18
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 8.6,
+     "rss_gb": 0.38
+    }
+   ]
+  },
+  {
+   "t": 35.0,
+   "rss_gb": 0.674,
+   "mps_alloc_gb": 6.848,
+   "mps_driver_gb": 14.028,
+   "gpu_util_pct": 2,
+   "sys_cpu_pct": 18.2,
+   "sys_mem_used_gb": 40.7,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 9.5,
+     "rss_gb": 0.14
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.02
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 3.4,
+     "rss_gb": 0.23
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 21.1,
+     "rss_gb": 0.39
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 21.9,
+     "rss_gb": 0.4
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 18.6,
+     "rss_gb": 0.65
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 9.4,
+     "rss_gb": 0.11
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 8.7,
+     "rss_gb": 0.12
+    }
+   ]
+  },
+  {
+   "t": 45.1,
+   "rss_gb": 0.458,
+   "mps_alloc_gb": 14.249,
+   "mps_driver_gb": 15.102,
+   "gpu_util_pct": 2,
+   "sys_cpu_pct": 18.7,
+   "sys_mem_used_gb": 40.9,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 9.7,
+     "rss_gb": 0.09
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.02
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 3.6,
+     "rss_gb": 0.18
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 22.5,
+     "rss_gb": 0.34
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 20.5,
+     "rss_gb": 0.34
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 18.0,
+     "rss_gb": 0.62
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 18.6,
+     "rss_gb": 0.4
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 12.1,
+     "rss_gb": 0.37
+    }
+   ]
+  },
+  {
+   "t": 55.2,
+   "rss_gb": 0.365,
+   "mps_alloc_gb": 6.831,
+   "mps_driver_gb": 16.17,
+   "gpu_util_pct": 2,
+   "sys_cpu_pct": 26.6,
+   "sys_mem_used_gb": 39.1,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 16.5,
+     "rss_gb": 0.09
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 3.8,
+     "rss_gb": 0.08
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 21.1,
+     "rss_gb": 0.22
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 22.0,
+     "rss_gb": 0.22
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 18.9,
+     "rss_gb": 0.19
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 9.6,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 13.0,
+     "rss_gb": 0.07
+    }
+   ]
+  },
+  {
+   "t": 65.4,
+   "rss_gb": 0.376,
+   "mps_alloc_gb": 6.829,
+   "mps_driver_gb": 16.177,
+   "gpu_util_pct": 2,
+   "sys_cpu_pct": 20.6,
+   "sys_mem_used_gb": 40.6,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 15.4,
+     "rss_gb": 0.37
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 4.0,
+     "rss_gb": 0.08
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 22.7,
+     "rss_gb": 0.24
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 20.7,
+     "rss_gb": 0.24
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 20.1,
+     "rss_gb": 0.21
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 9.4,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 8.8,
+     "rss_gb": 0.07
+    }
+   ]
+  },
+  {
+   "t": 75.5,
+   "rss_gb": 0.097,
+   "mps_alloc_gb": 13.541,
+   "mps_driver_gb": 23.7,
+   "gpu_util_pct": 3,
+   "sys_cpu_pct": 26.9,
+   "sys_mem_used_gb": 45.1,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 11.0,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 4.9,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 21.9,
+     "rss_gb": 0.15
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 22.8,
+     "rss_gb": 0.14
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 21.8,
+     "rss_gb": 0.24
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 10.5,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 10.0,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 85.8,
+   "rss_gb": 0.184,
+   "mps_alloc_gb": 6.83,
+   "mps_driver_gb": 23.701,
+   "gpu_util_pct": 2,
+   "sys_cpu_pct": 25.1,
+   "sys_mem_used_gb": 44.8,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 9.7,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 6.7,
+     "rss_gb": 0.08
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 23.7,
+     "rss_gb": 0.21
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 21.6,
+     "rss_gb": 0.21
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 20.6,
+     "rss_gb": 0.32
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 9.8,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 9.4,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 95.9,
+   "rss_gb": 0.109,
+   "mps_alloc_gb": 11.432,
+   "mps_driver_gb": 23.699,
+   "gpu_util_pct": 3,
+   "sys_cpu_pct": 28.7,
+   "sys_mem_used_gb": 46.2,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 10.4,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 6.1,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 22.4,
+     "rss_gb": 0.13
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 23.5,
+     "rss_gb": 0.13
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 19.7,
+     "rss_gb": 0.13
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 10.7,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 13.7,
+     "rss_gb": 0.28
+    }
+   ]
+  },
+  {
+   "t": 106.0,
+   "rss_gb": 0.12,
+   "mps_alloc_gb": 8.979,
+   "mps_driver_gb": 23.693,
+   "gpu_util_pct": 18,
+   "sys_cpu_pct": 30.5,
+   "sys_mem_used_gb": 45.5,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 10.9,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 10.5,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 24.6,
+     "rss_gb": 0.13
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 22.2,
+     "rss_gb": 0.12
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 21.8,
+     "rss_gb": 0.14
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 10.9,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 16.4,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 116.1,
+   "rss_gb": 0.104,
+   "mps_alloc_gb": 9.732,
+   "mps_driver_gb": 23.698,
+   "gpu_util_pct": 88,
+   "sys_cpu_pct": 34.5,
+   "sys_mem_used_gb": 45.5,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 22.7,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 11.3,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 24.6,
+     "rss_gb": 0.12
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 25.8,
+     "rss_gb": 0.12
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 23.3,
+     "rss_gb": 0.15
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 11.8,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 11.4,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 126.2,
+   "rss_gb": 0.1,
+   "mps_alloc_gb": 6.813,
+   "mps_driver_gb": 23.697,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 42.3,
+   "sys_mem_used_gb": 45.2,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 11.9,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 8.5,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 26.2,
+     "rss_gb": 0.12
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 24.2,
+     "rss_gb": 0.12
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 25.3,
+     "rss_gb": 0.17
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 12.5,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 11.9,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 136.4,
+   "rss_gb": 0.155,
+   "mps_alloc_gb": 6.82,
+   "mps_driver_gb": 23.695,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 38.2,
+   "sys_mem_used_gb": 45.3,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 18.2,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 7.1,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 25.8,
+     "rss_gb": 0.14
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 26.0,
+     "rss_gb": 0.14
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 24.9,
+     "rss_gb": 0.19
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 24.4,
+     "rss_gb": 0.1
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 12.0,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 146.5,
+   "rss_gb": 0.175,
+   "mps_alloc_gb": 7.605,
+   "mps_driver_gb": 23.695,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 35.1,
+   "sys_mem_used_gb": 40.0,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 16.3,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 10.5,
+     "rss_gb": 0.08
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 26.7,
+     "rss_gb": 0.17
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 25.7,
+     "rss_gb": 0.17
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 23.4,
+     "rss_gb": 0.16
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 14.4,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 14.0,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 156.7,
+   "rss_gb": 0.136,
+   "mps_alloc_gb": 6.844,
+   "mps_driver_gb": 23.696,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 39.7,
+   "sys_mem_used_gb": 42.7,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 22.5,
+     "rss_gb": 0.08
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 11.6,
+     "rss_gb": 0.33
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 25.5,
+     "rss_gb": 0.14
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 27.4,
+     "rss_gb": 0.14
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 25.3,
+     "rss_gb": 0.16
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 15.5,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 14.9,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 166.9,
+   "rss_gb": 0.16,
+   "mps_alloc_gb": 6.839,
+   "mps_driver_gb": 23.696,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 39.7,
+   "sys_mem_used_gb": 41.2,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 22.8,
+     "rss_gb": 0.26
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 48.2,
+     "rss_gb": 0.03
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 28.9,
+     "rss_gb": 0.19
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 27.0,
+     "rss_gb": 0.17
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 27.3,
+     "rss_gb": 0.28
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 25.1,
+     "rss_gb": 0.3
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 15.9,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 177.1,
+   "rss_gb": 0.111,
+   "mps_alloc_gb": 8.906,
+   "mps_driver_gb": 23.698,
+   "gpu_util_pct": 94,
+   "sys_cpu_pct": 33.0,
+   "sys_mem_used_gb": 33.9,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 17.1,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 14.8,
+     "rss_gb": 0.03
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 33.2,
+     "rss_gb": 0.25
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 33.7,
+     "rss_gb": 0.26
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 32.4,
+     "rss_gb": 0.45
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 19.7,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 21.7,
+     "rss_gb": 0.37
+    }
+   ]
+  },
+  {
+   "t": 187.3,
+   "rss_gb": 0.099,
+   "mps_alloc_gb": 7.181,
+   "mps_driver_gb": 23.698,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 42.2,
+   "sys_mem_used_gb": 28.5,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 20.9,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 15.8,
+     "rss_gb": 0.03
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 36.4,
+     "rss_gb": 0.37
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 37.0,
+     "rss_gb": 0.37
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 31.4,
+     "rss_gb": 0.39
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 24.0,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 20.9,
+     "rss_gb": 0.17
+    }
+   ]
+  },
+  {
+   "t": 197.4,
+   "rss_gb": 0.072,
+   "mps_alloc_gb": 6.836,
+   "mps_driver_gb": 23.698,
+   "gpu_util_pct": 87,
+   "sys_cpu_pct": 41.4,
+   "sys_mem_used_gb": 30.7,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 27.2,
+     "rss_gb": 0.36
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 22.5,
+     "rss_gb": 0.03
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 39.9,
+     "rss_gb": 0.34
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 40.4,
+     "rss_gb": 0.32
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 34.9,
+     "rss_gb": 0.42
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 28.3,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 30.6,
+     "rss_gb": 0.37
+    }
+   ]
+  },
+  {
+   "t": 207.5,
+   "rss_gb": 0.059,
+   "mps_alloc_gb": 6.825,
+   "mps_driver_gb": 23.698,
+   "gpu_util_pct": 15,
+   "sys_cpu_pct": 41.5,
+   "sys_mem_used_gb": 42.5,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 23.1,
+     "rss_gb": 0.11
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 13.3,
+     "rss_gb": 0.08
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 30.0,
+     "rss_gb": 0.19
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 28.2,
+     "rss_gb": 0.17
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 28.8,
+     "rss_gb": 0.15
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 17.2,
+     "rss_gb": 0.18
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 16.2,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 217.6,
+   "rss_gb": 0.04,
+   "mps_alloc_gb": 5.12,
+   "mps_driver_gb": 23.698,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 35.6,
+   "sys_mem_used_gb": 33.2,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 14.0,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 6.1,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 28.3,
+     "rss_gb": 0.18
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 28.5,
+     "rss_gb": 0.17
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 25.9,
+     "rss_gb": 0.16
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 26.2,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 14.0,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 227.8,
+   "rss_gb": 0.099,
+   "mps_alloc_gb": 7.288,
+   "mps_driver_gb": 23.696,
+   "gpu_util_pct": 1,
+   "sys_cpu_pct": 35.0,
+   "sys_mem_used_gb": 37.7,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 14.5,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 6.6,
+     "rss_gb": 0.08
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 28.7,
+     "rss_gb": 0.27
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 29.3,
+     "rss_gb": 0.24
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 25.0,
+     "rss_gb": 0.34
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 16.2,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 14.8,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 238.0,
+   "rss_gb": 0.1,
+   "mps_alloc_gb": 6.735,
+   "mps_driver_gb": 23.696,
+   "gpu_util_pct": 41,
+   "sys_cpu_pct": 33.3,
+   "sys_mem_used_gb": 34.1,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 20.6,
+     "rss_gb": 0.37
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 7.6,
+     "rss_gb": 0.08
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 29.0,
+     "rss_gb": 0.22
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 27.5,
+     "rss_gb": 0.19
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 26.7,
+     "rss_gb": 0.33
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 25.2,
+     "rss_gb": 0.1
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 16.0,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 248.1,
+   "rss_gb": 0.039,
+   "mps_alloc_gb": 8.535,
+   "mps_driver_gb": 23.696,
+   "gpu_util_pct": 2,
+   "sys_cpu_pct": 36.8,
+   "sys_mem_used_gb": 44.2,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 14.0,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 5.9,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 27.8,
+     "rss_gb": 0.15
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 28.5,
+     "rss_gb": 0.14
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 27.8,
+     "rss_gb": 0.23
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 13.4,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 13.6,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 258.2,
+   "rss_gb": 0.075,
+   "mps_alloc_gb": 6.817,
+   "mps_driver_gb": 23.696,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 39.3,
+   "sys_mem_used_gb": 44.9,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 22.8,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 9.4,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 28.3,
+     "rss_gb": 0.12
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 26.8,
+     "rss_gb": 0.13
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 27.0,
+     "rss_gb": 0.12
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 14.2,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 14.5,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 268.3,
+   "rss_gb": 0.088,
+   "mps_alloc_gb": 6.817,
+   "mps_driver_gb": 25.859,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 31.6,
+   "sys_mem_used_gb": 42.9,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 15.2,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 20.3,
+     "rss_gb": 0.03
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 23.3,
+     "rss_gb": 0.16
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 23.8,
+     "rss_gb": 0.17
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 20.8,
+     "rss_gb": 0.21
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 14.5,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 15.0,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 278.5,
+   "rss_gb": 0.172,
+   "mps_alloc_gb": 6.809,
+   "mps_driver_gb": 25.853,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 24.5,
+   "sys_mem_used_gb": 40.5,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 14.1,
+     "rss_gb": 0.26
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 29.4,
+     "rss_gb": 0.12
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 25.6,
+     "rss_gb": 0.19
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 24.6,
+     "rss_gb": 0.17
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 23.4,
+     "rss_gb": 0.22
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 12.7,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 12.9,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 288.6,
+   "rss_gb": 0.148,
+   "mps_alloc_gb": 6.724,
+   "mps_driver_gb": 25.846,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 29.3,
+   "sys_mem_used_gb": 42.4,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 29.8,
+     "rss_gb": 0.37
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 22.3,
+     "rss_gb": 0.03
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 28.8,
+     "rss_gb": 0.2
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 28.8,
+     "rss_gb": 0.21
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 28.7,
+     "rss_gb": 0.27
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 17.0,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 22.5,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 298.8,
+   "rss_gb": 0.173,
+   "mps_alloc_gb": 7.35,
+   "mps_driver_gb": 25.847,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 25.2,
+   "sys_mem_used_gb": 42.4,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 15.2,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 15.1,
+     "rss_gb": 0.03
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 29.6,
+     "rss_gb": 0.22
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 29.6,
+     "rss_gb": 0.21
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 28.3,
+     "rss_gb": 0.28
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 14.7,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 14.6,
+     "rss_gb": 0.07
+    }
+   ]
+  },
+  {
+   "t": 308.9,
+   "rss_gb": 0.15,
+   "mps_alloc_gb": 15.358,
+   "mps_driver_gb": 25.853,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 27.4,
+   "sys_mem_used_gb": 33.6,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 16.5,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 10.7,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 29.5,
+     "rss_gb": 0.28
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 27.2,
+     "rss_gb": 0.27
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 23.2,
+     "rss_gb": 0.31
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 15.4,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 15.6,
+     "rss_gb": 0.07
+    }
+   ]
+  },
+  {
+   "t": 319.0,
+   "rss_gb": 0.05,
+   "mps_alloc_gb": 6.81,
+   "mps_driver_gb": 25.855,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 40.1,
+   "sys_mem_used_gb": 35.7,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 28.8,
+     "rss_gb": 0.35
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 10.6,
+     "rss_gb": 0.03
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 39.8,
+     "rss_gb": 0.32
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 39.2,
+     "rss_gb": 0.3
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 36.6,
+     "rss_gb": 0.32
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 29.1,
+     "rss_gb": 0.25
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 28.8,
+     "rss_gb": 0.36
+    }
+   ]
+  },
+  {
+   "t": 329.1,
+   "rss_gb": 0.113,
+   "mps_alloc_gb": 6.81,
+   "mps_driver_gb": 25.847,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 35.1,
+   "sys_mem_used_gb": 40.8,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 23.4,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 8.2,
+     "rss_gb": 0.03
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 33.5,
+     "rss_gb": 0.17
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 33.1,
+     "rss_gb": 0.16
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 30.7,
+     "rss_gb": 0.3
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 17.9,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 18.1,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 339.2,
+   "rss_gb": 0.122,
+   "mps_alloc_gb": 6.98,
+   "mps_driver_gb": 25.847,
+   "gpu_util_pct": 66,
+   "sys_cpu_pct": 34.4,
+   "sys_mem_used_gb": 30.6,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 19.9,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 9.9,
+     "rss_gb": 0.03
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 38.5,
+     "rss_gb": 0.36
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 38.6,
+     "rss_gb": 0.35
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 36.1,
+     "rss_gb": 0.41
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 28.5,
+     "rss_gb": 0.37
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 20.6,
+     "rss_gb": 0.07
+    }
+   ]
+  },
+  {
+   "t": 349.4,
+   "rss_gb": 0.142,
+   "mps_alloc_gb": 9.091,
+   "mps_driver_gb": 25.845,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 31.6,
+   "sys_mem_used_gb": 41.3,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 26.2,
+     "rss_gb": 0.36
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 8.2,
+     "rss_gb": 0.03
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 33.5,
+     "rss_gb": 0.22
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 33.3,
+     "rss_gb": 0.21
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 31.0,
+     "rss_gb": 0.24
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 20.3,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 20.9,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 359.5,
+   "rss_gb": 0.15,
+   "mps_alloc_gb": 6.824,
+   "mps_driver_gb": 25.847,
+   "gpu_util_pct": 0,
+   "sys_cpu_pct": 20.1,
+   "sys_mem_used_gb": 41.5,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 19.6,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 8.1,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 29.2,
+     "rss_gb": 0.16
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 27.7,
+     "rss_gb": 0.16
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 25.3,
+     "rss_gb": 0.33
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 13.5,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 13.7,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 369.6,
+   "rss_gb": 0.128,
+   "mps_alloc_gb": 9.841,
+   "mps_driver_gb": 25.852,
+   "gpu_util_pct": 0,
+   "sys_cpu_pct": 23.3,
+   "sys_mem_used_gb": 44.0,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 14.6,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 10.0,
+     "rss_gb": 0.03
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 28.2,
+     "rss_gb": 0.17
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 27.5,
+     "rss_gb": 0.18
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 26.0,
+     "rss_gb": 0.14
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 12.6,
+     "rss_gb": 0.06
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 12.8,
+     "rss_gb": 0.06
+    }
+   ]
+  },
+  {
+   "t": 379.9,
+   "rss_gb": 0.684,
+   "mps_alloc_gb": 5.12,
+   "mps_driver_gb": 25.845,
+   "gpu_util_pct": 84,
+   "sys_cpu_pct": 30.7,
+   "sys_mem_used_gb": 28.9,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 34.0,
+     "rss_gb": 0.44
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 6.3,
+     "rss_gb": 0.03
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 38.4,
+     "rss_gb": 0.29
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 38.1,
+     "rss_gb": 0.3
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 33.3,
+     "rss_gb": 0.41
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 22.1,
+     "rss_gb": 0.07
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 22.2,
+     "rss_gb": 0.36
+    }
+   ]
+  },
+  {
+   "t": 390.0,
+   "rss_gb": 1.005,
+   "mps_alloc_gb": 5.12,
+   "mps_driver_gb": 25.841,
+   "gpu_util_pct": 89,
+   "sys_cpu_pct": 27.0,
+   "sys_mem_used_gb": 26.9,
+   "cotenant": [
+    {
+     "pid": 4626,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 4628,
+     "cpu_pct": 18.3,
+     "rss_gb": 0.3
+    },
+    {
+     "pid": 19773,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 19774,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 19779,
+     "cpu_pct": 7.1,
+     "rss_gb": 0.03
+    },
+    {
+     "pid": 52227,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 52229,
+     "cpu_pct": 33.8,
+     "rss_gb": 0.37
+    },
+    {
+     "pid": 55421,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 55423,
+     "cpu_pct": 34.1,
+     "rss_gb": 0.36
+    },
+    {
+     "pid": 61944,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 61966,
+     "cpu_pct": 32.7,
+     "rss_gb": 0.53
+    },
+    {
+     "pid": 88014,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 88016,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 88020,
+     "cpu_pct": 17.4,
+     "rss_gb": 0.2
+    },
+    {
+     "pid": 99892,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99894,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99905,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    },
+    {
+     "pid": 99907,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.01
+    },
+    {
+     "pid": 99911,
+     "cpu_pct": 18.8,
+     "rss_gb": 0.09
+    }
+   ]
+  }
+ ],
+ "events": [
+  [
+   3.666,
+   "Using legacy cached training items without metadata: poc/finetune/data/t3arm/T8_english.pt"
+  ],
+  [
+   4.822,
+   "Device: mps"
+  ],
+  [
+   4.822,
+   "Training items: 444; calibration items: 40"
+  ],
+  [
+   4.822,
+   "micro_batch=8; grad_accum=4; epochs=2"
+  ],
+  [
+   140.354,
+   "Epoch 1/2 complete; avg_loss=0.3800"
+  ],
+  [
+   373.893,
+   "Epoch 2/2 complete; avg_loss=0.0925"
+  ],
+  [
+   379.212,
+   "Running temperature calibration ..."
+  ],
+  [
+   390.041,
+   "Model saved to poc/finetune/ckpt_t3arm_rep_s14/T8_run"
+  ],
+  [
+   390.046,
+   "Temperatures: [1.2, 1.2, 1.979012370109558]"
+  ]
+ ],
+ "micro_batch_trace": [
+  [
+   4.8226,
+   8,
+   118,
+   1.3816,
+   0.54251,
+   0.875
+  ],
+  [
+   6.2042,
+   8,
+   94,
+   1.0512,
+   3.02189,
+   0.75
+  ],
+  [
+   7.2554,
+   8,
+   73,
+   0.861,
+   0.13467,
+   0.875
+  ],
+  [
+   8.1164,
+   8,
+   346,
+   6.0956,
+   0.11707,
+   1.0
+  ],
+  [
+   14.212,
+   8,
+   138,
+   1.7511,
+   2.45147,
+   0.75
+  ],
+  [
+   15.9631,
+   8,
+   96,
+   1.3792,
+   3.37286,
+   0.625
+  ],
+  [
+   17.3423,
+   8,
+   75,
+   1.0735,
+   0.00151,
+   1.0
+  ],
+  [
+   18.4158,
+   8,
+   83,
+   2.7276,
+   0.00093,
+   1.0
+  ],
+  [
+   21.1434,
+   8,
+   111,
+   1.606,
+   0.72248,
+   0.875
+  ],
+  [
+   22.7494,
+   8,
+   96,
+   1.442,
+   1.12111,
+   0.75
+  ],
+  [
+   24.1914,
+   8,
+   91,
+   1.3691,
+   2.02719,
+   0.75
+  ],
+  [
+   25.5605,
+   8,
+   75,
+   2.724,
+   1.29646,
+   0.625
+  ],
+  [
+   28.2845,
+   8,
+   113,
+   1.5182,
+   0.27185,
+   0.875
+  ],
+  [
+   29.8027,
+   8,
+   96,
+   1.3156,
+   0.47613,
+   0.75
+  ],
+  [
+   31.1183,
+   8,
+   166,
+   2.3355,
+   0.87174,
+   0.75
+  ],
+  [
+   33.4538,
+   8,
+   132,
+   3.6852,
+   0.3444,
+   0.75
+  ],
+  [
+   37.139,
+   8,
+   116,
+   1.4062,
+   0.33669,
+   0.875
+  ],
+  [
+   38.5452,
+   8,
+   108,
+   1.4442,
+   0.2061,
+   0.875
+  ],
+  [
+   39.9894,
+   8,
+   80,
+   1.0311,
+   0.3302,
+   0.875
+  ],
+  [
+   41.0205,
+   8,
+   77,
+   2.769,
+   0.49368,
+   0.75
+  ],
+  [
+   43.7895,
+   8,
+   91,
+   1.1408,
+   0.36017,
+   0.875
+  ],
+  [
+   44.9303,
+   8,
+   308,
+   3.9814,
+   0.22934,
+   0.875
+  ],
+  [
+   48.9117,
+   8,
+   99,
+   1.4127,
+   0.28778,
+   0.875
+  ],
+  [
+   50.3244,
+   8,
+   138,
+   3.691,
+   0.18201,
+   1.0
+  ],
+  [
+   54.0154,
+   8,
+   128,
+   1.7783,
+   0.47436,
+   0.75
+  ],
+  [
+   55.7937,
+   8,
+   133,
+   1.8455,
+   0.21874,
+   0.875
+  ],
+  [
+   57.6392,
+   8,
+   163,
+   2.2023,
+   0.06325,
+   1.0
+  ],
+  [
+   59.8415,
+   8,
+   215,
+   4.1918,
+   0.53934,
+   0.75
+  ],
+  [
+   64.0333,
+   8,
+   184,
+   2.2693,
+   0.14221,
+   0.875
+  ],
+  [
+   66.3026,
+   8,
+   85,
+   1.4188,
+   0.08582,
+   1.0
+  ],
+  [
+   67.7214,
+   8,
+   512,
+   6.7683,
+   0.72645,
+   0.75
+  ],
+  [
+   74.4897,
+   8,
+   286,
+   6.0096,
+   0.03259,
+   1.0
+  ],
+  [
+   80.4993,
+   8,
+   85,
+   0.9814,
+   0.25968,
+   0.875
+  ],
+  [
+   81.4807,
+   8,
+   107,
+   1.2214,
+   0.04444,
+   1.0
+  ],
+  [
+   82.7021,
+   8,
+   91,
+   1.075,
+   0.17041,
+   0.875
+  ],
+  [
+   83.7771,
+   8,
+   84,
+   2.9586,
+   0.02542,
+   1.0
+  ],
+  [
+   86.7357,
+   8,
+   177,
+   2.9327,
+   0.39597,
+   0.875
+  ],
+  [
+   89.6684,
+   8,
+   114,
+   1.6816,
+   0.02854,
+   1.0
+  ],
+  [
+   91.35,
+   8,
+   298,
+   4.2009,
+   0.01882,
+   1.0
+  ],
+  [
+   95.5509,
+   8,
+   208,
+   4.5425,
+   0.03031,
+   1.0
+  ],
+  [
+   100.0934,
+   8,
+   90,
+   1.3686,
+   0.35601,
+   0.875
+  ],
+  [
+   101.462,
+   8,
+   83,
+   1.6175,
+   0.06101,
+   1.0
+  ],
+  [
+   103.0795,
+   8,
+   124,
+   2.4222,
+   0.03392,
+   1.0
+  ],
+  [
+   105.5017,
+   8,
+   104,
+   3.063,
+   0.32033,
+   0.875
+  ],
+  [
+   108.5647,
+   8,
+   94,
+   1.4168,
+   0.49575,
+   0.875
+  ],
+  [
+   109.9815,
+   8,
+   71,
+   2.8866,
+   0.0143,
+   1.0
+  ],
+  [
+   112.8681,
+   8,
+   195,
+   2.6663,
+   0.49883,
+   0.875
+  ],
+  [
+   115.5344,
+   8,
+   138,
+   3.8349,
+   0.01039,
+   1.0
+  ],
+  [
+   119.3693,
+   8,
+   79,
+   2.8862,
+   0.00843,
+   1.0
+  ],
+  [
+   122.2555,
+   8,
+   86,
+   2.0564,
+   0.00792,
+   1.0
+  ],
+  [
+   124.3119,
+   8,
+   126,
+   2.2743,
+   0.58059,
+   0.875
+  ],
+  [
+   126.5862,
+   8,
+   103,
+   4.9972,
+   0.00617,
+   1.0
+  ],
+  [
+   131.5834,
+   8,
+   205,
+   2.7223,
+   0.7176,
+   0.875
+  ],
+  [
+   134.3057,
+   8,
+   79,
+   1.2812,
+   0.06228,
+   1.0
+  ],
+  [
+   135.5869,
+   8,
+   81,
+   1.5326,
+   0.5516,
+   0.875
+  ],
+  [
+   137.1195,
+   4,
+   109,
+   3.2345,
+   0.00931,
+   1.0
+  ],
+  [
+   143.8386,
+   8,
+   116,
+   10.9514,
+   0.00843,
+   1.0
+  ],
+  [
+   154.79,
+   8,
+   120,
+   1.9271,
+   0.03782,
+   1.0
+  ],
+  [
+   156.7171,
+   8,
+   181,
+   1.9747,
+   0.12899,
+   0.875
+  ],
+  [
+   158.6918,
+   8,
+   93,
+   3.2618,
+   0.00619,
+   1.0
+  ],
+  [
+   161.9536,
+   8,
+   81,
+   0.7872,
+   0.51123,
+   0.875
+  ],
+  [
+   162.7408,
+   8,
+   308,
+   2.0983,
+   0.00357,
+   1.0
+  ],
+  [
+   164.8391,
+   8,
+   108,
+   1.1482,
+   0.00339,
+   1.0
+  ],
+  [
+   165.9873,
+   8,
+   111,
+   2.4075,
+   0.13657,
+   0.875
+  ],
+  [
+   168.3948,
+   8,
+   114,
+   0.9862,
+   0.00446,
+   1.0
+  ],
+  [
+   169.381,
+   8,
+   195,
+   1.9967,
+   0.00934,
+   1.0
+  ],
+  [
+   171.3777,
+   8,
+   138,
+   1.858,
+   0.40914,
+   0.875
+  ],
+  [
+   173.2357,
+   8,
+   96,
+   47.6221,
+   0.00661,
+   1.0
+  ],
+  [
+   220.8578,
+   8,
+   101,
+   24.1924,
+   0.43082,
+   0.875
+  ],
+  [
+   245.0502,
+   8,
+   81,
+   5.0111,
+   0.0038,
+   1.0
+  ],
+  [
+   250.0613,
+   8,
+   96,
+   2.249,
+   0.35475,
+   0.875
+  ],
+  [
+   252.3103,
+   8,
+   68,
+   3.8094,
+   0.00392,
+   1.0
+  ],
+  [
+   256.1197,
+   8,
+   91,
+   2.1157,
+   0.00205,
+   1.0
+  ],
+  [
+   258.2354,
+   8,
+   99,
+   1.5001,
+   0.00264,
+   1.0
+  ],
+  [
+   259.7355,
+   8,
+   89,
+   2.2442,
+   0.73858,
+   0.875
+  ],
+  [
+   261.9797,
+   8,
+   512,
+   6.903,
+   0.00142,
+   1.0
+  ],
+  [
+   268.8827,
+   8,
+   205,
+   2.2008,
+   0.0015,
+   1.0
+  ],
+  [
+   271.0835,
+   8,
+   90,
+   1.0846,
+   0.00257,
+   1.0
+  ],
+  [
+   272.1681,
+   8,
+   166,
+   1.6819,
+   0.00806,
+   1.0
+  ],
+  [
+   273.85,
+   8,
+   79,
+   1.9108,
+   0.35155,
+   0.875
+  ],
+  [
+   275.7608,
+   8,
+   127,
+   1.3416,
+   0.62721,
+   0.875
+  ],
+  [
+   277.1024,
+   8,
+   286,
+   2.102,
+   0.00077,
+   1.0
+  ],
+  [
+   279.2044,
+   8,
+   215,
+   1.5504,
+   0.00061,
+   1.0
+  ],
+  [
+   280.7548,
+   8,
+   232,
+   7.7376,
+   0.00203,
+   1.0
+  ],
+  [
+   288.4924,
+   8,
+   75,
+   0.8489,
+   0.0008,
+   1.0
+  ],
+  [
+   289.3413,
+   8,
+   99,
+   0.9474,
+   0.53411,
+   0.875
+  ],
+  [
+   290.2887,
+   8,
+   108,
+   0.9881,
+   0.00184,
+   1.0
+  ],
+  [
+   291.2768,
+   8,
+   138,
+   2.9357,
+   0.00147,
+   1.0
+  ],
+  [
+   294.2125,
+   8,
+   114,
+   2.7885,
+   0.00155,
+   1.0
+  ],
+  [
+   297.001,
+   8,
+   133,
+   1.2129,
+   0.00149,
+   1.0
+  ],
+  [
+   298.2139,
+   8,
+   119,
+   1.302,
+   0.38646,
+   0.875
+  ],
+  [
+   299.5159,
+   8,
+   94,
+   2.8628,
+   0.00108,
+   1.0
+  ],
+  [
+   302.3787,
+   8,
+   139,
+   1.3092,
+   0.0008,
+   1.0
+  ],
+  [
+   303.6879,
+   8,
+   346,
+   16.759,
+   0.00309,
+   1.0
+  ],
+  [
+   320.4469,
+   8,
+   163,
+   4.8899,
+   0.00069,
+   1.0
+  ],
+  [
+   325.3368,
+   8,
+   126,
+   10.3524,
+   0.21704,
+   0.875
+  ],
+  [
+   335.6892,
+   8,
+   87,
+   12.9466,
+   0.0013,
+   1.0
+  ],
+  [
+   348.6358,
+   8,
+   114,
+   2.1388,
+   0.00035,
+   1.0
+  ],
+  [
+   350.7746,
+   8,
+   107,
+   1.7012,
+   0.00104,
+   1.0
+  ],
+  [
+   352.4758,
+   8,
+   121,
+   2.3321,
+   0.00096,
+   1.0
+  ],
+  [
+   354.8079,
+   8,
+   101,
+   1.0427,
+   0.00086,
+   1.0
+  ],
+  [
+   355.8506,
+   8,
+   75,
+   0.7699,
+   0.00069,
+   1.0
+  ],
+  [
+   356.6205,
+   8,
+   184,
+   1.9047,
+   0.00045,
+   1.0
+  ],
+  [
+   358.5252,
+   8,
+   94,
+   2.3592,
+   0.00047,
+   1.0
+  ],
+  [
+   360.8844,
+   8,
+   107,
+   1.0073,
+   0.00132,
+   1.0
+  ],
+  [
+   361.8917,
+   8,
+   100,
+   1.2501,
+   0.00052,
+   1.0
+  ],
+  [
+   363.1418,
+   8,
+   298,
+   2.5291,
+   0.00032,
+   1.0
+  ],
+  [
+   365.6709,
+   8,
+   111,
+   2.5502,
+   0.00141,
+   1.0
+  ],
+  [
+   368.2211,
+   8,
+   87,
+   0.9066,
+   0.06079,
+   1.0
+  ],
+  [
+   369.1277,
+   8,
+   138,
+   1.5331,
+   0.00087,
+   1.0
+  ],
+  [
+   370.6608,
+   8,
+   124,
+   1.3838,
+   0.00061,
+   1.0
+  ],
+  [
+   372.0446,
+   4,
+   94,
+   1.8484,
+   0.00029,
+   1.0
+  ]
+ ]
+}

@@ -1,0 +1,85 @@
+{
+  "model": "laya-rl-agent",
+  "answers": {
+    "intent": {
+      "type": "choice",
+      "choice": "refund",
+      "probabilities": {
+        "refund": 0.9971,
+        "technical_help": 0.0,
+        "billing_question": 0.0,
+        "information": 0.0,
+        "cancellation": 0.0028,
+        "other": 0.0
+      },
+      "confidence": 0.9889,
+      "answer_confidence": 0.9971,
+      "action": {
+        "act_probability": 1.0
+      }
+    },
+    "is_urgent": {
+      "type": "noul",
+      "noul": 0.0641,
+      "confidence": 0.9359,
+      "answer_confidence": 0.9359,
+      "action": {
+        "act_probability": 1.0
+      }
+    },
+    "frustration": {
+      "type": "score",
+      "score": 2.1043,
+      "legend": {
+        "0": "calm and neutral",
+        "1": "concerned but civil",
+        "2": "clearly annoyed",
+        "3": "very angry or using strong language"
+      },
+      "probabilities": {
+        "0": 0.0511,
+        "1": 0.1372,
+        "2": 0.468,
+        "3": 0.3437
+      },
+      "confidence": 0.1727,
+      "answer_confidence": 0.468,
+      "action": {
+        "act_probability": 1.0
+      }
+    },
+    "refund_requested": {
+      "type": "noul",
+      "noul": 0.0666,
+      "confidence": 0.9334,
+      "answer_confidence": 0.9334,
+      "action": {
+        "act_probability": 1.0
+      }
+    },
+    "churn_risk": {
+      "type": "noul",
+      "noul": 0.0252,
+      "confidence": 0.9748,
+      "answer_confidence": 0.9748,
+      "action": {
+        "act_probability": 1.0
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 416,
+    "output_tokens": 0,
+    "state_tokens": 34,
+    "state_tokens_dropped": 0,
+    "truncated": false,
+    "truncated_questions": []
+  },
+  "routing": {
+    "model": "multilingual",
+    "repo": "convaiinnovations/laya/multilingual",
+    "reason": "explicit model='multilingual'",
+    "detection": null,
+    "workflow": null
+  }
+}

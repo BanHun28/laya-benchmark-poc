@@ -1,0 +1,21 @@
+results/P4/dev/ko_klue_ynat_7.jsonl: 245 dev rows of 500 (state sha256 % 2), sha256 e47494226f0464463ec0dfbf8352bf6884a8297581b5283efd3803c8769d16ae
+results/P4/20261002-2014_multilingual_ko_massive_domain_8.json: {"choice_accuracy": 0.526, "mean_confidence": 0.7553, "ece": 0.2293} load 5.3s eval 22.8s
+results/P4/20261002-2014_ft-probe_ko_massive_domain_8.json: {"choice_accuracy": 0.722, "mean_confidence": 0.6668, "ece": 0.0973} load 4.7s eval 22.9s
+results/P4/20261002-2014_ft-probe_domain8_dev.json: {"choice_accuracy": 0.7162, "mean_confidence": 0.6195, "ece": 0.1284} load 4.2s eval 88.8s
+results/P4/20261002-2014_multilingual_domain8_dev.json: {"choice_accuracy": 0.4617, "mean_confidence": 0.7103, "ece": 0.2486} load 4.1s eval 89.9s
+results/P4/20261002-2014_multilingual_ko_klue_ynat_7_dev.json: {"choice_accuracy": 0.6122, "mean_confidence": 0.8125, "ece": 0.2017} load 4.4s eval 8.0s
+results/P4/20261002-2014_ft-probe_ko_klue_ynat_7_dev.json: {"choice_accuracy": 0.6245, "mean_confidence": 0.6017, "ece": 0.1439} load 4.5s eval 7.8s
+Rows whose state appears verbatim in `poc/finetune/data/domain8_train.jsonl` (11094 rows) vs the rest.
+
+| report | split | n | acc | n overlap | acc overlap | n clean | acc clean |
+|---|---|---|---|---|---|---|---|
+| results/P4/20261002-2014_ft-probe_ko_massive_domain_8.json | all | 500 | 0.722 | 33 | 0.788 | 467 | 0.717 |
+| results/P4/20261002-2014_ft-probe_ko_massive_domain_8.json | dev | 250 | 0.724 | 17 | 0.882 | 233 | 0.712 |
+| results/P4/20261002-2014_ft-probe_ko_massive_domain_8.json | test | 250 | 0.720 | 16 | 0.688 | 234 | 0.722 |
+| results/P4/20261002-2014_multilingual_ko_massive_domain_8.json | all | 500 | 0.526 | 33 | 0.576 | 467 | 0.522 |
+| results/P4/20261002-2014_multilingual_ko_massive_domain_8.json | dev | 250 | 0.560 | 17 | 0.706 | 233 | 0.549 |
+| results/P4/20261002-2014_multilingual_ko_massive_domain_8.json | test | 250 | 0.492 | 16 | 0.438 | 234 | 0.496 |
+| results/P4/20261002-2014_ft-probe_domain8_dev.json | all | 2012 | 0.716 | 116 | 0.810 | 1896 | 0.710 |
+| results/P4/20261002-2014_ft-probe_domain8_dev.json | dev | 2012 | 0.716 | 116 | 0.810 | 1896 | 0.710 |
+| results/P4/20261002-2014_multilingual_domain8_dev.json | all | 2012 | 0.462 | 116 | 0.578 | 1896 | 0.455 |
+| results/P4/20261002-2014_multilingual_domain8_dev.json | dev | 2012 | 0.462 | 116 | 0.578 | 1896 | 0.455 |

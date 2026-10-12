@@ -1,0 +1,87 @@
+{
+ "items": "poc/finetune/data/t3arm/T3_english.pt",
+ "items_sha256": "be7394826d835342f8c5c20a292c043d0658a8d6edac28a8385bd592312a4573",
+ "task": "T3",
+ "base": "english",
+ "base_dir": "/Users/banhun/.cache/huggingface/hub/models--convaiinnovations--laya/snapshots/55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+ "script": "poc/finetune/laya_finetune_mps_patched.py",
+ "script_sha256": "d8dc1eb92db72c0f577ec9cf6dc3ad80558e0e0ff79897bd92dc3f87399db642",
+ "budget": {
+  "max_len": 512,
+  "head_max_len": 192
+ },
+ "seed": 13,
+ "n_items": 5400,
+ "n_train": 5000,
+ "n_calib": 400,
+ "calib_max": 400,
+ "rows": {
+  "train": {
+   "path": "poc/finetune/data/t3arm/T3_train.jsonl",
+   "sha256": "7efc73c7a5d3e96e30ded3613d96705041d4b5121f0606467df3917490efaa2c",
+   "rows_total": 5000,
+   "rows_used": 5000
+  },
+  "calib": {
+   "path": "poc/finetune/data/t3arm/T3_calib.jsonl",
+   "sha256": "e8a16eb61ce72bc96cbdf41771954012c07bc58235999dac148aa5887743020c",
+   "rows_total": 400,
+   "rows_used": 400
+  }
+ },
+ "subset": {
+  "n_train": 0,
+  "n_calib": 0,
+  "rule": "random.Random(seed).shuffle(row indices), rows taken until n items, row order kept"
+ },
+ "shuffle_options": "all",
+ "option_order": {
+  "train": "choice: random.Random(13 + item index).shuffle(criteria keys); score/noul fixed",
+  "calib": "canonical"
+ },
+ "options_reordered": {
+  "train": 4991,
+  "calib": 0
+ },
+ "gold_slot": {
+  "calib:choice:0": 67,
+  "calib:choice:1": 67,
+  "calib:choice:2": 67,
+  "calib:choice:3": 67,
+  "calib:choice:4": 66,
+  "calib:choice:5": 66,
+  "train:choice:0": 841,
+  "train:choice:1": 854,
+  "train:choice:2": 845,
+  "train:choice:3": 803,
+  "train:choice:4": 855,
+  "train:choice:5": 802
+ },
+ "permute_labels": null,
+ "v4_inference_identity": {
+  "checked": 25,
+  "identical": 25
+ },
+ "seq_len_train": {
+  "min": 37,
+  "p50": 53,
+  "p90": 71,
+  "max": 108,
+  "mean": 55.3,
+  "sum": 276568
+ },
+ "decoded_example": {
+  "src": "train:0:emotion",
+  "label": 5,
+  "options": [
+   "anger",
+   "sadness",
+   "fear",
+   "joy",
+   "surprise",
+   "love"
+  ],
+  "text": "[CLS]choice question: Which emotion is most strongly expressed in `text`?[SEP][MASK] anger[MASK] sadness[MASK] fear[MASK] joy[MASK] surprise[MASK] love[SEP]{\"text\": \"i am ever feeling nostalgic about the fireplace i will know that it is still on the property\"}[SEP]"
+ },
+ "run_with": "--items poc/finetune/data/t3arm/T3_english.pt --calib-max 400 (never --force-preprocess)"
+}

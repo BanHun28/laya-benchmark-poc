@@ -1,0 +1,15 @@
+| qid | mps(float32) value | cpu(float32) value | argmax mps(float32) / cpu(float32) | same | mps(float32) ac / abst | cpu(float32) ac / abst | max abs dp |
+|---|---|---|---|---|---|---|---|
+| intent | cancellation | cancellation | cancellation / cancellation | True | 0.4141 / abstained | 0.4141 / abstained | 0.0000 |
+| is_urgent | 0.0641 | 0.0641 | False / False | True | 0.9359 / passed | 0.9359 / passed | 0.0000 |
+| frustration | 1.5098 | 1.5098 | 1 / 1 | True | 0.4684 / abstained | 0.4684 / abstained | 0.0000 |
+| refund_requested | 0.0659 | 0.0659 | False / False | True | 0.9341 / passed | 0.9341 / passed | 0.0000 |
+| churn_risk | 0.025 | 0.025 | False / False | True | 0.9750 / passed | 0.9750 / passed | 0.0000 |
+| needs_llm | 0.0116 | 0.0116 | False / False | True | 0.9884 / passed | 0.9884 / passed | 0.0000 |
+| complexity | structured | structured | structured / structured | True | 0.6834 / abstained | 0.6834 / abstained | 0.0000 |
+
+argmax flips: 0 / 7, overall max abs dp: 0.0000
+abstention_threshold: {0.7} {0.7}
+usage mps(float32): {"input_tokens": 661, "output_tokens": 0, "state_tokens": 34, "state_tokens_dropped": 0, "truncated": false, "truncated_questions": []}
+usage cpu(float32): {"input_tokens": 661, "output_tokens": 0, "state_tokens": 34, "state_tokens_dropped": 0, "truncated": false, "truncated_questions": []}
+routing key present: False False

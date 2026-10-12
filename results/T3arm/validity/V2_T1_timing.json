@@ -1,0 +1,12776 @@
+{
+ "script": "poc/finetune/laya_finetune_mps_patched.py",
+ "script_sha256": "d8dc1eb92db72c0f577ec9cf6dc3ad80558e0e0ff79897bd92dc3f87399db642",
+ "zero_step": false,
+ "script_args": [
+  "models/laya",
+  "poc/finetune/ckpt_t3arm/_v2_T1",
+  "--items",
+  "poc/finetune/data/t3arm/T1_english.pt",
+  "--calib-max",
+  "400",
+  "--epochs",
+  "2",
+  "--micro-batch",
+  "8",
+  "--grad-accum",
+  "4",
+  "--no-checkpointing",
+  "--device",
+  "mps"
+ ],
+ "seed": 13,
+ "keep_epoch_checkpoints": true,
+ "started_at": "2026-10-08T09:37:03+0900",
+ "versions": {
+  "torch": "2.14.1",
+  "python": "3.12.12",
+  "laya": "0.3.23"
+ },
+ "threads": {
+  "intra": 10,
+  "interop": 14
+ },
+ "load_before": {
+  "gpu_util_pct": 5,
+  "mps_fp32_matmul_tflops": 6.8,
+  "cotenant": [],
+  "sys_mem_used_gb": 15.8
+ },
+ "status": "ok",
+ "wall_s": 2559.95,
+ "load_after": {
+  "gpu_util_pct": 7,
+  "mps_fp32_matmul_tflops": 6.83
+ },
+ "micro_batch": 8,
+ "grad_accum": 4,
+ "epochs": 2,
+ "n_train_items": 5000,
+ "micro_batches": 1250,
+ "optimizer_steps": 314,
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 0.87,
+  "train_loop": 2528.71,
+  "epoch_checkpoint_saves": 2.31,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 0.94,
+  "calibration (forward + fit_temperature)": 23.17,
+  "export (final save + configs)": 0.73,
+  "train() total": 2556.77
+ },
+ "throughput": {
+  "train_items_per_s": 3.955,
+  "s_per_optimizer_step": 8.053,
+  "s_per_micro_batch_mean": 2.023
+ },
+ "micro_batch_s": {
+  "median_all": 1.9282,
+  "median_repeat_shape_no_step": 1.7231,
+  "median_repeat_shape_with_step": 2.4627,
+  "optimizer_step_overhead": 0.7396,
+  "median_first_shape": 2.037,
+  "first_shape_count": 188,
+  "repeat_shape_count": 1062,
+  "first_shape_extra_total_s": 39.7
+ },
+ "memory_gb": {
+  "ru_maxrss": 3.68,
+  "rss_peak_sampled": 1.57,
+  "mps_current_allocated_peak": 20.7,
+  "mps_driver_allocated_peak": 29.11,
+  "mps_recommended_max": 40.2
+ },
+ "loss_log_script": [
+  "epoch 1/2, step 100, loss=0.7208",
+  "epoch 1/2, step 200, loss=0.4551",
+  "epoch 1/2, step 300, loss=1.2382",
+  "epoch 1/2, step 400, loss=1.1716",
+  "epoch 1/2, step 500, loss=0.6793",
+  "epoch 1/2, step 600, loss=1.0656",
+  "Epoch 1/2 complete; avg_loss=0.7489",
+  "epoch 2/2, step 100, loss=1.5761",
+  "epoch 2/2, step 200, loss=1.1202",
+  "epoch 2/2, step 300, loss=0.6668",
+  "epoch 2/2, step 400, loss=0.0355",
+  "epoch 2/2, step 500, loss=1.1476",
+  "epoch 2/2, step 600, loss=0.6853",
+  "Epoch 2/2 complete; avg_loss=0.7625"
+ ],
+ "train_ce_windows": [
+  1.0997,
+  1.0008,
+  0.9806,
+  0.913,
+  0.9244,
+  0.8685,
+  0.8373,
+  0.8549,
+  0.844,
+  0.8635
+ ],
+ "train_acc_windows": [
+  0.523,
+  0.601,
+  0.615,
+  0.689,
+  0.711,
+  0.767,
+  0.795,
+  0.788,
+  0.779,
+  0.79
+ ],
+ "calibration_rows": {
+  "n": 400,
+  "ce_before_T": 0.8968,
+  "accuracy": 0.7175
+ },
+ "temperature_fits": [
+  {
+   "start": 2558.44,
+   "end": 2558.473,
+   "samples": 120
+  },
+  {
+   "start": 2558.473,
+   "end": 2558.483,
+   "samples": 160
+  },
+  {
+   "start": 2558.483,
+   "end": 2558.493,
+   "samples": 120
+  }
+ ],
+ "item_sources": {
+  "train": {
+   "train": 10000
+  },
+  "calibration": {
+   "calib": 400
+  }
+ },
+ "cotenant_found": false,
+ "load_series": [
+  {
+   "t": 3.5,
+   "rss_gb": 1.497,
+   "mps_alloc_gb": 10.198,
+   "mps_driver_gb": 10.747,
+   "gpu_util_pct": 87,
+   "sys_cpu_pct": 23.1,
+   "sys_mem_used_gb": 24.1,
+   "cotenant": []
+  },
+  {
+   "t": 13.6,
+   "rss_gb": 0.577,
+   "mps_alloc_gb": 18.481,
+   "mps_driver_gb": 20.44,
+   "gpu_util_pct": 0,
+   "sys_cpu_pct": 27.9,
+   "sys_mem_used_gb": 30.1,
+   "cotenant": []
+  },
+  {
+   "t": 23.7,
+   "rss_gb": 0.263,
+   "mps_alloc_gb": 16.334,
+   "mps_driver_gb": 22.588,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 37.8,
+   "sys_mem_used_gb": 32.7,
+   "cotenant": []
+  },
+  {
+   "t": 33.8,
+   "rss_gb": 0.367,
+   "mps_alloc_gb": 8.578,
+   "mps_driver_gb": 22.587,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 35.4,
+   "sys_mem_used_gb": 32.9,
+   "cotenant": []
+  },
+  {
+   "t": 43.9,
+   "rss_gb": 0.206,
+   "mps_alloc_gb": 6.779,
+   "mps_driver_gb": 23.671,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 35.2,
+   "sys_mem_used_gb": 32.5,
+   "cotenant": []
+  },
+  {
+   "t": 54.0,
+   "rss_gb": 0.325,
+   "mps_alloc_gb": 16.109,
+   "mps_driver_gb": 23.67,
+   "gpu_util_pct": 98,
+   "sys_cpu_pct": 12.4,
+   "sys_mem_used_gb": 33.9,
+   "cotenant": []
+  },
+  {
+   "t": 64.1,
+   "rss_gb": 0.348,
+   "mps_alloc_gb": 6.776,
+   "mps_driver_gb": 23.671,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 9.9,
+   "sys_mem_used_gb": 34.2,
+   "cotenant": []
+  },
+  {
+   "t": 74.1,
+   "rss_gb": 0.241,
+   "mps_alloc_gb": 6.784,
+   "mps_driver_gb": 23.674,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 19.7,
+   "sys_mem_used_gb": 33.7,
+   "cotenant": []
+  },
+  {
+   "t": 84.2,
+   "rss_gb": 0.317,
+   "mps_alloc_gb": 8.371,
+   "mps_driver_gb": 23.674,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 32.9,
+   "sys_mem_used_gb": 34.0,
+   "cotenant": []
+  },
+  {
+   "t": 94.3,
+   "rss_gb": 0.29,
+   "mps_alloc_gb": 16.381,
+   "mps_driver_gb": 23.671,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 31.8,
+   "sys_mem_used_gb": 34.3,
+   "cotenant": []
+  },
+  {
+   "t": 104.4,
+   "rss_gb": 0.385,
+   "mps_alloc_gb": 5.082,
+   "mps_driver_gb": 23.691,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 34.7,
+   "sys_mem_used_gb": 34.3,
+   "cotenant": []
+  },
+  {
+   "t": 114.5,
+   "rss_gb": 0.259,
+   "mps_alloc_gb": 8.321,
+   "mps_driver_gb": 25.824,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 33.1,
+   "sys_mem_used_gb": 35.6,
+   "cotenant": []
+  },
+  {
+   "t": 124.5,
+   "rss_gb": 0.168,
+   "mps_alloc_gb": 11.085,
+   "mps_driver_gb": 27.97,
+   "gpu_util_pct": 98,
+   "sys_cpu_pct": 35.1,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 134.6,
+   "rss_gb": 0.153,
+   "mps_alloc_gb": 15.444,
+   "mps_driver_gb": 27.973,
+   "gpu_util_pct": 98,
+   "sys_cpu_pct": 31.3,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 144.8,
+   "rss_gb": 0.216,
+   "mps_alloc_gb": 16.961,
+   "mps_driver_gb": 27.983,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 43.1,
+   "sys_mem_used_gb": 37.9,
+   "cotenant": []
+  },
+  {
+   "t": 154.8,
+   "rss_gb": 0.167,
+   "mps_alloc_gb": 6.791,
+   "mps_driver_gb": 27.969,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 45.8,
+   "sys_mem_used_gb": 37.5,
+   "cotenant": []
+  },
+  {
+   "t": 164.9,
+   "rss_gb": 0.21,
+   "mps_alloc_gb": 6.781,
+   "mps_driver_gb": 27.987,
+   "gpu_util_pct": 98,
+   "sys_cpu_pct": 44.3,
+   "sys_mem_used_gb": 38.2,
+   "cotenant": []
+  },
+  {
+   "t": 175.0,
+   "rss_gb": 0.175,
+   "mps_alloc_gb": 16.538,
+   "mps_driver_gb": 27.974,
+   "gpu_util_pct": 80,
+   "sys_cpu_pct": 44.6,
+   "sys_mem_used_gb": 36.4,
+   "cotenant": []
+  },
+  {
+   "t": 185.2,
+   "rss_gb": 0.152,
+   "mps_alloc_gb": 6.785,
+   "mps_driver_gb": 27.973,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 49.0,
+   "sys_mem_used_gb": 37.7,
+   "cotenant": []
+  },
+  {
+   "t": 195.3,
+   "rss_gb": 0.138,
+   "mps_alloc_gb": 10.815,
+   "mps_driver_gb": 27.988,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 49.0,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 205.4,
+   "rss_gb": 0.178,
+   "mps_alloc_gb": 6.784,
+   "mps_driver_gb": 27.975,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 42.7,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 215.5,
+   "rss_gb": 0.209,
+   "mps_alloc_gb": 6.783,
+   "mps_driver_gb": 27.997,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 47.9,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 225.6,
+   "rss_gb": 0.199,
+   "mps_alloc_gb": 15.739,
+   "mps_driver_gb": 27.981,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 45.7,
+   "sys_mem_used_gb": 38.0,
+   "cotenant": []
+  },
+  {
+   "t": 235.7,
+   "rss_gb": 0.156,
+   "mps_alloc_gb": 6.781,
+   "mps_driver_gb": 27.983,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 46.2,
+   "sys_mem_used_gb": 37.3,
+   "cotenant": []
+  },
+  {
+   "t": 245.8,
+   "rss_gb": 0.199,
+   "mps_alloc_gb": 6.781,
+   "mps_driver_gb": 27.983,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 44.6,
+   "sys_mem_used_gb": 37.8,
+   "cotenant": []
+  },
+  {
+   "t": 255.9,
+   "rss_gb": 0.27,
+   "mps_alloc_gb": 16.593,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 44.3,
+   "sys_mem_used_gb": 38.3,
+   "cotenant": []
+  },
+  {
+   "t": 266.0,
+   "rss_gb": 0.221,
+   "mps_alloc_gb": 6.787,
+   "mps_driver_gb": 27.986,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 45.3,
+   "sys_mem_used_gb": 37.7,
+   "cotenant": []
+  },
+  {
+   "t": 276.1,
+   "rss_gb": 0.194,
+   "mps_alloc_gb": 6.776,
+   "mps_driver_gb": 27.999,
+   "gpu_util_pct": 59,
+   "sys_cpu_pct": 45.1,
+   "sys_mem_used_gb": 37.9,
+   "cotenant": []
+  },
+  {
+   "t": 286.2,
+   "rss_gb": 0.268,
+   "mps_alloc_gb": 6.775,
+   "mps_driver_gb": 27.987,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 44.3,
+   "sys_mem_used_gb": 38.2,
+   "cotenant": []
+  },
+  {
+   "t": 296.3,
+   "rss_gb": 0.27,
+   "mps_alloc_gb": 9.445,
+   "mps_driver_gb": 27.987,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 45.5,
+   "sys_mem_used_gb": 37.4,
+   "cotenant": []
+  },
+  {
+   "t": 306.4,
+   "rss_gb": 0.206,
+   "mps_alloc_gb": 16.406,
+   "mps_driver_gb": 27.984,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 51.5,
+   "sys_mem_used_gb": 38.2,
+   "cotenant": []
+  },
+  {
+   "t": 316.5,
+   "rss_gb": 0.192,
+   "mps_alloc_gb": 15.097,
+   "mps_driver_gb": 27.999,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 52.6,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 326.6,
+   "rss_gb": 0.152,
+   "mps_alloc_gb": 6.773,
+   "mps_driver_gb": 27.985,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 49.6,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 336.7,
+   "rss_gb": 0.254,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 28.002,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 47.1,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 346.8,
+   "rss_gb": 0.249,
+   "mps_alloc_gb": 6.774,
+   "mps_driver_gb": 27.99,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 46.1,
+   "sys_mem_used_gb": 37.9,
+   "cotenant": []
+  },
+  {
+   "t": 356.9,
+   "rss_gb": 0.25,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 27.991,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 45.4,
+   "sys_mem_used_gb": 37.9,
+   "cotenant": []
+  },
+  {
+   "t": 367.0,
+   "rss_gb": 0.267,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 27.991,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 43.6,
+   "sys_mem_used_gb": 37.5,
+   "cotenant": []
+  },
+  {
+   "t": 377.1,
+   "rss_gb": 0.323,
+   "mps_alloc_gb": 6.774,
+   "mps_driver_gb": 27.991,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 40.3,
+   "sys_mem_used_gb": 37.4,
+   "cotenant": []
+  },
+  {
+   "t": 387.3,
+   "rss_gb": 0.201,
+   "mps_alloc_gb": 6.785,
+   "mps_driver_gb": 27.991,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 46.2,
+   "sys_mem_used_gb": 35.4,
+   "cotenant": []
+  },
+  {
+   "t": 397.4,
+   "rss_gb": 0.253,
+   "mps_alloc_gb": 16.37,
+   "mps_driver_gb": 27.991,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 47.9,
+   "sys_mem_used_gb": 37.7,
+   "cotenant": []
+  },
+  {
+   "t": 407.5,
+   "rss_gb": 0.3,
+   "mps_alloc_gb": 6.775,
+   "mps_driver_gb": 27.992,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 44.8,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 417.6,
+   "rss_gb": 0.323,
+   "mps_alloc_gb": 7.788,
+   "mps_driver_gb": 27.992,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 44.7,
+   "sys_mem_used_gb": 37.6,
+   "cotenant": []
+  },
+  {
+   "t": 427.7,
+   "rss_gb": 0.374,
+   "mps_alloc_gb": 6.79,
+   "mps_driver_gb": 27.993,
+   "gpu_util_pct": 83,
+   "sys_cpu_pct": 43.5,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 437.8,
+   "rss_gb": 0.306,
+   "mps_alloc_gb": 8.046,
+   "mps_driver_gb": 27.993,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 31.2,
+   "sys_mem_used_gb": 37.9,
+   "cotenant": []
+  },
+  {
+   "t": 448.0,
+   "rss_gb": 0.343,
+   "mps_alloc_gb": 8.526,
+   "mps_driver_gb": 27.993,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 48.3,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 458.1,
+   "rss_gb": 0.274,
+   "mps_alloc_gb": 6.776,
+   "mps_driver_gb": 27.993,
+   "gpu_util_pct": 91,
+   "sys_cpu_pct": 49.1,
+   "sys_mem_used_gb": 38.3,
+   "cotenant": []
+  },
+  {
+   "t": 468.2,
+   "rss_gb": 0.235,
+   "mps_alloc_gb": 6.779,
+   "mps_driver_gb": 27.989,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 49.1,
+   "sys_mem_used_gb": 37.4,
+   "cotenant": []
+  },
+  {
+   "t": 478.3,
+   "rss_gb": 0.156,
+   "mps_alloc_gb": 14.074,
+   "mps_driver_gb": 27.99,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 55.2,
+   "sys_mem_used_gb": 36.4,
+   "cotenant": []
+  },
+  {
+   "t": 488.4,
+   "rss_gb": 0.235,
+   "mps_alloc_gb": 16.392,
+   "mps_driver_gb": 27.994,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 53.3,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 498.5,
+   "rss_gb": 0.206,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 27.994,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 52.5,
+   "sys_mem_used_gb": 37.3,
+   "cotenant": []
+  },
+  {
+   "t": 508.6,
+   "rss_gb": 0.17,
+   "mps_alloc_gb": 6.77,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 65.0,
+   "sys_mem_used_gb": 36.4,
+   "cotenant": []
+  },
+  {
+   "t": 518.7,
+   "rss_gb": 0.256,
+   "mps_alloc_gb": 7.557,
+   "mps_driver_gb": 28.009,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 47.7,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 528.9,
+   "rss_gb": 0.197,
+   "mps_alloc_gb": 6.77,
+   "mps_driver_gb": 27.995,
+   "gpu_util_pct": 0,
+   "sys_cpu_pct": 58.9,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 539.1,
+   "rss_gb": 0.164,
+   "mps_alloc_gb": 11.359,
+   "mps_driver_gb": 27.995,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 61.5,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 549.2,
+   "rss_gb": 0.229,
+   "mps_alloc_gb": 6.77,
+   "mps_driver_gb": 27.995,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 56.9,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 559.3,
+   "rss_gb": 0.209,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 27.993,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 48.4,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 569.4,
+   "rss_gb": 0.223,
+   "mps_alloc_gb": 7.245,
+   "mps_driver_gb": 27.996,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 46.2,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 579.5,
+   "rss_gb": 0.235,
+   "mps_alloc_gb": 16.854,
+   "mps_driver_gb": 27.996,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 36.5,
+   "sys_mem_used_gb": 37.4,
+   "cotenant": []
+  },
+  {
+   "t": 589.6,
+   "rss_gb": 0.239,
+   "mps_alloc_gb": 16.707,
+   "mps_driver_gb": 28.006,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 39.6,
+   "sys_mem_used_gb": 37.9,
+   "cotenant": []
+  },
+  {
+   "t": 599.8,
+   "rss_gb": 0.222,
+   "mps_alloc_gb": 7.225,
+   "mps_driver_gb": 27.996,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 45.1,
+   "sys_mem_used_gb": 38.1,
+   "cotenant": []
+  },
+  {
+   "t": 609.9,
+   "rss_gb": 0.204,
+   "mps_alloc_gb": 15.971,
+   "mps_driver_gb": 27.996,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 42.0,
+   "sys_mem_used_gb": 38.0,
+   "cotenant": []
+  },
+  {
+   "t": 620.0,
+   "rss_gb": 0.207,
+   "mps_alloc_gb": 14.569,
+   "mps_driver_gb": 27.996,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 42.5,
+   "sys_mem_used_gb": 37.6,
+   "cotenant": []
+  },
+  {
+   "t": 630.2,
+   "rss_gb": 0.166,
+   "mps_alloc_gb": 6.773,
+   "mps_driver_gb": 27.996,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 47.7,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 640.3,
+   "rss_gb": 0.185,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 27.992,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 47.3,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 650.4,
+   "rss_gb": 0.251,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 27.993,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 46.6,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 660.5,
+   "rss_gb": 0.182,
+   "mps_alloc_gb": 6.777,
+   "mps_driver_gb": 27.997,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 55.2,
+   "sys_mem_used_gb": 35.9,
+   "cotenant": []
+  },
+  {
+   "t": 670.6,
+   "rss_gb": 0.214,
+   "mps_alloc_gb": 5.082,
+   "mps_driver_gb": 27.997,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 45.0,
+   "sys_mem_used_gb": 37.9,
+   "cotenant": []
+  },
+  {
+   "t": 680.8,
+   "rss_gb": 0.15,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 27.995,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 57.7,
+   "sys_mem_used_gb": 37.9,
+   "cotenant": []
+  },
+  {
+   "t": 690.9,
+   "rss_gb": 0.16,
+   "mps_alloc_gb": 6.783,
+   "mps_driver_gb": 28.01,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 57.7,
+   "sys_mem_used_gb": 37.4,
+   "cotenant": []
+  },
+  {
+   "t": 701.0,
+   "rss_gb": 0.172,
+   "mps_alloc_gb": 6.773,
+   "mps_driver_gb": 27.994,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 53.9,
+   "sys_mem_used_gb": 38.4,
+   "cotenant": []
+  },
+  {
+   "t": 711.3,
+   "rss_gb": 0.216,
+   "mps_alloc_gb": 15.535,
+   "mps_driver_gb": 27.996,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 59.9,
+   "sys_mem_used_gb": 38.7,
+   "cotenant": []
+  },
+  {
+   "t": 721.4,
+   "rss_gb": 0.136,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 27.996,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 53.9,
+   "sys_mem_used_gb": 37.4,
+   "cotenant": []
+  },
+  {
+   "t": 731.5,
+   "rss_gb": 0.171,
+   "mps_alloc_gb": 16.662,
+   "mps_driver_gb": 28.009,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 60.9,
+   "sys_mem_used_gb": 38.2,
+   "cotenant": []
+  },
+  {
+   "t": 741.6,
+   "rss_gb": 0.197,
+   "mps_alloc_gb": 17.677,
+   "mps_driver_gb": 27.998,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 49.9,
+   "sys_mem_used_gb": 37.7,
+   "cotenant": []
+  },
+  {
+   "t": 751.7,
+   "rss_gb": 0.154,
+   "mps_alloc_gb": 6.775,
+   "mps_driver_gb": 27.999,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 55.7,
+   "sys_mem_used_gb": 38.1,
+   "cotenant": []
+  },
+  {
+   "t": 761.8,
+   "rss_gb": 0.229,
+   "mps_alloc_gb": 6.774,
+   "mps_driver_gb": 27.999,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 50.5,
+   "sys_mem_used_gb": 38.7,
+   "cotenant": []
+  },
+  {
+   "t": 771.9,
+   "rss_gb": 0.233,
+   "mps_alloc_gb": 15.376,
+   "mps_driver_gb": 27.999,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 52.0,
+   "sys_mem_used_gb": 38.5,
+   "cotenant": []
+  },
+  {
+   "t": 782.1,
+   "rss_gb": 0.242,
+   "mps_alloc_gb": 6.774,
+   "mps_driver_gb": 27.999,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 49.6,
+   "sys_mem_used_gb": 38.4,
+   "cotenant": []
+  },
+  {
+   "t": 792.2,
+   "rss_gb": 0.131,
+   "mps_alloc_gb": 12.562,
+   "mps_driver_gb": 27.999,
+   "gpu_util_pct": 89,
+   "sys_cpu_pct": 66.3,
+   "sys_mem_used_gb": 29.4,
+   "cotenant": []
+  },
+  {
+   "t": 802.4,
+   "rss_gb": 0.183,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 28.0,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 62.5,
+   "sys_mem_used_gb": 38.5,
+   "cotenant": []
+  },
+  {
+   "t": 812.5,
+   "rss_gb": 0.139,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 27.998,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 68.8,
+   "sys_mem_used_gb": 38.5,
+   "cotenant": []
+  },
+  {
+   "t": 822.7,
+   "rss_gb": 0.129,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 27.998,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 58.2,
+   "sys_mem_used_gb": 38.2,
+   "cotenant": []
+  },
+  {
+   "t": 832.9,
+   "rss_gb": 0.21,
+   "mps_alloc_gb": 6.782,
+   "mps_driver_gb": 28.013,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 58.5,
+   "sys_mem_used_gb": 39.1,
+   "cotenant": []
+  },
+  {
+   "t": 843.0,
+   "rss_gb": 0.159,
+   "mps_alloc_gb": 7.751,
+   "mps_driver_gb": 27.998,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 50.7,
+   "sys_mem_used_gb": 38.1,
+   "cotenant": []
+  },
+  {
+   "t": 853.1,
+   "rss_gb": 0.173,
+   "mps_alloc_gb": 18.443,
+   "mps_driver_gb": 28.0,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 54.8,
+   "sys_mem_used_gb": 37.8,
+   "cotenant": []
+  },
+  {
+   "t": 863.3,
+   "rss_gb": 0.249,
+   "mps_alloc_gb": 16.896,
+   "mps_driver_gb": 28.0,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 57.7,
+   "sys_mem_used_gb": 39.3,
+   "cotenant": []
+  },
+  {
+   "t": 873.5,
+   "rss_gb": 0.208,
+   "mps_alloc_gb": 6.774,
+   "mps_driver_gb": 28.0,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 53.2,
+   "sys_mem_used_gb": 39.0,
+   "cotenant": []
+  },
+  {
+   "t": 883.6,
+   "rss_gb": 0.27,
+   "mps_alloc_gb": 6.774,
+   "mps_driver_gb": 28.0,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 42.4,
+   "sys_mem_used_gb": 38.3,
+   "cotenant": []
+  },
+  {
+   "t": 893.7,
+   "rss_gb": 0.303,
+   "mps_alloc_gb": 20.691,
+   "mps_driver_gb": 28.015,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 49.1,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 903.9,
+   "rss_gb": 0.224,
+   "mps_alloc_gb": 10.603,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 48.9,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 914.0,
+   "rss_gb": 0.251,
+   "mps_alloc_gb": 5.285,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 94,
+   "sys_cpu_pct": 47.3,
+   "sys_mem_used_gb": 36.5,
+   "cotenant": []
+  },
+  {
+   "t": 924.1,
+   "rss_gb": 0.234,
+   "mps_alloc_gb": 8.689,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 38.6,
+   "sys_mem_used_gb": 37.5,
+   "cotenant": []
+  },
+  {
+   "t": 934.3,
+   "rss_gb": 0.211,
+   "mps_alloc_gb": 6.775,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 45.8,
+   "sys_mem_used_gb": 38.2,
+   "cotenant": []
+  },
+  {
+   "t": 944.4,
+   "rss_gb": 0.289,
+   "mps_alloc_gb": 18.803,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 41.1,
+   "sys_mem_used_gb": 37.6,
+   "cotenant": []
+  },
+  {
+   "t": 954.5,
+   "rss_gb": 0.296,
+   "mps_alloc_gb": 5.082,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 44.5,
+   "sys_mem_used_gb": 36.4,
+   "cotenant": []
+  },
+  {
+   "t": 964.6,
+   "rss_gb": 0.266,
+   "mps_alloc_gb": 17.782,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 48.1,
+   "sys_mem_used_gb": 37.8,
+   "cotenant": []
+  },
+  {
+   "t": 974.8,
+   "rss_gb": 0.305,
+   "mps_alloc_gb": 6.778,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 41.8,
+   "sys_mem_used_gb": 38.5,
+   "cotenant": []
+  },
+  {
+   "t": 984.9,
+   "rss_gb": 0.302,
+   "mps_alloc_gb": 6.775,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 26.7,
+   "sys_mem_used_gb": 37.6,
+   "cotenant": []
+  },
+  {
+   "t": 995.0,
+   "rss_gb": 0.316,
+   "mps_alloc_gb": 6.783,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 43.5,
+   "sys_mem_used_gb": 38.0,
+   "cotenant": []
+  },
+  {
+   "t": 1005.1,
+   "rss_gb": 0.349,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 38.1,
+   "sys_mem_used_gb": 37.5,
+   "cotenant": []
+  },
+  {
+   "t": 1015.2,
+   "rss_gb": 0.388,
+   "mps_alloc_gb": 8.239,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 91,
+   "sys_cpu_pct": 31.1,
+   "sys_mem_used_gb": 38.5,
+   "cotenant": []
+  },
+  {
+   "t": 1025.4,
+   "rss_gb": 0.437,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 40.7,
+   "sys_mem_used_gb": 39.2,
+   "cotenant": []
+  },
+  {
+   "t": 1035.5,
+   "rss_gb": 0.395,
+   "mps_alloc_gb": 14.759,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 41.5,
+   "sys_mem_used_gb": 39.0,
+   "cotenant": []
+  },
+  {
+   "t": 1045.6,
+   "rss_gb": 0.413,
+   "mps_alloc_gb": 6.775,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 40.7,
+   "sys_mem_used_gb": 37.8,
+   "cotenant": []
+  },
+  {
+   "t": 1055.7,
+   "rss_gb": 0.396,
+   "mps_alloc_gb": 16.209,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 40.9,
+   "sys_mem_used_gb": 37.7,
+   "cotenant": []
+  },
+  {
+   "t": 1065.8,
+   "rss_gb": 0.354,
+   "mps_alloc_gb": 8.675,
+   "mps_driver_gb": 27.997,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 27.6,
+   "sys_mem_used_gb": 37.5,
+   "cotenant": []
+  },
+  {
+   "t": 1076.0,
+   "rss_gb": 0.35,
+   "mps_alloc_gb": 16.109,
+   "mps_driver_gb": 27.997,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 37.9,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 1086.1,
+   "rss_gb": 0.392,
+   "mps_alloc_gb": 16.389,
+   "mps_driver_gb": 28.016,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 35.7,
+   "sys_mem_used_gb": 37.7,
+   "cotenant": []
+  },
+  {
+   "t": 1096.2,
+   "rss_gb": 0.424,
+   "mps_alloc_gb": 6.774,
+   "mps_driver_gb": 28.016,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 24.5,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 1106.3,
+   "rss_gb": 0.418,
+   "mps_alloc_gb": 7.043,
+   "mps_driver_gb": 28.017,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 34.6,
+   "sys_mem_used_gb": 36.5,
+   "cotenant": []
+  },
+  {
+   "t": 1116.4,
+   "rss_gb": 0.464,
+   "mps_alloc_gb": 6.777,
+   "mps_driver_gb": 28.0,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 28.2,
+   "sys_mem_used_gb": 38.4,
+   "cotenant": []
+  },
+  {
+   "t": 1126.6,
+   "rss_gb": 0.507,
+   "mps_alloc_gb": 15.549,
+   "mps_driver_gb": 28.017,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 38.6,
+   "sys_mem_used_gb": 38.5,
+   "cotenant": []
+  },
+  {
+   "t": 1136.7,
+   "rss_gb": 0.38,
+   "mps_alloc_gb": 6.778,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 33.1,
+   "sys_mem_used_gb": 38.0,
+   "cotenant": []
+  },
+  {
+   "t": 1146.8,
+   "rss_gb": 0.324,
+   "mps_alloc_gb": 13.961,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 24.1,
+   "sys_mem_used_gb": 38.7,
+   "cotenant": []
+  },
+  {
+   "t": 1156.9,
+   "rss_gb": 0.345,
+   "mps_alloc_gb": 9.039,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 34.3,
+   "sys_mem_used_gb": 38.3,
+   "cotenant": []
+  },
+  {
+   "t": 1167.0,
+   "rss_gb": 0.377,
+   "mps_alloc_gb": 6.777,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 74,
+   "sys_cpu_pct": 24.1,
+   "sys_mem_used_gb": 37.4,
+   "cotenant": []
+  },
+  {
+   "t": 1177.2,
+   "rss_gb": 0.416,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 25.8,
+   "sys_mem_used_gb": 37.8,
+   "cotenant": []
+  },
+  {
+   "t": 1187.3,
+   "rss_gb": 0.457,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 34.6,
+   "sys_mem_used_gb": 38.0,
+   "cotenant": []
+  },
+  {
+   "t": 1197.4,
+   "rss_gb": 0.416,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 27.9,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 1207.5,
+   "rss_gb": 0.382,
+   "mps_alloc_gb": 5.082,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 27.2,
+   "sys_mem_used_gb": 37.7,
+   "cotenant": []
+  },
+  {
+   "t": 1217.6,
+   "rss_gb": 0.439,
+   "mps_alloc_gb": 11.466,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 26.6,
+   "sys_mem_used_gb": 37.8,
+   "cotenant": []
+  },
+  {
+   "t": 1227.8,
+   "rss_gb": 0.337,
+   "mps_alloc_gb": 11.683,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 33.0,
+   "sys_mem_used_gb": 37.6,
+   "cotenant": []
+  },
+  {
+   "t": 1237.9,
+   "rss_gb": 0.216,
+   "mps_alloc_gb": 6.775,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 45.5,
+   "sys_mem_used_gb": 37.8,
+   "cotenant": []
+  },
+  {
+   "t": 1248.0,
+   "rss_gb": 0.275,
+   "mps_alloc_gb": 6.785,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 34.4,
+   "sys_mem_used_gb": 37.5,
+   "cotenant": []
+  },
+  {
+   "t": 1258.1,
+   "rss_gb": 0.215,
+   "mps_alloc_gb": 12.561,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 36.9,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1268.3,
+   "rss_gb": 0.252,
+   "mps_alloc_gb": 7.728,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 38.1,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 1278.4,
+   "rss_gb": 0.262,
+   "mps_alloc_gb": 11.262,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 35.6,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 1288.5,
+   "rss_gb": 0.244,
+   "mps_alloc_gb": 16.233,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 31.7,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 1298.7,
+   "rss_gb": 0.296,
+   "mps_alloc_gb": 6.775,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 28.1,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 1308.8,
+   "rss_gb": 0.858,
+   "mps_alloc_gb": 17.68,
+   "mps_driver_gb": 28.015,
+   "gpu_util_pct": 98,
+   "sys_cpu_pct": 30.9,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 1318.9,
+   "rss_gb": 0.875,
+   "mps_alloc_gb": 17.249,
+   "mps_driver_gb": 28.032,
+   "gpu_util_pct": 84,
+   "sys_cpu_pct": 28.8,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1329.1,
+   "rss_gb": 0.18,
+   "mps_alloc_gb": 7.418,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 25.7,
+   "sys_mem_used_gb": 35.5,
+   "cotenant": []
+  },
+  {
+   "t": 1339.3,
+   "rss_gb": 0.251,
+   "mps_alloc_gb": 17.171,
+   "mps_driver_gb": 28.015,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 44.4,
+   "sys_mem_used_gb": 36.4,
+   "cotenant": []
+  },
+  {
+   "t": 1349.4,
+   "rss_gb": 0.288,
+   "mps_alloc_gb": 6.781,
+   "mps_driver_gb": 28.002,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 40.5,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 1359.5,
+   "rss_gb": 0.338,
+   "mps_alloc_gb": 5.082,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 3,
+   "sys_cpu_pct": 37.2,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 1369.6,
+   "rss_gb": 0.324,
+   "mps_alloc_gb": 8.313,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 35.5,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 1379.8,
+   "rss_gb": 0.224,
+   "mps_alloc_gb": 16.665,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 38.4,
+   "sys_mem_used_gb": 37.5,
+   "cotenant": []
+  },
+  {
+   "t": 1389.9,
+   "rss_gb": 0.281,
+   "mps_alloc_gb": 20.477,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 25.7,
+   "sys_mem_used_gb": 37.4,
+   "cotenant": []
+  },
+  {
+   "t": 1400.0,
+   "rss_gb": 0.259,
+   "mps_alloc_gb": 6.782,
+   "mps_driver_gb": 28.015,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 41.5,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 1410.1,
+   "rss_gb": 0.312,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 28.0,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 42.8,
+   "sys_mem_used_gb": 37.7,
+   "cotenant": []
+  },
+  {
+   "t": 1420.3,
+   "rss_gb": 0.16,
+   "mps_alloc_gb": 16.464,
+   "mps_driver_gb": 28.0,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 37.0,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 1430.4,
+   "rss_gb": 0.24,
+   "mps_alloc_gb": 17.186,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 40.4,
+   "sys_mem_used_gb": 37.3,
+   "cotenant": []
+  },
+  {
+   "t": 1440.5,
+   "rss_gb": 0.251,
+   "mps_alloc_gb": 13.624,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 40.9,
+   "sys_mem_used_gb": 37.6,
+   "cotenant": []
+  },
+  {
+   "t": 1450.7,
+   "rss_gb": 0.248,
+   "mps_alloc_gb": 6.785,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 37.6,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 1460.8,
+   "rss_gb": 0.248,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 38.2,
+   "sys_mem_used_gb": 37.5,
+   "cotenant": []
+  },
+  {
+   "t": 1471.0,
+   "rss_gb": 0.252,
+   "mps_alloc_gb": 14.986,
+   "mps_driver_gb": 28.015,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 37.5,
+   "sys_mem_used_gb": 37.5,
+   "cotenant": []
+  },
+  {
+   "t": 1481.1,
+   "rss_gb": 0.301,
+   "mps_alloc_gb": 9.3,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 30.3,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1491.2,
+   "rss_gb": 0.271,
+   "mps_alloc_gb": 16.397,
+   "mps_driver_gb": 28.019,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 32.5,
+   "sys_mem_used_gb": 37.4,
+   "cotenant": []
+  },
+  {
+   "t": 1501.3,
+   "rss_gb": 0.274,
+   "mps_alloc_gb": 6.773,
+   "mps_driver_gb": 28.004,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 36.8,
+   "sys_mem_used_gb": 37.6,
+   "cotenant": []
+  },
+  {
+   "t": 1511.5,
+   "rss_gb": 0.273,
+   "mps_alloc_gb": 15.832,
+   "mps_driver_gb": 28.015,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 25.8,
+   "sys_mem_used_gb": 37.4,
+   "cotenant": []
+  },
+  {
+   "t": 1521.6,
+   "rss_gb": 0.326,
+   "mps_alloc_gb": 9.492,
+   "mps_driver_gb": 28.017,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 23.5,
+   "sys_mem_used_gb": 37.3,
+   "cotenant": []
+  },
+  {
+   "t": 1531.7,
+   "rss_gb": 0.254,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 27.998,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 34.5,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 1541.8,
+   "rss_gb": 0.327,
+   "mps_alloc_gb": 6.784,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 33.8,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 1551.9,
+   "rss_gb": 0.342,
+   "mps_alloc_gb": 15.734,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 22.7,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 1562.1,
+   "rss_gb": 0.328,
+   "mps_alloc_gb": 6.773,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 21.9,
+   "sys_mem_used_gb": 36.3,
+   "cotenant": []
+  },
+  {
+   "t": 1572.2,
+   "rss_gb": 0.317,
+   "mps_alloc_gb": 6.786,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 21.5,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 1582.3,
+   "rss_gb": 0.281,
+   "mps_alloc_gb": 15.846,
+   "mps_driver_gb": 28.011,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 25.6,
+   "sys_mem_used_gb": 35.2,
+   "cotenant": []
+  },
+  {
+   "t": 1592.4,
+   "rss_gb": 0.288,
+   "mps_alloc_gb": 6.776,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 83,
+   "sys_cpu_pct": 30.5,
+   "sys_mem_used_gb": 35.6,
+   "cotenant": []
+  },
+  {
+   "t": 1602.6,
+   "rss_gb": 0.295,
+   "mps_alloc_gb": 6.774,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 29.1,
+   "sys_mem_used_gb": 35.7,
+   "cotenant": []
+  },
+  {
+   "t": 1612.7,
+   "rss_gb": 0.325,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 28.02,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 22.5,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 1622.8,
+   "rss_gb": 0.374,
+   "mps_alloc_gb": 16.199,
+   "mps_driver_gb": 28.02,
+   "gpu_util_pct": 97,
+   "sys_cpu_pct": 23.7,
+   "sys_mem_used_gb": 36.2,
+   "cotenant": []
+  },
+  {
+   "t": 1632.9,
+   "rss_gb": 0.355,
+   "mps_alloc_gb": 6.773,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 26.6,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 1643.0,
+   "rss_gb": 0.351,
+   "mps_alloc_gb": 6.784,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 21.0,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 1653.1,
+   "rss_gb": 0.374,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 74,
+   "sys_cpu_pct": 22.0,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 1663.3,
+   "rss_gb": 0.32,
+   "mps_alloc_gb": 8.547,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 23.6,
+   "sys_mem_used_gb": 36.5,
+   "cotenant": []
+  },
+  {
+   "t": 1673.4,
+   "rss_gb": 0.376,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 25.5,
+   "sys_mem_used_gb": 36.0,
+   "cotenant": []
+  },
+  {
+   "t": 1683.5,
+   "rss_gb": 0.331,
+   "mps_alloc_gb": 6.822,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 22.6,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 1693.6,
+   "rss_gb": 0.323,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 22.5,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1703.7,
+   "rss_gb": 0.32,
+   "mps_alloc_gb": 20.154,
+   "mps_driver_gb": 28.02,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 28.9,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 1713.8,
+   "rss_gb": 0.25,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 36.7,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 1724.0,
+   "rss_gb": 0.271,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 41.4,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1734.1,
+   "rss_gb": 0.25,
+   "mps_alloc_gb": 16.728,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 29.1,
+   "sys_mem_used_gb": 36.4,
+   "cotenant": []
+  },
+  {
+   "t": 1744.2,
+   "rss_gb": 0.296,
+   "mps_alloc_gb": 6.774,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 27.5,
+   "sys_mem_used_gb": 36.5,
+   "cotenant": []
+  },
+  {
+   "t": 1754.3,
+   "rss_gb": 0.276,
+   "mps_alloc_gb": 13.95,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 98,
+   "sys_cpu_pct": 27.3,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 1764.4,
+   "rss_gb": 0.238,
+   "mps_alloc_gb": 17.023,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 25.6,
+   "sys_mem_used_gb": 36.3,
+   "cotenant": []
+  },
+  {
+   "t": 1774.6,
+   "rss_gb": 0.18,
+   "mps_alloc_gb": 19.83,
+   "mps_driver_gb": 28.018,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 51.8,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 1784.7,
+   "rss_gb": 0.159,
+   "mps_alloc_gb": 9.15,
+   "mps_driver_gb": 28.016,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 67.0,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 1794.9,
+   "rss_gb": 0.234,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 50.1,
+   "sys_mem_used_gb": 37.4,
+   "cotenant": []
+  },
+  {
+   "t": 1805.1,
+   "rss_gb": 0.27,
+   "mps_alloc_gb": 6.773,
+   "mps_driver_gb": 28.02,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 44.2,
+   "sys_mem_used_gb": 37.6,
+   "cotenant": []
+  },
+  {
+   "t": 1815.2,
+   "rss_gb": 0.274,
+   "mps_alloc_gb": 15.875,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 44.9,
+   "sys_mem_used_gb": 37.7,
+   "cotenant": []
+  },
+  {
+   "t": 1825.3,
+   "rss_gb": 0.251,
+   "mps_alloc_gb": 15.426,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 45.4,
+   "sys_mem_used_gb": 37.3,
+   "cotenant": []
+  },
+  {
+   "t": 1835.5,
+   "rss_gb": 0.3,
+   "mps_alloc_gb": 5.862,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 44.3,
+   "sys_mem_used_gb": 38.2,
+   "cotenant": []
+  },
+  {
+   "t": 1845.6,
+   "rss_gb": 0.328,
+   "mps_alloc_gb": 15.188,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 44.6,
+   "sys_mem_used_gb": 37.6,
+   "cotenant": []
+  },
+  {
+   "t": 1855.7,
+   "rss_gb": 0.372,
+   "mps_alloc_gb": 8.377,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 42.7,
+   "sys_mem_used_gb": 37.4,
+   "cotenant": []
+  },
+  {
+   "t": 1865.8,
+   "rss_gb": 0.177,
+   "mps_alloc_gb": 7.218,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 74,
+   "sys_cpu_pct": 31.1,
+   "sys_mem_used_gb": 36.2,
+   "cotenant": []
+  },
+  {
+   "t": 1876.0,
+   "rss_gb": 0.235,
+   "mps_alloc_gb": 20.687,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 47,
+   "sys_cpu_pct": 50.3,
+   "sys_mem_used_gb": 36.2,
+   "cotenant": []
+  },
+  {
+   "t": 1886.1,
+   "rss_gb": 0.288,
+   "mps_alloc_gb": 5.082,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 48.9,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 1896.3,
+   "rss_gb": 0.355,
+   "mps_alloc_gb": 12.722,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 45.9,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 1906.4,
+   "rss_gb": 0.359,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 37.4,
+   "sys_mem_used_gb": 34.8,
+   "cotenant": []
+  },
+  {
+   "t": 1916.5,
+   "rss_gb": 0.328,
+   "mps_alloc_gb": 6.776,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 34.0,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1926.6,
+   "rss_gb": 0.25,
+   "mps_alloc_gb": 17.68,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 37.0,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 1936.8,
+   "rss_gb": 0.295,
+   "mps_alloc_gb": 17.836,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 39.1,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 1946.9,
+   "rss_gb": 0.296,
+   "mps_alloc_gb": 8.27,
+   "mps_driver_gb": 28.02,
+   "gpu_util_pct": 93,
+   "sys_cpu_pct": 38.0,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 1957.0,
+   "rss_gb": 0.341,
+   "mps_alloc_gb": 6.783,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 37.1,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 1967.2,
+   "rss_gb": 0.282,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 39.7,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 1977.3,
+   "rss_gb": 0.221,
+   "mps_alloc_gb": 8.184,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 52.9,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 1987.4,
+   "rss_gb": 0.244,
+   "mps_alloc_gb": 6.777,
+   "mps_driver_gb": 28.001,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 40.7,
+   "sys_mem_used_gb": 36.4,
+   "cotenant": []
+  },
+  {
+   "t": 1997.7,
+   "rss_gb": 0.254,
+   "mps_alloc_gb": 7.718,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 46.4,
+   "sys_mem_used_gb": 36.1,
+   "cotenant": []
+  },
+  {
+   "t": 2007.8,
+   "rss_gb": 0.284,
+   "mps_alloc_gb": 6.773,
+   "mps_driver_gb": 28.033,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 23.5,
+   "sys_mem_used_gb": 35.5,
+   "cotenant": []
+  },
+  {
+   "t": 2017.9,
+   "rss_gb": 0.35,
+   "mps_alloc_gb": 15.748,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 15.2,
+   "sys_mem_used_gb": 36.5,
+   "cotenant": []
+  },
+  {
+   "t": 2028.0,
+   "rss_gb": 0.395,
+   "mps_alloc_gb": 14.881,
+   "mps_driver_gb": 28.02,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.0,
+   "sys_mem_used_gb": 37.8,
+   "cotenant": []
+  },
+  {
+   "t": 2038.1,
+   "rss_gb": 0.438,
+   "mps_alloc_gb": 15.979,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.5,
+   "sys_mem_used_gb": 37.4,
+   "cotenant": []
+  },
+  {
+   "t": 2048.2,
+   "rss_gb": 0.489,
+   "mps_alloc_gb": 16.394,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.8,
+   "sys_mem_used_gb": 37.8,
+   "cotenant": []
+  },
+  {
+   "t": 2058.4,
+   "rss_gb": 0.541,
+   "mps_alloc_gb": 6.774,
+   "mps_driver_gb": 28.003,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.0,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 2068.5,
+   "rss_gb": 0.584,
+   "mps_alloc_gb": 17.581,
+   "mps_driver_gb": 28.02,
+   "gpu_util_pct": 59,
+   "sys_cpu_pct": 7.2,
+   "sys_mem_used_gb": 37.9,
+   "cotenant": []
+  },
+  {
+   "t": 2078.6,
+   "rss_gb": 0.609,
+   "mps_alloc_gb": 6.779,
+   "mps_driver_gb": 28.02,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 7.4,
+   "sys_mem_used_gb": 38.1,
+   "cotenant": []
+  },
+  {
+   "t": 2088.7,
+   "rss_gb": 0.639,
+   "mps_alloc_gb": 6.774,
+   "mps_driver_gb": 28.02,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 12.6,
+   "sys_mem_used_gb": 38.6,
+   "cotenant": []
+  },
+  {
+   "t": 2098.8,
+   "rss_gb": 0.676,
+   "mps_alloc_gb": 16.259,
+   "mps_driver_gb": 28.02,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 10.1,
+   "sys_mem_used_gb": 39.3,
+   "cotenant": []
+  },
+  {
+   "t": 2108.9,
+   "rss_gb": 0.704,
+   "mps_alloc_gb": 6.776,
+   "mps_driver_gb": 28.02,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 8.4,
+   "sys_mem_used_gb": 39.0,
+   "cotenant": []
+  },
+  {
+   "t": 2119.0,
+   "rss_gb": 0.742,
+   "mps_alloc_gb": 6.778,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 98,
+   "sys_cpu_pct": 8.6,
+   "sys_mem_used_gb": 39.2,
+   "cotenant": []
+  },
+  {
+   "t": 2129.1,
+   "rss_gb": 0.761,
+   "mps_alloc_gb": 14.689,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 6.7,
+   "sys_mem_used_gb": 39.2,
+   "cotenant": []
+  },
+  {
+   "t": 2139.2,
+   "rss_gb": 0.796,
+   "mps_alloc_gb": 8.593,
+   "mps_driver_gb": 28.005,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 7.5,
+   "sys_mem_used_gb": 39.6,
+   "cotenant": []
+  },
+  {
+   "t": 2149.4,
+   "rss_gb": 0.812,
+   "mps_alloc_gb": 20.056,
+   "mps_driver_gb": 29.079,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.7,
+   "sys_mem_used_gb": 40.2,
+   "cotenant": []
+  },
+  {
+   "t": 2159.5,
+   "rss_gb": 0.834,
+   "mps_alloc_gb": 16.079,
+   "mps_driver_gb": 29.079,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.5,
+   "sys_mem_used_gb": 40.2,
+   "cotenant": []
+  },
+  {
+   "t": 2169.6,
+   "rss_gb": 0.856,
+   "mps_alloc_gb": 6.776,
+   "mps_driver_gb": 29.079,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 7.9,
+   "sys_mem_used_gb": 40.2,
+   "cotenant": []
+  },
+  {
+   "t": 2179.7,
+   "rss_gb": 0.857,
+   "mps_alloc_gb": 6.776,
+   "mps_driver_gb": 29.079,
+   "gpu_util_pct": 23,
+   "sys_cpu_pct": 7.3,
+   "sys_mem_used_gb": 40.2,
+   "cotenant": []
+  },
+  {
+   "t": 2189.8,
+   "rss_gb": 0.859,
+   "mps_alloc_gb": 16.385,
+   "mps_driver_gb": 29.079,
+   "gpu_util_pct": 63,
+   "sys_cpu_pct": 8.3,
+   "sys_mem_used_gb": 40.1,
+   "cotenant": []
+  },
+  {
+   "t": 2200.0,
+   "rss_gb": 0.311,
+   "mps_alloc_gb": 6.774,
+   "mps_driver_gb": 29.079,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 14.1,
+   "sys_mem_used_gb": 39.2,
+   "cotenant": []
+  },
+  {
+   "t": 2210.1,
+   "rss_gb": 0.22,
+   "mps_alloc_gb": 19.285,
+   "mps_driver_gb": 29.079,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 20.8,
+   "sys_mem_used_gb": 39.3,
+   "cotenant": []
+  },
+  {
+   "t": 2220.2,
+   "rss_gb": 0.226,
+   "mps_alloc_gb": 6.78,
+   "mps_driver_gb": 29.077,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 26.9,
+   "sys_mem_used_gb": 39.7,
+   "cotenant": []
+  },
+  {
+   "t": 2230.3,
+   "rss_gb": 0.273,
+   "mps_alloc_gb": 8.98,
+   "mps_driver_gb": 29.094,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 26.9,
+   "sys_mem_used_gb": 39.8,
+   "cotenant": []
+  },
+  {
+   "t": 2240.5,
+   "rss_gb": 0.257,
+   "mps_alloc_gb": 17.532,
+   "mps_driver_gb": 29.079,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 27.8,
+   "sys_mem_used_gb": 39.2,
+   "cotenant": []
+  },
+  {
+   "t": 2250.6,
+   "rss_gb": 0.257,
+   "mps_alloc_gb": 6.781,
+   "mps_driver_gb": 29.079,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 25.6,
+   "sys_mem_used_gb": 38.2,
+   "cotenant": []
+  },
+  {
+   "t": 2260.7,
+   "rss_gb": 0.262,
+   "mps_alloc_gb": 19.159,
+   "mps_driver_gb": 29.079,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 14.1,
+   "sys_mem_used_gb": 38.8,
+   "cotenant": []
+  },
+  {
+   "t": 2270.8,
+   "rss_gb": 0.317,
+   "mps_alloc_gb": 16.954,
+   "mps_driver_gb": 29.079,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.4,
+   "sys_mem_used_gb": 38.8,
+   "cotenant": []
+  },
+  {
+   "t": 2280.9,
+   "rss_gb": 0.29,
+   "mps_alloc_gb": 8.357,
+   "mps_driver_gb": 29.079,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 16.5,
+   "sys_mem_used_gb": 39.0,
+   "cotenant": []
+  },
+  {
+   "t": 2291.0,
+   "rss_gb": 0.271,
+   "mps_alloc_gb": 8.3,
+   "mps_driver_gb": 29.079,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 20.2,
+   "sys_mem_used_gb": 39.2,
+   "cotenant": []
+  },
+  {
+   "t": 2301.2,
+   "rss_gb": 0.251,
+   "mps_alloc_gb": 9.844,
+   "mps_driver_gb": 29.08,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 17.2,
+   "sys_mem_used_gb": 39.2,
+   "cotenant": []
+  },
+  {
+   "t": 2311.3,
+   "rss_gb": 0.239,
+   "mps_alloc_gb": 20.317,
+   "mps_driver_gb": 29.08,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 23.6,
+   "sys_mem_used_gb": 38.7,
+   "cotenant": []
+  },
+  {
+   "t": 2321.4,
+   "rss_gb": 0.293,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 29.08,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 19.1,
+   "sys_mem_used_gb": 38.9,
+   "cotenant": []
+  },
+  {
+   "t": 2331.5,
+   "rss_gb": 0.324,
+   "mps_alloc_gb": 16.111,
+   "mps_driver_gb": 29.08,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 18.3,
+   "sys_mem_used_gb": 39.2,
+   "cotenant": []
+  },
+  {
+   "t": 2341.6,
+   "rss_gb": 0.287,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 29.078,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 22.1,
+   "sys_mem_used_gb": 38.9,
+   "cotenant": []
+  },
+  {
+   "t": 2351.7,
+   "rss_gb": 0.284,
+   "mps_alloc_gb": 7.154,
+   "mps_driver_gb": 29.078,
+   "gpu_util_pct": 81,
+   "sys_cpu_pct": 22.5,
+   "sys_mem_used_gb": 38.2,
+   "cotenant": []
+  },
+  {
+   "t": 2361.8,
+   "rss_gb": 0.211,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 29.094,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 26.2,
+   "sys_mem_used_gb": 38.6,
+   "cotenant": []
+  },
+  {
+   "t": 2371.9,
+   "rss_gb": 0.236,
+   "mps_alloc_gb": 9.834,
+   "mps_driver_gb": 29.08,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 22.0,
+   "sys_mem_used_gb": 38.2,
+   "cotenant": []
+  },
+  {
+   "t": 2382.0,
+   "rss_gb": 0.254,
+   "mps_alloc_gb": 16.23,
+   "mps_driver_gb": 29.08,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 24.1,
+   "sys_mem_used_gb": 38.9,
+   "cotenant": []
+  },
+  {
+   "t": 2392.1,
+   "rss_gb": 0.277,
+   "mps_alloc_gb": 6.87,
+   "mps_driver_gb": 29.08,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 19.1,
+   "sys_mem_used_gb": 37.9,
+   "cotenant": []
+  },
+  {
+   "t": 2402.2,
+   "rss_gb": 0.25,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 29.076,
+   "gpu_util_pct": 75,
+   "sys_cpu_pct": 22.0,
+   "sys_mem_used_gb": 38.8,
+   "cotenant": []
+  },
+  {
+   "t": 2412.4,
+   "rss_gb": 0.259,
+   "mps_alloc_gb": 6.782,
+   "mps_driver_gb": 29.107,
+   "gpu_util_pct": 82,
+   "sys_cpu_pct": 30.5,
+   "sys_mem_used_gb": 38.6,
+   "cotenant": []
+  },
+  {
+   "t": 2422.5,
+   "rss_gb": 0.167,
+   "mps_alloc_gb": 15.248,
+   "mps_driver_gb": 29.078,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 31.0,
+   "sys_mem_used_gb": 39.7,
+   "cotenant": []
+  },
+  {
+   "t": 2432.6,
+   "rss_gb": 0.222,
+   "mps_alloc_gb": 16.262,
+   "mps_driver_gb": 29.08,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 23.7,
+   "sys_mem_used_gb": 38.9,
+   "cotenant": []
+  },
+  {
+   "t": 2442.7,
+   "rss_gb": 0.274,
+   "mps_alloc_gb": 17.045,
+   "mps_driver_gb": 29.08,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 14.9,
+   "sys_mem_used_gb": 39.0,
+   "cotenant": []
+  },
+  {
+   "t": 2452.8,
+   "rss_gb": 0.321,
+   "mps_alloc_gb": 15.636,
+   "mps_driver_gb": 29.08,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 11.8,
+   "sys_mem_used_gb": 39.2,
+   "cotenant": []
+  },
+  {
+   "t": 2462.9,
+   "rss_gb": 0.366,
+   "mps_alloc_gb": 14.649,
+   "mps_driver_gb": 29.08,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.8,
+   "sys_mem_used_gb": 38.8,
+   "cotenant": []
+  },
+  {
+   "t": 2473.0,
+   "rss_gb": 0.405,
+   "mps_alloc_gb": 20.695,
+   "mps_driver_gb": 29.08,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.2,
+   "sys_mem_used_gb": 39.0,
+   "cotenant": []
+  },
+  {
+   "t": 2483.1,
+   "rss_gb": 0.44,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 29.08,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.6,
+   "sys_mem_used_gb": 39.1,
+   "cotenant": []
+  },
+  {
+   "t": 2493.3,
+   "rss_gb": 0.455,
+   "mps_alloc_gb": 17.592,
+   "mps_driver_gb": 29.08,
+   "gpu_util_pct": 60,
+   "sys_cpu_pct": 9.0,
+   "sys_mem_used_gb": 39.2,
+   "cotenant": []
+  },
+  {
+   "t": 2503.4,
+   "rss_gb": 0.501,
+   "mps_alloc_gb": 6.774,
+   "mps_driver_gb": 29.08,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.1,
+   "sys_mem_used_gb": 39.2,
+   "cotenant": []
+  },
+  {
+   "t": 2513.5,
+   "rss_gb": 0.539,
+   "mps_alloc_gb": 7.732,
+   "mps_driver_gb": 29.08,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.2,
+   "sys_mem_used_gb": 38.9,
+   "cotenant": []
+  },
+  {
+   "t": 2523.6,
+   "rss_gb": 0.577,
+   "mps_alloc_gb": 8.22,
+   "mps_driver_gb": 29.08,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 8.7,
+   "sys_mem_used_gb": 39.3,
+   "cotenant": []
+  },
+  {
+   "t": 2533.7,
+   "rss_gb": 0.574,
+   "mps_alloc_gb": 5.087,
+   "mps_driver_gb": 29.085,
+   "gpu_util_pct": 0,
+   "sys_cpu_pct": 10.1,
+   "sys_mem_used_gb": 39.2,
+   "cotenant": []
+  },
+  {
+   "t": 2543.8,
+   "rss_gb": 1.07,
+   "mps_alloc_gb": 5.082,
+   "mps_driver_gb": 29.09,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 12.6,
+   "sys_mem_used_gb": 31.6,
+   "cotenant": []
+  },
+  {
+   "t": 2554.0,
+   "rss_gb": 1.106,
+   "mps_alloc_gb": 5.082,
+   "mps_driver_gb": 29.078,
+   "gpu_util_pct": 98,
+   "sys_cpu_pct": 8.5,
+   "sys_mem_used_gb": 33.0,
+   "cotenant": []
+  }
+ ],
+ "events": [
+  [
+   2.493,
+   "Using legacy cached training items without metadata: poc/finetune/data/t3arm/T1_english.pt"
+  ],
+  [
+   3.359,
+   "Device: mps"
+  ],
+  [
+   3.359,
+   "Training items: 5000; calibration items: 400"
+  ],
+  [
+   3.359,
+   "micro_batch=8; grad_accum=4; epochs=2"
+  ],
+  [
+   205.995,
+   "epoch 1/2, step 100, loss=0.7208"
+  ],
+  [
+   413.158,
+   "epoch 1/2, step 200, loss=0.4551"
+  ],
+  [
+   619.751,
+   "epoch 1/2, step 300, loss=1.2382"
+  ],
+  [
+   841.853,
+   "epoch 1/2, step 400, loss=1.1716"
+  ],
+  [
+   1049.718,
+   "epoch 1/2, step 500, loss=0.6793"
+  ],
+  [
+   1249.051,
+   "epoch 1/2, step 600, loss=1.0656"
+  ],
+  [
+   1301.639,
+   "Epoch 1/2 complete; avg_loss=0.7489"
+  ],
+  [
+   1504.399,
+   "epoch 2/2, step 100, loss=1.5761"
+  ],
+  [
+   1701.383,
+   "epoch 2/2, step 200, loss=1.1202"
+  ],
+  [
+   1902.101,
+   "epoch 2/2, step 300, loss=0.6668"
+  ],
+  [
+   2097.246,
+   "epoch 2/2, step 400, loss=0.0355"
+  ],
+  [
+   2290.311,
+   "epoch 2/2, step 500, loss=1.1476"
+  ],
+  [
+   2485.509,
+   "epoch 2/2, step 600, loss=0.6853"
+  ],
+  [
+   2533.594,
+   "Epoch 2/2 complete; avg_loss=0.7625"
+  ],
+  [
+   2535.322,
+   "Running temperature calibration ..."
+  ],
+  [
+   2559.224,
+   "Model saved to poc/finetune/ckpt_t3arm/_v2_T1"
+  ],
+  [
+   2559.224,
+   "Temperatures: [1.087946891784668, 1.1246908903121948, 1.1941457986831665]"
+  ]
+ ],
+ "micro_batch_trace": [
+  [
+   3.3599,
+   8,
+   494,
+   2.2205,
+   1.36753,
+   0.25
+  ],
+  [
+   5.5804,
+   8,
+   416,
+   1.7319,
+   1.56279,
+   0.25
+  ],
+  [
+   7.3123,
+   8,
+   451,
+   1.9438,
+   1.62521,
+   0.125
+  ],
+  [
+   9.2561,
+   8,
+   374,
+   2.3922,
+   1.65864,
+   0.375
+  ],
+  [
+   11.6483,
+   8,
+   344,
+   1.4329,
+   1.59373,
+   0.375
+  ],
+  [
+   13.0812,
+   8,
+   447,
+   2.1926,
+   1.5063,
+   0.25
+  ],
+  [
+   15.2738,
+   8,
+   512,
+   2.444,
+   1.55837,
+   0.0
+  ],
+  [
+   17.7178,
+   8,
+   357,
+   2.2611,
+   1.00168,
+   0.5
+  ],
+  [
+   19.9789,
+   8,
+   464,
+   2.0059,
+   1.08695,
+   0.5
+  ],
+  [
+   21.9848,
+   8,
+   357,
+   1.5072,
+   1.28516,
+   0.25
+  ],
+  [
+   23.492,
+   8,
+   379,
+   1.6332,
+   1.41485,
+   0.25
+  ],
+  [
+   25.1252,
+   8,
+   381,
+   2.3786,
+   1.24256,
+   0.25
+  ],
+  [
+   27.5038,
+   8,
+   413,
+   1.7791,
+   1.20023,
+   0.875
+  ],
+  [
+   29.2829,
+   8,
+   405,
+   1.762,
+   0.94613,
+   0.375
+  ],
+  [
+   31.0449,
+   8,
+   380,
+   1.6308,
+   1.38934,
+   0.125
+  ],
+  [
+   32.6757,
+   8,
+   442,
+   2.7335,
+   1.19713,
+   0.5
+  ],
+  [
+   35.4092,
+   8,
+   357,
+   1.503,
+   0.97182,
+   0.75
+  ],
+  [
+   36.9122,
+   8,
+   430,
+   1.9122,
+   0.80785,
+   0.875
+  ],
+  [
+   38.8244,
+   8,
+   512,
+   2.2857,
+   1.09456,
+   0.25
+  ],
+  [
+   41.1101,
+   8,
+   512,
+   2.987,
+   1.25118,
+   0.5
+  ],
+  [
+   44.0971,
+   8,
+   400,
+   1.6444,
+   1.28156,
+   0.375
+  ],
+  [
+   45.7415,
+   8,
+   350,
+   1.4537,
+   1.20602,
+   0.375
+  ],
+  [
+   47.1952,
+   8,
+   342,
+   1.4712,
+   0.93757,
+   0.25
+  ],
+  [
+   48.6664,
+   8,
+   394,
+   2.398,
+   0.80481,
+   0.625
+  ],
+  [
+   51.0644,
+   8,
+   316,
+   1.2977,
+   0.87866,
+   0.625
+  ],
+  [
+   52.3621,
+   8,
+   354,
+   1.4772,
+   1.21451,
+   0.625
+  ],
+  [
+   53.8393,
+   8,
+   370,
+   1.5482,
+   0.94151,
+   0.5
+  ],
+  [
+   55.3875,
+   8,
+   422,
+   2.5217,
+   1.1334,
+   0.25
+  ],
+  [
+   57.9092,
+   8,
+   373,
+   1.5448,
+   0.91418,
+   0.5
+  ],
+  [
+   59.454,
+   8,
+   330,
+   1.3679,
+   0.98496,
+   0.375
+  ],
+  [
+   60.8219,
+   8,
+   342,
+   1.3986,
+   0.668,
+   0.625
+  ],
+  [
+   62.2205,
+   8,
+   336,
+   2.1036,
+   1.10604,
+   0.5
+  ],
+  [
+   64.3241,
+   8,
+   467,
+   2.0047,
+   0.90099,
+   0.625
+  ],
+  [
+   66.3288,
+   8,
+   352,
+   1.4406,
+   1.05226,
+   0.625
+  ],
+  [
+   67.7694,
+   8,
+   379,
+   1.5885,
+   0.97906,
+   0.75
+  ],
+  [
+   69.3579,
+   8,
+   465,
+   2.7587,
+   1.2063,
+   0.5
+  ],
+  [
+   72.1166,
+   8,
+   465,
+   2.0578,
+   0.90271,
+   0.625
+  ],
+  [
+   74.1744,
+   8,
+   501,
+   2.3123,
+   0.83969,
+   0.625
+  ],
+  [
+   76.4867,
+   8,
+   389,
+   1.7565,
+   1.24169,
+   0.375
+  ],
+  [
+   78.2432,
+   8,
+   498,
+   3.01,
+   0.88444,
+   0.625
+  ],
+  [
+   81.2532,
+   8,
+   494,
+   2.1287,
+   1.41871,
+   0.375
+  ],
+  [
+   83.3819,
+   8,
+   422,
+   1.802,
+   0.98739,
+   0.5
+  ],
+  [
+   85.1839,
+   8,
+   360,
+   1.5722,
+   1.60493,
+   0.125
+  ],
+  [
+   86.7561,
+   8,
+   365,
+   2.3367,
+   1.34336,
+   0.125
+  ],
+  [
+   89.0928,
+   8,
+   386,
+   1.6182,
+   1.2893,
+   0.375
+  ],
+  [
+   90.711,
+   8,
+   394,
+   1.6614,
+   0.97467,
+   0.625
+  ],
+  [
+   92.3724,
+   8,
+   377,
+   1.6234,
+   1.02073,
+   0.625
+  ],
+  [
+   93.9958,
+   8,
+   378,
+   2.3988,
+   1.23374,
+   0.5
+  ],
+  [
+   96.3946,
+   8,
+   369,
+   1.5943,
+   1.28296,
+   0.25
+  ],
+  [
+   97.9889,
+   8,
+   404,
+   1.7694,
+   1.23489,
+   0.5
+  ],
+  [
+   99.7583,
+   8,
+   425,
+   1.8634,
+   1.1613,
+   0.5
+  ],
+  [
+   101.6217,
+   8,
+   470,
+   2.7881,
+   1.04718,
+   0.5
+  ],
+  [
+   104.4098,
+   8,
+   291,
+   1.2053,
+   1.0411,
+   0.375
+  ],
+  [
+   105.6151,
+   8,
+   370,
+   1.6046,
+   0.98994,
+   0.625
+  ],
+  [
+   107.2197,
+   8,
+   512,
+   2.351,
+   1.15382,
+   0.375
+  ],
+  [
+   109.5707,
+   8,
+   427,
+   2.5934,
+   1.2289,
+   0.625
+  ],
+  [
+   112.1641,
+   8,
+   382,
+   1.5945,
+   1.46574,
+   0.5
+  ],
+  [
+   113.7586,
+   8,
+   374,
+   1.5765,
+   1.27941,
+   0.625
+  ],
+  [
+   115.3351,
+   8,
+   364,
+   1.6211,
+   1.23024,
+   0.375
+  ],
+  [
+   116.9562,
+   8,
+   512,
+   3.2965,
+   1.00451,
+   0.25
+  ],
+  [
+   120.2527,
+   8,
+   411,
+   1.7831,
+   1.05568,
+   0.5
+  ],
+  [
+   122.0358,
+   8,
+   379,
+   1.6037,
+   0.97646,
+   0.5
+  ],
+  [
+   123.6395,
+   8,
+   444,
+   2.0098,
+   0.97376,
+   0.5
+  ],
+  [
+   125.6493,
+   8,
+   510,
+   3.0961,
+   1.04866,
+   0.75
+  ],
+  [
+   128.7454,
+   8,
+   404,
+   1.6853,
+   1.10991,
+   0.5
+  ],
+  [
+   130.4307,
+   8,
+   439,
+   1.8841,
+   0.89741,
+   0.875
+  ],
+  [
+   132.3148,
+   8,
+   483,
+   2.2546,
+   0.95105,
+   0.5
+  ],
+  [
+   134.5694,
+   8,
+   383,
+   2.4563,
+   0.95437,
+   0.375
+  ],
+  [
+   137.0257,
+   8,
+   389,
+   1.7356,
+   0.9677,
+   1.0
+  ],
+  [
+   138.7613,
+   8,
+   344,
+   1.5007,
+   0.74518,
+   1.0
+  ],
+  [
+   140.262,
+   8,
+   413,
+   1.8572,
+   1.19423,
+   0.5
+  ],
+  [
+   142.1192,
+   8,
+   358,
+   2.3261,
+   0.98144,
+   0.625
+  ],
+  [
+   144.4453,
+   8,
+   506,
+   2.3353,
+   1.22725,
+   0.25
+  ],
+  [
+   146.7806,
+   8,
+   489,
+   2.2771,
+   1.15272,
+   0.75
+  ],
+  [
+   149.0577,
+   8,
+   379,
+   1.6635,
+   0.75612,
+   0.75
+  ],
+  [
+   150.7212,
+   8,
+   401,
+   2.5847,
+   0.89798,
+   0.625
+  ],
+  [
+   153.3059,
+   8,
+   378,
+   1.6497,
+   0.96933,
+   0.5
+  ],
+  [
+   154.9556,
+   8,
+   479,
+   2.2155,
+   0.89485,
+   0.5
+  ],
+  [
+   157.1711,
+   8,
+   353,
+   1.5587,
+   1.18971,
+   0.5
+  ],
+  [
+   158.7298,
+   8,
+   374,
+   2.3876,
+   1.13544,
+   0.875
+  ],
+  [
+   161.1174,
+   8,
+   512,
+   2.5244,
+   0.73783,
+   0.75
+  ],
+  [
+   163.6418,
+   8,
+   406,
+   1.9001,
+   1.03051,
+   0.875
+  ],
+  [
+   165.5419,
+   8,
+   360,
+   1.5983,
+   0.99279,
+   0.5
+  ],
+  [
+   167.1402,
+   8,
+   458,
+   2.8933,
+   1.19418,
+   0.25
+  ],
+  [
+   170.0335,
+   8,
+   404,
+   1.8023,
+   1.3204,
+   0.375
+  ],
+  [
+   171.8358,
+   8,
+   512,
+   2.5075,
+   0.83296,
+   0.875
+  ],
+  [
+   174.3433,
+   8,
+   387,
+   2.0636,
+   0.85091,
+   0.625
+  ],
+  [
+   176.4069,
+   8,
+   348,
+   2.5986,
+   0.83767,
+   0.5
+  ],
+  [
+   179.0055,
+   8,
+   512,
+   2.4305,
+   1.26798,
+   0.625
+  ],
+  [
+   181.436,
+   8,
+   378,
+   1.7582,
+   1.11919,
+   0.375
+  ],
+  [
+   183.1942,
+   8,
+   411,
+   2.1311,
+   1.31105,
+   0.25
+  ],
+  [
+   185.3253,
+   8,
+   497,
+   3.6229,
+   1.172,
+   0.625
+  ],
+  [
+   188.9482,
+   8,
+   383,
+   1.7218,
+   1.0568,
+   0.75
+  ],
+  [
+   190.67,
+   8,
+   353,
+   1.6006,
+   1.11587,
+   0.625
+  ],
+  [
+   192.2706,
+   8,
+   362,
+   1.7139,
+   1.07711,
+   0.5
+  ],
+  [
+   193.9845,
+   8,
+   512,
+   3.3128,
+   1.13798,
+   0.75
+  ],
+  [
+   197.2973,
+   8,
+   347,
+   1.5129,
+   1.16079,
+   0.5
+  ],
+  [
+   198.8102,
+   8,
+   490,
+   2.3588,
+   1.03851,
+   0.5
+  ],
+  [
+   201.169,
+   8,
+   496,
+   2.3269,
+   1.28377,
+   0.875
+  ],
+  [
+   203.4959,
+   8,
+   378,
+   2.5,
+   1.093,
+   0.75
+  ],
+  [
+   205.9959,
+   8,
+   376,
+   1.7195,
+   0.75886,
+   0.5
+  ],
+  [
+   207.7154,
+   8,
+   338,
+   1.6198,
+   1.23274,
+   0.625
+  ],
+  [
+   209.3352,
+   8,
+   389,
+   1.8492,
+   0.99794,
+   0.375
+  ],
+  [
+   211.1844,
+   8,
+   335,
+   2.2964,
+   0.70474,
+   0.875
+  ],
+  [
+   213.4808,
+   8,
+   505,
+   2.3904,
+   0.96904,
+   0.5
+  ],
+  [
+   215.8712,
+   8,
+   512,
+   2.5218,
+   1.03328,
+   0.5
+  ],
+  [
+   218.393,
+   8,
+   339,
+   1.5873,
+   0.95327,
+   0.5
+  ],
+  [
+   219.9803,
+   8,
+   484,
+   3.061,
+   1.01748,
+   0.625
+  ],
+  [
+   223.0413,
+   8,
+   499,
+   2.3795,
+   0.96146,
+   0.5
+  ],
+  [
+   225.4208,
+   8,
+   362,
+   1.7078,
+   1.06712,
+   0.375
+  ],
+  [
+   227.1286,
+   8,
+   494,
+   2.4037,
+   0.96827,
+   0.375
+  ],
+  [
+   229.5323,
+   8,
+   386,
+   2.7473,
+   0.95335,
+   0.875
+  ],
+  [
+   232.2796,
+   8,
+   448,
+   2.0329,
+   0.9833,
+   0.75
+  ],
+  [
+   234.3125,
+   8,
+   416,
+   1.9411,
+   1.10722,
+   0.5
+  ],
+  [
+   236.2536,
+   8,
+   342,
+   1.6001,
+   1.13644,
+   0.625
+  ],
+  [
+   237.8537,
+   8,
+   476,
+   3.0497,
+   1.02837,
+   0.5
+  ],
+  [
+   240.9034,
+   8,
+   401,
+   1.7907,
+   1.38567,
+   0.375
+  ],
+  [
+   242.6941,
+   8,
+   427,
+   1.9853,
+   1.22748,
+   0.5
+  ],
+  [
+   244.6794,
+   8,
+   357,
+   1.6884,
+   1.1308,
+   0.375
+  ],
+  [
+   246.3678,
+   8,
+   361,
+   2.4792,
+   0.97003,
+   0.875
+  ],
+  [
+   248.847,
+   8,
+   448,
+   2.0068,
+   1.14141,
+   0.625
+  ],
+  [
+   250.8538,
+   8,
+   442,
+   2.1305,
+   1.036,
+   0.875
+  ],
+  [
+   252.9843,
+   8,
+   455,
+   2.2324,
+   1.13549,
+   0.625
+  ],
+  [
+   255.2167,
+   8,
+   389,
+   2.5931,
+   1.00443,
+   0.5
+  ],
+  [
+   257.8098,
+   8,
+   348,
+   1.5145,
+   1.01537,
+   0.625
+  ],
+  [
+   259.3243,
+   8,
+   468,
+   2.2787,
+   1.16254,
+   0.5
+  ],
+  [
+   261.603,
+   8,
+   464,
+   2.2231,
+   1.01281,
+   0.75
+  ],
+  [
+   263.8261,
+   8,
+   452,
+   2.9189,
+   0.74456,
+   0.75
+  ],
+  [
+   266.745,
+   8,
+   380,
+   1.6779,
+   1.09098,
+   0.625
+  ],
+  [
+   268.4229,
+   8,
+   300,
+   1.3673,
+   1.10863,
+   0.75
+  ],
+  [
+   269.7902,
+   8,
+   380,
+   1.7658,
+   1.16292,
+   0.625
+  ],
+  [
+   271.556,
+   8,
+   324,
+   2.4816,
+   0.78244,
+   0.75
+  ],
+  [
+   274.0376,
+   8,
+   512,
+   2.3065,
+   1.11614,
+   0.625
+  ],
+  [
+   276.3441,
+   8,
+   461,
+   2.189,
+   1.03793,
+   0.875
+  ],
+  [
+   278.5331,
+   8,
+   402,
+   1.9007,
+   1.04766,
+   0.625
+  ],
+  [
+   280.4338,
+   8,
+   346,
+   2.3472,
+   1.10601,
+   0.625
+  ],
+  [
+   282.781,
+   8,
+   505,
+   2.3775,
+   0.84011,
+   0.625
+  ],
+  [
+   285.1585,
+   8,
+   380,
+   1.7373,
+   0.96105,
+   0.625
+  ],
+  [
+   286.8958,
+   8,
+   360,
+   1.6642,
+   0.96742,
+   0.625
+  ],
+  [
+   288.56,
+   8,
+   364,
+   2.4532,
+   0.92572,
+   0.75
+  ],
+  [
+   291.0132,
+   8,
+   435,
+   1.9912,
+   0.926,
+   0.75
+  ],
+  [
+   293.0044,
+   8,
+   419,
+   1.9514,
+   0.9734,
+   0.75
+  ],
+  [
+   294.9558,
+   8,
+   501,
+   2.4257,
+   1.05584,
+   0.625
+  ],
+  [
+   297.3815,
+   8,
+   469,
+   3.0874,
+   0.97333,
+   0.875
+  ],
+  [
+   300.4689,
+   8,
+   382,
+   1.9768,
+   1.43829,
+   0.25
+  ],
+  [
+   302.4457,
+   8,
+   408,
+   1.8706,
+   1.13311,
+   0.5
+  ],
+  [
+   304.3163,
+   8,
+   366,
+   1.6815,
+   1.16385,
+   0.25
+  ],
+  [
+   305.9978,
+   8,
+   383,
+   2.4901,
+   1.0824,
+   0.375
+  ],
+  [
+   308.4879,
+   8,
+   371,
+   1.6363,
+   0.93237,
+   0.75
+  ],
+  [
+   310.1242,
+   8,
+   339,
+   1.5196,
+   1.00756,
+   0.75
+  ],
+  [
+   311.6438,
+   8,
+   390,
+   1.8464,
+   0.95171,
+   0.75
+  ],
+  [
+   313.4902,
+   8,
+   329,
+   2.3165,
+   1.06431,
+   0.5
+  ],
+  [
+   315.8067,
+   8,
+   403,
+   1.8093,
+   0.98376,
+   0.5
+  ],
+  [
+   317.616,
+   8,
+   377,
+   1.6856,
+   0.99943,
+   0.625
+  ],
+  [
+   319.3016,
+   8,
+   381,
+   1.7129,
+   0.89647,
+   0.75
+  ],
+  [
+   321.0145,
+   8,
+   448,
+   2.7897,
+   0.86151,
+   0.75
+  ],
+  [
+   323.8042,
+   8,
+   374,
+   1.7642,
+   0.95239,
+   0.75
+  ],
+  [
+   325.5684,
+   8,
+   382,
+   1.7563,
+   0.78251,
+   0.625
+  ],
+  [
+   327.3247,
+   8,
+   368,
+   1.6532,
+   1.41181,
+   0.25
+  ],
+  [
+   328.9779,
+   8,
+   370,
+   2.4285,
+   1.08069,
+   0.75
+  ],
+  [
+   331.4064,
+   8,
+   375,
+   1.6171,
+   1.02101,
+   0.625
+  ],
+  [
+   333.0235,
+   8,
+   511,
+   2.3886,
+   1.027,
+   0.625
+  ],
+  [
+   335.4121,
+   8,
+   385,
+   1.75,
+   1.09904,
+   0.5
+  ],
+  [
+   337.1621,
+   8,
+   357,
+   2.344,
+   0.91634,
+   0.5
+  ],
+  [
+   339.5061,
+   8,
+   448,
+   1.944,
+   1.21782,
+   0.375
+  ],
+  [
+   341.4501,
+   8,
+   421,
+   1.9105,
+   0.76053,
+   0.75
+  ],
+  [
+   343.3606,
+   8,
+   378,
+   1.6915,
+   1.06778,
+   0.5
+  ],
+  [
+   345.0521,
+   8,
+   349,
+   2.4063,
+   0.95275,
+   0.5
+  ],
+  [
+   347.4584,
+   8,
+   397,
+   1.7949,
+   1.07357,
+   0.625
+  ],
+  [
+   349.2533,
+   8,
+   512,
+   2.3736,
+   1.18464,
+   0.625
+  ],
+  [
+   351.6269,
+   8,
+   363,
+   1.6087,
+   0.90191,
+   0.625
+  ],
+  [
+   353.2356,
+   8,
+   352,
+   2.341,
+   0.93707,
+   0.625
+  ],
+  [
+   355.5766,
+   8,
+   396,
+   1.732,
+   1.14134,
+   0.625
+  ],
+  [
+   357.3086,
+   8,
+   512,
+   2.3458,
+   1.08253,
+   0.75
+  ],
+  [
+   359.6544,
+   8,
+   383,
+   1.7191,
+   0.95731,
+   0.75
+  ],
+  [
+   361.3735,
+   8,
+   391,
+   2.522,
+   1.11168,
+   0.875
+  ],
+  [
+   363.8955,
+   8,
+   441,
+   1.9695,
+   1.19821,
+   0.5
+  ],
+  [
+   365.865,
+   8,
+   369,
+   1.6073,
+   0.81692,
+   0.625
+  ],
+  [
+   367.4723,
+   8,
+   366,
+   1.5979,
+   1.06108,
+   0.625
+  ],
+  [
+   369.0702,
+   8,
+   511,
+   3.1237,
+   0.94618,
+   0.75
+  ],
+  [
+   372.1939,
+   8,
+   470,
+   2.1023,
+   1.0306,
+   0.375
+  ],
+  [
+   374.2962,
+   8,
+   361,
+   1.5787,
+   1.24017,
+   0.625
+  ],
+  [
+   375.8749,
+   8,
+   387,
+   1.7162,
+   0.93378,
+   0.875
+  ],
+  [
+   377.5911,
+   8,
+   392,
+   2.5013,
+   0.89979,
+   0.875
+  ],
+  [
+   380.0924,
+   8,
+   348,
+   1.5625,
+   0.98721,
+   1.0
+  ],
+  [
+   381.6549,
+   8,
+   512,
+   2.304,
+   0.87189,
+   0.625
+  ],
+  [
+   383.9589,
+   8,
+   382,
+   1.7736,
+   0.90333,
+   0.5
+  ],
+  [
+   385.7325,
+   8,
+   378,
+   2.448,
+   1.11377,
+   0.375
+  ],
+  [
+   388.1805,
+   8,
+   341,
+   1.7704,
+   0.83263,
+   0.375
+  ],
+  [
+   389.9509,
+   8,
+   413,
+   1.8501,
+   1.07651,
+   0.375
+  ],
+  [
+   391.801,
+   8,
+   456,
+   2.0407,
+   0.96395,
+   0.875
+  ],
+  [
+   393.8417,
+   8,
+   494,
+   3.0384,
+   0.90651,
+   0.75
+  ],
+  [
+   396.8801,
+   8,
+   433,
+   1.9466,
+   1.0469,
+   0.5
+  ],
+  [
+   398.8267,
+   8,
+   381,
+   1.6819,
+   1.12682,
+   0.125
+  ],
+  [
+   400.5086,
+   8,
+   463,
+   2.1293,
+   0.91951,
+   0.75
+  ],
+  [
+   402.6379,
+   8,
+   419,
+   2.6607,
+   1.02345,
+   0.625
+  ],
+  [
+   405.2986,
+   8,
+   512,
+   2.2881,
+   1.04231,
+   0.625
+  ],
+  [
+   407.5867,
+   8,
+   329,
+   1.7069,
+   1.11748,
+   0.375
+  ],
+  [
+   409.2936,
+   8,
+   375,
+   1.6506,
+   0.8732,
+   0.625
+  ],
+  [
+   410.9442,
+   8,
+   335,
+   2.2159,
+   0.85201,
+   0.5
+  ],
+  [
+   413.1601,
+   8,
+   372,
+   1.613,
+   1.05353,
+   0.75
+  ],
+  [
+   414.7731,
+   8,
+   429,
+   1.9333,
+   1.07363,
+   0.75
+  ],
+  [
+   416.7064,
+   8,
+   395,
+   1.7885,
+   1.07745,
+   0.375
+  ],
+  [
+   418.4949,
+   8,
+   384,
+   2.4598,
+   0.6017,
+   0.5
+  ],
+  [
+   420.9547,
+   8,
+   365,
+   1.5643,
+   0.88787,
+   0.875
+  ],
+  [
+   422.519,
+   8,
+   504,
+   2.3159,
+   0.92521,
+   0.625
+  ],
+  [
+   424.8349,
+   8,
+   428,
+   1.9455,
+   0.85816,
+   0.75
+  ],
+  [
+   426.7804,
+   8,
+   360,
+   2.3273,
+   0.86281,
+   0.625
+  ],
+  [
+   429.1077,
+   8,
+   377,
+   1.5917,
+   1.16452,
+   0.25
+  ],
+  [
+   430.6994,
+   8,
+   512,
+   2.1971,
+   1.17703,
+   0.625
+  ],
+  [
+   432.8965,
+   8,
+   381,
+   1.5964,
+   1.17134,
+   0.25
+  ],
+  [
+   434.4929,
+   8,
+   374,
+   2.3296,
+   1.34569,
+   0.5
+  ],
+  [
+   436.8225,
+   8,
+   348,
+   1.8716,
+   0.99737,
+   0.375
+  ],
+  [
+   438.6941,
+   8,
+   395,
+   1.7715,
+   0.76311,
+   0.875
+  ],
+  [
+   440.4656,
+   8,
+   512,
+   2.366,
+   1.02437,
+   0.625
+  ],
+  [
+   442.8316,
+   8,
+   437,
+   2.7453,
+   0.83966,
+   0.75
+  ],
+  [
+   445.5769,
+   8,
+   358,
+   1.542,
+   0.97298,
+   0.5
+  ],
+  [
+   447.1189,
+   8,
+   413,
+   1.8648,
+   1.00167,
+   0.875
+  ],
+  [
+   448.9837,
+   8,
+   349,
+   1.7293,
+   0.98288,
+   0.625
+  ],
+  [
+   450.713,
+   8,
+   500,
+   3.0757,
+   1.09176,
+   0.75
+  ],
+  [
+   453.7887,
+   8,
+   400,
+   1.7306,
+   1.0238,
+   0.5
+  ],
+  [
+   455.5193,
+   8,
+   321,
+   1.6117,
+   0.98659,
+   0.5
+  ],
+  [
+   457.131,
+   8,
+   372,
+   1.6341,
+   0.98377,
+   0.625
+  ],
+  [
+   458.7651,
+   8,
+   376,
+   2.4024,
+   0.93596,
+   0.375
+  ],
+  [
+   461.1675,
+   8,
+   355,
+   1.5531,
+   0.89848,
+   0.625
+  ],
+  [
+   462.7206,
+   8,
+   512,
+   2.305,
+   0.93935,
+   0.625
+  ],
+  [
+   465.0256,
+   8,
+   342,
+   1.676,
+   0.62562,
+   0.5
+  ],
+  [
+   466.7016,
+   8,
+   379,
+   2.4153,
+   0.85622,
+   0.75
+  ],
+  [
+   469.1169,
+   8,
+   459,
+   2.4436,
+   1.05702,
+   0.625
+  ],
+  [
+   471.5605,
+   8,
+   385,
+   1.795,
+   1.04361,
+   0.5
+  ],
+  [
+   473.3555,
+   8,
+   386,
+   1.7878,
+   0.98846,
+   0.625
+  ],
+  [
+   475.1433,
+   8,
+   472,
+   2.9614,
+   1.1335,
+   0.375
+  ],
+  [
+   478.1047,
+   8,
+   362,
+   1.6084,
+   0.98208,
+   0.5
+  ],
+  [
+   479.7131,
+   8,
+   377,
+   1.7272,
+   1.12943,
+   0.25
+  ],
+  [
+   481.4403,
+   8,
+   453,
+   2.248,
+   0.96162,
+   0.5
+  ],
+  [
+   483.6883,
+   8,
+   443,
+   2.8609,
+   1.05875,
+   0.75
+  ],
+  [
+   486.5492,
+   8,
+   373,
+   1.6541,
+   0.86275,
+   0.625
+  ],
+  [
+   488.2033,
+   8,
+   382,
+   1.7317,
+   0.96898,
+   0.25
+  ],
+  [
+   489.935,
+   8,
+   383,
+   1.9474,
+   1.21425,
+   0.5
+  ],
+  [
+   491.8824,
+   8,
+   462,
+   2.9287,
+   0.86366,
+   0.75
+  ],
+  [
+   494.8111,
+   8,
+   349,
+   1.6446,
+   0.6426,
+   0.875
+  ],
+  [
+   496.4557,
+   8,
+   496,
+   2.2592,
+   0.99327,
+   0.75
+  ],
+  [
+   498.7149,
+   8,
+   381,
+   1.7821,
+   1.00175,
+   0.25
+  ],
+  [
+   500.497,
+   8,
+   380,
+   2.5467,
+   1.24379,
+   0.375
+  ],
+  [
+   503.0437,
+   8,
+   350,
+   1.6352,
+   0.94229,
+   0.625
+  ],
+  [
+   504.6789,
+   8,
+   383,
+   2.4319,
+   1.01806,
+   0.5
+  ],
+  [
+   507.1108,
+   8,
+   394,
+   1.783,
+   1.08406,
+   0.75
+  ],
+  [
+   508.8938,
+   8,
+   491,
+   3.2065,
+   0.90655,
+   0.375
+  ],
+  [
+   512.1003,
+   8,
+   379,
+   1.6994,
+   1.00493,
+   0.75
+  ],
+  [
+   513.7997,
+   8,
+   512,
+   2.389,
+   0.89606,
+   0.5
+  ],
+  [
+   516.1887,
+   8,
+   371,
+   1.6868,
+   1.20662,
+   0.25
+  ],
+  [
+   517.8755,
+   8,
+   377,
+   2.4722,
+   1.00023,
+   0.625
+  ],
+  [
+   520.3477,
+   8,
+   381,
+   1.838,
+   1.21269,
+   0.375
+  ],
+  [
+   522.1857,
+   8,
+   500,
+   2.3553,
+   0.81426,
+   0.875
+  ],
+  [
+   524.541,
+   8,
+   425,
+   1.9566,
+   0.988,
+   0.625
+  ],
+  [
+   526.4976,
+   8,
+   370,
+   2.5306,
+   1.17678,
+   0.75
+  ],
+  [
+   529.0282,
+   8,
+   388,
+   1.8211,
+   1.28942,
+   0.75
+  ],
+  [
+   530.8493,
+   8,
+   355,
+   1.6613,
+   0.85727,
+   0.875
+  ],
+  [
+   532.5106,
+   8,
+   487,
+   2.4176,
+   1.10635,
+   0.75
+  ],
+  [
+   534.9282,
+   8,
+   512,
+   3.1518,
+   0.92444,
+   0.625
+  ],
+  [
+   538.08,
+   8,
+   512,
+   2.3376,
+   0.65786,
+   0.625
+  ],
+  [
+   540.4176,
+   8,
+   458,
+   2.2278,
+   0.83763,
+   0.875
+  ],
+  [
+   542.6454,
+   8,
+   433,
+   1.9764,
+   0.95176,
+   0.5
+  ],
+  [
+   544.6218,
+   8,
+   507,
+   3.1866,
+   0.87792,
+   0.375
+  ],
+  [
+   547.8084,
+   8,
+   384,
+   1.6616,
+   1.31372,
+   0.0
+  ],
+  [
+   549.47,
+   8,
+   376,
+   1.6487,
+   1.0943,
+   0.25
+  ],
+  [
+   551.1187,
+   8,
+   370,
+   1.6568,
+   0.83292,
+   0.75
+  ],
+  [
+   552.7755,
+   8,
+   512,
+   3.1362,
+   1.07117,
+   0.625
+  ],
+  [
+   555.9117,
+   8,
+   386,
+   1.7151,
+   1.24535,
+   0.625
+  ],
+  [
+   557.6268,
+   8,
+   416,
+   1.8267,
+   1.06569,
+   0.375
+  ],
+  [
+   559.4535,
+   8,
+   512,
+   2.3319,
+   0.92686,
+   0.625
+  ],
+  [
+   561.7854,
+   8,
+   382,
+   2.431,
+   0.77772,
+   0.5
+  ],
+  [
+   564.2164,
+   8,
+   485,
+   2.2196,
+   1.09144,
+   0.375
+  ],
+  [
+   566.436,
+   8,
+   449,
+   2.1012,
+   1.06471,
+   0.5
+  ],
+  [
+   568.5372,
+   8,
+   373,
+   1.6576,
+   0.86896,
+   0.625
+  ],
+  [
+   570.1948,
+   8,
+   392,
+   2.5001,
+   1.05644,
+   0.375
+  ],
+  [
+   572.6949,
+   8,
+   512,
+   2.278,
+   1.0081,
+   0.625
+  ],
+  [
+   574.9729,
+   8,
+   512,
+   2.247,
+   0.90848,
+   0.75
+  ],
+  [
+   577.2199,
+   8,
+   459,
+   1.9928,
+   1.19374,
+   0.375
+  ],
+  [
+   579.2127,
+   8,
+   399,
+   2.4626,
+   0.95664,
+   0.25
+  ],
+  [
+   581.6753,
+   8,
+   333,
+   1.5164,
+   1.02099,
+   0.5
+  ],
+  [
+   583.1917,
+   8,
+   360,
+   1.5353,
+   0.80447,
+   0.875
+  ],
+  [
+   584.727,
+   8,
+   366,
+   1.5886,
+   0.82035,
+   0.5
+  ],
+  [
+   586.3156,
+   8,
+   419,
+   2.6114,
+   0.90618,
+   0.625
+  ],
+  [
+   588.927,
+   8,
+   442,
+   1.9999,
+   0.96433,
+   0.625
+  ],
+  [
+   590.9269,
+   8,
+   381,
+   1.7071,
+   1.05715,
+   0.375
+  ],
+  [
+   592.634,
+   8,
+   484,
+   2.2186,
+   0.94004,
+   0.875
+  ],
+  [
+   594.8526,
+   8,
+   361,
+   2.3302,
+   1.02891,
+   0.375
+  ],
+  [
+   597.1828,
+   8,
+   404,
+   1.7578,
+   1.053,
+   0.5
+  ],
+  [
+   598.9406,
+   8,
+   362,
+   1.5719,
+   1.1377,
+   0.625
+  ],
+  [
+   600.5125,
+   8,
+   369,
+   1.6178,
+   0.74668,
+   0.625
+  ],
+  [
+   602.1303,
+   8,
+   371,
+   2.3747,
+   0.86391,
+   0.375
+  ],
+  [
+   604.505,
+   8,
+   389,
+   1.6861,
+   0.86918,
+   0.625
+  ],
+  [
+   606.1911,
+   8,
+   387,
+   1.7054,
+   0.78736,
+   0.625
+  ],
+  [
+   607.8965,
+   8,
+   379,
+   1.6668,
+   1.07845,
+   0.25
+  ],
+  [
+   609.5633,
+   8,
+   367,
+   2.3783,
+   0.97125,
+   0.75
+  ],
+  [
+   611.9416,
+   8,
+   367,
+   1.568,
+   1.01075,
+   0.25
+  ],
+  [
+   613.5096,
+   8,
+   351,
+   1.5451,
+   0.86778,
+   0.75
+  ],
+  [
+   615.0547,
+   8,
+   381,
+   1.6517,
+   0.8549,
+   0.625
+  ],
+  [
+   616.7064,
+   8,
+   512,
+   3.0453,
+   1.27695,
+   0.625
+  ],
+  [
+   619.7517,
+   8,
+   378,
+   1.6639,
+   0.90437,
+   0.5
+  ],
+  [
+   621.4156,
+   8,
+   365,
+   1.5923,
+   1.09213,
+   0.625
+  ],
+  [
+   623.0079,
+   8,
+   356,
+   1.6542,
+   1.1446,
+   0.75
+  ],
+  [
+   624.6621,
+   8,
+   512,
+   3.3249,
+   0.94387,
+   0.625
+  ],
+  [
+   627.987,
+   8,
+   507,
+   2.5238,
+   1.00748,
+   0.5
+  ],
+  [
+   630.5108,
+   8,
+   512,
+   2.5362,
+   0.92284,
+   0.75
+  ],
+  [
+   633.047,
+   8,
+   368,
+   1.7129,
+   0.73958,
+   0.75
+  ],
+  [
+   634.7599,
+   8,
+   478,
+   2.9812,
+   1.01448,
+   0.875
+  ],
+  [
+   637.7411,
+   8,
+   366,
+   1.591,
+   0.94432,
+   0.875
+  ],
+  [
+   639.3321,
+   8,
+   375,
+   1.6537,
+   0.947,
+   0.5
+  ],
+  [
+   640.9858,
+   8,
+   372,
+   1.6794,
+   1.10891,
+   0.875
+  ],
+  [
+   642.6652,
+   8,
+   495,
+   3.1009,
+   0.84907,
+   0.875
+  ],
+  [
+   645.7661,
+   8,
+   360,
+   1.5873,
+   0.82573,
+   0.875
+  ],
+  [
+   647.3534,
+   8,
+   384,
+   1.6435,
+   1.17025,
+   0.5
+  ],
+  [
+   648.9969,
+   8,
+   378,
+   1.6459,
+   1.09505,
+   0.625
+  ],
+  [
+   650.6428,
+   8,
+   422,
+   2.6388,
+   0.9594,
+   1.0
+  ],
+  [
+   653.2816,
+   8,
+   426,
+   2.0559,
+   0.72215,
+   0.875
+  ],
+  [
+   655.3375,
+   8,
+   383,
+   1.9409,
+   0.92007,
+   0.75
+  ],
+  [
+   657.2784,
+   8,
+   512,
+   2.3375,
+   1.16376,
+   0.625
+  ],
+  [
+   659.6159,
+   8,
+   338,
+   2.2086,
+   1.00864,
+   0.75
+  ],
+  [
+   661.8245,
+   8,
+   486,
+   2.2131,
+   0.97833,
+   0.875
+  ],
+  [
+   664.0376,
+   8,
+   512,
+   2.3969,
+   0.83289,
+   0.75
+  ],
+  [
+   666.4345,
+   8,
+   453,
+   2.0648,
+   1.01479,
+   0.5
+  ],
+  [
+   668.4993,
+   8,
+   340,
+   2.2433,
+   1.0229,
+   0.75
+  ],
+  [
+   670.7426,
+   8,
+   512,
+   5.2033,
+   0.85857,
+   0.625
+  ],
+  [
+   675.9459,
+   8,
+   512,
+   3.1406,
+   1.37455,
+   0.625
+  ],
+  [
+   679.0865,
+   8,
+   395,
+   1.8211,
+   1.08184,
+   0.375
+  ],
+  [
+   680.9076,
+   8,
+   425,
+   2.749,
+   0.93798,
+   0.625
+  ],
+  [
+   683.6566,
+   8,
+   414,
+   1.9073,
+   0.9242,
+   0.75
+  ],
+  [
+   685.5639,
+   8,
+   342,
+   1.5337,
+   0.93892,
+   0.625
+  ],
+  [
+   687.0976,
+   8,
+   376,
+   1.8018,
+   1.14045,
+   0.5
+  ],
+  [
+   688.8994,
+   8,
+   485,
+   3.172,
+   1.18909,
+   0.25
+  ],
+  [
+   692.0714,
+   8,
+   486,
+   2.3893,
+   0.71741,
+   0.75
+  ],
+  [
+   694.4607,
+   8,
+   474,
+   2.439,
+   1.02285,
+   0.625
+  ],
+  [
+   696.8997,
+   8,
+   382,
+   1.7242,
+   0.91988,
+   0.875
+  ],
+  [
+   698.6239,
+   8,
+   381,
+   2.6056,
+   0.85036,
+   0.75
+  ],
+  [
+   701.2295,
+   8,
+   380,
+   1.8461,
+   1.15386,
+   0.25
+  ],
+  [
+   703.0756,
+   8,
+   512,
+   2.9123,
+   0.98104,
+   0.625
+  ],
+  [
+   705.9879,
+   8,
+   423,
+   2.0333,
+   0.96676,
+   0.5
+  ],
+  [
+   708.0212,
+   8,
+   396,
+   2.526,
+   1.07587,
+   0.5
+  ],
+  [
+   710.5472,
+   8,
+   406,
+   1.854,
+   0.89218,
+   0.625
+  ],
+  [
+   712.4012,
+   8,
+   410,
+   1.8848,
+   0.9754,
+   0.5
+  ],
+  [
+   714.286,
+   8,
+   369,
+   1.7257,
+   1.18187,
+   0.5
+  ],
+  [
+   716.0117,
+   8,
+   368,
+   2.4396,
+   1.08061,
+   0.25
+  ],
+  [
+   718.4513,
+   8,
+   362,
+   1.6047,
+   0.88361,
+   0.875
+  ],
+  [
+   720.056,
+   8,
+   402,
+   1.8637,
+   0.6974,
+   0.625
+  ],
+  [
+   721.9197,
+   8,
+   465,
+   2.3071,
+   0.77392,
+   0.75
+  ],
+  [
+   724.2268,
+   8,
+   446,
+   2.9347,
+   1.29616,
+   0.5
+  ],
+  [
+   727.1615,
+   8,
+   372,
+   2.0183,
+   1.02489,
+   0.75
+  ],
+  [
+   729.1798,
+   8,
+   379,
+   1.8278,
+   0.93821,
+   0.75
+  ],
+  [
+   731.0076,
+   8,
+   390,
+   1.7584,
+   1.11774,
+   0.5
+  ],
+  [
+   732.766,
+   8,
+   344,
+   2.2674,
+   0.98143,
+   0.625
+  ],
+  [
+   735.0334,
+   8,
+   488,
+   2.2446,
+   0.99846,
+   0.75
+  ],
+  [
+   737.278,
+   8,
+   512,
+   2.355,
+   0.75445,
+   0.625
+  ],
+  [
+   739.633,
+   8,
+   353,
+   1.591,
+   0.87953,
+   0.5
+  ],
+  [
+   741.224,
+   8,
+   424,
+   2.6949,
+   0.82458,
+   0.625
+  ],
+  [
+   743.9189,
+   8,
+   388,
+   1.7245,
+   0.95164,
+   0.625
+  ],
+  [
+   745.6434,
+   8,
+   404,
+   1.9315,
+   0.9804,
+   0.75
+  ],
+  [
+   747.5749,
+   8,
+   410,
+   2.0178,
+   1.07017,
+   0.625
+  ],
+  [
+   749.5927,
+   8,
+   372,
+   2.5131,
+   1.21824,
+   0.75
+  ],
+  [
+   752.1058,
+   8,
+   465,
+   2.2237,
+   1.03065,
+   0.625
+  ],
+  [
+   754.3295,
+   8,
+   386,
+   1.8044,
+   0.91416,
+   0.875
+  ],
+  [
+   756.1339,
+   8,
+   512,
+   2.4139,
+   1.19498,
+   0.625
+  ],
+  [
+   758.5478,
+   8,
+   355,
+   2.3473,
+   0.80283,
+   0.875
+  ],
+  [
+   760.8951,
+   8,
+   344,
+   1.4883,
+   0.77574,
+   0.625
+  ],
+  [
+   762.3834,
+   8,
+   421,
+   1.9833,
+   0.84824,
+   0.5
+  ],
+  [
+   764.3667,
+   8,
+   359,
+   1.6863,
+   1.06245,
+   0.375
+  ],
+  [
+   766.053,
+   8,
+   512,
+   3.1852,
+   0.71841,
+   1.0
+  ],
+  [
+   769.2382,
+   8,
+   418,
+   2.0032,
+   1.11221,
+   0.75
+  ],
+  [
+   771.2414,
+   8,
+   408,
+   1.8554,
+   1.07803,
+   0.625
+  ],
+  [
+   773.0968,
+   8,
+   348,
+   1.5833,
+   0.72104,
+   0.625
+  ],
+  [
+   774.6801,
+   8,
+   380,
+   2.4584,
+   1.23318,
+   0.5
+  ],
+  [
+   777.1385,
+   8,
+   496,
+   2.3211,
+   0.72045,
+   0.75
+  ],
+  [
+   779.4596,
+   8,
+   348,
+   1.5758,
+   1.15188,
+   0.5
+  ],
+  [
+   781.0354,
+   8,
+   281,
+   1.3202,
+   0.78357,
+   0.625
+  ],
+  [
+   782.3556,
+   8,
+   336,
+   3.8543,
+   0.5276,
+   1.0
+  ],
+  [
+   786.2099,
+   8,
+   492,
+   2.6927,
+   0.66989,
+   0.75
+  ],
+  [
+   788.9026,
+   8,
+   512,
+   6.3011,
+   0.82553,
+   0.625
+  ],
+  [
+   795.2037,
+   8,
+   442,
+   2.0851,
+   0.9348,
+   0.625
+  ],
+  [
+   797.2888,
+   8,
+   450,
+   2.9968,
+   0.82567,
+   1.0
+  ],
+  [
+   800.2856,
+   8,
+   464,
+   2.183,
+   1.02392,
+   0.375
+  ],
+  [
+   802.4686,
+   8,
+   326,
+   1.61,
+   0.91398,
+   0.625
+  ],
+  [
+   804.0786,
+   8,
+   418,
+   2.2906,
+   1.06682,
+   0.75
+  ],
+  [
+   806.3692,
+   8,
+   439,
+   2.928,
+   1.14785,
+   0.5
+  ],
+  [
+   809.2972,
+   8,
+   374,
+   1.9357,
+   1.01994,
+   0.75
+  ],
+  [
+   811.2329,
+   8,
+   342,
+   1.6663,
+   0.77569,
+   0.75
+  ],
+  [
+   812.8992,
+   8,
+   385,
+   1.9262,
+   1.11102,
+   0.375
+  ],
+  [
+   814.8254,
+   8,
+   383,
+   2.6436,
+   0.88197,
+   0.625
+  ],
+  [
+   817.469,
+   8,
+   395,
+   2.1187,
+   1.10478,
+   0.375
+  ],
+  [
+   819.5877,
+   8,
+   331,
+   1.5616,
+   1.11041,
+   0.625
+  ],
+  [
+   821.1493,
+   8,
+   362,
+   1.6184,
+   1.09321,
+   0.375
+  ],
+  [
+   822.7677,
+   8,
+   377,
+   2.8766,
+   0.86649,
+   0.625
+  ],
+  [
+   825.6443,
+   8,
+   366,
+   1.6059,
+   0.94266,
+   0.5
+  ],
+  [
+   827.2502,
+   8,
+   368,
+   1.9252,
+   1.07338,
+   0.5
+  ],
+  [
+   829.1754,
+   8,
+   458,
+   2.2775,
+   0.76288,
+   0.75
+  ],
+  [
+   831.4529,
+   8,
+   417,
+   2.846,
+   1.09584,
+   0.375
+  ],
+  [
+   834.2989,
+   8,
+   316,
+   1.4136,
+   1.00216,
+   0.625
+  ],
+  [
+   835.7125,
+   8,
+   375,
+   1.674,
+   1.18146,
+   0.875
+  ],
+  [
+   837.3865,
+   8,
+   382,
+   1.7072,
+   0.89081,
+   0.375
+  ],
+  [
+   839.0937,
+   8,
+   396,
+   2.7669,
+   1.0831,
+   0.75
+  ],
+  [
+   841.8606,
+   8,
+   408,
+   2.0632,
+   0.91877,
+   0.75
+  ],
+  [
+   843.9238,
+   8,
+   362,
+   1.6061,
+   0.93715,
+   0.625
+  ],
+  [
+   845.5299,
+   8,
+   478,
+   2.2734,
+   0.83178,
+   0.875
+  ],
+  [
+   847.8033,
+   8,
+   364,
+   2.4686,
+   0.91874,
+   0.75
+  ],
+  [
+   850.2719,
+   8,
+   451,
+   2.0965,
+   0.99366,
+   0.625
+  ],
+  [
+   852.3684,
+   8,
+   443,
+   2.1249,
+   1.11923,
+   0.625
+  ],
+  [
+   854.4933,
+   8,
+   376,
+   1.7202,
+   0.99562,
+   0.625
+  ],
+  [
+   856.2135,
+   8,
+   370,
+   2.4646,
+   0.88176,
+   0.625
+  ],
+  [
+   858.6781,
+   8,
+   447,
+   2.1075,
+   1.0009,
+   0.75
+  ],
+  [
+   860.7856,
+   8,
+   475,
+   2.267,
+   0.74556,
+   0.875
+  ],
+  [
+   863.0526,
+   8,
+   505,
+   4.4905,
+   1.06163,
+   0.5
+  ],
+  [
+   867.5431,
+   8,
+   416,
+   2.5845,
+   0.69672,
+   1.0
+  ],
+  [
+   870.1276,
+   8,
+   479,
+   2.169,
+   0.9439,
+   0.75
+  ],
+  [
+   872.2966,
+   8,
+   428,
+   1.9166,
+   0.97294,
+   0.625
+  ],
+  [
+   874.2132,
+   8,
+   512,
+   2.2902,
+   0.82859,
+   0.75
+  ],
+  [
+   876.5034,
+   8,
+   430,
+   2.6887,
+   0.90214,
+   0.875
+  ],
+  [
+   879.1921,
+   8,
+   344,
+   1.4497,
+   0.83715,
+   0.875
+  ],
+  [
+   880.6418,
+   8,
+   367,
+   1.5886,
+   0.97732,
+   0.625
+  ],
+  [
+   882.2304,
+   8,
+   390,
+   1.7528,
+   0.92325,
+   0.875
+  ],
+  [
+   883.9832,
+   8,
+   415,
+   2.9706,
+   1.00388,
+   0.875
+  ],
+  [
+   886.9538,
+   8,
+   406,
+   1.8411,
+   0.84053,
+   0.75
+  ],
+  [
+   888.7949,
+   8,
+   376,
+   1.6975,
+   0.93477,
+   0.75
+  ],
+  [
+   890.4924,
+   8,
+   512,
+   2.4254,
+   1.11602,
+   0.625
+  ],
+  [
+   892.9178,
+   8,
+   512,
+   3.1869,
+   0.91752,
+   0.75
+  ],
+  [
+   896.1047,
+   8,
+   483,
+   2.2643,
+   1.03841,
+   0.5
+  ],
+  [
+   898.369,
+   8,
+   453,
+   2.1102,
+   0.85453,
+   0.625
+  ],
+  [
+   900.4792,
+   8,
+   474,
+   2.2202,
+   0.72509,
+   0.625
+  ],
+  [
+   902.6994,
+   8,
+   507,
+   3.1286,
+   0.88605,
+   0.625
+  ],
+  [
+   905.828,
+   8,
+   412,
+   1.9484,
+   0.74452,
+   1.0
+  ],
+  [
+   907.7764,
+   8,
+   389,
+   1.7467,
+   0.91435,
+   0.75
+  ],
+  [
+   909.5231,
+   8,
+   369,
+   1.666,
+   1.08234,
+   0.5
+  ],
+  [
+   911.1891,
+   8,
+   445,
+   2.8012,
+   0.87793,
+   0.75
+  ],
+  [
+   913.9903,
+   8,
+   344,
+   1.9208,
+   0.91645,
+   0.75
+  ],
+  [
+   915.9111,
+   8,
+   366,
+   1.7099,
+   0.76756,
+   0.75
+  ],
+  [
+   917.621,
+   8,
+   377,
+   1.6795,
+   0.8268,
+   0.75
+  ],
+  [
+   919.3005,
+   8,
+   360,
+   2.3089,
+   0.92504,
+   0.875
+  ],
+  [
+   921.6094,
+   8,
+   419,
+   1.8056,
+   0.82021,
+   0.75
+  ],
+  [
+   923.415,
+   8,
+   386,
+   1.6887,
+   0.80781,
+   0.875
+  ],
+  [
+   925.1037,
+   8,
+   496,
+   2.351,
+   0.6686,
+   0.75
+  ],
+  [
+   927.4547,
+   8,
+   433,
+   2.7428,
+   0.72952,
+   0.875
+  ],
+  [
+   930.1975,
+   8,
+   503,
+   2.3411,
+   0.91141,
+   0.875
+  ],
+  [
+   932.5386,
+   8,
+   354,
+   1.8621,
+   0.74356,
+   0.625
+  ],
+  [
+   934.4007,
+   8,
+   484,
+   2.2084,
+   0.89847,
+   0.5
+  ],
+  [
+   936.6091,
+   8,
+   382,
+   2.4356,
+   1.25918,
+   0.5
+  ],
+  [
+   939.0447,
+   8,
+   357,
+   1.5471,
+   1.06715,
+   0.5
+  ],
+  [
+   940.5918,
+   8,
+   366,
+   1.6006,
+   0.88798,
+   0.625
+  ],
+  [
+   942.1924,
+   8,
+   421,
+   1.8872,
+   0.88933,
+   0.625
+  ],
+  [
+   944.0796,
+   8,
+   453,
+   2.8035,
+   0.89506,
+   0.5
+  ],
+  [
+   946.8831,
+   8,
+   344,
+   1.4708,
+   0.95009,
+   0.625
+  ],
+  [
+   948.3539,
+   8,
+   374,
+   1.6474,
+   1.04665,
+   0.75
+  ],
+  [
+   950.0013,
+   8,
+   379,
+   1.7853,
+   0.97591,
+   0.625
+  ],
+  [
+   951.7866,
+   8,
+   420,
+   2.7914,
+   0.82426,
+   0.625
+  ],
+  [
+   954.578,
+   8,
+   352,
+   1.8457,
+   1.11221,
+   0.5
+  ],
+  [
+   956.4237,
+   8,
+   385,
+   1.8216,
+   1.19981,
+   0.5
+  ],
+  [
+   958.2453,
+   8,
+   391,
+   1.749,
+   0.6259,
+   0.875
+  ],
+  [
+   959.9943,
+   8,
+   347,
+   2.297,
+   0.85722,
+   0.5
+  ],
+  [
+   962.2913,
+   8,
+   512,
+   2.2861,
+   1.11629,
+   0.5
+  ],
+  [
+   964.5774,
+   8,
+   464,
+   2.0729,
+   0.85711,
+   0.875
+  ],
+  [
+   966.6503,
+   8,
+   478,
+   2.183,
+   0.94565,
+   0.875
+  ],
+  [
+   968.8333,
+   8,
+   353,
+   2.3424,
+   1.02162,
+   0.875
+  ],
+  [
+   971.1757,
+   8,
+   505,
+   2.3203,
+   0.81042,
+   0.625
+  ],
+  [
+   973.496,
+   8,
+   416,
+   1.8346,
+   1.08524,
+   0.625
+  ],
+  [
+   975.3306,
+   8,
+   361,
+   1.6087,
+   1.27001,
+   0.625
+  ],
+  [
+   976.9393,
+   8,
+   366,
+   2.297,
+   0.8587,
+   0.625
+  ],
+  [
+   979.2363,
+   8,
+   462,
+   2.0208,
+   1.27719,
+   0.75
+  ],
+  [
+   981.2571,
+   8,
+   512,
+   2.2627,
+   0.87396,
+   0.625
+  ],
+  [
+   983.5198,
+   8,
+   417,
+   2.055,
+   0.8376,
+   0.875
+  ],
+  [
+   985.5748,
+   8,
+   375,
+   2.4041,
+   1.00944,
+   0.625
+  ],
+  [
+   987.9789,
+   8,
+   363,
+   1.5591,
+   1.03603,
+   0.5
+  ],
+  [
+   989.538,
+   8,
+   379,
+   1.6552,
+   0.73471,
+   1.0
+  ],
+  [
+   991.1932,
+   8,
+   448,
+   2.008,
+   1.02451,
+   0.75
+  ],
+  [
+   993.2012,
+   8,
+   512,
+   3.0823,
+   1.22412,
+   0.5
+  ],
+  [
+   996.2835,
+   8,
+   374,
+   1.6112,
+   0.83303,
+   0.625
+  ],
+  [
+   997.8947,
+   8,
+   416,
+   1.8372,
+   0.8851,
+   0.625
+  ],
+  [
+   999.7319,
+   8,
+   377,
+   1.6837,
+   1.1364,
+   0.5
+  ],
+  [
+   1001.4156,
+   8,
+   377,
+   2.3938,
+   0.43355,
+   0.875
+  ],
+  [
+   1003.8094,
+   8,
+   336,
+   1.3739,
+   0.85237,
+   0.75
+  ],
+  [
+   1005.1833,
+   8,
+   371,
+   1.5734,
+   0.85352,
+   0.75
+  ],
+  [
+   1006.7567,
+   8,
+   447,
+   1.9198,
+   0.81137,
+   0.625
+  ],
+  [
+   1008.6765,
+   8,
+   391,
+   2.4821,
+   0.63757,
+   0.625
+  ],
+  [
+   1011.1586,
+   8,
+   384,
+   1.6448,
+   0.76121,
+   0.875
+  ],
+  [
+   1012.8034,
+   8,
+   388,
+   1.734,
+   0.59983,
+   0.875
+  ],
+  [
+   1014.5374,
+   8,
+   353,
+   1.5664,
+   0.78108,
+   1.0
+  ],
+  [
+   1016.1038,
+   8,
+   411,
+   2.5902,
+   1.05367,
+   0.5
+  ],
+  [
+   1018.694,
+   8,
+   378,
+   1.6618,
+   0.87042,
+   0.625
+  ],
+  [
+   1020.3558,
+   8,
+   370,
+   1.6293,
+   0.7358,
+   0.875
+  ],
+  [
+   1021.9851,
+   8,
+   357,
+   1.5452,
+   0.57827,
+   0.75
+  ],
+  [
+   1023.5303,
+   8,
+   382,
+   2.4255,
+   0.69122,
+   0.625
+  ],
+  [
+   1025.9558,
+   8,
+   397,
+   1.7583,
+   0.61125,
+   1.0
+  ],
+  [
+   1027.7141,
+   8,
+   384,
+   1.6516,
+   0.64132,
+   1.0
+  ],
+  [
+   1029.3657,
+   8,
+   369,
+   1.6152,
+   1.05271,
+   0.5
+  ],
+  [
+   1030.9809,
+   8,
+   353,
+   2.314,
+   0.97473,
+   0.625
+  ],
+  [
+   1033.2949,
+   8,
+   429,
+   1.941,
+   0.96081,
+   0.875
+  ],
+  [
+   1035.2359,
+   8,
+   328,
+   1.479,
+   1.04545,
+   0.625
+  ],
+  [
+   1036.7149,
+   8,
+   494,
+   2.2657,
+   1.01563,
+   0.625
+  ],
+  [
+   1038.9806,
+   8,
+   459,
+   2.8293,
+   0.79285,
+   0.875
+  ],
+  [
+   1041.8099,
+   8,
+   488,
+   2.1968,
+   1.07839,
+   0.375
+  ],
+  [
+   1044.0067,
+   8,
+   382,
+   1.6718,
+   0.76429,
+   0.875
+  ],
+  [
+   1045.6785,
+   8,
+   352,
+   1.5612,
+   0.80502,
+   0.75
+  ],
+  [
+   1047.2397,
+   8,
+   391,
+   2.4793,
+   0.92274,
+   0.5
+  ],
+  [
+   1049.719,
+   8,
+   472,
+   2.1008,
+   0.72021,
+   0.625
+  ],
+  [
+   1051.8198,
+   8,
+   381,
+   1.6724,
+   0.99933,
+   0.625
+  ],
+  [
+   1053.4922,
+   8,
+   397,
+   1.7459,
+   0.85566,
+   0.75
+  ],
+  [
+   1055.2381,
+   8,
+   370,
+   2.3736,
+   1.20216,
+   0.625
+  ],
+  [
+   1057.6117,
+   8,
+   379,
+   1.5923,
+   0.74357,
+   0.75
+  ],
+  [
+   1059.204,
+   8,
+   479,
+   2.0705,
+   0.8217,
+   0.75
+  ],
+  [
+   1061.2745,
+   8,
+   394,
+   1.6782,
+   0.78171,
+   0.75
+  ],
+  [
+   1062.9527,
+   8,
+   348,
+   2.259,
+   1.0712,
+   0.75
+  ],
+  [
+   1065.2117,
+   8,
+   367,
+   1.5675,
+   0.99578,
+   0.625
+  ],
+  [
+   1066.7792,
+   8,
+   464,
+   2.0372,
+   0.83007,
+   0.75
+  ],
+  [
+   1068.8164,
+   8,
+   352,
+   1.5268,
+   0.95518,
+   0.625
+  ],
+  [
+   1070.3432,
+   8,
+   383,
+   2.4147,
+   0.57288,
+   0.75
+  ],
+  [
+   1072.7579,
+   8,
+   377,
+   1.6179,
+   0.96345,
+   0.75
+  ],
+  [
+   1074.3758,
+   8,
+   353,
+   1.5171,
+   0.66477,
+   0.875
+  ],
+  [
+   1075.8929,
+   8,
+   369,
+   1.5979,
+   0.7773,
+   0.75
+  ],
+  [
+   1077.4908,
+   8,
+   397,
+   2.4693,
+   0.60695,
+   0.875
+  ],
+  [
+   1079.9601,
+   8,
+   481,
+   2.1867,
+   0.93555,
+   0.625
+  ],
+  [
+   1082.1468,
+   8,
+   458,
+   2.0532,
+   0.95483,
+   0.5
+  ],
+  [
+   1084.2,
+   8,
+   381,
+   1.6504,
+   1.02625,
+   0.375
+  ],
+  [
+   1085.8504,
+   8,
+   382,
+   2.4112,
+   0.89384,
+   0.75
+  ],
+  [
+   1088.2616,
+   8,
+   405,
+   1.736,
+   0.68506,
+   0.875
+  ],
+  [
+   1089.9976,
+   8,
+   471,
+   2.0601,
+   1.0005,
+   0.5
+  ],
+  [
+   1092.0577,
+   8,
+   379,
+   1.6081,
+   1.02535,
+   0.75
+  ],
+  [
+   1093.6658,
+   8,
+   465,
+   2.7959,
+   0.94106,
+   0.625
+  ],
+  [
+   1096.4617,
+   8,
+   384,
+   1.6088,
+   0.86986,
+   0.75
+  ],
+  [
+   1098.0705,
+   8,
+   460,
+   2.0625,
+   0.8041,
+   0.875
+  ],
+  [
+   1100.133,
+   8,
+   485,
+   2.1716,
+   0.93887,
+   0.625
+  ],
+  [
+   1102.3046,
+   8,
+   351,
+   2.544,
+   0.99763,
+   0.625
+  ],
+  [
+   1104.8486,
+   8,
+   497,
+   2.194,
+   1.01902,
+   0.75
+  ],
+  [
+   1107.0426,
+   8,
+   512,
+   2.1999,
+   1.00841,
+   0.875
+  ],
+  [
+   1109.2425,
+   8,
+   405,
+   1.7379,
+   0.88418,
+   0.75
+  ],
+  [
+   1110.9804,
+   8,
+   350,
+   2.2711,
+   0.97196,
+   0.5
+  ],
+  [
+   1113.2515,
+   8,
+   343,
+   1.473,
+   0.71171,
+   0.625
+  ],
+  [
+   1114.7245,
+   8,
+   433,
+   1.9114,
+   0.88416,
+   0.5
+  ],
+  [
+   1116.6359,
+   8,
+   385,
+   1.683,
+   1.12186,
+   0.5
+  ],
+  [
+   1118.3189,
+   8,
+   352,
+   2.2527,
+   0.78757,
+   0.75
+  ],
+  [
+   1120.5716,
+   8,
+   462,
+   2.0347,
+   0.84309,
+   0.75
+  ],
+  [
+   1122.6063,
+   8,
+   363,
+   1.5607,
+   0.95553,
+   0.75
+  ],
+  [
+   1124.167,
+   8,
+   382,
+   1.6546,
+   0.85041,
+   0.5
+  ],
+  [
+   1125.8216,
+   8,
+   398,
+   2.4992,
+   0.76815,
+   1.0
+  ],
+  [
+   1128.3208,
+   8,
+   512,
+   2.2065,
+   1.00826,
+   0.75
+  ],
+  [
+   1130.5273,
+   8,
+   502,
+   2.284,
+   1.12082,
+   0.625
+  ],
+  [
+   1132.8113,
+   8,
+   391,
+   1.7007,
+   0.76327,
+   0.625
+  ],
+  [
+   1134.512,
+   8,
+   466,
+   2.8606,
+   0.85061,
+   0.625
+  ],
+  [
+   1137.3726,
+   8,
+   424,
+   1.7842,
+   0.97236,
+   0.625
+  ],
+  [
+   1139.1568,
+   8,
+   369,
+   1.5469,
+   0.94111,
+   0.875
+  ],
+  [
+   1140.7037,
+   8,
+   363,
+   1.5133,
+   0.94886,
+   0.875
+  ],
+  [
+   1142.217,
+   8,
+   368,
+   2.2878,
+   0.94378,
+   0.625
+  ],
+  [
+   1144.5048,
+   8,
+   512,
+   2.2361,
+   0.97353,
+   0.75
+  ],
+  [
+   1146.7409,
+   8,
+   313,
+   1.358,
+   1.07835,
+   0.25
+  ],
+  [
+   1148.0989,
+   8,
+   381,
+   1.6433,
+   0.88794,
+   0.625
+  ],
+  [
+   1149.7422,
+   8,
+   377,
+   2.3645,
+   0.95139,
+   0.625
+  ],
+  [
+   1152.1067,
+   8,
+   474,
+   2.0897,
+   0.83472,
+   0.875
+  ],
+  [
+   1154.1964,
+   8,
+   324,
+   1.4003,
+   0.9498,
+   0.75
+  ],
+  [
+   1155.5967,
+   8,
+   512,
+   2.2642,
+   0.98435,
+   0.75
+  ],
+  [
+   1157.8609,
+   8,
+   399,
+   2.4472,
+   1.00319,
+   0.5
+  ],
+  [
+   1160.3081,
+   8,
+   399,
+   1.6625,
+   1.03865,
+   0.625
+  ],
+  [
+   1161.9706,
+   8,
+   469,
+   2.0426,
+   0.9319,
+   0.75
+  ],
+  [
+   1164.0132,
+   8,
+   364,
+   1.5389,
+   1.01428,
+   0.75
+  ],
+  [
+   1165.5521,
+   8,
+   488,
+   2.9014,
+   1.06524,
+   0.625
+  ],
+  [
+   1168.4535,
+   8,
+   436,
+   1.925,
+   0.71421,
+   0.875
+  ],
+  [
+   1170.3785,
+   8,
+   381,
+   1.621,
+   1.19687,
+   0.625
+  ],
+  [
+   1171.9995,
+   8,
+   456,
+   1.9597,
+   0.82232,
+   0.875
+  ],
+  [
+   1173.9592,
+   8,
+   370,
+   2.292,
+   1.09011,
+   0.75
+  ],
+  [
+   1176.2512,
+   8,
+   369,
+   1.5692,
+   1.02354,
+   0.625
+  ],
+  [
+   1177.8204,
+   8,
+   350,
+   1.4963,
+   0.85681,
+   0.75
+  ],
+  [
+   1179.3167,
+   8,
+   501,
+   2.2586,
+   1.0361,
+   0.625
+  ],
+  [
+   1181.5753,
+   8,
+   383,
+   2.3912,
+   0.91335,
+   0.375
+  ],
+  [
+   1183.9665,
+   8,
+   445,
+   1.9459,
+   1.29438,
+   0.5
+  ],
+  [
+   1185.9124,
+   8,
+   369,
+   1.5951,
+   0.61587,
+   1.0
+  ],
+  [
+   1187.5075,
+   8,
+   508,
+   2.3127,
+   0.93671,
+   0.875
+  ],
+  [
+   1189.8202,
+   8,
+   361,
+   2.3226,
+   1.01183,
+   0.875
+  ],
+  [
+   1192.1428,
+   8,
+   427,
+   1.812,
+   1.08623,
+   0.625
+  ],
+  [
+   1193.9548,
+   8,
+   364,
+   1.5157,
+   0.71674,
+   1.0
+  ],
+  [
+   1195.4705,
+   8,
+   471,
+   2.0605,
+   0.90753,
+   0.875
+  ],
+  [
+   1197.531,
+   8,
+   379,
+   2.3658,
+   1.07619,
+   0.375
+  ],
+  [
+   1199.8968,
+   8,
+   411,
+   1.7635,
+   1.05972,
+   0.625
+  ],
+  [
+   1201.6603,
+   8,
+   427,
+   1.8622,
+   0.78549,
+   1.0
+  ],
+  [
+   1203.5225,
+   8,
+   386,
+   1.667,
+   1.0189,
+   0.625
+  ],
+  [
+   1205.1895,
+   8,
+   378,
+   2.3984,
+   1.15886,
+   0.625
+  ],
+  [
+   1207.5879,
+   8,
+   378,
+   1.596,
+   1.04774,
+   0.75
+  ],
+  [
+   1209.1839,
+   8,
+   501,
+   2.2377,
+   0.59074,
+   1.0
+  ],
+  [
+   1211.4216,
+   8,
+   345,
+   1.5635,
+   1.02719,
+   0.75
+  ],
+  [
+   1212.9851,
+   8,
+   345,
+   2.1965,
+   1.02404,
+   0.875
+  ],
+  [
+   1215.1816,
+   8,
+   380,
+   1.5986,
+   0.78476,
+   0.875
+  ],
+  [
+   1216.7802,
+   8,
+   459,
+   2.0507,
+   0.77407,
+   0.875
+  ],
+  [
+   1218.8309,
+   8,
+   392,
+   1.7104,
+   1.03107,
+   0.75
+  ],
+  [
+   1220.5413,
+   8,
+   379,
+   2.4202,
+   1.11024,
+   0.75
+  ],
+  [
+   1222.9615,
+   8,
+   438,
+   1.927,
+   0.74361,
+   1.0
+  ],
+  [
+   1224.8885,
+   8,
+   422,
+   1.8451,
+   0.81347,
+   1.0
+  ],
+  [
+   1226.7336,
+   8,
+   512,
+   2.2921,
+   0.98601,
+   0.625
+  ],
+  [
+   1229.0257,
+   8,
+   512,
+   3.3058,
+   1.1961,
+   0.375
+  ],
+  [
+   1232.3315,
+   8,
+   393,
+   1.945,
+   0.82187,
+   0.75
+  ],
+  [
+   1234.2765,
+   8,
+   475,
+   2.2287,
+   0.82568,
+   0.625
+  ],
+  [
+   1236.5052,
+   8,
+   379,
+   1.6911,
+   0.99119,
+   0.625
+  ],
+  [
+   1238.1963,
+   8,
+   423,
+   2.6925,
+   0.8906,
+   0.625
+  ],
+  [
+   1240.8888,
+   8,
+   395,
+   1.8281,
+   1.07209,
+   0.5
+  ],
+  [
+   1242.7169,
+   8,
+   378,
+   1.7212,
+   0.63482,
+   0.875
+  ],
+  [
+   1244.4381,
+   8,
+   381,
+   1.6987,
+   0.99218,
+   0.375
+  ],
+  [
+   1246.1368,
+   8,
+   477,
+   2.9158,
+   1.04947,
+   0.75
+  ],
+  [
+   1249.0526,
+   8,
+   452,
+   2.0541,
+   1.18821,
+   0.625
+  ],
+  [
+   1251.1067,
+   8,
+   356,
+   1.5253,
+   1.0139,
+   0.875
+  ],
+  [
+   1252.632,
+   8,
+   511,
+   2.368,
+   1.0605,
+   0.625
+  ],
+  [
+   1255.0,
+   8,
+   485,
+   2.9342,
+   0.82909,
+   0.75
+  ],
+  [
+   1257.9342,
+   8,
+   312,
+   1.5163,
+   0.72995,
+   0.875
+  ],
+  [
+   1259.4505,
+   8,
+   432,
+   1.935,
+   0.89978,
+   0.75
+  ],
+  [
+   1261.3855,
+   8,
+   377,
+   1.6362,
+   0.95974,
+   0.875
+  ],
+  [
+   1263.0217,
+   8,
+   386,
+   2.4282,
+   0.71877,
+   0.75
+  ],
+  [
+   1265.4499,
+   8,
+   472,
+   2.0786,
+   1.06623,
+   0.375
+  ],
+  [
+   1267.5285,
+   8,
+   343,
+   1.4746,
+   1.00091,
+   0.5
+  ],
+  [
+   1269.0031,
+   8,
+   512,
+   2.2907,
+   0.86815,
+   0.625
+  ],
+  [
+   1271.2938,
+   8,
+   472,
+   2.8508,
+   0.93687,
+   0.75
+  ],
+  [
+   1274.1446,
+   8,
+   402,
+   1.714,
+   0.85187,
+   0.75
+  ],
+  [
+   1275.8586,
+   8,
+   367,
+   1.533,
+   0.72105,
+   1.0
+  ],
+  [
+   1277.3916,
+   8,
+   462,
+   2.1417,
+   0.89386,
+   0.875
+  ],
+  [
+   1279.5333,
+   8,
+   512,
+   3.0406,
+   1.00185,
+   0.625
+  ],
+  [
+   1282.5739,
+   8,
+   421,
+   1.8256,
+   0.80257,
+   1.0
+  ],
+  [
+   1284.3995,
+   8,
+   512,
+   2.246,
+   1.13685,
+   0.625
+  ],
+  [
+   1286.6455,
+   8,
+   395,
+   1.7075,
+   0.99881,
+   0.875
+  ],
+  [
+   1288.353,
+   8,
+   371,
+   2.3286,
+   0.80722,
+   0.625
+  ],
+  [
+   1290.6816,
+   8,
+   483,
+   2.1331,
+   0.6613,
+   0.75
+  ],
+  [
+   1292.8147,
+   8,
+   370,
+   1.5862,
+   0.81836,
+   0.75
+  ],
+  [
+   1294.4009,
+   8,
+   384,
+   1.6186,
+   1.08042,
+   0.75
+  ],
+  [
+   1296.0195,
+   8,
+   512,
+   2.9854,
+   1.05555,
+   0.5
+  ],
+  [
+   1299.0049,
+   8,
+   438,
+   2.6341,
+   1.01006,
+   0.875
+  ],
+  [
+   1303.1611,
+   8,
+   378,
+   2.5296,
+   0.93631,
+   0.5
+  ],
+  [
+   1305.6907,
+   8,
+   364,
+   1.5476,
+   0.99218,
+   0.75
+  ],
+  [
+   1307.2383,
+   8,
+   346,
+   1.4796,
+   0.88655,
+   0.75
+  ],
+  [
+   1308.7179,
+   8,
+   421,
+   2.5703,
+   0.76997,
+   0.625
+  ],
+  [
+   1311.2882,
+   8,
+   362,
+   1.5219,
+   0.77981,
+   0.75
+  ],
+  [
+   1312.8101,
+   8,
+   373,
+   1.5994,
+   1.05128,
+   0.75
+  ],
+  [
+   1314.4095,
+   8,
+   399,
+   1.7392,
+   0.91078,
+   1.0
+  ],
+  [
+   1316.1487,
+   8,
+   416,
+   2.5295,
+   0.70239,
+   0.625
+  ],
+  [
+   1318.6782,
+   8,
+   458,
+   2.009,
+   1.02155,
+   0.625
+  ],
+  [
+   1320.6872,
+   8,
+   512,
+   2.2245,
+   0.81239,
+   1.0
+  ],
+  [
+   1322.9117,
+   8,
+   512,
+   2.1911,
+   0.86869,
+   0.625
+  ],
+  [
+   1325.1028,
+   8,
+   419,
+   2.5504,
+   0.97023,
+   0.75
+  ],
+  [
+   1327.6532,
+   8,
+   512,
+   2.2914,
+   0.9929,
+   0.625
+  ],
+  [
+   1329.9446,
+   8,
+   351,
+   1.5553,
+   0.77926,
+   1.0
+  ],
+  [
+   1331.4999,
+   8,
+   381,
+   1.6608,
+   0.99655,
+   0.875
+  ],
+  [
+   1333.1607,
+   8,
+   364,
+   2.3258,
+   0.62244,
+   1.0
+  ],
+  [
+   1335.4865,
+   8,
+   384,
+   1.638,
+   0.88251,
+   0.875
+  ],
+  [
+   1337.1245,
+   8,
+   413,
+   1.8331,
+   0.93761,
+   0.75
+  ],
+  [
+   1338.9576,
+   8,
+   400,
+   1.7469,
+   0.85231,
+   0.75
+  ],
+  [
+   1340.7045,
+   8,
+   373,
+   2.4111,
+   0.89308,
+   0.75
+  ],
+  [
+   1343.1156,
+   8,
+   396,
+   1.7175,
+   0.96937,
+   0.5
+  ],
+  [
+   1344.8331,
+   8,
+   391,
+   1.7205,
+   0.95052,
+   0.625
+  ],
+  [
+   1346.5536,
+   8,
+   370,
+   1.6144,
+   0.72607,
+   1.0
+  ],
+  [
+   1348.168,
+   8,
+   397,
+   2.4843,
+   0.74925,
+   0.875
+  ],
+  [
+   1350.6523,
+   8,
+   469,
+   2.1034,
+   0.97492,
+   0.75
+  ],
+  [
+   1352.7557,
+   8,
+   412,
+   1.8112,
+   0.6982,
+   1.0
+  ],
+  [
+   1354.5669,
+   8,
+   512,
+   2.2812,
+   1.15608,
+   0.5
+  ],
+  [
+   1356.8481,
+   8,
+   439,
+   2.73,
+   0.7302,
+   0.875
+  ],
+  [
+   1359.5781,
+   8,
+   512,
+   2.2612,
+   1.0187,
+   1.0
+  ],
+  [
+   1361.8393,
+   8,
+   375,
+   1.6494,
+   0.55738,
+   0.75
+  ],
+  [
+   1363.4887,
+   8,
+   512,
+   2.285,
+   0.9707,
+   0.75
+  ],
+  [
+   1365.7737,
+   8,
+   512,
+   3.0317,
+   1.20463,
+   0.375
+  ],
+  [
+   1368.8054,
+   8,
+   433,
+   1.9008,
+   0.82915,
+   0.875
+  ],
+  [
+   1370.7062,
+   8,
+   362,
+   1.5861,
+   0.77037,
+   1.0
+  ],
+  [
+   1372.2923,
+   8,
+   512,
+   2.3023,
+   0.88912,
+   0.75
+  ],
+  [
+   1374.5946,
+   8,
+   491,
+   2.988,
+   0.86089,
+   0.875
+  ],
+  [
+   1377.5826,
+   8,
+   380,
+   1.655,
+   0.68767,
+   0.875
+  ],
+  [
+   1379.2376,
+   8,
+   392,
+   1.7277,
+   0.56686,
+   1.0
+  ],
+  [
+   1380.9653,
+   8,
+   433,
+   1.9294,
+   1.04085,
+   1.0
+  ],
+  [
+   1382.8947,
+   8,
+   472,
+   2.8273,
+   0.66302,
+   0.875
+  ],
+  [
+   1385.722,
+   8,
+   422,
+   1.7765,
+   0.9156,
+   0.75
+  ],
+  [
+   1387.4985,
+   8,
+   429,
+   1.8388,
+   0.72293,
+   0.875
+  ],
+  [
+   1389.3373,
+   8,
+   500,
+   2.2084,
+   0.81019,
+   0.625
+  ],
+  [
+   1391.5457,
+   8,
+   369,
+   2.3791,
+   0.87493,
+   1.0
+  ],
+  [
+   1393.9248,
+   8,
+   372,
+   1.5944,
+   0.91299,
+   0.875
+  ],
+  [
+   1395.5192,
+   8,
+   374,
+   1.6309,
+   0.86667,
+   0.75
+  ],
+  [
+   1397.1501,
+   8,
+   380,
+   1.6569,
+   0.95307,
+   0.75
+  ],
+  [
+   1398.807,
+   8,
+   422,
+   2.6246,
+   0.99852,
+   0.5
+  ],
+  [
+   1401.4316,
+   8,
+   377,
+   1.6221,
+   0.79173,
+   0.875
+  ],
+  [
+   1403.0537,
+   8,
+   379,
+   1.6786,
+   0.86528,
+   0.75
+  ],
+  [
+   1404.7323,
+   8,
+   413,
+   1.8361,
+   0.99988,
+   0.875
+  ],
+  [
+   1406.5684,
+   8,
+   367,
+   2.3616,
+   0.74711,
+   0.75
+  ],
+  [
+   1408.93,
+   8,
+   380,
+   1.6296,
+   0.82806,
+   0.875
+  ],
+  [
+   1410.5596,
+   8,
+   481,
+   2.2148,
+   0.60234,
+   0.875
+  ],
+  [
+   1412.7744,
+   8,
+   369,
+   1.7439,
+   0.89362,
+   0.75
+  ],
+  [
+   1414.5183,
+   8,
+   357,
+   2.2252,
+   0.74331,
+   0.875
+  ],
+  [
+   1416.7435,
+   8,
+   395,
+   1.6928,
+   0.75701,
+   0.625
+  ],
+  [
+   1418.4363,
+   8,
+   383,
+   1.6196,
+   0.77152,
+   0.875
+  ],
+  [
+   1420.0559,
+   8,
+   380,
+   1.6677,
+   0.90004,
+   0.625
+  ],
+  [
+   1421.7236,
+   8,
+   377,
+   2.4139,
+   0.68288,
+   0.875
+  ],
+  [
+   1424.1375,
+   8,
+   392,
+   1.6838,
+   0.83471,
+   0.75
+  ],
+  [
+   1425.8213,
+   8,
+   386,
+   1.7162,
+   1.01195,
+   1.0
+  ],
+  [
+   1427.5375,
+   8,
+   512,
+   2.3337,
+   0.74807,
+   0.875
+  ],
+  [
+   1429.8712,
+   8,
+   405,
+   2.5422,
+   0.81539,
+   0.875
+  ],
+  [
+   1432.4134,
+   8,
+   383,
+   1.6597,
+   0.84334,
+   0.75
+  ],
+  [
+   1434.0731,
+   8,
+   495,
+   2.2562,
+   1.03622,
+   0.375
+  ],
+  [
+   1436.3293,
+   8,
+   386,
+   1.7012,
+   0.77808,
+   0.875
+  ],
+  [
+   1438.0305,
+   8,
+   385,
+   2.4559,
+   0.9669,
+   0.5
+  ],
+  [
+   1440.4864,
+   8,
+   346,
+   1.476,
+   0.75721,
+   0.875
+  ],
+  [
+   1441.9624,
+   8,
+   377,
+   1.6501,
+   0.86439,
+   0.75
+  ],
+  [
+   1443.6125,
+   8,
+   393,
+   1.7342,
+   0.93623,
+   0.875
+  ],
+  [
+   1445.3467,
+   8,
+   397,
+   2.4823,
+   0.84409,
+   0.75
+  ],
+  [
+   1447.829,
+   8,
+   380,
+   1.619,
+   0.72883,
+   1.0
+  ],
+  [
+   1449.448,
+   8,
+   419,
+   1.852,
+   0.91975,
+   0.625
+  ],
+  [
+   1451.3,
+   8,
+   465,
+   2.1227,
+   1.08633,
+   0.75
+  ],
+  [
+   1453.4227,
+   8,
+   438,
+   2.7009,
+   0.75206,
+   0.75
+  ],
+  [
+   1456.1236,
+   8,
+   379,
+   1.6322,
+   1.13211,
+   0.75
+  ],
+  [
+   1457.7558,
+   8,
+   381,
+   1.6856,
+   0.72509,
+   0.625
+  ],
+  [
+   1459.4414,
+   8,
+   411,
+   1.8155,
+   0.96565,
+   0.75
+  ],
+  [
+   1461.2569,
+   8,
+   384,
+   2.3943,
+   1.03893,
+   0.5
+  ],
+  [
+   1463.6512,
+   8,
+   380,
+   1.6252,
+   0.92721,
+   0.875
+  ],
+  [
+   1465.2764,
+   8,
+   328,
+   1.384,
+   0.83293,
+   0.875
+  ],
+  [
+   1466.6604,
+   8,
+   384,
+   1.6465,
+   0.70648,
+   0.75
+  ],
+  [
+   1468.3069,
+   8,
+   376,
+   2.3702,
+   0.71463,
+   0.625
+  ],
+  [
+   1470.6771,
+   8,
+   391,
+   1.7012,
+   0.98726,
+   0.875
+  ],
+  [
+   1472.3783,
+   8,
+   472,
+   2.1092,
+   0.9138,
+   0.75
+  ],
+  [
+   1474.4875,
+   8,
+   380,
+   1.6473,
+   0.83875,
+   0.75
+  ],
+  [
+   1476.1348,
+   8,
+   365,
+   2.3107,
+   0.95115,
+   0.75
+  ],
+  [
+   1478.4455,
+   8,
+   355,
+   1.4532,
+   0.86502,
+   0.875
+  ],
+  [
+   1479.8987,
+   8,
+   486,
+   2.1153,
+   0.88978,
+   0.875
+  ],
+  [
+   1482.014,
+   8,
+   512,
+   2.2506,
+   0.97225,
+   0.625
+  ],
+  [
+   1484.2646,
+   8,
+   392,
+   2.6038,
+   0.9748,
+   0.5
+  ],
+  [
+   1486.8684,
+   8,
+   512,
+   2.2374,
+   0.7881,
+   0.875
+  ],
+  [
+   1489.1058,
+   8,
+   449,
+   2.0074,
+   1.27722,
+   0.5
+  ],
+  [
+   1491.1132,
+   8,
+   383,
+   1.6635,
+   0.55456,
+   0.875
+  ],
+  [
+   1492.7767,
+   8,
+   512,
+   3.0145,
+   0.87787,
+   0.5
+  ],
+  [
+   1495.7912,
+   8,
+   379,
+   1.6135,
+   1.03588,
+   0.625
+  ],
+  [
+   1497.4047,
+   8,
+   452,
+   1.9966,
+   1.04549,
+   0.5
+  ],
+  [
+   1499.4013,
+   8,
+   483,
+   2.175,
+   0.97143,
+   0.625
+  ],
+  [
+   1501.5763,
+   8,
+   478,
+   2.8236,
+   1.02619,
+   0.625
+  ],
+  [
+   1504.3999,
+   8,
+   371,
+   1.5362,
+   0.70112,
+   0.75
+  ],
+  [
+   1505.9361,
+   8,
+   366,
+   1.5306,
+   0.87858,
+   0.5
+  ],
+  [
+   1507.4667,
+   8,
+   359,
+   1.5191,
+   0.72064,
+   0.875
+  ],
+  [
+   1508.9858,
+   8,
+   345,
+   2.2179,
+   0.91581,
+   0.5
+  ],
+  [
+   1511.2037,
+   8,
+   416,
+   1.7573,
+   0.90727,
+   0.75
+  ],
+  [
+   1512.961,
+   8,
+   464,
+   2.0264,
+   0.99527,
+   0.75
+  ],
+  [
+   1514.9874,
+   8,
+   352,
+   1.4979,
+   0.98908,
+   0.75
+  ],
+  [
+   1516.4853,
+   8,
+   369,
+   2.2766,
+   0.81779,
+   0.875
+  ],
+  [
+   1518.7619,
+   8,
+   443,
+   1.8808,
+   0.77503,
+   0.875
+  ],
+  [
+   1520.6427,
+   8,
+   428,
+   1.8372,
+   0.84276,
+   0.875
+  ],
+  [
+   1522.4799,
+   8,
+   512,
+   2.4044,
+   0.75839,
+   0.75
+  ],
+  [
+   1524.8843,
+   8,
+   372,
+   2.3476,
+   1.04486,
+   0.5
+  ],
+  [
+   1527.2319,
+   8,
+   366,
+   1.6983,
+   0.91285,
+   1.0
+  ],
+  [
+   1528.9302,
+   8,
+   374,
+   1.607,
+   0.78238,
+   0.75
+  ],
+  [
+   1530.5372,
+   8,
+   292,
+   1.2634,
+   0.92277,
+   0.5
+  ],
+  [
+   1531.8006,
+   8,
+   382,
+   2.3871,
+   0.94911,
+   0.625
+  ],
+  [
+   1534.1877,
+   8,
+   440,
+   1.9402,
+   0.8527,
+   0.875
+  ],
+  [
+   1536.1279,
+   8,
+   442,
+   1.947,
+   0.92542,
+   0.875
+  ],
+  [
+   1538.0749,
+   8,
+   511,
+   2.3071,
+   1.04163,
+   1.0
+  ],
+  [
+   1540.382,
+   8,
+   381,
+   2.3664,
+   0.95388,
+   0.875
+  ],
+  [
+   1542.7484,
+   8,
+   342,
+   1.4053,
+   0.82997,
+   0.625
+  ],
+  [
+   1544.1537,
+   8,
+   372,
+   1.5527,
+   0.72723,
+   0.75
+  ],
+  [
+   1545.7064,
+   8,
+   343,
+   1.4515,
+   0.4511,
+   1.0
+  ],
+  [
+   1547.1579,
+   8,
+   397,
+   2.4517,
+   0.79878,
+   0.875
+  ],
+  [
+   1549.6096,
+   8,
+   507,
+   2.2464,
+   0.82422,
+   0.75
+  ],
+  [
+   1551.856,
+   8,
+   361,
+   1.7337,
+   0.93759,
+   0.75
+  ],
+  [
+   1553.5897,
+   8,
+   385,
+   1.6683,
+   0.95299,
+   0.75
+  ],
+  [
+   1555.258,
+   8,
+   352,
+   2.3496,
+   0.69796,
+   1.0
+  ],
+  [
+   1557.6076,
+   8,
+   356,
+   1.45,
+   0.81215,
+   0.5
+  ],
+  [
+   1559.0576,
+   8,
+   379,
+   1.586,
+   0.95493,
+   0.875
+  ],
+  [
+   1560.6436,
+   8,
+   484,
+   2.0992,
+   0.84127,
+   0.875
+  ],
+  [
+   1562.7428,
+   8,
+   421,
+   2.5689,
+   0.72879,
+   0.875
+  ],
+  [
+   1565.3117,
+   8,
+   512,
+   2.2107,
+   0.84387,
+   0.875
+  ],
+  [
+   1567.5224,
+   8,
+   442,
+   1.9088,
+   0.99782,
+   0.875
+  ],
+  [
+   1569.4312,
+   8,
+   380,
+   1.5837,
+   0.74429,
+   0.875
+  ],
+  [
+   1571.0149,
+   8,
+   380,
+   2.3251,
+   0.92443,
+   0.75
+  ],
+  [
+   1573.34,
+   8,
+   379,
+   1.5861,
+   0.79648,
+   0.75
+  ],
+  [
+   1574.9261,
+   8,
+   315,
+   1.6987,
+   0.77536,
+   1.0
+  ],
+  [
+   1576.6248,
+   8,
+   390,
+   1.6812,
+   0.90066,
+   0.875
+  ],
+  [
+   1578.306,
+   8,
+   316,
+   2.1133,
+   1.09454,
+   0.875
+  ],
+  [
+   1580.4193,
+   8,
+   376,
+   1.5397,
+   0.64073,
+   0.75
+  ],
+  [
+   1581.959,
+   8,
+   361,
+   1.5102,
+   0.73666,
+   0.75
+  ],
+  [
+   1583.4692,
+   8,
+   379,
+   1.6131,
+   0.88819,
+   0.5
+  ],
+  [
+   1585.0823,
+   8,
+   474,
+   2.8643,
+   0.69177,
+   0.75
+  ],
+  [
+   1587.9466,
+   8,
+   407,
+   1.7858,
+   0.80924,
+   1.0
+  ],
+  [
+   1589.7324,
+   8,
+   353,
+   1.508,
+   0.7694,
+   0.875
+  ],
+  [
+   1591.2404,
+   8,
+   379,
+   1.6198,
+   0.83764,
+   0.625
+  ],
+  [
+   1592.8602,
+   8,
+   512,
+   2.9951,
+   0.72881,
+   1.0
+  ],
+  [
+   1595.8553,
+   8,
+   373,
+   1.5409,
+   0.74004,
+   1.0
+  ],
+  [
+   1597.3962,
+   8,
+   376,
+   1.5601,
+   0.71061,
+   0.875
+  ],
+  [
+   1598.9563,
+   8,
+   410,
+   1.7545,
+   0.95443,
+   0.625
+  ],
+  [
+   1600.7108,
+   8,
+   402,
+   2.4875,
+   0.75248,
+   0.625
+  ],
+  [
+   1603.1983,
+   8,
+   426,
+   1.8297,
+   0.94777,
+   0.75
+  ],
+  [
+   1605.028,
+   8,
+   385,
+   1.6548,
+   0.80962,
+   0.625
+  ],
+  [
+   1606.6828,
+   8,
+   347,
+   1.458,
+   0.7409,
+   0.625
+  ],
+  [
+   1608.1408,
+   8,
+   512,
+   2.9328,
+   1.02646,
+   0.875
+  ],
+  [
+   1611.0736,
+   8,
+   424,
+   1.8081,
+   0.80397,
+   0.875
+  ],
+  [
+   1612.8817,
+   8,
+   376,
+   1.6008,
+   0.92845,
+   0.875
+  ],
+  [
+   1614.4825,
+   8,
+   430,
+   1.8754,
+   0.85505,
+   0.75
+  ],
+  [
+   1616.3579,
+   8,
+   378,
+   2.356,
+   0.86356,
+   0.5
+  ],
+  [
+   1618.7139,
+   8,
+   465,
+   2.0418,
+   0.84289,
+   0.625
+  ],
+  [
+   1620.7557,
+   8,
+   396,
+   1.69,
+   0.71257,
+   1.0
+  ],
+  [
+   1622.4457,
+   8,
+   369,
+   1.5586,
+   0.71463,
+   0.875
+  ],
+  [
+   1624.0043,
+   8,
+   512,
+   2.981,
+   0.74709,
+   1.0
+  ],
+  [
+   1626.9853,
+   8,
+   470,
+   2.0696,
+   0.72401,
+   1.0
+  ],
+  [
+   1629.0549,
+   8,
+   393,
+   1.6972,
+   0.64441,
+   1.0
+  ],
+  [
+   1630.7521,
+   8,
+   512,
+   2.2385,
+   0.74725,
+   0.875
+  ],
+  [
+   1632.9906,
+   8,
+   375,
+   2.3596,
+   1.08961,
+   0.75
+  ],
+  [
+   1635.3502,
+   8,
+   512,
+   2.1816,
+   0.95545,
+   0.75
+  ],
+  [
+   1637.5318,
+   8,
+   467,
+   2.0377,
+   0.67665,
+   1.0
+  ],
+  [
+   1639.5695,
+   8,
+   388,
+   1.6479,
+   0.714,
+   0.75
+  ],
+  [
+   1641.2174,
+   8,
+   512,
+   2.9634,
+   0.86456,
+   0.625
+  ],
+  [
+   1644.1808,
+   8,
+   512,
+   2.1994,
+   0.84692,
+   0.625
+  ],
+  [
+   1646.3802,
+   8,
+   375,
+   1.5649,
+   0.8494,
+   0.75
+  ],
+  [
+   1647.9451,
+   8,
+   459,
+   1.9873,
+   0.75888,
+   1.0
+  ],
+  [
+   1649.9324,
+   8,
+   360,
+   2.2327,
+   0.87575,
+   0.625
+  ],
+  [
+   1652.1651,
+   8,
+   356,
+   1.4703,
+   0.9234,
+   0.625
+  ],
+  [
+   1653.6354,
+   8,
+   498,
+   2.2045,
+   0.75018,
+   1.0
+  ],
+  [
+   1655.8399,
+   8,
+   442,
+   1.896,
+   1.00764,
+   0.75
+  ],
+  [
+   1657.7359,
+   8,
+   450,
+   2.7037,
+   0.95688,
+   0.875
+  ],
+  [
+   1660.4396,
+   8,
+   387,
+   1.6524,
+   0.93799,
+   0.5
+  ],
+  [
+   1662.092,
+   8,
+   459,
+   2.0229,
+   0.8656,
+   0.625
+  ],
+  [
+   1664.1149,
+   8,
+   509,
+   2.3107,
+   1.01026,
+   0.875
+  ],
+  [
+   1666.4256,
+   8,
+   500,
+   2.9585,
+   0.77555,
+   1.0
+  ],
+  [
+   1669.3841,
+   8,
+   512,
+   2.2043,
+   0.63467,
+   1.0
+  ],
+  [
+   1671.5884,
+   8,
+   512,
+   2.1945,
+   0.98798,
+   0.875
+  ],
+  [
+   1673.7829,
+   8,
+   512,
+   2.2222,
+   0.62387,
+   0.75
+  ],
+  [
+   1676.0051,
+   8,
+   314,
+   2.235,
+   0.84539,
+   1.0
+  ],
+  [
+   1678.2401,
+   8,
+   379,
+   1.5908,
+   1.07942,
+   0.75
+  ],
+  [
+   1679.8309,
+   8,
+   512,
+   2.2013,
+   0.84006,
+   1.0
+  ],
+  [
+   1682.0322,
+   8,
+   512,
+   2.2078,
+   0.81279,
+   0.875
+  ],
+  [
+   1684.24,
+   8,
+   417,
+   2.5516,
+   0.88928,
+   0.75
+  ],
+  [
+   1686.7916,
+   8,
+   395,
+   1.6749,
+   0.80139,
+   0.875
+  ],
+  [
+   1688.4665,
+   8,
+   400,
+   1.684,
+   0.84739,
+   0.875
+  ],
+  [
+   1690.1505,
+   8,
+   357,
+   1.4793,
+   0.80922,
+   0.75
+  ],
+  [
+   1691.6298,
+   8,
+   376,
+   2.3044,
+   1.03126,
+   0.75
+  ],
+  [
+   1693.9342,
+   8,
+   379,
+   1.6054,
+   0.85081,
+   0.875
+  ],
+  [
+   1695.5396,
+   8,
+   378,
+   1.6254,
+   0.89468,
+   0.875
+  ],
+  [
+   1697.165,
+   8,
+   419,
+   1.8406,
+   0.82938,
+   0.5
+  ],
+  [
+   1699.0056,
+   8,
+   382,
+   2.3791,
+   0.97416,
+   0.75
+  ],
+  [
+   1701.3847,
+   8,
+   383,
+   1.6258,
+   0.79556,
+   0.75
+  ],
+  [
+   1703.0105,
+   8,
+   494,
+   2.2311,
+   0.86847,
+   1.0
+  ],
+  [
+   1705.2416,
+   8,
+   366,
+   1.5567,
+   0.901,
+   0.625
+  ],
+  [
+   1706.7983,
+   8,
+   352,
+   2.1911,
+   1.08332,
+   1.0
+  ],
+  [
+   1708.9894,
+   8,
+   413,
+   1.7477,
+   0.61466,
+   0.875
+  ],
+  [
+   1710.7371,
+   8,
+   427,
+   1.8667,
+   0.78,
+   1.0
+  ],
+  [
+   1712.6038,
+   8,
+   414,
+   1.8818,
+   1.06475,
+   0.875
+  ],
+  [
+   1714.4856,
+   8,
+   352,
+   2.2565,
+   0.68122,
+   0.875
+  ],
+  [
+   1716.7421,
+   8,
+   382,
+   1.6072,
+   0.78906,
+   0.625
+  ],
+  [
+   1718.3493,
+   8,
+   438,
+   1.9139,
+   0.63644,
+   0.875
+  ],
+  [
+   1720.2632,
+   8,
+   371,
+   1.6196,
+   0.9777,
+   0.5
+  ],
+  [
+   1721.8828,
+   8,
+   394,
+   2.4361,
+   0.86496,
+   0.875
+  ],
+  [
+   1724.3189,
+   8,
+   383,
+   1.6219,
+   0.79076,
+   0.875
+  ],
+  [
+   1725.9408,
+   8,
+   356,
+   1.4978,
+   0.93328,
+   0.625
+  ],
+  [
+   1727.4386,
+   8,
+   496,
+   2.1341,
+   0.54641,
+   0.875
+  ],
+  [
+   1729.5727,
+   8,
+   354,
+   2.2157,
+   0.91441,
+   0.625
+  ],
+  [
+   1731.7884,
+   8,
+   479,
+   2.153,
+   0.71682,
+   0.75
+  ],
+  [
+   1733.9414,
+   8,
+   393,
+   1.7346,
+   1.01744,
+   0.75
+  ],
+  [
+   1735.676,
+   8,
+   383,
+   1.6751,
+   0.86618,
+   0.625
+  ],
+  [
+   1737.3511,
+   8,
+   437,
+   2.6808,
+   0.84791,
+   0.875
+  ],
+  [
+   1740.0319,
+   8,
+   381,
+   1.5799,
+   0.83314,
+   0.75
+  ],
+  [
+   1741.6118,
+   8,
+   383,
+   1.6059,
+   0.81736,
+   0.75
+  ],
+  [
+   1743.2177,
+   8,
+   378,
+   1.6041,
+   0.82914,
+   0.625
+  ],
+  [
+   1744.8218,
+   8,
+   378,
+   2.3736,
+   0.91237,
+   0.625
+  ],
+  [
+   1747.1954,
+   8,
+   400,
+   1.6583,
+   0.74863,
+   1.0
+  ],
+  [
+   1748.8537,
+   8,
+   353,
+   1.4723,
+   0.93441,
+   0.625
+  ],
+  [
+   1750.326,
+   8,
+   377,
+   1.6003,
+   0.79637,
+   0.75
+  ],
+  [
+   1751.9263,
+   8,
+   358,
+   2.2835,
+   0.49978,
+   0.875
+  ],
+  [
+   1754.2098,
+   8,
+   355,
+   1.4871,
+   0.76613,
+   0.625
+  ],
+  [
+   1755.6969,
+   8,
+   485,
+   2.1646,
+   1.07937,
+   0.5
+  ],
+  [
+   1757.8615,
+   8,
+   512,
+   2.2418,
+   0.83621,
+   0.875
+  ],
+  [
+   1760.1033,
+   8,
+   369,
+   2.2804,
+   0.79631,
+   0.625
+  ],
+  [
+   1762.3837,
+   8,
+   421,
+   1.8326,
+   1.10012,
+   0.75
+  ],
+  [
+   1764.2163,
+   8,
+   395,
+   1.7956,
+   1.01401,
+   0.75
+  ],
+  [
+   1766.0119,
+   8,
+   426,
+   1.9158,
+   0.84108,
+   0.75
+  ],
+  [
+   1767.9277,
+   8,
+   447,
+   2.7689,
+   0.99472,
+   0.5
+  ],
+  [
+   1770.6966,
+   8,
+   355,
+   1.5431,
+   1.01417,
+   0.5
+  ],
+  [
+   1772.2397,
+   8,
+   378,
+   1.687,
+   0.73475,
+   0.75
+  ],
+  [
+   1773.9267,
+   8,
+   485,
+   2.2813,
+   1.08404,
+   0.875
+  ],
+  [
+   1776.208,
+   8,
+   501,
+   3.1529,
+   0.78525,
+   0.875
+  ],
+  [
+   1779.3609,
+   8,
+   385,
+   1.7071,
+   0.83798,
+   1.0
+  ],
+  [
+   1781.068,
+   8,
+   365,
+   1.6188,
+   0.87317,
+   0.5
+  ],
+  [
+   1782.6868,
+   8,
+   415,
+   2.0141,
+   0.6578,
+   1.0
+  ],
+  [
+   1784.7009,
+   8,
+   416,
+   2.6007,
+   0.63787,
+   0.875
+  ],
+  [
+   1787.3016,
+   8,
+   458,
+   2.0918,
+   0.73237,
+   0.75
+  ],
+  [
+   1789.3934,
+   8,
+   385,
+   1.7357,
+   0.5523,
+   1.0
+  ],
+  [
+   1791.1291,
+   8,
+   374,
+   1.6361,
+   0.89114,
+   0.625
+  ],
+  [
+   1792.7652,
+   8,
+   345,
+   2.2512,
+   0.89661,
+   1.0
+  ],
+  [
+   1795.0164,
+   8,
+   477,
+   2.1471,
+   0.79828,
+   1.0
+  ],
+  [
+   1797.1635,
+   8,
+   462,
+   2.0976,
+   0.69402,
+   0.875
+  ],
+  [
+   1799.2611,
+   8,
+   445,
+   1.998,
+   0.85404,
+   0.875
+  ],
+  [
+   1801.2591,
+   8,
+   348,
+   2.254,
+   0.80248,
+   0.875
+  ],
+  [
+   1803.5131,
+   8,
+   474,
+   2.141,
+   0.76513,
+   1.0
+  ],
+  [
+   1805.6541,
+   8,
+   355,
+   1.5696,
+   0.99619,
+   0.75
+  ],
+  [
+   1807.2237,
+   8,
+   382,
+   1.6779,
+   0.65538,
+   0.875
+  ],
+  [
+   1808.9016,
+   8,
+   366,
+   2.3526,
+   0.73037,
+   0.875
+  ],
+  [
+   1811.2542,
+   8,
+   384,
+   1.6549,
+   0.89219,
+   0.75
+  ],
+  [
+   1812.9091,
+   8,
+   453,
+   2.0384,
+   0.81742,
+   0.75
+  ],
+  [
+   1814.9475,
+   8,
+   365,
+   1.5955,
+   0.74462,
+   0.875
+  ],
+  [
+   1816.543,
+   8,
+   505,
+   3.2007,
+   1.01708,
+   0.75
+  ],
+  [
+   1819.7437,
+   8,
+   403,
+   1.807,
+   0.84394,
+   0.875
+  ],
+  [
+   1821.5507,
+   8,
+   402,
+   1.7916,
+   0.84666,
+   0.5
+  ],
+  [
+   1823.3423,
+   8,
+   421,
+   1.8949,
+   0.79785,
+   0.875
+  ],
+  [
+   1825.2372,
+   8,
+   351,
+   2.2891,
+   0.92411,
+   0.5
+  ],
+  [
+   1827.5263,
+   8,
+   338,
+   1.6257,
+   0.78314,
+   0.875
+  ],
+  [
+   1829.152,
+   8,
+   413,
+   1.8673,
+   0.71546,
+   1.0
+  ],
+  [
+   1831.0193,
+   8,
+   366,
+   1.5911,
+   0.49394,
+   1.0
+  ],
+  [
+   1832.6104,
+   8,
+   453,
+   2.8044,
+   0.762,
+   0.875
+  ],
+  [
+   1835.4148,
+   8,
+   512,
+   2.4049,
+   0.85989,
+   0.5
+  ],
+  [
+   1837.8197,
+   8,
+   433,
+   1.9766,
+   0.87354,
+   0.875
+  ],
+  [
+   1839.7963,
+   8,
+   383,
+   1.7045,
+   0.84129,
+   1.0
+  ],
+  [
+   1841.5008,
+   8,
+   369,
+   2.383,
+   0.85185,
+   0.625
+  ],
+  [
+   1843.8838,
+   8,
+   374,
+   1.6307,
+   0.89934,
+   0.625
+  ],
+  [
+   1845.5145,
+   8,
+   512,
+   2.329,
+   1.15505,
+   0.75
+  ],
+  [
+   1847.8435,
+   8,
+   490,
+   2.2676,
+   0.7026,
+   0.875
+  ],
+  [
+   1850.1111,
+   8,
+   448,
+   2.7329,
+   0.70993,
+   1.0
+  ],
+  [
+   1852.844,
+   8,
+   379,
+   1.6506,
+   0.81791,
+   0.875
+  ],
+  [
+   1854.4946,
+   8,
+   460,
+   2.0594,
+   0.88204,
+   0.75
+  ],
+  [
+   1856.554,
+   8,
+   386,
+   1.6358,
+   0.82079,
+   1.0
+  ],
+  [
+   1858.1898,
+   8,
+   464,
+   2.7114,
+   0.92961,
+   0.75
+  ],
+  [
+   1860.9012,
+   8,
+   406,
+   1.7362,
+   0.64622,
+   0.625
+  ],
+  [
+   1862.6374,
+   8,
+   406,
+   1.8269,
+   0.70098,
+   1.0
+  ],
+  [
+   1864.4643,
+   8,
+   460,
+   2.1092,
+   0.94664,
+   0.625
+  ],
+  [
+   1866.5735,
+   8,
+   507,
+   3.125,
+   0.83427,
+   0.75
+  ],
+  [
+   1869.6985,
+   8,
+   395,
+   1.7276,
+   0.76001,
+   0.75
+  ],
+  [
+   1871.4261,
+   8,
+   380,
+   1.67,
+   0.72895,
+   0.625
+  ],
+  [
+   1873.0961,
+   8,
+   484,
+   2.2055,
+   0.94082,
+   0.625
+  ],
+  [
+   1875.3016,
+   8,
+   512,
+   3.108,
+   0.68518,
+   0.75
+  ],
+  [
+   1878.4096,
+   8,
+   468,
+   2.1153,
+   0.93883,
+   1.0
+  ],
+  [
+   1880.5249,
+   8,
+   385,
+   1.7076,
+   0.67076,
+   0.875
+  ],
+  [
+   1882.2325,
+   8,
+   353,
+   1.5386,
+   0.6684,
+   0.625
+  ],
+  [
+   1883.7711,
+   8,
+   381,
+   2.4327,
+   0.77104,
+   0.75
+  ],
+  [
+   1886.2038,
+   8,
+   384,
+   1.6307,
+   0.94744,
+   0.875
+  ],
+  [
+   1887.8345,
+   8,
+   383,
+   1.6945,
+   1.00299,
+   0.75
+  ],
+  [
+   1889.529,
+   8,
+   360,
+   1.5527,
+   0.85226,
+   0.875
+  ],
+  [
+   1891.0817,
+   8,
+   354,
+   2.2903,
+   0.81603,
+   0.625
+  ],
+  [
+   1893.372,
+   8,
+   448,
+   1.9517,
+   0.69793,
+   0.875
+  ],
+  [
+   1895.3237,
+   8,
+   501,
+   2.3051,
+   0.78356,
+   0.875
+  ],
+  [
+   1897.6288,
+   8,
+   448,
+   1.9818,
+   0.97605,
+   0.75
+  ],
+  [
+   1899.6106,
+   8,
+   393,
+   2.4915,
+   0.87484,
+   0.75
+  ],
+  [
+   1902.1021,
+   8,
+   399,
+   1.7386,
+   0.60856,
+   0.875
+  ],
+  [
+   1903.8407,
+   8,
+   367,
+   1.5325,
+   0.71251,
+   1.0
+  ],
+  [
+   1905.3732,
+   8,
+   423,
+   1.7964,
+   1.15182,
+   0.5
+  ],
+  [
+   1907.1696,
+   8,
+   408,
+   2.4609,
+   1.1088,
+   0.75
+  ],
+  [
+   1909.6305,
+   8,
+   384,
+   1.6319,
+   0.86254,
+   0.875
+  ],
+  [
+   1911.2624,
+   8,
+   512,
+   2.2944,
+   1.00341,
+   0.75
+  ],
+  [
+   1913.5568,
+   8,
+   357,
+   1.5287,
+   0.69582,
+   0.875
+  ],
+  [
+   1915.0855,
+   8,
+   384,
+   2.3835,
+   0.99664,
+   0.875
+  ],
+  [
+   1917.469,
+   8,
+   352,
+   1.4855,
+   0.9621,
+   0.75
+  ],
+  [
+   1918.9545,
+   8,
+   420,
+   1.8555,
+   0.91946,
+   0.75
+  ],
+  [
+   1920.81,
+   8,
+   391,
+   1.6971,
+   0.78042,
+   0.75
+  ],
+  [
+   1922.5071,
+   8,
+   381,
+   2.4101,
+   0.96526,
+   0.75
+  ],
+  [
+   1924.9172,
+   8,
+   371,
+   1.5945,
+   1.03412,
+   0.75
+  ],
+  [
+   1926.5117,
+   8,
+   420,
+   1.8448,
+   0.83369,
+   0.75
+  ],
+  [
+   1928.3565,
+   8,
+   370,
+   1.6066,
+   0.65028,
+   1.0
+  ],
+  [
+   1929.9631,
+   8,
+   406,
+   2.5242,
+   0.87173,
+   0.625
+  ],
+  [
+   1932.4873,
+   8,
+   399,
+   1.7314,
+   1.03856,
+   0.75
+  ],
+  [
+   1934.2187,
+   8,
+   501,
+   2.2792,
+   0.82725,
+   1.0
+  ],
+  [
+   1936.4979,
+   8,
+   512,
+   2.2852,
+   0.94961,
+   0.875
+  ],
+  [
+   1938.7831,
+   8,
+   512,
+   3.03,
+   0.73289,
+   0.875
+  ],
+  [
+   1941.8131,
+   8,
+   453,
+   2.0197,
+   1.12855,
+   0.625
+  ],
+  [
+   1943.8328,
+   8,
+   401,
+   1.7933,
+   1.12811,
+   0.5
+  ],
+  [
+   1945.6261,
+   8,
+   459,
+   2.1126,
+   0.86114,
+   0.875
+  ],
+  [
+   1947.7387,
+   8,
+   371,
+   2.3658,
+   0.51697,
+   1.0
+  ],
+  [
+   1950.1045,
+   8,
+   411,
+   1.8255,
+   0.65811,
+   0.875
+  ],
+  [
+   1951.93,
+   8,
+   391,
+   1.7563,
+   1.01531,
+   0.5
+  ],
+  [
+   1953.6863,
+   8,
+   395,
+   1.7424,
+   0.82742,
+   0.625
+  ],
+  [
+   1955.4287,
+   8,
+   380,
+   2.4052,
+   1.07344,
+   0.875
+  ],
+  [
+   1957.8339,
+   8,
+   379,
+   1.6556,
+   0.91436,
+   0.625
+  ],
+  [
+   1959.4895,
+   8,
+   475,
+   2.1414,
+   1.10332,
+   0.5
+  ],
+  [
+   1961.6309,
+   8,
+   380,
+   1.6358,
+   0.9792,
+   0.75
+  ],
+  [
+   1963.2667,
+   8,
+   378,
+   2.3939,
+   0.62125,
+   0.875
+  ],
+  [
+   1965.6606,
+   8,
+   391,
+   1.714,
+   0.88527,
+   1.0
+  ],
+  [
+   1967.3746,
+   8,
+   465,
+   2.1583,
+   1.04512,
+   0.875
+  ],
+  [
+   1969.5329,
+   8,
+   380,
+   1.6759,
+   0.96563,
+   0.5
+  ],
+  [
+   1971.2088,
+   8,
+   494,
+   3.0187,
+   0.97604,
+   1.0
+  ],
+  [
+   1974.2275,
+   8,
+   512,
+   2.2833,
+   0.77859,
+   0.875
+  ],
+  [
+   1976.5108,
+   8,
+   382,
+   1.7066,
+   0.87475,
+   0.75
+  ],
+  [
+   1978.2174,
+   8,
+   478,
+   2.2105,
+   1.01055,
+   0.75
+  ],
+  [
+   1980.4279,
+   8,
+   389,
+   2.4689,
+   0.95603,
+   0.875
+  ],
+  [
+   1982.8968,
+   8,
+   357,
+   1.5241,
+   0.83622,
+   0.75
+  ],
+  [
+   1984.4209,
+   8,
+   427,
+   1.9236,
+   0.81907,
+   0.75
+  ],
+  [
+   1986.3445,
+   8,
+   375,
+   1.6463,
+   0.65466,
+   0.875
+  ],
+  [
+   1987.9908,
+   8,
+   465,
+   2.8744,
+   0.78427,
+   0.75
+  ],
+  [
+   1990.8652,
+   8,
+   494,
+   2.2348,
+   0.8781,
+   0.625
+  ],
+  [
+   1993.1,
+   8,
+   356,
+   1.5236,
+   0.95481,
+   0.625
+  ],
+  [
+   1994.6236,
+   8,
+   363,
+   1.5719,
+   0.86504,
+   0.5
+  ],
+  [
+   1996.1955,
+   8,
+   508,
+   3.0677,
+   0.92346,
+   0.5
+  ],
+  [
+   1999.2632,
+   8,
+   370,
+   1.6242,
+   0.88157,
+   0.875
+  ],
+  [
+   2000.8874,
+   8,
+   360,
+   1.5103,
+   0.78147,
+   0.875
+  ],
+  [
+   2002.3977,
+   8,
+   346,
+   1.4314,
+   0.71567,
+   1.0
+  ],
+  [
+   2003.8291,
+   8,
+   397,
+   2.4121,
+   0.95421,
+   0.625
+  ],
+  [
+   2006.2412,
+   8,
+   461,
+   1.973,
+   0.82052,
+   0.875
+  ],
+  [
+   2008.2142,
+   8,
+   398,
+   1.698,
+   0.96471,
+   1.0
+  ],
+  [
+   2009.9122,
+   8,
+   484,
+   2.1109,
+   0.90255,
+   0.75
+  ],
+  [
+   2012.0231,
+   8,
+   386,
+   2.3681,
+   0.7284,
+   0.625
+  ],
+  [
+   2014.3912,
+   8,
+   351,
+   1.4665,
+   0.81197,
+   0.875
+  ],
+  [
+   2015.8577,
+   8,
+   438,
+   1.8927,
+   0.66921,
+   0.875
+  ],
+  [
+   2017.7504,
+   8,
+   361,
+   1.5808,
+   0.70666,
+   0.875
+  ],
+  [
+   2019.3312,
+   8,
+   362,
+   2.2405,
+   0.59215,
+   1.0
+  ],
+  [
+   2021.5717,
+   8,
+   512,
+   2.1627,
+   0.90139,
+   0.875
+  ],
+  [
+   2023.7344,
+   8,
+   403,
+   1.6927,
+   0.78973,
+   1.0
+  ],
+  [
+   2025.4271,
+   8,
+   512,
+   2.1787,
+   0.81683,
+   0.875
+  ],
+  [
+   2027.6058,
+   8,
+   331,
+   2.1711,
+   0.65864,
+   0.75
+  ],
+  [
+   2029.7769,
+   8,
+   494,
+   2.1243,
+   1.17003,
+   0.5
+  ],
+  [
+   2031.9012,
+   8,
+   392,
+   1.6546,
+   1.10009,
+   0.75
+  ],
+  [
+   2033.5558,
+   8,
+   389,
+   1.6366,
+   0.73101,
+   1.0
+  ],
+  [
+   2035.1924,
+   8,
+   372,
+   2.305,
+   0.89914,
+   0.875
+  ],
+  [
+   2037.4974,
+   8,
+   423,
+   1.7995,
+   0.97367,
+   0.625
+  ],
+  [
+   2039.2969,
+   8,
+   367,
+   1.5479,
+   0.91669,
+   0.75
+  ],
+  [
+   2040.8448,
+   8,
+   363,
+   1.5101,
+   0.91539,
+   0.5
+  ],
+  [
+   2042.3549,
+   8,
+   379,
+   2.3045,
+   0.71273,
+   0.875
+  ],
+  [
+   2044.6594,
+   8,
+   358,
+   1.4809,
+   1.05889,
+   0.75
+  ],
+  [
+   2046.1403,
+   8,
+   419,
+   1.8079,
+   0.86987,
+   0.75
+  ],
+  [
+   2047.9482,
+   8,
+   382,
+   1.6286,
+   1.0504,
+   0.75
+  ],
+  [
+   2049.5768,
+   8,
+   413,
+   2.4846,
+   0.9976,
+   0.625
+  ],
+  [
+   2052.0614,
+   8,
+   404,
+   1.6733,
+   0.74231,
+   0.75
+  ],
+  [
+   2053.7347,
+   8,
+   345,
+   1.4269,
+   0.84131,
+   0.75
+  ],
+  [
+   2055.1616,
+   8,
+   396,
+   1.6476,
+   0.68789,
+   0.75
+  ],
+  [
+   2056.8092,
+   8,
+   381,
+   2.3125,
+   0.9787,
+   0.75
+  ],
+  [
+   2059.1217,
+   8,
+   394,
+   1.6337,
+   0.91235,
+   0.75
+  ],
+  [
+   2060.7554,
+   8,
+   378,
+   1.5808,
+   0.65774,
+   0.75
+  ],
+  [
+   2062.3362,
+   8,
+   353,
+   1.464,
+   0.53231,
+   1.0
+  ],
+  [
+   2063.8002,
+   8,
+   483,
+   2.8075,
+   0.87456,
+   0.875
+  ],
+  [
+   2066.6077,
+   8,
+   419,
+   1.7681,
+   0.65908,
+   0.875
+  ],
+  [
+   2068.3758,
+   8,
+   415,
+   1.7772,
+   0.95705,
+   1.0
+  ],
+  [
+   2070.153,
+   8,
+   396,
+   1.6539,
+   0.83445,
+   0.75
+  ],
+  [
+   2071.8069,
+   8,
+   356,
+   2.1856,
+   0.80103,
+   0.75
+  ],
+  [
+   2073.9925,
+   8,
+   487,
+   2.0901,
+   1.05914,
+   0.625
+  ],
+  [
+   2076.0826,
+   8,
+   377,
+   1.5751,
+   0.826,
+   0.625
+  ],
+  [
+   2077.6577,
+   8,
+   356,
+   1.4629,
+   0.86182,
+   0.75
+  ],
+  [
+   2079.1206,
+   8,
+   379,
+   2.3108,
+   1.10909,
+   0.5
+  ],
+  [
+   2081.4314,
+   8,
+   380,
+   1.5606,
+   0.84206,
+   0.75
+  ],
+  [
+   2082.992,
+   8,
+   512,
+   2.2271,
+   0.97039,
+   0.625
+  ],
+  [
+   2085.2191,
+   8,
+   355,
+   1.4891,
+   0.70743,
+   0.75
+  ],
+  [
+   2086.7082,
+   8,
+   422,
+   2.5515,
+   1.01099,
+   0.75
+  ],
+  [
+   2089.2597,
+   8,
+   452,
+   1.9385,
+   0.76175,
+   0.75
+  ],
+  [
+   2091.1982,
+   8,
+   382,
+   1.594,
+   0.87112,
+   0.75
+  ],
+  [
+   2092.7922,
+   8,
+   395,
+   1.6581,
+   1.04553,
+   0.75
+  ],
+  [
+   2094.4503,
+   8,
+   479,
+   2.7966,
+   0.88239,
+   0.875
+  ],
+  [
+   2097.2469,
+   8,
+   315,
+   1.2902,
+   1.09269,
+   0.625
+  ],
+  [
+   2098.5371,
+   8,
+   378,
+   1.578,
+   0.63243,
+   0.875
+  ],
+  [
+   2100.1151,
+   8,
+   496,
+   2.1158,
+   0.84421,
+   0.875
+  ],
+  [
+   2102.2309,
+   8,
+   445,
+   2.6671,
+   0.88432,
+   0.875
+  ],
+  [
+   2104.898,
+   8,
+   496,
+   2.0947,
+   0.95358,
+   0.75
+  ],
+  [
+   2106.9927,
+   8,
+   511,
+   2.2312,
+   0.70511,
+   0.875
+  ],
+  [
+   2109.2239,
+   8,
+   470,
+   2.0263,
+   0.86315,
+   0.75
+  ],
+  [
+   2111.2502,
+   8,
+   339,
+   2.1422,
+   0.91545,
+   0.875
+  ],
+  [
+   2113.3924,
+   8,
+   475,
+   2.0631,
+   0.81891,
+   0.875
+  ],
+  [
+   2115.4555,
+   8,
+   377,
+   1.5867,
+   0.82564,
+   0.75
+  ],
+  [
+   2117.0422,
+   8,
+   453,
+   1.9669,
+   0.72758,
+   1.0
+  ],
+  [
+   2119.0091,
+   8,
+   453,
+   2.7051,
+   0.78486,
+   0.75
+  ],
+  [
+   2121.7142,
+   8,
+   350,
+   1.4224,
+   0.7665,
+   0.75
+  ],
+  [
+   2123.1366,
+   8,
+   379,
+   1.5745,
+   0.85972,
+   0.875
+  ],
+  [
+   2124.7111,
+   8,
+   362,
+   1.5026,
+   0.70488,
+   0.75
+  ],
+  [
+   2126.2137,
+   8,
+   435,
+   2.5895,
+   0.8676,
+   1.0
+  ],
+  [
+   2128.8032,
+   8,
+   381,
+   1.568,
+   0.91673,
+   0.875
+  ],
+  [
+   2130.3712,
+   8,
+   368,
+   1.5016,
+   1.03446,
+   0.625
+  ],
+  [
+   2131.8728,
+   8,
+   501,
+   2.1712,
+   0.79816,
+   0.875
+  ],
+  [
+   2134.044,
+   8,
+   406,
+   2.4458,
+   0.83953,
+   0.75
+  ],
+  [
+   2136.4898,
+   8,
+   360,
+   1.4592,
+   0.7372,
+   0.875
+  ],
+  [
+   2137.949,
+   8,
+   502,
+   2.2117,
+   0.76935,
+   0.875
+  ],
+  [
+   2140.1607,
+   8,
+   363,
+   1.5076,
+   1.00867,
+   0.625
+  ],
+  [
+   2141.6683,
+   8,
+   507,
+   3.0511,
+   0.72029,
+   0.875
+  ],
+  [
+   2144.7194,
+   8,
+   512,
+   2.1862,
+   0.86301,
+   0.875
+  ],
+  [
+   2146.9056,
+   8,
+   462,
+   2.022,
+   0.80337,
+   0.875
+  ],
+  [
+   2148.9276,
+   8,
+   488,
+   2.1201,
+   0.87501,
+   0.75
+  ],
+  [
+   2151.0477,
+   8,
+   505,
+   2.975,
+   0.77005,
+   0.875
+  ],
+  [
+   2154.0227,
+   8,
+   425,
+   1.8183,
+   0.84828,
+   0.625
+  ],
+  [
+   2155.841,
+   8,
+   382,
+   1.6137,
+   0.71515,
+   0.875
+  ],
+  [
+   2157.4547,
+   8,
+   414,
+   1.7767,
+   0.92749,
+   0.625
+  ],
+  [
+   2159.2314,
+   8,
+   370,
+   2.3039,
+   0.7541,
+   0.75
+  ],
+  [
+   2161.5353,
+   8,
+   371,
+   1.5572,
+   1.16723,
+   0.5
+  ],
+  [
+   2163.0925,
+   8,
+   358,
+   1.482,
+   1.02773,
+   0.625
+  ],
+  [
+   2164.5745,
+   8,
+   463,
+   2.0156,
+   0.94753,
+   0.875
+  ],
+  [
+   2166.5901,
+   8,
+   291,
+   1.9259,
+   0.83066,
+   0.875
+  ],
+  [
+   2168.516,
+   8,
+   365,
+   1.4998,
+   0.98732,
+   0.875
+  ],
+  [
+   2170.0158,
+   8,
+   355,
+   1.492,
+   0.77491,
+   0.75
+  ],
+  [
+   2171.5078,
+   8,
+   511,
+   2.2291,
+   0.63037,
+   0.875
+  ],
+  [
+   2173.7369,
+   8,
+   512,
+   2.9069,
+   0.69869,
+   0.75
+  ],
+  [
+   2176.6438,
+   8,
+   358,
+   1.4742,
+   0.78734,
+   0.75
+  ],
+  [
+   2178.118,
+   8,
+   452,
+   1.925,
+   0.72358,
+   0.75
+  ],
+  [
+   2180.043,
+   8,
+   367,
+   1.5214,
+   0.81667,
+   0.625
+  ],
+  [
+   2181.5644,
+   8,
+   415,
+   2.4969,
+   1.00657,
+   0.5
+  ],
+  [
+   2184.0613,
+   8,
+   370,
+   1.5471,
+   0.83862,
+   0.875
+  ],
+  [
+   2185.6084,
+   8,
+   377,
+   1.5945,
+   0.86357,
+   0.625
+  ],
+  [
+   2187.2029,
+   8,
+   512,
+   2.2309,
+   0.88172,
+   0.875
+  ],
+  [
+   2189.4338,
+   8,
+   381,
+   2.3304,
+   0.71545,
+   0.75
+  ],
+  [
+   2191.7642,
+   8,
+   378,
+   1.5722,
+   0.9383,
+   1.0
+  ],
+  [
+   2193.3364,
+   8,
+   352,
+   1.4484,
+   0.95931,
+   0.875
+  ],
+  [
+   2194.7848,
+   8,
+   346,
+   1.4379,
+   0.81555,
+   0.75
+  ],
+  [
+   2196.2227,
+   8,
+   375,
+   2.3454,
+   0.86469,
+   0.875
+  ],
+  [
+   2198.5681,
+   8,
+   362,
+   1.5102,
+   0.84128,
+   0.875
+  ],
+  [
+   2200.0783,
+   8,
+   358,
+   1.5474,
+   0.64739,
+   0.875
+  ],
+  [
+   2201.6257,
+   8,
+   397,
+   1.8138,
+   0.85988,
+   0.75
+  ],
+  [
+   2203.4395,
+   8,
+   356,
+   2.3976,
+   1.02297,
+   0.625
+  ],
+  [
+   2205.8371,
+   8,
+   474,
+   2.1125,
+   0.88517,
+   0.875
+  ],
+  [
+   2207.9496,
+   8,
+   382,
+   1.6138,
+   0.96091,
+   0.875
+  ],
+  [
+   2209.5634,
+   8,
+   469,
+   2.0821,
+   0.73812,
+   0.875
+  ],
+  [
+   2211.6455,
+   8,
+   350,
+   2.3209,
+   0.89854,
+   1.0
+  ],
+  [
+   2213.9664,
+   8,
+   367,
+   1.566,
+   0.83234,
+   0.5
+  ],
+  [
+   2215.5324,
+   8,
+   423,
+   1.9993,
+   0.8554,
+   0.75
+  ],
+  [
+   2217.5317,
+   8,
+   379,
+   1.7189,
+   0.75557,
+   0.75
+  ],
+  [
+   2219.2506,
+   8,
+   344,
+   2.2194,
+   0.72672,
+   0.75
+  ],
+  [
+   2221.47,
+   8,
+   437,
+   1.9343,
+   0.73039,
+   0.75
+  ],
+  [
+   2223.4043,
+   8,
+   381,
+   1.753,
+   0.87014,
+   1.0
+  ],
+  [
+   2225.1573,
+   8,
+   366,
+   1.6071,
+   0.78323,
+   0.875
+  ],
+  [
+   2226.7644,
+   8,
+   376,
+   2.3216,
+   0.83221,
+   0.625
+  ],
+  [
+   2229.086,
+   8,
+   512,
+   2.2402,
+   0.83502,
+   0.875
+  ],
+  [
+   2231.3262,
+   8,
+   397,
+   1.7055,
+   0.94492,
+   0.875
+  ],
+  [
+   2233.0317,
+   8,
+   379,
+   1.6194,
+   0.64775,
+   0.875
+  ],
+  [
+   2234.6511,
+   8,
+   370,
+   2.3053,
+   0.77011,
+   0.75
+  ],
+  [
+   2236.9564,
+   8,
+   390,
+   1.6386,
+   0.71437,
+   0.875
+  ],
+  [
+   2238.595,
+   8,
+   371,
+   1.5993,
+   0.98788,
+   0.625
+  ],
+  [
+   2240.1943,
+   8,
+   415,
+   1.796,
+   0.95971,
+   0.625
+  ],
+  [
+   2241.9903,
+   8,
+   382,
+   2.3736,
+   0.78792,
+   0.75
+  ],
+  [
+   2244.3639,
+   8,
+   356,
+   1.4765,
+   0.93495,
+   0.625
+  ],
+  [
+   2245.8404,
+   8,
+   378,
+   1.6067,
+   1.00409,
+   0.625
+  ],
+  [
+   2247.4471,
+   8,
+   378,
+   1.6357,
+   1.0594,
+   0.625
+  ],
+  [
+   2249.0828,
+   8,
+   408,
+   2.4522,
+   0.90843,
+   0.625
+  ],
+  [
+   2251.535,
+   8,
+   512,
+   2.185,
+   0.82456,
+   0.875
+  ],
+  [
+   2253.72,
+   8,
+   363,
+   1.5422,
+   0.87397,
+   0.625
+  ],
+  [
+   2255.2622,
+   8,
+   296,
+   1.271,
+   0.86673,
+   0.875
+  ],
+  [
+   2256.5332,
+   8,
+   345,
+   2.2288,
+   0.64805,
+   1.0
+  ],
+  [
+   2258.762,
+   8,
+   386,
+   1.6104,
+   0.53854,
+   0.875
+  ],
+  [
+   2260.3724,
+   8,
+   512,
+   2.2095,
+   0.85537,
+   0.875
+  ],
+  [
+   2262.5819,
+   8,
+   340,
+   1.4047,
+   0.71055,
+   0.75
+  ],
+  [
+   2263.9866,
+   8,
+   382,
+   2.3314,
+   1.15569,
+   0.5
+  ],
+  [
+   2266.318,
+   8,
+   499,
+   2.1784,
+   0.79391,
+   0.625
+  ],
+  [
+   2268.4964,
+   8,
+   492,
+   2.1365,
+   0.65176,
+   0.875
+  ],
+  [
+   2270.6329,
+   8,
+   512,
+   2.2522,
+   0.74308,
+   0.75
+  ],
+  [
+   2272.8851,
+   8,
+   370,
+   2.2922,
+   0.63845,
+   1.0
+  ],
+  [
+   2275.1773,
+   8,
+   346,
+   1.4234,
+   1.11161,
+   0.75
+  ],
+  [
+   2276.6007,
+   8,
+   466,
+   2.0307,
+   0.84708,
+   0.75
+  ],
+  [
+   2278.6314,
+   8,
+   370,
+   1.5495,
+   0.85867,
+   0.75
+  ],
+  [
+   2280.1809,
+   8,
+   382,
+   2.3773,
+   0.80834,
+   0.875
+  ],
+  [
+   2282.5582,
+   8,
+   394,
+   1.6436,
+   0.93477,
+   0.75
+  ],
+  [
+   2284.2018,
+   8,
+   356,
+   1.4791,
+   0.78977,
+   0.5
+  ],
+  [
+   2285.6809,
+   8,
+   390,
+   1.7272,
+   0.83723,
+   1.0
+  ],
+  [
+   2287.4081,
+   8,
+   494,
+   2.9029,
+   0.88542,
+   0.75
+  ],
+  [
+   2290.311,
+   8,
+   401,
+   1.6799,
+   0.67,
+   0.75
+  ],
+  [
+   2291.9909,
+   8,
+   345,
+   1.4333,
+   0.8437,
+   0.625
+  ],
+  [
+   2293.4242,
+   8,
+   304,
+   1.2512,
+   1.0711,
+   0.875
+  ],
+  [
+   2294.6754,
+   8,
+   512,
+   2.9169,
+   0.74521,
+   0.875
+  ],
+  [
+   2297.5923,
+   8,
+   311,
+   1.2811,
+   0.89969,
+   1.0
+  ],
+  [
+   2298.8734,
+   8,
+   356,
+   1.5281,
+   0.90373,
+   0.875
+  ],
+  [
+   2300.4015,
+   8,
+   414,
+   1.8484,
+   1.12813,
+   0.625
+  ],
+  [
+   2302.2499,
+   8,
+   512,
+   2.9984,
+   0.90929,
+   1.0
+  ],
+  [
+   2305.2483,
+   8,
+   459,
+   1.9929,
+   0.74157,
+   0.75
+  ],
+  [
+   2307.2412,
+   8,
+   389,
+   1.6412,
+   0.5296,
+   0.875
+  ],
+  [
+   2308.8824,
+   8,
+   372,
+   1.5444,
+   0.85885,
+   0.875
+  ],
+  [
+   2310.4268,
+   8,
+   501,
+   2.9529,
+   0.66124,
+   0.75
+  ],
+  [
+   2313.3797,
+   8,
+   345,
+   1.4392,
+   0.72084,
+   0.75
+  ],
+  [
+   2314.8189,
+   8,
+   411,
+   1.7691,
+   0.71141,
+   0.875
+  ],
+  [
+   2316.588,
+   8,
+   363,
+   1.5146,
+   0.82441,
+   0.75
+  ],
+  [
+   2318.1026,
+   8,
+   362,
+   2.2539,
+   0.77012,
+   0.875
+  ],
+  [
+   2320.3565,
+   8,
+   352,
+   1.4349,
+   1.05648,
+   0.75
+  ],
+  [
+   2321.7914,
+   8,
+   419,
+   1.7837,
+   0.99338,
+   0.75
+  ],
+  [
+   2323.5751,
+   8,
+   404,
+   1.7026,
+   0.9765,
+   0.5
+  ],
+  [
+   2325.2777,
+   8,
+   345,
+   2.1767,
+   0.88368,
+   0.625
+  ],
+  [
+   2327.4544,
+   8,
+   356,
+   1.4577,
+   0.76404,
+   0.875
+  ],
+  [
+   2328.9121,
+   8,
+   464,
+   1.9887,
+   0.81868,
+   0.875
+  ],
+  [
+   2330.9008,
+   8,
+   379,
+   1.6232,
+   0.96703,
+   0.75
+  ],
+  [
+   2332.524,
+   8,
+   391,
+   2.4039,
+   1.08908,
+   0.875
+  ],
+  [
+   2334.9279,
+   8,
+   386,
+   1.6227,
+   0.89506,
+   0.875
+  ],
+  [
+   2336.5506,
+   8,
+   353,
+   1.4733,
+   1.00912,
+   0.5
+  ],
+  [
+   2338.0239,
+   8,
+   426,
+   1.8474,
+   0.78953,
+   0.875
+  ],
+  [
+   2339.8713,
+   8,
+   357,
+   2.2706,
+   0.72119,
+   0.875
+  ],
+  [
+   2342.1419,
+   8,
+   349,
+   1.4511,
+   0.81468,
+   0.875
+  ],
+  [
+   2343.593,
+   8,
+   360,
+   1.4938,
+   0.71739,
+   0.875
+  ],
+  [
+   2345.0868,
+   8,
+   439,
+   1.9157,
+   0.98192,
+   0.75
+  ],
+  [
+   2347.0025,
+   8,
+   352,
+   2.185,
+   0.73478,
+   0.875
+  ],
+  [
+   2349.1875,
+   8,
+   383,
+   1.5967,
+   0.97652,
+   0.875
+  ],
+  [
+   2350.7842,
+   8,
+   401,
+   1.724,
+   0.90866,
+   0.875
+  ],
+  [
+   2352.5082,
+   8,
+   376,
+   1.5682,
+   1.1906,
+   1.0
+  ],
+  [
+   2354.0764,
+   8,
+   357,
+   2.23,
+   0.77808,
+   1.0
+  ],
+  [
+   2356.3064,
+   8,
+   442,
+   1.9445,
+   1.05055,
+   0.375
+  ],
+  [
+   2358.2509,
+   8,
+   452,
+   2.0062,
+   0.48306,
+   1.0
+  ],
+  [
+   2360.2571,
+   8,
+   462,
+   2.0299,
+   0.92128,
+   0.75
+  ],
+  [
+   2362.287,
+   8,
+   497,
+   2.9454,
+   0.7166,
+   0.875
+  ],
+  [
+   2365.2324,
+   8,
+   462,
+   2.0031,
+   0.99701,
+   0.75
+  ],
+  [
+   2367.2355,
+   8,
+   497,
+   2.173,
+   0.80389,
+   0.875
+  ],
+  [
+   2369.4085,
+   8,
+   372,
+   1.5681,
+   0.90418,
+   0.875
+  ],
+  [
+   2370.9766,
+   8,
+   432,
+   2.5898,
+   0.67006,
+   0.75
+  ],
+  [
+   2373.5664,
+   8,
+   370,
+   1.566,
+   0.97775,
+   0.5
+  ],
+  [
+   2375.1324,
+   8,
+   448,
+   1.926,
+   1.09259,
+   1.0
+  ],
+  [
+   2377.0584,
+   8,
+   474,
+   2.0921,
+   0.94185,
+   1.0
+  ],
+  [
+   2379.1505,
+   8,
+   430,
+   2.5835,
+   0.79634,
+   0.875
+  ],
+  [
+   2381.734,
+   8,
+   429,
+   1.8328,
+   0.90295,
+   1.0
+  ],
+  [
+   2383.5668,
+   8,
+   356,
+   1.478,
+   0.70919,
+   0.875
+  ],
+  [
+   2385.0448,
+   8,
+   371,
+   1.5617,
+   0.91303,
+   0.75
+  ],
+  [
+   2386.6065,
+   8,
+   455,
+   2.7175,
+   0.84321,
+   0.875
+  ],
+  [
+   2389.324,
+   8,
+   447,
+   1.9425,
+   0.80922,
+   0.875
+  ],
+  [
+   2391.2665,
+   8,
+   376,
+   1.5688,
+   0.94774,
+   0.75
+  ],
+  [
+   2392.8353,
+   8,
+   346,
+   1.4379,
+   0.95742,
+   0.875
+  ],
+  [
+   2394.2732,
+   8,
+   512,
+   2.9351,
+   0.73957,
+   0.75
+  ],
+  [
+   2397.2083,
+   8,
+   496,
+   2.1526,
+   0.48311,
+   0.875
+  ],
+  [
+   2399.3609,
+   8,
+   379,
+   1.6168,
+   0.94562,
+   0.625
+  ],
+  [
+   2400.9777,
+   8,
+   371,
+   1.5727,
+   0.78065,
+   0.875
+  ],
+  [
+   2402.5504,
+   8,
+   472,
+   2.8277,
+   1.12717,
+   0.625
+  ],
+  [
+   2405.3781,
+   8,
+   478,
+   2.1194,
+   0.63297,
+   0.75
+  ],
+  [
+   2407.4975,
+   8,
+   368,
+   1.5336,
+   0.89492,
+   0.5
+  ],
+  [
+   2409.0311,
+   8,
+   441,
+   1.9205,
+   0.70753,
+   1.0
+  ],
+  [
+   2410.9516,
+   8,
+   471,
+   2.8025,
+   0.69486,
+   0.875
+  ],
+  [
+   2413.7541,
+   8,
+   335,
+   1.3835,
+   0.97929,
+   0.875
+  ],
+  [
+   2415.1376,
+   8,
+   475,
+   2.086,
+   1.02583,
+   0.875
+  ],
+  [
+   2417.2236,
+   8,
+   512,
+   2.3971,
+   1.05409,
+   0.75
+  ],
+  [
+   2419.6207,
+   8,
+   417,
+   2.6065,
+   0.77624,
+   0.625
+  ],
+  [
+   2422.2272,
+   8,
+   394,
+   1.7223,
+   1.01874,
+   0.625
+  ],
+  [
+   2423.9495,
+   8,
+   369,
+   1.6099,
+   0.89338,
+   0.75
+  ],
+  [
+   2425.5594,
+   8,
+   448,
+   1.9619,
+   0.82663,
+   1.0
+  ],
+  [
+   2427.5213,
+   8,
+   464,
+   2.8544,
+   0.84407,
+   0.625
+  ],
+  [
+   2430.3757,
+   8,
+   512,
+   2.1928,
+   0.81209,
+   1.0
+  ],
+  [
+   2432.5685,
+   8,
+   377,
+   1.6937,
+   0.9377,
+   0.875
+  ],
+  [
+   2434.2622,
+   8,
+   367,
+   1.5505,
+   0.89667,
+   0.625
+  ],
+  [
+   2435.8127,
+   8,
+   439,
+   2.637,
+   0.91411,
+   0.75
+  ],
+  [
+   2438.4497,
+   8,
+   373,
+   1.663,
+   0.97243,
+   0.625
+  ],
+  [
+   2440.1127,
+   8,
+   505,
+   2.2882,
+   1.00689,
+   0.875
+  ],
+  [
+   2442.4009,
+   8,
+   400,
+   1.6605,
+   0.75233,
+   1.0
+  ],
+  [
+   2444.0614,
+   8,
+   479,
+   2.8011,
+   0.74651,
+   0.875
+  ],
+  [
+   2446.8625,
+   8,
+   381,
+   1.5751,
+   1.11962,
+   0.375
+  ],
+  [
+   2448.4376,
+   8,
+   386,
+   1.6386,
+   0.85804,
+   0.875
+  ],
+  [
+   2450.0762,
+   8,
+   512,
+   2.195,
+   1.03686,
+   0.25
+  ],
+  [
+   2452.2712,
+   8,
+   358,
+   2.2407,
+   1.1283,
+   0.625
+  ],
+  [
+   2454.5119,
+   8,
+   504,
+   2.1841,
+   0.62489,
+   0.875
+  ],
+  [
+   2456.696,
+   8,
+   359,
+   1.4873,
+   0.88934,
+   0.875
+  ],
+  [
+   2458.1833,
+   8,
+   395,
+   1.6622,
+   0.77464,
+   0.625
+  ],
+  [
+   2459.8455,
+   8,
+   512,
+   2.9294,
+   0.76651,
+   1.0
+  ],
+  [
+   2462.7749,
+   8,
+   379,
+   1.5599,
+   0.94076,
+   0.75
+  ],
+  [
+   2464.3348,
+   8,
+   342,
+   1.4098,
+   0.91432,
+   0.75
+  ],
+  [
+   2465.7446,
+   8,
+   421,
+   1.8099,
+   0.85695,
+   0.75
+  ],
+  [
+   2467.5545,
+   8,
+   445,
+   2.6376,
+   0.84627,
+   0.75
+  ],
+  [
+   2470.1921,
+   8,
+   469,
+   2.015,
+   0.80633,
+   0.875
+  ],
+  [
+   2472.2071,
+   8,
+   512,
+   2.2347,
+   0.7177,
+   0.875
+  ],
+  [
+   2474.4418,
+   8,
+   417,
+   1.8008,
+   0.69905,
+   0.875
+  ],
+  [
+   2476.2426,
+   8,
+   314,
+   2.0166,
+   0.99518,
+   0.75
+  ],
+  [
+   2478.2592,
+   8,
+   348,
+   1.4157,
+   0.81446,
+   0.875
+  ],
+  [
+   2479.6749,
+   8,
+   373,
+   1.5568,
+   0.79635,
+   0.75
+  ],
+  [
+   2481.2317,
+   8,
+   461,
+   1.9866,
+   1.04285,
+   0.625
+  ],
+  [
+   2483.2183,
+   8,
+   375,
+   2.2916,
+   0.93827,
+   0.75
+  ],
+  [
+   2485.5099,
+   8,
+   377,
+   1.562,
+   0.78662,
+   0.75
+  ],
+  [
+   2487.0719,
+   8,
+   358,
+   1.4806,
+   1.00547,
+   0.875
+  ],
+  [
+   2488.5525,
+   8,
+   386,
+   1.6258,
+   0.76866,
+   0.625
+  ],
+  [
+   2490.1783,
+   8,
+   461,
+   2.711,
+   0.91942,
+   0.75
+  ],
+  [
+   2492.8893,
+   8,
+   499,
+   2.151,
+   0.93798,
+   0.75
+  ],
+  [
+   2495.0403,
+   8,
+   362,
+   1.5309,
+   0.97906,
+   0.5
+  ],
+  [
+   2496.5712,
+   8,
+   416,
+   1.7312,
+   0.76406,
+   0.75
+  ],
+  [
+   2498.3024,
+   8,
+   364,
+   2.2368,
+   0.78302,
+   1.0
+  ],
+  [
+   2500.5392,
+   8,
+   366,
+   1.5002,
+   0.64295,
+   0.875
+  ],
+  [
+   2502.0394,
+   8,
+   377,
+   1.5837,
+   0.91414,
+   0.875
+  ],
+  [
+   2503.6231,
+   8,
+   381,
+   1.599,
+   0.79628,
+   0.75
+  ],
+  [
+   2505.2221,
+   8,
+   387,
+   2.3552,
+   0.69177,
+   0.625
+  ],
+  [
+   2507.5773,
+   8,
+   377,
+   1.553,
+   0.89127,
+   0.875
+  ],
+  [
+   2509.1303,
+   8,
+   451,
+   1.9458,
+   0.83705,
+   0.375
+  ],
+  [
+   2511.0761,
+   8,
+   369,
+   1.5459,
+   0.78166,
+   0.875
+  ],
+  [
+   2512.622,
+   8,
+   393,
+   2.4061,
+   1.03757,
+   0.5
+  ],
+  [
+   2515.0281,
+   8,
+   380,
+   1.5641,
+   1.06303,
+   0.875
+  ],
+  [
+   2516.5922,
+   8,
+   432,
+   1.8526,
+   0.847,
+   0.875
+  ],
+  [
+   2518.4448,
+   8,
+   396,
+   1.6679,
+   1.07936,
+   0.5
+  ],
+  [
+   2520.1127,
+   8,
+   444,
+   2.6392,
+   0.88253,
+   0.75
+  ],
+  [
+   2522.7519,
+   8,
+   439,
+   1.8557,
+   0.64114,
+   0.875
+  ],
+  [
+   2524.6076,
+   8,
+   472,
+   2.0273,
+   0.77625,
+   0.875
+  ],
+  [
+   2526.6349,
+   8,
+   380,
+   1.5885,
+   0.73854,
+   1.0
+  ],
+  [
+   2528.2234,
+   8,
+   512,
+   2.9252,
+   0.94042,
+   0.875
+  ],
+  [
+   2531.1486,
+   8,
+   416,
+   2.4454,
+   0.90996,
+   0.875
+  ]
+ ]
+}

@@ -1,0 +1,38 @@
+
+==========================================================================
+  Example 35 -- Device selection and latency
+==========================================================================
+  Device resolution in `Agent.__init__`: an explicit `device=` wins (with a warning and a
+  fallback to CPU if it is unavailable), otherwise CUDA, then MPS, then CPU. Precision follows
+  the device -- mixed precision (bf16/fp16) is a CUDA win, while CPU and MPS run **fp32**;
+  `torch.autocast` has no MPS backend here, so Laya only wraps the forward pass on CUDA.
+  
+  For explicit control pass `device="cpu"`, `"mps"` or `"cuda"`. Laya does not read an env var
+  itself, but a common application pattern is to read one (`LAYA_DEVICE`) and pass it through.
+  
+  `timed(fn, repeat=3)` discards one warm-up call, so the first MPS call's ~13 s of Metal
+  kernel compilation does not pollute the median. Both legs answer the same question set.
+
+   torch 2.14.1   cuda_available=False   mps_available=True
+   explicit selection example: device = os.environ.get('LAYA_DEVICE') or None
+
+   == CPU ==
+   cpu  -> loaded on cpu  dtype=torch.float32 median    48.0 ms/call  16.0 ms/question
+
+   == MPS ==
+   mps  -> loaded on mps  dtype=torch.float16 median    19.3 ms/call  6.4 ms/question
+
+   speed-up: CPU 48.0 ms -> MPS 19.3 ms  (2.48x)
+   answers agree after JSON serialisation: True
+   cpu answers : {"department": {"action": {"act_probability": 1.0}, "answer_confidence": 0.9886, "choice": "billing"
+   mps answers : {"department": {"action": {"act_probability": 1.0}, "answer_confidence": 0.9886, "choice": "billing"
+
+   device line and one answer from the CPU leg:
+   department         choice  billing (p=0.989, conf=0.947, answer_conf=0.989)   next: account=0.006  other=0.004
+   urgency            score   1.74 / 2 (conf=0.433, answer_conf=0.770)
+   refund_requested   noul    0.994 (true)  conf=0.994, answer_conf=0.994
+   both legs used fp32 (device.type in ('cpu','mps') -> torch.float32);
+   mixed precision would only be enabled on CUDA.
+real 5.18
+user 3.70
+sys 1.47

@@ -1,0 +1,155 @@
+{
+ "task": "T7",
+ "timing_report": "results/T3arm/smoke_20261008-1021/T7/train_timing.json",
+ "status": "ok",
+ "throughput": {
+  "train_items_per_s": 18.22,
+  "s_per_optimizer_step": 1.756,
+  "s_per_micro_batch_mean": 0.4391
+ },
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 1.94,
+  "train_loop": 3.51,
+  "epoch_checkpoint_saves": 0.33,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 0.23,
+  "calibration (forward + fit_temperature)": 0.08,
+  "export (final save + configs)": 0.45,
+  "train() total": 6.56
+ },
+ "memory_gb": {
+  "ru_maxrss": 2.99,
+  "rss_peak_sampled": 2.02,
+  "mps_current_allocated_peak": 5.29,
+  "mps_driver_allocated_peak": 9.18,
+  "mps_recommended_max": 40.2
+ },
+ "optimizer_steps": 2,
+ "n_train_items": 64,
+ "loss_log_script": [
+  "Epoch 1/1 complete; avg_loss=0.9375"
+ ],
+ "train_ce_windows": [
+  0.5867,
+  0.2495,
+  1.498,
+  1.2592,
+  1.0406,
+  2.0089,
+  1.6151,
+  0.6469
+ ],
+ "train_acc_windows": [
+  0.75,
+  0.875,
+  0.75,
+  0.75,
+  0.75,
+  0.5,
+  0.5,
+  0.875
+ ],
+ "calibration_rows": {
+  "n": 7,
+  "ce_before_T": 0.835,
+  "accuracy": 0.8571
+ },
+ "temperature_fits_script": [
+  {
+   "start": 9.048,
+   "end": 9.048,
+   "samples": 7
+  }
+ ],
+ "dev": {
+  "epoch0_vanilla": {
+   "report": "results/T3arm/smoke_20261008-1021/T7/dev_ep0.json",
+   "accuracy": 0.6875
+  },
+  "reports": [
+   "results/T3arm/smoke_20261008-1021/T7/dev_final.json"
+  ],
+  "accuracy": [
+   0.625
+  ],
+  "selected": "results/T3arm/smoke_20261008-1021/T7/dev_final.json",
+  "rule": "highest dev accuracy; a tie goes to the earlier epoch (docs/11 §4)"
+ },
+ "training_failed": true,
+ "class_recall_dev": {
+  "epoch0_vanilla": {
+   "alarm_remove": 1.0,
+   "alarm_set": 1.0,
+   "audio_volume_down": 0.6667,
+   "audio_volume_mute": 1.0,
+   "audio_volume_up": 1.0,
+   "datetime_query": 1.0,
+   "iot_cleaning": 1.0,
+   "iot_hue_lightchange": 1.0,
+   "iot_wemo_off": 1.0,
+   "music_settings": 0.0,
+   "news_query": 0.0,
+   "play_music": 0.5
+  },
+  "selected": {
+   "alarm_remove": 1.0,
+   "alarm_set": 1.0,
+   "audio_volume_down": 0.3333,
+   "audio_volume_mute": 1.0,
+   "audio_volume_up": 1.0,
+   "datetime_query": 1.0,
+   "iot_cleaning": 1.0,
+   "iot_hue_lightchange": 1.0,
+   "iot_wemo_off": 1.0,
+   "music_settings": 0.0,
+   "news_query": 0.0,
+   "play_music": 0.5
+  }
+ },
+ "train_vs_dev_gap": {
+  "train_acc_last_window": 0.875,
+  "dev_acc_selected": 0.625,
+  "gap": 0.25,
+  "note": "train acc = argmax vs target on each micro-batch's training forward (dropout on), last 10%"
+ },
+ "selected_ckpt": "/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.E01Th9/ckpt/T7_run",
+ "selected_temperature": [
+  1.0,
+  1.2,
+  1.2
+ ],
+ "temperature_clamp": {
+  "script_fit_range": [
+   0.1,
+   10.0
+  ],
+  "load_range": [
+   0.5,
+   5.0
+  ],
+  "outside_load_range": [],
+  "at_script_bound": [],
+  "default_1.2_for_types_without_calibration_rows": [
+   1,
+   2
+  ]
+ },
+ "selected_temperature_by_options": null,
+ "selected_max_len": [
+  1024,
+  256
+ ],
+ "option_order_flip_dev40": {
+  "n_items": 8,
+  "n_options": 10,
+  "orig_accuracy": 0.875,
+  "flip_rate_per_perm": 0.125,
+  "flip_rate_per_perm_ci": [
+   0.0,
+   0.375
+  ],
+  "any_flip_rate": 0.125,
+  "perm_accuracy_mean": 0.875
+ }
+}

@@ -1,0 +1,209 @@
+{
+  "scenario": "C domain router, fine-tuned ft-v1 (full_20261003-1156); zero-shot values kept in history",
+  "updated": "2026-10-03",
+  "G0": {
+    "value": 0.47,
+    "pass": true,
+    "run_ids": [
+      "K2_intent20_ko_multilingual",
+      "20261002-1650_multilingual_ko_massive_intent_20opt"
+    ],
+    "source": [
+      "results/A/README.md",
+      "results/korean_support/K2_intent20_ko_multilingual.json"
+    ],
+    "note": "ko_massive_intent_20opt multilingual 0.470 vs upstream 0.470, Δ 0.000 (±0.03 이내). 빌더 파일 런(Track B)도 0.470"
+  },
+  "G1": {
+    "value": 0.9,
+    "pass": true,
+    "run_ids": [
+      "full_20261003-1156_ft-v1_ko_massive_domain_8",
+      "full_20261003-1156_ft-v1_ko_massive_domain_8_full",
+      "20261002-1643_multilingual_ko_massive_domain_8"
+    ],
+    "source": [
+      "results/P4/metrics/full_20261003-1156_summary.md",
+      "results/P4/full_20261003-1156_ft-v1_ko_massive_domain_8.json",
+      "results/P4/full_20261003-1156_ft-v1_ko_massive_domain_8_full.json",
+      "results/P4/full_20261003-1156_driver.log"
+    ],
+    "note": "파인튜닝 ft-v1(run full_20261003-1156): domain_8 test 절반 0.900 [0.860, 0.936] (n=250), train 중복 제외 0.893 (n=234); 전체 ko test 2,917행 0.913 [0.902, 0.923], 중복 제외 0.908 (n=2,762); validation 2,012행 0.918. LLM 베이스라인 없음 → 절대 기준 0.80 적용, 통과. 보조 ynat_7 dev 0.633(파인튜닝 대상 아님).",
+    "history": {
+      "zero-shot multilingual (2026-10-02)": {
+        "value": 0.492,
+        "pass": false,
+        "note": "domain_8 test 절반 0.492 [0.432, 0.552]; P4 probe(1k행 1 epoch) 0.720 [0.664, 0.776]"
+      }
+    }
+  },
+  "G2": {
+    "value": 0.756,
+    "pass": true,
+    "run_ids": [
+      "full_20261003-1156_ft-v1_ko_massive_domain_8",
+      "full_20261003-1156_ft-v1_ko_massive_domain_8_full"
+    ],
+    "source": [
+      "results/P4/metrics/full_20261003-1156_coverage_500.md",
+      "results/P4/metrics/full_20261003-1156_coverage_2917.md"
+    ],
+    "note": "파인튜닝 ft-v1, test 절반(n=250): 오류 ≤ 5%에서 최대 coverage 0.756 (T 0.938, covered acc 0.952; 같은 split에서 고른 사후 T), 오류 ≤ 10%에서 1.000 (T 0.217, acc 0.900). dev 절반이 고른 T 0.892(≈0.90)를 test에 적용하면 coverage 0.916, 오류 0.079(5% 예산 초과, 10% 예산 내). 전체 test 2,917행: 5% 예산 0.923 (T 0.897), 10% 예산 1.000; dev-1459가 고른 T 0.907(≈0.90)를 test-1458에 적용하면 coverage 0.923, 오류 0.042(5% 예산 내). 판정 통과는 2,917행 기준으로 안정적이고 250행 기준은 T 선택 방식에 민감하다.",
+    "history": {
+      "zero-shot multilingual refit pooled (2026-10-02)": {
+        "value": 0.224,
+        "pass": false,
+        "note": "dev가 고른 T 0.8799 → test coverage 0.224(오류 0.036); 정확도 0.492에서 상한 a/(1−e) = 0.518"
+      }
+    }
+  },
+  "G3": {
+    "value": 0.053,
+    "pass": true,
+    "run_ids": [
+      "full_20261003-1156_ft-v1_ko_massive_domain_8",
+      "full_20261003-1156_ft-v1_ko_massive_domain_8_full",
+      "20261002-1733_calibration_multilingual"
+    ],
+    "source": [
+      "results/P4/metrics/full_20261003-1156_summary.md",
+      "results/E/E_summary_20261002.md"
+    ],
+    "note": "파인튜닝 ft-v1(스크립트가 validation 400행으로 맞춘 T 적용): domain_8 test 절반 ECE 0.053 [0.034, 0.097], 전체 2,917행 0.057 [0.050, 0.067], validation 2,012행 0.056. 기준 0.10 통과.",
+    "history": {
+      "zero-shot multilingual refit pooled (2026-10-02)": {
+        "value": 0.098,
+        "pass": true,
+        "note": "경계 통과: pooled T=1.9161, test ECE 0.263 → 0.098 [0.081, 0.162]; per-task fit 0.123"
+      }
+    }
+  },
+  "G4": {
+    "value": 0.037,
+    "pass": true,
+    "run_ids": [
+      "full_20261003-1156_option_order_dev",
+      "C1_option_order_20261002"
+    ],
+    "source": [
+      "results/P4/metrics/full_20261003-1156_option_order_dev.md",
+      "results/C/C1_option_order_20261002.json"
+    ],
+    "note": "파인튜닝 ft-v1(학습 아이템 옵션 순서 셔플 증강), router_v1 domain_8 dev 250행, 순열 5개: 순열당 flip 0.037 [0.022, 0.057], any-flip 0.084 [0.052, 0.124], 원 순서 acc 0.888, 순열 평균 acc 0.894. confidence ≥ 0.9 결정(219건)의 flip 0.005. 기준 0.10 통과(순열당·any-flip 모두).",
+    "history": {
+      "zero-shot multilingual (2026-10-02)": {
+        "value": 0.27,
+        "pass": false,
+        "note": "순열당 0.270 [0.230, 0.310], any-flip 0.512; confidence ≥ 0.9 결정만 0.094"
+      }
+    }
+  },
+  "G5": {
+    "value": 22.6,
+    "pass": true,
+    "run_ids": [
+      "20261003-1249_latency_matrix",
+      "20261003-1312_latency_paced"
+    ],
+    "source": [
+      "results/D/D_summary_20261003.md",
+      "results/D/20261003-1249_latency_matrix.json",
+      "results/D/20261003-1312_latency_paced.json"
+    ],
+    "note": "Track D1, multilingual 3문항 in-process p95(연속 호출, warm-up 3 + 10회): MPS 22.6 ms(short 59 tok) / 92.5 ms(long 433 tok), CPU 10 threads 57.8 / 247.8 ms. 기준 MPS ≤ 100, CPU ≤ 500 → 통과. 간헐 호출(D1c, idle gap ≥ 100 ms)에서는 MPS 54.9~90.6, CPU 61.9~100.5 ms로 여전히 기준 안. english·typed-decisions long(919 tok)은 CPU p95 529.5 / 1175.7 ms로 CPU 기준 미달(PoC 구성 아님).",
+    "history": {
+      "P0 참고 (2026-10-02)": {
+        "value": 73.83,
+        "pass": null,
+        "note": "7문항 MPS fp16 median 73.83 ms / CPU 145.88 ms (정식 측정 아님)"
+      }
+    }
+  },
+  "G6": {
+    "value": 79.4,
+    "pass": true,
+    "run_ids": [
+      "20261003-1330_http_mps",
+      "20261003-1343_http_cpu"
+    ],
+    "source": [
+      "results/D/D_summary_20261003.md",
+      "results/D/20261003-1330_http_mps.json",
+      "results/D/20261003-1343_http_cpu.json"
+    ],
+    "note": "Track D6, laya-serve(LAYA_DEVICE=mps, preload multilingual, LAYA_THREADS=10), 3문항 한국어 body, open-loop 10 RPS × 60 s: p50 63.5 / p95 79.4 / p99 85.1 ms, 600건, 오류 0, 503 0. 기준 p95 ≤ 150 → 통과. 참고: 1문항 10 RPS p95 57.3; closed-loop c=1 3q p95 48.6; CPU 서버 10 RPS 3q p95 135.8(기준 안). 서버가 추론을 직렬 처리하므로 처리량 상한은 MPS 1q 약 50 RPS, 3q 22.6 RPS, CPU 3q 10 RPS.",
+    "history": {
+      "스모크 참고 (2026-10-02)": {
+        "value": 17.6,
+        "pass": null,
+        "note": "1문항 HTTP 왕복 median 17.6 ms, 부하 없음, 5회"
+      }
+    }
+  },
+  "G7": {
+    "value": 0.0001,
+    "pass": true,
+    "run_ids": [
+      "20261003-1314_batch"
+    ],
+    "source": [
+      "results/D/D_summary_20261003.md",
+      "results/D/20261003-1314_batch.json"
+    ],
+    "note": "Track D4, G7 정의대로 측정: CPU fp32 multilingual, 혼합 길이 한국어 64 + 256 states × predict_batch(batch_size 8/16/32, sort_by_length=True) vs predict 루프: argmax flip 0, max |Δp| 0.0001(출력 해상도 하한). sort_by_length=False 배치도 flip 0 / 0.0001. MPS fp16 배치는 flip 0, max |Δp| 0.0081~0.0085(기록용). 기준 flip 0, |Δp| ≤ 0.01 → 통과.",
+    "history": {
+      "P0 device parity (2026-10-02)": {
+        "value": 0.0017,
+        "pass": true,
+        "note": "MPS fp16 vs CPU fp32, 7문항 argmax 7/7, max |Δp| 0.0017 (G7 정의가 아닌 디바이스 parity 근거였음)"
+      }
+    }
+  },
+  "verdict": "Conditional Go: 파인튜닝(ft-v1) 전제 모든 게이트 통과; zero-shot은 G1/G2/G4 미달",
+  "jev_comparison": {
+    "date": "2026-10-07",
+    "scope": "Laya 0.3.23 zero-shot(english, multilingual, Router) vs Jev(typesafe-ai/jev, 독립 공개 플레이그라운드 경유, API 아님). 같은 state·질문·옵션 문자열, 8과제 T1~T8, 과제당 n=40(T1 120 decision, T7 100행)",
+    "verdict": "zero-shot에서는 Jev가 Laya보다 정확하고(8과제 중 Laya 유의 우세 0, Holm 후 Jev 유의 우세 2), 특히 지시형·다국어 과제에서 격차가 크다. Laya는 로컬 실행·지연·비용과 파인튜닝으로 격차를 메울 수 있다는 점에서 경쟁력이 있다.",
+    "verdict_counts": {
+      "jev_better": 4,
+      "not_significant": 4,
+      "laya_better": 0
+    },
+    "verdict_counts_holm": {
+      "jev_better": 2,
+      "not_significant": 6,
+      "laya_better": 0
+    },
+    "holm_significant_tasks": [
+      "T1",
+      "T7"
+    ],
+    "macro_accuracy": {
+      "jev": 0.828,
+      "laya_english": 0.646,
+      "laya_multilingual": 0.598,
+      "laya_router": 0.661,
+      "laya_best_per_task": 0.675
+    },
+    "pooled_mcnemar_best_laya": {
+      "n": 240,
+      "b": 39,
+      "c": 21,
+      "p": 0.0273
+    },
+    "jev_latency_displayed_median_ms": 226.0,
+    "jev_browser_post_median_ms": 465.0,
+    "jev_cost_per_1k_decisions_usd": 0.0197,
+    "t1_finetuned_reference": {
+      "correct": 104,
+      "n": 120,
+      "mcnemar_vs_jev_p": 1.0
+    },
+    "site_requests": 438,
+    "note": "G0~G7과 H1~H10 판정(한국어 라우팅 PoC 기준)은 바꾸지 않는다. Jev 단가는 upstream README가 인용한 제3자 값($0.042/1M 토큰)이라 확인이 필요하다.",
+    "source": [
+      "results/F/jev_cmp/summary.json",
+      "results/F/jev_cmp/summary.md"
+    ]
+  }
+}

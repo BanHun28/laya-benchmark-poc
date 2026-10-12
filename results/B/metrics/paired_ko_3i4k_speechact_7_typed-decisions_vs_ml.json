@@ -1,0 +1,110 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/B/20261002-1704_typed-decisions_ko_3i4k_speechact_7.json",
+   "results/B/20261002-1703_multilingual_ko_3i4k_speechact_7.json",
+   "--out",
+   "results/B/metrics/paired_ko_3i4k_speechact_7_typed-decisions_vs_ml.md",
+   "--json",
+   "results/B/metrics/paired_ko_3i4k_speechact_7_typed-decisions_vs_ml.json"
+  ],
+  "generated_at": "2026-10-02T17:05:34+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1704_typed-decisions_ko_3i4k_speechact_7.json",
+    "dataset": "data/evals/ko_3i4k_speechact_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "88e47bec5b3966b5b2747b385744ecb1d738b2e3fb2b7a186755c85d48c6f741",
+    "questions_sha256": "bc89af6329eca2b09e2ac19c4d6f6deea507e7fb01b964bf5067822f213274e7",
+    "revisions": {
+     "typed-decisions": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "typed-decisions",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 259,
+     "dev": 241
+    }
+   },
+   {
+    "report": "results/B/20261002-1703_multilingual_ko_3i4k_speechact_7.json",
+    "dataset": "data/evals/ko_3i4k_speechact_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "88e47bec5b3966b5b2747b385744ecb1d738b2e3fb2b7a186755c85d48c6f741",
+    "questions_sha256": "bc89af6329eca2b09e2ac19c4d6f6deea507e7fb01b964bf5067822f213274e7",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 259,
+     "dev": 241
+    }
+   }
+  ]
+ },
+ "a": "results/B/20261002-1704_typed-decisions_ko_3i4k_speechact_7.json",
+ "b": "results/B/20261002-1703_multilingual_ko_3i4k_speechact_7.json",
+ "results": [
+  {
+   "qid": "speech_act",
+   "split": "all",
+   "n": 500,
+   "acc_a": 0.162,
+   "acc_b": 0.178,
+   "delta": 0.016,
+   "delta_ci": [
+    -0.026558997882938924,
+    0.058558997882938925
+   ],
+   "b": 55,
+   "c": 63,
+   "p": 0.5194908187566281,
+   "agreement": 0.284,
+   "same_state": 1.0
+  },
+  {
+   "qid": "speech_act",
+   "split": "dev",
+   "n": 241,
+   "acc_a": 0.17012448132780084,
+   "acc_b": 0.1950207468879668,
+   "delta": 0.024896265560165973,
+   "delta_ci": [
+    -0.04209465515471947,
+    0.09188718627505141
+   ],
+   "b": 31,
+   "c": 37,
+   "p": 0.5446122234192591,
+   "agreement": 0.26556016597510373,
+   "same_state": 1.0
+  },
+  {
+   "qid": "speech_act",
+   "split": "test",
+   "n": 259,
+   "acc_a": 0.15444015444015444,
+   "acc_b": 0.16216216216216217,
+   "delta": 0.007722007722007722,
+   "delta_ci": [
+    -0.045780510867215754,
+    0.061224526311231195
+   ],
+   "b": 24,
+   "c": 26,
+   "p": 0.887724827340783,
+   "agreement": 0.30115830115830117,
+   "same_state": 1.0
+  }
+ ]
+}

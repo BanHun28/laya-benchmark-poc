@@ -1,0 +1,125 @@
+{
+ "title": "D8 preload RSS",
+ "states_sha256": "a49004bb0bdac3e63b63cab8452cda6abc5fdca2e5af3311a7c9932576da17b8",
+ "questions_sha256": "6cc3401a3f7c3a603c2c68961564a0c17d8a09294bb8b7b5172a5a40ebdc2ca2",
+ "run_card": {
+  "started_at": "2026-10-03 13:07:21 +0900",
+  "argv": [
+   "scripts/bench_latency_local.py",
+   "--rss",
+   "--devices",
+   "cpu,mps",
+   "--out",
+   "results/D/20261003-1307_rss_preload.json"
+  ],
+  "laya": "0.3.23",
+  "torch": "2.14.1",
+  "transformers": "5.18.0",
+  "python": "3.12.12",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "threads_intra": 10,
+  "threads_interop": 1,
+  "checkpoint_sha": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+  "env_ref": "results/env/env_20261002-1333.json",
+  "env": {
+   "OMP_NUM_THREADS": "10",
+   "LAYA_MPS_AMP_MIN_ROWS": null,
+   "LAYA_CPU_AMP": null,
+   "LAYA_REVISION": "reviewed",
+   "HF_HUB_OFFLINE": null
+  },
+  "power": "Now drawing from 'AC Power'",
+  "uptime": "13:07  up 1 day,  5:13, 7 users, load averages: 4.28 4.16 4.26",
+  "git_sha": "n/a (not a git repo)",
+  "uptime_after": "13:07  up 1 day,  5:13, 7 users, load averages: 4.08 4.12 4.24"
+ },
+ "rss": [
+  {
+   "device": "cpu",
+   "rows": [
+    {
+     "loaded": [],
+     "rss_gib": 0.191
+    },
+    {
+     "loaded": [
+      "multilingual"
+     ],
+     "rss_gib": 2.066,
+     "rss_after_predict_gib": 2.085
+    },
+    {
+     "loaded": [
+      "multilingual",
+      "english"
+     ],
+     "rss_gib": 3.632,
+     "rss_after_predict_gib": 3.666
+    },
+    {
+     "loaded": [
+      "multilingual",
+      "english",
+      "typed-decisions"
+     ],
+     "rss_gib": 5.23,
+     "rss_after_predict_gib": 5.257
+    }
+   ],
+   "warnings": [
+    "/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/laya/router.py:594: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated."
+   ]
+  },
+  {
+   "device": "mps",
+   "rows": [
+    {
+     "loaded": [],
+     "rss_gib": 0.192,
+     "mps_current_gib": 0.0,
+     "mps_driver_gib": 0.0
+    },
+    {
+     "loaded": [
+      "multilingual"
+     ],
+     "rss_gib": 1.125,
+     "mps_current_gib": 1.207,
+     "mps_driver_gib": 1.243,
+     "rss_after_predict_gib": 1.249,
+     "mps_current_gib_after_predict": 1.207,
+     "mps_driver_gib_after_predict": 1.245
+    },
+    {
+     "loaded": [
+      "multilingual",
+      "english"
+     ],
+     "rss_gib": 1.707,
+     "mps_current_gib": 2.781,
+     "mps_driver_gib": 3.245,
+     "rss_after_predict_gib": 1.711,
+     "mps_current_gib_after_predict": 2.781,
+     "mps_driver_gib_after_predict": 3.253
+    },
+    {
+     "loaded": [
+      "multilingual",
+      "english",
+      "typed-decisions"
+     ],
+     "rss_gib": 1.7,
+     "mps_current_gib": 4.355,
+     "mps_driver_gib": 5.253,
+     "rss_after_predict_gib": 1.702,
+     "mps_current_gib_after_predict": 4.355,
+     "mps_driver_gib_after_predict": 5.253
+    }
+   ],
+   "warnings": [
+    "/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/laya/router.py:594: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated."
+   ]
+  }
+ ],
+ "wall_s": 9.8
+}

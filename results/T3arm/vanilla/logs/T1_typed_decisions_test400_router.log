@@ -1,0 +1,28 @@
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 1915.03it/s]
+/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/laya/router.py:594: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  agent = Agent(repo, **kwargs)
+choice_accuracy    0.2900
+cost_per_decision_p50_ms 807.6786
+cost_per_decision_p95_ms 1519.2293
+ece                0.1602
+latency_p50_ms     6355.6590
+latency_p95_ms     12153.8345
+mean_confidence    0.5362
+noul_accuracy      0.4883
+score_mae          0.9158
+  qid=action  choice_accuracy=0.1950 ece=0.2695 mean_confidence=0.4645
+  qid=category  choice_accuracy=0.4700 ece=0.1320 mean_confidence=0.4568
+  qid=churn_risk  mean_confidence=0.4734 score_mae=0.6536
+  qid=credential_compromise  ece=0.1982 mean_confidence=0.7469 noul_accuracy=0.5500
+  qid=discrepancy_severity  mean_confidence=0.3701 score_mae=1.3797
+  qid=disposition  choice_accuracy=0.2450 ece=0.1987 mean_confidence=0.4347
+  qid=duplicate  ece=0.7031 mean_confidence=0.8131 noul_accuracy=0.1100
+  qid=matches_order  ece=0.0809 mean_confidence=0.5293 noul_accuracy=0.4900
+  qid=needs_human  ece=0.1263 mean_confidence=0.5690 noul_accuracy=0.6800
+  qid=needs_review  ece=0.0893 mean_confidence=0.6121 noul_accuracy=0.5800
+  qid=outcome  choice_accuracy=0.3900 ece=0.2183 mean_confidence=0.4609
+  qid=risk  mean_confidence=0.5267 score_mae=0.8444
+  qid=severity  mean_confidence=0.3894 score_mae=0.8646
+  qid=true_positive  ece=0.0875 mean_confidence=0.6024 noul_accuracy=0.5200
+  qid=urgency  mean_confidence=0.5936 score_mae=0.8961
+  model=english  choice_accuracy=0.2900 ece=0.1602 mean_confidence=0.5362 noul_accuracy=0.4883 score_mae=0.9158

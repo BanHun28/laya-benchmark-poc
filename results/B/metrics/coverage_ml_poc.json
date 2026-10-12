@@ -1,0 +1,543 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "coverage",
+   "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+   "results/B/20261002-1645_multilingual_ko_klue_ynat_7.json",
+   "--out",
+   "results/B/metrics/coverage_ml_poc.md",
+   "--json",
+   "results/B/metrics/coverage_ml_poc.json"
+  ],
+  "generated_at": "2026-10-02T17:05:35+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+    "dataset": "data/evals/ko_massive_domain_8.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "edf33079033640fa9656c3b583a422c1ededc4bcd75eaafbfb84c5adf613f46b",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 500,
+    "split_rows": {
+     "dev": 250,
+     "test": 250
+    }
+   },
+   {
+    "report": "results/B/20261002-1645_multilingual_ko_klue_ynat_7.json",
+    "dataset": "data/evals/ko_klue_ynat_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "52c1af160c0433405763a919c593afea3d4f62c51c3d893a84b6ea2610da991f",
+    "questions_sha256": "2eec39b823fd3a6eec8d54cb1bfb8caafccd93375fe2ef33c608d232ad37f260",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 255,
+     "dev": 245
+    }
+   }
+  ]
+ },
+ "results": [
+  {
+   "report": "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+   "qid": "domain",
+   "split": "all",
+   "curve": [
+    {
+     "T": 0.5,
+     "coverage": 0.804,
+     "n": 402,
+     "accuracy": 0.6069651741293532
+    },
+    {
+     "T": 0.55,
+     "coverage": 0.754,
+     "n": 377,
+     "accuracy": 0.6180371352785146
+    },
+    {
+     "T": 0.6,
+     "coverage": 0.694,
+     "n": 347,
+     "accuracy": 0.6512968299711815
+    },
+    {
+     "T": 0.65,
+     "coverage": 0.638,
+     "n": 319,
+     "accuracy": 0.6896551724137931
+    },
+    {
+     "T": 0.7,
+     "coverage": 0.602,
+     "n": 301,
+     "accuracy": 0.7142857142857143
+    },
+    {
+     "T": 0.75,
+     "coverage": 0.578,
+     "n": 289,
+     "accuracy": 0.7370242214532872
+    },
+    {
+     "T": 0.8,
+     "coverage": 0.54,
+     "n": 270,
+     "accuracy": 0.7407407407407407
+    },
+    {
+     "T": 0.85,
+     "coverage": 0.5,
+     "n": 250,
+     "accuracy": 0.764
+    },
+    {
+     "T": 0.9,
+     "coverage": 0.44,
+     "n": 220,
+     "accuracy": 0.8090909090909091
+    },
+    {
+     "T": 0.95,
+     "coverage": 0.352,
+     "n": 176,
+     "accuracy": 0.8522727272727273
+    }
+   ],
+   "max_coverage": {
+    "0.05": {
+     "coverage": 0.202,
+     "T": 0.9947,
+     "n": 101,
+     "accuracy": 0.9504950495049505
+    },
+    "0.1": {
+     "coverage": 0.294,
+     "T": 0.9711,
+     "n": 147,
+     "accuracy": 0.9047619047619048
+    }
+   }
+  },
+  {
+   "report": "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+   "qid": "domain",
+   "split": "dev",
+   "curve": [
+    {
+     "T": 0.5,
+     "coverage": 0.812,
+     "n": 203,
+     "accuracy": 0.6305418719211823
+    },
+    {
+     "T": 0.55,
+     "coverage": 0.768,
+     "n": 192,
+     "accuracy": 0.640625
+    },
+    {
+     "T": 0.6,
+     "coverage": 0.696,
+     "n": 174,
+     "accuracy": 0.6839080459770115
+    },
+    {
+     "T": 0.65,
+     "coverage": 0.652,
+     "n": 163,
+     "accuracy": 0.7055214723926381
+    },
+    {
+     "T": 0.7,
+     "coverage": 0.612,
+     "n": 153,
+     "accuracy": 0.7320261437908496
+    },
+    {
+     "T": 0.75,
+     "coverage": 0.576,
+     "n": 144,
+     "accuracy": 0.7708333333333334
+    },
+    {
+     "T": 0.8,
+     "coverage": 0.52,
+     "n": 130,
+     "accuracy": 0.7769230769230769
+    },
+    {
+     "T": 0.85,
+     "coverage": 0.484,
+     "n": 121,
+     "accuracy": 0.7933884297520661
+    },
+    {
+     "T": 0.9,
+     "coverage": 0.432,
+     "n": 108,
+     "accuracy": 0.8148148148148148
+    },
+    {
+     "T": 0.95,
+     "coverage": 0.32,
+     "n": 80,
+     "accuracy": 0.875
+    }
+   ],
+   "max_coverage": {
+    "0.05": {
+     "coverage": 0.184,
+     "T": 0.9941,
+     "n": 46,
+     "accuracy": 0.9565217391304348
+    },
+    "0.1": {
+     "coverage": 0.284,
+     "T": 0.972,
+     "n": 71,
+     "accuracy": 0.9014084507042254
+    }
+   }
+  },
+  {
+   "report": "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+   "qid": "domain",
+   "split": "test",
+   "curve": [
+    {
+     "T": 0.5,
+     "coverage": 0.796,
+     "n": 199,
+     "accuracy": 0.5829145728643216
+    },
+    {
+     "T": 0.55,
+     "coverage": 0.74,
+     "n": 185,
+     "accuracy": 0.5945945945945946
+    },
+    {
+     "T": 0.6,
+     "coverage": 0.692,
+     "n": 173,
+     "accuracy": 0.6184971098265896
+    },
+    {
+     "T": 0.65,
+     "coverage": 0.624,
+     "n": 156,
+     "accuracy": 0.6730769230769231
+    },
+    {
+     "T": 0.7,
+     "coverage": 0.592,
+     "n": 148,
+     "accuracy": 0.6959459459459459
+    },
+    {
+     "T": 0.75,
+     "coverage": 0.58,
+     "n": 145,
+     "accuracy": 0.7034482758620689
+    },
+    {
+     "T": 0.8,
+     "coverage": 0.56,
+     "n": 140,
+     "accuracy": 0.7071428571428572
+    },
+    {
+     "T": 0.85,
+     "coverage": 0.516,
+     "n": 129,
+     "accuracy": 0.7364341085271318
+    },
+    {
+     "T": 0.9,
+     "coverage": 0.448,
+     "n": 112,
+     "accuracy": 0.8035714285714286
+    },
+    {
+     "T": 0.95,
+     "coverage": 0.384,
+     "n": 96,
+     "accuracy": 0.8333333333333334
+    }
+   ],
+   "max_coverage": {
+    "0.05": {
+     "coverage": 0.216,
+     "T": 0.9951,
+     "n": 54,
+     "accuracy": 0.9814814814814815
+    },
+    "0.1": {
+     "coverage": 0.304,
+     "T": 0.9711,
+     "n": 76,
+     "accuracy": 0.9078947368421053
+    }
+   }
+  },
+  {
+   "report": "results/B/20261002-1645_multilingual_ko_klue_ynat_7.json",
+   "qid": "topic",
+   "split": "all",
+   "curve": [
+    {
+     "T": 0.5,
+     "coverage": 0.884,
+     "n": 442,
+     "accuracy": 0.667420814479638
+    },
+    {
+     "T": 0.55,
+     "coverage": 0.838,
+     "n": 419,
+     "accuracy": 0.6873508353221957
+    },
+    {
+     "T": 0.6,
+     "coverage": 0.8,
+     "n": 400,
+     "accuracy": 0.705
+    },
+    {
+     "T": 0.65,
+     "coverage": 0.772,
+     "n": 386,
+     "accuracy": 0.7150259067357513
+    },
+    {
+     "T": 0.7,
+     "coverage": 0.73,
+     "n": 365,
+     "accuracy": 0.726027397260274
+    },
+    {
+     "T": 0.75,
+     "coverage": 0.676,
+     "n": 338,
+     "accuracy": 0.7366863905325444
+    },
+    {
+     "T": 0.8,
+     "coverage": 0.632,
+     "n": 316,
+     "accuracy": 0.7531645569620253
+    },
+    {
+     "T": 0.85,
+     "coverage": 0.566,
+     "n": 283,
+     "accuracy": 0.784452296819788
+    },
+    {
+     "T": 0.9,
+     "coverage": 0.46,
+     "n": 230,
+     "accuracy": 0.8173913043478261
+    },
+    {
+     "T": 0.95,
+     "coverage": 0.35,
+     "n": 175,
+     "accuracy": 0.8628571428571429
+    }
+   ],
+   "max_coverage": {
+    "0.05": {
+     "coverage": 0.214,
+     "T": 0.9799,
+     "n": 107,
+     "accuracy": 0.9532710280373832
+    },
+    "0.1": {
+     "coverage": 0.26,
+     "T": 0.9678,
+     "n": 130,
+     "accuracy": 0.9
+    }
+   }
+  },
+  {
+   "report": "results/B/20261002-1645_multilingual_ko_klue_ynat_7.json",
+   "qid": "topic",
+   "split": "dev",
+   "curve": [
+    {
+     "T": 0.5,
+     "coverage": 0.8979591836734694,
+     "n": 220,
+     "accuracy": 0.6409090909090909
+    },
+    {
+     "T": 0.55,
+     "coverage": 0.8653061224489796,
+     "n": 212,
+     "accuracy": 0.6556603773584906
+    },
+    {
+     "T": 0.6,
+     "coverage": 0.8204081632653061,
+     "n": 201,
+     "accuracy": 0.681592039800995
+    },
+    {
+     "T": 0.65,
+     "coverage": 0.7918367346938775,
+     "n": 194,
+     "accuracy": 0.6907216494845361
+    },
+    {
+     "T": 0.7,
+     "coverage": 0.7714285714285715,
+     "n": 189,
+     "accuracy": 0.6984126984126984
+    },
+    {
+     "T": 0.75,
+     "coverage": 0.6938775510204082,
+     "n": 170,
+     "accuracy": 0.711764705882353
+    },
+    {
+     "T": 0.8,
+     "coverage": 0.636734693877551,
+     "n": 156,
+     "accuracy": 0.7307692307692307
+    },
+    {
+     "T": 0.85,
+     "coverage": 0.5755102040816327,
+     "n": 141,
+     "accuracy": 0.75177304964539
+    },
+    {
+     "T": 0.9,
+     "coverage": 0.4489795918367347,
+     "n": 110,
+     "accuracy": 0.8181818181818182
+    },
+    {
+     "T": 0.95,
+     "coverage": 0.33877551020408164,
+     "n": 83,
+     "accuracy": 0.8674698795180723
+    }
+   ],
+   "max_coverage": {
+    "0.05": {
+     "coverage": 0.1306122448979592,
+     "T": 0.991,
+     "n": 32,
+     "accuracy": 0.96875
+    },
+    "0.1": {
+     "coverage": 0.24489795918367346,
+     "T": 0.9679,
+     "n": 60,
+     "accuracy": 0.9
+    }
+   }
+  },
+  {
+   "report": "results/B/20261002-1645_multilingual_ko_klue_ynat_7.json",
+   "qid": "topic",
+   "split": "test",
+   "curve": [
+    {
+     "T": 0.5,
+     "coverage": 0.8705882352941177,
+     "n": 222,
+     "accuracy": 0.6936936936936937
+    },
+    {
+     "T": 0.55,
+     "coverage": 0.8117647058823529,
+     "n": 207,
+     "accuracy": 0.7198067632850241
+    },
+    {
+     "T": 0.6,
+     "coverage": 0.7803921568627451,
+     "n": 199,
+     "accuracy": 0.7286432160804021
+    },
+    {
+     "T": 0.65,
+     "coverage": 0.7529411764705882,
+     "n": 192,
+     "accuracy": 0.7395833333333334
+    },
+    {
+     "T": 0.7,
+     "coverage": 0.6901960784313725,
+     "n": 176,
+     "accuracy": 0.7556818181818182
+    },
+    {
+     "T": 0.75,
+     "coverage": 0.6588235294117647,
+     "n": 168,
+     "accuracy": 0.7619047619047619
+    },
+    {
+     "T": 0.8,
+     "coverage": 0.6274509803921569,
+     "n": 160,
+     "accuracy": 0.775
+    },
+    {
+     "T": 0.85,
+     "coverage": 0.5568627450980392,
+     "n": 142,
+     "accuracy": 0.8169014084507042
+    },
+    {
+     "T": 0.9,
+     "coverage": 0.47058823529411764,
+     "n": 120,
+     "accuracy": 0.8166666666666667
+    },
+    {
+     "T": 0.95,
+     "coverage": 0.3607843137254902,
+     "n": 92,
+     "accuracy": 0.8586956521739131
+    }
+   ],
+   "max_coverage": {
+    "0.05": {
+     "coverage": 0.23529411764705882,
+     "T": 0.9776,
+     "n": 60,
+     "accuracy": 0.95
+    },
+    "0.1": {
+     "coverage": 0.2901960784313726,
+     "T": 0.9636,
+     "n": 74,
+     "accuracy": 0.9054054054054054
+    }
+   }
+  }
+ ]
+}

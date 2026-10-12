@@ -1,0 +1,135 @@
+{
+ "task": "T4",
+ "timing_report": "results/T3arm/smoke_20261008-1021/T4/train_timing.json",
+ "status": "ok",
+ "throughput": {
+  "train_items_per_s": 12.657,
+  "s_per_optimizer_step": 2.528,
+  "s_per_micro_batch_mean": 0.6321
+ },
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 0.56,
+  "train_loop": 5.06,
+  "epoch_checkpoint_saves": 0.24,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 0.36,
+  "calibration (forward + fit_temperature)": 0.12,
+  "export (final save + configs)": 0.69,
+  "train() total": 7.04
+ },
+ "memory_gb": {
+  "ru_maxrss": 3.19,
+  "rss_peak_sampled": 1.64,
+  "mps_current_allocated_peak": 8.73,
+  "mps_driver_allocated_peak": 10.9,
+  "mps_recommended_max": 40.2
+ },
+ "optimizer_steps": 2,
+ "n_train_items": 64,
+ "loss_log_script": [
+  "Epoch 1/1 complete; avg_loss=0.3681"
+ ],
+ "train_ce_windows": [
+  0.0455,
+  0.6472,
+  0.5428,
+  0.5046,
+  0.1697,
+  0.0245,
+  0.1542,
+  0.6155
+ ],
+ "train_acc_windows": [
+  1.0,
+  0.875,
+  0.75,
+  0.75,
+  1.0,
+  1.0,
+  1.0,
+  0.875
+ ],
+ "calibration_rows": {
+  "n": 7,
+  "ce_before_T": 0.0167,
+  "accuracy": 1.0
+ },
+ "temperature_fits_script": [
+  {
+   "start": 9.244,
+   "end": 9.244,
+   "samples": 7
+  }
+ ],
+ "dev": {
+  "epoch0_vanilla": {
+   "report": "results/T3arm/smoke_20261008-1021/T4/dev_ep0.json",
+   "accuracy": 0.6875
+  },
+  "reports": [
+   "results/T3arm/smoke_20261008-1021/T4/dev_final.json"
+  ],
+  "accuracy": [
+   0.8125
+  ],
+  "selected": "results/T3arm/smoke_20261008-1021/T4/dev_final.json",
+  "rule": "highest dev accuracy; a tie goes to the earlier epoch (docs/11 §4)"
+ },
+ "training_failed": false,
+ "class_recall_dev": {
+  "epoch0_vanilla": {
+   "card arrival": 0.6923,
+   "card linking": 0.6667
+  },
+  "selected": {
+   "card arrival": 0.8462,
+   "card linking": 0.6667
+  }
+ },
+ "train_vs_dev_gap": {
+  "train_acc_last_window": 0.875,
+  "dev_acc_selected": 0.8125,
+  "gap": 0.0625,
+  "note": "train acc = argmax vs target on each micro-batch's training forward (dropout on), last 10%"
+ },
+ "selected_ckpt": "/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.E01Th9/ckpt/T4_run",
+ "selected_temperature": [
+  1.0,
+  1.2,
+  1.2
+ ],
+ "temperature_clamp": {
+  "script_fit_range": [
+   0.1,
+   10.0
+  ],
+  "load_range": [
+   0.5,
+   5.0
+  ],
+  "outside_load_range": [],
+  "at_script_bound": [],
+  "default_1.2_for_types_without_calibration_rows": [
+   1,
+   2
+  ]
+ },
+ "selected_temperature_by_options": null,
+ "selected_max_len": [
+  512,
+  192
+ ],
+ "option_order_flip_dev40": {
+  "n_items": 8,
+  "n_options": 10,
+  "orig_accuracy": 1.0,
+  "flip_rate_per_perm": 0.0,
+  "flip_rate_per_perm_ci": [
+   0.0,
+   0.0
+  ],
+  "any_flip_rate": 0.0,
+  "perm_accuracy_mean": 1.0
+ }
+}

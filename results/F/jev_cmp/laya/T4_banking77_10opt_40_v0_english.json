@@ -1,0 +1,1834 @@
+{
+  "cases": [
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9998,
+        "choice": "card_arrival",
+        "confidence": 0.9989,
+        "probabilities": {
+          "cancel_transfer": 0.0,
+          "card_arrival": 0.9998,
+          "card_payment_not_recognised": 0.0,
+          "card_swallowed": 0.0,
+          "contactless_not_working": 0.0,
+          "direct_debit_payment_not_recognised": 0.0,
+          "disposable_card_limits": 0.0,
+          "exchange_via_app": 0.0,
+          "get_disposable_virtual_card": 0.0,
+          "why_verify_identity": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9998,
+      "correct": true,
+      "expected": "card_arrival",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9998,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:38"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9998,
+        "choice": "card_delivery_estimate",
+        "confidence": 0.9991,
+        "probabilities": {
+          "card_about_to_expire": 0.0,
+          "card_delivery_estimate": 0.9998,
+          "card_payment_wrong_exchange_rate": 0.0,
+          "disposable_card_limits": 0.0,
+          "exchange_rate": 0.0,
+          "exchange_via_app": 0.0,
+          "pending_card_payment": 0.0,
+          "top_up_by_bank_transfer_charge": 0.0,
+          "top_up_by_cash_or_cheque": 0.0,
+          "transaction_charged_twice": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9998,
+      "correct": true,
+      "expected": "card_delivery_estimate",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9998,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:294"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9968,
+        "choice": "card_not_working",
+        "confidence": 0.9884,
+        "probabilities": {
+          "card_not_working": 0.9968,
+          "card_payment_wrong_exchange_rate": 0.0001,
+          "compromised_card": 0.0003,
+          "declined_card_payment": 0.0017,
+          "get_disposable_virtual_card": 0.0001,
+          "top_up_by_card_charge": 0.0002,
+          "top_up_by_cash_or_cheque": 0.0002,
+          "verify_my_identity": 0.0001,
+          "verify_top_up": 0.0001,
+          "visa_or_mastercard": 0.0002
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9968,
+      "correct": true,
+      "expected": "card_not_working",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9968,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:364"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9524,
+        "choice": "exchange_via_app",
+        "confidence": 0.8741,
+        "probabilities": {
+          "card_payment_fee_charged": 0.0045,
+          "contactless_not_working": 0.0039,
+          "disposable_card_limits": 0.0045,
+          "exchange_via_app": 0.9524,
+          "pending_cash_withdrawal": 0.0035,
+          "receiving_money": 0.0141,
+          "transaction_charged_twice": 0.0042,
+          "verify_top_up": 0.004,
+          "virtual_card_not_working": 0.0047,
+          "why_verify_identity": 0.0042
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9524,
+      "correct": true,
+      "expected": "exchange_via_app",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9524,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:427"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2104,
+        "choice": "top_up_by_card_charge",
+        "confidence": 0.1115,
+        "probabilities": {
+          "automatic_top_up": 0.0358,
+          "card_payment_wrong_exchange_rate": 0.1237,
+          "cash_withdrawal_charge": 0.0301,
+          "declined_transfer": 0.0386,
+          "exchange_charge": 0.0355,
+          "lost_or_stolen_card": 0.1879,
+          "reverted_card_payment?": 0.1877,
+          "top_up_by_card_charge": 0.2104,
+          "transfer_fee_charged": 0.0318,
+          "verify_top_up": 0.1185
+        },
+        "type": "choice"
+      },
+      "confidence": 0.2104,
+      "correct": false,
+      "expected": "lost_or_stolen_card",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.2104,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:452"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "age_limit",
+        "confidence": 1.0,
+        "probabilities": {
+          "age_limit": 1.0,
+          "automatic_top_up": 0.0,
+          "balance_not_updated_after_bank_transfer": 0.0,
+          "change_pin": 0.0,
+          "contactless_not_working": 0.0,
+          "country_support": 0.0,
+          "declined_transfer": 0.0,
+          "get_disposable_virtual_card": 0.0,
+          "order_physical_card": 0.0,
+          "pending_card_payment": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "age_limit",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:506"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9989,
+        "choice": "contactless_not_working",
+        "confidence": 0.9953,
+        "probabilities": {
+          "Refund_not_showing_up": 0.0001,
+          "card_acceptance": 0.0001,
+          "card_not_working": 0.0004,
+          "card_payment_fee_charged": 0.0001,
+          "contactless_not_working": 0.9989,
+          "extra_charge_on_statement": 0.0,
+          "get_physical_card": 0.0,
+          "getting_spare_card": 0.0,
+          "reverted_card_payment?": 0.0002,
+          "unable_to_verify_identity": 0.0001
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9989,
+      "correct": true,
+      "expected": "contactless_not_working",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9989,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:577"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9999,
+        "choice": "transfer_fee_charged",
+        "confidence": 0.9994,
+        "probabilities": {
+          "card_swallowed": 0.0,
+          "declined_card_payment": 0.0,
+          "declined_transfer": 0.0,
+          "fiat_currency_support": 0.0,
+          "top_up_by_bank_transfer_charge": 0.0,
+          "top_up_reverted": 0.0,
+          "transfer_fee_charged": 0.9999,
+          "transfer_timing": 0.0,
+          "verify_my_identity": 0.0,
+          "virtual_card_not_working": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9999,
+      "correct": false,
+      "expected": "top_up_by_bank_transfer_charge",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.9999,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:621"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "top_up_limits",
+        "confidence": 1.0,
+        "probabilities": {
+          "declined_card_payment": 0.0,
+          "disposable_card_limits": 0.0,
+          "edit_personal_details": 0.0,
+          "exchange_rate": 0.0,
+          "failed_transfer": 0.0,
+          "order_physical_card": 0.0,
+          "passcode_forgotten": 0.0,
+          "supported_cards_and_currencies": 0.0,
+          "top_up_limits": 1.0,
+          "wrong_amount_of_cash_received": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "top_up_limits",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:719"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5222,
+        "choice": "balance_not_updated_after_cheque_or_cash_deposit",
+        "confidence": 0.4139,
+        "probabilities": {
+          "balance_not_updated_after_cheque_or_cash_deposit": 0.5222,
+          "contactless_not_working": 0.0025,
+          "fiat_currency_support": 0.0018,
+          "get_physical_card": 0.0017,
+          "lost_or_stolen_card": 0.0073,
+          "pending_transfer": 0.2326,
+          "top_up_by_card_charge": 0.0064,
+          "top_up_reverted": 0.0446,
+          "transfer_not_received_by_recipient": 0.1173,
+          "verify_top_up": 0.0636
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5222,
+      "correct": false,
+      "expected": "transfer_not_received_by_recipient",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5222,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:856"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9853,
+        "choice": "supported_cards_and_currencies",
+        "confidence": 0.9655,
+        "probabilities": {
+          "atm_support": 0.0001,
+          "card_arrival": 0.0,
+          "card_payment_fee_charged": 0.0,
+          "fiat_currency_support": 0.0143,
+          "get_disposable_virtual_card": 0.0,
+          "get_physical_card": 0.0,
+          "order_physical_card": 0.0,
+          "pending_card_payment": 0.0,
+          "pending_transfer": 0.0,
+          "supported_cards_and_currencies": 0.9853
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9853,
+      "correct": true,
+      "expected": "supported_cards_and_currencies",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9853,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:898"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9709,
+        "choice": "lost_or_stolen_card",
+        "confidence": 0.9385,
+        "probabilities": {
+          "Refund_not_showing_up": 0.0002,
+          "card_acceptance": 0.0002,
+          "card_payment_fee_charged": 0.0002,
+          "card_swallowed": 0.0002,
+          "cash_withdrawal_not_recognised": 0.0002,
+          "edit_personal_details": 0.0002,
+          "getting_virtual_card": 0.0274,
+          "lost_or_stolen_card": 0.9709,
+          "topping_up_by_card": 0.0002,
+          "verify_source_of_funds": 0.0003
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9709,
+      "correct": false,
+      "expected": "getting_virtual_card",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.9709,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:936"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9869,
+        "choice": "card_acceptance",
+        "confidence": 0.9639,
+        "probabilities": {
+          "balance_not_updated_after_bank_transfer": 0.0003,
+          "card_acceptance": 0.9869,
+          "card_not_working": 0.0096,
+          "card_payment_wrong_exchange_rate": 0.0003,
+          "country_support": 0.0018,
+          "receiving_money": 0.0002,
+          "top_up_by_card_charge": 0.0002,
+          "transfer_timing": 0.0001,
+          "verify_top_up": 0.0003,
+          "virtual_card_not_working": 0.0004
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9869,
+      "correct": true,
+      "expected": "card_acceptance",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9869,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:986"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "top_up_reverted",
+        "confidence": 1.0,
+        "probabilities": {
+          "activate_my_card": 0.0,
+          "apple_pay_or_google_pay": 0.0,
+          "balance_not_updated_after_bank_transfer": 0.0,
+          "card_acceptance": 0.0,
+          "card_delivery_estimate": 0.0,
+          "cash_withdrawal_not_recognised": 0.0,
+          "exchange_via_app": 0.0,
+          "pending_cash_withdrawal": 0.0,
+          "top_up_reverted": 1.0,
+          "unable_to_verify_identity": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "top_up_reverted",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:1007"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9892,
+        "choice": "balance_not_updated_after_cheque_or_cash_deposit",
+        "confidence": 0.9731,
+        "probabilities": {
+          "balance_not_updated_after_cheque_or_cash_deposit": 0.9892,
+          "cash_withdrawal_charge": 0.0,
+          "extra_charge_on_statement": 0.0,
+          "getting_spare_card": 0.0,
+          "pin_blocked": 0.0,
+          "request_refund": 0.0,
+          "top_up_by_cash_or_cheque": 0.0104,
+          "top_up_reverted": 0.0003,
+          "verify_source_of_funds": 0.0,
+          "why_verify_identity": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9892,
+      "correct": true,
+      "expected": "balance_not_updated_after_cheque_or_cash_deposit",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9892,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:1076"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7928,
+        "choice": "verify_my_identity",
+        "confidence": 0.5997,
+        "probabilities": {
+          "card_swallowed": 0.0178,
+          "cash_withdrawal_charge": 0.016,
+          "exchange_rate": 0.0146,
+          "get_physical_card": 0.0161,
+          "pending_top_up": 0.0201,
+          "reverted_card_payment?": 0.0741,
+          "supported_cards_and_currencies": 0.0173,
+          "top_up_limits": 0.015,
+          "topping_up_by_card": 0.0162,
+          "verify_my_identity": 0.7928
+        },
+        "type": "choice"
+      },
+      "confidence": 0.7928,
+      "correct": false,
+      "expected": "get_physical_card",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.7928,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:1274"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9054,
+        "choice": "visa_or_mastercard",
+        "confidence": 0.8532,
+        "probabilities": {
+          "Refund_not_showing_up": 0.0003,
+          "balance_not_updated_after_cheque_or_cash_deposit": 0.0016,
+          "card_about_to_expire": 0.0002,
+          "card_delivery_estimate": 0.0002,
+          "card_payment_fee_charged": 0.0004,
+          "card_payment_not_recognised": 0.0008,
+          "get_physical_card": 0.0903,
+          "transaction_charged_twice": 0.0004,
+          "transfer_not_received_by_recipient": 0.0003,
+          "visa_or_mastercard": 0.9054
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9054,
+      "correct": true,
+      "expected": "visa_or_mastercard",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9054,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:1289"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "disposable_card_limits",
+        "confidence": 1.0,
+        "probabilities": {
+          "age_limit": 0.0,
+          "balance_not_updated_after_bank_transfer": 0.0,
+          "card_arrival": 0.0,
+          "declined_transfer": 0.0,
+          "disposable_card_limits": 1.0,
+          "exchange_charge": 0.0,
+          "exchange_rate": 0.0,
+          "terminate_account": 0.0,
+          "transaction_charged_twice": 0.0,
+          "transfer_into_account": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "disposable_card_limits",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:1363"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9994,
+        "choice": "atm_support",
+        "confidence": 0.9972,
+        "probabilities": {
+          "activate_my_card": 0.0001,
+          "atm_support": 0.9994,
+          "card_delivery_estimate": 0.0001,
+          "card_swallowed": 0.0001,
+          "edit_personal_details": 0.0001,
+          "pending_top_up": 0.0001,
+          "terminate_account": 0.0001,
+          "top_up_limits": 0.0001,
+          "transfer_not_received_by_recipient": 0.0001,
+          "unable_to_verify_identity": 0.0001
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9994,
+      "correct": true,
+      "expected": "atm_support",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9994,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:1449"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9939,
+        "choice": "passcode_forgotten",
+        "confidence": 0.9833,
+        "probabilities": {
+          "apple_pay_or_google_pay": 0.0,
+          "balance_not_updated_after_cheque_or_cash_deposit": 0.0,
+          "card_delivery_estimate": 0.0,
+          "card_payment_fee_charged": 0.0,
+          "card_payment_wrong_exchange_rate": 0.0,
+          "change_pin": 0.0059,
+          "passcode_forgotten": 0.9939,
+          "top_up_limits": 0.0,
+          "transfer_not_received_by_recipient": 0.0,
+          "verify_source_of_funds": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9939,
+      "correct": true,
+      "expected": "passcode_forgotten",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9939,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:1539"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "pending_card_payment",
+        "confidence": 0.9999,
+        "probabilities": {
+          "cancel_transfer": 0.0,
+          "card_not_working": 0.0,
+          "declined_card_payment": 0.0,
+          "extra_charge_on_statement": 0.0,
+          "getting_virtual_card": 0.0,
+          "lost_or_stolen_phone": 0.0,
+          "pending_card_payment": 1.0,
+          "pending_transfer": 0.0,
+          "unable_to_verify_identity": 0.0,
+          "visa_or_mastercard": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "pending_card_payment",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:1604"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9962,
+        "choice": "declined_card_payment",
+        "confidence": 0.9857,
+        "probabilities": {
+          "Refund_not_showing_up": 0.0005,
+          "balance_not_updated_after_cheque_or_cash_deposit": 0.0007,
+          "card_about_to_expire": 0.0003,
+          "card_payment_wrong_exchange_rate": 0.0005,
+          "declined_card_payment": 0.9962,
+          "declined_transfer": 0.0005,
+          "exchange_rate": 0.0002,
+          "lost_or_stolen_card": 0.0003,
+          "verify_my_identity": 0.0004,
+          "visa_or_mastercard": 0.0003
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9962,
+      "correct": true,
+      "expected": "declined_card_payment",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9962,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:1805"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9997,
+        "choice": "pending_transfer",
+        "confidence": 0.9987,
+        "probabilities": {
+          "age_limit": 0.0,
+          "beneficiary_not_allowed": 0.0,
+          "card_linking": 0.0,
+          "card_payment_fee_charged": 0.0,
+          "cash_withdrawal_charge": 0.0,
+          "declined_cash_withdrawal": 0.0,
+          "getting_spare_card": 0.0,
+          "pending_transfer": 0.9997,
+          "pin_blocked": 0.0,
+          "verify_top_up": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9997,
+      "correct": true,
+      "expected": "pending_transfer",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9997,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:1864"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9491,
+        "choice": "card_swallowed",
+        "confidence": 0.8831,
+        "probabilities": {
+          "balance_not_updated_after_bank_transfer": 0.0252,
+          "card_about_to_expire": 0.0052,
+          "card_linking": 0.0009,
+          "card_swallowed": 0.9491,
+          "cash_withdrawal_charge": 0.001,
+          "passcode_forgotten": 0.0009,
+          "transaction_charged_twice": 0.0155,
+          "transfer_not_received_by_recipient": 0.0012,
+          "transfer_timing": 0.0005,
+          "verify_top_up": 0.0005
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9491,
+      "correct": true,
+      "expected": "card_swallowed",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9491,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:1932"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "verify_source_of_funds",
+        "confidence": 1.0,
+        "probabilities": {
+          "card_about_to_expire": 0.0,
+          "card_arrival": 0.0,
+          "declined_cash_withdrawal": 0.0,
+          "exchange_rate": 0.0,
+          "extra_charge_on_statement": 0.0,
+          "failed_transfer": 0.0,
+          "reverted_card_payment?": 0.0,
+          "verify_source_of_funds": 1.0,
+          "verify_top_up": 0.0,
+          "wrong_amount_of_cash_received": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "verify_source_of_funds",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:2031"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2747,
+        "choice": "reverted_card_payment?",
+        "confidence": 0.2049,
+        "probabilities": {
+          "automatic_top_up": 0.0131,
+          "card_arrival": 0.0137,
+          "card_delivery_estimate": 0.0139,
+          "card_payment_not_recognised": 0.0996,
+          "reverted_card_payment?": 0.2747,
+          "top_up_by_bank_transfer_charge": 0.0559,
+          "transaction_charged_twice": 0.1876,
+          "transfer_fee_charged": 0.04,
+          "verify_source_of_funds": 0.0338,
+          "wrong_amount_of_cash_received": 0.2677
+        },
+        "type": "choice"
+      },
+      "confidence": 0.2747,
+      "correct": false,
+      "expected": "transfer_fee_charged",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.2747,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:2210"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "transfer_into_account",
+        "confidence": 1.0,
+        "probabilities": {
+          "Refund_not_showing_up": 0.0,
+          "activate_my_card": 0.0,
+          "card_acceptance": 0.0,
+          "card_arrival": 0.0,
+          "card_payment_not_recognised": 0.0,
+          "exchange_via_app": 0.0,
+          "reverted_card_payment?": 0.0,
+          "top_up_by_card_charge": 0.0,
+          "transfer_into_account": 1.0,
+          "transfer_timing": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "transfer_into_account",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:2350"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9997,
+        "choice": "getting_spare_card",
+        "confidence": 0.9987,
+        "probabilities": {
+          "balance_not_updated_after_cheque_or_cash_deposit": 0.0002,
+          "card_delivery_estimate": 0.0,
+          "card_payment_wrong_exchange_rate": 0.0,
+          "cash_withdrawal_charge": 0.0,
+          "cash_withdrawal_not_recognised": 0.0,
+          "contactless_not_working": 0.0,
+          "getting_spare_card": 0.9997,
+          "lost_or_stolen_phone": 0.0,
+          "passcode_forgotten": 0.0,
+          "terminate_account": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9997,
+      "correct": true,
+      "expected": "getting_spare_card",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9997,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:2424"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "top_up_by_cash_or_cheque",
+        "confidence": 0.9998,
+        "probabilities": {
+          "age_limit": 0.0,
+          "card_about_to_expire": 0.0,
+          "edit_personal_details": 0.0,
+          "failed_transfer": 0.0,
+          "lost_or_stolen_phone": 0.0,
+          "pin_blocked": 0.0,
+          "receiving_money": 0.0,
+          "supported_cards_and_currencies": 0.0,
+          "top_up_by_cash_or_cheque": 1.0,
+          "wrong_amount_of_cash_received": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "top_up_by_cash_or_cheque",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:2467"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9996,
+        "choice": "order_physical_card",
+        "confidence": 0.9981,
+        "probabilities": {
+          "apple_pay_or_google_pay": 0.0,
+          "automatic_top_up": 0.0,
+          "card_payment_wrong_exchange_rate": 0.0001,
+          "contactless_not_working": 0.0,
+          "disposable_card_limits": 0.0,
+          "order_physical_card": 0.9996,
+          "top_up_by_bank_transfer_charge": 0.0,
+          "virtual_card_not_working": 0.0001,
+          "why_verify_identity": 0.0,
+          "wrong_amount_of_cash_received": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9996,
+      "correct": true,
+      "expected": "order_physical_card",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9996,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:2511"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "virtual_card_not_working",
+        "confidence": 0.9999,
+        "probabilities": {
+          "balance_not_updated_after_cheque_or_cash_deposit": 0.0,
+          "declined_card_payment": 0.0,
+          "declined_transfer": 0.0,
+          "pin_blocked": 0.0,
+          "receiving_money": 0.0,
+          "terminate_account": 0.0,
+          "top_up_by_bank_transfer_charge": 0.0,
+          "verify_top_up": 0.0,
+          "virtual_card_not_working": 1.0,
+          "visa_or_mastercard": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "virtual_card_not_working",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:2524"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9023,
+        "choice": "wrong_exchange_rate_for_cash_withdrawal",
+        "confidence": 0.7864,
+        "probabilities": {
+          "card_about_to_expire": 0.0019,
+          "card_acceptance": 0.0153,
+          "card_payment_fee_charged": 0.0025,
+          "receiving_money": 0.0394,
+          "top_up_by_card_charge": 0.0095,
+          "top_up_by_cash_or_cheque": 0.011,
+          "topping_up_by_card": 0.013,
+          "transaction_charged_twice": 0.0027,
+          "transfer_fee_charged": 0.0025,
+          "wrong_exchange_rate_for_cash_withdrawal": 0.9023
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9023,
+      "correct": true,
+      "expected": "wrong_exchange_rate_for_cash_withdrawal",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9023,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:2579"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9996,
+        "choice": "top_up_failed",
+        "confidence": 0.9983,
+        "probabilities": {
+          "apple_pay_or_google_pay": 0.0,
+          "atm_support": 0.0,
+          "automatic_top_up": 0.0,
+          "declined_card_payment": 0.0001,
+          "reverted_card_payment?": 0.0,
+          "top_up_failed": 0.9996,
+          "top_up_limits": 0.0,
+          "topping_up_by_card": 0.0001,
+          "virtual_card_not_working": 0.0,
+          "wrong_amount_of_cash_received": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9996,
+      "correct": true,
+      "expected": "top_up_failed",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9996,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:2650"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9974,
+        "choice": "balance_not_updated_after_bank_transfer",
+        "confidence": 0.9916,
+        "probabilities": {
+          "Refund_not_showing_up": 0.0023,
+          "balance_not_updated_after_bank_transfer": 0.9974,
+          "cancel_transfer": 0.0,
+          "change_pin": 0.0,
+          "compromised_card": 0.0,
+          "country_support": 0.0,
+          "get_disposable_virtual_card": 0.0,
+          "top_up_reverted": 0.0,
+          "transfer_fee_charged": 0.0,
+          "visa_or_mastercard": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9974,
+      "correct": true,
+      "expected": "balance_not_updated_after_bank_transfer",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9974,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:2692"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8332,
+        "choice": "declined_cash_withdrawal",
+        "confidence": 0.7549,
+        "probabilities": {
+          "apple_pay_or_google_pay": 0.0003,
+          "balance_not_updated_after_cheque_or_cash_deposit": 0.0474,
+          "card_payment_wrong_exchange_rate": 0.0003,
+          "cash_withdrawal_not_recognised": 0.1175,
+          "country_support": 0.0004,
+          "declined_cash_withdrawal": 0.8332,
+          "lost_or_stolen_phone": 0.0003,
+          "pending_transfer": 0.0003,
+          "top_up_by_cash_or_cheque": 0.0002,
+          "visa_or_mastercard": 0.0003
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8332,
+      "correct": false,
+      "expected": "cash_withdrawal_not_recognised",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.8332,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:2743"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9997,
+        "choice": "exchange_charge",
+        "confidence": 0.9987,
+        "probabilities": {
+          "Refund_not_showing_up": 0.0,
+          "cash_withdrawal_not_recognised": 0.0,
+          "edit_personal_details": 0.0,
+          "exchange_charge": 0.9997,
+          "fiat_currency_support": 0.0001,
+          "getting_spare_card": 0.0,
+          "request_refund": 0.0,
+          "reverted_card_payment?": 0.0,
+          "top_up_by_cash_or_cheque": 0.0,
+          "transfer_not_received_by_recipient": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9997,
+      "correct": true,
+      "expected": "exchange_charge",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9997,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:2772"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "activate_my_card",
+        "confidence": 1.0,
+        "probabilities": {
+          "Refund_not_showing_up": 0.0,
+          "activate_my_card": 1.0,
+          "card_payment_not_recognised": 0.0,
+          "declined_transfer": 0.0,
+          "edit_personal_details": 0.0,
+          "failed_transfer": 0.0,
+          "lost_or_stolen_phone": 0.0,
+          "terminate_account": 0.0,
+          "verify_my_identity": 0.0,
+          "virtual_card_not_working": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "activate_my_card",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:2845"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "cash_withdrawal_charge",
+        "confidence": 1.0,
+        "probabilities": {
+          "apple_pay_or_google_pay": 0.0,
+          "cancel_transfer": 0.0,
+          "card_about_to_expire": 0.0,
+          "card_linking": 0.0,
+          "cash_withdrawal_charge": 1.0,
+          "compromised_card": 0.0,
+          "pending_cash_withdrawal": 0.0,
+          "top_up_limits": 0.0,
+          "transaction_charged_twice": 0.0,
+          "wrong_amount_of_cash_received": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "cash_withdrawal_charge",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:2892"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9999,
+        "choice": "card_about_to_expire",
+        "confidence": 0.9993,
+        "probabilities": {
+          "card_about_to_expire": 0.9999,
+          "card_acceptance": 0.0,
+          "card_payment_fee_charged": 0.0,
+          "cash_withdrawal_charge": 0.0,
+          "declined_cash_withdrawal": 0.0,
+          "order_physical_card": 0.0,
+          "reverted_card_payment?": 0.0,
+          "verify_source_of_funds": 0.0,
+          "wrong_amount_of_cash_received": 0.0,
+          "wrong_exchange_rate_for_cash_withdrawal": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9999,
+      "correct": true,
+      "expected": "card_about_to_expire",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9999,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:2924"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8834,
+        "choice": "country_support",
+        "confidence": 0.7811,
+        "probabilities": {
+          "automatic_top_up": 0.0029,
+          "cancel_transfer": 0.0026,
+          "card_delivery_estimate": 0.0028,
+          "contactless_not_working": 0.0027,
+          "country_support": 0.8834,
+          "get_physical_card": 0.0219,
+          "getting_spare_card": 0.0747,
+          "pin_blocked": 0.0028,
+          "verify_my_identity": 0.0033,
+          "why_verify_identity": 0.0029
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8834,
+      "correct": true,
+      "expected": "country_support",
+      "language": "en",
+      "model": "english",
+      "qid": "intent",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.8834,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "banking77",
+        "id:3037"
+      ]
+    }
+  ],
+  "config": {
+    "dataset": "data/evals/jev_cmp/T4_banking77_10opt_40.jsonl",
+    "dataset_sha256": "df700caa098332eaaf6bd6fc4c0609413db85656fc96dd13bb5f43fda804786c",
+    "device": "cpu",
+    "laya_version": "0.3.23",
+    "model": "english",
+    "questions_sha256": "a3ef71c9cbdb5ac7a79571d1efa5c7bfe22ab4863204d7d674ffda409366a34a",
+    "revisions": {
+      "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "schema": "laya-evals-report/1",
+    "thresholds": {
+      "baseline_tolerance": {},
+      "max": {},
+      "min": {}
+    },
+    "timing": {
+      "batch_form": "states",
+      "batch_size": 8,
+      "chunks": 40,
+      "cost_metric": "per decision: that call divided by its own chunk size",
+      "latency_metric": "per request: the wall time of the call that returned it, unsplit",
+      "max_chunk": 1,
+      "min_confidence": null,
+      "min_confidence_sent": false,
+      "rows_alone": 40,
+      "rows_grouped": 0,
+      "sort_by_length": false,
+      "sort_by_length_sent": false
+    }
+  },
+  "overall": {
+    "choice_accuracy": 0.825,
+    "cost_per_decision_p50_ms": 91.80058349738829,
+    "cost_per_decision_p95_ms": 109.89908396732062,
+    "ece": 0.1189075,
+    "latency_p50_ms": 91.80058349738829,
+    "latency_p95_ms": 109.89908396732062,
+    "mean_confidence": 0.9284625
+  },
+  "slices": {
+    "language": {
+      "en": {
+        "choice_accuracy": 0.825,
+        "ece": 0.1189075,
+        "mean_confidence": 0.9284625
+      }
+    },
+    "model": {
+      "english": {
+        "choice_accuracy": 0.825,
+        "ece": 0.1189075,
+        "mean_confidence": 0.9284625
+      }
+    },
+    "qid": {
+      "intent": {
+        "choice_accuracy": 0.825,
+        "ece": 0.1189075,
+        "mean_confidence": 0.9284625
+      }
+    },
+    "tag": {
+      "banking77": {
+        "choice_accuracy": 0.825,
+        "ece": 0.1189075,
+        "mean_confidence": 0.9284625
+      },
+      "id:1007": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0,
+        "mean_confidence": 1.0
+      },
+      "id:1076": {
+        "choice_accuracy": 1.0,
+        "ece": 0.010800000000000032,
+        "mean_confidence": 0.9892
+      },
+      "id:1274": {
+        "choice_accuracy": 0.0,
+        "ece": 0.7928,
+        "mean_confidence": 0.7928
+      },
+      "id:1289": {
+        "choice_accuracy": 1.0,
+        "ece": 0.09460000000000002,
+        "mean_confidence": 0.9054
+      },
+      "id:1363": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0,
+        "mean_confidence": 1.0
+      },
+      "id:1449": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0006000000000000449,
+        "mean_confidence": 0.9994
+      },
+      "id:1539": {
+        "choice_accuracy": 1.0,
+        "ece": 0.006099999999999994,
+        "mean_confidence": 0.9939
+      },
+      "id:1604": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0,
+        "mean_confidence": 1.0
+      },
+      "id:1805": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0038000000000000256,
+        "mean_confidence": 0.9962
+      },
+      "id:1864": {
+        "choice_accuracy": 1.0,
+        "ece": 0.00029999999999996696,
+        "mean_confidence": 0.9997
+      },
+      "id:1932": {
+        "choice_accuracy": 1.0,
+        "ece": 0.050899999999999945,
+        "mean_confidence": 0.9491
+      },
+      "id:2031": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0,
+        "mean_confidence": 1.0
+      },
+      "id:2210": {
+        "choice_accuracy": 0.0,
+        "ece": 0.2747,
+        "mean_confidence": 0.2747
+      },
+      "id:2350": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0,
+        "mean_confidence": 1.0
+      },
+      "id:2424": {
+        "choice_accuracy": 1.0,
+        "ece": 0.00029999999999996696,
+        "mean_confidence": 0.9997
+      },
+      "id:2467": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0,
+        "mean_confidence": 1.0
+      },
+      "id:2511": {
+        "choice_accuracy": 1.0,
+        "ece": 0.00039999999999995595,
+        "mean_confidence": 0.9996
+      },
+      "id:2524": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0,
+        "mean_confidence": 1.0
+      },
+      "id:2579": {
+        "choice_accuracy": 1.0,
+        "ece": 0.09770000000000001,
+        "mean_confidence": 0.9023
+      },
+      "id:2650": {
+        "choice_accuracy": 1.0,
+        "ece": 0.00039999999999995595,
+        "mean_confidence": 0.9996
+      },
+      "id:2692": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0026000000000000467,
+        "mean_confidence": 0.9974
+      },
+      "id:2743": {
+        "choice_accuracy": 0.0,
+        "ece": 0.8332,
+        "mean_confidence": 0.8332
+      },
+      "id:2772": {
+        "choice_accuracy": 1.0,
+        "ece": 0.00029999999999996696,
+        "mean_confidence": 0.9997
+      },
+      "id:2845": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0,
+        "mean_confidence": 1.0
+      },
+      "id:2892": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0,
+        "mean_confidence": 1.0
+      },
+      "id:2924": {
+        "choice_accuracy": 1.0,
+        "ece": 9.999999999998899e-05,
+        "mean_confidence": 0.9999
+      },
+      "id:294": {
+        "choice_accuracy": 1.0,
+        "ece": 0.00019999999999997797,
+        "mean_confidence": 0.9998
+      },
+      "id:3037": {
+        "choice_accuracy": 1.0,
+        "ece": 0.11660000000000004,
+        "mean_confidence": 0.8834
+      },
+      "id:364": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0031999999999999806,
+        "mean_confidence": 0.9968
+      },
+      "id:38": {
+        "choice_accuracy": 1.0,
+        "ece": 0.00019999999999997797,
+        "mean_confidence": 0.9998
+      },
+      "id:427": {
+        "choice_accuracy": 1.0,
+        "ece": 0.047599999999999976,
+        "mean_confidence": 0.9524
+      },
+      "id:452": {
+        "choice_accuracy": 0.0,
+        "ece": 0.2104,
+        "mean_confidence": 0.2104
+      },
+      "id:506": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0,
+        "mean_confidence": 1.0
+      },
+      "id:577": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0010999999999999899,
+        "mean_confidence": 0.9989
+      },
+      "id:621": {
+        "choice_accuracy": 0.0,
+        "ece": 0.9999,
+        "mean_confidence": 0.9999
+      },
+      "id:719": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0,
+        "mean_confidence": 1.0
+      },
+      "id:856": {
+        "choice_accuracy": 0.0,
+        "ece": 0.5222,
+        "mean_confidence": 0.5222
+      },
+      "id:898": {
+        "choice_accuracy": 1.0,
+        "ece": 0.014700000000000046,
+        "mean_confidence": 0.9853
+      },
+      "id:936": {
+        "choice_accuracy": 0.0,
+        "ece": 0.9709,
+        "mean_confidence": 0.9709
+      },
+      "id:986": {
+        "choice_accuracy": 1.0,
+        "ece": 0.0131,
+        "mean_confidence": 0.9869
+      }
+    }
+  }
+}

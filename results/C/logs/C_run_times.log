@@ -1,0 +1,46 @@
+2026-10-02 17:30:06 start C1_option_order :: .venv/bin/python scripts/probe_option_order.py data/evals/ko_massive_domain_8.jsonl data/evals/ko_klue_ynat_7.jsonl data/evals/ko_massive_scenario_18.jsonl --model models/laya-multilingual --device cpu --permutations 5 --seed 13 --split dev --splits results/B/B_splits.json --reference results/B/20261002-1643_multilingual_ko_massive_domain_8.json --reference results/B/20261002-1645_multilingual_ko_klue_ynat_7.json --reference results/B/20261002-1647_multilingual_ko_massive_scenario_18.json --out results/C/C1_option_order_20261002.json
+2026-10-02 17:32:50 end   C1_option_order exit=0 secs=164
+2026-10-02 17:32:56 start 20261002-1732_multilingual_router_v1_dev :: laya_evals run results/C/schemas_v2/router_v1_dev.jsonl --model multilingual --device cpu --batch-size 16 --slice qid --slice tag --json results/C/schemas_v2/20261002-1732_multilingual_router_v1_dev.json --markdown results/C/schemas_v2/20261002-1732_multilingual_router_v1_dev.md
+2026-10-02 17:33:09 end   20261002-1732_multilingual_router_v1_dev exit=0 secs=13
+2026-10-02 17:33:09 start 20261002-1733_multilingual_router_v2a_dev :: laya_evals run results/C/schemas_v2/router_v2a_dev.jsonl --model multilingual --device cpu --batch-size 16 --slice qid --slice tag --json results/C/schemas_v2/20261002-1733_multilingual_router_v2a_dev.json --markdown results/C/schemas_v2/20261002-1733_multilingual_router_v2a_dev.md
+2026-10-02 17:33:23 end   20261002-1733_multilingual_router_v2a_dev exit=0 secs=14
+2026-10-02 17:33:23 start 20261002-1733_multilingual_router_v2b_dev :: laya_evals run results/C/schemas_v2/router_v2b_dev.jsonl --model multilingual --device cpu --batch-size 16 --slice qid --slice tag --json results/C/schemas_v2/20261002-1733_multilingual_router_v2b_dev.json --markdown results/C/schemas_v2/20261002-1733_multilingual_router_v2b_dev.md
+2026-10-02 17:33:39 end   20261002-1733_multilingual_router_v2b_dev exit=0 secs=16
+2026-10-02 17:33:39 start 20261002-1733_multilingual_router_v2b_dev_general :: laya_evals run results/C/schemas_v2/router_v2b_dev_general.jsonl --model multilingual --device cpu --batch-size 16 --slice qid --slice tag --json results/C/schemas_v2/20261002-1733_multilingual_router_v2b_dev_general.json --markdown results/C/schemas_v2/20261002-1733_multilingual_router_v2b_dev_general.md
+2026-10-02 17:33:46 end   20261002-1733_multilingual_router_v2b_dev_general exit=0 secs=7
+2026-10-02 17:33:46 start 20261002-1733_multilingual_router_v2c_dev :: laya_evals run results/C/schemas_v2/router_v2c_dev.jsonl --model multilingual --device cpu --batch-size 16 --slice qid --slice tag --json results/C/schemas_v2/20261002-1733_multilingual_router_v2c_dev.json --markdown results/C/schemas_v2/20261002-1733_multilingual_router_v2c_dev.md
+2026-10-02 17:34:04 end   20261002-1733_multilingual_router_v2c_dev exit=0 secs=18
+2026-10-02 17:34:04 start 20261002-1734_multilingual_router_v2d_dev :: laya_evals run results/C/schemas_v2/router_v2d_dev.jsonl --model multilingual --device cpu --batch-size 16 --slice qid --slice tag --json results/C/schemas_v2/20261002-1734_multilingual_router_v2d_dev.json --markdown results/C/schemas_v2/20261002-1734_multilingual_router_v2d_dev.md
+2026-10-02 17:34:22 end   20261002-1734_multilingual_router_v2d_dev exit=0 secs=18
+2026-10-02 17:34:22 start 20261002-1734_multilingual_router_v2e_dev :: laya_evals run results/C/schemas_v2/router_v2e_dev.jsonl --model multilingual --device cpu --batch-size 16 --slice qid --slice tag --json results/C/schemas_v2/20261002-1734_multilingual_router_v2e_dev.json --markdown results/C/schemas_v2/20261002-1734_multilingual_router_v2e_dev.md
+2026-10-02 17:34:36 end   20261002-1734_multilingual_router_v2e_dev exit=0 secs=14
+2026-10-02 17:34:36 start 20261002-1734_multilingual_router_v2e_dev_general :: laya_evals run results/C/schemas_v2/router_v2e_dev_general.jsonl --model multilingual --device cpu --batch-size 16 --slice qid --slice tag --json results/C/schemas_v2/20261002-1734_multilingual_router_v2e_dev_general.json --markdown results/C/schemas_v2/20261002-1734_multilingual_router_v2e_dev_general.md
+2026-10-02 17:34:42 end   20261002-1734_multilingual_router_v2e_dev_general exit=0 secs=6
+2026-10-02 17:34:42 start 20261002-1734_multilingual_router_v2c_dev_h512 :: .venv/bin/python - results/C/schemas_v2/router_v2c_dev.jsonl results/C/schemas_v2/20261002-1734_multilingual_router_v2c_dev_h512
+2026-10-02 17:35:06 end   20261002-1734_multilingual_router_v2c_dev_h512 exit=0 secs=24
+2026-10-02 17:35:25 start metrics_summary_v1 :: .venv/bin/python scripts/metrics_extra.py summary results/C/schemas_v2/20261002-1732_multilingual_router_v1_dev.json --bootstrap 1000 --seed 13 --out results/C/schemas_v2/metrics/summary_v1.md --json results/C/schemas_v2/metrics/summary_v1.json
+2026-10-02 17:35:25 end   metrics_summary_v1 exit=0 secs=0
+2026-10-02 17:35:25 start metrics_summary_v2a :: .venv/bin/python scripts/metrics_extra.py summary results/C/schemas_v2/20261002-1733_multilingual_router_v2a_dev.json --bootstrap 1000 --seed 13 --out results/C/schemas_v2/metrics/summary_v2a.md --json results/C/schemas_v2/metrics/summary_v2a.json
+2026-10-02 17:35:25 end   metrics_summary_v2a exit=0 secs=0
+2026-10-02 17:35:25 start metrics_summary_v2b :: .venv/bin/python scripts/metrics_extra.py summary results/C/schemas_v2/20261002-1733_multilingual_router_v2b_dev.json --bootstrap 1000 --seed 13 --out results/C/schemas_v2/metrics/summary_v2b.md --json results/C/schemas_v2/metrics/summary_v2b.json
+2026-10-02 17:35:25 end   metrics_summary_v2b exit=0 secs=0
+2026-10-02 17:35:25 start metrics_summary_v2c :: .venv/bin/python scripts/metrics_extra.py summary results/C/schemas_v2/20261002-1733_multilingual_router_v2c_dev.json --bootstrap 1000 --seed 13 --out results/C/schemas_v2/metrics/summary_v2c.md --json results/C/schemas_v2/metrics/summary_v2c.json
+2026-10-02 17:35:26 end   metrics_summary_v2c exit=0 secs=1
+2026-10-02 17:35:26 start metrics_summary_v2c_h512 :: .venv/bin/python scripts/metrics_extra.py summary results/C/schemas_v2/20261002-1734_multilingual_router_v2c_dev_h512.json --bootstrap 1000 --seed 13 --out results/C/schemas_v2/metrics/summary_v2c_h512.md --json results/C/schemas_v2/metrics/summary_v2c_h512.json
+2026-10-02 17:35:26 end   metrics_summary_v2c_h512 exit=0 secs=0
+2026-10-02 17:35:26 start metrics_summary_v2d :: .venv/bin/python scripts/metrics_extra.py summary results/C/schemas_v2/20261002-1734_multilingual_router_v2d_dev.json --bootstrap 1000 --seed 13 --out results/C/schemas_v2/metrics/summary_v2d.md --json results/C/schemas_v2/metrics/summary_v2d.json
+2026-10-02 17:35:26 end   metrics_summary_v2d exit=0 secs=0
+2026-10-02 17:35:26 start metrics_summary_v2e :: .venv/bin/python scripts/metrics_extra.py summary results/C/schemas_v2/20261002-1734_multilingual_router_v2e_dev.json --bootstrap 1000 --seed 13 --out results/C/schemas_v2/metrics/summary_v2e.md --json results/C/schemas_v2/metrics/summary_v2e.json
+2026-10-02 17:35:26 end   metrics_summary_v2e exit=0 secs=0
+2026-10-02 17:35:26 start metrics_paired_v1_v2a :: .venv/bin/python scripts/metrics_extra.py paired results/C/schemas_v2/20261002-1732_multilingual_router_v1_dev.json results/C/schemas_v2/20261002-1733_multilingual_router_v2a_dev.json --split dev --out results/C/schemas_v2/metrics/paired_v1_v2a.md --json results/C/schemas_v2/metrics/paired_v1_v2a.json
+2026-10-02 17:35:26 end   metrics_paired_v1_v2a exit=0 secs=0
+2026-10-02 17:35:26 start metrics_paired_v1_v2c :: .venv/bin/python scripts/metrics_extra.py paired results/C/schemas_v2/20261002-1732_multilingual_router_v1_dev.json results/C/schemas_v2/20261002-1733_multilingual_router_v2c_dev.json --split dev --out results/C/schemas_v2/metrics/paired_v1_v2c.md --json results/C/schemas_v2/metrics/paired_v1_v2c.json
+2026-10-02 17:35:26 end   metrics_paired_v1_v2c exit=0 secs=0
+2026-10-02 17:35:26 start metrics_paired_v1_v2c_h512 :: .venv/bin/python scripts/metrics_extra.py paired results/C/schemas_v2/20261002-1732_multilingual_router_v1_dev.json results/C/schemas_v2/20261002-1734_multilingual_router_v2c_dev_h512.json --split dev --out results/C/schemas_v2/metrics/paired_v1_v2c_h512.md --json results/C/schemas_v2/metrics/paired_v1_v2c_h512.json
+2026-10-02 17:35:26 end   metrics_paired_v1_v2c_h512 exit=0 secs=0
+2026-10-02 17:35:26 start metrics_paired_v1_v2d :: .venv/bin/python scripts/metrics_extra.py paired results/C/schemas_v2/20261002-1732_multilingual_router_v1_dev.json results/C/schemas_v2/20261002-1734_multilingual_router_v2d_dev.json --split dev --out results/C/schemas_v2/metrics/paired_v1_v2d.md --json results/C/schemas_v2/metrics/paired_v1_v2d.json
+2026-10-02 17:35:26 end   metrics_paired_v1_v2d exit=0 secs=0
+2026-10-02 17:35:26 start metrics_paired_v2a_v2d :: .venv/bin/python scripts/metrics_extra.py paired results/C/schemas_v2/20261002-1733_multilingual_router_v2a_dev.json results/C/schemas_v2/20261002-1734_multilingual_router_v2d_dev.json --split dev --out results/C/schemas_v2/metrics/paired_v2a_v2d.md --json results/C/schemas_v2/metrics/paired_v2a_v2d.json
+2026-10-02 17:35:26 end   metrics_paired_v2a_v2d exit=0 secs=0
+2026-10-02 17:35:26 start C_schema_v2_analyze :: .venv/bin/python results/C/C_schema_v2_analyze.py 20261002
+2026-10-02 17:35:26 end   C_schema_v2_analyze exit=0 secs=0

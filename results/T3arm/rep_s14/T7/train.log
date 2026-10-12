@@ -1,0 +1,71 @@
+load before: {"gpu_util_pct": 13, "mps_fp32_matmul_tflops": 2.98, "cotenant": ["uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step143000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step143000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100", "uv run python experiments/poc_output_hopfield.py --capture --model gpt2", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_output_hopfield.py --capture --model gpt2", "uv run python experiments/poc_output_hopfield.py --capture --model pythia-160m", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_output_hopfield.py --capture --model pythia-160m", "uv run python experiments/poc_output_hopfield.py --capture --model Qwen3-0.6B", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_output_hopfield.py --capture --model Qwen3-0.6B", "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1791356222128-5vm37w.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model gpt2 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage2_gpt2.log' < /dev/null && pwd -P >| /tmp/claude-714c-cwd", "uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model gpt2 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_fixedpoint_ladder.py --stage 2 --model gpt2 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100", "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1791356222128-5vm37w.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval '(uv run python experiments/poc_fixedpoint_ladder.py --stage 1 --model pythia-160m-step143000 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage1_pythia-160m-step143000.log; uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step143000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage2_pythia-160m-step143000.log)' < /dev/null && pwd -P >| /tmp/claude-2b07-cwd", "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1791356222128-5vm37w.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval '(uv run python experiments/poc_fixedpoint_ladder.py --stage 1 --model pythia-160m-step143000 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage1_pythia-160m-step143000.log; uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step143000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage2_pythia-160m-step143000.log)' < /dev/null && pwd -P >| /tmp/claude-2b07-cwd", "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1791356222128-5vm37w.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step2000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage2_pythia-160m-step2000.log' < /dev/null && pwd -P >| /tmp/claude-4d8d-cwd", "uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step2000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step2000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100"], "sys_mem_used_gb": 25.0}
+[     3.5s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T7_multilingual.pt
+[     5.8s] Device: mps
+[     5.8s] Training items: 5000; calibration items: 400
+[     5.8s] micro_batch=8; grad_accum=4; epochs=2
+[    86.0s] epoch 1/2, step 100, loss=0.4624
+[   167.3s] epoch 1/2, step 200, loss=1.1021
+[   246.5s] epoch 1/2, step 300, loss=-0.1628
+[   325.4s] epoch 1/2, step 400, loss=0.5798
+[   403.2s] epoch 1/2, step 500, loss=0.5887
+[   483.0s] epoch 1/2, step 600, loss=0.3890
+[   503.8s] Epoch 1/2 complete; avg_loss=0.5123
+[   586.3s] epoch 2/2, step 100, loss=1.8734
+[   664.8s] epoch 2/2, step 200, loss=2.7949
+[   741.5s] epoch 2/2, step 300, loss=-0.0277
+[   819.9s] epoch 2/2, step 400, loss=3.4144
+[   897.7s] epoch 2/2, step 500, loss=2.5347
+[   978.7s] epoch 2/2, step 600, loss=0.0101
+[   999.9s] Epoch 2/2 complete; avg_loss=0.5967
+[  1003.3s] Running temperature calibration ...
+[  1015.1s] Model saved to poc/finetune/ckpt_t3arm_rep_s14/T7_run
+[  1015.2s] Temperatures: [4.462158203125, 1.2, 1.2]
+{
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 2.31,
+  "train_loop": 992.43,
+  "epoch_checkpoint_saves": 3.58,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 1.5,
+  "calibration (forward + fit_temperature)": 9.7,
+  "export (final save + configs)": 2.13,
+  "train() total": 1011.85
+ },
+ "throughput": {
+  "train_items_per_s": 10.076,
+  "s_per_optimizer_step": 3.161,
+  "s_per_micro_batch_mean": 0.7939
+ },
+ "micro_batch_s": {
+  "median_all": 0.5795,
+  "median_repeat_shape_no_step": 0.5528,
+  "median_repeat_shape_with_step": 1.5289,
+  "optimizer_step_overhead": 0.9761,
+  "median_first_shape": 0.6027,
+  "first_shape_count": 35,
+  "repeat_shape_count": 1215,
+  "first_shape_extra_total_s": 8.0
+ },
+ "memory_gb": {
+  "ru_maxrss": 2.97,
+  "rss_peak_sampled": 1.85,
+  "mps_current_allocated_peak": 6.85,
+  "mps_driver_allocated_peak": 17.17,
+  "mps_recommended_max": 40.2
+ },
+ "calibration_rows": {
+  "n": 400,
+  "ce_before_T": 1.5598,
+  "accuracy": 0.895
+ },
+ "item_sources": {
+  "train": {
+   "train": 10000
+  },
+  "calibration": {
+   "calib": 400
+  }
+ }
+}
+report: results/T3arm/rep_s14/T7/train_timing.json (wall 1016.1s, status ok)

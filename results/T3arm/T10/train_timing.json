@@ -1,0 +1,11856 @@
+{
+ "script": "poc/finetune/laya_finetune_mps_patched.py",
+ "script_sha256": "d8dc1eb92db72c0f577ec9cf6dc3ad80558e0e0ff79897bd92dc3f87399db642",
+ "zero_step": false,
+ "script_args": [
+  "models/laya",
+  "poc/finetune/ckpt_t3arm/T10_run",
+  "--items",
+  "poc/finetune/data/t3arm/T10_english.pt",
+  "--calib-max",
+  "400",
+  "--epochs",
+  "2",
+  "--micro-batch",
+  "8",
+  "--grad-accum",
+  "4",
+  "--no-checkpointing",
+  "--device",
+  "mps"
+ ],
+ "seed": 13,
+ "keep_epoch_checkpoints": true,
+ "started_at": "2026-10-08T14:28:14+0900",
+ "versions": {
+  "torch": "2.14.1",
+  "python": "3.12.12",
+  "laya": "0.3.23"
+ },
+ "threads": {
+  "intra": 10,
+  "interop": 14
+ },
+ "load_before": {
+  "gpu_util_pct": 11,
+  "mps_fp32_matmul_tflops": 6.84,
+  "cotenant": [],
+  "sys_mem_used_gb": 17.8
+ },
+ "status": "ok",
+ "wall_s": 1632.78,
+ "load_after": {
+  "gpu_util_pct": 0,
+  "mps_fp32_matmul_tflops": 6.75
+ },
+ "micro_batch": 8,
+ "grad_accum": 4,
+ "epochs": 2,
+ "n_train_items": 5000,
+ "micro_batches": 1250,
+ "optimizer_steps": 314,
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 0.51,
+  "train_loop": 1609.38,
+  "epoch_checkpoint_saves": 2.12,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 0.94,
+  "calibration (forward + fit_temperature)": 16.69,
+  "export (final save + configs)": 0.6,
+  "train() total": 1630.26
+ },
+ "throughput": {
+  "train_items_per_s": 6.214,
+  "s_per_optimizer_step": 5.125,
+  "s_per_micro_batch_mean": 1.2875
+ },
+ "micro_batch_s": {
+  "median_all": 1.1111,
+  "median_repeat_shape_no_step": 1.0465,
+  "median_repeat_shape_with_step": 1.7854,
+  "optimizer_step_overhead": 0.7389,
+  "median_first_shape": 1.3323,
+  "first_shape_count": 154,
+  "repeat_shape_count": 1096,
+  "first_shape_extra_total_s": 47.1
+ },
+ "memory_gb": {
+  "ru_maxrss": 3.29,
+  "rss_peak_sampled": 2.89,
+  "mps_current_allocated_peak": 18.15,
+  "mps_driver_allocated_peak": 22.74,
+  "mps_recommended_max": 40.2
+ },
+ "loss_log_script": [
+  "epoch 1/2, step 100, loss=1.6609",
+  "epoch 1/2, step 200, loss=1.4732",
+  "epoch 1/2, step 300, loss=1.6695",
+  "epoch 1/2, step 400, loss=2.0905",
+  "epoch 1/2, step 500, loss=2.3760",
+  "epoch 1/2, step 600, loss=1.3010",
+  "Epoch 1/2 complete; avg_loss=1.7310",
+  "epoch 2/2, step 100, loss=1.6530",
+  "epoch 2/2, step 200, loss=1.5462",
+  "epoch 2/2, step 300, loss=2.3096",
+  "epoch 2/2, step 400, loss=1.6350",
+  "epoch 2/2, step 500, loss=1.5422",
+  "epoch 2/2, step 600, loss=2.5136",
+  "Epoch 2/2 complete; avg_loss=1.5859"
+ ],
+ "train_ce_windows": [
+  1.9041,
+  1.8195,
+  1.8435,
+  1.866,
+  1.7888,
+  1.647,
+  1.6107,
+  1.6754,
+  1.5444,
+  1.5311
+ ],
+ "train_acc_windows": [
+  0.337,
+  0.347,
+  0.318,
+  0.327,
+  0.361,
+  0.41,
+  0.437,
+  0.405,
+  0.429,
+  0.468
+ ],
+ "calibration_rows": {
+  "n": 400,
+  "ce_before_T": 1.8142,
+  "accuracy": 0.375
+ },
+ "temperature_fits": [
+  {
+   "start": 1632.059,
+   "end": 1632.079,
+   "samples": 400
+  }
+ ],
+ "item_sources": {
+  "train": {
+   "train": 10000
+  },
+  "calibration": {
+   "calib": 400
+  }
+ },
+ "cotenant_found": false,
+ "load_series": [
+  {
+   "t": 3.4,
+   "rss_gb": 1.521,
+   "mps_alloc_gb": 3.944,
+   "mps_driver_gb": 8.712,
+   "gpu_util_pct": 92,
+   "sys_cpu_pct": 19.6,
+   "sys_mem_used_gb": 26.1,
+   "cotenant": []
+  },
+  {
+   "t": 13.5,
+   "rss_gb": 1.688,
+   "mps_alloc_gb": 10.863,
+   "mps_driver_gb": 15.166,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.2,
+   "sys_mem_used_gb": 32.7,
+   "cotenant": []
+  },
+  {
+   "t": 23.6,
+   "rss_gb": 1.768,
+   "mps_alloc_gb": 10.745,
+   "mps_driver_gb": 15.167,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.3,
+   "sys_mem_used_gb": 32.8,
+   "cotenant": []
+  },
+  {
+   "t": 33.7,
+   "rss_gb": 1.916,
+   "mps_alloc_gb": 10.326,
+   "mps_driver_gb": 16.263,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.8,
+   "sys_mem_used_gb": 34.1,
+   "cotenant": []
+  },
+  {
+   "t": 43.8,
+   "rss_gb": 1.973,
+   "mps_alloc_gb": 11.281,
+   "mps_driver_gb": 17.337,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.9,
+   "sys_mem_used_gb": 35.4,
+   "cotenant": []
+  },
+  {
+   "t": 53.9,
+   "rss_gb": 2.054,
+   "mps_alloc_gb": 7.437,
+   "mps_driver_gb": 18.399,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.8,
+   "sys_mem_used_gb": 35.9,
+   "cotenant": []
+  },
+  {
+   "t": 64.0,
+   "rss_gb": 2.123,
+   "mps_alloc_gb": 10.915,
+   "mps_driver_gb": 18.4,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.9,
+   "sys_mem_used_gb": 36.0,
+   "cotenant": []
+  },
+  {
+   "t": 74.1,
+   "rss_gb": 2.208,
+   "mps_alloc_gb": 6.786,
+   "mps_driver_gb": 18.422,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.9,
+   "sys_mem_used_gb": 36.0,
+   "cotenant": []
+  },
+  {
+   "t": 84.2,
+   "rss_gb": 2.293,
+   "mps_alloc_gb": 6.784,
+   "mps_driver_gb": 19.484,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.4,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 94.3,
+   "rss_gb": 2.378,
+   "mps_alloc_gb": 6.788,
+   "mps_driver_gb": 19.5,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.0,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 104.4,
+   "rss_gb": 2.449,
+   "mps_alloc_gb": 12.201,
+   "mps_driver_gb": 20.572,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.1,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 114.5,
+   "rss_gb": 2.548,
+   "mps_alloc_gb": 6.783,
+   "mps_driver_gb": 20.561,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.0,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 124.6,
+   "rss_gb": 2.633,
+   "mps_alloc_gb": 6.798,
+   "mps_driver_gb": 20.574,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 7.6,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 134.7,
+   "rss_gb": 2.65,
+   "mps_alloc_gb": 7.576,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.3,
+   "sys_mem_used_gb": 37.7,
+   "cotenant": []
+  },
+  {
+   "t": 144.8,
+   "rss_gb": 2.684,
+   "mps_alloc_gb": 6.781,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 7.5,
+   "sys_mem_used_gb": 37.7,
+   "cotenant": []
+  },
+  {
+   "t": 154.9,
+   "rss_gb": 2.72,
+   "mps_alloc_gb": 12.842,
+   "mps_driver_gb": 21.649,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.1,
+   "sys_mem_used_gb": 37.7,
+   "cotenant": []
+  },
+  {
+   "t": 165.0,
+   "rss_gb": 2.737,
+   "mps_alloc_gb": 12.827,
+   "mps_driver_gb": 21.636,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 7.7,
+   "sys_mem_used_gb": 37.6,
+   "cotenant": []
+  },
+  {
+   "t": 175.1,
+   "rss_gb": 2.788,
+   "mps_alloc_gb": 6.784,
+   "mps_driver_gb": 21.637,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.1,
+   "sys_mem_used_gb": 37.6,
+   "cotenant": []
+  },
+  {
+   "t": 185.2,
+   "rss_gb": 2.822,
+   "mps_alloc_gb": 6.773,
+   "mps_driver_gb": 21.637,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.6,
+   "sys_mem_used_gb": 37.7,
+   "cotenant": []
+  },
+  {
+   "t": 195.3,
+   "rss_gb": 2.873,
+   "mps_alloc_gb": 11.112,
+   "mps_driver_gb": 21.665,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.2,
+   "sys_mem_used_gb": 36.5,
+   "cotenant": []
+  },
+  {
+   "t": 205.4,
+   "rss_gb": 1.927,
+   "mps_alloc_gb": 6.778,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 28.8,
+   "sys_mem_used_gb": 38.1,
+   "cotenant": []
+  },
+  {
+   "t": 215.5,
+   "rss_gb": 1.139,
+   "mps_alloc_gb": 5.081,
+   "mps_driver_gb": 21.638,
+   "gpu_util_pct": 58,
+   "sys_cpu_pct": 22.2,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 225.6,
+   "rss_gb": 1.196,
+   "mps_alloc_gb": 7.616,
+   "mps_driver_gb": 21.654,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.6,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 235.7,
+   "rss_gb": 1.263,
+   "mps_alloc_gb": 6.781,
+   "mps_driver_gb": 21.654,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.2,
+   "sys_mem_used_gb": 36.5,
+   "cotenant": []
+  },
+  {
+   "t": 245.8,
+   "rss_gb": 1.294,
+   "mps_alloc_gb": 6.775,
+   "mps_driver_gb": 21.64,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 11.8,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 255.9,
+   "rss_gb": 1.375,
+   "mps_alloc_gb": 12.226,
+   "mps_driver_gb": 21.655,
+   "gpu_util_pct": 78,
+   "sys_cpu_pct": 12.7,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 266.0,
+   "rss_gb": 1.379,
+   "mps_alloc_gb": 13.026,
+   "mps_driver_gb": 21.64,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 12.9,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 276.1,
+   "rss_gb": 1.423,
+   "mps_alloc_gb": 6.77,
+   "mps_driver_gb": 21.641,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 12.3,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 286.2,
+   "rss_gb": 1.465,
+   "mps_alloc_gb": 12.671,
+   "mps_driver_gb": 21.654,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 13.2,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 296.3,
+   "rss_gb": 1.509,
+   "mps_alloc_gb": 13.622,
+   "mps_driver_gb": 21.642,
+   "gpu_util_pct": 80,
+   "sys_cpu_pct": 12.1,
+   "sys_mem_used_gb": 37.4,
+   "cotenant": []
+  },
+  {
+   "t": 306.4,
+   "rss_gb": 1.544,
+   "mps_alloc_gb": 12.664,
+   "mps_driver_gb": 21.655,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 12.5,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 316.5,
+   "rss_gb": 1.607,
+   "mps_alloc_gb": 7.128,
+   "mps_driver_gb": 21.655,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 12.2,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 326.6,
+   "rss_gb": 1.608,
+   "mps_alloc_gb": 7.614,
+   "mps_driver_gb": 21.655,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 12.5,
+   "sys_mem_used_gb": 37.3,
+   "cotenant": []
+  },
+  {
+   "t": 336.7,
+   "rss_gb": 1.629,
+   "mps_alloc_gb": 8.636,
+   "mps_driver_gb": 21.655,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.2,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 346.9,
+   "rss_gb": 1.667,
+   "mps_alloc_gb": 6.781,
+   "mps_driver_gb": 21.643,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.5,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 357.0,
+   "rss_gb": 1.706,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 21.671,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.1,
+   "sys_mem_used_gb": 37.3,
+   "cotenant": []
+  },
+  {
+   "t": 367.1,
+   "rss_gb": 1.708,
+   "mps_alloc_gb": 6.77,
+   "mps_driver_gb": 21.643,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.4,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 377.1,
+   "rss_gb": 1.712,
+   "mps_alloc_gb": 6.77,
+   "mps_driver_gb": 21.656,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.6,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 387.3,
+   "rss_gb": 1.746,
+   "mps_alloc_gb": 6.791,
+   "mps_driver_gb": 21.656,
+   "gpu_util_pct": 86,
+   "sys_cpu_pct": 10.3,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 397.3,
+   "rss_gb": 1.76,
+   "mps_alloc_gb": 6.782,
+   "mps_driver_gb": 21.657,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 24.1,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 407.5,
+   "rss_gb": 1.799,
+   "mps_alloc_gb": 13.659,
+   "mps_driver_gb": 21.659,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 11.6,
+   "sys_mem_used_gb": 37.4,
+   "cotenant": []
+  },
+  {
+   "t": 417.6,
+   "rss_gb": 1.857,
+   "mps_alloc_gb": 12.642,
+   "mps_driver_gb": 21.657,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 9.8,
+   "sys_mem_used_gb": 37.6,
+   "cotenant": []
+  },
+  {
+   "t": 427.7,
+   "rss_gb": 1.892,
+   "mps_alloc_gb": 13.32,
+   "mps_driver_gb": 21.658,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 10.6,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 437.8,
+   "rss_gb": 1.948,
+   "mps_alloc_gb": 7.595,
+   "mps_driver_gb": 21.646,
+   "gpu_util_pct": 27,
+   "sys_cpu_pct": 10.1,
+   "sys_mem_used_gb": 36.5,
+   "cotenant": []
+  },
+  {
+   "t": 447.9,
+   "rss_gb": 1.978,
+   "mps_alloc_gb": 6.77,
+   "mps_driver_gb": 21.646,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.1,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 458.0,
+   "rss_gb": 2.001,
+   "mps_alloc_gb": 12.325,
+   "mps_driver_gb": 21.659,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.7,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 468.1,
+   "rss_gb": 2.021,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 21.646,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.7,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 478.2,
+   "rss_gb": 2.061,
+   "mps_alloc_gb": 6.77,
+   "mps_driver_gb": 21.647,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.7,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 488.4,
+   "rss_gb": 2.062,
+   "mps_alloc_gb": 12.622,
+   "mps_driver_gb": 21.647,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.8,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 498.5,
+   "rss_gb": 2.069,
+   "mps_alloc_gb": 12.856,
+   "mps_driver_gb": 21.647,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.5,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 508.6,
+   "rss_gb": 1.823,
+   "mps_alloc_gb": 8.721,
+   "mps_driver_gb": 21.662,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 16.2,
+   "sys_mem_used_gb": 37.6,
+   "cotenant": []
+  },
+  {
+   "t": 518.7,
+   "rss_gb": 1.594,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 21.647,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 15.6,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 528.8,
+   "rss_gb": 1.6,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 21.647,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 12.8,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 539.0,
+   "rss_gb": 1.517,
+   "mps_alloc_gb": 13.306,
+   "mps_driver_gb": 21.674,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 11.5,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 549.1,
+   "rss_gb": 1.521,
+   "mps_alloc_gb": 12.654,
+   "mps_driver_gb": 21.647,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.6,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 559.2,
+   "rss_gb": 1.544,
+   "mps_alloc_gb": 13.495,
+   "mps_driver_gb": 21.647,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.6,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 569.3,
+   "rss_gb": 1.563,
+   "mps_alloc_gb": 13.77,
+   "mps_driver_gb": 21.66,
+   "gpu_util_pct": 93,
+   "sys_cpu_pct": 9.7,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 579.4,
+   "rss_gb": 1.581,
+   "mps_alloc_gb": 6.786,
+   "mps_driver_gb": 21.648,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.8,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 589.5,
+   "rss_gb": 1.638,
+   "mps_alloc_gb": 6.782,
+   "mps_driver_gb": 21.661,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.3,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 599.6,
+   "rss_gb": 1.638,
+   "mps_alloc_gb": 6.784,
+   "mps_driver_gb": 21.648,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.1,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 609.7,
+   "rss_gb": 1.643,
+   "mps_alloc_gb": 11.359,
+   "mps_driver_gb": 21.661,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.8,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 619.9,
+   "rss_gb": 1.645,
+   "mps_alloc_gb": 14.174,
+   "mps_driver_gb": 21.648,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.6,
+   "sys_mem_used_gb": 36.2,
+   "cotenant": []
+  },
+  {
+   "t": 630.0,
+   "rss_gb": 1.668,
+   "mps_alloc_gb": 6.782,
+   "mps_driver_gb": 21.661,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.4,
+   "sys_mem_used_gb": 36.3,
+   "cotenant": []
+  },
+  {
+   "t": 640.1,
+   "rss_gb": 1.669,
+   "mps_alloc_gb": 6.775,
+   "mps_driver_gb": 21.648,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 13.1,
+   "sys_mem_used_gb": 36.0,
+   "cotenant": []
+  },
+  {
+   "t": 650.2,
+   "rss_gb": 1.686,
+   "mps_alloc_gb": 12.575,
+   "mps_driver_gb": 21.648,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 7.0,
+   "sys_mem_used_gb": 35.7,
+   "cotenant": []
+  },
+  {
+   "t": 660.3,
+   "rss_gb": 1.703,
+   "mps_alloc_gb": 13.989,
+   "mps_driver_gb": 21.649,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 7.4,
+   "sys_mem_used_gb": 35.8,
+   "cotenant": []
+  },
+  {
+   "t": 670.4,
+   "rss_gb": 1.704,
+   "mps_alloc_gb": 13.063,
+   "mps_driver_gb": 21.649,
+   "gpu_util_pct": 53,
+   "sys_cpu_pct": 7.0,
+   "sys_mem_used_gb": 35.8,
+   "cotenant": []
+  },
+  {
+   "t": 680.5,
+   "rss_gb": 1.704,
+   "mps_alloc_gb": 12.828,
+   "mps_driver_gb": 21.661,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 7.6,
+   "sys_mem_used_gb": 35.8,
+   "cotenant": []
+  },
+  {
+   "t": 690.7,
+   "rss_gb": 1.725,
+   "mps_alloc_gb": 11.837,
+   "mps_driver_gb": 21.649,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 7.7,
+   "sys_mem_used_gb": 36.4,
+   "cotenant": []
+  },
+  {
+   "t": 700.8,
+   "rss_gb": 1.738,
+   "mps_alloc_gb": 7.053,
+   "mps_driver_gb": 21.649,
+   "gpu_util_pct": 80,
+   "sys_cpu_pct": 7.9,
+   "sys_mem_used_gb": 35.9,
+   "cotenant": []
+  },
+  {
+   "t": 710.9,
+   "rss_gb": 1.755,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 21.664,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 7.5,
+   "sys_mem_used_gb": 36.5,
+   "cotenant": []
+  },
+  {
+   "t": 721.0,
+   "rss_gb": 1.756,
+   "mps_alloc_gb": 12.521,
+   "mps_driver_gb": 21.649,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 7.1,
+   "sys_mem_used_gb": 36.5,
+   "cotenant": []
+  },
+  {
+   "t": 731.1,
+   "rss_gb": 1.765,
+   "mps_alloc_gb": 6.773,
+   "mps_driver_gb": 21.649,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 7.1,
+   "sys_mem_used_gb": 36.4,
+   "cotenant": []
+  },
+  {
+   "t": 741.2,
+   "rss_gb": 1.765,
+   "mps_alloc_gb": 12.628,
+   "mps_driver_gb": 21.649,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 7.2,
+   "sys_mem_used_gb": 35.9,
+   "cotenant": []
+  },
+  {
+   "t": 751.3,
+   "rss_gb": 1.789,
+   "mps_alloc_gb": 6.887,
+   "mps_driver_gb": 21.649,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 7.8,
+   "sys_mem_used_gb": 35.9,
+   "cotenant": []
+  },
+  {
+   "t": 761.5,
+   "rss_gb": 1.797,
+   "mps_alloc_gb": 6.77,
+   "mps_driver_gb": 21.662,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.6,
+   "sys_mem_used_gb": 36.2,
+   "cotenant": []
+  },
+  {
+   "t": 771.6,
+   "rss_gb": 1.797,
+   "mps_alloc_gb": 7.737,
+   "mps_driver_gb": 21.662,
+   "gpu_util_pct": 79,
+   "sys_cpu_pct": 7.1,
+   "sys_mem_used_gb": 36.0,
+   "cotenant": []
+  },
+  {
+   "t": 781.7,
+   "rss_gb": 1.805,
+   "mps_alloc_gb": 6.777,
+   "mps_driver_gb": 21.649,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.6,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 791.8,
+   "rss_gb": 1.822,
+   "mps_alloc_gb": 6.789,
+   "mps_driver_gb": 21.662,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.2,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 801.9,
+   "rss_gb": 1.856,
+   "mps_alloc_gb": 6.776,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.1,
+   "sys_mem_used_gb": 36.4,
+   "cotenant": []
+  },
+  {
+   "t": 812.0,
+   "rss_gb": 2.393,
+   "mps_alloc_gb": 6.782,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 70,
+   "sys_cpu_pct": 10.2,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 822.1,
+   "rss_gb": 2.41,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.7,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 832.3,
+   "rss_gb": 2.421,
+   "mps_alloc_gb": 6.77,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.2,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 842.4,
+   "rss_gb": 2.421,
+   "mps_alloc_gb": 6.77,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 7.8,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 852.5,
+   "rss_gb": 2.422,
+   "mps_alloc_gb": 6.787,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 83,
+   "sys_cpu_pct": 15.9,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 862.6,
+   "rss_gb": 2.422,
+   "mps_alloc_gb": 11.438,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 13.3,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 872.8,
+   "rss_gb": 2.422,
+   "mps_alloc_gb": 11.938,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 96,
+   "sys_cpu_pct": 8.4,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 882.9,
+   "rss_gb": 2.446,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.1,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 893.0,
+   "rss_gb": 2.446,
+   "mps_alloc_gb": 6.777,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.2,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 903.1,
+   "rss_gb": 2.454,
+   "mps_alloc_gb": 11.141,
+   "mps_driver_gb": 21.665,
+   "gpu_util_pct": 98,
+   "sys_cpu_pct": 7.7,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 913.2,
+   "rss_gb": 2.457,
+   "mps_alloc_gb": 10.728,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 7.6,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 923.3,
+   "rss_gb": 2.457,
+   "mps_alloc_gb": 10.816,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.7,
+   "sys_mem_used_gb": 37.4,
+   "cotenant": []
+  },
+  {
+   "t": 933.5,
+   "rss_gb": 2.462,
+   "mps_alloc_gb": 10.833,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 14.0,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 943.6,
+   "rss_gb": 2.462,
+   "mps_alloc_gb": 14.196,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 11.0,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 953.7,
+   "rss_gb": 2.463,
+   "mps_alloc_gb": 6.773,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.9,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 963.8,
+   "rss_gb": 2.467,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.7,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 973.9,
+   "rss_gb": 2.48,
+   "mps_alloc_gb": 14.59,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.3,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 984.1,
+   "rss_gb": 2.48,
+   "mps_alloc_gb": 12.627,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 85,
+   "sys_cpu_pct": 9.2,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 994.2,
+   "rss_gb": 2.492,
+   "mps_alloc_gb": 7.268,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.9,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 1004.3,
+   "rss_gb": 2.492,
+   "mps_alloc_gb": 13.643,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.4,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 1014.4,
+   "rss_gb": 2.492,
+   "mps_alloc_gb": 6.782,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 68,
+   "sys_cpu_pct": 8.9,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 1024.6,
+   "rss_gb": 2.492,
+   "mps_alloc_gb": 12.991,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.7,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 1034.7,
+   "rss_gb": 2.5,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.0,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 1044.8,
+   "rss_gb": 2.5,
+   "mps_alloc_gb": 7.737,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.9,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 1055.0,
+   "rss_gb": 2.5,
+   "mps_alloc_gb": 7.189,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.8,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 1065.1,
+   "rss_gb": 2.5,
+   "mps_alloc_gb": 11.779,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.3,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 1075.2,
+   "rss_gb": 2.504,
+   "mps_alloc_gb": 6.78,
+   "mps_driver_gb": 21.678,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.2,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1085.3,
+   "rss_gb": 2.504,
+   "mps_alloc_gb": 6.796,
+   "mps_driver_gb": 21.65,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.1,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1095.5,
+   "rss_gb": 2.538,
+   "mps_alloc_gb": 6.775,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.4,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1105.6,
+   "rss_gb": 2.542,
+   "mps_alloc_gb": 6.787,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 74,
+   "sys_cpu_pct": 9.5,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1115.7,
+   "rss_gb": 2.547,
+   "mps_alloc_gb": 12.602,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.1,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1125.9,
+   "rss_gb": 2.548,
+   "mps_alloc_gb": 16.271,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.8,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1136.0,
+   "rss_gb": 2.55,
+   "mps_alloc_gb": 13.47,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 84,
+   "sys_cpu_pct": 10.8,
+   "sys_mem_used_gb": 37.3,
+   "cotenant": []
+  },
+  {
+   "t": 1146.1,
+   "rss_gb": 2.562,
+   "mps_alloc_gb": 9.478,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.6,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1156.2,
+   "rss_gb": 2.563,
+   "mps_alloc_gb": 13.069,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.1,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1166.4,
+   "rss_gb": 2.568,
+   "mps_alloc_gb": 15.112,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.7,
+   "sys_mem_used_gb": 37.3,
+   "cotenant": []
+  },
+  {
+   "t": 1176.5,
+   "rss_gb": 2.569,
+   "mps_alloc_gb": 6.778,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.4,
+   "sys_mem_used_gb": 37.3,
+   "cotenant": []
+  },
+  {
+   "t": 1186.6,
+   "rss_gb": 2.573,
+   "mps_alloc_gb": 6.784,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.6,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 1196.8,
+   "rss_gb": 2.573,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.7,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1206.9,
+   "rss_gb": 2.578,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.9,
+   "sys_mem_used_gb": 37.3,
+   "cotenant": []
+  },
+  {
+   "t": 1217.0,
+   "rss_gb": 2.59,
+   "mps_alloc_gb": 12.061,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.1,
+   "sys_mem_used_gb": 37.3,
+   "cotenant": []
+  },
+  {
+   "t": 1227.1,
+   "rss_gb": 2.59,
+   "mps_alloc_gb": 6.772,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 58,
+   "sys_cpu_pct": 9.4,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1237.3,
+   "rss_gb": 2.598,
+   "mps_alloc_gb": 12.679,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.2,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 1247.4,
+   "rss_gb": 2.605,
+   "mps_alloc_gb": 6.773,
+   "mps_driver_gb": 21.665,
+   "gpu_util_pct": 78,
+   "sys_cpu_pct": 20.2,
+   "sys_mem_used_gb": 36.0,
+   "cotenant": []
+  },
+  {
+   "t": 1257.6,
+   "rss_gb": 1.581,
+   "mps_alloc_gb": 6.786,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 23.5,
+   "sys_mem_used_gb": 37.8,
+   "cotenant": []
+  },
+  {
+   "t": 1267.7,
+   "rss_gb": 1.658,
+   "mps_alloc_gb": 6.773,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 18.1,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 1277.8,
+   "rss_gb": 1.706,
+   "mps_alloc_gb": 7.124,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 16.0,
+   "sys_mem_used_gb": 36.3,
+   "cotenant": []
+  },
+  {
+   "t": 1288.0,
+   "rss_gb": 1.758,
+   "mps_alloc_gb": 12.562,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 97,
+   "sys_cpu_pct": 13.6,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 1298.1,
+   "rss_gb": 1.802,
+   "mps_alloc_gb": 12.86,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 98,
+   "sys_cpu_pct": 10.6,
+   "sys_mem_used_gb": 36.5,
+   "cotenant": []
+  },
+  {
+   "t": 1308.2,
+   "rss_gb": 1.836,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 14.8,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 1318.3,
+   "rss_gb": 1.809,
+   "mps_alloc_gb": 13.463,
+   "mps_driver_gb": 21.665,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 16.1,
+   "sys_mem_used_gb": 36.2,
+   "cotenant": []
+  },
+  {
+   "t": 1328.4,
+   "rss_gb": 1.834,
+   "mps_alloc_gb": 12.598,
+   "mps_driver_gb": 21.663,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.8,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 1338.6,
+   "rss_gb": 1.854,
+   "mps_alloc_gb": 6.778,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 7.9,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 1348.7,
+   "rss_gb": 1.89,
+   "mps_alloc_gb": 7.634,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.4,
+   "sys_mem_used_gb": 36.5,
+   "cotenant": []
+  },
+  {
+   "t": 1358.8,
+   "rss_gb": 1.919,
+   "mps_alloc_gb": 6.785,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.2,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 1368.9,
+   "rss_gb": 1.946,
+   "mps_alloc_gb": 6.785,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.7,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 1379.0,
+   "rss_gb": 1.957,
+   "mps_alloc_gb": 6.779,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.7,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 1389.2,
+   "rss_gb": 1.978,
+   "mps_alloc_gb": 13.455,
+   "mps_driver_gb": 21.666,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.1,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 1399.3,
+   "rss_gb": 1.993,
+   "mps_alloc_gb": 6.784,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.8,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 1409.4,
+   "rss_gb": 1.999,
+   "mps_alloc_gb": 12.702,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.3,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 1419.5,
+   "rss_gb": 2.0,
+   "mps_alloc_gb": 13.907,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.6,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 1429.7,
+   "rss_gb": 2.034,
+   "mps_alloc_gb": 13.069,
+   "mps_driver_gb": 21.664,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.9,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 1439.8,
+   "rss_gb": 2.051,
+   "mps_alloc_gb": 7.974,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 11.0,
+   "sys_mem_used_gb": 37.0,
+   "cotenant": []
+  },
+  {
+   "t": 1449.9,
+   "rss_gb": 2.035,
+   "mps_alloc_gb": 7.41,
+   "mps_driver_gb": 21.664,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.3,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1460.0,
+   "rss_gb": 2.046,
+   "mps_alloc_gb": 17.68,
+   "mps_driver_gb": 21.678,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 8.7,
+   "sys_mem_used_gb": 37.1,
+   "cotenant": []
+  },
+  {
+   "t": 1470.2,
+   "rss_gb": 1.984,
+   "mps_alloc_gb": 6.785,
+   "mps_driver_gb": 21.666,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 13.0,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1480.3,
+   "rss_gb": 2.01,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 21.651,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 14.4,
+   "sys_mem_used_gb": 37.2,
+   "cotenant": []
+  },
+  {
+   "t": 1490.4,
+   "rss_gb": 1.794,
+   "mps_alloc_gb": 6.77,
+   "mps_driver_gb": 22.725,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.8,
+   "sys_mem_used_gb": 37.5,
+   "cotenant": []
+  },
+  {
+   "t": 1500.5,
+   "rss_gb": 1.171,
+   "mps_alloc_gb": 12.656,
+   "mps_driver_gb": 22.738,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 14.0,
+   "sys_mem_used_gb": 36.3,
+   "cotenant": []
+  },
+  {
+   "t": 1510.6,
+   "rss_gb": 1.2,
+   "mps_alloc_gb": 13.124,
+   "mps_driver_gb": 22.725,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.5,
+   "sys_mem_used_gb": 36.3,
+   "cotenant": []
+  },
+  {
+   "t": 1520.8,
+   "rss_gb": 1.203,
+   "mps_alloc_gb": 6.77,
+   "mps_driver_gb": 22.738,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.5,
+   "sys_mem_used_gb": 36.4,
+   "cotenant": []
+  },
+  {
+   "t": 1530.9,
+   "rss_gb": 1.211,
+   "mps_alloc_gb": 8.312,
+   "mps_driver_gb": 22.725,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 11.1,
+   "sys_mem_used_gb": 36.5,
+   "cotenant": []
+  },
+  {
+   "t": 1541.0,
+   "rss_gb": 1.229,
+   "mps_alloc_gb": 7.621,
+   "mps_driver_gb": 22.725,
+   "gpu_util_pct": 96,
+   "sys_cpu_pct": 10.7,
+   "sys_mem_used_gb": 36.6,
+   "cotenant": []
+  },
+  {
+   "t": 1551.1,
+   "rss_gb": 1.238,
+   "mps_alloc_gb": 6.782,
+   "mps_driver_gb": 22.725,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.4,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 1561.2,
+   "rss_gb": 1.238,
+   "mps_alloc_gb": 6.771,
+   "mps_driver_gb": 22.725,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 11.7,
+   "sys_mem_used_gb": 36.8,
+   "cotenant": []
+  },
+  {
+   "t": 1571.3,
+   "rss_gb": 1.26,
+   "mps_alloc_gb": 6.777,
+   "mps_driver_gb": 22.74,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.1,
+   "sys_mem_used_gb": 36.7,
+   "cotenant": []
+  },
+  {
+   "t": 1581.4,
+   "rss_gb": 1.276,
+   "mps_alloc_gb": 6.786,
+   "mps_driver_gb": 22.738,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.9,
+   "sys_mem_used_gb": 36.5,
+   "cotenant": []
+  },
+  {
+   "t": 1591.5,
+   "rss_gb": 1.292,
+   "mps_alloc_gb": 8.04,
+   "mps_driver_gb": 22.725,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.7,
+   "sys_mem_used_gb": 36.1,
+   "cotenant": []
+  },
+  {
+   "t": 1601.7,
+   "rss_gb": 1.317,
+   "mps_alloc_gb": 6.77,
+   "mps_driver_gb": 22.738,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.1,
+   "sys_mem_used_gb": 36.5,
+   "cotenant": []
+  },
+  {
+   "t": 1611.8,
+   "rss_gb": 1.325,
+   "mps_alloc_gb": 6.773,
+   "mps_driver_gb": 22.725,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 9.8,
+   "sys_mem_used_gb": 36.9,
+   "cotenant": []
+  },
+  {
+   "t": 1621.9,
+   "rss_gb": 1.807,
+   "mps_alloc_gb": 5.081,
+   "mps_driver_gb": 22.723,
+   "gpu_util_pct": 98,
+   "sys_cpu_pct": 10.9,
+   "sys_mem_used_gb": 34.8,
+   "cotenant": []
+  },
+  {
+   "t": 1632.0,
+   "rss_gb": 1.821,
+   "mps_alloc_gb": 5.081,
+   "mps_driver_gb": 22.736,
+   "gpu_util_pct": 98,
+   "sys_cpu_pct": 8.7,
+   "sys_mem_used_gb": 35.4,
+   "cotenant": []
+  }
+ ],
+ "events": [
+  [
+   2.433,
+   "Using legacy cached training items without metadata: poc/finetune/data/t3arm/T10_english.pt"
+  ],
+  [
+   2.944,
+   "Device: mps"
+  ],
+  [
+   2.944,
+   "Training items: 5000; calibration items: 400"
+  ],
+  [
+   2.944,
+   "micro_batch=8; grad_accum=4; epochs=2"
+  ],
+  [
+   133.228,
+   "epoch 1/2, step 100, loss=1.6609"
+  ],
+  [
+   263.477,
+   "epoch 1/2, step 200, loss=1.4732"
+  ],
+  [
+   392.997,
+   "epoch 1/2, step 300, loss=1.6695"
+  ],
+  [
+   521.827,
+   "epoch 1/2, step 400, loss=2.0905"
+  ],
+  [
+   649.09,
+   "epoch 1/2, step 500, loss=2.3760"
+  ],
+  [
+   773.983,
+   "epoch 1/2, step 600, loss=1.3010"
+  ],
+  [
+   805.655,
+   "Epoch 1/2 complete; avg_loss=1.7310"
+  ],
+  [
+   933.326,
+   "epoch 2/2, step 100, loss=1.6530"
+  ],
+  [
+   1064.717,
+   "epoch 2/2, step 200, loss=1.5462"
+  ],
+  [
+   1194.794,
+   "epoch 2/2, step 300, loss=2.3096"
+  ],
+  [
+   1325.819,
+   "epoch 2/2, step 400, loss=1.6350"
+  ],
+  [
+   1452.185,
+   "epoch 2/2, step 500, loss=1.5422"
+  ],
+  [
+   1580.429,
+   "epoch 2/2, step 600, loss=2.5136"
+  ],
+  [
+   1613.799,
+   "Epoch 2/2 complete; avg_loss=1.5859"
+  ],
+  [
+   1615.388,
+   "Running temperature calibration ..."
+  ],
+  [
+   1632.675,
+   "Model saved to poc/finetune/ckpt_t3arm/T10_run"
+  ],
+  [
+   1632.676,
+   "Temperatures: [1.425628423690796, 1.2, 1.2]"
+  ]
+ ],
+ "micro_batch_trace": [
+  [
+   2.9445,
+   8,
+   237,
+   1.0018,
+   1.74373,
+   0.5
+  ],
+  [
+   3.9463,
+   8,
+   255,
+   1.0449,
+   2.0153,
+   0.25
+  ],
+  [
+   4.9912,
+   8,
+   297,
+   1.2372,
+   1.83488,
+   0.375
+  ],
+  [
+   6.2284,
+   8,
+   265,
+   1.8515,
+   2.79565,
+   0.0
+  ],
+  [
+   8.0799,
+   8,
+   260,
+   1.0268,
+   1.9203,
+   0.5
+  ],
+  [
+   9.1067,
+   8,
+   271,
+   1.1141,
+   1.45937,
+   0.375
+  ],
+  [
+   10.2208,
+   8,
+   235,
+   0.943,
+   2.056,
+   0.25
+  ],
+  [
+   11.1638,
+   8,
+   294,
+   1.9606,
+   1.48597,
+   0.5
+  ],
+  [
+   13.1244,
+   8,
+   263,
+   1.0918,
+   1.78429,
+   0.25
+  ],
+  [
+   14.2162,
+   8,
+   294,
+   1.1817,
+   1.98191,
+   0.25
+  ],
+  [
+   15.3979,
+   8,
+   264,
+   1.0706,
+   2.05566,
+   0.375
+  ],
+  [
+   16.4685,
+   8,
+   276,
+   1.8656,
+   1.94196,
+   0.25
+  ],
+  [
+   18.3341,
+   8,
+   261,
+   1.0365,
+   2.04128,
+   0.25
+  ],
+  [
+   19.3706,
+   8,
+   253,
+   1.04,
+   1.3756,
+   0.5
+  ],
+  [
+   20.4106,
+   8,
+   253,
+   1.0117,
+   1.90881,
+   0.375
+  ],
+  [
+   21.4223,
+   8,
+   276,
+   1.8401,
+   2.27101,
+   0.25
+  ],
+  [
+   23.2624,
+   8,
+   245,
+   0.9985,
+   1.7665,
+   0.5
+  ],
+  [
+   24.2609,
+   8,
+   211,
+   0.8584,
+   1.92092,
+   0.5
+  ],
+  [
+   25.1193,
+   8,
+   256,
+   1.0296,
+   2.59645,
+   0.0
+  ],
+  [
+   26.1489,
+   8,
+   249,
+   1.7509,
+   1.92725,
+   0.375
+  ],
+  [
+   27.8998,
+   8,
+   251,
+   0.9953,
+   1.62618,
+   0.375
+  ],
+  [
+   28.8951,
+   8,
+   280,
+   1.1382,
+   1.49141,
+   0.5
+  ],
+  [
+   30.0333,
+   8,
+   328,
+   1.3527,
+   1.94332,
+   0.5
+  ],
+  [
+   31.386,
+   8,
+   292,
+   1.9216,
+   2.05819,
+   0.125
+  ],
+  [
+   33.3076,
+   8,
+   254,
+   1.0066,
+   1.45873,
+   0.5
+  ],
+  [
+   34.3142,
+   8,
+   254,
+   1.006,
+   1.76536,
+   0.125
+  ],
+  [
+   35.3202,
+   8,
+   263,
+   1.0457,
+   1.94852,
+   0.375
+  ],
+  [
+   36.3659,
+   8,
+   262,
+   1.8008,
+   1.92056,
+   0.375
+  ],
+  [
+   38.1667,
+   8,
+   253,
+   1.0093,
+   1.97154,
+   0.375
+  ],
+  [
+   39.176,
+   8,
+   303,
+   1.2716,
+   2.69703,
+   0.0
+  ],
+  [
+   40.4476,
+   8,
+   344,
+   1.42,
+   2.09772,
+   0.25
+  ],
+  [
+   41.8676,
+   8,
+   251,
+   1.7303,
+   1.9256,
+   0.5
+  ],
+  [
+   43.5979,
+   8,
+   266,
+   1.0808,
+   2.01678,
+   0.25
+  ],
+  [
+   44.6787,
+   8,
+   268,
+   1.0823,
+   2.39786,
+   0.25
+  ],
+  [
+   45.761,
+   8,
+   267,
+   1.0969,
+   2.08671,
+   0.25
+  ],
+  [
+   46.8579,
+   8,
+   255,
+   1.7385,
+   1.59207,
+   0.625
+  ],
+  [
+   48.5964,
+   8,
+   278,
+   1.1102,
+   1.65475,
+   0.25
+  ],
+  [
+   49.7066,
+   8,
+   249,
+   0.9941,
+   1.96019,
+   0.25
+  ],
+  [
+   50.7007,
+   8,
+   253,
+   1.0163,
+   2.15282,
+   0.25
+  ],
+  [
+   51.717,
+   8,
+   249,
+   1.7297,
+   1.2138,
+   0.5
+  ],
+  [
+   53.4467,
+   8,
+   252,
+   1.006,
+   1.59025,
+   0.375
+  ],
+  [
+   54.4527,
+   8,
+   262,
+   1.048,
+   2.32126,
+   0.25
+  ],
+  [
+   55.5007,
+   8,
+   306,
+   1.2578,
+   2.18601,
+   0.25
+  ],
+  [
+   56.7585,
+   8,
+   248,
+   1.743,
+   1.68008,
+   0.375
+  ],
+  [
+   58.5015,
+   8,
+   272,
+   1.1036,
+   2.15935,
+   0.25
+  ],
+  [
+   59.6051,
+   8,
+   266,
+   1.0916,
+   1.72459,
+   0.375
+  ],
+  [
+   60.6967,
+   8,
+   271,
+   1.0835,
+   1.9385,
+   0.375
+  ],
+  [
+   61.7802,
+   8,
+   287,
+   1.9174,
+   2.24499,
+   0.125
+  ],
+  [
+   63.6976,
+   8,
+   254,
+   1.005,
+   1.35878,
+   0.75
+  ],
+  [
+   64.7026,
+   8,
+   288,
+   1.1838,
+   1.88408,
+   0.25
+  ],
+  [
+   65.8864,
+   8,
+   298,
+   1.2311,
+   1.50479,
+   0.5
+  ],
+  [
+   67.1175,
+   8,
+   259,
+   1.8055,
+   1.62149,
+   0.375
+  ],
+  [
+   68.923,
+   8,
+   274,
+   1.1115,
+   1.90019,
+   0.125
+  ],
+  [
+   70.0345,
+   8,
+   359,
+   1.4967,
+   2.15688,
+   0.5
+  ],
+  [
+   71.5312,
+   8,
+   255,
+   1.0204,
+   2.04594,
+   0.375
+  ],
+  [
+   72.5516,
+   8,
+   253,
+   1.7473,
+   1.50931,
+   0.5
+  ],
+  [
+   74.2989,
+   8,
+   281,
+   1.1462,
+   2.14373,
+   0.25
+  ],
+  [
+   75.4451,
+   8,
+   243,
+   0.9873,
+   2.30158,
+   0.25
+  ],
+  [
+   76.4324,
+   8,
+   280,
+   1.1197,
+   1.97603,
+   0.125
+  ],
+  [
+   77.5521,
+   8,
+   240,
+   1.7034,
+   1.45705,
+   0.5
+  ],
+  [
+   79.2555,
+   8,
+   266,
+   1.0515,
+   1.597,
+   0.375
+  ],
+  [
+   80.307,
+   8,
+   289,
+   1.1897,
+   1.57455,
+   0.375
+  ],
+  [
+   81.4967,
+   8,
+   258,
+   1.0564,
+   1.88623,
+   0.375
+  ],
+  [
+   82.5531,
+   8,
+   258,
+   1.7505,
+   2.1789,
+   0.125
+  ],
+  [
+   84.3036,
+   8,
+   346,
+   1.4453,
+   1.788,
+   0.375
+  ],
+  [
+   85.7489,
+   8,
+   260,
+   1.0451,
+   2.17917,
+   0.125
+  ],
+  [
+   86.794,
+   8,
+   247,
+   1.0059,
+   1.6762,
+   0.375
+  ],
+  [
+   87.7999,
+   8,
+   238,
+   1.7003,
+   2.09726,
+   0.375
+  ],
+  [
+   89.5002,
+   8,
+   280,
+   1.0931,
+   1.94461,
+   0.25
+  ],
+  [
+   90.5933,
+   8,
+   393,
+   1.6706,
+   1.958,
+   0.5
+  ],
+  [
+   92.2639,
+   8,
+   277,
+   1.132,
+   1.89098,
+   0.375
+  ],
+  [
+   93.3959,
+   8,
+   297,
+   1.942,
+   1.96894,
+   0.5
+  ],
+  [
+   95.3379,
+   8,
+   291,
+   1.1826,
+   2.04165,
+   0.375
+  ],
+  [
+   96.5205,
+   8,
+   259,
+   1.0524,
+   1.90817,
+   0.25
+  ],
+  [
+   97.5729,
+   8,
+   308,
+   1.2738,
+   1.28532,
+   0.625
+  ],
+  [
+   98.8467,
+   8,
+   260,
+   1.7648,
+   1.44435,
+   0.375
+  ],
+  [
+   100.6115,
+   8,
+   356,
+   1.4617,
+   1.44605,
+   0.5
+  ],
+  [
+   102.0732,
+   8,
+   249,
+   1.0029,
+   2.24909,
+   0.25
+  ],
+  [
+   103.0761,
+   8,
+   301,
+   1.2441,
+   2.00334,
+   0.5
+  ],
+  [
+   104.3202,
+   8,
+   257,
+   1.7853,
+   1.22581,
+   0.5
+  ],
+  [
+   106.1055,
+   8,
+   341,
+   1.4048,
+   1.9725,
+   0.125
+  ],
+  [
+   107.5103,
+   8,
+   285,
+   1.1711,
+   2.07282,
+   0.125
+  ],
+  [
+   108.6814,
+   8,
+   251,
+   1.0015,
+   2.48194,
+   0.25
+  ],
+  [
+   109.6829,
+   8,
+   253,
+   1.7385,
+   2.25154,
+   0.25
+  ],
+  [
+   111.4214,
+   8,
+   279,
+   1.1164,
+   1.31042,
+   0.625
+  ],
+  [
+   112.5378,
+   8,
+   302,
+   1.2402,
+   2.025,
+   0.125
+  ],
+  [
+   113.778,
+   8,
+   234,
+   0.9501,
+   3.09505,
+   0.25
+  ],
+  [
+   114.7281,
+   8,
+   324,
+   2.0661,
+   2.5881,
+   0.125
+  ],
+  [
+   116.7942,
+   8,
+   299,
+   1.2141,
+   2.46602,
+   0.0
+  ],
+  [
+   118.0083,
+   8,
+   332,
+   1.3757,
+   1.71449,
+   0.375
+  ],
+  [
+   119.384,
+   8,
+   282,
+   1.1708,
+   2.09263,
+   0.25
+  ],
+  [
+   120.5548,
+   8,
+   261,
+   1.7766,
+   1.53534,
+   0.5
+  ],
+  [
+   122.3314,
+   8,
+   370,
+   1.5288,
+   1.48444,
+   0.375
+  ],
+  [
+   123.8602,
+   8,
+   255,
+   1.0154,
+   1.3986,
+   0.5
+  ],
+  [
+   124.8756,
+   8,
+   260,
+   1.0396,
+   1.72946,
+   0.5
+  ],
+  [
+   125.9152,
+   8,
+   248,
+   1.7089,
+   1.84731,
+   0.5
+  ],
+  [
+   127.6241,
+   8,
+   259,
+   1.019,
+   1.56719,
+   0.5
+  ],
+  [
+   128.6431,
+   8,
+   415,
+   1.7948,
+   1.67777,
+   0.375
+  ],
+  [
+   130.4379,
+   8,
+   278,
+   1.1183,
+   2.06697,
+   0.25
+  ],
+  [
+   131.5562,
+   8,
+   237,
+   1.6723,
+   1.80105,
+   0.375
+  ],
+  [
+   133.2285,
+   8,
+   243,
+   0.9501,
+   1.59951,
+   0.375
+  ],
+  [
+   134.1786,
+   8,
+   259,
+   1.0359,
+   0.91972,
+   0.625
+  ],
+  [
+   135.2145,
+   8,
+   252,
+   0.9999,
+   1.81088,
+   0.375
+  ],
+  [
+   136.2144,
+   8,
+   379,
+   2.3168,
+   1.8603,
+   0.5
+  ],
+  [
+   138.5312,
+   8,
+   388,
+   1.6275,
+   2.43031,
+   0.0
+  ],
+  [
+   140.1587,
+   8,
+   248,
+   0.9798,
+   2.09932,
+   0.625
+  ],
+  [
+   141.1385,
+   8,
+   257,
+   1.0387,
+   1.62077,
+   0.375
+  ],
+  [
+   142.1772,
+   8,
+   262,
+   1.7817,
+   1.67159,
+   0.375
+  ],
+  [
+   143.9589,
+   8,
+   249,
+   0.9791,
+   1.82979,
+   0.375
+  ],
+  [
+   144.938,
+   8,
+   256,
+   1.0044,
+   2.25712,
+   0.125
+  ],
+  [
+   145.9424,
+   8,
+   245,
+   0.9765,
+   1.68627,
+   0.375
+  ],
+  [
+   146.9189,
+   8,
+   266,
+   1.8158,
+   2.00556,
+   0.25
+  ],
+  [
+   148.7347,
+   8,
+   327,
+   1.3328,
+   1.82388,
+   0.5
+  ],
+  [
+   150.0675,
+   8,
+   261,
+   1.0459,
+   2.05893,
+   0.375
+  ],
+  [
+   151.1134,
+   8,
+   253,
+   1.0077,
+   2.02632,
+   0.125
+  ],
+  [
+   152.1211,
+   8,
+   266,
+   1.7969,
+   2.10547,
+   0.375
+  ],
+  [
+   153.918,
+   8,
+   221,
+   0.8764,
+   2.03369,
+   0.375
+  ],
+  [
+   154.7944,
+   8,
+   260,
+   1.0406,
+   2.1701,
+   0.125
+  ],
+  [
+   155.835,
+   8,
+   248,
+   0.9764,
+   1.73773,
+   0.5
+  ],
+  [
+   156.8114,
+   8,
+   308,
+   1.9776,
+   1.97727,
+   0.25
+  ],
+  [
+   158.789,
+   8,
+   251,
+   0.9823,
+   1.71407,
+   0.5
+  ],
+  [
+   159.7713,
+   8,
+   251,
+   0.9954,
+   2.2436,
+   0.125
+  ],
+  [
+   160.7667,
+   8,
+   310,
+   1.2772,
+   2.13267,
+   0.25
+  ],
+  [
+   162.0439,
+   8,
+   259,
+   1.7691,
+   2.01044,
+   0.25
+  ],
+  [
+   163.813,
+   8,
+   245,
+   0.9491,
+   2.09569,
+   0.0
+  ],
+  [
+   164.7621,
+   8,
+   261,
+   1.0451,
+   2.02704,
+   0.25
+  ],
+  [
+   165.8072,
+   8,
+   243,
+   0.9703,
+   0.8888,
+   0.75
+  ],
+  [
+   166.7775,
+   8,
+   230,
+   1.6651,
+   1.39811,
+   0.5
+  ],
+  [
+   168.4426,
+   8,
+   250,
+   0.9993,
+   1.84382,
+   0.375
+  ],
+  [
+   169.4419,
+   8,
+   269,
+   1.1014,
+   1.85066,
+   0.25
+  ],
+  [
+   170.5433,
+   8,
+   256,
+   1.0076,
+   1.86013,
+   0.375
+  ],
+  [
+   171.5509,
+   8,
+   238,
+   1.6728,
+   2.59703,
+   0.125
+  ],
+  [
+   173.2237,
+   8,
+   261,
+   1.0305,
+   1.41948,
+   0.375
+  ],
+  [
+   174.2542,
+   8,
+   261,
+   1.0404,
+   1.94359,
+   0.375
+  ],
+  [
+   175.2946,
+   8,
+   249,
+   0.9999,
+   1.7881,
+   0.375
+  ],
+  [
+   176.2945,
+   8,
+   359,
+   2.2156,
+   1.83851,
+   0.375
+  ],
+  [
+   178.5101,
+   8,
+   250,
+   0.985,
+   1.89305,
+   0.375
+  ],
+  [
+   179.4951,
+   8,
+   254,
+   1.0112,
+   1.77104,
+   0.5
+  ],
+  [
+   180.5063,
+   8,
+   256,
+   1.0084,
+   1.61252,
+   0.375
+  ],
+  [
+   181.5147,
+   8,
+   239,
+   1.7003,
+   1.53183,
+   0.5
+  ],
+  [
+   183.215,
+   8,
+   246,
+   1.0115,
+   2.09068,
+   0.375
+  ],
+  [
+   184.2265,
+   8,
+   262,
+   1.0636,
+   0.96274,
+   0.5
+  ],
+  [
+   185.2901,
+   8,
+   253,
+   1.0137,
+   1.35602,
+   0.625
+  ],
+  [
+   186.3038,
+   8,
+   264,
+   1.7868,
+   1.73224,
+   0.375
+  ],
+  [
+   188.0906,
+   8,
+   265,
+   1.069,
+   1.70341,
+   0.25
+  ],
+  [
+   189.1596,
+   8,
+   270,
+   1.1205,
+   2.10085,
+   0.375
+  ],
+  [
+   190.2801,
+   8,
+   339,
+   1.4254,
+   1.88684,
+   0.375
+  ],
+  [
+   191.7055,
+   8,
+   385,
+   2.4004,
+   2.2155,
+   0.25
+  ],
+  [
+   194.1059,
+   8,
+   298,
+   1.1953,
+   1.92767,
+   0.125
+  ],
+  [
+   195.3012,
+   8,
+   341,
+   1.4477,
+   1.78979,
+   0.375
+  ],
+  [
+   196.7489,
+   8,
+   288,
+   1.1559,
+   1.81976,
+   0.5
+  ],
+  [
+   197.9048,
+   8,
+   296,
+   2.0043,
+   1.40336,
+   0.5
+  ],
+  [
+   199.9091,
+   8,
+   338,
+   1.4144,
+   2.31366,
+   0.25
+  ],
+  [
+   201.3235,
+   8,
+   263,
+   1.1023,
+   1.22686,
+   0.625
+  ],
+  [
+   202.4258,
+   8,
+   330,
+   1.3949,
+   3.00071,
+   0.0
+  ],
+  [
+   203.8207,
+   8,
+   271,
+   1.8472,
+   1.65867,
+   0.5
+  ],
+  [
+   205.6679,
+   8,
+   257,
+   1.0308,
+   1.83478,
+   0.375
+  ],
+  [
+   206.6987,
+   8,
+   265,
+   1.1156,
+   1.71425,
+   0.375
+  ],
+  [
+   207.8143,
+   8,
+   273,
+   1.1596,
+   1.87715,
+   0.625
+  ],
+  [
+   208.9739,
+   8,
+   261,
+   1.7917,
+   2.02768,
+   0.25
+  ],
+  [
+   210.7656,
+   8,
+   257,
+   1.0187,
+   1.75298,
+   0.5
+  ],
+  [
+   211.7843,
+   8,
+   256,
+   1.0161,
+   1.73635,
+   0.375
+  ],
+  [
+   212.8004,
+   8,
+   251,
+   1.0084,
+   1.97559,
+   0.25
+  ],
+  [
+   213.8088,
+   8,
+   261,
+   1.7876,
+   2.1714,
+   0.125
+  ],
+  [
+   215.5964,
+   8,
+   320,
+   1.2964,
+   1.61275,
+   0.375
+  ],
+  [
+   216.8928,
+   8,
+   281,
+   1.1537,
+   1.94982,
+   0.125
+  ],
+  [
+   218.0465,
+   8,
+   256,
+   1.0166,
+   1.8058,
+   0.5
+  ],
+  [
+   219.0631,
+   8,
+   424,
+   2.5374,
+   1.60523,
+   0.5
+  ],
+  [
+   221.6005,
+   8,
+   258,
+   1.0262,
+   2.32388,
+   0.25
+  ],
+  [
+   222.6267,
+   8,
+   353,
+   1.4799,
+   2.00519,
+   0.25
+  ],
+  [
+   224.1066,
+   8,
+   256,
+   1.0285,
+   2.85086,
+   0.25
+  ],
+  [
+   225.1351,
+   8,
+   264,
+   1.7795,
+   2.29113,
+   0.375
+  ],
+  [
+   226.9146,
+   8,
+   352,
+   1.4461,
+   2.30393,
+   0.25
+  ],
+  [
+   228.3607,
+   8,
+   240,
+   0.9494,
+   1.4879,
+   0.25
+  ],
+  [
+   229.3101,
+   8,
+   268,
+   1.0682,
+   1.64562,
+   0.375
+  ],
+  [
+   230.3783,
+   8,
+   294,
+   1.9163,
+   1.49904,
+   0.625
+  ],
+  [
+   232.2946,
+   8,
+   215,
+   0.8394,
+   2.0661,
+   0.375
+  ],
+  [
+   233.134,
+   8,
+   268,
+   1.0635,
+   1.52692,
+   0.5
+  ],
+  [
+   234.1975,
+   8,
+   390,
+   1.6406,
+   1.82236,
+   0.25
+  ],
+  [
+   235.8381,
+   8,
+   287,
+   1.8857,
+   2.30884,
+   0.25
+  ],
+  [
+   237.7238,
+   8,
+   300,
+   1.1951,
+   1.86053,
+   0.25
+  ],
+  [
+   238.9189,
+   8,
+   271,
+   1.0855,
+   2.13876,
+   0.125
+  ],
+  [
+   240.0044,
+   8,
+   247,
+   0.9713,
+   1.71726,
+   0.5
+  ],
+  [
+   240.9757,
+   8,
+   256,
+   1.7297,
+   1.85468,
+   0.375
+  ],
+  [
+   242.7054,
+   8,
+   249,
+   0.9712,
+   1.81728,
+   0.375
+  ],
+  [
+   243.6766,
+   8,
+   251,
+   0.9928,
+   2.162,
+   0.125
+  ],
+  [
+   244.6694,
+   8,
+   299,
+   1.2044,
+   1.99896,
+   0.375
+  ],
+  [
+   245.8738,
+   8,
+   229,
+   1.6663,
+   1.98571,
+   0.125
+  ],
+  [
+   247.5401,
+   8,
+   435,
+   1.8301,
+   1.57423,
+   0.5
+  ],
+  [
+   249.3702,
+   8,
+   305,
+   1.2513,
+   1.6474,
+   0.375
+  ],
+  [
+   250.6215,
+   8,
+   325,
+   1.3317,
+   1.73544,
+   0.375
+  ],
+  [
+   251.9532,
+   8,
+   235,
+   1.6546,
+   2.39363,
+   0.125
+  ],
+  [
+   253.6078,
+   8,
+   276,
+   1.076,
+   1.72309,
+   0.375
+  ],
+  [
+   254.6838,
+   8,
+   300,
+   1.2008,
+   1.36104,
+   0.625
+  ],
+  [
+   255.8846,
+   8,
+   240,
+   0.9364,
+   2.15276,
+   0.25
+  ],
+  [
+   256.821,
+   8,
+   288,
+   1.8655,
+   1.46304,
+   0.5
+  ],
+  [
+   258.6865,
+   8,
+   251,
+   0.9729,
+   1.11835,
+   0.625
+  ],
+  [
+   259.6594,
+   8,
+   271,
+   1.0814,
+   1.62685,
+   0.375
+  ],
+  [
+   260.7408,
+   8,
+   255,
+   1.0092,
+   1.90173,
+   0.125
+  ],
+  [
+   261.75,
+   8,
+   252,
+   1.7271,
+   2.02027,
+   0.25
+  ],
+  [
+   263.4771,
+   8,
+   305,
+   1.2104,
+   2.22398,
+   0.125
+  ],
+  [
+   264.6875,
+   8,
+   276,
+   1.0958,
+   1.74516,
+   0.25
+  ],
+  [
+   265.7833,
+   8,
+   265,
+   1.0607,
+   1.96652,
+   0.125
+  ],
+  [
+   266.844,
+   8,
+   225,
+   1.6459,
+   2.08056,
+   0.125
+  ],
+  [
+   268.4899,
+   8,
+   298,
+   1.1802,
+   2.10338,
+   0.25
+  ],
+  [
+   269.6701,
+   8,
+   267,
+   1.0625,
+   2.06443,
+   0.25
+  ],
+  [
+   270.7326,
+   8,
+   277,
+   1.1049,
+   1.73557,
+   0.25
+  ],
+  [
+   271.8375,
+   8,
+   244,
+   1.7183,
+   2.11458,
+   0.25
+  ],
+  [
+   273.5558,
+   8,
+   256,
+   0.9793,
+   1.92233,
+   0.125
+  ],
+  [
+   274.5351,
+   8,
+   254,
+   1.0055,
+   1.83871,
+   0.375
+  ],
+  [
+   275.5406,
+   8,
+   243,
+   0.9692,
+   1.67003,
+   0.5
+  ],
+  [
+   276.5098,
+   8,
+   318,
+   2.0279,
+   1.32692,
+   0.375
+  ],
+  [
+   278.5377,
+   8,
+   260,
+   1.0359,
+   1.56286,
+   0.75
+  ],
+  [
+   279.5736,
+   8,
+   289,
+   1.1664,
+   1.78373,
+   0.375
+  ],
+  [
+   280.74,
+   8,
+   256,
+   0.9973,
+   2.03148,
+   0.25
+  ],
+  [
+   281.7373,
+   8,
+   257,
+   1.7515,
+   1.29761,
+   0.5
+  ],
+  [
+   283.4888,
+   8,
+   364,
+   1.4981,
+   1.26708,
+   0.5
+  ],
+  [
+   284.9869,
+   8,
+   262,
+   1.0434,
+   1.72236,
+   0.375
+  ],
+  [
+   286.0303,
+   8,
+   256,
+   1.0004,
+   1.62797,
+   0.5
+  ],
+  [
+   287.0307,
+   8,
+   279,
+   1.8498,
+   1.17607,
+   0.75
+  ],
+  [
+   288.8805,
+   8,
+   261,
+   1.0492,
+   1.99917,
+   0.25
+  ],
+  [
+   289.9297,
+   8,
+   242,
+   1.0152,
+   1.45642,
+   0.5
+  ],
+  [
+   290.9449,
+   8,
+   279,
+   1.1089,
+   2.02826,
+   0.125
+  ],
+  [
+   292.0538,
+   8,
+   304,
+   1.9549,
+   1.6999,
+   0.25
+  ],
+  [
+   294.0087,
+   8,
+   255,
+   0.9855,
+   1.8126,
+   0.375
+  ],
+  [
+   294.9942,
+   8,
+   305,
+   1.2367,
+   1.09947,
+   0.75
+  ],
+  [
+   296.2309,
+   8,
+   284,
+   1.1507,
+   2.32573,
+   0.125
+  ],
+  [
+   297.3816,
+   8,
+   249,
+   1.7225,
+   1.79561,
+   0.25
+  ],
+  [
+   299.1041,
+   8,
+   274,
+   1.0733,
+   1.7037,
+   0.25
+  ],
+  [
+   300.1774,
+   8,
+   345,
+   1.4296,
+   2.08314,
+   0.125
+  ],
+  [
+   301.607,
+   8,
+   257,
+   1.0244,
+   1.91922,
+   0.25
+  ],
+  [
+   302.6314,
+   8,
+   256,
+   1.7271,
+   2.01032,
+   0.375
+  ],
+  [
+   304.3585,
+   8,
+   258,
+   1.0081,
+   1.83553,
+   0.375
+  ],
+  [
+   305.3666,
+   8,
+   255,
+   1.0058,
+   2.06028,
+   0.0
+  ],
+  [
+   306.3724,
+   8,
+   252,
+   0.9955,
+   2.12522,
+   0.25
+  ],
+  [
+   307.3679,
+   8,
+   269,
+   1.8036,
+   1.97453,
+   0.25
+  ],
+  [
+   309.1715,
+   8,
+   267,
+   1.047,
+   1.70046,
+   0.375
+  ],
+  [
+   310.2185,
+   8,
+   363,
+   1.5168,
+   1.79338,
+   0.25
+  ],
+  [
+   311.7353,
+   8,
+   265,
+   1.0602,
+   2.30731,
+   0.25
+  ],
+  [
+   312.7955,
+   8,
+   286,
+   1.8863,
+   1.70812,
+   0.375
+  ],
+  [
+   314.6818,
+   8,
+   317,
+   1.2711,
+   1.02924,
+   0.5
+  ],
+  [
+   315.9529,
+   8,
+   285,
+   1.139,
+   1.6044,
+   0.375
+  ],
+  [
+   317.0919,
+   8,
+   274,
+   1.095,
+   1.74859,
+   0.375
+  ],
+  [
+   318.1869,
+   8,
+   259,
+   1.7577,
+   2.04107,
+   0.125
+  ],
+  [
+   319.9446,
+   8,
+   288,
+   1.1197,
+   2.20839,
+   0.25
+  ],
+  [
+   321.0643,
+   8,
+   325,
+   1.3207,
+   2.32056,
+   0.125
+  ],
+  [
+   322.385,
+   8,
+   261,
+   1.038,
+   1.68281,
+   0.25
+  ],
+  [
+   323.423,
+   8,
+   255,
+   1.7336,
+   1.69782,
+   0.5
+  ],
+  [
+   325.1566,
+   8,
+   269,
+   1.0526,
+   1.34497,
+   0.5
+  ],
+  [
+   326.2092,
+   8,
+   248,
+   0.9706,
+   1.15497,
+   0.625
+  ],
+  [
+   327.1798,
+   8,
+   297,
+   1.1985,
+   1.90003,
+   0.375
+  ],
+  [
+   328.3783,
+   8,
+   285,
+   1.8653,
+   1.99184,
+   0.25
+  ],
+  [
+   330.2436,
+   8,
+   260,
+   1.0075,
+   2.26338,
+   0.125
+  ],
+  [
+   331.2511,
+   8,
+   256,
+   0.9968,
+   1.78422,
+   0.375
+  ],
+  [
+   332.2479,
+   8,
+   333,
+   1.3673,
+   1.77643,
+   0.375
+  ],
+  [
+   333.6152,
+   8,
+   247,
+   1.6987,
+   2.36023,
+   0.0
+  ],
+  [
+   335.3139,
+   8,
+   249,
+   0.9707,
+   1.60458,
+   0.375
+  ],
+  [
+   336.2846,
+   8,
+   298,
+   1.1998,
+   1.73709,
+   0.125
+  ],
+  [
+   337.4844,
+   8,
+   387,
+   1.6191,
+   1.77352,
+   0.25
+  ],
+  [
+   339.1035,
+   8,
+   272,
+   1.7986,
+   1.75753,
+   0.25
+  ],
+  [
+   340.9021,
+   8,
+   259,
+   1.0066,
+   1.03601,
+   0.625
+  ],
+  [
+   341.9087,
+   8,
+   277,
+   1.1032,
+   1.81548,
+   0.375
+  ],
+  [
+   343.0119,
+   8,
+   262,
+   1.0401,
+   2.27137,
+   0.375
+  ],
+  [
+   344.052,
+   8,
+   274,
+   1.8222,
+   2.68122,
+   0.125
+  ],
+  [
+   345.8742,
+   8,
+   314,
+   1.2626,
+   2.18824,
+   0.125
+  ],
+  [
+   347.1368,
+   8,
+   363,
+   1.4951,
+   2.27006,
+   0.25
+  ],
+  [
+   348.6319,
+   8,
+   324,
+   1.3073,
+   1.8302,
+   0.375
+  ],
+  [
+   349.9392,
+   8,
+   261,
+   1.7612,
+   1.22947,
+   0.375
+  ],
+  [
+   351.7004,
+   8,
+   258,
+   1.005,
+   2.09955,
+   0.25
+  ],
+  [
+   352.7054,
+   8,
+   326,
+   1.3333,
+   2.06992,
+   0.125
+  ],
+  [
+   354.0387,
+   8,
+   263,
+   1.0439,
+   2.82147,
+   0.25
+  ],
+  [
+   355.0826,
+   8,
+   409,
+   2.4568,
+   1.5853,
+   0.5
+  ],
+  [
+   357.5394,
+   8,
+   259,
+   1.0097,
+   1.37321,
+   0.375
+  ],
+  [
+   358.5491,
+   8,
+   242,
+   0.9601,
+   1.66057,
+   0.375
+  ],
+  [
+   359.5092,
+   8,
+   252,
+   0.992,
+   1.43869,
+   0.5
+  ],
+  [
+   360.5012,
+   8,
+   277,
+   1.8282,
+   2.19212,
+   0.125
+  ],
+  [
+   362.3294,
+   8,
+   267,
+   1.0444,
+   2.355,
+   0.125
+  ],
+  [
+   363.3738,
+   8,
+   286,
+   1.1391,
+   1.63274,
+   0.5
+  ],
+  [
+   364.5129,
+   8,
+   276,
+   1.095,
+   1.77769,
+   0.125
+  ],
+  [
+   365.6079,
+   8,
+   266,
+   1.7883,
+   1.57017,
+   0.625
+  ],
+  [
+   367.3962,
+   8,
+   249,
+   0.9715,
+   1.79885,
+   0.25
+  ],
+  [
+   368.3677,
+   8,
+   247,
+   0.9703,
+   1.90199,
+   0.25
+  ],
+  [
+   369.338,
+   8,
+   256,
+   0.9951,
+   2.09472,
+   0.25
+  ],
+  [
+   370.3331,
+   8,
+   280,
+   1.8335,
+   1.81453,
+   0.375
+  ],
+  [
+   372.1666,
+   8,
+   252,
+   0.9733,
+   2.04331,
+   0.25
+  ],
+  [
+   373.1399,
+   8,
+   243,
+   0.9582,
+   2.01568,
+   0.25
+  ],
+  [
+   374.0981,
+   8,
+   271,
+   1.0783,
+   1.45638,
+   0.375
+  ],
+  [
+   375.1764,
+   8,
+   345,
+   2.1436,
+   2.42215,
+   0.0
+  ],
+  [
+   377.32,
+   8,
+   254,
+   0.9845,
+   1.6664,
+   0.375
+  ],
+  [
+   378.3045,
+   8,
+   281,
+   1.1289,
+   1.72222,
+   0.5
+  ],
+  [
+   379.4334,
+   8,
+   290,
+   1.1883,
+   2.04525,
+   0.25
+  ],
+  [
+   380.6217,
+   8,
+   275,
+   1.8472,
+   1.95808,
+   0.25
+  ],
+  [
+   382.4689,
+   8,
+   256,
+   0.9739,
+   1.65736,
+   0.625
+  ],
+  [
+   383.4428,
+   8,
+   325,
+   1.3205,
+   2.2014,
+   0.25
+  ],
+  [
+   384.7633,
+   8,
+   249,
+   0.9923,
+   1.38865,
+   0.5
+  ],
+  [
+   385.7556,
+   8,
+   263,
+   1.7697,
+   1.71582,
+   0.375
+  ],
+  [
+   387.5253,
+   8,
+   293,
+   1.1718,
+   2.05826,
+   0.375
+  ],
+  [
+   388.6971,
+   8,
+   251,
+   0.9935,
+   2.27626,
+   0.125
+  ],
+  [
+   389.6906,
+   8,
+   291,
+   1.1771,
+   1.14753,
+   0.75
+  ],
+  [
+   390.8677,
+   8,
+   339,
+   2.13,
+   2.00667,
+   0.0
+  ],
+  [
+   392.9977,
+   8,
+   274,
+   1.0766,
+   2.64478,
+   0.0
+  ],
+  [
+   394.0743,
+   8,
+   272,
+   1.075,
+   2.25809,
+   0.25
+  ],
+  [
+   395.1493,
+   8,
+   271,
+   1.0955,
+   2.04315,
+   0.25
+  ],
+  [
+   396.2448,
+   8,
+   262,
+   1.7725,
+   1.8796,
+   0.25
+  ],
+  [
+   398.0173,
+   8,
+   244,
+   0.9412,
+   2.18911,
+   0.25
+  ],
+  [
+   398.9585,
+   8,
+   411,
+   1.7283,
+   1.90631,
+   0.5
+  ],
+  [
+   400.6868,
+   8,
+   273,
+   1.0923,
+   1.73268,
+   0.25
+  ],
+  [
+   401.7791,
+   8,
+   378,
+   2.304,
+   1.87029,
+   0.5
+  ],
+  [
+   404.0831,
+   8,
+   252,
+   0.9723,
+   1.46732,
+   0.5
+  ],
+  [
+   405.0554,
+   8,
+   269,
+   1.0717,
+   1.88396,
+   0.25
+  ],
+  [
+   406.1271,
+   8,
+   292,
+   1.1662,
+   1.68722,
+   0.5
+  ],
+  [
+   407.2933,
+   8,
+   290,
+   1.8967,
+   2.13616,
+   0.25
+  ],
+  [
+   409.19,
+   8,
+   354,
+   1.4427,
+   2.09718,
+   0.25
+  ],
+  [
+   410.6327,
+   8,
+   306,
+   1.2404,
+   1.46115,
+   0.5
+  ],
+  [
+   411.8731,
+   8,
+   256,
+   0.9954,
+   1.73086,
+   0.25
+  ],
+  [
+   412.8685,
+   8,
+   347,
+   2.1617,
+   1.75263,
+   0.25
+  ],
+  [
+   415.0302,
+   8,
+   280,
+   1.0879,
+   1.34321,
+   0.625
+  ],
+  [
+   416.1181,
+   8,
+   309,
+   1.2776,
+   2.03273,
+   0.125
+  ],
+  [
+   417.3957,
+   8,
+   254,
+   1.0033,
+   1.95386,
+   0.25
+  ],
+  [
+   418.399,
+   8,
+   265,
+   1.7857,
+   1.99201,
+   0.0
+  ],
+  [
+   420.1847,
+   8,
+   271,
+   1.0642,
+   1.51256,
+   0.5
+  ],
+  [
+   421.2489,
+   8,
+   291,
+   1.164,
+   2.00665,
+   0.125
+  ],
+  [
+   422.4129,
+   8,
+   255,
+   1.0058,
+   1.86219,
+   0.125
+  ],
+  [
+   423.4187,
+   8,
+   241,
+   1.6989,
+   1.69182,
+   0.375
+  ],
+  [
+   425.1176,
+   8,
+   349,
+   1.4223,
+   1.60768,
+   0.625
+  ],
+  [
+   426.5399,
+   8,
+   244,
+   0.9589,
+   1.60358,
+   0.375
+  ],
+  [
+   427.4988,
+   8,
+   279,
+   1.1118,
+   1.62287,
+   0.375
+  ],
+  [
+   428.6106,
+   8,
+   242,
+   1.6856,
+   1.18448,
+   0.75
+  ],
+  [
+   430.2962,
+   8,
+   224,
+   0.8661,
+   1.91881,
+   0.125
+  ],
+  [
+   431.1623,
+   8,
+   241,
+   0.9543,
+   2.27514,
+   0.125
+  ],
+  [
+   432.1166,
+   8,
+   311,
+   1.2709,
+   1.8019,
+   0.125
+  ],
+  [
+   433.3875,
+   8,
+   233,
+   1.6617,
+   2.38878,
+   0.375
+  ],
+  [
+   435.0492,
+   8,
+   258,
+   1.0034,
+   1.78631,
+   0.25
+  ],
+  [
+   436.0526,
+   8,
+   296,
+   1.1738,
+   1.80336,
+   0.375
+  ],
+  [
+   437.2264,
+   8,
+   294,
+   1.1801,
+   1.51279,
+   0.5
+  ],
+  [
+   438.4065,
+   8,
+   248,
+   1.7057,
+   2.32347,
+   0.125
+  ],
+  [
+   440.1122,
+   8,
+   292,
+   1.1431,
+   1.88515,
+   0.125
+  ],
+  [
+   441.2553,
+   8,
+   283,
+   1.1474,
+   1.79086,
+   0.25
+  ],
+  [
+   442.4027,
+   8,
+   243,
+   0.9579,
+   2.1623,
+   0.25
+  ],
+  [
+   443.3606,
+   8,
+   303,
+   1.949,
+   1.49484,
+   0.375
+  ],
+  [
+   445.3096,
+   8,
+   256,
+   0.9794,
+   1.60341,
+   0.5
+  ],
+  [
+   446.289,
+   8,
+   266,
+   1.0581,
+   1.71151,
+   0.125
+  ],
+  [
+   447.3471,
+   8,
+   246,
+   0.9768,
+   2.12665,
+   0.25
+  ],
+  [
+   448.3239,
+   8,
+   350,
+   2.1756,
+   1.1094,
+   0.625
+  ],
+  [
+   450.4995,
+   8,
+   235,
+   0.9049,
+   1.75542,
+   0.25
+  ],
+  [
+   451.4044,
+   8,
+   259,
+   1.0264,
+   2.01956,
+   0.125
+  ],
+  [
+   452.4308,
+   8,
+   287,
+   1.1437,
+   1.72173,
+   0.5
+  ],
+  [
+   453.5745,
+   8,
+   287,
+   1.8676,
+   1.56684,
+   0.375
+  ],
+  [
+   455.4421,
+   8,
+   264,
+   1.0204,
+   1.72267,
+   0.25
+  ],
+  [
+   456.4625,
+   8,
+   346,
+   1.4157,
+   1.4559,
+   0.5
+  ],
+  [
+   457.8782,
+   8,
+   242,
+   0.9602,
+   1.58497,
+   0.625
+  ],
+  [
+   458.8384,
+   8,
+   256,
+   1.7214,
+   1.59354,
+   0.375
+  ],
+  [
+   460.5598,
+   8,
+   255,
+   0.9833,
+   1.98102,
+   0.25
+  ],
+  [
+   461.5431,
+   8,
+   248,
+   0.9728,
+   1.99356,
+   0.125
+  ],
+  [
+   462.5159,
+   8,
+   255,
+   1.0001,
+   2.18447,
+   0.125
+  ],
+  [
+   463.516,
+   8,
+   256,
+   1.7191,
+   0.85299,
+   0.75
+  ],
+  [
+   465.2351,
+   8,
+   289,
+   1.143,
+   1.53531,
+   0.5
+  ],
+  [
+   466.3781,
+   8,
+   228,
+   0.9114,
+   1.78611,
+   0.25
+  ],
+  [
+   467.2895,
+   8,
+   250,
+   0.9935,
+   1.79285,
+   0.25
+  ],
+  [
+   468.283,
+   8,
+   313,
+   2.0219,
+   1.91104,
+   0.125
+  ],
+  [
+   470.3049,
+   8,
+   286,
+   1.1191,
+   1.70742,
+   0.25
+  ],
+  [
+   471.424,
+   8,
+   281,
+   1.1323,
+   2.12402,
+   0.125
+  ],
+  [
+   472.5563,
+   8,
+   259,
+   1.027,
+   1.45611,
+   0.375
+  ],
+  [
+   473.5833,
+   8,
+   310,
+   1.9841,
+   1.87437,
+   0.375
+  ],
+  [
+   475.5674,
+   8,
+   226,
+   0.892,
+   3.20498,
+   0.125
+  ],
+  [
+   476.4594,
+   8,
+   243,
+   0.9597,
+   1.95836,
+   0.25
+  ],
+  [
+   477.4191,
+   8,
+   283,
+   1.1319,
+   1.20779,
+   0.75
+  ],
+  [
+   478.551,
+   8,
+   245,
+   1.6931,
+   1.98047,
+   0.375
+  ],
+  [
+   480.2441,
+   8,
+   260,
+   1.0073,
+   1.22062,
+   0.625
+  ],
+  [
+   481.2514,
+   8,
+   273,
+   1.0899,
+   1.71438,
+   0.5
+  ],
+  [
+   482.3413,
+   8,
+   252,
+   0.9946,
+   1.95932,
+   0.125
+  ],
+  [
+   483.3359,
+   8,
+   296,
+   1.9025,
+   1.69486,
+   0.375
+  ],
+  [
+   485.2384,
+   8,
+   279,
+   1.0979,
+   1.90378,
+   0.5
+  ],
+  [
+   486.3363,
+   8,
+   237,
+   0.9299,
+   1.93622,
+   0.25
+  ],
+  [
+   487.2662,
+   8,
+   259,
+   1.0306,
+   1.9471,
+   0.25
+  ],
+  [
+   488.2968,
+   8,
+   250,
+   1.7217,
+   3.59496,
+   0.25
+  ],
+  [
+   490.0185,
+   8,
+   328,
+   1.2959,
+   1.65471,
+   0.25
+  ],
+  [
+   491.3144,
+   8,
+   299,
+   1.2034,
+   1.86716,
+   0.25
+  ],
+  [
+   492.5178,
+   8,
+   274,
+   1.0925,
+   1.08627,
+   0.625
+  ],
+  [
+   493.6103,
+   8,
+   250,
+   1.7174,
+   1.63762,
+   0.5
+  ],
+  [
+   495.3277,
+   8,
+   260,
+   1.0062,
+   2.14001,
+   0.125
+  ],
+  [
+   496.3339,
+   8,
+   272,
+   1.0718,
+   1.94009,
+   0.25
+  ],
+  [
+   497.4057,
+   8,
+   226,
+   0.8941,
+   1.54478,
+   0.5
+  ],
+  [
+   498.2998,
+   8,
+   262,
+   1.7724,
+   2.19116,
+   0.125
+  ],
+  [
+   500.0722,
+   8,
+   257,
+   1.0145,
+   2.49306,
+   0.125
+  ],
+  [
+   501.0867,
+   8,
+   250,
+   0.9971,
+   1.89718,
+   0.375
+  ],
+  [
+   502.0838,
+   8,
+   418,
+   1.7816,
+   1.67272,
+   0.25
+  ],
+  [
+   503.8654,
+   8,
+   258,
+   1.7897,
+   1.54221,
+   0.625
+  ],
+  [
+   505.6551,
+   8,
+   277,
+   1.1818,
+   1.84678,
+   0.25
+  ],
+  [
+   506.8369,
+   8,
+   256,
+   1.071,
+   2.03395,
+   0.25
+  ],
+  [
+   507.9079,
+   8,
+   370,
+   1.6359,
+   1.62179,
+   0.625
+  ],
+  [
+   509.5438,
+   8,
+   327,
+   2.0969,
+   1.37218,
+   0.375
+  ],
+  [
+   511.6407,
+   8,
+   283,
+   1.1311,
+   1.60791,
+   0.5
+  ],
+  [
+   512.7718,
+   8,
+   254,
+   1.0279,
+   1.74288,
+   0.5
+  ],
+  [
+   513.7997,
+   8,
+   297,
+   1.2387,
+   1.53738,
+   0.625
+  ],
+  [
+   515.0384,
+   8,
+   281,
+   1.9005,
+   1.89569,
+   0.25
+  ],
+  [
+   516.9389,
+   8,
+   259,
+   1.0258,
+   1.63259,
+   0.5
+  ],
+  [
+   517.9647,
+   8,
+   282,
+   1.1461,
+   1.84359,
+   0.5
+  ],
+  [
+   519.1108,
+   8,
+   253,
+   1.0083,
+   2.16927,
+   0.25
+  ],
+  [
+   520.1191,
+   8,
+   246,
+   1.7089,
+   2.00512,
+   0.125
+  ],
+  [
+   521.828,
+   8,
+   301,
+   1.2137,
+   1.91692,
+   0.25
+  ],
+  [
+   523.0417,
+   8,
+   260,
+   1.0365,
+   1.57181,
+   0.5
+  ],
+  [
+   524.0782,
+   8,
+   272,
+   1.0802,
+   1.86432,
+   0.5
+  ],
+  [
+   525.1584,
+   8,
+   267,
+   1.805,
+   1.58306,
+   0.375
+  ],
+  [
+   526.9634,
+   8,
+   244,
+   0.9523,
+   1.97367,
+   0.125
+  ],
+  [
+   527.9157,
+   8,
+   235,
+   0.9732,
+   1.50145,
+   0.375
+  ],
+  [
+   528.8889,
+   8,
+   261,
+   1.0922,
+   1.31849,
+   0.5
+  ],
+  [
+   529.9811,
+   8,
+   265,
+   1.7934,
+   1.21599,
+   0.5
+  ],
+  [
+   531.7745,
+   8,
+   252,
+   0.9845,
+   1.51657,
+   0.5
+  ],
+  [
+   532.759,
+   8,
+   331,
+   1.3787,
+   1.78635,
+   0.5
+  ],
+  [
+   534.1377,
+   8,
+   265,
+   1.0621,
+   1.65817,
+   0.25
+  ],
+  [
+   535.1998,
+   8,
+   253,
+   1.756,
+   1.63737,
+   0.375
+  ],
+  [
+   536.9558,
+   8,
+   389,
+   1.6266,
+   1.84973,
+   0.375
+  ],
+  [
+   538.5824,
+   8,
+   279,
+   1.1785,
+   1.61663,
+   0.375
+  ],
+  [
+   539.7609,
+   8,
+   243,
+   0.9663,
+   1.8638,
+   0.25
+  ],
+  [
+   540.7272,
+   8,
+   270,
+   1.8205,
+   1.98746,
+   0.25
+  ],
+  [
+   542.5477,
+   8,
+   303,
+   1.2221,
+   1.74459,
+   0.375
+  ],
+  [
+   543.7698,
+   8,
+   269,
+   1.0891,
+   1.59996,
+   0.25
+  ],
+  [
+   544.8589,
+   8,
+   262,
+   1.0697,
+   1.88951,
+   0.25
+  ],
+  [
+   545.9286,
+   8,
+   280,
+   1.8637,
+   2.0285,
+   0.125
+  ],
+  [
+   547.7923,
+   8,
+   241,
+   0.9632,
+   2.09648,
+   0.375
+  ],
+  [
+   548.7555,
+   8,
+   251,
+   1.0101,
+   2.04756,
+   0.25
+  ],
+  [
+   549.7656,
+   8,
+   322,
+   1.3585,
+   2.15973,
+   0.125
+  ],
+  [
+   551.1241,
+   8,
+   211,
+   1.5784,
+   1.49355,
+   0.5
+  ],
+  [
+   552.7025,
+   8,
+   263,
+   1.0419,
+   1.4134,
+   0.5
+  ],
+  [
+   553.7444,
+   8,
+   297,
+   1.2187,
+   1.84153,
+   0.25
+  ],
+  [
+   554.9631,
+   8,
+   271,
+   1.0984,
+   1.63286,
+   0.5
+  ],
+  [
+   556.0615,
+   8,
+   283,
+   1.8835,
+   1.94538,
+   0.125
+  ],
+  [
+   557.945,
+   8,
+   256,
+   0.99,
+   2.2548,
+   0.375
+  ],
+  [
+   558.935,
+   8,
+   285,
+   1.1583,
+   1.23301,
+   0.625
+  ],
+  [
+   560.0933,
+   8,
+   286,
+   1.1622,
+   1.77548,
+   0.5
+  ],
+  [
+   561.2555,
+   8,
+   254,
+   1.7489,
+   2.14219,
+   0.125
+  ],
+  [
+   563.0044,
+   8,
+   242,
+   0.9506,
+   1.54064,
+   0.625
+  ],
+  [
+   563.955,
+   8,
+   250,
+   1.0158,
+   2.12897,
+   0.25
+  ],
+  [
+   564.9708,
+   8,
+   253,
+   1.0163,
+   2.16596,
+   0.25
+  ],
+  [
+   565.9871,
+   8,
+   242,
+   1.7018,
+   1.61658,
+   0.375
+  ],
+  [
+   567.6889,
+   8,
+   343,
+   1.4315,
+   2.31975,
+   0.125
+  ],
+  [
+   569.1204,
+   8,
+   296,
+   1.1969,
+   2.10046,
+   0.25
+  ],
+  [
+   570.3173,
+   8,
+   252,
+   1.0078,
+   1.95391,
+   0.125
+  ],
+  [
+   571.3251,
+   8,
+   323,
+   2.0977,
+   1.75833,
+   0.25
+  ],
+  [
+   573.4228,
+   8,
+   260,
+   1.0286,
+   1.89346,
+   0.5
+  ],
+  [
+   574.4514,
+   8,
+   244,
+   0.9735,
+   1.54518,
+   0.5
+  ],
+  [
+   575.4249,
+   8,
+   254,
+   1.017,
+   1.80562,
+   0.375
+  ],
+  [
+   576.4419,
+   8,
+   282,
+   1.8837,
+   2.41155,
+   0.125
+  ],
+  [
+   578.3256,
+   8,
+   290,
+   1.1631,
+   1.65764,
+   0.375
+  ],
+  [
+   579.4887,
+   8,
+   232,
+   0.955,
+   1.83964,
+   0.5
+  ],
+  [
+   580.4437,
+   8,
+   290,
+   1.1784,
+   2.02541,
+   0.25
+  ],
+  [
+   581.6221,
+   8,
+   247,
+   1.7197,
+   2.02625,
+   0.25
+  ],
+  [
+   583.3418,
+   8,
+   239,
+   0.9314,
+   1.7772,
+   0.5
+  ],
+  [
+   584.2732,
+   8,
+   334,
+   1.407,
+   1.56643,
+   0.625
+  ],
+  [
+   585.6802,
+   8,
+   315,
+   1.32,
+   2.25974,
+   0.25
+  ],
+  [
+   587.0002,
+   8,
+   247,
+   1.7228,
+   1.70729,
+   0.375
+  ],
+  [
+   588.723,
+   8,
+   240,
+   0.9321,
+   1.65445,
+   0.375
+  ],
+  [
+   589.6551,
+   8,
+   238,
+   0.9534,
+   1.91841,
+   0.25
+  ],
+  [
+   590.6085,
+   8,
+   245,
+   0.9827,
+   1.23022,
+   0.625
+  ],
+  [
+   591.5912,
+   8,
+   271,
+   1.8355,
+   2.30978,
+   0.375
+  ],
+  [
+   593.4267,
+   8,
+   290,
+   1.1679,
+   1.95772,
+   0.25
+  ],
+  [
+   594.5946,
+   8,
+   253,
+   1.016,
+   1.55255,
+   0.375
+  ],
+  [
+   595.6106,
+   8,
+   285,
+   1.1634,
+   2.36083,
+   0.125
+  ],
+  [
+   596.774,
+   8,
+   289,
+   1.9174,
+   2.00409,
+   0.25
+  ],
+  [
+   598.6914,
+   8,
+   256,
+   0.9993,
+   1.57902,
+   0.5
+  ],
+  [
+   599.6907,
+   8,
+   274,
+   1.1196,
+   1.95626,
+   0.25
+  ],
+  [
+   600.8103,
+   8,
+   271,
+   1.097,
+   1.69508,
+   0.25
+  ],
+  [
+   601.9073,
+   8,
+   257,
+   1.7829,
+   2.5311,
+   0.0
+  ],
+  [
+   603.6902,
+   8,
+   323,
+   1.3167,
+   2.1978,
+   0.125
+  ],
+  [
+   605.0069,
+   8,
+   243,
+   0.9759,
+   2.02547,
+   0.375
+  ],
+  [
+   605.9828,
+   8,
+   267,
+   1.0792,
+   1.95349,
+   0.5
+  ],
+  [
+   607.062,
+   8,
+   245,
+   1.712,
+   2.09364,
+   0.125
+  ],
+  [
+   608.774,
+   8,
+   234,
+   0.9308,
+   0.95261,
+   0.75
+  ],
+  [
+   609.7048,
+   8,
+   293,
+   1.2009,
+   1.48631,
+   0.5
+  ],
+  [
+   610.9057,
+   8,
+   259,
+   1.0471,
+   2.05139,
+   0.375
+  ],
+  [
+   611.9528,
+   8,
+   256,
+   1.7447,
+   2.10464,
+   0.25
+  ],
+  [
+   613.6975,
+   8,
+   262,
+   1.0414,
+   2.23932,
+   0.25
+  ],
+  [
+   614.7389,
+   8,
+   253,
+   1.0131,
+   1.70317,
+   0.25
+  ],
+  [
+   615.752,
+   8,
+   263,
+   1.0583,
+   2.25285,
+   0.125
+  ],
+  [
+   616.8103,
+   8,
+   259,
+   1.7791,
+   2.11697,
+   0.125
+  ],
+  [
+   618.5894,
+   8,
+   259,
+   1.0208,
+   1.96447,
+   0.125
+  ],
+  [
+   619.6102,
+   8,
+   310,
+   1.274,
+   1.91109,
+   0.25
+  ],
+  [
+   620.8842,
+   8,
+   268,
+   1.0856,
+   2.16654,
+   0.25
+  ],
+  [
+   621.9698,
+   8,
+   245,
+   1.7133,
+   1.61136,
+   0.375
+  ],
+  [
+   623.6831,
+   8,
+   271,
+   1.0759,
+   2.19536,
+   0.25
+  ],
+  [
+   624.759,
+   8,
+   259,
+   1.0496,
+   1.93651,
+   0.375
+  ],
+  [
+   625.8086,
+   8,
+   295,
+   1.2443,
+   2.00852,
+   0.25
+  ],
+  [
+   627.0529,
+   8,
+   237,
+   1.6864,
+   1.52197,
+   0.5
+  ],
+  [
+   628.7393,
+   8,
+   332,
+   1.3507,
+   2.08597,
+   0.25
+  ],
+  [
+   630.09,
+   8,
+   259,
+   1.0485,
+   1.89381,
+   0.125
+  ],
+  [
+   631.1385,
+   8,
+   264,
+   1.1257,
+   2.07319,
+   0.125
+  ],
+  [
+   632.2642,
+   8,
+   260,
+   1.8663,
+   1.45974,
+   0.5
+  ],
+  [
+   634.1305,
+   8,
+   247,
+   0.9802,
+   1.98647,
+   0.375
+  ],
+  [
+   635.1107,
+   8,
+   260,
+   1.0759,
+   1.75927,
+   0.375
+  ],
+  [
+   636.1866,
+   8,
+   267,
+   1.1612,
+   1.89494,
+   0.5
+  ],
+  [
+   637.3478,
+   8,
+   269,
+   1.8193,
+   1.81714,
+   0.125
+  ],
+  [
+   639.1671,
+   8,
+   254,
+   0.9904,
+   1.65704,
+   0.375
+  ],
+  [
+   640.1575,
+   8,
+   309,
+   1.2578,
+   1.67901,
+   0.5
+  ],
+  [
+   641.4153,
+   8,
+   233,
+   0.9364,
+   2.04115,
+   0.0
+  ],
+  [
+   642.3517,
+   8,
+   248,
+   1.7039,
+   2.09397,
+   0.125
+  ],
+  [
+   644.0556,
+   8,
+   284,
+   1.1194,
+   2.48262,
+   0.0
+  ],
+  [
+   645.175,
+   8,
+   254,
+   1.0132,
+   2.20464,
+   0.25
+  ],
+  [
+   646.1882,
+   8,
+   259,
+   1.0328,
+   1.72829,
+   0.375
+  ],
+  [
+   647.221,
+   8,
+   282,
+   1.8697,
+   2.32284,
+   0.0
+  ],
+  [
+   649.0907,
+   8,
+   266,
+   1.0457,
+   1.32452,
+   0.5
+  ],
+  [
+   650.1364,
+   8,
+   252,
+   1.001,
+   1.90277,
+   0.375
+  ],
+  [
+   651.1374,
+   8,
+   256,
+   1.0112,
+   2.35612,
+   0.125
+  ],
+  [
+   652.1486,
+   8,
+   274,
+   1.8294,
+   1.64557,
+   0.375
+  ],
+  [
+   653.978,
+   8,
+   259,
+   1.0169,
+   1.58665,
+   0.5
+  ],
+  [
+   654.9949,
+   8,
+   277,
+   1.1106,
+   1.88418,
+   0.25
+  ],
+  [
+   656.1055,
+   8,
+   256,
+   1.0072,
+   1.63351,
+   0.5
+  ],
+  [
+   657.1127,
+   8,
+   307,
+   2.0073,
+   1.49957,
+   0.5
+  ],
+  [
+   659.12,
+   8,
+   279,
+   1.0962,
+   2.33976,
+   0.25
+  ],
+  [
+   660.2162,
+   8,
+   301,
+   1.2173,
+   1.85624,
+   0.375
+  ],
+  [
+   661.4335,
+   8,
+   327,
+   1.3346,
+   1.96121,
+   0.125
+  ],
+  [
+   662.7681,
+   8,
+   267,
+   1.8019,
+   1.999,
+   0.375
+  ],
+  [
+   664.57,
+   8,
+   245,
+   0.9524,
+   1.44774,
+   0.375
+  ],
+  [
+   665.5224,
+   8,
+   253,
+   1.0111,
+   1.4425,
+   0.5
+  ],
+  [
+   666.5335,
+   8,
+   249,
+   0.9967,
+   1.48375,
+   0.375
+  ],
+  [
+   667.5302,
+   8,
+   272,
+   1.8087,
+   2.37281,
+   0.0
+  ],
+  [
+   669.3389,
+   8,
+   251,
+   0.9799,
+   2.2029,
+   0.25
+  ],
+  [
+   670.3188,
+   8,
+   269,
+   1.0806,
+   1.98468,
+   0.5
+  ],
+  [
+   671.3994,
+   8,
+   279,
+   1.1174,
+   1.55632,
+   0.375
+  ],
+  [
+   672.5168,
+   8,
+   255,
+   1.7401,
+   1.54428,
+   0.5
+  ],
+  [
+   674.2569,
+   8,
+   243,
+   0.9424,
+   2.38429,
+   0.25
+  ],
+  [
+   675.1993,
+   8,
+   271,
+   1.0875,
+   2.22157,
+   0.125
+  ],
+  [
+   676.2868,
+   8,
+   323,
+   1.3245,
+   1.92867,
+   0.25
+  ],
+  [
+   677.6113,
+   8,
+   269,
+   1.808,
+   1.79795,
+   0.375
+  ],
+  [
+   679.4193,
+   8,
+   249,
+   0.9735,
+   2.03632,
+   0.375
+  ],
+  [
+   680.3928,
+   8,
+   257,
+   1.032,
+   1.94979,
+   0.25
+  ],
+  [
+   681.4248,
+   8,
+   351,
+   1.4746,
+   1.71482,
+   0.375
+  ],
+  [
+   682.8994,
+   8,
+   306,
+   1.9686,
+   1.70265,
+   0.25
+  ],
+  [
+   684.868,
+   8,
+   256,
+   0.9808,
+   1.49913,
+   0.375
+  ],
+  [
+   685.8488,
+   8,
+   268,
+   1.0683,
+   2.1523,
+   0.25
+  ],
+  [
+   686.9171,
+   8,
+   254,
+   1.0086,
+   2.09354,
+   0.25
+  ],
+  [
+   687.9257,
+   8,
+   255,
+   1.7392,
+   1.62245,
+   0.5
+  ],
+  [
+   689.6649,
+   8,
+   233,
+   0.9094,
+   1.17807,
+   0.875
+  ],
+  [
+   690.5743,
+   8,
+   222,
+   0.9151,
+   1.8139,
+   0.375
+  ],
+  [
+   691.4894,
+   8,
+   276,
+   1.1068,
+   2.07907,
+   0.0
+  ],
+  [
+   692.5962,
+   8,
+   266,
+   1.7948,
+   1.81477,
+   0.375
+  ],
+  [
+   694.391,
+   8,
+   257,
+   1.0105,
+   2.2845,
+   0.125
+  ],
+  [
+   695.4015,
+   8,
+   261,
+   1.0413,
+   1.84445,
+   0.375
+  ],
+  [
+   696.4428,
+   8,
+   233,
+   0.9254,
+   1.64802,
+   0.5
+  ],
+  [
+   697.3682,
+   8,
+   278,
+   1.8462,
+   1.70294,
+   0.5
+  ],
+  [
+   699.2144,
+   8,
+   266,
+   1.045,
+   2.03626,
+   0.25
+  ],
+  [
+   700.2594,
+   8,
+   245,
+   0.9702,
+   2.07348,
+   0.25
+  ],
+  [
+   701.2296,
+   8,
+   403,
+   1.7161,
+   1.32987,
+   0.625
+  ],
+  [
+   702.9457,
+   8,
+   241,
+   1.6934,
+   1.45985,
+   0.375
+  ],
+  [
+   704.6391,
+   8,
+   288,
+   1.123,
+   1.8863,
+   0.5
+  ],
+  [
+   705.7621,
+   8,
+   351,
+   1.4457,
+   1.54134,
+   0.375
+  ],
+  [
+   707.2078,
+   8,
+   303,
+   1.2332,
+   1.93848,
+   0.125
+  ],
+  [
+   708.441,
+   8,
+   268,
+   1.7987,
+   2.00377,
+   0.125
+  ],
+  [
+   710.2397,
+   8,
+   239,
+   0.9285,
+   2.18493,
+   0.375
+  ],
+  [
+   711.1682,
+   8,
+   288,
+   1.149,
+   1.95171,
+   0.125
+  ],
+  [
+   712.3172,
+   8,
+   232,
+   0.9154,
+   1.57678,
+   0.5
+  ],
+  [
+   713.2326,
+   8,
+   242,
+   1.6917,
+   1.09376,
+   0.875
+  ],
+  [
+   714.9243,
+   8,
+   262,
+   1.0284,
+   1.58589,
+   0.25
+  ],
+  [
+   715.9527,
+   8,
+   290,
+   1.1746,
+   1.35829,
+   0.625
+  ],
+  [
+   717.1273,
+   8,
+   267,
+   1.0702,
+   1.24065,
+   0.625
+  ],
+  [
+   718.1975,
+   8,
+   259,
+   1.7632,
+   1.73379,
+   0.375
+  ],
+  [
+   719.9607,
+   8,
+   237,
+   0.9188,
+   2.03964,
+   0.125
+  ],
+  [
+   720.8795,
+   8,
+   247,
+   0.9789,
+   1.97964,
+   0.25
+  ],
+  [
+   721.8584,
+   8,
+   246,
+   0.9763,
+   1.48738,
+   0.625
+  ],
+  [
+   722.8347,
+   8,
+   265,
+   1.7967,
+   1.91173,
+   0.375
+  ],
+  [
+   724.6314,
+   8,
+   259,
+   1.013,
+   1.61443,
+   0.375
+  ],
+  [
+   725.6444,
+   8,
+   272,
+   1.0792,
+   1.25815,
+   0.5
+  ],
+  [
+   726.7236,
+   8,
+   229,
+   0.9091,
+   1.15222,
+   0.625
+  ],
+  [
+   727.6327,
+   8,
+   249,
+   1.7262,
+   1.78149,
+   0.375
+  ],
+  [
+   729.3589,
+   8,
+   244,
+   0.9465,
+   1.66403,
+   0.5
+  ],
+  [
+   730.3054,
+   8,
+   263,
+   1.0557,
+   1.78641,
+   0.25
+  ],
+  [
+   731.3611,
+   8,
+   248,
+   0.9866,
+   1.69018,
+   0.375
+  ],
+  [
+   732.3477,
+   8,
+   279,
+   1.8459,
+   1.46283,
+   0.375
+  ],
+  [
+   734.1936,
+   8,
+   251,
+   0.9792,
+   2.11574,
+   0.125
+  ],
+  [
+   735.1728,
+   8,
+   252,
+   1.0071,
+   1.26405,
+   0.625
+  ],
+  [
+   736.1799,
+   8,
+   269,
+   1.0776,
+   2.1554,
+   0.25
+  ],
+  [
+   737.2575,
+   8,
+   262,
+   1.7764,
+   2.0245,
+   0.25
+  ],
+  [
+   739.0339,
+   8,
+   278,
+   1.0927,
+   1.71644,
+   0.5
+  ],
+  [
+   740.1266,
+   8,
+   247,
+   0.9759,
+   2.12895,
+   0.125
+  ],
+  [
+   741.1025,
+   8,
+   250,
+   1.0088,
+   1.9876,
+   0.25
+  ],
+  [
+   742.1113,
+   8,
+   231,
+   1.676,
+   1.55648,
+   0.5
+  ],
+  [
+   743.7873,
+   8,
+   240,
+   0.9202,
+   2.18405,
+   0.25
+  ],
+  [
+   744.7075,
+   8,
+   302,
+   1.2323,
+   2.03274,
+   0.25
+  ],
+  [
+   745.9398,
+   8,
+   252,
+   1.0043,
+   1.92683,
+   0.25
+  ],
+  [
+   746.9441,
+   8,
+   266,
+   1.7947,
+   1.96304,
+   0.5
+  ],
+  [
+   748.7388,
+   8,
+   274,
+   1.0858,
+   1.73338,
+   0.375
+  ],
+  [
+   749.8246,
+   8,
+   247,
+   0.9754,
+   1.75259,
+   0.5
+  ],
+  [
+   750.8,
+   8,
+   252,
+   0.9986,
+   2.09062,
+   0.25
+  ],
+  [
+   751.7986,
+   8,
+   244,
+   1.7,
+   1.84474,
+   0.375
+  ],
+  [
+   753.4986,
+   8,
+   258,
+   1.0118,
+   2.25699,
+   0.125
+  ],
+  [
+   754.5104,
+   8,
+   255,
+   1.0107,
+   2.4064,
+   0.125
+  ],
+  [
+   755.5211,
+   8,
+   256,
+   1.0039,
+   1.93876,
+   0.375
+  ],
+  [
+   756.525,
+   8,
+   272,
+   1.8108,
+   1.72146,
+   0.375
+  ],
+  [
+   758.3358,
+   8,
+   245,
+   0.9487,
+   2.49439,
+   0.375
+  ],
+  [
+   759.2845,
+   8,
+   239,
+   0.9419,
+   1.56639,
+   0.375
+  ],
+  [
+   760.2264,
+   8,
+   364,
+   1.5053,
+   1.93054,
+   0.25
+  ],
+  [
+   761.7317,
+   8,
+   251,
+   1.7347,
+   2.04591,
+   0.25
+  ],
+  [
+   763.4664,
+   8,
+   251,
+   0.9743,
+   2.22393,
+   0.125
+  ],
+  [
+   764.4407,
+   8,
+   264,
+   1.0507,
+   1.20825,
+   0.5
+  ],
+  [
+   765.4914,
+   8,
+   259,
+   1.0383,
+   2.68623,
+   0.125
+  ],
+  [
+   766.5297,
+   8,
+   293,
+   1.9146,
+   1.56043,
+   0.375
+  ],
+  [
+   768.4443,
+   8,
+   364,
+   1.4759,
+   2.44575,
+   0.125
+  ],
+  [
+   769.9202,
+   8,
+   245,
+   0.9708,
+   1.75721,
+   0.25
+  ],
+  [
+   770.891,
+   8,
+   341,
+   1.3992,
+   1.93969,
+   0.125
+  ],
+  [
+   772.2902,
+   8,
+   241,
+   1.6933,
+   1.38944,
+   0.375
+  ],
+  [
+   773.9835,
+   8,
+   239,
+   0.9202,
+   1.37832,
+   0.5
+  ],
+  [
+   774.9037,
+   8,
+   246,
+   0.9812,
+   1.30909,
+   0.375
+  ],
+  [
+   775.8849,
+   8,
+   301,
+   1.2256,
+   1.29076,
+   0.625
+  ],
+  [
+   777.1105,
+   8,
+   245,
+   1.7001,
+   1.54838,
+   0.375
+  ],
+  [
+   778.8106,
+   8,
+   318,
+   1.268,
+   2.03045,
+   0.5
+  ],
+  [
+   780.0786,
+   8,
+   244,
+   0.9678,
+   1.82002,
+   0.25
+  ],
+  [
+   781.0464,
+   8,
+   247,
+   0.9802,
+   1.62312,
+   0.5
+  ],
+  [
+   782.0266,
+   8,
+   241,
+   1.7123,
+   1.08397,
+   0.625
+  ],
+  [
+   783.7389,
+   8,
+   262,
+   1.0345,
+   1.74709,
+   0.375
+  ],
+  [
+   784.7734,
+   8,
+   274,
+   1.1177,
+   1.61622,
+   0.375
+  ],
+  [
+   785.8911,
+   8,
+   259,
+   1.0352,
+   1.82591,
+   0.5
+  ],
+  [
+   786.9263,
+   8,
+   250,
+   1.7406,
+   1.44989,
+   0.375
+  ],
+  [
+   788.6669,
+   8,
+   340,
+   1.3936,
+   2.03164,
+   0.25
+  ],
+  [
+   790.0605,
+   8,
+   289,
+   1.1712,
+   1.30503,
+   0.5
+  ],
+  [
+   791.2317,
+   8,
+   235,
+   0.9333,
+   2.14042,
+   0.25
+  ],
+  [
+   792.165,
+   8,
+   286,
+   1.8866,
+   2.10912,
+   0.25
+  ],
+  [
+   794.0516,
+   8,
+   268,
+   1.05,
+   1.98473,
+   0.25
+  ],
+  [
+   795.1016,
+   8,
+   255,
+   1.0165,
+   1.69251,
+   0.5
+  ],
+  [
+   796.1181,
+   8,
+   316,
+   1.2982,
+   2.27617,
+   0.25
+  ],
+  [
+   797.4163,
+   8,
+   212,
+   1.5979,
+   1.19122,
+   0.625
+  ],
+  [
+   799.0142,
+   8,
+   246,
+   0.9543,
+   1.42259,
+   0.625
+  ],
+  [
+   799.9685,
+   8,
+   271,
+   1.084,
+   1.9043,
+   0.375
+  ],
+  [
+   801.0525,
+   8,
+   287,
+   1.15,
+   1.5599,
+   0.375
+  ],
+  [
+   802.2025,
+   8,
+   242,
+   1.7034,
+   1.50561,
+   0.375
+  ],
+  [
+   803.9059,
+   8,
+   259,
+   1.7491,
+   1.38398,
+   0.5
+  ],
+  [
+   807.1253,
+   8,
+   239,
+   1.002,
+   2.09552,
+   0.25
+  ],
+  [
+   808.1273,
+   8,
+   239,
+   0.9381,
+   1.50947,
+   0.5
+  ],
+  [
+   809.0654,
+   8,
+   304,
+   1.2156,
+   1.7555,
+   0.5
+  ],
+  [
+   810.281,
+   8,
+   297,
+   1.9351,
+   1.62766,
+   0.125
+  ],
+  [
+   812.2161,
+   8,
+   363,
+   1.4869,
+   1.38203,
+   0.625
+  ],
+  [
+   813.703,
+   8,
+   278,
+   1.1227,
+   1.24054,
+   0.5
+  ],
+  [
+   814.8257,
+   8,
+   252,
+   1.0044,
+   1.08548,
+   0.5
+  ],
+  [
+   815.8301,
+   8,
+   219,
+   1.6196,
+   1.95264,
+   0.25
+  ],
+  [
+   817.4497,
+   8,
+   252,
+   0.9752,
+   1.4572,
+   0.625
+  ],
+  [
+   818.4249,
+   8,
+   247,
+   0.9826,
+   1.77958,
+   0.375
+  ],
+  [
+   819.4075,
+   8,
+   279,
+   1.1196,
+   1.55045,
+   0.375
+  ],
+  [
+   820.5271,
+   8,
+   249,
+   1.7283,
+   1.58628,
+   0.625
+  ],
+  [
+   822.2554,
+   8,
+   254,
+   0.9895,
+   1.60782,
+   0.375
+  ],
+  [
+   823.2449,
+   8,
+   349,
+   1.4418,
+   1.81012,
+   0.375
+  ],
+  [
+   824.6867,
+   8,
+   263,
+   1.0503,
+   1.92231,
+   0.125
+  ],
+  [
+   825.737,
+   8,
+   267,
+   1.8079,
+   2.27425,
+   0.25
+  ],
+  [
+   827.5449,
+   8,
+   249,
+   0.9752,
+   1.78477,
+   0.25
+  ],
+  [
+   828.5201,
+   8,
+   345,
+   1.4361,
+   1.27229,
+   0.5
+  ],
+  [
+   829.9562,
+   8,
+   308,
+   1.2437,
+   2.20846,
+   0.25
+  ],
+  [
+   831.1999,
+   8,
+   270,
+   1.8197,
+   1.19473,
+   0.625
+  ],
+  [
+   833.0196,
+   8,
+   271,
+   1.0673,
+   1.88803,
+   0.375
+  ],
+  [
+   834.0869,
+   8,
+   247,
+   0.9777,
+   1.78605,
+   0.375
+  ],
+  [
+   835.0646,
+   8,
+   272,
+   1.083,
+   2.02397,
+   0.375
+  ],
+  [
+   836.1476,
+   8,
+   254,
+   1.736,
+   1.94212,
+   0.25
+  ],
+  [
+   837.8836,
+   8,
+   252,
+   0.9779,
+   1.53859,
+   0.5
+  ],
+  [
+   838.8615,
+   8,
+   292,
+   1.1749,
+   1.32845,
+   0.375
+  ],
+  [
+   840.0364,
+   8,
+   252,
+   0.9979,
+   1.34852,
+   0.625
+  ],
+  [
+   841.0343,
+   8,
+   244,
+   1.6949,
+   2.09144,
+   0.375
+  ],
+  [
+   842.7292,
+   8,
+   277,
+   1.0912,
+   1.97079,
+   0.375
+  ],
+  [
+   843.8204,
+   8,
+   235,
+   0.9298,
+   1.92404,
+   0.25
+  ],
+  [
+   844.7502,
+   8,
+   249,
+   0.9953,
+   1.25994,
+   0.5
+  ],
+  [
+   845.7455,
+   8,
+   288,
+   1.8714,
+   1.62204,
+   0.375
+  ],
+  [
+   847.6169,
+   8,
+   222,
+   0.8571,
+   1.29634,
+   0.625
+  ],
+  [
+   848.474,
+   8,
+   273,
+   1.1051,
+   1.27626,
+   0.625
+  ],
+  [
+   849.5791,
+   8,
+   332,
+   1.3662,
+   1.70237,
+   0.625
+  ],
+  [
+   850.9453,
+   8,
+   260,
+   1.7846,
+   2.21616,
+   0.25
+  ],
+  [
+   852.7299,
+   8,
+   235,
+   0.9141,
+   1.59679,
+   0.5
+  ],
+  [
+   853.644,
+   8,
+   263,
+   1.0552,
+   1.82697,
+   0.375
+  ],
+  [
+   854.6992,
+   8,
+   261,
+   1.0424,
+   1.37111,
+   0.375
+  ],
+  [
+   855.7416,
+   8,
+   251,
+   1.7412,
+   1.93618,
+   0.25
+  ],
+  [
+   857.4828,
+   8,
+   273,
+   1.0797,
+   2.01443,
+   0.125
+  ],
+  [
+   858.5625,
+   8,
+   255,
+   1.014,
+   1.31514,
+   0.75
+  ],
+  [
+   859.5765,
+   8,
+   258,
+   1.0303,
+   1.49467,
+   0.5
+  ],
+  [
+   860.6068,
+   8,
+   249,
+   1.7268,
+   1.43705,
+   0.625
+  ],
+  [
+   862.3336,
+   8,
+   269,
+   1.0589,
+   1.18568,
+   0.5
+  ],
+  [
+   863.3925,
+   8,
+   269,
+   1.0764,
+   1.63116,
+   0.375
+  ],
+  [
+   864.4689,
+   8,
+   267,
+   1.076,
+   1.44934,
+   0.5
+  ],
+  [
+   865.5449,
+   8,
+   254,
+   1.7502,
+   1.10313,
+   0.75
+  ],
+  [
+   867.2951,
+   8,
+   255,
+   0.9911,
+   1.93522,
+   0.25
+  ],
+  [
+   868.2862,
+   8,
+   306,
+   1.2418,
+   2.30962,
+   0.125
+  ],
+  [
+   869.528,
+   8,
+   262,
+   1.0439,
+   1.91934,
+   0.25
+  ],
+  [
+   870.5719,
+   8,
+   259,
+   1.7652,
+   1.91721,
+   0.375
+  ],
+  [
+   872.3371,
+   8,
+   288,
+   1.1833,
+   1.77715,
+   0.375
+  ],
+  [
+   873.5204,
+   8,
+   251,
+   1.0071,
+   1.9734,
+   0.375
+  ],
+  [
+   874.5275,
+   8,
+   236,
+   0.9594,
+   0.84595,
+   0.875
+  ],
+  [
+   875.4869,
+   8,
+   228,
+   1.6349,
+   2.15686,
+   0.375
+  ],
+  [
+   877.1218,
+   8,
+   265,
+   1.0459,
+   1.38446,
+   0.625
+  ],
+  [
+   878.1677,
+   8,
+   278,
+   1.113,
+   2.01792,
+   0.25
+  ],
+  [
+   879.2807,
+   8,
+   277,
+   1.1105,
+   1.72533,
+   0.25
+  ],
+  [
+   880.3912,
+   8,
+   280,
+   1.8466,
+   2.14556,
+   0.25
+  ],
+  [
+   882.2378,
+   8,
+   262,
+   1.0336,
+   1.77453,
+   0.125
+  ],
+  [
+   883.2714,
+   8,
+   277,
+   1.1096,
+   1.39321,
+   0.5
+  ],
+  [
+   884.381,
+   8,
+   249,
+   0.9976,
+   1.65949,
+   0.375
+  ],
+  [
+   885.3786,
+   8,
+   255,
+   1.7414,
+   1.37797,
+   0.5
+  ],
+  [
+   887.12,
+   8,
+   285,
+   1.1244,
+   1.20591,
+   0.75
+  ],
+  [
+   888.2444,
+   8,
+   318,
+   1.2904,
+   1.31878,
+   0.5
+  ],
+  [
+   889.5348,
+   8,
+   259,
+   1.0325,
+   1.66546,
+   0.25
+  ],
+  [
+   890.5673,
+   8,
+   253,
+   1.7325,
+   1.319,
+   0.5
+  ],
+  [
+   892.2998,
+   8,
+   250,
+   0.9792,
+   1.7692,
+   0.125
+  ],
+  [
+   893.279,
+   8,
+   251,
+   1.0009,
+   1.29631,
+   0.5
+  ],
+  [
+   894.2799,
+   8,
+   245,
+   0.9712,
+   1.21899,
+   0.625
+  ],
+  [
+   895.2511,
+   8,
+   271,
+   1.8186,
+   1.51422,
+   0.5
+  ],
+  [
+   897.0697,
+   8,
+   293,
+   1.1647,
+   1.79083,
+   0.125
+  ],
+  [
+   898.2344,
+   8,
+   260,
+   1.0332,
+   1.39727,
+   0.5
+  ],
+  [
+   899.2676,
+   8,
+   390,
+   1.6366,
+   1.5766,
+   0.375
+  ],
+  [
+   900.9042,
+   8,
+   271,
+   1.8228,
+   1.32142,
+   0.5
+  ],
+  [
+   902.727,
+   8,
+   266,
+   1.0854,
+   2.01277,
+   0.25
+  ],
+  [
+   903.8124,
+   8,
+   265,
+   1.066,
+   1.48339,
+   0.625
+  ],
+  [
+   904.8784,
+   8,
+   262,
+   1.05,
+   1.48305,
+   0.5
+  ],
+  [
+   905.9284,
+   8,
+   262,
+   1.774,
+   1.58816,
+   0.375
+  ],
+  [
+   907.7024,
+   8,
+   350,
+   1.422,
+   1.9724,
+   0.25
+  ],
+  [
+   909.1244,
+   8,
+   245,
+   0.9832,
+   1.57799,
+   0.5
+  ],
+  [
+   910.1076,
+   8,
+   274,
+   1.1058,
+   1.61524,
+   0.5
+  ],
+  [
+   911.2134,
+   8,
+   283,
+   1.8686,
+   2.21329,
+   0.125
+  ],
+  [
+   913.082,
+   8,
+   245,
+   0.9507,
+   1.31253,
+   0.5
+  ],
+  [
+   914.0327,
+   8,
+   254,
+   1.0171,
+   1.88707,
+   0.25
+  ],
+  [
+   915.0498,
+   8,
+   258,
+   1.029,
+   0.91748,
+   0.75
+  ],
+  [
+   916.0788,
+   8,
+   279,
+   1.8464,
+   1.76733,
+   0.25
+  ],
+  [
+   917.9252,
+   8,
+   269,
+   1.0598,
+   1.70274,
+   0.375
+  ],
+  [
+   918.985,
+   8,
+   250,
+   1.0837,
+   0.93845,
+   1.0
+  ],
+  [
+   920.0687,
+   8,
+   256,
+   1.0286,
+   1.76196,
+   0.375
+  ],
+  [
+   921.0973,
+   8,
+   279,
+   1.9266,
+   1.55617,
+   0.5
+  ],
+  [
+   923.0239,
+   8,
+   248,
+   1.0365,
+   0.89083,
+   0.75
+  ],
+  [
+   924.0604,
+   8,
+   298,
+   1.2184,
+   1.6683,
+   0.25
+  ],
+  [
+   925.2788,
+   8,
+   306,
+   1.2487,
+   1.61912,
+   0.375
+  ],
+  [
+   926.5275,
+   8,
+   262,
+   1.7772,
+   1.46204,
+   0.375
+  ],
+  [
+   928.3047,
+   8,
+   313,
+   1.265,
+   1.68467,
+   0.375
+  ],
+  [
+   929.5697,
+   8,
+   250,
+   1.0071,
+   1.28048,
+   0.625
+  ],
+  [
+   930.5768,
+   8,
+   247,
+   0.9776,
+   1.2022,
+   0.5
+  ],
+  [
+   931.5544,
+   8,
+   259,
+   1.7718,
+   1.48028,
+   0.375
+  ],
+  [
+   933.3262,
+   8,
+   249,
+   0.9929,
+   2.02789,
+   0.375
+  ],
+  [
+   934.3191,
+   8,
+   244,
+   0.9834,
+   1.18523,
+   0.625
+  ],
+  [
+   935.3025,
+   8,
+   248,
+   0.9845,
+   1.20494,
+   0.5
+  ],
+  [
+   936.287,
+   8,
+   244,
+   1.7143,
+   2.03526,
+   0.125
+  ],
+  [
+   938.0013,
+   8,
+   258,
+   1.0295,
+   2.43257,
+   0.125
+  ],
+  [
+   939.0308,
+   8,
+   316,
+   1.2917,
+   1.41732,
+   0.625
+  ],
+  [
+   940.3225,
+   8,
+   280,
+   1.1299,
+   1.75237,
+   0.125
+  ],
+  [
+   941.4524,
+   8,
+   243,
+   1.7126,
+   2.16931,
+   0.25
+  ],
+  [
+   943.165,
+   8,
+   363,
+   1.5028,
+   1.80046,
+   0.125
+  ],
+  [
+   944.6678,
+   8,
+   267,
+   1.0802,
+   1.66484,
+   0.375
+  ],
+  [
+   945.748,
+   8,
+   273,
+   1.1142,
+   1.56169,
+   0.375
+  ],
+  [
+   946.8622,
+   8,
+   284,
+   1.8847,
+   1.58854,
+   0.5
+  ],
+  [
+   948.7469,
+   8,
+   280,
+   1.1053,
+   1.23093,
+   0.5
+  ],
+  [
+   949.8522,
+   8,
+   359,
+   1.4953,
+   1.21114,
+   0.625
+  ],
+  [
+   951.3475,
+   8,
+   256,
+   1.0166,
+   1.78319,
+   0.125
+  ],
+  [
+   952.3641,
+   8,
+   281,
+   1.8831,
+   2.25775,
+   0.375
+  ],
+  [
+   954.2472,
+   8,
+   240,
+   0.9372,
+   1.33763,
+   0.625
+  ],
+  [
+   955.1844,
+   8,
+   308,
+   1.2707,
+   1.54074,
+   0.5
+  ],
+  [
+   956.4551,
+   8,
+   252,
+   1.0171,
+   1.75807,
+   0.25
+  ],
+  [
+   957.4722,
+   8,
+   275,
+   1.8493,
+   2.27002,
+   0.25
+  ],
+  [
+   959.3215,
+   8,
+   254,
+   1.0039,
+   1.67872,
+   0.625
+  ],
+  [
+   960.3254,
+   8,
+   273,
+   1.1107,
+   2.1244,
+   0.25
+  ],
+  [
+   961.4361,
+   8,
+   245,
+   0.9891,
+   1.98268,
+   0.125
+  ],
+  [
+   962.4252,
+   8,
+   318,
+   2.0391,
+   2.23579,
+   0.125
+  ],
+  [
+   964.4643,
+   8,
+   278,
+   1.1057,
+   2.16711,
+   0.375
+  ],
+  [
+   965.57,
+   8,
+   354,
+   1.4865,
+   1.40169,
+   0.75
+  ],
+  [
+   967.0565,
+   8,
+   262,
+   1.0625,
+   1.27669,
+   0.5
+  ],
+  [
+   968.119,
+   8,
+   276,
+   1.8505,
+   1.59935,
+   0.625
+  ],
+  [
+   969.9695,
+   8,
+   274,
+   1.0902,
+   1.14185,
+   0.625
+  ],
+  [
+   971.0597,
+   8,
+   325,
+   1.3436,
+   1.12477,
+   0.625
+  ],
+  [
+   972.4033,
+   8,
+   266,
+   1.0808,
+   1.70266,
+   0.375
+  ],
+  [
+   973.4841,
+   8,
+   323,
+   2.0942,
+   1.97488,
+   0.5
+  ],
+  [
+   975.5783,
+   8,
+   250,
+   0.9899,
+   1.3011,
+   0.5
+  ],
+  [
+   976.5682,
+   8,
+   259,
+   1.0416,
+   1.50952,
+   0.5
+  ],
+  [
+   977.6098,
+   8,
+   247,
+   0.9879,
+   2.19712,
+   0.25
+  ],
+  [
+   978.5977,
+   8,
+   261,
+   1.7866,
+   1.408,
+   0.625
+  ],
+  [
+   980.3843,
+   8,
+   303,
+   1.2152,
+   2.30092,
+   0.25
+  ],
+  [
+   981.5995,
+   8,
+   298,
+   1.2263,
+   1.23702,
+   0.625
+  ],
+  [
+   982.8258,
+   8,
+   290,
+   1.1888,
+   1.89553,
+   0.5
+  ],
+  [
+   984.0146,
+   8,
+   256,
+   1.7447,
+   1.65027,
+   0.375
+  ],
+  [
+   985.7593,
+   8,
+   305,
+   1.236,
+   0.51731,
+   0.875
+  ],
+  [
+   986.9953,
+   8,
+   385,
+   1.6383,
+   1.63269,
+   0.375
+  ],
+  [
+   988.6336,
+   8,
+   266,
+   1.074,
+   1.52614,
+   0.625
+  ],
+  [
+   989.7076,
+   8,
+   296,
+   1.9307,
+   1.24362,
+   0.5
+  ],
+  [
+   991.6383,
+   8,
+   231,
+   0.9208,
+   1.27531,
+   0.75
+  ],
+  [
+   992.5591,
+   8,
+   275,
+   1.1163,
+   1.94374,
+   0.25
+  ],
+  [
+   993.6754,
+   8,
+   253,
+   1.0205,
+   1.1147,
+   0.5
+  ],
+  [
+   994.6959,
+   8,
+   285,
+   1.8914,
+   1.84608,
+   0.625
+  ],
+  [
+   996.5873,
+   8,
+   346,
+   1.4244,
+   1.37184,
+   0.5
+  ],
+  [
+   998.0117,
+   8,
+   260,
+   1.0462,
+   1.77721,
+   0.25
+  ],
+  [
+   999.0579,
+   8,
+   254,
+   1.0187,
+   1.37736,
+   0.625
+  ],
+  [
+   1000.0766,
+   8,
+   293,
+   1.9264,
+   1.21206,
+   0.625
+  ],
+  [
+   1002.003,
+   8,
+   252,
+   0.9955,
+   1.66403,
+   0.375
+  ],
+  [
+   1002.9985,
+   8,
+   261,
+   1.0507,
+   1.73723,
+   0.375
+  ],
+  [
+   1004.0492,
+   8,
+   289,
+   1.1842,
+   1.62492,
+   0.375
+  ],
+  [
+   1005.2334,
+   8,
+   286,
+   1.891,
+   1.52942,
+   0.375
+  ],
+  [
+   1007.1244,
+   8,
+   343,
+   1.4031,
+   1.68334,
+   0.625
+  ],
+  [
+   1008.5275,
+   8,
+   246,
+   0.9823,
+   1.67487,
+   0.25
+  ],
+  [
+   1009.5098,
+   8,
+   246,
+   0.9794,
+   1.63549,
+   0.5
+  ],
+  [
+   1010.4892,
+   8,
+   290,
+   1.9194,
+   1.12261,
+   0.625
+  ],
+  [
+   1012.4086,
+   8,
+   255,
+   1.0009,
+   1.92839,
+   0.375
+  ],
+  [
+   1013.4095,
+   8,
+   257,
+   1.0973,
+   1.3408,
+   0.5
+  ],
+  [
+   1014.5068,
+   8,
+   322,
+   1.3363,
+   2.32711,
+   0.25
+  ],
+  [
+   1015.8431,
+   8,
+   351,
+   2.1901,
+   1.43857,
+   0.5
+  ],
+  [
+   1018.0332,
+   8,
+   266,
+   1.0554,
+   1.77634,
+   0.25
+  ],
+  [
+   1019.0886,
+   8,
+   251,
+   1.0228,
+   1.43877,
+   0.75
+  ],
+  [
+   1020.1114,
+   8,
+   255,
+   1.0215,
+   2.00165,
+   0.375
+  ],
+  [
+   1021.1329,
+   8,
+   270,
+   1.8278,
+   2.01866,
+   0.25
+  ],
+  [
+   1022.9607,
+   8,
+   346,
+   1.4176,
+   1.20154,
+   0.625
+  ],
+  [
+   1024.3783,
+   8,
+   266,
+   1.0772,
+   1.65341,
+   0.375
+  ],
+  [
+   1025.4555,
+   8,
+   265,
+   1.0798,
+   2.11472,
+   0.125
+  ],
+  [
+   1026.5353,
+   8,
+   251,
+   1.7458,
+   2.10604,
+   0.25
+  ],
+  [
+   1028.2811,
+   8,
+   266,
+   1.0517,
+   2.01276,
+   0.25
+  ],
+  [
+   1029.3328,
+   8,
+   314,
+   1.2942,
+   1.90528,
+   0.25
+  ],
+  [
+   1030.627,
+   8,
+   364,
+   1.5149,
+   1.81193,
+   0.375
+  ],
+  [
+   1032.1419,
+   8,
+   247,
+   1.7228,
+   1.92083,
+   0.0
+  ],
+  [
+   1033.8647,
+   8,
+   323,
+   1.3112,
+   1.25145,
+   0.625
+  ],
+  [
+   1035.1759,
+   8,
+   280,
+   1.1347,
+   1.41157,
+   0.5
+  ],
+  [
+   1036.3106,
+   8,
+   296,
+   1.2008,
+   2.07731,
+   0.375
+  ],
+  [
+   1037.5114,
+   8,
+   262,
+   1.7928,
+   1.94879,
+   0.375
+  ],
+  [
+   1039.3042,
+   8,
+   277,
+   1.1071,
+   1.77689,
+   0.375
+  ],
+  [
+   1040.4113,
+   8,
+   251,
+   1.0161,
+   1.43707,
+   0.5
+  ],
+  [
+   1041.4274,
+   8,
+   266,
+   1.0799,
+   2.17058,
+   0.0
+  ],
+  [
+   1042.5073,
+   8,
+   285,
+   1.8904,
+   1.69593,
+   0.5
+  ],
+  [
+   1044.3977,
+   8,
+   270,
+   1.0756,
+   1.82116,
+   0.375
+  ],
+  [
+   1045.4733,
+   8,
+   301,
+   1.238,
+   1.35316,
+   0.75
+  ],
+  [
+   1046.7113,
+   8,
+   286,
+   1.163,
+   1.99513,
+   0.375
+  ],
+  [
+   1047.8743,
+   8,
+   245,
+   1.723,
+   1.65102,
+   0.375
+  ],
+  [
+   1049.5973,
+   8,
+   260,
+   1.0297,
+   0.97802,
+   0.75
+  ],
+  [
+   1050.627,
+   8,
+   256,
+   1.0159,
+   1.63235,
+   0.125
+  ],
+  [
+   1051.6429,
+   8,
+   256,
+   1.0113,
+   1.74842,
+   0.375
+  ],
+  [
+   1052.6542,
+   8,
+   252,
+   1.7623,
+   1.5052,
+   0.25
+  ],
+  [
+   1054.4165,
+   8,
+   287,
+   1.147,
+   1.22879,
+   0.625
+  ],
+  [
+   1055.5635,
+   8,
+   285,
+   1.1591,
+   1.94848,
+   0.25
+  ],
+  [
+   1056.7226,
+   8,
+   272,
+   1.0994,
+   1.40093,
+   0.5
+  ],
+  [
+   1057.822,
+   8,
+   267,
+   1.8193,
+   1.89987,
+   0.375
+  ],
+  [
+   1059.6413,
+   8,
+   257,
+   1.0222,
+   1.18488,
+   0.625
+  ],
+  [
+   1060.6635,
+   8,
+   247,
+   0.9908,
+   1.80541,
+   0.375
+  ],
+  [
+   1061.6543,
+   8,
+   318,
+   1.3098,
+   1.54713,
+   0.375
+  ],
+  [
+   1062.9641,
+   8,
+   255,
+   1.7531,
+   1.45334,
+   0.375
+  ],
+  [
+   1064.7172,
+   8,
+   282,
+   1.1613,
+   1.98924,
+   0.375
+  ],
+  [
+   1065.8785,
+   8,
+   252,
+   1.027,
+   1.1808,
+   0.625
+  ],
+  [
+   1066.9055,
+   8,
+   257,
+   1.0379,
+   1.42603,
+   0.625
+  ],
+  [
+   1067.9434,
+   8,
+   266,
+   1.8125,
+   1.96781,
+   0.25
+  ],
+  [
+   1069.7559,
+   8,
+   359,
+   1.475,
+   1.30631,
+   0.5
+  ],
+  [
+   1071.2309,
+   8,
+   267,
+   1.0808,
+   1.63547,
+   0.5
+  ],
+  [
+   1072.3117,
+   8,
+   264,
+   1.0557,
+   2.31595,
+   0.0
+  ],
+  [
+   1073.3674,
+   8,
+   393,
+   2.4116,
+   1.5809,
+   0.375
+  ],
+  [
+   1075.779,
+   8,
+   262,
+   1.0418,
+   1.46265,
+   0.5
+  ],
+  [
+   1076.8208,
+   8,
+   273,
+   1.1189,
+   1.96251,
+   0.25
+  ],
+  [
+   1077.9397,
+   8,
+   403,
+   1.7139,
+   1.75543,
+   0.5
+  ],
+  [
+   1079.6536,
+   8,
+   255,
+   1.7607,
+   1.7514,
+   0.5
+  ],
+  [
+   1081.4143,
+   8,
+   268,
+   1.0619,
+   1.73937,
+   0.375
+  ],
+  [
+   1082.4762,
+   8,
+   266,
+   1.0759,
+   1.06791,
+   0.375
+  ],
+  [
+   1083.5521,
+   8,
+   253,
+   1.0198,
+   1.69269,
+   0.5
+  ],
+  [
+   1084.5719,
+   8,
+   248,
+   1.7184,
+   1.1277,
+   0.625
+  ],
+  [
+   1086.2903,
+   8,
+   251,
+   0.9919,
+   1.78732,
+   0.25
+  ],
+  [
+   1087.2822,
+   8,
+   217,
+   0.9216,
+   1.12093,
+   0.625
+  ],
+  [
+   1088.2038,
+   8,
+   248,
+   0.9855,
+   1.29839,
+   0.5
+  ],
+  [
+   1089.1893,
+   8,
+   216,
+   1.6364,
+   1.89858,
+   0.5
+  ],
+  [
+   1090.8257,
+   8,
+   364,
+   1.4965,
+   1.6802,
+   0.375
+  ],
+  [
+   1092.3222,
+   8,
+   244,
+   0.9827,
+   1.83495,
+   0.375
+  ],
+  [
+   1093.3049,
+   8,
+   248,
+   0.9907,
+   1.09761,
+   0.5
+  ],
+  [
+   1094.2956,
+   8,
+   250,
+   1.7431,
+   1.93355,
+   0.25
+  ],
+  [
+   1096.0387,
+   8,
+   256,
+   0.9975,
+   1.5255,
+   0.375
+  ],
+  [
+   1097.0362,
+   8,
+   276,
+   1.1138,
+   1.64243,
+   0.25
+  ],
+  [
+   1098.15,
+   8,
+   257,
+   1.0506,
+   1.66246,
+   0.625
+  ],
+  [
+   1099.2006,
+   8,
+   246,
+   1.7188,
+   2.4297,
+   0.0
+  ],
+  [
+   1100.9194,
+   8,
+   265,
+   1.0596,
+   2.29802,
+   0.25
+  ],
+  [
+   1101.979,
+   8,
+   364,
+   1.5191,
+   1.48335,
+   0.375
+  ],
+  [
+   1103.4981,
+   8,
+   311,
+   1.2794,
+   1.17424,
+   0.625
+  ],
+  [
+   1104.7775,
+   8,
+   253,
+   1.7494,
+   1.33645,
+   0.375
+  ],
+  [
+   1106.5269,
+   8,
+   297,
+   1.2063,
+   1.38776,
+   0.5
+  ],
+  [
+   1107.7332,
+   8,
+   411,
+   1.7628,
+   1.14366,
+   0.625
+  ],
+  [
+   1109.496,
+   8,
+   310,
+   1.2768,
+   1.67658,
+   0.5
+  ],
+  [
+   1110.7728,
+   8,
+   244,
+   1.7137,
+   1.72808,
+   0.5
+  ],
+  [
+   1112.4865,
+   8,
+   250,
+   0.9939,
+   1.50307,
+   0.375
+  ],
+  [
+   1113.4804,
+   8,
+   296,
+   1.2044,
+   2.49433,
+   0.25
+  ],
+  [
+   1114.6848,
+   8,
+   246,
+   1.0002,
+   1.69516,
+   0.375
+  ],
+  [
+   1115.685,
+   8,
+   253,
+   1.7555,
+   1.01376,
+   0.625
+  ],
+  [
+   1117.4405,
+   8,
+   253,
+   0.9918,
+   1.75263,
+   0.375
+  ],
+  [
+   1118.4323,
+   8,
+   257,
+   1.0401,
+   1.77553,
+   0.25
+  ],
+  [
+   1119.4724,
+   8,
+   290,
+   1.1902,
+   1.37381,
+   0.25
+  ],
+  [
+   1120.6626,
+   8,
+   240,
+   1.6895,
+   1.48027,
+   0.5
+  ],
+  [
+   1122.3521,
+   8,
+   272,
+   1.0731,
+   1.22589,
+   0.75
+  ],
+  [
+   1123.4252,
+   8,
+   259,
+   1.0471,
+   1.3498,
+   0.5
+  ],
+  [
+   1124.4723,
+   8,
+   258,
+   1.0469,
+   1.62836,
+   0.375
+  ],
+  [
+   1125.5192,
+   8,
+   378,
+   2.3337,
+   2.11079,
+   0.375
+  ],
+  [
+   1127.8529,
+   8,
+   286,
+   1.1409,
+   0.85782,
+   0.875
+  ],
+  [
+   1128.9938,
+   8,
+   256,
+   1.0129,
+   1.82416,
+   0.25
+  ],
+  [
+   1130.0067,
+   8,
+   244,
+   0.9769,
+   1.53048,
+   0.25
+  ],
+  [
+   1130.9836,
+   8,
+   274,
+   1.8459,
+   1.44782,
+   0.5
+  ],
+  [
+   1132.8295,
+   8,
+   256,
+   0.9903,
+   1.75907,
+   0.25
+  ],
+  [
+   1133.8198,
+   8,
+   268,
+   1.0883,
+   1.50522,
+   0.5
+  ],
+  [
+   1134.9081,
+   8,
+   251,
+   1.0093,
+   2.39164,
+   0.25
+  ],
+  [
+   1135.9174,
+   8,
+   283,
+   1.8897,
+   1.49969,
+   0.375
+  ],
+  [
+   1137.8071,
+   8,
+   345,
+   1.4209,
+   1.45938,
+   0.5
+  ],
+  [
+   1139.228,
+   8,
+   276,
+   1.1156,
+   1.97134,
+   0.125
+  ],
+  [
+   1140.3436,
+   8,
+   247,
+   0.991,
+   1.64002,
+   0.5
+  ],
+  [
+   1141.3346,
+   8,
+   352,
+   2.1837,
+   1.29488,
+   0.625
+  ],
+  [
+   1143.5183,
+   8,
+   379,
+   1.5794,
+   2.48217,
+   0.25
+  ],
+  [
+   1145.0977,
+   8,
+   248,
+   0.9874,
+   1.37629,
+   0.25
+  ],
+  [
+   1146.0851,
+   8,
+   233,
+   0.9452,
+   2.46115,
+   0.125
+  ],
+  [
+   1147.0303,
+   8,
+   252,
+   1.75,
+   1.44877,
+   0.25
+  ],
+  [
+   1148.7803,
+   8,
+   243,
+   0.9552,
+   1.30023,
+   0.375
+  ],
+  [
+   1149.7355,
+   8,
+   327,
+   1.3566,
+   0.78158,
+   1.0
+  ],
+  [
+   1151.0921,
+   8,
+   257,
+   1.042,
+   2.45984,
+   0.375
+  ],
+  [
+   1152.1341,
+   8,
+   265,
+   1.8104,
+   2.90131,
+   0.125
+  ],
+  [
+   1153.9445,
+   8,
+   299,
+   1.1986,
+   1.08896,
+   0.375
+  ],
+  [
+   1155.1431,
+   8,
+   257,
+   1.0372,
+   1.77478,
+   0.375
+  ],
+  [
+   1156.1803,
+   8,
+   269,
+   1.093,
+   1.83939,
+   0.5
+  ],
+  [
+   1157.2733,
+   8,
+   276,
+   1.8449,
+   1.75315,
+   0.375
+  ],
+  [
+   1159.1182,
+   8,
+   296,
+   1.1771,
+   1.24646,
+   0.625
+  ],
+  [
+   1160.2953,
+   8,
+   284,
+   1.1537,
+   1.70049,
+   0.375
+  ],
+  [
+   1161.449,
+   8,
+   230,
+   0.9369,
+   1.4121,
+   0.375
+  ],
+  [
+   1162.3859,
+   8,
+   271,
+   1.8418,
+   2.30165,
+   0.25
+  ],
+  [
+   1164.2277,
+   8,
+   274,
+   1.0905,
+   1.26229,
+   0.5
+  ],
+  [
+   1165.3182,
+   8,
+   256,
+   1.0146,
+   1.56706,
+   0.375
+  ],
+  [
+   1166.3328,
+   8,
+   340,
+   1.4078,
+   1.68509,
+   0.625
+  ],
+  [
+   1167.7406,
+   8,
+   226,
+   1.6418,
+   1.56515,
+   0.375
+  ],
+  [
+   1169.3824,
+   8,
+   260,
+   1.0211,
+   1.181,
+   0.75
+  ],
+  [
+   1170.4035,
+   8,
+   258,
+   1.0527,
+   1.39556,
+   0.5
+  ],
+  [
+   1171.4562,
+   8,
+   274,
+   1.1129,
+   1.41696,
+   0.5
+  ],
+  [
+   1172.5691,
+   8,
+   286,
+   1.9045,
+   1.48513,
+   0.75
+  ],
+  [
+   1174.4736,
+   8,
+   267,
+   1.0783,
+   1.47377,
+   0.625
+  ],
+  [
+   1175.5519,
+   8,
+   248,
+   1.0112,
+   1.6001,
+   0.5
+  ],
+  [
+   1176.5631,
+   8,
+   271,
+   1.0987,
+   1.21222,
+   0.5
+  ],
+  [
+   1177.6618,
+   8,
+   263,
+   1.7979,
+   1.93596,
+   0.25
+  ],
+  [
+   1179.4597,
+   8,
+   260,
+   1.0259,
+   1.75619,
+   0.375
+  ],
+  [
+   1180.4856,
+   8,
+   270,
+   1.1061,
+   2.37647,
+   0.0
+  ],
+  [
+   1181.5917,
+   8,
+   234,
+   0.9445,
+   2.35566,
+   0.125
+  ],
+  [
+   1182.5362,
+   8,
+   248,
+   1.7219,
+   2.12976,
+   0.5
+  ],
+  [
+   1184.2581,
+   8,
+   344,
+   1.3998,
+   1.7187,
+   0.5
+  ],
+  [
+   1185.6579,
+   8,
+   288,
+   1.1562,
+   1.88614,
+   0.375
+  ],
+  [
+   1186.8141,
+   8,
+   305,
+   1.2563,
+   1.28521,
+   0.5
+  ],
+  [
+   1188.0704,
+   8,
+   249,
+   1.7503,
+   1.2757,
+   0.625
+  ],
+  [
+   1189.8207,
+   8,
+   271,
+   1.0796,
+   2.20062,
+   0.125
+  ],
+  [
+   1190.9003,
+   8,
+   289,
+   1.1875,
+   1.64754,
+   0.375
+  ],
+  [
+   1192.0878,
+   8,
+   244,
+   0.9834,
+   2.06276,
+   0.25
+  ],
+  [
+   1193.0712,
+   8,
+   247,
+   1.7236,
+   2.36397,
+   0.125
+  ],
+  [
+   1194.7948,
+   8,
+   242,
+   0.9557,
+   1.49832,
+   0.375
+  ],
+  [
+   1195.7505,
+   8,
+   255,
+   1.0696,
+   1.50603,
+   0.5
+  ],
+  [
+   1196.8201,
+   8,
+   285,
+   1.1658,
+   1.33176,
+   0.625
+  ],
+  [
+   1197.9859,
+   8,
+   269,
+   1.8281,
+   2.49716,
+   0.125
+  ],
+  [
+   1199.814,
+   8,
+   256,
+   0.9929,
+   1.80286,
+   0.25
+  ],
+  [
+   1200.8069,
+   8,
+   282,
+   1.156,
+   1.37503,
+   0.625
+  ],
+  [
+   1201.9629,
+   8,
+   245,
+   0.9823,
+   2.01452,
+   0.5
+  ],
+  [
+   1202.9452,
+   8,
+   252,
+   1.7427,
+   1.60322,
+   0.25
+  ],
+  [
+   1204.6879,
+   8,
+   247,
+   0.9661,
+   2.1312,
+   0.25
+  ],
+  [
+   1205.654,
+   8,
+   330,
+   1.3815,
+   1.20476,
+   0.625
+  ],
+  [
+   1207.0355,
+   8,
+   302,
+   1.2401,
+   1.54688,
+   0.5
+  ],
+  [
+   1208.2756,
+   8,
+   283,
+   1.8822,
+   2.08879,
+   0.25
+  ],
+  [
+   1210.1578,
+   8,
+   387,
+   1.6205,
+   1.72946,
+   0.375
+  ],
+  [
+   1211.7783,
+   8,
+   333,
+   1.3783,
+   1.37319,
+   0.5
+  ],
+  [
+   1213.1566,
+   8,
+   245,
+   0.9818,
+   1.79604,
+   0.375
+  ],
+  [
+   1214.1384,
+   8,
+   232,
+   1.6663,
+   1.38359,
+   0.375
+  ],
+  [
+   1215.8047,
+   8,
+   258,
+   1.0231,
+   1.3182,
+   0.5
+  ],
+  [
+   1216.8278,
+   8,
+   230,
+   0.9268,
+   1.4074,
+   0.5
+  ],
+  [
+   1217.7546,
+   8,
+   243,
+   0.9794,
+   1.96616,
+   0.375
+  ],
+  [
+   1218.734,
+   8,
+   290,
+   1.9183,
+   1.02357,
+   0.625
+  ],
+  [
+   1220.6523,
+   8,
+   285,
+   1.1361,
+   0.96581,
+   0.875
+  ],
+  [
+   1221.7884,
+   8,
+   341,
+   1.4171,
+   2.0958,
+   0.5
+  ],
+  [
+   1223.2055,
+   8,
+   257,
+   1.0487,
+   1.65322,
+   0.375
+  ],
+  [
+   1224.2542,
+   8,
+   309,
+   2.0095,
+   1.91316,
+   0.5
+  ],
+  [
+   1226.2637,
+   8,
+   250,
+   0.9923,
+   1.85798,
+   0.125
+  ],
+  [
+   1227.256,
+   8,
+   327,
+   1.3568,
+   1.94198,
+   0.25
+  ],
+  [
+   1228.6128,
+   8,
+   324,
+   1.3332,
+   1.26159,
+   0.5
+  ],
+  [
+   1229.946,
+   8,
+   263,
+   1.8025,
+   1.6958,
+   0.25
+  ],
+  [
+   1231.7485,
+   8,
+   271,
+   1.0792,
+   1.65999,
+   0.375
+  ],
+  [
+   1232.8277,
+   8,
+   258,
+   1.0425,
+   1.56153,
+   0.25
+  ],
+  [
+   1233.8702,
+   8,
+   244,
+   0.98,
+   1.65364,
+   0.375
+  ],
+  [
+   1234.8502,
+   8,
+   356,
+   2.2092,
+   2.50125,
+   0.0
+  ],
+  [
+   1237.0594,
+   8,
+   317,
+   1.288,
+   1.37862,
+   0.25
+  ],
+  [
+   1238.3474,
+   8,
+   256,
+   1.0229,
+   1.8345,
+   0.375
+  ],
+  [
+   1239.3703,
+   8,
+   238,
+   0.965,
+   1.95772,
+   0.25
+  ],
+  [
+   1240.3353,
+   8,
+   415,
+   2.5184,
+   1.42669,
+   0.5
+  ],
+  [
+   1242.8537,
+   8,
+   242,
+   0.9786,
+   1.99004,
+   0.25
+  ],
+  [
+   1243.8323,
+   8,
+   261,
+   1.0517,
+   1.49784,
+   0.375
+  ],
+  [
+   1244.884,
+   8,
+   264,
+   1.0568,
+   1.51529,
+   0.5
+  ],
+  [
+   1245.9408,
+   8,
+   301,
+   1.9647,
+   1.59542,
+   0.625
+  ],
+  [
+   1247.9055,
+   8,
+   307,
+   1.2358,
+   1.2095,
+   0.5
+  ],
+  [
+   1249.1413,
+   8,
+   244,
+   0.964,
+   1.87023,
+   0.375
+  ],
+  [
+   1250.1053,
+   8,
+   287,
+   1.1644,
+   1.59059,
+   0.25
+  ],
+  [
+   1251.2697,
+   8,
+   269,
+   1.9331,
+   1.64181,
+   0.625
+  ],
+  [
+   1253.2028,
+   8,
+   298,
+   1.3026,
+   0.99226,
+   0.625
+  ],
+  [
+   1254.5054,
+   8,
+   244,
+   1.0411,
+   1.14937,
+   0.625
+  ],
+  [
+   1255.5465,
+   8,
+   241,
+   1.0049,
+   1.71067,
+   0.5
+  ],
+  [
+   1256.5514,
+   8,
+   256,
+   1.8395,
+   1.56222,
+   0.5
+  ],
+  [
+   1258.3909,
+   8,
+   276,
+   1.1274,
+   1.04534,
+   0.75
+  ],
+  [
+   1259.5183,
+   8,
+   307,
+   1.2648,
+   1.85439,
+   0.125
+  ],
+  [
+   1260.7831,
+   8,
+   251,
+   1.0174,
+   2.29443,
+   0.125
+  ],
+  [
+   1261.8005,
+   8,
+   279,
+   1.8869,
+   1.50369,
+   0.5
+  ],
+  [
+   1263.6874,
+   8,
+   248,
+   0.9881,
+   1.18606,
+   0.75
+  ],
+  [
+   1264.6755,
+   8,
+   215,
+   0.8899,
+   1.5805,
+   0.375
+  ],
+  [
+   1265.5654,
+   8,
+   245,
+   0.985,
+   1.58734,
+   0.375
+  ],
+  [
+   1266.5504,
+   8,
+   250,
+   1.7466,
+   1.45968,
+   0.5
+  ],
+  [
+   1268.297,
+   8,
+   258,
+   1.0662,
+   1.51663,
+   0.25
+  ],
+  [
+   1269.3632,
+   8,
+   261,
+   1.1258,
+   1.48193,
+   0.5
+  ],
+  [
+   1270.489,
+   8,
+   268,
+   1.0868,
+   1.61411,
+   0.625
+  ],
+  [
+   1271.5758,
+   8,
+   290,
+   1.926,
+   1.5873,
+   0.5
+  ],
+  [
+   1273.5018,
+   8,
+   327,
+   1.3502,
+   1.44339,
+   0.25
+  ],
+  [
+   1274.852,
+   8,
+   258,
+   1.0532,
+   1.87904,
+   0.375
+  ],
+  [
+   1275.9052,
+   8,
+   325,
+   1.3366,
+   1.4854,
+   0.625
+  ],
+  [
+   1277.2418,
+   8,
+   281,
+   1.9058,
+   2.12579,
+   0.25
+  ],
+  [
+   1279.1476,
+   8,
+   260,
+   1.0432,
+   2.37366,
+   0.25
+  ],
+  [
+   1280.1908,
+   8,
+   272,
+   1.0946,
+   1.65234,
+   0.375
+  ],
+  [
+   1281.2854,
+   8,
+   341,
+   1.4212,
+   1.87594,
+   0.25
+  ],
+  [
+   1282.7066,
+   8,
+   256,
+   1.7517,
+   1.60251,
+   0.25
+  ],
+  [
+   1284.4583,
+   8,
+   271,
+   1.084,
+   2.06251,
+   0.125
+  ],
+  [
+   1285.5423,
+   8,
+   246,
+   0.9975,
+   1.73088,
+   0.25
+  ],
+  [
+   1286.5398,
+   8,
+   282,
+   1.1641,
+   1.69121,
+   0.625
+  ],
+  [
+   1287.7039,
+   8,
+   248,
+   1.7344,
+   1.68863,
+   0.375
+  ],
+  [
+   1289.4383,
+   8,
+   263,
+   1.0464,
+   0.90978,
+   0.75
+  ],
+  [
+   1290.4847,
+   8,
+   257,
+   1.0425,
+   2.30092,
+   0.125
+  ],
+  [
+   1291.5272,
+   8,
+   294,
+   1.2052,
+   1.94485,
+   0.375
+  ],
+  [
+   1292.7324,
+   8,
+   260,
+   1.7779,
+   0.87294,
+   0.75
+  ],
+  [
+   1294.5103,
+   8,
+   256,
+   0.9943,
+   1.71045,
+   0.375
+  ],
+  [
+   1295.5046,
+   8,
+   288,
+   1.1546,
+   1.84914,
+   0.375
+  ],
+  [
+   1296.6592,
+   8,
+   259,
+   1.0483,
+   1.62335,
+   0.25
+  ],
+  [
+   1297.7075,
+   8,
+   261,
+   1.8337,
+   1.86381,
+   0.25
+  ],
+  [
+   1299.5412,
+   8,
+   327,
+   1.3354,
+   1.70647,
+   0.25
+  ],
+  [
+   1300.8766,
+   8,
+   303,
+   1.249,
+   1.75753,
+   0.375
+  ],
+  [
+   1302.1256,
+   8,
+   265,
+   1.075,
+   1.49293,
+   0.25
+  ],
+  [
+   1303.2006,
+   8,
+   255,
+   1.7556,
+   1.51607,
+   0.5
+  ],
+  [
+   1304.9562,
+   8,
+   297,
+   1.1976,
+   1.38945,
+   0.5
+  ],
+  [
+   1306.1538,
+   8,
+   272,
+   1.114,
+   1.55072,
+   0.625
+  ],
+  [
+   1307.2678,
+   8,
+   256,
+   1.0307,
+   2.17361,
+   0.25
+  ],
+  [
+   1308.2985,
+   8,
+   240,
+   1.6926,
+   1.64182,
+   0.25
+  ],
+  [
+   1309.9911,
+   8,
+   254,
+   0.9987,
+   1.66838,
+   0.375
+  ],
+  [
+   1310.9898,
+   8,
+   254,
+   1.0136,
+   1.346,
+   0.5
+  ],
+  [
+   1312.0034,
+   8,
+   254,
+   1.0166,
+   1.55988,
+   0.375
+  ],
+  [
+   1313.02,
+   8,
+   435,
+   2.6038,
+   1.51869,
+   0.375
+  ],
+  [
+   1315.6238,
+   8,
+   269,
+   1.0615,
+   1.15772,
+   0.5
+  ],
+  [
+   1316.6853,
+   8,
+   334,
+   1.379,
+   1.11488,
+   0.625
+  ],
+  [
+   1318.0643,
+   8,
+   283,
+   1.1503,
+   1.40338,
+   0.625
+  ],
+  [
+   1319.2146,
+   8,
+   240,
+   1.6895,
+   1.43341,
+   0.5
+  ],
+  [
+   1320.9041,
+   8,
+   284,
+   1.1263,
+   1.53442,
+   0.5
+  ],
+  [
+   1322.0304,
+   8,
+   271,
+   1.0968,
+   1.6259,
+   0.5
+  ],
+  [
+   1323.1272,
+   8,
+   252,
+   1.0244,
+   1.68981,
+   0.375
+  ],
+  [
+   1324.1516,
+   8,
+   234,
+   1.668,
+   1.82955,
+   0.5
+  ],
+  [
+   1325.8196,
+   8,
+   251,
+   0.9868,
+   1.4405,
+   0.5
+  ],
+  [
+   1326.8064,
+   8,
+   370,
+   1.548,
+   1.48063,
+   0.375
+  ],
+  [
+   1328.3544,
+   8,
+   254,
+   1.0268,
+   1.43927,
+   0.625
+  ],
+  [
+   1329.3812,
+   8,
+   259,
+   1.7765,
+   1.40063,
+   0.375
+  ],
+  [
+   1331.1577,
+   8,
+   260,
+   1.0221,
+   1.55601,
+   0.375
+  ],
+  [
+   1332.1798,
+   8,
+   253,
+   1.0185,
+   1.82373,
+   0.375
+  ],
+  [
+   1333.1983,
+   8,
+   257,
+   1.0344,
+   1.82131,
+   0.375
+  ],
+  [
+   1334.2327,
+   8,
+   221,
+   1.6153,
+   1.53746,
+   0.375
+  ],
+  [
+   1335.848,
+   8,
+   257,
+   1.0126,
+   1.33691,
+   0.375
+  ],
+  [
+   1336.8606,
+   8,
+   269,
+   1.0877,
+   2.20518,
+   0.125
+  ],
+  [
+   1337.9483,
+   8,
+   252,
+   1.0091,
+   1.30716,
+   0.5
+  ],
+  [
+   1338.9574,
+   8,
+   268,
+   1.8072,
+   1.90406,
+   0.375
+  ],
+  [
+   1340.7646,
+   8,
+   252,
+   0.9815,
+   1.65478,
+   0.375
+  ],
+  [
+   1341.7461,
+   8,
+   206,
+   0.8551,
+   1.33968,
+   0.5
+  ],
+  [
+   1342.6012,
+   8,
+   270,
+   1.0936,
+   1.89037,
+   0.375
+  ],
+  [
+   1343.6948,
+   8,
+   237,
+   1.6875,
+   2.17,
+   0.125
+  ],
+  [
+   1345.3823,
+   8,
+   254,
+   0.9991,
+   0.95665,
+   0.75
+  ],
+  [
+   1346.3814,
+   8,
+   253,
+   1.0123,
+   1.63648,
+   0.125
+  ],
+  [
+   1347.3937,
+   8,
+   217,
+   0.8704,
+   1.33775,
+   0.625
+  ],
+  [
+   1348.2641,
+   8,
+   231,
+   1.6541,
+   1.71904,
+   0.5
+  ],
+  [
+   1349.9182,
+   8,
+   261,
+   1.0325,
+   1.3751,
+   0.625
+  ],
+  [
+   1350.9507,
+   8,
+   220,
+   0.9078,
+   0.85827,
+   0.75
+  ],
+  [
+   1351.8585,
+   8,
+   252,
+   1.0032,
+   1.48611,
+   0.25
+  ],
+  [
+   1352.8617,
+   8,
+   261,
+   1.7916,
+   1.96597,
+   0.375
+  ],
+  [
+   1354.6533,
+   8,
+   280,
+   1.1057,
+   1.6111,
+   0.375
+  ],
+  [
+   1355.759,
+   8,
+   250,
+   1.0116,
+   1.64591,
+   0.375
+  ],
+  [
+   1356.7706,
+   8,
+   239,
+   0.9484,
+   1.27151,
+   0.625
+  ],
+  [
+   1357.719,
+   8,
+   253,
+   1.7438,
+   1.10277,
+   0.5
+  ],
+  [
+   1359.4628,
+   8,
+   279,
+   1.1082,
+   1.42903,
+   0.625
+  ],
+  [
+   1360.571,
+   8,
+   326,
+   1.3384,
+   1.85792,
+   0.25
+  ],
+  [
+   1361.9094,
+   8,
+   249,
+   1.0106,
+   1.4042,
+   0.625
+  ],
+  [
+   1362.92,
+   8,
+   268,
+   1.8182,
+   2.05411,
+   0.25
+  ],
+  [
+   1364.7382,
+   8,
+   250,
+   0.9856,
+   1.46815,
+   0.5
+  ],
+  [
+   1365.7238,
+   8,
+   311,
+   1.2712,
+   1.47012,
+   0.5
+  ],
+  [
+   1366.995,
+   8,
+   247,
+   0.9878,
+   0.89948,
+   0.75
+  ],
+  [
+   1367.9828,
+   8,
+   246,
+   1.7166,
+   1.43055,
+   0.5
+  ],
+  [
+   1369.6994,
+   8,
+   294,
+   1.1708,
+   0.87539,
+   0.75
+  ],
+  [
+   1370.8702,
+   8,
+   259,
+   1.0405,
+   1.61523,
+   0.375
+  ],
+  [
+   1371.9107,
+   8,
+   248,
+   0.9884,
+   1.70371,
+   0.375
+  ],
+  [
+   1372.8991,
+   8,
+   288,
+   1.8798,
+   1.69195,
+   0.125
+  ],
+  [
+   1374.7789,
+   8,
+   295,
+   1.1796,
+   1.03686,
+   0.75
+  ],
+  [
+   1375.9585,
+   8,
+   247,
+   0.9861,
+   1.31567,
+   0.625
+  ],
+  [
+   1376.9446,
+   8,
+   271,
+   1.0953,
+   2.00877,
+   0.125
+  ],
+  [
+   1378.0399,
+   8,
+   274,
+   1.8431,
+   1.75096,
+   0.125
+  ],
+  [
+   1379.883,
+   8,
+   388,
+   1.6093,
+   1.93982,
+   0.5
+  ],
+  [
+   1381.4923,
+   8,
+   243,
+   0.9711,
+   1.86753,
+   0.25
+  ],
+  [
+   1382.4634,
+   8,
+   263,
+   1.0582,
+   1.16318,
+   0.625
+  ],
+  [
+   1383.5216,
+   8,
+   244,
+   1.7019,
+   1.30037,
+   0.625
+  ],
+  [
+   1385.2235,
+   8,
+   260,
+   1.0211,
+   1.36948,
+   0.5
+  ],
+  [
+   1386.2446,
+   8,
+   389,
+   1.6453,
+   2.05057,
+   0.125
+  ],
+  [
+   1387.8899,
+   8,
+   259,
+   1.0391,
+   1.6578,
+   0.5
+  ],
+  [
+   1388.929,
+   8,
+   282,
+   1.8816,
+   1.36534,
+   0.5
+  ],
+  [
+   1390.8106,
+   8,
+   418,
+   1.7635,
+   1.27452,
+   0.625
+  ],
+  [
+   1392.5741,
+   8,
+   239,
+   0.9448,
+   2.34827,
+   0.125
+  ],
+  [
+   1393.5189,
+   8,
+   272,
+   1.0839,
+   1.89083,
+   0.25
+  ],
+  [
+   1394.6028,
+   8,
+   302,
+   1.9631,
+   1.56718,
+   0.375
+  ],
+  [
+   1396.5659,
+   8,
+   262,
+   1.0336,
+   1.90916,
+   0.25
+  ],
+  [
+   1397.5995,
+   8,
+   252,
+   1.0046,
+   1.36589,
+   0.5
+  ],
+  [
+   1398.6041,
+   8,
+   254,
+   1.0141,
+   2.27948,
+   0.0
+  ],
+  [
+   1399.6182,
+   8,
+   370,
+   2.2812,
+   1.57093,
+   0.5
+  ],
+  [
+   1401.8994,
+   8,
+   265,
+   1.0492,
+   1.68715,
+   0.25
+  ],
+  [
+   1402.9486,
+   8,
+   344,
+   1.4093,
+   1.37944,
+   0.375
+  ],
+  [
+   1404.3579,
+   8,
+   244,
+   0.9679,
+   0.93741,
+   0.625
+  ],
+  [
+   1405.3258,
+   8,
+   259,
+   1.7718,
+   1.23724,
+   0.5
+  ],
+  [
+   1407.0976,
+   8,
+   276,
+   1.0851,
+   1.26965,
+   0.5
+  ],
+  [
+   1408.1827,
+   8,
+   253,
+   1.0101,
+   1.48262,
+   0.375
+  ],
+  [
+   1409.1928,
+   8,
+   252,
+   1.0058,
+   1.31028,
+   0.375
+  ],
+  [
+   1410.1986,
+   8,
+   260,
+   1.7734,
+   1.28759,
+   0.625
+  ],
+  [
+   1411.972,
+   8,
+   287,
+   1.1363,
+   2.32494,
+   0.0
+  ],
+  [
+   1413.1083,
+   8,
+   254,
+   1.0181,
+   2.73156,
+   0.0
+  ],
+  [
+   1414.1264,
+   8,
+   274,
+   1.1101,
+   1.54333,
+   0.5
+  ],
+  [
+   1415.2365,
+   8,
+   250,
+   1.7466,
+   1.54511,
+   0.375
+  ],
+  [
+   1416.9831,
+   8,
+   309,
+   1.2419,
+   1.36295,
+   0.625
+  ],
+  [
+   1418.225,
+   8,
+   242,
+   0.9684,
+   1.10631,
+   0.5
+  ],
+  [
+   1419.1934,
+   8,
+   297,
+   1.2225,
+   1.27669,
+   0.625
+  ],
+  [
+   1420.4159,
+   8,
+   262,
+   1.785,
+   2.39142,
+   0.125
+  ],
+  [
+   1422.2009,
+   8,
+   244,
+   0.9496,
+   1.80936,
+   0.25
+  ],
+  [
+   1423.1505,
+   8,
+   262,
+   1.0505,
+   0.69642,
+   0.75
+  ],
+  [
+   1424.201,
+   8,
+   339,
+   1.4032,
+   1.74342,
+   0.5
+  ],
+  [
+   1425.6042,
+   8,
+   274,
+   1.8381,
+   1.78469,
+   0.25
+  ],
+  [
+   1427.4423,
+   8,
+   218,
+   0.8809,
+   1.34166,
+   0.5
+  ],
+  [
+   1428.3232,
+   8,
+   299,
+   1.2152,
+   1.5436,
+   0.5
+  ],
+  [
+   1429.5384,
+   8,
+   269,
+   1.0841,
+   1.67301,
+   0.25
+  ],
+  [
+   1430.6225,
+   8,
+   262,
+   1.7841,
+   1.59975,
+   0.125
+  ],
+  [
+   1432.4066,
+   8,
+   235,
+   0.9152,
+   1.35988,
+   0.5
+  ],
+  [
+   1433.3218,
+   8,
+   273,
+   1.1085,
+   1.24835,
+   0.625
+  ],
+  [
+   1434.4303,
+   8,
+   294,
+   1.1929,
+   1.3315,
+   0.625
+  ],
+  [
+   1435.6232,
+   8,
+   241,
+   1.6995,
+   1.12449,
+   0.75
+  ],
+  [
+   1437.3227,
+   8,
+   261,
+   1.032,
+   1.14704,
+   0.625
+  ],
+  [
+   1438.3547,
+   8,
+   247,
+   0.9827,
+   1.79806,
+   0.375
+  ],
+  [
+   1439.3374,
+   8,
+   262,
+   1.0516,
+   1.85229,
+   0.375
+  ],
+  [
+   1440.389,
+   8,
+   265,
+   1.7982,
+   1.6641,
+   0.375
+  ],
+  [
+   1442.1872,
+   8,
+   252,
+   0.9829,
+   1.74201,
+   0.125
+  ],
+  [
+   1443.1701,
+   8,
+   245,
+   0.9811,
+   1.79121,
+   0.25
+  ],
+  [
+   1444.1512,
+   8,
+   271,
+   1.0948,
+   0.48944,
+   0.875
+  ],
+  [
+   1445.246,
+   8,
+   353,
+   2.2115,
+   1.06571,
+   0.625
+  ],
+  [
+   1447.4575,
+   8,
+   250,
+   0.9825,
+   1.93887,
+   0.25
+  ],
+  [
+   1448.44,
+   8,
+   242,
+   0.9676,
+   0.9776,
+   0.75
+  ],
+  [
+   1449.4076,
+   8,
+   261,
+   1.0467,
+   1.17629,
+   0.5
+  ],
+  [
+   1450.4543,
+   8,
+   249,
+   1.7313,
+   2.0449,
+   0.25
+  ],
+  [
+   1452.1856,
+   8,
+   247,
+   0.9629,
+   1.77494,
+   0.5
+  ],
+  [
+   1453.1485,
+   8,
+   303,
+   1.242,
+   1.03043,
+   0.75
+  ],
+  [
+   1454.3905,
+   8,
+   257,
+   1.0343,
+   1.65663,
+   0.25
+  ],
+  [
+   1455.4248,
+   8,
+   240,
+   1.6774,
+   1.61638,
+   0.375
+  ],
+  [
+   1457.1022,
+   8,
+   264,
+   1.0343,
+   2.14275,
+   0.375
+  ],
+  [
+   1458.1365,
+   8,
+   339,
+   1.4021,
+   1.36964,
+   0.5
+  ],
+  [
+   1459.5386,
+   8,
+   424,
+   1.786,
+   2.01616,
+   0.25
+  ],
+  [
+   1461.3246,
+   8,
+   258,
+   1.7903,
+   1.99359,
+   0.5
+  ],
+  [
+   1463.1149,
+   8,
+   257,
+   1.054,
+   1.73573,
+   0.5
+  ],
+  [
+   1464.1689,
+   8,
+   258,
+   1.0441,
+   2.18596,
+   0.25
+  ],
+  [
+   1465.213,
+   8,
+   253,
+   1.0126,
+   1.66436,
+   0.625
+  ],
+  [
+   1466.2256,
+   8,
+   338,
+   2.1172,
+   1.63526,
+   0.375
+  ],
+  [
+   1468.3428,
+   8,
+   256,
+   0.9839,
+   1.41331,
+   0.625
+  ],
+  [
+   1469.3267,
+   8,
+   247,
+   0.9908,
+   1.51383,
+   0.375
+  ],
+  [
+   1470.3175,
+   8,
+   292,
+   1.1938,
+   1.00594,
+   0.75
+  ],
+  [
+   1471.5113,
+   8,
+   264,
+   1.7776,
+   1.13612,
+   0.375
+  ],
+  [
+   1473.2889,
+   8,
+   310,
+   1.2451,
+   1.85556,
+   0.25
+  ],
+  [
+   1474.534,
+   8,
+   266,
+   1.0755,
+   1.62474,
+   0.25
+  ],
+  [
+   1475.6095,
+   8,
+   247,
+   0.9893,
+   2.17768,
+   0.25
+  ],
+  [
+   1476.5988,
+   8,
+   292,
+   1.9076,
+   2.24262,
+   0.25
+  ],
+  [
+   1478.5064,
+   8,
+   265,
+   1.0635,
+   1.21486,
+   0.625
+  ],
+  [
+   1479.5699,
+   8,
+   257,
+   1.0315,
+   1.04249,
+   0.625
+  ],
+  [
+   1480.6014,
+   8,
+   241,
+   0.9666,
+   1.08692,
+   0.5
+  ],
+  [
+   1481.568,
+   8,
+   261,
+   1.7782,
+   1.02484,
+   0.625
+  ],
+  [
+   1483.3462,
+   8,
+   244,
+   0.9603,
+   2.25464,
+   0.25
+  ],
+  [
+   1484.3065,
+   8,
+   291,
+   1.1736,
+   1.74258,
+   0.5
+  ],
+  [
+   1485.4801,
+   8,
+   253,
+   1.0193,
+   0.79227,
+   0.75
+  ],
+  [
+   1486.4994,
+   8,
+   300,
+   1.9632,
+   1.83314,
+   0.5
+  ],
+  [
+   1488.4626,
+   8,
+   249,
+   1.0344,
+   1.73976,
+   0.5
+  ],
+  [
+   1489.497,
+   8,
+   288,
+   1.2151,
+   1.02242,
+   0.75
+  ],
+  [
+   1490.7121,
+   8,
+   269,
+   1.1043,
+   1.14609,
+   0.5
+  ],
+  [
+   1491.8164,
+   8,
+   272,
+   1.9024,
+   1.32844,
+   0.5
+  ],
+  [
+   1493.7188,
+   8,
+   305,
+   1.313,
+   1.43032,
+   0.5
+  ],
+  [
+   1495.0318,
+   8,
+   280,
+   1.1886,
+   1.75156,
+   0.25
+  ],
+  [
+   1496.2204,
+   8,
+   261,
+   1.0471,
+   1.19153,
+   0.375
+  ],
+  [
+   1497.2675,
+   8,
+   328,
+   2.0692,
+   1.03591,
+   0.5
+  ],
+  [
+   1499.3367,
+   8,
+   254,
+   0.9943,
+   1.13823,
+   0.625
+  ],
+  [
+   1500.331,
+   8,
+   256,
+   1.0127,
+   1.31836,
+   0.625
+  ],
+  [
+   1501.3437,
+   8,
+   268,
+   1.0835,
+   2.00408,
+   0.375
+  ],
+  [
+   1502.4272,
+   8,
+   241,
+   1.7102,
+   1.95326,
+   0.5
+  ],
+  [
+   1504.1374,
+   8,
+   315,
+   1.2864,
+   1.96928,
+   0.625
+  ],
+  [
+   1505.4238,
+   8,
+   257,
+   1.0425,
+   0.92369,
+   0.625
+  ],
+  [
+   1506.4663,
+   8,
+   279,
+   1.1307,
+   1.88487,
+   0.375
+  ],
+  [
+   1507.597,
+   8,
+   227,
+   1.6802,
+   1.2861,
+   0.375
+  ],
+  [
+   1509.2772,
+   8,
+   272,
+   1.0769,
+   1.56154,
+   0.625
+  ],
+  [
+   1510.3541,
+   8,
+   271,
+   1.1084,
+   1.2374,
+   0.625
+  ],
+  [
+   1511.4625,
+   8,
+   253,
+   1.0174,
+   0.68084,
+   0.875
+  ],
+  [
+   1512.4799,
+   8,
+   250,
+   1.7487,
+   2.27079,
+   0.25
+  ],
+  [
+   1514.2286,
+   8,
+   274,
+   1.1027,
+   1.69335,
+   0.375
+  ],
+  [
+   1515.3313,
+   8,
+   265,
+   1.087,
+   1.47847,
+   0.25
+  ],
+  [
+   1516.4183,
+   8,
+   235,
+   0.9484,
+   1.21599,
+   0.5
+  ],
+  [
+   1517.3667,
+   8,
+   250,
+   1.7505,
+   1.12998,
+   0.375
+  ],
+  [
+   1519.1172,
+   8,
+   215,
+   0.842,
+   0.41626,
+   1.0
+  ],
+  [
+   1519.9592,
+   8,
+   326,
+   1.3515,
+   1.46305,
+   0.5
+  ],
+  [
+   1521.3107,
+   8,
+   284,
+   1.1731,
+   1.7216,
+   0.375
+  ],
+  [
+   1522.4838,
+   8,
+   282,
+   1.8944,
+   1.70916,
+   0.25
+  ],
+  [
+   1524.3782,
+   8,
+   320,
+   1.295,
+   1.59436,
+   0.5
+  ],
+  [
+   1525.6732,
+   8,
+   262,
+   1.07,
+   1.05121,
+   0.625
+  ],
+  [
+   1526.7432,
+   8,
+   297,
+   1.2262,
+   1.90788,
+   0.375
+  ],
+  [
+   1527.9694,
+   8,
+   269,
+   1.8256,
+   1.52591,
+   0.375
+  ],
+  [
+   1529.795,
+   8,
+   272,
+   1.0665,
+   2.03539,
+   0.125
+  ],
+  [
+   1530.8615,
+   8,
+   309,
+   1.2754,
+   1.40359,
+   0.625
+  ],
+  [
+   1532.1369,
+   8,
+   255,
+   1.0205,
+   1.83843,
+   0.5
+  ],
+  [
+   1533.1574,
+   8,
+   249,
+   1.7369,
+   1.22206,
+   0.5
+  ],
+  [
+   1534.8943,
+   8,
+   243,
+   0.9536,
+   1.65918,
+   0.375
+  ],
+  [
+   1535.8479,
+   8,
+   246,
+   0.9856,
+   2.42675,
+   0.125
+  ],
+  [
+   1536.8335,
+   8,
+   280,
+   1.1183,
+   2.02893,
+   0.25
+  ],
+  [
+   1537.9518,
+   8,
+   250,
+   1.7535,
+   1.85841,
+   0.375
+  ],
+  [
+   1539.7053,
+   8,
+   199,
+   0.8207,
+   1.20001,
+   0.625
+  ],
+  [
+   1540.526,
+   8,
+   253,
+   1.0329,
+   1.52982,
+   0.25
+  ],
+  [
+   1541.5589,
+   8,
+   281,
+   1.1677,
+   1.51763,
+   0.5
+  ],
+  [
+   1542.7266,
+   8,
+   255,
+   1.7723,
+   1.24012,
+   0.625
+  ],
+  [
+   1544.4989,
+   8,
+   255,
+   0.9974,
+   2.01092,
+   0.25
+  ],
+  [
+   1545.4963,
+   8,
+   266,
+   1.0895,
+   1.28229,
+   0.5
+  ],
+  [
+   1546.5858,
+   8,
+   282,
+   1.1623,
+   1.68012,
+   0.25
+  ],
+  [
+   1547.7481,
+   8,
+   262,
+   1.8019,
+   2.36704,
+   0.25
+  ],
+  [
+   1549.55,
+   8,
+   227,
+   0.897,
+   1.53768,
+   0.5
+  ],
+  [
+   1550.447,
+   8,
+   267,
+   1.0923,
+   1.69874,
+   0.375
+  ],
+  [
+   1551.5393,
+   8,
+   250,
+   1.0176,
+   1.70704,
+   0.25
+  ],
+  [
+   1552.5569,
+   8,
+   250,
+   1.7458,
+   0.73345,
+   0.75
+  ],
+  [
+   1554.3027,
+   8,
+   247,
+   0.9774,
+   1.94602,
+   0.25
+  ],
+  [
+   1555.2801,
+   8,
+   303,
+   1.2565,
+   1.09693,
+   0.625
+  ],
+  [
+   1556.5366,
+   8,
+   273,
+   1.1198,
+   1.30077,
+   0.625
+  ],
+  [
+   1557.6564,
+   8,
+   251,
+   1.7529,
+   1.34134,
+   0.625
+  ],
+  [
+   1559.4093,
+   8,
+   237,
+   0.927,
+   1.35001,
+   0.375
+  ],
+  [
+   1560.3363,
+   8,
+   261,
+   1.0538,
+   1.95168,
+   0.125
+  ],
+  [
+   1561.3901,
+   8,
+   409,
+   1.7483,
+   1.41331,
+   0.625
+  ],
+  [
+   1563.1384,
+   8,
+   332,
+   2.1016,
+   1.86969,
+   0.5
+  ],
+  [
+   1565.24,
+   8,
+   259,
+   1.0464,
+   1.56656,
+   0.25
+  ],
+  [
+   1566.2864,
+   8,
+   234,
+   0.9396,
+   1.77617,
+   0.375
+  ],
+  [
+   1567.226,
+   8,
+   341,
+   1.4222,
+   1.02612,
+   0.625
+  ],
+  [
+   1568.6482,
+   8,
+   295,
+   1.9393,
+   1.05174,
+   0.625
+  ],
+  [
+   1570.5875,
+   8,
+   254,
+   1.0139,
+   1.39048,
+   0.625
+  ],
+  [
+   1571.6014,
+   8,
+   278,
+   1.1303,
+   2.09598,
+   0.25
+  ],
+  [
+   1572.7317,
+   8,
+   263,
+   1.0621,
+   1.79768,
+   0.5
+  ],
+  [
+   1573.7938,
+   8,
+   264,
+   1.7958,
+   1.76325,
+   0.25
+  ],
+  [
+   1575.5896,
+   8,
+   255,
+   1.0013,
+   1.27364,
+   0.5
+  ],
+  [
+   1576.5909,
+   8,
+   260,
+   1.0502,
+   1.5826,
+   0.5
+  ],
+  [
+   1577.6411,
+   8,
+   249,
+   1.0107,
+   1.02047,
+   0.75
+  ],
+  [
+   1578.6518,
+   8,
+   259,
+   1.778,
+   1.68442,
+   0.5
+  ],
+  [
+   1580.4298,
+   8,
+   347,
+   1.4308,
+   1.32737,
+   0.5
+  ],
+  [
+   1581.8606,
+   8,
+   287,
+   1.1716,
+   0.83358,
+   0.875
+  ],
+  [
+   1583.0322,
+   8,
+   254,
+   1.0218,
+   1.45116,
+   0.5
+  ],
+  [
+   1584.054,
+   8,
+   261,
+   1.7854,
+   0.83542,
+   0.75
+  ],
+  [
+   1585.8394,
+   8,
+   276,
+   1.0967,
+   2.29502,
+   0.375
+  ],
+  [
+   1586.9361,
+   8,
+   267,
+   1.0972,
+   0.84145,
+   0.625
+  ],
+  [
+   1588.0333,
+   8,
+   289,
+   1.1857,
+   1.55677,
+   0.375
+  ],
+  [
+   1589.219,
+   8,
+   278,
+   1.8541,
+   1.01431,
+   0.625
+  ],
+  [
+   1591.0731,
+   8,
+   293,
+   1.1839,
+   1.61933,
+   0.5
+  ],
+  [
+   1592.257,
+   8,
+   276,
+   1.1342,
+   1.61362,
+   0.625
+  ],
+  [
+   1593.3912,
+   8,
+   296,
+   1.1967,
+   1.78225,
+   0.5
+  ],
+  [
+   1594.5879,
+   8,
+   324,
+   2.0627,
+   2.13278,
+   0.375
+  ],
+  [
+   1596.6506,
+   8,
+   286,
+   1.1403,
+   1.30472,
+   0.5
+  ],
+  [
+   1597.7909,
+   8,
+   256,
+   1.0205,
+   1.42679,
+   0.375
+  ],
+  [
+   1598.8114,
+   8,
+   256,
+   1.0073,
+   1.53589,
+   0.375
+  ],
+  [
+   1599.8187,
+   8,
+   299,
+   1.9651,
+   1.48636,
+   0.5
+  ],
+  [
+   1601.7838,
+   8,
+   325,
+   1.3236,
+   1.02784,
+   0.75
+  ],
+  [
+   1603.1074,
+   8,
+   328,
+   1.3324,
+   2.09768,
+   0.25
+  ],
+  [
+   1604.4398,
+   8,
+   255,
+   1.0203,
+   0.96401,
+   0.625
+  ],
+  [
+   1605.4601,
+   8,
+   248,
+   1.7148,
+   1.6664,
+   0.25
+  ],
+  [
+   1607.1749,
+   8,
+   278,
+   1.0973,
+   1.5406,
+   0.625
+  ],
+  [
+   1608.2722,
+   8,
+   249,
+   1.0213,
+   1.49588,
+   0.5
+  ],
+  [
+   1609.2935,
+   8,
+   244,
+   0.9717,
+   2.15271,
+   0.25
+  ],
+  [
+   1610.2652,
+   8,
+   262,
+   1.7855,
+   2.14553,
+   0.25
+  ],
+  [
+   1612.0507,
+   8,
+   258,
+   1.7483,
+   1.40164,
+   0.5
+  ]
+ ]
+}

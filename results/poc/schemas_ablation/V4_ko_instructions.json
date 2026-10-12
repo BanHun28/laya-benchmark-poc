@@ -1,0 +1,52 @@
+{
+  "state_key": "message",
+  "questions": {
+    "intent": {
+      "type": "choice",
+      "instructions": "`message`에서 고객이 원하는 것은 무엇인가요?",
+      "criteria": {
+        "refund": "환불, 결제 취소, 중복 결제 환급을 요구",
+        "technical_help": "버그, 오류, 접속 불가, 연동 문제 등 기술적 도움 요청",
+        "billing_question": "청구서, 요금제, 결제 수단, 금액에 대한 문의",
+        "information": "일반 정보, 가격, 사용 방법 문의",
+        "cancellation": "해지, 탈퇴, 다운그레이드 요청",
+        "other": "위 어느 것에도 해당하지 않음"
+      }
+    },
+    "is_urgent": {
+      "type": "noul",
+      "instructions": "`message`에 시간 압박이나 기한이 드러나 있나요?"
+    },
+    "frustration": {
+      "type": "score",
+      "instructions": "`message`에서 고객이 얼마나 짜증 난 것으로 느껴지나요?",
+      "criteria": [
+        "차분하고 중립적",
+        "걱정하지만 정중함",
+        "분명히 짜증남",
+        "매우 화남 또는 강한 표현 사용"
+      ]
+    },
+    "refund_requested": {
+      "type": "noul",
+      "instructions": "고객이 돈을 돌려달라고 요청하나요?"
+    },
+    "churn_risk": {
+      "type": "noul",
+      "instructions": "`message`에 고객이 경쟁사로 옮기거나 해지할 수 있다는 신호가 있나요?"
+    },
+    "needs_llm": {
+      "type": "noul",
+      "instructions": "`message`에 답하려면 템플릿 액션이 아니라 자유 형식으로 생성한 답변이 필요한가요?"
+    },
+    "complexity": {
+      "type": "choice",
+      "instructions": "`message`의 요청은 얼마나 복잡한가요?",
+      "criteria": {
+        "canned": "인사, 표준 FAQ, 단순 상태 확인",
+        "structured": "API나 템플릿으로 결정적으로 처리 가능한 요청",
+        "complex": "생성형 답변, 다단계 추론, 복합 분석이 필요한 요청"
+      }
+    }
+  }
+}

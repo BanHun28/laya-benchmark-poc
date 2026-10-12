@@ -1,0 +1,99 @@
+{
+ "items": "poc/finetune/data/t3arm/T4_english.pt",
+ "items_sha256": "24eb23d7f6f82e166896d24fc0803133664ffe8d3c0874a4b6e81c1d9ab44596",
+ "task": "T4",
+ "base": "english",
+ "base_dir": "/Users/banhun/.cache/huggingface/hub/models--convaiinnovations--laya/snapshots/55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+ "script": "poc/finetune/laya_finetune_mps_patched.py",
+ "script_sha256": "d8dc1eb92db72c0f577ec9cf6dc3ad80558e0e0ff79897bd92dc3f87399db642",
+ "budget": {
+  "max_len": 512,
+  "head_max_len": 192
+ },
+ "seed": 13,
+ "n_items": 5400,
+ "n_train": 5000,
+ "n_calib": 400,
+ "calib_max": 400,
+ "rows": {
+  "train": {
+   "path": "poc/finetune/data/t3arm/T4_train.jsonl",
+   "sha256": "2fa1220d3da17894cfc2a48f4aa9c725dd74c480da50058ef5dda0d5168c23dc",
+   "rows_total": 5000,
+   "rows_used": 5000
+  },
+  "calib": {
+   "path": "poc/finetune/data/t3arm/T4_calib.jsonl",
+   "sha256": "1178454fbbd4ce97368688d9eaff66b6ab672cf677c7eef22ecf0ecfb65f240d",
+   "rows_total": 400,
+   "rows_used": 400
+  }
+ },
+ "subset": {
+  "n_train": 0,
+  "n_calib": 0,
+  "rule": "random.Random(seed).shuffle(row indices), rows taken until n items, row order kept"
+ },
+ "shuffle_options": "all",
+ "option_order": {
+  "train": "choice: random.Random(13 + item index).shuffle(criteria keys); score/noul fixed",
+  "calib": "canonical"
+ },
+ "options_reordered": {
+  "train": 5000,
+  "calib": 0
+ },
+ "gold_slot": {
+  "calib:choice:0": 31,
+  "calib:choice:1": 32,
+  "calib:choice:2": 50,
+  "calib:choice:3": 41,
+  "calib:choice:4": 44,
+  "calib:choice:5": 32,
+  "calib:choice:6": 40,
+  "calib:choice:7": 51,
+  "calib:choice:8": 31,
+  "calib:choice:9": 48,
+  "train:choice:0": 509,
+  "train:choice:1": 490,
+  "train:choice:2": 522,
+  "train:choice:3": 481,
+  "train:choice:4": 508,
+  "train:choice:5": 520,
+  "train:choice:6": 499,
+  "train:choice:7": 481,
+  "train:choice:8": 480,
+  "train:choice:9": 510
+ },
+ "permute_labels": null,
+ "v4_inference_identity": {
+  "checked": 25,
+  "identical": 25
+ },
+ "seq_len_train": {
+  "min": 61,
+  "p50": 77,
+  "p90": 89,
+  "max": 159,
+  "mean": 78.5,
+  "sum": 392728
+ },
+ "decoded_example": {
+  "src": "train:0:intent",
+  "label": 4,
+  "options": [
+   "get physical card",
+   "getting spare card",
+   "cash withdrawal not recognised",
+   "balance not updated after bank transfer",
+   "card arrival",
+   "disposable card limits",
+   "transfer into account",
+   "compromised card",
+   "transfer not received by recipient",
+   "pending card payment"
+  ],
+  "text": "[CLS]choice question: Which banking intent does `message` express?[SEP][MASK] get physical card[MASK] getting spare card[MASK] cash withdrawal not recognised[MASK] balance not updated after bank transfer[MASK] card arrival[MASK] disposable card limits[MASK] transfer into account[MASK] compromised card[MASK] transfer not received by recipient[MASK] pending card payment[SEP]{\"message\": \"What can I do if my card still hasn't arrived after 2 weeks?\"}[SEP]"
+ },
+ "run_with": "--items poc/finetune/data/t3arm/T4_english.pt --calib-max 400 (never --force-preprocess)"
+}

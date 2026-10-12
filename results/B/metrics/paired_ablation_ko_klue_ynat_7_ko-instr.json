@@ -1,0 +1,77 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/B/20261002-1645_multilingual_ko_klue_ynat_7.json",
+   "results/B/20261002-1650_multilingual_ko_klue_ynat_7_ko-instr_dev.json",
+   "--split",
+   "dev",
+   "--out",
+   "results/B/metrics/paired_ablation_ko_klue_ynat_7_ko-instr.md",
+   "--json",
+   "results/B/metrics/paired_ablation_ko_klue_ynat_7_ko-instr.json"
+  ],
+  "generated_at": "2026-10-02T17:05:34+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1645_multilingual_ko_klue_ynat_7.json",
+    "dataset": "data/evals/ko_klue_ynat_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "52c1af160c0433405763a919c593afea3d4f62c51c3d893a84b6ea2610da991f",
+    "questions_sha256": "2eec39b823fd3a6eec8d54cb1bfb8caafccd93375fe2ef33c608d232ad37f260",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 255,
+     "dev": 245
+    }
+   },
+   {
+    "report": "results/B/20261002-1650_multilingual_ko_klue_ynat_7_ko-instr_dev.json",
+    "dataset": "results/B/dev/ko_klue_ynat_7_ko-instr.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "56df846e83b9986299bdd32c55f78613fff73f8fa57ffd697953a03bbf75eebd",
+    "questions_sha256": "da716935ac306caa48da5786cac233d7dabe4dbba8ff1bd957c9f7fa344c5c93",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 245,
+    "split_rows": {
+     "dev": 245
+    }
+   }
+  ]
+ },
+ "a": "results/B/20261002-1645_multilingual_ko_klue_ynat_7.json",
+ "b": "results/B/20261002-1650_multilingual_ko_klue_ynat_7_ko-instr_dev.json",
+ "results": [
+  {
+   "qid": "topic",
+   "split": "dev",
+   "n": 245,
+   "acc_a": 0.6122448979591837,
+   "acc_b": 0.6081632653061224,
+   "delta": -0.004081632653061225,
+   "delta_ci": [
+    -0.017928609778419816,
+    0.009765344472297367
+   ],
+   "b": 2,
+   "c": 1,
+   "p": 1.0,
+   "agreement": 0.9714285714285714,
+   "same_state": 1.0
+  }
+ ]
+}

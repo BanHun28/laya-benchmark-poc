@@ -1,0 +1,66 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "parity",
+   "results/B/20261002-1652_multilingual_ko_klue_nli_3.json",
+   "results/B/20261002-1654_router_ko_klue_nli_3.json",
+   "--out",
+   "results/B/metrics/parity_ko_klue_nli_3_router.md",
+   "--json",
+   "results/B/metrics/parity_ko_klue_nli_3_router.json"
+  ],
+  "generated_at": "2026-10-02T17:05:33+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1652_multilingual_ko_klue_nli_3.json",
+    "dataset": "data/evals/ko_klue_nli_3.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "ae2787b1350acfe99e75d33e713004b72f30435bab8edb37f24e160f842086ff",
+    "questions_sha256": "3f131f442bc7f0fd83b45e1c06454dc27b432b063dd8af7f374cffcd823986ec",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "dev": 263,
+     "test": 237
+    }
+   },
+   {
+    "report": "results/B/20261002-1654_router_ko_klue_nli_3.json",
+    "dataset": "data/evals/ko_klue_nli_3.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "ae2787b1350acfe99e75d33e713004b72f30435bab8edb37f24e160f842086ff",
+    "questions_sha256": "3f131f442bc7f0fd83b45e1c06454dc27b432b063dd8af7f374cffcd823986ec",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "router (auto)",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "dev": 263,
+     "test": 237
+    }
+   }
+  ]
+ },
+ "reference": "results/B/20261002-1652_multilingual_ko_klue_nli_3.json",
+ "results": [
+  {
+   "other": "results/B/20261002-1654_router_ko_klue_nli_3.json",
+   "n": 500,
+   "agreement": 1.0,
+   "flips": 0,
+   "max_abs_dp": 0.0,
+   "mean_abs_dconf": 0.0
+  }
+ ]
+}

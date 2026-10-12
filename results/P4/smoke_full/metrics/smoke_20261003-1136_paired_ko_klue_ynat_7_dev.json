@@ -1,0 +1,76 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/P4/20261002-2014_multilingual_ko_klue_ynat_7_dev.json",
+   "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_ko_klue_ynat_7_dev.json",
+   "--split",
+   "all",
+   "--out",
+   "results/P4/smoke_full/metrics/smoke_20261003-1136_paired_ko_klue_ynat_7_dev.md",
+   "--json",
+   "results/P4/smoke_full/metrics/smoke_20261003-1136_paired_ko_klue_ynat_7_dev.json"
+  ],
+  "generated_at": "2026-10-03T11:43:34+0900",
+  "reports": [
+   {
+    "report": "results/P4/20261002-2014_multilingual_ko_klue_ynat_7_dev.json",
+    "dataset": "results/P4/dev/ko_klue_ynat_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "e47494226f0464463ec0dfbf8352bf6884a8297581b5283efd3803c8769d16ae",
+    "questions_sha256": "2eec39b823fd3a6eec8d54cb1bfb8caafccd93375fe2ef33c608d232ad37f260",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 245,
+    "split_rows": {
+     "dev": 245
+    }
+   },
+   {
+    "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_ko_klue_ynat_7_dev.json",
+    "dataset": "results/P4/dev/ko_klue_ynat_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "e47494226f0464463ec0dfbf8352bf6884a8297581b5283efd3803c8769d16ae",
+    "questions_sha256": "2eec39b823fd3a6eec8d54cb1bfb8caafccd93375fe2ef33c608d232ad37f260",
+    "revisions": {
+     "ft-smoke": "local:results/P4/smoke_full/ckpt_20261003-1136 (base 55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851)"
+    },
+    "model": "ft-smoke",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 245,
+    "split_rows": {
+     "dev": 245
+    }
+   }
+  ]
+ },
+ "a": "results/P4/20261002-2014_multilingual_ko_klue_ynat_7_dev.json",
+ "b": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_ko_klue_ynat_7_dev.json",
+ "results": [
+  {
+   "qid": "topic",
+   "split": "all",
+   "n": 245,
+   "acc_a": 0.6122448979591837,
+   "acc_b": 0.6081632653061224,
+   "delta": -0.004081632653061225,
+   "delta_ci": [
+    -0.028076189859023663,
+    0.019912924552901213
+   ],
+   "b": 5,
+   "c": 4,
+   "p": 1.0,
+   "agreement": 0.9551020408163265,
+   "same_state": 1.0
+  }
+ ]
+}

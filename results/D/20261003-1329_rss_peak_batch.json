@@ -1,0 +1,103 @@
+{
+ "run_card": {
+  "started_at": "2026-10-03 13:29:36 +0900",
+  "argv": [
+   "scripts/bench_batch_local.py",
+   "--memory",
+   "--n",
+   "64",
+   "--devices",
+   "cpu,mps",
+   "--out",
+   "results/D/20261003-1329_rss_peak_batch.json"
+  ],
+  "laya": "0.3.23",
+  "torch": "2.14.1",
+  "transformers": "5.18.0",
+  "python": "3.12.12",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "threads_intra": 10,
+  "threads_interop": 1,
+  "checkpoint_sha": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+  "env_ref": "results/env/env_20261002-1333.json",
+  "env": {
+   "OMP_NUM_THREADS": "10",
+   "LAYA_MPS_AMP_MIN_ROWS": null,
+   "LAYA_CPU_AMP": null,
+   "LAYA_REVISION": "reviewed",
+   "HF_HUB_OFFLINE": null
+  },
+  "power": "Now drawing from 'AC Power'",
+  "uptime": "13:29  up 1 day,  5:36, 7 users, load averages: 3.65 4.21 4.49",
+  "git_sha": "n/a (not a git repo)",
+  "uptime_after": "13:30  up 1 day,  5:37, 7 users, load averages: 3.35 4.02 4.40"
+ },
+ "question_sha256": "e756e1901173d1a8b4f2178d659b8b9aae627fac2bd43b650dd701532e1ff8b3",
+ "states_sha256": {
+  "64": "173a98c3fcba5917ba24b6545e94f60a06397a1c18052feac78b88a9aaa1a292"
+ },
+ "title": "D8 peak RSS during predict_batch",
+ "rows": [
+  {
+   "device": "cpu",
+   "mode": "b16",
+   "n": 64,
+   "start_rss_gib": 4.473,
+   "peak_rss_gib": 4.481,
+   "delta_gib": 0.008,
+   "samples": 318
+  },
+  {
+   "device": "cpu",
+   "mode": "b16s",
+   "n": 64,
+   "start_rss_gib": 3.908,
+   "peak_rss_gib": 3.909,
+   "delta_gib": 0.001,
+   "samples": 218
+  },
+  {
+   "device": "cpu",
+   "mode": "all",
+   "n": 64,
+   "start_rss_gib": 7.537,
+   "peak_rss_gib": 7.539,
+   "delta_gib": 0.001,
+   "samples": 455
+  },
+  {
+   "device": "mps",
+   "mode": "b16",
+   "n": 64,
+   "start_rss_gib": 1.245,
+   "peak_rss_gib": 1.245,
+   "delta_gib": 0.0,
+   "samples": 148,
+   "mps_current_gib": 1.207,
+   "mps_driver_gib": 2.287
+  },
+  {
+   "device": "mps",
+   "mode": "b16s",
+   "n": 64,
+   "start_rss_gib": 1.245,
+   "peak_rss_gib": 1.246,
+   "delta_gib": 0.0,
+   "samples": 104,
+   "mps_current_gib": 1.207,
+   "mps_driver_gib": 3.275
+  },
+  {
+   "device": "mps",
+   "mode": "all",
+   "n": 64,
+   "start_rss_gib": 1.242,
+   "peak_rss_gib": 1.243,
+   "delta_gib": 0.001,
+   "samples": 216,
+   "mps_current_gib": 1.207,
+   "mps_driver_gib": 4.383
+  }
+ ],
+ "wall_s": 65.9
+}

@@ -1,0 +1,110 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/B/20261002-1652_english_ko_klue_nli_3.json",
+   "results/B/20261002-1652_multilingual_ko_klue_nli_3.json",
+   "--out",
+   "results/B/metrics/paired_ko_klue_nli_3_english_vs_ml.md",
+   "--json",
+   "results/B/metrics/paired_ko_klue_nli_3_english_vs_ml.json"
+  ],
+  "generated_at": "2026-10-02T17:05:33+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1652_english_ko_klue_nli_3.json",
+    "dataset": "data/evals/ko_klue_nli_3.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "ae2787b1350acfe99e75d33e713004b72f30435bab8edb37f24e160f842086ff",
+    "questions_sha256": "3f131f442bc7f0fd83b45e1c06454dc27b432b063dd8af7f374cffcd823986ec",
+    "revisions": {
+     "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "english",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "dev": 263,
+     "test": 237
+    }
+   },
+   {
+    "report": "results/B/20261002-1652_multilingual_ko_klue_nli_3.json",
+    "dataset": "data/evals/ko_klue_nli_3.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "ae2787b1350acfe99e75d33e713004b72f30435bab8edb37f24e160f842086ff",
+    "questions_sha256": "3f131f442bc7f0fd83b45e1c06454dc27b432b063dd8af7f374cffcd823986ec",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "dev": 263,
+     "test": 237
+    }
+   }
+  ]
+ },
+ "a": "results/B/20261002-1652_english_ko_klue_nli_3.json",
+ "b": "results/B/20261002-1652_multilingual_ko_klue_nli_3.json",
+ "results": [
+  {
+   "qid": "relation",
+   "split": "all",
+   "n": 500,
+   "acc_a": 0.448,
+   "acc_b": 0.75,
+   "delta": 0.302,
+   "delta_ci": [
+    0.25008433928764845,
+    0.35391566071235153
+   ],
+   "b": 35,
+   "c": 186,
+   "p": 4.6429393989991066e-26,
+   "agreement": 0.504,
+   "same_state": 1.0
+  },
+  {
+   "qid": "relation",
+   "split": "dev",
+   "n": 263,
+   "acc_a": 0.45627376425855515,
+   "acc_b": 0.7604562737642585,
+   "delta": 0.3041825095057034,
+   "delta_ci": [
+    0.23440516616681437,
+    0.37395985284459243
+   ],
+   "b": 16,
+   "c": 96,
+   "p": 4.3777338031345975e-15,
+   "agreement": 0.5095057034220533,
+   "same_state": 1.0
+  },
+  {
+   "qid": "relation",
+   "split": "test",
+   "n": 237,
+   "acc_a": 0.4388185654008439,
+   "acc_b": 0.7383966244725738,
+   "delta": 0.29957805907172996,
+   "delta_ci": [
+    0.22211731122311967,
+    0.37703880692034025
+   ],
+   "b": 19,
+   "c": 90,
+   "p": 3.0984729664322627e-12,
+   "agreement": 0.4978902953586498,
+   "same_state": 1.0
+  }
+ ]
+}

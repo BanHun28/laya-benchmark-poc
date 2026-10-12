@@ -1,0 +1,1690 @@
+{
+ "run_card": {
+  "tool": "scripts/probe_option_order.py",
+  "argv": [
+   "/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.E01Th9/evals/T10/T10_dev40.jsonl",
+   "--model",
+   "/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.E01Th9/ckpt/T10_run",
+   "--device",
+   "cpu",
+   "--permutations",
+   "5",
+   "--seed",
+   "13",
+   "--split",
+   "all",
+   "--splits",
+   "",
+   "--out",
+   "results/T3arm/smoke_20261008-1021/T10/flip_dev40.json"
+  ],
+  "started_at": "2026-10-08T10:35:11+0900",
+  "laya_version": "0.3.23",
+  "torch": "2.14.1",
+  "transformers": "5.18.0",
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "amp_enabled": false,
+  "threads_intra_inter": [
+   10,
+   1
+  ],
+  "checkpoint": {
+   "path": "/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T/t3arm_smoke.E01Th9/ckpt/T10_run",
+   "realpath": "/private/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T/t3arm_smoke.E01Th9/ckpt/T10_run",
+   "snapshot_sha": null,
+   "weights_blob": null,
+   "head_max_len": 192,
+   "max_len": 512
+  },
+  "power": "Now drawing from 'AC Power' |  -InternalBattery-0 (id=22085731)\t100%; charged; 0:00 remaining present: true",
+  "git_sha": null,
+  "load_seconds": 2.4,
+  "warnings": [],
+  "finished_at": "2026-10-08T10:35:20+0900",
+  "total_seconds": 8.1
+ },
+ "params": {
+  "files": [
+   "/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.E01Th9/evals/T10/T10_dev40.jsonl"
+  ],
+  "model": "/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.E01Th9/ckpt/T10_run",
+  "device": "cpu",
+  "permutations": 5,
+  "seed": 13,
+  "split": "all",
+  "splits": "",
+  "reference": [],
+  "bootstrap": 1000,
+  "threads": 10,
+  "interop": 1,
+  "out": "results/T3arm/smoke_20261008-1021/T10/flip_dev40.json"
+ },
+ "sets": [
+  {
+   "file": "/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.E01Th9/evals/T10/T10_dev40.jsonl",
+   "set": "T10_dev40",
+   "dataset_sha256": "5f4c7bd6e4b84e893b66ceedf474af95a75005b6332e2d838b45e6d28f96a58f",
+   "split": "all",
+   "split_rule": "state sha256 % 2",
+   "split_check": null,
+   "seconds": 5.7,
+   "items": [
+    {
+     "row": 0,
+     "qid": "queue",
+     "gold": "Product Support",
+     "options": [
+      "Technical Support",
+      "Product Support",
+      "Customer Service",
+      "IT Support",
+      "Billing and Payments",
+      "Returns and Exchanges",
+      "Service Outages and Maintenance",
+      "Sales and Pre-Sales",
+      "Human Resources",
+      "General Inquiry"
+     ],
+     "tags": [
+      "support_tickets",
+      "id:414",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "Technical Support",
+      "conf": 0.426,
+      "probs": {
+       "Technical Support": 0.426,
+       "Product Support": 0.1018,
+       "Customer Service": 0.0539,
+       "IT Support": 0.2862,
+       "Billing and Payments": 0.0137,
+       "Returns and Exchanges": 0.0504,
+       "Service Outages and Maintenance": 0.0225,
+       "Sales and Pre-Sales": 0.0135,
+       "Human Resources": 0.0186,
+       "General Inquiry": 0.0134
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "IT Support",
+        "Technical Support",
+        "Sales and Pre-Sales",
+        "Human Resources",
+        "Service Outages and Maintenance",
+        "Product Support",
+        "Returns and Exchanges",
+        "Customer Service",
+        "General Inquiry",
+        "Billing and Payments"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.3545,
+       "probs": {
+        "IT Support": 0.2985,
+        "Technical Support": 0.3545,
+        "Sales and Pre-Sales": 0.0157,
+        "Human Resources": 0.0172,
+        "Service Outages and Maintenance": 0.0242,
+        "Product Support": 0.1125,
+        "Returns and Exchanges": 0.068,
+        "Customer Service": 0.0803,
+        "General Inquiry": 0.0128,
+        "Billing and Payments": 0.0164
+       }
+      },
+      {
+       "order": [
+        "Human Resources",
+        "Service Outages and Maintenance",
+        "Billing and Payments",
+        "Sales and Pre-Sales",
+        "Technical Support",
+        "General Inquiry",
+        "Returns and Exchanges",
+        "IT Support",
+        "Product Support",
+        "Customer Service"
+       ],
+       "pred": "IT Support",
+       "conf": 0.3375,
+       "probs": {
+        "Human Resources": 0.0178,
+        "Service Outages and Maintenance": 0.0384,
+        "Billing and Payments": 0.0183,
+        "Sales and Pre-Sales": 0.0146,
+        "Technical Support": 0.331,
+        "General Inquiry": 0.0116,
+        "Returns and Exchanges": 0.0479,
+        "IT Support": 0.3375,
+        "Product Support": 0.1099,
+        "Customer Service": 0.073
+       }
+      },
+      {
+       "order": [
+        "Returns and Exchanges",
+        "Sales and Pre-Sales",
+        "Technical Support",
+        "General Inquiry",
+        "IT Support",
+        "Human Resources",
+        "Service Outages and Maintenance",
+        "Product Support",
+        "Customer Service",
+        "Billing and Payments"
+       ],
+       "pred": "IT Support",
+       "conf": 0.3735,
+       "probs": {
+        "Returns and Exchanges": 0.0445,
+        "Sales and Pre-Sales": 0.0123,
+        "Technical Support": 0.3141,
+        "General Inquiry": 0.0108,
+        "IT Support": 0.3735,
+        "Human Resources": 0.0172,
+        "Service Outages and Maintenance": 0.0239,
+        "Product Support": 0.1177,
+        "Customer Service": 0.0727,
+        "Billing and Payments": 0.0133
+       }
+      },
+      {
+       "order": [
+        "Technical Support",
+        "Product Support",
+        "Customer Service",
+        "Human Resources",
+        "General Inquiry",
+        "Billing and Payments",
+        "Service Outages and Maintenance",
+        "Sales and Pre-Sales",
+        "IT Support",
+        "Returns and Exchanges"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.4492,
+       "probs": {
+        "Technical Support": 0.4492,
+        "Product Support": 0.1053,
+        "Customer Service": 0.0591,
+        "Human Resources": 0.015,
+        "General Inquiry": 0.0095,
+        "Billing and Payments": 0.0141,
+        "Service Outages and Maintenance": 0.0195,
+        "Sales and Pre-Sales": 0.0114,
+        "IT Support": 0.2736,
+        "Returns and Exchanges": 0.0433
+       }
+      },
+      {
+       "order": [
+        "Sales and Pre-Sales",
+        "Technical Support",
+        "Human Resources",
+        "IT Support",
+        "General Inquiry",
+        "Billing and Payments",
+        "Customer Service",
+        "Product Support",
+        "Returns and Exchanges",
+        "Service Outages and Maintenance"
+       ],
+       "pred": "IT Support",
+       "conf": 0.3622,
+       "probs": {
+        "Sales and Pre-Sales": 0.0111,
+        "Technical Support": 0.3502,
+        "Human Resources": 0.0154,
+        "IT Support": 0.3622,
+        "General Inquiry": 0.0105,
+        "Billing and Payments": 0.0145,
+        "Customer Service": 0.0613,
+        "Product Support": 0.0999,
+        "Returns and Exchanges": 0.0514,
+        "Service Outages and Maintenance": 0.0236
+       }
+      }
+     ]
+    },
+    {
+     "row": 1,
+     "qid": "queue",
+     "gold": "IT Support",
+     "options": [
+      "Technical Support",
+      "Product Support",
+      "Customer Service",
+      "IT Support",
+      "Billing and Payments",
+      "Returns and Exchanges",
+      "Service Outages and Maintenance",
+      "Sales and Pre-Sales",
+      "Human Resources",
+      "General Inquiry"
+     ],
+     "tags": [
+      "support_tickets",
+      "id:996",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "Technical Support",
+      "conf": 0.4703,
+      "probs": {
+       "Technical Support": 0.4703,
+       "Product Support": 0.0958,
+       "Customer Service": 0.0492,
+       "IT Support": 0.24,
+       "Billing and Payments": 0.0156,
+       "Returns and Exchanges": 0.062,
+       "Service Outages and Maintenance": 0.0164,
+       "Sales and Pre-Sales": 0.0151,
+       "Human Resources": 0.0195,
+       "General Inquiry": 0.0162
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "Technical Support",
+        "IT Support",
+        "Billing and Payments",
+        "Service Outages and Maintenance",
+        "Returns and Exchanges",
+        "Product Support",
+        "Human Resources",
+        "Customer Service",
+        "General Inquiry",
+        "Sales and Pre-Sales"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.43,
+       "probs": {
+        "Technical Support": 0.43,
+        "IT Support": 0.2147,
+        "Billing and Payments": 0.0155,
+        "Service Outages and Maintenance": 0.0158,
+        "Returns and Exchanges": 0.0622,
+        "Product Support": 0.1164,
+        "Human Resources": 0.0197,
+        "Customer Service": 0.0941,
+        "General Inquiry": 0.0168,
+        "Sales and Pre-Sales": 0.0149
+       }
+      },
+      {
+       "order": [
+        "Returns and Exchanges",
+        "Technical Support",
+        "Customer Service",
+        "Service Outages and Maintenance",
+        "General Inquiry",
+        "Product Support",
+        "IT Support",
+        "Human Resources",
+        "Billing and Payments",
+        "Sales and Pre-Sales"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.4661,
+       "probs": {
+        "Returns and Exchanges": 0.0483,
+        "Technical Support": 0.4661,
+        "Customer Service": 0.0507,
+        "Service Outages and Maintenance": 0.0137,
+        "General Inquiry": 0.0119,
+        "Product Support": 0.0911,
+        "IT Support": 0.2719,
+        "Human Resources": 0.0162,
+        "Billing and Payments": 0.016,
+        "Sales and Pre-Sales": 0.0141
+       }
+      },
+      {
+       "order": [
+        "Sales and Pre-Sales",
+        "Service Outages and Maintenance",
+        "Billing and Payments",
+        "Technical Support",
+        "Product Support",
+        "Customer Service",
+        "Returns and Exchanges",
+        "Human Resources",
+        "IT Support",
+        "General Inquiry"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.4449,
+       "probs": {
+        "Sales and Pre-Sales": 0.0127,
+        "Service Outages and Maintenance": 0.0141,
+        "Billing and Payments": 0.016,
+        "Technical Support": 0.4449,
+        "Product Support": 0.0982,
+        "Customer Service": 0.0594,
+        "Returns and Exchanges": 0.0558,
+        "Human Resources": 0.017,
+        "IT Support": 0.2678,
+        "General Inquiry": 0.0141
+       }
+      },
+      {
+       "order": [
+        "Returns and Exchanges",
+        "Customer Service",
+        "IT Support",
+        "Billing and Payments",
+        "Product Support",
+        "Human Resources",
+        "Sales and Pre-Sales",
+        "General Inquiry",
+        "Technical Support",
+        "Service Outages and Maintenance"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.3939,
+       "probs": {
+        "Returns and Exchanges": 0.0443,
+        "Customer Service": 0.0529,
+        "IT Support": 0.3412,
+        "Billing and Payments": 0.0147,
+        "Product Support": 0.0962,
+        "Human Resources": 0.0154,
+        "Sales and Pre-Sales": 0.0133,
+        "General Inquiry": 0.0134,
+        "Technical Support": 0.3939,
+        "Service Outages and Maintenance": 0.0146
+       }
+      },
+      {
+       "order": [
+        "Technical Support",
+        "IT Support",
+        "General Inquiry",
+        "Product Support",
+        "Sales and Pre-Sales",
+        "Human Resources",
+        "Returns and Exchanges",
+        "Service Outages and Maintenance",
+        "Customer Service",
+        "Billing and Payments"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.43,
+       "probs": {
+        "Technical Support": 0.43,
+        "IT Support": 0.2465,
+        "General Inquiry": 0.0147,
+        "Product Support": 0.1076,
+        "Sales and Pre-Sales": 0.0141,
+        "Human Resources": 0.0179,
+        "Returns and Exchanges": 0.0603,
+        "Service Outages and Maintenance": 0.0154,
+        "Customer Service": 0.0751,
+        "Billing and Payments": 0.0183
+       }
+      }
+     ]
+    },
+    {
+     "row": 2,
+     "qid": "queue",
+     "gold": "IT Support",
+     "options": [
+      "Technical Support",
+      "Product Support",
+      "Customer Service",
+      "IT Support",
+      "Billing and Payments",
+      "Returns and Exchanges",
+      "Service Outages and Maintenance",
+      "Sales and Pre-Sales",
+      "Human Resources",
+      "General Inquiry"
+     ],
+     "tags": [
+      "support_tickets",
+      "id:2653",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "Technical Support",
+      "conf": 0.2396,
+      "probs": {
+       "Technical Support": 0.2396,
+       "Product Support": 0.1577,
+       "Customer Service": 0.193,
+       "IT Support": 0.1282,
+       "Billing and Payments": 0.068,
+       "Returns and Exchanges": 0.0748,
+       "Service Outages and Maintenance": 0.0235,
+       "Sales and Pre-Sales": 0.0565,
+       "Human Resources": 0.0315,
+       "General Inquiry": 0.0272
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "Billing and Payments",
+        "Service Outages and Maintenance",
+        "General Inquiry",
+        "Technical Support",
+        "Product Support",
+        "Sales and Pre-Sales",
+        "Returns and Exchanges",
+        "IT Support",
+        "Customer Service",
+        "Human Resources"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.2453,
+       "probs": {
+        "Billing and Payments": 0.05,
+        "Service Outages and Maintenance": 0.0236,
+        "General Inquiry": 0.0323,
+        "Technical Support": 0.2453,
+        "Product Support": 0.1573,
+        "Sales and Pre-Sales": 0.0583,
+        "Returns and Exchanges": 0.0784,
+        "IT Support": 0.1189,
+        "Customer Service": 0.2029,
+        "Human Resources": 0.033
+       }
+      },
+      {
+       "order": [
+        "Billing and Payments",
+        "Service Outages and Maintenance",
+        "IT Support",
+        "Technical Support",
+        "Human Resources",
+        "Product Support",
+        "Sales and Pre-Sales",
+        "Customer Service",
+        "General Inquiry",
+        "Returns and Exchanges"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.249,
+       "probs": {
+        "Billing and Payments": 0.0469,
+        "Service Outages and Maintenance": 0.0234,
+        "IT Support": 0.1229,
+        "Technical Support": 0.249,
+        "Human Resources": 0.0343,
+        "Product Support": 0.1328,
+        "Sales and Pre-Sales": 0.061,
+        "Customer Service": 0.2178,
+        "General Inquiry": 0.0278,
+        "Returns and Exchanges": 0.0839
+       }
+      },
+      {
+       "order": [
+        "Returns and Exchanges",
+        "General Inquiry",
+        "Human Resources",
+        "Billing and Payments",
+        "Sales and Pre-Sales",
+        "Customer Service",
+        "IT Support",
+        "Technical Support",
+        "Service Outages and Maintenance",
+        "Product Support"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.2439,
+       "probs": {
+        "Returns and Exchanges": 0.0771,
+        "General Inquiry": 0.0295,
+        "Human Resources": 0.0298,
+        "Billing and Payments": 0.0599,
+        "Sales and Pre-Sales": 0.0572,
+        "Customer Service": 0.212,
+        "IT Support": 0.1415,
+        "Technical Support": 0.2439,
+        "Service Outages and Maintenance": 0.0236,
+        "Product Support": 0.1255
+       }
+      },
+      {
+       "order": [
+        "IT Support",
+        "Human Resources",
+        "General Inquiry",
+        "Technical Support",
+        "Returns and Exchanges",
+        "Sales and Pre-Sales",
+        "Customer Service",
+        "Billing and Payments",
+        "Service Outages and Maintenance",
+        "Product Support"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.2263,
+       "probs": {
+        "IT Support": 0.1601,
+        "Human Resources": 0.0284,
+        "General Inquiry": 0.0295,
+        "Technical Support": 0.2263,
+        "Returns and Exchanges": 0.0879,
+        "Sales and Pre-Sales": 0.0609,
+        "Customer Service": 0.1936,
+        "Billing and Payments": 0.0743,
+        "Service Outages and Maintenance": 0.0223,
+        "Product Support": 0.1168
+       }
+      },
+      {
+       "order": [
+        "Sales and Pre-Sales",
+        "Service Outages and Maintenance",
+        "Human Resources",
+        "Billing and Payments",
+        "IT Support",
+        "Product Support",
+        "Customer Service",
+        "Returns and Exchanges",
+        "General Inquiry",
+        "Technical Support"
+       ],
+       "pred": "Customer Service",
+       "conf": 0.231,
+       "probs": {
+        "Sales and Pre-Sales": 0.0691,
+        "Service Outages and Maintenance": 0.0218,
+        "Human Resources": 0.0281,
+        "Billing and Payments": 0.053,
+        "IT Support": 0.1246,
+        "Product Support": 0.1453,
+        "Customer Service": 0.231,
+        "Returns and Exchanges": 0.0771,
+        "General Inquiry": 0.0271,
+        "Technical Support": 0.2227
+       }
+      }
+     ]
+    },
+    {
+     "row": 3,
+     "qid": "queue",
+     "gold": "IT Support",
+     "options": [
+      "Technical Support",
+      "Product Support",
+      "Customer Service",
+      "IT Support",
+      "Billing and Payments",
+      "Returns and Exchanges",
+      "Service Outages and Maintenance",
+      "Sales and Pre-Sales",
+      "Human Resources",
+      "General Inquiry"
+     ],
+     "tags": [
+      "support_tickets",
+      "id:3135",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "Product Support",
+      "conf": 0.2526,
+      "probs": {
+       "Technical Support": 0.2212,
+       "Product Support": 0.2526,
+       "Customer Service": 0.1178,
+       "IT Support": 0.1506,
+       "Billing and Payments": 0.056,
+       "Returns and Exchanges": 0.0872,
+       "Service Outages and Maintenance": 0.0269,
+       "Sales and Pre-Sales": 0.0295,
+       "Human Resources": 0.0331,
+       "General Inquiry": 0.0251
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "Human Resources",
+        "Customer Service",
+        "IT Support",
+        "Sales and Pre-Sales",
+        "Product Support",
+        "Returns and Exchanges",
+        "General Inquiry",
+        "Service Outages and Maintenance",
+        "Technical Support",
+        "Billing and Payments"
+       ],
+       "pred": "Product Support",
+       "conf": 0.226,
+       "probs": {
+        "Human Resources": 0.0356,
+        "Customer Service": 0.1315,
+        "IT Support": 0.1694,
+        "Sales and Pre-Sales": 0.0449,
+        "Product Support": 0.226,
+        "Returns and Exchanges": 0.1002,
+        "General Inquiry": 0.0247,
+        "Service Outages and Maintenance": 0.0294,
+        "Technical Support": 0.1675,
+        "Billing and Payments": 0.0706
+       }
+      },
+      {
+       "order": [
+        "Technical Support",
+        "General Inquiry",
+        "Sales and Pre-Sales",
+        "Returns and Exchanges",
+        "Customer Service",
+        "Product Support",
+        "Human Resources",
+        "Service Outages and Maintenance",
+        "Billing and Payments",
+        "IT Support"
+       ],
+       "pred": "Product Support",
+       "conf": 0.2489,
+       "probs": {
+        "Technical Support": 0.2208,
+        "General Inquiry": 0.0282,
+        "Sales and Pre-Sales": 0.0434,
+        "Returns and Exchanges": 0.0906,
+        "Customer Service": 0.1167,
+        "Product Support": 0.2489,
+        "Human Resources": 0.0321,
+        "Service Outages and Maintenance": 0.0274,
+        "Billing and Payments": 0.051,
+        "IT Support": 0.141
+       }
+      },
+      {
+       "order": [
+        "Billing and Payments",
+        "Sales and Pre-Sales",
+        "Product Support",
+        "General Inquiry",
+        "Customer Service",
+        "Technical Support",
+        "Human Resources",
+        "Returns and Exchanges",
+        "IT Support",
+        "Service Outages and Maintenance"
+       ],
+       "pred": "Product Support",
+       "conf": 0.2494,
+       "probs": {
+        "Billing and Payments": 0.0512,
+        "Sales and Pre-Sales": 0.0441,
+        "Product Support": 0.2494,
+        "General Inquiry": 0.0281,
+        "Customer Service": 0.1196,
+        "Technical Support": 0.1988,
+        "Human Resources": 0.034,
+        "Returns and Exchanges": 0.0922,
+        "IT Support": 0.1462,
+        "Service Outages and Maintenance": 0.0365
+       }
+      },
+      {
+       "order": [
+        "Sales and Pre-Sales",
+        "Service Outages and Maintenance",
+        "Billing and Payments",
+        "IT Support",
+        "General Inquiry",
+        "Customer Service",
+        "Returns and Exchanges",
+        "Human Resources",
+        "Technical Support",
+        "Product Support"
+       ],
+       "pred": "Product Support",
+       "conf": 0.2267,
+       "probs": {
+        "Sales and Pre-Sales": 0.0388,
+        "Service Outages and Maintenance": 0.0334,
+        "Billing and Payments": 0.0622,
+        "IT Support": 0.1427,
+        "General Inquiry": 0.0314,
+        "Customer Service": 0.1166,
+        "Returns and Exchanges": 0.0999,
+        "Human Resources": 0.0364,
+        "Technical Support": 0.212,
+        "Product Support": 0.2267
+       }
+      },
+      {
+       "order": [
+        "General Inquiry",
+        "Customer Service",
+        "Human Resources",
+        "Service Outages and Maintenance",
+        "Product Support",
+        "IT Support",
+        "Sales and Pre-Sales",
+        "Billing and Payments",
+        "Technical Support",
+        "Returns and Exchanges"
+       ],
+       "pred": "Product Support",
+       "conf": 0.2381,
+       "probs": {
+        "General Inquiry": 0.0293,
+        "Customer Service": 0.1347,
+        "Human Resources": 0.0354,
+        "Service Outages and Maintenance": 0.033,
+        "Product Support": 0.2381,
+        "IT Support": 0.1539,
+        "Sales and Pre-Sales": 0.0422,
+        "Billing and Payments": 0.0588,
+        "Technical Support": 0.1611,
+        "Returns and Exchanges": 0.1135
+       }
+      }
+     ]
+    },
+    {
+     "row": 4,
+     "qid": "queue",
+     "gold": "Technical Support",
+     "options": [
+      "Technical Support",
+      "Product Support",
+      "Customer Service",
+      "IT Support",
+      "Billing and Payments",
+      "Returns and Exchanges",
+      "Service Outages and Maintenance",
+      "Sales and Pre-Sales",
+      "Human Resources",
+      "General Inquiry"
+     ],
+     "tags": [
+      "support_tickets",
+      "id:4605",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "Technical Support",
+      "conf": 0.4812,
+      "probs": {
+       "Technical Support": 0.4812,
+       "Product Support": 0.1879,
+       "Customer Service": 0.0749,
+       "IT Support": 0.1139,
+       "Billing and Payments": 0.0161,
+       "Returns and Exchanges": 0.0467,
+       "Service Outages and Maintenance": 0.0205,
+       "Sales and Pre-Sales": 0.0236,
+       "Human Resources": 0.0186,
+       "General Inquiry": 0.0165
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "General Inquiry",
+        "Technical Support",
+        "Product Support",
+        "Sales and Pre-Sales",
+        "Billing and Payments",
+        "Service Outages and Maintenance",
+        "Human Resources",
+        "IT Support",
+        "Customer Service",
+        "Returns and Exchanges"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.4177,
+       "probs": {
+        "General Inquiry": 0.0134,
+        "Technical Support": 0.4177,
+        "Product Support": 0.2056,
+        "Sales and Pre-Sales": 0.0197,
+        "Billing and Payments": 0.0149,
+        "Service Outages and Maintenance": 0.0177,
+        "Human Resources": 0.0168,
+        "IT Support": 0.143,
+        "Customer Service": 0.1027,
+        "Returns and Exchanges": 0.0485
+       }
+      },
+      {
+       "order": [
+        "Service Outages and Maintenance",
+        "Sales and Pre-Sales",
+        "Technical Support",
+        "Billing and Payments",
+        "General Inquiry",
+        "IT Support",
+        "Human Resources",
+        "Product Support",
+        "Customer Service",
+        "Returns and Exchanges"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.439,
+       "probs": {
+        "Service Outages and Maintenance": 0.0171,
+        "Sales and Pre-Sales": 0.0208,
+        "Technical Support": 0.439,
+        "Billing and Payments": 0.0158,
+        "General Inquiry": 0.0136,
+        "IT Support": 0.1227,
+        "Human Resources": 0.0184,
+        "Product Support": 0.2032,
+        "Customer Service": 0.1021,
+        "Returns and Exchanges": 0.0473
+       }
+      },
+      {
+       "order": [
+        "IT Support",
+        "Returns and Exchanges",
+        "General Inquiry",
+        "Product Support",
+        "Sales and Pre-Sales",
+        "Technical Support",
+        "Service Outages and Maintenance",
+        "Customer Service",
+        "Billing and Payments",
+        "Human Resources"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.395,
+       "probs": {
+        "IT Support": 0.1509,
+        "Returns and Exchanges": 0.0448,
+        "General Inquiry": 0.0162,
+        "Product Support": 0.2232,
+        "Sales and Pre-Sales": 0.0216,
+        "Technical Support": 0.395,
+        "Service Outages and Maintenance": 0.0198,
+        "Customer Service": 0.0923,
+        "Billing and Payments": 0.0182,
+        "Human Resources": 0.0179
+       }
+      },
+      {
+       "order": [
+        "Returns and Exchanges",
+        "Billing and Payments",
+        "Product Support",
+        "Service Outages and Maintenance",
+        "Sales and Pre-Sales",
+        "Human Resources",
+        "General Inquiry",
+        "Customer Service",
+        "IT Support",
+        "Technical Support"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.4547,
+       "probs": {
+        "Returns and Exchanges": 0.0394,
+        "Billing and Payments": 0.0152,
+        "Product Support": 0.2383,
+        "Service Outages and Maintenance": 0.0186,
+        "Sales and Pre-Sales": 0.0196,
+        "Human Resources": 0.0156,
+        "General Inquiry": 0.0116,
+        "Customer Service": 0.0725,
+        "IT Support": 0.1146,
+        "Technical Support": 0.4547
+       }
+      },
+      {
+       "order": [
+        "Customer Service",
+        "Service Outages and Maintenance",
+        "Human Resources",
+        "Sales and Pre-Sales",
+        "Billing and Payments",
+        "Product Support",
+        "Returns and Exchanges",
+        "General Inquiry",
+        "Technical Support",
+        "IT Support"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.42,
+       "probs": {
+        "Customer Service": 0.1052,
+        "Service Outages and Maintenance": 0.0279,
+        "Human Resources": 0.0224,
+        "Sales and Pre-Sales": 0.0295,
+        "Billing and Payments": 0.0207,
+        "Product Support": 0.1693,
+        "Returns and Exchanges": 0.0496,
+        "General Inquiry": 0.0149,
+        "Technical Support": 0.42,
+        "IT Support": 0.1404
+       }
+      }
+     ]
+    },
+    {
+     "row": 5,
+     "qid": "queue",
+     "gold": "IT Support",
+     "options": [
+      "Technical Support",
+      "Product Support",
+      "Customer Service",
+      "IT Support",
+      "Billing and Payments",
+      "Returns and Exchanges",
+      "Service Outages and Maintenance",
+      "Sales and Pre-Sales",
+      "Human Resources",
+      "General Inquiry"
+     ],
+     "tags": [
+      "support_tickets",
+      "id:4762",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "Technical Support",
+      "conf": 0.5639,
+      "probs": {
+       "Technical Support": 0.5639,
+       "Product Support": 0.1611,
+       "Customer Service": 0.0596,
+       "IT Support": 0.0953,
+       "Billing and Payments": 0.0122,
+       "Returns and Exchanges": 0.0402,
+       "Service Outages and Maintenance": 0.0184,
+       "Sales and Pre-Sales": 0.0172,
+       "Human Resources": 0.0165,
+       "General Inquiry": 0.0156
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "Service Outages and Maintenance",
+        "Returns and Exchanges",
+        "IT Support",
+        "Customer Service",
+        "Product Support",
+        "Billing and Payments",
+        "Sales and Pre-Sales",
+        "Human Resources",
+        "Technical Support",
+        "General Inquiry"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.5578,
+       "probs": {
+        "Service Outages and Maintenance": 0.0156,
+        "Returns and Exchanges": 0.036,
+        "IT Support": 0.1106,
+        "Customer Service": 0.0674,
+        "Product Support": 0.1607,
+        "Billing and Payments": 0.012,
+        "Sales and Pre-Sales": 0.013,
+        "Human Resources": 0.0129,
+        "Technical Support": 0.5578,
+        "General Inquiry": 0.0141
+       }
+      },
+      {
+       "order": [
+        "Product Support",
+        "Sales and Pre-Sales",
+        "IT Support",
+        "Returns and Exchanges",
+        "Service Outages and Maintenance",
+        "Technical Support",
+        "Human Resources",
+        "General Inquiry",
+        "Customer Service",
+        "Billing and Payments"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.5358,
+       "probs": {
+        "Product Support": 0.1803,
+        "Sales and Pre-Sales": 0.014,
+        "IT Support": 0.11,
+        "Returns and Exchanges": 0.0378,
+        "Service Outages and Maintenance": 0.0153,
+        "Technical Support": 0.5358,
+        "Human Resources": 0.0153,
+        "General Inquiry": 0.0114,
+        "Customer Service": 0.0691,
+        "Billing and Payments": 0.0111
+       }
+      },
+      {
+       "order": [
+        "Sales and Pre-Sales",
+        "Human Resources",
+        "Returns and Exchanges",
+        "IT Support",
+        "Customer Service",
+        "General Inquiry",
+        "Service Outages and Maintenance",
+        "Billing and Payments",
+        "Product Support",
+        "Technical Support"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.608,
+       "probs": {
+        "Sales and Pre-Sales": 0.0121,
+        "Human Resources": 0.0124,
+        "Returns and Exchanges": 0.0339,
+        "IT Support": 0.1254,
+        "Customer Service": 0.0702,
+        "General Inquiry": 0.0098,
+        "Service Outages and Maintenance": 0.0131,
+        "Billing and Payments": 0.0088,
+        "Product Support": 0.1063,
+        "Technical Support": 0.608
+       }
+      },
+      {
+       "order": [
+        "General Inquiry",
+        "Service Outages and Maintenance",
+        "Sales and Pre-Sales",
+        "Billing and Payments",
+        "Returns and Exchanges",
+        "IT Support",
+        "Customer Service",
+        "Human Resources",
+        "Product Support",
+        "Technical Support"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.5789,
+       "probs": {
+        "General Inquiry": 0.0134,
+        "Service Outages and Maintenance": 0.0168,
+        "Sales and Pre-Sales": 0.0176,
+        "Billing and Payments": 0.0131,
+        "Returns and Exchanges": 0.0372,
+        "IT Support": 0.1195,
+        "Customer Service": 0.0651,
+        "Human Resources": 0.0141,
+        "Product Support": 0.1243,
+        "Technical Support": 0.5789
+       }
+      },
+      {
+       "order": [
+        "IT Support",
+        "Product Support",
+        "Service Outages and Maintenance",
+        "Returns and Exchanges",
+        "Billing and Payments",
+        "Technical Support",
+        "Human Resources",
+        "Sales and Pre-Sales",
+        "General Inquiry",
+        "Customer Service"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.4988,
+       "probs": {
+        "IT Support": 0.1127,
+        "Product Support": 0.2017,
+        "Service Outages and Maintenance": 0.0163,
+        "Returns and Exchanges": 0.0338,
+        "Billing and Payments": 0.0119,
+        "Technical Support": 0.4988,
+        "Human Resources": 0.0143,
+        "Sales and Pre-Sales": 0.0137,
+        "General Inquiry": 0.0123,
+        "Customer Service": 0.0845
+       }
+      }
+     ]
+    },
+    {
+     "row": 6,
+     "qid": "queue",
+     "gold": "Technical Support",
+     "options": [
+      "Technical Support",
+      "Product Support",
+      "Customer Service",
+      "IT Support",
+      "Billing and Payments",
+      "Returns and Exchanges",
+      "Service Outages and Maintenance",
+      "Sales and Pre-Sales",
+      "Human Resources",
+      "General Inquiry"
+     ],
+     "tags": [
+      "support_tickets",
+      "id:5694",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "Technical Support",
+      "conf": 0.3452,
+      "probs": {
+       "Technical Support": 0.3452,
+       "Product Support": 0.1583,
+       "Customer Service": 0.1285,
+       "IT Support": 0.1121,
+       "Billing and Payments": 0.0381,
+       "Returns and Exchanges": 0.0973,
+       "Service Outages and Maintenance": 0.0266,
+       "Sales and Pre-Sales": 0.0281,
+       "Human Resources": 0.0396,
+       "General Inquiry": 0.0261
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "Technical Support",
+        "Human Resources",
+        "General Inquiry",
+        "Service Outages and Maintenance",
+        "Sales and Pre-Sales",
+        "Customer Service",
+        "Product Support",
+        "IT Support",
+        "Returns and Exchanges",
+        "Billing and Payments"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.3538,
+       "probs": {
+        "Technical Support": 0.3538,
+        "Human Resources": 0.0464,
+        "General Inquiry": 0.0291,
+        "Service Outages and Maintenance": 0.0308,
+        "Sales and Pre-Sales": 0.0363,
+        "Customer Service": 0.1325,
+        "Product Support": 0.149,
+        "IT Support": 0.0838,
+        "Returns and Exchanges": 0.1046,
+        "Billing and Payments": 0.0337
+       }
+      },
+      {
+       "order": [
+        "Technical Support",
+        "Human Resources",
+        "Returns and Exchanges",
+        "Product Support",
+        "IT Support",
+        "Service Outages and Maintenance",
+        "General Inquiry",
+        "Sales and Pre-Sales",
+        "Customer Service",
+        "Billing and Payments"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.3359,
+       "probs": {
+        "Technical Support": 0.3359,
+        "Human Resources": 0.0399,
+        "Returns and Exchanges": 0.0908,
+        "Product Support": 0.1613,
+        "IT Support": 0.1338,
+        "Service Outages and Maintenance": 0.0308,
+        "General Inquiry": 0.0265,
+        "Sales and Pre-Sales": 0.0297,
+        "Customer Service": 0.1191,
+        "Billing and Payments": 0.0323
+       }
+      },
+      {
+       "order": [
+        "Service Outages and Maintenance",
+        "Customer Service",
+        "Sales and Pre-Sales",
+        "Returns and Exchanges",
+        "Product Support",
+        "Billing and Payments",
+        "General Inquiry",
+        "Human Resources",
+        "Technical Support",
+        "IT Support"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.296,
+       "probs": {
+        "Service Outages and Maintenance": 0.0293,
+        "Customer Service": 0.1321,
+        "Sales and Pre-Sales": 0.0436,
+        "Returns and Exchanges": 0.1161,
+        "Product Support": 0.1543,
+        "Billing and Payments": 0.0435,
+        "General Inquiry": 0.0275,
+        "Human Resources": 0.0444,
+        "Technical Support": 0.296,
+        "IT Support": 0.1133
+       }
+      },
+      {
+       "order": [
+        "Human Resources",
+        "Product Support",
+        "Returns and Exchanges",
+        "Service Outages and Maintenance",
+        "Sales and Pre-Sales",
+        "IT Support",
+        "Technical Support",
+        "Billing and Payments",
+        "Customer Service",
+        "General Inquiry"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.298,
+       "probs": {
+        "Human Resources": 0.0414,
+        "Product Support": 0.1784,
+        "Returns and Exchanges": 0.1098,
+        "Service Outages and Maintenance": 0.0297,
+        "Sales and Pre-Sales": 0.0328,
+        "IT Support": 0.1207,
+        "Technical Support": 0.298,
+        "Billing and Payments": 0.0354,
+        "Customer Service": 0.1271,
+        "General Inquiry": 0.0267
+       }
+      },
+      {
+       "order": [
+        "Billing and Payments",
+        "Sales and Pre-Sales",
+        "IT Support",
+        "Customer Service",
+        "Product Support",
+        "Returns and Exchanges",
+        "Service Outages and Maintenance",
+        "General Inquiry",
+        "Human Resources",
+        "Technical Support"
+       ],
+       "pred": "Technical Support",
+       "conf": 0.2944,
+       "probs": {
+        "Billing and Payments": 0.0328,
+        "Sales and Pre-Sales": 0.0341,
+        "IT Support": 0.1348,
+        "Customer Service": 0.1387,
+        "Product Support": 0.1583,
+        "Returns and Exchanges": 0.1106,
+        "Service Outages and Maintenance": 0.0269,
+        "General Inquiry": 0.0243,
+        "Human Resources": 0.0451,
+        "Technical Support": 0.2944
+       }
+      }
+     ]
+    },
+    {
+     "row": 7,
+     "qid": "queue",
+     "gold": "IT Support",
+     "options": [
+      "Technical Support",
+      "Product Support",
+      "Customer Service",
+      "IT Support",
+      "Billing and Payments",
+      "Returns and Exchanges",
+      "Service Outages and Maintenance",
+      "Sales and Pre-Sales",
+      "Human Resources",
+      "General Inquiry"
+     ],
+     "tags": [
+      "support_tickets",
+      "id:8042",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "Customer Service",
+      "conf": 0.2476,
+      "probs": {
+       "Technical Support": 0.17,
+       "Product Support": 0.1365,
+       "Customer Service": 0.2476,
+       "IT Support": 0.0744,
+       "Billing and Payments": 0.1475,
+       "Returns and Exchanges": 0.0854,
+       "Service Outages and Maintenance": 0.0282,
+       "Sales and Pre-Sales": 0.0536,
+       "Human Resources": 0.0321,
+       "General Inquiry": 0.0248
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "Billing and Payments",
+        "Returns and Exchanges",
+        "General Inquiry",
+        "IT Support",
+        "Product Support",
+        "Customer Service",
+        "Sales and Pre-Sales",
+        "Service Outages and Maintenance",
+        "Human Resources",
+        "Technical Support"
+       ],
+       "pred": "Customer Service",
+       "conf": 0.2638,
+       "probs": {
+        "Billing and Payments": 0.154,
+        "Returns and Exchanges": 0.0914,
+        "General Inquiry": 0.0284,
+        "IT Support": 0.0675,
+        "Product Support": 0.1509,
+        "Customer Service": 0.2638,
+        "Sales and Pre-Sales": 0.075,
+        "Service Outages and Maintenance": 0.0328,
+        "Human Resources": 0.0323,
+        "Technical Support": 0.1038
+       }
+      },
+      {
+       "order": [
+        "Human Resources",
+        "Sales and Pre-Sales",
+        "Service Outages and Maintenance",
+        "Product Support",
+        "Customer Service",
+        "General Inquiry",
+        "Billing and Payments",
+        "Technical Support",
+        "Returns and Exchanges",
+        "IT Support"
+       ],
+       "pred": "Customer Service",
+       "conf": 0.3134,
+       "probs": {
+        "Human Resources": 0.0323,
+        "Sales and Pre-Sales": 0.0667,
+        "Service Outages and Maintenance": 0.0296,
+        "Product Support": 0.1272,
+        "Customer Service": 0.3134,
+        "General Inquiry": 0.0239,
+        "Billing and Payments": 0.1292,
+        "Technical Support": 0.1303,
+        "Returns and Exchanges": 0.0843,
+        "IT Support": 0.0633
+       }
+      },
+      {
+       "order": [
+        "Customer Service",
+        "Sales and Pre-Sales",
+        "Product Support",
+        "General Inquiry",
+        "Technical Support",
+        "Returns and Exchanges",
+        "Billing and Payments",
+        "IT Support",
+        "Service Outages and Maintenance",
+        "Human Resources"
+       ],
+       "pred": "Customer Service",
+       "conf": 0.291,
+       "probs": {
+        "Customer Service": 0.291,
+        "Sales and Pre-Sales": 0.0689,
+        "Product Support": 0.1334,
+        "General Inquiry": 0.0242,
+        "Technical Support": 0.1493,
+        "Returns and Exchanges": 0.0861,
+        "Billing and Payments": 0.1272,
+        "IT Support": 0.0583,
+        "Service Outages and Maintenance": 0.0302,
+        "Human Resources": 0.0314
+       }
+      },
+      {
+       "order": [
+        "Billing and Payments",
+        "Technical Support",
+        "IT Support",
+        "Service Outages and Maintenance",
+        "Product Support",
+        "General Inquiry",
+        "Human Resources",
+        "Customer Service",
+        "Returns and Exchanges",
+        "Sales and Pre-Sales"
+       ],
+       "pred": "Customer Service",
+       "conf": 0.2169,
+       "probs": {
+        "Billing and Payments": 0.1503,
+        "Technical Support": 0.1772,
+        "IT Support": 0.0818,
+        "Service Outages and Maintenance": 0.0336,
+        "Product Support": 0.126,
+        "General Inquiry": 0.0254,
+        "Human Resources": 0.0334,
+        "Customer Service": 0.2169,
+        "Returns and Exchanges": 0.0925,
+        "Sales and Pre-Sales": 0.0629
+       }
+      },
+      {
+       "order": [
+        "Service Outages and Maintenance",
+        "Sales and Pre-Sales",
+        "IT Support",
+        "Technical Support",
+        "General Inquiry",
+        "Product Support",
+        "Returns and Exchanges",
+        "Human Resources",
+        "Customer Service",
+        "Billing and Payments"
+       ],
+       "pred": "Customer Service",
+       "conf": 0.2035,
+       "probs": {
+        "Service Outages and Maintenance": 0.0345,
+        "Sales and Pre-Sales": 0.0815,
+        "IT Support": 0.0979,
+        "Technical Support": 0.1564,
+        "General Inquiry": 0.0313,
+        "Product Support": 0.1308,
+        "Returns and Exchanges": 0.0993,
+        "Human Resources": 0.0354,
+        "Customer Service": 0.2035,
+        "Billing and Payments": 0.1294
+       }
+      }
+     ]
+    }
+   ],
+   "questions_sha256": "8fadd3f6b2a4436087c97e0538a2d2f3a37e82051f090d83b19ee11868952a60",
+   "metrics": {
+    "n_items": 8,
+    "n_options": 10,
+    "permutations": 5,
+    "identity_permutations": 0,
+    "orig_accuracy": 0.25,
+    "flip_rate_per_perm": 0.1,
+    "flip_rate_per_perm_ci": [
+     0.0,
+     0.25
+    ],
+    "flip_rate_by_perm": [
+     0.0,
+     0.125,
+     0.125,
+     0.0,
+     0.25
+    ],
+    "any_flip_rate": 0.25,
+    "any_flip_rate_ci": [
+     0.0,
+     0.5
+    ],
+    "accuracy_by_perm": [
+     0.25,
+     0.25,
+     0.25,
+     0.25,
+     0.25
+    ],
+    "perm_accuracy_mean": 0.25,
+    "perm_accuracy_min": 0.25,
+    "perm_accuracy_max": 0.25,
+    "mean_abs_delta_answer_confidence": 0.03511499999999999,
+    "slots": {
+     "chosen_slot_share": [
+      0.15,
+      0.075,
+      0.05,
+      0.125,
+      0.1,
+      0.125,
+      0.05,
+      0.075,
+      0.125,
+      0.125
+     ],
+     "uniform": 0.1,
+     "chi2": 4.5,
+     "df": 9,
+     "p": 0.8755390252983378,
+     "accuracy_by_gold_slot": [
+      [
+       0.5,
+       4
+      ],
+      [
+       0.25,
+       4
+      ],
+      [
+       0.125,
+       8
+      ],
+      [
+       0.0,
+       3
+      ],
+      [
+       0.0,
+       1
+      ],
+      [
+       0.25,
+       4
+      ],
+      [
+       0.3333333333333333,
+       3
+      ],
+      [
+       0.0,
+       4
+      ],
+      [
+       0.4,
+       5
+      ],
+      [
+       0.5,
+       4
+      ]
+     ]
+    },
+    "pred_counts_orig": {
+     "Technical Support": 6,
+     "Product Support": 1,
+     "Customer Service": 1
+    },
+    "pred_counts_perm_mean": {
+     "Technical Support": 5.2,
+     "Customer Service": 1.2,
+     "Product Support": 1.0,
+     "IT Support": 0.6
+    },
+    "gold_counts": {
+     "IT Support": 5,
+     "Technical Support": 2,
+     "Product Support": 1
+    },
+    "by_gold": {
+     "IT Support": {
+      "n": 5,
+      "flip_rate_per_perm": 0.04,
+      "any_flip_rate": 0.2,
+      "orig_accuracy": 0.0,
+      "perm_accuracy": 0.0
+     },
+     "Product Support": {
+      "n": 1,
+      "flip_rate_per_perm": 0.6,
+      "any_flip_rate": 1.0,
+      "orig_accuracy": 0.0,
+      "perm_accuracy": 0.0
+     },
+     "Technical Support": {
+      "n": 2,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     }
+    },
+    "by_orig_pred": {
+     "Customer Service": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.0,
+      "perm_accuracy": 0.0
+     },
+     "Product Support": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.0,
+      "perm_accuracy": 0.0
+     },
+     "Technical Support": {
+      "n": 6,
+      "flip_rate_per_perm": 0.13333333333333333,
+      "any_flip_rate": 0.3333333333333333,
+      "orig_accuracy": 0.3333333333333333,
+      "perm_accuracy": 0.3333333333333333
+     }
+    },
+    "by_orig_conf": {
+     "[0.0, 0.5)": {
+      "n": 7,
+      "flip_rate_per_perm": 0.1142857142857143,
+      "any_flip_rate": 0.2857142857142857,
+      "orig_accuracy": 0.2857142857142857,
+      "perm_accuracy": 0.2857142857142857
+     },
+     "[0.5, 0.7)": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.0,
+      "perm_accuracy": 0.0
+     }
+    }
+   }
+  }
+ ]
+}

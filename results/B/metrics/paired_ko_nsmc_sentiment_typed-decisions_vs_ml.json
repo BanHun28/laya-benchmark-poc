@@ -1,0 +1,161 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/B/20261002-1656_typed-decisions_ko_nsmc_sentiment.json",
+   "results/B/20261002-1654_multilingual_ko_nsmc_sentiment.json",
+   "--out",
+   "results/B/metrics/paired_ko_nsmc_sentiment_typed-decisions_vs_ml.md",
+   "--json",
+   "results/B/metrics/paired_ko_nsmc_sentiment_typed-decisions_vs_ml.json"
+  ],
+  "generated_at": "2026-10-02T17:05:33+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1656_typed-decisions_ko_nsmc_sentiment.json",
+    "dataset": "data/evals/ko_nsmc_sentiment.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "68efeccdcbcc93d8856be721af93e4275e344293b00ef8eb6646b12e40639f1d",
+    "questions_sha256": "c76e85a04f5bbbc4d45f27a81ec2d7a6bdf76cfc958d27be0ef78c0f07668a98",
+    "revisions": {
+     "typed-decisions": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "typed-decisions",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 251,
+     "dev": 249
+    }
+   },
+   {
+    "report": "results/B/20261002-1654_multilingual_ko_nsmc_sentiment.json",
+    "dataset": "data/evals/ko_nsmc_sentiment.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "68efeccdcbcc93d8856be721af93e4275e344293b00ef8eb6646b12e40639f1d",
+    "questions_sha256": "c76e85a04f5bbbc4d45f27a81ec2d7a6bdf76cfc958d27be0ef78c0f07668a98",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 251,
+     "dev": 249
+    }
+   }
+  ]
+ },
+ "a": "results/B/20261002-1656_typed-decisions_ko_nsmc_sentiment.json",
+ "b": "results/B/20261002-1654_multilingual_ko_nsmc_sentiment.json",
+ "results": [
+  {
+   "qid": "sentiment_noul",
+   "split": "all",
+   "n": 500,
+   "acc_a": 0.532,
+   "acc_b": 0.638,
+   "delta": 0.106,
+   "delta_ci": [
+    0.05620180359892539,
+    0.15579819640107462
+   ],
+   "b": 57,
+   "c": 110,
+   "p": 5.002564263018995e-05,
+   "agreement": 0.666,
+   "same_state": 1.0
+  },
+  {
+   "qid": "sentiment_noul",
+   "split": "dev",
+   "n": 249,
+   "acc_a": 0.5381526104417671,
+   "acc_b": 0.6345381526104418,
+   "delta": 0.0963855421686747,
+   "delta_ci": [
+    0.024376826077325345,
+    0.16839425826002408
+   ],
+   "b": 31,
+   "c": 55,
+   "p": 0.012672513952314864,
+   "agreement": 0.6546184738955824,
+   "same_state": 1.0
+  },
+  {
+   "qid": "sentiment_noul",
+   "split": "test",
+   "n": 251,
+   "acc_a": 0.5258964143426295,
+   "acc_b": 0.6414342629482072,
+   "delta": 0.11553784860557768,
+   "delta_ci": [
+    0.046727872237452825,
+    0.18434782497370256
+   ],
+   "b": 26,
+   "c": 55,
+   "p": 0.001688638072721024,
+   "agreement": 0.6772908366533864,
+   "same_state": 1.0
+  },
+  {
+   "qid": "sentiment_choice",
+   "split": "all",
+   "n": 500,
+   "acc_a": 0.506,
+   "acc_b": 0.774,
+   "delta": 0.268,
+   "delta_ci": [
+    0.20802425620969758,
+    0.3279757437903024
+   ],
+   "b": 68,
+   "c": 202,
+   "p": 1.3235292214434794e-16,
+   "agreement": 0.46,
+   "same_state": 1.0
+  },
+  {
+   "qid": "sentiment_choice",
+   "split": "dev",
+   "n": 249,
+   "acc_a": 0.5220883534136547,
+   "acc_b": 0.7751004016064257,
+   "delta": 0.25301204819277107,
+   "delta_ci": [
+    0.16857765941427033,
+    0.3374464369712718
+   ],
+   "b": 34,
+   "c": 97,
+   "p": 3.321500013147584e-08,
+   "agreement": 0.4738955823293173,
+   "same_state": 1.0
+  },
+  {
+   "qid": "sentiment_choice",
+   "split": "test",
+   "n": 251,
+   "acc_a": 0.4900398406374502,
+   "acc_b": 0.7729083665338645,
+   "delta": 0.28286852589641437,
+   "delta_ci": [
+    0.19771490746661569,
+    0.36802214432621305
+   ],
+   "b": 34,
+   "c": 105,
+   "p": 1.2622956902102258e-09,
+   "agreement": 0.44621513944223107,
+   "same_state": 1.0
+  }
+ ]
+}

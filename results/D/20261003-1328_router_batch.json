@@ -1,0 +1,251 @@
+{
+ "run_card": {
+  "started_at": "2026-10-03 13:28:45 +0900",
+  "argv": [
+   "scripts/bench_batch_local.py",
+   "--router",
+   "--n",
+   "32",
+   "--devices",
+   "cpu,mps",
+   "--out",
+   "results/D/20261003-1328_router_batch.json"
+  ],
+  "laya": "0.3.23",
+  "torch": "2.14.1",
+  "transformers": "5.18.0",
+  "python": "3.12.12",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "threads_intra": 10,
+  "threads_interop": 1,
+  "checkpoint_sha": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+  "env_ref": "results/env/env_20261002-1333.json",
+  "env": {
+   "OMP_NUM_THREADS": "10",
+   "LAYA_MPS_AMP_MIN_ROWS": null,
+   "LAYA_CPU_AMP": null,
+   "LAYA_REVISION": "reviewed",
+   "HF_HUB_OFFLINE": null
+  },
+  "power": "Now drawing from 'AC Power'",
+  "uptime": "13:28  up 1 day,  5:35, 7 users, load averages: 2.16 4.03 4.45",
+  "git_sha": "n/a (not a git repo)",
+  "uptime_after": "13:29  up 1 day,  5:36, 7 users, load averages: 3.65 4.21 4.49"
+ },
+ "question_sha256": "e756e1901173d1a8b4f2178d659b8b9aae627fac2bd43b650dd701532e1ff8b3",
+ "states_sha256": {
+  "32": "8b953986edcdfe71889aa6c8a8a7d2d493acd1a87ad67de1401cb4fc9340d311"
+ },
+ "title": "D5 Router heterogeneous batch",
+ "rows": [
+  {
+   "device": "cpu",
+   "max_loaded": 1,
+   "mode": "loop",
+   "pass": 1,
+   "total_s": 9.233,
+   "loads": 32,
+   "evicts": 31,
+   "models": [
+    "english",
+    "multilingual"
+   ]
+  },
+  {
+   "device": "cpu",
+   "max_loaded": 1,
+   "mode": "loop",
+   "pass": 2,
+   "total_s": 6.645,
+   "loads": 32,
+   "evicts": 32,
+   "models": [
+    "english",
+    "multilingual"
+   ]
+  },
+  {
+   "device": "cpu",
+   "max_loaded": 1,
+   "mode": "batch",
+   "pass": 1,
+   "total_s": 1.657,
+   "loads": 2,
+   "evicts": 1,
+   "models": [
+    "english",
+    "multilingual"
+   ]
+  },
+  {
+   "device": "cpu",
+   "max_loaded": 1,
+   "mode": "batch",
+   "pass": 2,
+   "total_s": 1.694,
+   "loads": 2,
+   "evicts": 2,
+   "models": [
+    "english",
+    "multilingual"
+   ]
+  },
+  {
+   "device": "cpu",
+   "max_loaded": 2,
+   "mode": "loop",
+   "pass": 1,
+   "total_s": 2.646,
+   "loads": 2,
+   "evicts": 0,
+   "models": [
+    "english",
+    "multilingual"
+   ]
+  },
+  {
+   "device": "cpu",
+   "max_loaded": 2,
+   "mode": "loop",
+   "pass": 2,
+   "total_s": 2.487,
+   "loads": 0,
+   "evicts": 0,
+   "models": [
+    "english",
+    "multilingual"
+   ]
+  },
+  {
+   "device": "cpu",
+   "max_loaded": 2,
+   "mode": "batch",
+   "pass": 1,
+   "total_s": 1.576,
+   "loads": 2,
+   "evicts": 0,
+   "models": [
+    "english",
+    "multilingual"
+   ]
+  },
+  {
+   "device": "cpu",
+   "max_loaded": 2,
+   "mode": "batch",
+   "pass": 2,
+   "total_s": 1.373,
+   "loads": 0,
+   "evicts": 0,
+   "models": [
+    "english",
+    "multilingual"
+   ]
+  },
+  {
+   "device": "mps",
+   "max_loaded": 1,
+   "mode": "loop",
+   "pass": 1,
+   "total_s": 7.714,
+   "loads": 32,
+   "evicts": 31,
+   "models": [
+    "english",
+    "multilingual"
+   ]
+  },
+  {
+   "device": "mps",
+   "max_loaded": 1,
+   "mode": "loop",
+   "pass": 2,
+   "total_s": 7.546,
+   "loads": 32,
+   "evicts": 32,
+   "models": [
+    "english",
+    "multilingual"
+   ]
+  },
+  {
+   "device": "mps",
+   "max_loaded": 1,
+   "mode": "batch",
+   "pass": 1,
+   "total_s": 1.066,
+   "loads": 2,
+   "evicts": 1,
+   "models": [
+    "english",
+    "multilingual"
+   ]
+  },
+  {
+   "device": "mps",
+   "max_loaded": 1,
+   "mode": "batch",
+   "pass": 2,
+   "total_s": 1.141,
+   "loads": 2,
+   "evicts": 2,
+   "models": [
+    "english",
+    "multilingual"
+   ]
+  },
+  {
+   "device": "mps",
+   "max_loaded": 2,
+   "mode": "loop",
+   "pass": 1,
+   "total_s": 1.232,
+   "loads": 2,
+   "evicts": 0,
+   "models": [
+    "english",
+    "multilingual"
+   ]
+  },
+  {
+   "device": "mps",
+   "max_loaded": 2,
+   "mode": "loop",
+   "pass": 2,
+   "total_s": 0.944,
+   "loads": 0,
+   "evicts": 0,
+   "models": [
+    "english",
+    "multilingual"
+   ]
+  },
+  {
+   "device": "mps",
+   "max_loaded": 2,
+   "mode": "batch",
+   "pass": 1,
+   "total_s": 0.997,
+   "loads": 2,
+   "evicts": 0,
+   "models": [
+    "english",
+    "multilingual"
+   ]
+  },
+  {
+   "device": "mps",
+   "max_loaded": 2,
+   "mode": "batch",
+   "pass": 2,
+   "total_s": 0.71,
+   "loads": 0,
+   "evicts": 0,
+   "models": [
+    "english",
+    "multilingual"
+   ]
+  }
+ ],
+ "wall_s": 49.6
+}

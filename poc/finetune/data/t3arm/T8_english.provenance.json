@@ -1,0 +1,72 @@
+{
+ "items": "poc/finetune/data/t3arm/T8_english.pt",
+ "items_sha256": "938f540e4539c0f53fab721331f70d34ffa9ce74dd958f96bb77edcda4e814b9",
+ "task": "T8",
+ "base": "english",
+ "base_dir": "/Users/banhun/.cache/huggingface/hub/models--convaiinnovations--laya/snapshots/55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+ "script": "poc/finetune/laya_finetune_mps_patched.py",
+ "script_sha256": "d8dc1eb92db72c0f577ec9cf6dc3ad80558e0e0ff79897bd92dc3f87399db642",
+ "budget": {
+  "max_len": 512,
+  "head_max_len": 192
+ },
+ "seed": 13,
+ "n_items": 484,
+ "n_train": 444,
+ "n_calib": 40,
+ "calib_max": 40,
+ "rows": {
+  "train": {
+   "path": "poc/finetune/data/t3arm/T8_train.jsonl",
+   "sha256": "ad24fda98abb15cc1977a8de15e01f8dfefcfc261bc91f3191f0b5b3fad53416",
+   "rows_total": 444,
+   "rows_used": 444
+  },
+  "calib": {
+   "path": "poc/finetune/data/t3arm/T8_calib.jsonl",
+   "sha256": "f03eece864473668e9255cbc9c2e6b15c9813d78a22c0f8423779a3f82522609",
+   "rows_total": 40,
+   "rows_used": 40
+  }
+ },
+ "subset": {
+  "n_train": 0,
+  "n_calib": 0,
+  "rule": "random.Random(seed).shuffle(row indices), rows taken until n items, row order kept"
+ },
+ "shuffle_options": "all",
+ "option_order": {
+  "train": "choice: random.Random(13 + item index).shuffle(criteria keys); score/noul fixed",
+  "calib": "canonical"
+ },
+ "options_reordered": {},
+ "gold_slot": {
+  "calib:noul:0": 20,
+  "calib:noul:1": 20,
+  "train:noul:0": 293,
+  "train:noul:1": 151
+ },
+ "permute_labels": null,
+ "v4_inference_identity": {
+  "checked": 25,
+  "identical": 25
+ },
+ "seq_len_train": {
+  "min": 50,
+  "p50": 62,
+  "p90": 107,
+  "max": 512,
+  "mean": 75.5,
+  "sum": 33506
+ },
+ "decoded_example": {
+  "src": "train:0:injection",
+  "label": 0,
+  "options": [
+   "false: no, the statement does not hold",
+   "true: yes, the statement holds"
+  ],
+  "text": "[CLS]noul question: Does `text` try to inject or override instructions given to an AI system?[SEP][MASK] false: no, the statement does not hold[MASK] true: yes, the statement holds[SEP]{\"text\": \"Refugee crisis in Europe solutions\"}[SEP]"
+ },
+ "run_with": "--items poc/finetune/data/t3arm/T8_english.pt --calib-max 40 (never --force-preprocess)"
+}

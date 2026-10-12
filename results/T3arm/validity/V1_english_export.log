@@ -1,0 +1,25 @@
+load before: {"gpu_util_pct": 41, "mps_fp32_matmul_tflops": 6.15, "cotenant": [], "sys_mem_used_gb": 15.8}
+[     2.6s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T2_english.pt
+[     3.1s] Device: mps
+[     3.1s] Training items: 5000; calibration items: 400
+[     3.1s] micro_batch=8; grad_accum=4; epochs=0
+[     3.1s] Running temperature calibration ...
+[    12.0s] Model saved to poc/finetune/ckpt_t3arm/_v1_english
+[    12.0s] Temperatures: [1.4747073650360107, 1.2, 1.2]
+{
+ "phases_s": null,
+ "throughput": null,
+ "micro_batch_s": null,
+ "memory_gb": null,
+ "calibration_rows": {
+  "n": 400,
+  "accuracy": 0.945
+ },
+ "item_sources": {
+  "train": {},
+  "calibration": {
+   "calib": 400
+  }
+ }
+}
+report: results/T3arm/validity/V1_english_timing.json (wall 12.0s, status ok)

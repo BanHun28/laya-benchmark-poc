@@ -1,0 +1,72 @@
+{
+ "items": "poc/finetune/data/t3arm/T9_english.pt",
+ "items_sha256": "325fc050e7ae995d23d1727f7bd2a274c99fa816bc03c4f233e713a5ddd7e9ad",
+ "task": "T9",
+ "base": "english",
+ "base_dir": "/Users/banhun/.cache/huggingface/hub/models--convaiinnovations--laya/snapshots/55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+ "script": "poc/finetune/laya_finetune_mps_patched.py",
+ "script_sha256": "d8dc1eb92db72c0f577ec9cf6dc3ad80558e0e0ff79897bd92dc3f87399db642",
+ "budget": {
+  "max_len": 512,
+  "head_max_len": 192
+ },
+ "seed": 13,
+ "n_items": 5400,
+ "n_train": 5000,
+ "n_calib": 400,
+ "calib_max": 400,
+ "rows": {
+  "train": {
+   "path": "poc/finetune/data/t3arm/T9_train.jsonl",
+   "sha256": "738176915b40568ce8489b793c9862ff4ea12a82aacfe8caab34328002064aeb",
+   "rows_total": 5000,
+   "rows_used": 5000
+  },
+  "calib": {
+   "path": "poc/finetune/data/t3arm/T9_calib.jsonl",
+   "sha256": "a702af7d9ef8de9a98775db984cb029fd721fba62ea169c88a23e40fe8893003",
+   "rows_total": 400,
+   "rows_used": 400
+  }
+ },
+ "subset": {
+  "n_train": 0,
+  "n_calib": 0,
+  "rule": "random.Random(seed).shuffle(row indices), rows taken until n items, row order kept"
+ },
+ "shuffle_options": "all",
+ "option_order": {
+  "train": "choice: random.Random(13 + item index).shuffle(criteria keys); score/noul fixed",
+  "calib": "canonical"
+ },
+ "options_reordered": {},
+ "gold_slot": {
+  "calib:noul:0": 200,
+  "calib:noul:1": 200,
+  "train:noul:0": 2500,
+  "train:noul:1": 2500
+ },
+ "permute_labels": null,
+ "v4_inference_identity": {
+  "checked": 25,
+  "identical": 25
+ },
+ "seq_len_train": {
+  "min": 50,
+  "p50": 203,
+  "p90": 451,
+  "max": 512,
+  "mean": 236.3,
+  "sum": 1181590
+ },
+ "decoded_example": {
+  "src": "train:0:is_spam",
+  "label": 0,
+  "options": [
+   "false: no, the statement does not hold",
+   "true: yes, the statement holds"
+  ],
+  "text": "[CLS]noul question: Is this email unsolicited spam or bulk marketing?[SEP][MASK] false: no, the statement does not hold[MASK] true: yes, the statement holds[SEP]{\"subject\": \"agenda for prc committee meeting - 30 may 2001\", \"body\": \"all :\\nattached please find a copy of the agenda for tomorrow ' s prc committee meeting . please don ' t hesitate to contact me should you have questions . thanks in advance ,\\ngina corteselli\"}[SEP]"
+ },
+ "run_with": "--items poc/finetune/data/t3arm/T9_english.pt --calib-max 400 (never --force-preprocess)"
+}

@@ -1,0 +1,66 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "parity",
+   "results/B/20261002-1647_multilingual_ko_massive_scenario_18.json",
+   "results/B/20261002-1648_router_ko_massive_scenario_18.json",
+   "--out",
+   "results/B/metrics/parity_ko_massive_scenario_18_router.md",
+   "--json",
+   "results/B/metrics/parity_ko_massive_scenario_18_router.json"
+  ],
+  "generated_at": "2026-10-02T17:05:32+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1647_multilingual_ko_massive_scenario_18.json",
+    "dataset": "data/evals/ko_massive_scenario_18.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "28694e08bfed61ee6e4cf5a02bb024c33ffb7c3228012267d4a022f3de0ac03e",
+    "questions_sha256": "7bf1c9b1b314f6bdd03e49cbcd471106c2a7209c06407698e82bcdb182f30a44",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 100,
+    "split_rows": {
+     "test": 51,
+     "dev": 49
+    }
+   },
+   {
+    "report": "results/B/20261002-1648_router_ko_massive_scenario_18.json",
+    "dataset": "data/evals/ko_massive_scenario_18.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "28694e08bfed61ee6e4cf5a02bb024c33ffb7c3228012267d4a022f3de0ac03e",
+    "questions_sha256": "7bf1c9b1b314f6bdd03e49cbcd471106c2a7209c06407698e82bcdb182f30a44",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "router (auto)",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 100,
+    "split_rows": {
+     "test": 51,
+     "dev": 49
+    }
+   }
+  ]
+ },
+ "reference": "results/B/20261002-1647_multilingual_ko_massive_scenario_18.json",
+ "results": [
+  {
+   "other": "results/B/20261002-1648_router_ko_massive_scenario_18.json",
+   "n": 100,
+   "agreement": 1.0,
+   "flips": 0,
+   "max_abs_dp": 0.0,
+   "mean_abs_dconf": 0.0
+  }
+ ]
+}

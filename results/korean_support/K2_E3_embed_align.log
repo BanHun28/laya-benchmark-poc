@@ -1,0 +1,7 @@
+| checkpoint | ko→en P@1 strict / dup-aware | ko→en P@5 | en→ko P@1 strict / dup-aware | en→ko P@5 | median rank ko→en / en→ko | mean cos true | mean cos random (sd) | gap (in random sd) |
+|---|---|---|---|---|---|---|---|---|
+| multilingual | 0.19 / 0.19 | 0.43 | 0.31 / 0.32 | 0.45 | 9 / 8 | 0.737 | 0.642 (0.135) | 0.095 (0.7) |
+| english | 0.03 / 0.03 | 0.07 | 0.01 / 0.01 | 0.07 | 46 / 46 | 0.800 | 0.794 (0.072) | 0.005 (0.1) |
+multilingual dim 768 load_s 3.34 embed_s 0.53 tokens {"ko": {"mean_tokens": 8.7, "unk_share": 0.0}, "en": {"mean_tokens": 5.96, "unk_share": 0.0}} ko-ko offdiag 0.705 en-en offdiag 0.635 P@5 dup-aware ko→en 0.44 en→ko 0.45 true pair is row+col max: 15/100
+english dim 1024 load_s 0.22 embed_s 1.93 tokens {"ko": {"mean_tokens": 20.35, "unk_share": 0.0}, "en": {"mean_tokens": 6.04, "unk_share": 0.0}} ko-ko offdiag 0.936 en-en offdiag 0.802 P@5 dup-aware ko→en 0.07 en→ko 0.07 true pair is row+col max: 0/100
+WARNING english /Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/laya/agent.py:1869: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.

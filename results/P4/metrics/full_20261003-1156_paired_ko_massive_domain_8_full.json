@@ -1,0 +1,78 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/P4/full_20261003-1156_multilingual_ko_massive_domain_8_full.json",
+   "results/P4/full_20261003-1156_ft-v1_ko_massive_domain_8_full.json",
+   "--split",
+   "all",
+   "--out",
+   "results/P4/metrics/full_20261003-1156_paired_ko_massive_domain_8_full.md",
+   "--json",
+   "results/P4/metrics/full_20261003-1156_paired_ko_massive_domain_8_full.json"
+  ],
+  "generated_at": "2026-10-03T12:40:28+0900",
+  "reports": [
+   {
+    "report": "results/P4/full_20261003-1156_multilingual_ko_massive_domain_8_full.json",
+    "dataset": "results/P4/evalsets_full/ko_massive_domain_8.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "e5fc26498e836cda5660f73b24d9a10d2eae04193d77ac86a4394c758eb09bf9",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 2917,
+    "split_rows": {
+     "dev": 1459,
+     "test": 1458
+    }
+   },
+   {
+    "report": "results/P4/full_20261003-1156_ft-v1_ko_massive_domain_8_full.json",
+    "dataset": "results/P4/evalsets_full/ko_massive_domain_8.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "e5fc26498e836cda5660f73b24d9a10d2eae04193d77ac86a4394c758eb09bf9",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "ft-v1": "local:poc/finetune/ckpt_domain8_v1 (base 55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851)"
+    },
+    "model": "ft-v1",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 2917,
+    "split_rows": {
+     "dev": 1459,
+     "test": 1458
+    }
+   }
+  ]
+ },
+ "a": "results/P4/full_20261003-1156_multilingual_ko_massive_domain_8_full.json",
+ "b": "results/P4/full_20261003-1156_ft-v1_ko_massive_domain_8_full.json",
+ "results": [
+  {
+   "qid": "domain",
+   "split": "all",
+   "n": 2917,
+   "acc_a": 0.47514569763455605,
+   "acc_b": 0.9129242372300308,
+   "delta": 0.4377785395954748,
+   "delta_ci": [
+    0.41872674019893846,
+    0.45683033899201114
+   ],
+   "b": 43,
+   "c": 1320,
+   "p": 0.0,
+   "agreement": 0.49160095989029823,
+   "same_state": 1.0
+  }
+ ]
+}

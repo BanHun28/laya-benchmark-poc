@@ -1,0 +1,1637 @@
+{
+ "laya_version": "0.3.23",
+ "n_cases": 46,
+ "rows": [
+  {
+   "group": "pure_ko",
+   "label": "long request",
+   "state": "같은 달 요금이 두 번 빠져나갔어요. 중복 결제된 금액 환불 부탁드립니다.",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 1.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 29,
+    "latin_letters": 0,
+    "han_letters": 0,
+    "all_letters": 29,
+    "hangul_share": 1.0,
+    "non_latin_words": [
+     "같은",
+     "요금이",
+     "빠져나갔어요",
+     "중복",
+     "결제된",
+     "금액",
+     "환불",
+     "부탁드립니다"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "pure_ko",
+   "label": "short complaint",
+   "state": "앱이 자꾸 튕겨요",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 1.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 7,
+    "latin_letters": 0,
+    "han_letters": 0,
+    "all_letters": 7,
+    "hangul_share": 1.0,
+    "non_latin_words": [
+     "앱이",
+     "자꾸",
+     "튕겨요"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "pure_ko",
+   "label": "login",
+   "state": "로그인이 안 돼요. 비밀번호를 바꿨는데도 계속 오류가 납니다.",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 1.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 25,
+    "latin_letters": 0,
+    "han_letters": 0,
+    "all_letters": 25,
+    "hangul_share": 1.0,
+    "non_latin_words": [
+     "로그인이",
+     "돼요",
+     "비밀번호를",
+     "바꿨는데도",
+     "계속",
+     "오류가",
+     "납니다"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "pure_ko",
+   "label": "dict state",
+   "state": {
+    "message": "다음 달부터 요금제를 해지하고 싶습니다."
+   },
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 1.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 17,
+    "latin_letters": 0,
+    "han_letters": 0,
+    "all_letters": 17,
+    "hangul_share": 1.0,
+    "non_latin_words": [
+     "다음",
+     "달부터",
+     "요금제를",
+     "해지하고",
+     "싶습니다"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "pure_ko",
+   "label": "NFD (decomposed jamo)",
+   "state": "환불해 주세요",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 1.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 14,
+    "latin_letters": 0,
+    "han_letters": 0,
+    "all_letters": 14,
+    "hangul_share": 1.0,
+    "non_latin_words": [
+     "환불해",
+     "주세요"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "ko_en_terms",
+   "label": "API + status code",
+   "state": "결제 API가 500 에러를 냅니다",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 0.75,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 9,
+    "latin_letters": 3,
+    "han_letters": 0,
+    "all_letters": 12,
+    "hangul_share": 0.75,
+    "non_latin_words": [
+     "결제",
+     "에러를",
+     "냅니다"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 75% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 75% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "ko_en_terms",
+   "label": "OAuth error",
+   "state": "로그인 시 OAuth redirect_uri mismatch 에러가 발생합니다",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 0.3333,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 12,
+    "latin_letters": 24,
+    "han_letters": 0,
+    "all_letters": 36,
+    "hangul_share": 0.3333,
+    "non_latin_words": [
+     "로그인",
+     "에러가",
+     "발생합니다"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 33% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 33% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "ko_en_terms",
+   "label": "Stripe webhook",
+   "state": "Stripe webhook이 timeout 나요",
+   "want": "multilingual",
+   "analyse": {
+    "script": "latin",
+    "language": null,
+    "is_english": true,
+    "language_undecided": true,
+    "non_latin_fraction": 0.1304,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 3,
+    "latin_letters": 20,
+    "han_letters": 0,
+    "all_letters": 23,
+    "hangul_share": 0.1304,
+    "non_latin_words": [
+     "나요"
+    ]
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "Latin script, language not identified and no non-English letters; using default (english)"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "Latin script, language not identified and no non-English letters; using default (multilingual)"
+   },
+   "verdict": "FAIL with stock default (ok with default=multilingual)"
+  },
+  {
+   "group": "ko_en_terms",
+   "label": "Kubernetes",
+   "state": "Kubernetes pod가 CrashLoopBackOff 상태예요",
+   "want": "multilingual",
+   "analyse": {
+    "script": "latin",
+    "language": null,
+    "is_english": true,
+    "language_undecided": true,
+    "non_latin_fraction": 0.1471,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 5,
+    "latin_letters": 29,
+    "han_letters": 0,
+    "all_letters": 34,
+    "hangul_share": 0.1471,
+    "non_latin_words": [
+     "상태예요"
+    ]
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "Latin script, language not identified and no non-English letters; using default (english)"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "Latin script, language not identified and no non-English letters; using default (multilingual)"
+   },
+   "verdict": "FAIL with stock default (ok with default=multilingual)"
+  },
+  {
+   "group": "ko_en_terms",
+   "label": "AWS S3",
+   "state": "AWS S3 bucket policy 설정 문의드립니다",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 0.3333,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 8,
+    "latin_letters": 16,
+    "han_letters": 0,
+    "all_letters": 24,
+    "hangul_share": 0.3333,
+    "non_latin_words": [
+     "설정",
+     "문의드립니다"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 33% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 33% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "ko_en_terms",
+   "label": "product name",
+   "state": "iPhone 15 Pro Max 환불",
+   "want": "multilingual",
+   "analyse": {
+    "script": "latin",
+    "language": null,
+    "is_english": true,
+    "language_undecided": true,
+    "non_latin_fraction": 0.1429,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 2,
+    "latin_letters": 12,
+    "han_letters": 0,
+    "all_letters": 14,
+    "hangul_share": 0.1429,
+    "non_latin_words": [
+     "환불"
+    ]
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "Latin script, language not identified and no non-English letters; using default (english)"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "Latin script, language not identified and no non-English letters; using default (multilingual)"
+   },
+   "verdict": "FAIL with stock default (ok with default=multilingual)"
+  },
+  {
+   "group": "ko_en_terms",
+   "label": "brand (upstream test)",
+   "state": "Samsung Galaxy 주문이 아직 안 왔어요",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 0.4091,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 9,
+    "latin_letters": 13,
+    "han_letters": 0,
+    "all_letters": 22,
+    "hangul_share": 0.4091,
+    "non_latin_words": [
+     "주문이",
+     "아직",
+     "왔어요"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 41% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 41% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "ko_en_terms",
+   "label": "pasted JS error",
+   "state": "TypeError: Cannot read properties of undefined (reading 'map') 이 에러 왜 나요?",
+   "want": "multilingual",
+   "analyse": {
+    "script": "latin",
+    "language": "en",
+    "is_english": true,
+    "language_undecided": false,
+    "non_latin_fraction": 0.1071,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 6,
+    "latin_letters": 50,
+    "han_letters": 0,
+    "all_letters": 56,
+    "hangul_share": 0.1071,
+    "non_latin_words": [
+     "에러",
+     "나요"
+    ]
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "route_default_multilingual": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "verdict": "FAIL"
+  },
+  {
+   "group": "ko_num_email_url",
+   "label": "order number",
+   "state": "주문번호 20231005-77 확인 부탁드려요",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 1.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 11,
+    "latin_letters": 0,
+    "han_letters": 0,
+    "all_letters": 11,
+    "hangul_share": 1.0,
+    "non_latin_words": [
+     "주문번호",
+     "확인",
+     "부탁드려요"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "ko_num_email_url",
+   "label": "phone number",
+   "state": "010-1234-5678로 연락 주세요",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 1.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 6,
+    "latin_letters": 0,
+    "han_letters": 0,
+    "all_letters": 6,
+    "hangul_share": 1.0,
+    "non_latin_words": [
+     "연락",
+     "주세요"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "ko_num_email_url",
+   "label": "email address",
+   "state": "kim.minsu@example.co.kr 로 영수증 보내주세요",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 0.3214,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 9,
+    "latin_letters": 19,
+    "han_letters": 0,
+    "all_letters": 28,
+    "hangul_share": 0.3214,
+    "non_latin_words": [
+     "영수증",
+     "보내주세요"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 32% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 32% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "ko_num_email_url",
+   "label": "receipt URL",
+   "state": "영수증: https://billing.example.com/invoices/INV-2024-000123/download?format=pdf",
+   "want": "multilingual",
+   "analyse": {
+    "script": "latin",
+    "language": null,
+    "is_english": true,
+    "language_undecided": true,
+    "non_latin_fraction": 0.0566,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 3,
+    "latin_letters": 50,
+    "han_letters": 0,
+    "all_letters": 53,
+    "hangul_share": 0.0566,
+    "non_latin_words": [
+     "영수증"
+    ]
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "Latin script, language not identified and no non-English letters; using default (english)"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "Latin script, language not identified and no non-English letters; using default (multilingual)"
+   },
+   "verdict": "FAIL with stock default (ok with default=multilingual)"
+  },
+  {
+   "group": "ko_num_email_url",
+   "label": "refund + URL",
+   "state": "환불 요청: https://shop.example.com/orders/ABCD-1234?ref=newsletter",
+   "want": "multilingual",
+   "analyse": {
+    "script": "latin",
+    "language": null,
+    "is_english": true,
+    "language_undecided": true,
+    "non_latin_fraction": 0.087,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 4,
+    "latin_letters": 42,
+    "han_letters": 0,
+    "all_letters": 46,
+    "hangul_share": 0.087,
+    "non_latin_words": [
+     "환불",
+     "요청"
+    ]
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "Latin script, language not identified and no non-English letters; using default (english)"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "Latin script, language not identified and no non-English letters; using default (multilingual)"
+   },
+   "verdict": "FAIL with stock default (ok with default=multilingual)"
+  },
+  {
+   "group": "mostly_en",
+   "label": "thanks in Korean",
+   "state": "Please check my order, 감사합니다",
+   "want": "either",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 0.2174,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 5,
+    "latin_letters": 18,
+    "han_letters": 0,
+    "all_letters": 23,
+    "hangul_share": 0.2174,
+    "non_latin_words": [
+     "감사합니다"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 22% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 22% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok (either)"
+  },
+  {
+   "group": "mostly_en",
+   "label": "one Korean noun",
+   "state": "I was charged twice for my subscription, 환불 please",
+   "want": "either",
+   "analyse": {
+    "script": "latin",
+    "language": "en",
+    "is_english": true,
+    "language_undecided": false,
+    "non_latin_fraction": 0.0488,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 2,
+    "latin_letters": 39,
+    "han_letters": 0,
+    "all_letters": 41,
+    "hangul_share": 0.0488,
+    "non_latin_words": [
+     "환불"
+    ]
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "route_default_multilingual": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "verdict": "ok (either)"
+  },
+  {
+   "group": "mostly_en",
+   "label": "Korean key term",
+   "state": "Hi team, the 정산 report for March is wrong",
+   "want": "either",
+   "analyse": {
+    "script": "latin",
+    "language": "en",
+    "is_english": true,
+    "language_undecided": false,
+    "non_latin_fraction": 0.0625,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 2,
+    "latin_letters": 30,
+    "han_letters": 0,
+    "all_letters": 32,
+    "hangul_share": 0.0625,
+    "non_latin_words": [
+     "정산"
+    ]
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "route_default_multilingual": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "verdict": "ok (either)"
+  },
+  {
+   "group": "mostly_en",
+   "label": "one Korean word, short",
+   "state": "The 결제 failed again",
+   "want": "either",
+   "analyse": {
+    "script": "latin",
+    "language": "en",
+    "is_english": true,
+    "language_undecided": false,
+    "non_latin_fraction": 0.125,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 2,
+    "latin_letters": 14,
+    "han_letters": 0,
+    "all_letters": 16,
+    "hangul_share": 0.125,
+    "non_latin_words": [
+     "결제"
+    ]
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "route_default_multilingual": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "verdict": "ok (either)"
+  },
+  {
+   "group": "romanized",
+   "label": "romanized 1",
+   "state": "gyeoljega du beon dwaesseoyo",
+   "want": "either",
+   "analyse": {
+    "script": "latin",
+    "language": null,
+    "is_english": true,
+    "language_undecided": true,
+    "non_latin_fraction": 0.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 0,
+    "latin_letters": 25,
+    "han_letters": 0,
+    "all_letters": 25,
+    "hangul_share": 0.0,
+    "non_latin_words": []
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "Latin script, language not identified and no non-English letters; using default (english)"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "Latin script, language not identified and no non-English letters; using default (multilingual)"
+   },
+   "verdict": "default-dependent"
+  },
+  {
+   "group": "romanized",
+   "label": "romanized 2",
+   "state": "hwanbul hae juseyo",
+   "want": "either",
+   "analyse": {
+    "script": "latin",
+    "language": null,
+    "is_english": true,
+    "language_undecided": true,
+    "non_latin_fraction": 0.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 0,
+    "latin_letters": 16,
+    "han_letters": 0,
+    "all_letters": 16,
+    "hangul_share": 0.0,
+    "non_latin_words": []
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "Latin script, language not identified and no non-English letters; using default (english)"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "Latin script, language not identified and no non-English letters; using default (multilingual)"
+   },
+   "verdict": "default-dependent"
+  },
+  {
+   "group": "romanized",
+   "label": "romanized 3",
+   "state": "annyeonghaseyo, jumun beonho hwagin buthakdeuryeoyo",
+   "want": "either",
+   "analyse": {
+    "script": "latin",
+    "language": null,
+    "is_english": true,
+    "language_undecided": true,
+    "non_latin_fraction": 0.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 0,
+    "latin_letters": 46,
+    "han_letters": 0,
+    "all_letters": 46,
+    "hangul_share": 0.0,
+    "non_latin_words": []
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "Latin script, language not identified and no non-English letters; using default (english)"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "Latin script, language not identified and no non-English letters; using default (multilingual)"
+   },
+   "verdict": "default-dependent"
+  },
+  {
+   "group": "emoji_chat",
+   "label": "Korean + emoji",
+   "state": "환불해주세요 😡😡",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 1.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 6,
+    "latin_letters": 0,
+    "han_letters": 0,
+    "all_letters": 6,
+    "hangul_share": 1.0,
+    "non_latin_words": [
+     "환불해주세요"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "emoji_chat",
+   "label": "jamo crying",
+   "state": "ㅠㅠ",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 1.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 2,
+    "latin_letters": 0,
+    "han_letters": 0,
+    "all_letters": 2,
+    "hangul_share": 1.0,
+    "non_latin_words": [
+     "ㅠㅠ"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "emoji_chat",
+   "label": "jamo laugh + ok",
+   "state": "ㅋㅋㅋ ok",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 0.6,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 3,
+    "latin_letters": 2,
+    "han_letters": 0,
+    "all_letters": 5,
+    "hangul_share": 0.6,
+    "non_latin_words": [
+     "ㅋㅋㅋ"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 60% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 60% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "emoji_chat",
+   "label": "emoji only (control)",
+   "state": "😡😡😡",
+   "want": "either",
+   "analyse": {
+    "script": "unknown",
+    "language": null,
+    "is_english": true,
+    "language_undecided": true,
+    "non_latin_fraction": 0.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 0,
+    "latin_letters": 0,
+    "han_letters": 0,
+    "all_letters": 0,
+    "hangul_share": 0.0,
+    "non_latin_words": []
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "no letters detected in state; using default (english)"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "no letters detected in state; using default (multilingual)"
+   },
+   "verdict": "default-dependent"
+  },
+  {
+   "group": "very_short",
+   "label": "two syllables",
+   "state": "환불",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 1.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 2,
+    "latin_letters": 0,
+    "han_letters": 0,
+    "all_letters": 2,
+    "hangul_share": 1.0,
+    "non_latin_words": [
+     "환불"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "very_short",
+   "label": "jamo abbreviation",
+   "state": "ㅇㅋ",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 1.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 2,
+    "latin_letters": 0,
+    "han_letters": 0,
+    "all_letters": 2,
+    "hangul_share": 1.0,
+    "non_latin_words": [
+     "ㅇㅋ"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "very_short",
+   "label": "one syllable",
+   "state": "네",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 1.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 1,
+    "latin_letters": 0,
+    "han_letters": 0,
+    "all_letters": 1,
+    "hangul_share": 1.0,
+    "non_latin_words": []
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "very_short",
+   "label": "one syllable + OK",
+   "state": "네 OK",
+   "want": "multilingual",
+   "analyse": {
+    "script": "latin",
+    "language": null,
+    "is_english": true,
+    "language_undecided": true,
+    "non_latin_fraction": 0.3333,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 1,
+    "latin_letters": 2,
+    "han_letters": 0,
+    "all_letters": 3,
+    "hangul_share": 0.3333,
+    "non_latin_words": []
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "Latin script, language not identified and no non-English letters; using default (english)"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "Latin script, language not identified and no non-English letters; using default (multilingual)"
+   },
+   "verdict": "FAIL with stock default (ok with default=multilingual)"
+  },
+  {
+   "group": "very_short",
+   "label": "OK + two syllables (tie)",
+   "state": "OK 감사",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 0.5,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 2,
+    "latin_letters": 2,
+    "han_letters": 0,
+    "all_letters": 4,
+    "hangul_share": 0.5,
+    "non_latin_words": [
+     "감사"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 50% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 50% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "hanja_mixed",
+   "label": "headline, 2 Hanja",
+   "state": "北 미사일 발사에 美 강력 규탄",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 1.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 10,
+    "latin_letters": 0,
+    "han_letters": 2,
+    "all_letters": 12,
+    "hangul_share": 0.8333,
+    "non_latin_words": [
+     "미사일",
+     "발사에",
+     "강력",
+     "규탄"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "hanja_mixed",
+   "label": "headline, Hanja abbreviations",
+   "state": "與野, 추경 합의 불발",
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 1.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 6,
+    "latin_letters": 0,
+    "han_letters": 2,
+    "all_letters": 8,
+    "hangul_share": 0.75,
+    "non_latin_words": [
+     "與野",
+     "추경",
+     "합의",
+     "불발"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "hanja_mixed",
+   "label": "Hanja only (Korean)",
+   "state": "大韓民國 憲法 第1條",
+   "want": "multilingual",
+   "analyse": {
+    "script": "han",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 1.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 0,
+    "latin_letters": 0,
+    "han_letters": 8,
+    "all_letters": 8,
+    "hangul_share": 0.0,
+    "non_latin_words": [
+     "大韓民國",
+     "憲法"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (han, 100% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (han, 100% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "structured",
+   "label": "dict: EN wrapper + 5-syllable message",
+   "state": {
+    "ticket_id": "TCK-88213",
+    "channel": "web chat",
+    "agent_notes": "Customer asked about a delayed order. Please check shipping status.",
+    "message": "환불해 주세요"
+   },
+   "want": "multilingual",
+   "analyse": {
+    "script": "latin",
+    "language": "en",
+    "is_english": true,
+    "language_undecided": false,
+    "non_latin_fraction": 0.0833,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 6,
+    "latin_letters": 66,
+    "han_letters": 0,
+    "all_letters": 72,
+    "hangul_share": 0.0833,
+    "non_latin_words": [
+     "환불해",
+     "주세요"
+    ]
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "route_default_multilingual": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "verdict": "FAIL"
+  },
+  {
+   "group": "structured",
+   "label": "dict: EN wrapper + 19-syllable message",
+   "state": {
+    "ticket_id": "TCK-88213",
+    "channel": "web chat",
+    "agent_notes": "Customer asked about a delayed order. Please check shipping status.",
+    "message": "주문한 지 2주가 지났는데 아직 배송이 안 됐어요"
+   },
+   "want": "multilingual",
+   "analyse": {
+    "script": "hangul",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 0.2235,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 19,
+    "latin_letters": 66,
+    "han_letters": 0,
+    "all_letters": 85,
+    "hangul_share": 0.2235,
+    "non_latin_words": [
+     "주문한",
+     "주가",
+     "지났는데",
+     "아직",
+     "배송이",
+     "됐어요"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 22% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (hangul, 22% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "structured",
+   "label": "turns: EN agent + short KO user",
+   "state": [
+    {
+     "role": "agent",
+     "text": "Hello! Thanks for contacting support. How can I help you today?"
+    },
+    {
+     "role": "user",
+     "text": "환불 부탁드려요"
+    }
+   ],
+   "want": "multilingual",
+   "analyse": {
+    "script": "latin",
+    "language": "en",
+    "is_english": true,
+    "language_undecided": false,
+    "non_latin_fraction": 0.1061,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 7,
+    "latin_letters": 59,
+    "han_letters": 0,
+    "all_letters": 66,
+    "hangul_share": 0.1061,
+    "non_latin_words": [
+     "환불",
+     "부탁드려요"
+    ]
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "route_default_multilingual": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "verdict": "FAIL"
+  },
+  {
+   "group": "structured",
+   "label": "plain string: long EN template + 19-syllable KO",
+   "state": "Ticket #4411\nChannel: web chat\nAgent notes: Customer asked about a delayed order. Please check the shipping status with the carrier, confirm the delivery address on file, and reply to the customer within 24 hours with the tracking number and a short apology for the delay.\nCustomer message: 주문한 지 2주가 지났는데 아직 배송이 안 됐어요",
+   "want": "multilingual",
+   "analyse": {
+    "script": "latin",
+    "language": "en",
+    "is_english": true,
+    "language_undecided": false,
+    "non_latin_fraction": 0.0766,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 19,
+    "latin_letters": 229,
+    "han_letters": 0,
+    "all_letters": 248,
+    "hangul_share": 0.0766,
+    "non_latin_words": [
+     "주문한",
+     "주가",
+     "지났는데",
+     "아직",
+     "배송이",
+     "됐어요"
+    ]
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "route_default_multilingual": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "verdict": "FAIL"
+  },
+  {
+   "group": "structured",
+   "label": "same content as dict",
+   "state": {
+    "ticket": "Ticket #4411\nChannel: web chat\nAgent notes: Customer asked about a delayed order. Please check the shipping status with the carrier, confirm the delivery address on file, and reply to the customer within 24 hours with the tracking number and a short apology for the delay.\nCustomer message",
+    "customer_message": "주문한 지 2주가 지났는데 아직 배송이 안 됐어요"
+   },
+   "want": "multilingual",
+   "analyse": {
+    "script": "latin",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 0.0766,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 19,
+    "latin_letters": 229,
+    "han_letters": 0,
+    "all_letters": 248,
+    "hangul_share": 0.0766,
+    "non_latin_words": [
+     "주문한",
+     "주가",
+     "지났는데",
+     "아직",
+     "배송이",
+     "됐어요"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "Latin script, language not identified but 0% non-English letters; not safe for the English checkpoint"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "Latin script, language not identified but 0% non-English letters; not safe for the English checkpoint"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "structured",
+   "label": "Korean keys, English values",
+   "state": {
+    "고객_메시지": "Please cancel my plan"
+   },
+   "want": "english",
+   "analyse": {
+    "script": "latin",
+    "language": "en",
+    "is_english": true,
+    "language_undecided": false,
+    "non_latin_fraction": 0.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 0,
+    "latin_letters": 18,
+    "han_letters": 0,
+    "all_letters": 18,
+    "hangul_share": 0.0,
+    "non_latin_words": []
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "route_default_multilingual": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "control",
+   "label": "Japanese",
+   "state": "二重に請求されました。返金をお願いします。",
+   "want": "multilingual",
+   "analyse": {
+    "script": "kana",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 1.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 0,
+    "latin_letters": 0,
+    "han_letters": 7,
+    "all_letters": 19,
+    "hangul_share": 0.0,
+    "non_latin_words": [
+     "二重",
+     "請求",
+     "されました",
+     "返金",
+     "をお",
+     "いします"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (kana, 100% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (kana, 100% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "control",
+   "label": "Chinese",
+   "state": "客户被重复扣款要求退款",
+   "want": "multilingual",
+   "analyse": {
+    "script": "han",
+    "language": null,
+    "is_english": false,
+    "language_undecided": true,
+    "non_latin_fraction": 1.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 0,
+    "latin_letters": 0,
+    "han_letters": 11,
+    "all_letters": 11,
+    "hangul_share": 0.0,
+    "non_latin_words": [
+     "客户被重复扣款要求退款"
+    ]
+   },
+   "route_default_english": {
+    "model": "multilingual",
+    "reason": "non-Latin script (han, 100% of letters); the English checkpoint cannot read it"
+   },
+   "route_default_multilingual": {
+    "model": "multilingual",
+    "reason": "non-Latin script (han, 100% of letters); the English checkpoint cannot read it"
+   },
+   "verdict": "ok"
+  },
+  {
+   "group": "control",
+   "label": "English",
+   "state": "I was charged twice, please refund the duplicate.",
+   "want": "english",
+   "analyse": {
+    "script": "latin",
+    "language": "en",
+    "is_english": true,
+    "language_undecided": false,
+    "non_latin_fraction": 0.0,
+    "mixed_segment": null
+   },
+   "letters": {
+    "hangul_letters": 0,
+    "latin_letters": 40,
+    "han_letters": 0,
+    "all_letters": 40,
+    "hangul_share": 0.0,
+    "non_latin_words": []
+   },
+   "route_default_english": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "route_default_multilingual": {
+    "model": "english",
+    "reason": "English Latin text"
+   },
+   "verdict": "ok"
+  }
+ ],
+ "plain_string_sweep": [
+  {
+   "latin_letters": 11,
+   "min_hangul_syllables_to_route_multilingual": 3,
+   "hangul_share_at_flip": 0.2143
+  },
+  {
+   "latin_letters": 20,
+   "min_hangul_syllables_to_route_multilingual": 5,
+   "hangul_share_at_flip": 0.2
+  },
+  {
+   "latin_letters": 44,
+   "min_hangul_syllables_to_route_multilingual": 10,
+   "hangul_share_at_flip": 0.1852
+  },
+  {
+   "latin_letters": 83,
+   "min_hangul_syllables_to_route_multilingual": 10,
+   "hangul_share_at_flip": 0.1075
+  },
+  {
+   "latin_letters": 160,
+   "min_hangul_syllables_to_route_multilingual": 18,
+   "hangul_share_at_flip": 0.1011
+  },
+  {
+   "latin_letters": 320,
+   "min_hangul_syllables_to_route_multilingual": 36,
+   "hangul_share_at_flip": 0.1011
+  }
+ ],
+ "mitigation_lang_ko": {
+  "romanized 1": "multilingual",
+  "Stripe webhook": "multilingual"
+ },
+ "thresholds": {
+  "NON_LATIN_FRACTION": 0.2,
+  "NON_LATIN_MIN_FRACTION": 0.1,
+  "NON_LATIN_MIN_LETTERS": 10
+ }
+}

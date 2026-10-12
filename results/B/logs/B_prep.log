@@ -1,0 +1,29 @@
+ko_massive_domain_8                rule=index parity     rows=500 dev=250 test=250
+en_massive_domain_8                rule=index parity     rows=500 dev=250 test=250
+ko_klue_ynat_7                     rule=state sha256 % 2 rows=500 dev=245 test=255
+ko_massive_scenario_18             rule=state sha256 % 2 rows=100 dev=49 test=51
+ko_massive_intent_20opt            rule=index parity     rows=100 dev=50 test=50
+en_massive_intent_20opt            rule=index parity     rows=100 dev=50 test=50
+ko_klue_nli_3                      rule=state sha256 % 2 rows=500 dev=263 test=237
+ko_nsmc_sentiment                  rule=state sha256 % 2 rows=500 dev=249 test=251
+ko_kmhas_hate                      rule=state sha256 % 2 rows=500 dev=237 test=263
+ko_kmhas_type_8                    rule=state sha256 % 2 rows=500 dev=244 test=256
+ko_3i4k_speechact_7                rule=state sha256 % 2 rows=500 dev=241 test=259
+ko_massive_domain_8_ko-instr       rule=index parity     rows=500 dev=250 test=250
+ko_massive_domain_8_en-desc        rule=index parity     rows=500 dev=250 test=250
+ko_klue_ynat_7_ko-instr            rule=state sha256 % 2 rows=500 dev=245 test=255
+ko_klue_ynat_7_en-desc             rule=state sha256 % 2 rows=500 dev=245 test=255
+ko_massive_scenario_18_en-desc     rule=state sha256 % 2 rows=100 dev=49 test=51
+pair ko_massive_domain_8 ~ en_massive_domain_8: 500/500 rows match expected + scenario tag
+pair ko_massive_intent_20opt ~ en_massive_intent_20opt: 100/100 rows match expected + scenario tag
+variant ko_massive_domain_8_ko-instr: same 500 states + expected in order as ko_massive_domain_8; questions differ: True
+  dev copy results/B/dev/ko_massive_domain_8_ko-instr.jsonl rows=250 sha256=23c194945d9536c606c8c201a376c745a9abf4b5b7a2a5570d41b3c940b6f686
+variant ko_massive_domain_8_en-desc: same 500 states + expected in order as ko_massive_domain_8; questions differ: True
+  dev copy results/B/dev/ko_massive_domain_8_en-desc.jsonl rows=250 sha256=4be87d318fe5a933eb08f35c6c667541e68a8ebb0ab8ec3fd1944196715ecd77
+variant ko_klue_ynat_7_ko-instr: same 500 states + expected in order as ko_klue_ynat_7; questions differ: True
+  dev copy results/B/dev/ko_klue_ynat_7_ko-instr.jsonl rows=245 sha256=56df846e83b9986299bdd32c55f78613fff73f8fa57ffd697953a03bbf75eebd
+variant ko_klue_ynat_7_en-desc: same 500 states + expected in order as ko_klue_ynat_7; questions differ: True
+  dev copy results/B/dev/ko_klue_ynat_7_en-desc.jsonl rows=245 sha256=8b8735f1fbbb4353a7bab7f2f9ed379ff6e86a6757807c35527be3deeea0d099
+variant ko_massive_scenario_18_en-desc: same 100 states + expected in order as ko_massive_scenario_18; questions differ: True
+  dev copy results/B/dev/ko_massive_scenario_18_en-desc.jsonl rows=49 sha256=fbd46b83f67a2f981121c3dcf6d258a825593d0f8a2eb149ce7708335c3f6715
+A3 file identity: {"rows": [100, 100], "field_equal_rows": {"state": 100, "questions": 100, "expected": 100, "language": 100}, "tags_only_in_k2": "101 distinct (id:<n>, k2_paired)", "tags_only_in_builder": {}, "questions_sha256": {"data/evals/ko_massive_intent_20opt.jsonl": "72baa7ba5b4d899bae87ce0b6cb67e9b6dce593e1ff5947e4957005554371e24", "results/korean_support/K2_intent20_ko.jsonl": "72baa7ba5b4d899bae87ce0b6cb67e9b6dce593e1ff5947e4957005554371e24"}, "manifest_questions_sha256": "72baa7ba5b4d899bae87ce0b6cb67e9b6dce593e1ff5947e4957005554371e24", "dataset_sha256": {"data/evals/ko_massive_intent_20opt.jsonl": "4e936ea663ba6072e8e7ab0cc5a4f22784824378ce74cb1266a8f955b4efb596", "results/korean_support/K2_intent20_ko.jsonl": "38ebcd80736d95a7dec418b953264075c3fe25c48e5283005eeb62d83d261dbc"}}

@@ -1,0 +1,35 @@
+{
+ "mmbert_repo": "jhu-clsp/mmBERT-base",
+ "mmbert_revision": "c5955035435e2bf121cde7f3c8863ef52ff35d82",
+ "vocab_equal": true,
+ "vocab_size": 256000,
+ "merges_equal": true,
+ "n_merges": 580604,
+ "byte_fallback": [
+  true,
+  true
+ ],
+ "normalizer_equal": true,
+ "normalizer": {
+  "type": "Replace",
+  "pattern": {
+   "String": " "
+  },
+  "content": "▁"
+ },
+ "pre_tokenizer": {
+  "mmbert": {
+   "type": "Metaspace",
+   "replacement": "▁",
+   "add_prefix_space": true
+  },
+  "laya": {
+   "type": "Metaspace",
+   "replacement": "▁",
+   "prepend_scheme": "always",
+   "split": true
+  }
+ },
+ "added_tokens_equal": true,
+ "identical_ids_on_massive_ko": "300/300"
+}

@@ -1,0 +1,57 @@
+load before: {"gpu_util_pct": 100, "mps_fp32_matmul_tflops": 3.42, "cotenant": ["/opt/homebrew/Cellar/python@3.12/3.12.12/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python experiments/kt_scores.py --model Qwen/Qwen2.5-7B --run-id rmt-mixed-precision-20261002-ktscores-qwen25-7b", "/opt/homebrew/Cellar/python@3.12/3.12.12/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python experiments/kt2_layer_sensitivity.py --model Qwen/Qwen2.5-7B --run-id rmt-mixed-precision-20261002-kt2-qwen25-7b", "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1790924480641-s06bu1.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'cd /Users/banhun/banhun28/lab/spectral-compression; L=results/rmt-mixed-precision/kt_queue.log; until grep -qE \"STEP (OK|FAIL) kt2_qwen25-7b\" $L && grep -qE \"STEP (OK|FAIL) kt_scores_qwen25-7b\" $L; do sleep 60; done; grep -E \"STEP (OK|FAIL) (kt2|kt_scores)_qwen25-7b|STEP START kt1e2_qwen\" $L | cut -c1-110; echo \"--- two-model KT-2 analysis ---\"; .venv/bin/python experiments/kt_analysis.py 2>&1 | sed -n '\"'\"'/## KT-2/,$p'\"'\"'' < /dev/null && pwd -P >| /tmp/claude-c8d9-cwd"], "sys_mem_used_gb": 25.0}
+[     4.0s] Using legacy cached training items without metadata: poc/finetune/data/items_probe200.pt
+[     6.5s] Device: mps
+[     6.5s] Training items: 200; calibration items: 20
+[     6.5s] micro_batch=8; grad_accum=4; epochs=1
+[   105.3s] Epoch 1/1 complete; avg_loss=1.3129
+[   106.2s] Running temperature calibration ...
+[   109.5s] Model saved to poc/finetune/ckpt_probe200_mb8
+[   109.5s] Temperatures: [1.000008225440979, 1.2, 1.2]
+{
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 2.48,
+  "train_loop": 98.77,
+  "epoch_checkpoint_saves": 0.96,
+  "calibration (forward + fit_temperature)": 2.12,
+  "export (final save + configs)": 1.14,
+  "train() total": 105.76
+ },
+ "throughput": {
+  "train_items_per_s": 2.025,
+  "s_per_optimizer_step": 14.11,
+  "s_per_micro_batch_mean": 3.9509
+ },
+ "micro_batch_s": {
+  "median_all": 3.9411,
+  "median_repeat_shape_no_step": 3.8202,
+  "median_repeat_shape_with_step": 5.409,
+  "optimizer_step_overhead": 1.5888,
+  "median_first_shape": 4.1222,
+  "first_shape_count": 11,
+  "repeat_shape_count": 14,
+  "first_shape_extra_total_s": 4.1
+ },
+ "memory_gb": {
+  "ru_maxrss": 2.97,
+  "rss_peak_sampled": 1.44,
+  "mps_current_allocated_peak": 5.57,
+  "mps_driver_allocated_peak": 7.87,
+  "mps_recommended_max": 40.2
+ },
+ "calibration_rows": {
+  "n": 20,
+  "ce_before_T": 0.9918,
+  "accuracy": 0.65
+ },
+ "item_sources": {
+  "train": {
+   "train": 200
+  },
+  "calibration": {
+   "validation": 20
+  }
+ }
+}
+report: results/P4/probe200-mb8_20261002-2008_timing.json (wall 109.9s, status ok)

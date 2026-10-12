@@ -1,0 +1,7 @@
+OK  1 py_compile | poc/service/app.py, poc/service/hooks.py, poc/service/policy.py, results/poc/P2_schema_check.py, results/poc/P2_offline_check.py, results/poc/P2_acceptance.py
+OK  2 JSON validity + embedded questions = sources | single 5, multi 4 (held: triage_a), domain utterances 8, sources ['email', 'guard', 'model_router', 'router_v1', 'triage_a', 'ynat_7']
+OK  3 label hygiene | 21 example texts vs 19641 distinct states in 22 files: 0 matches
+OK  4 HTML sanity + node --check + DOM-free JS unit tests | 162 tags, 53 ids, title='Laya Playground', round trip of 10 example question sets, 21-option warning, shell/Python quoting
+OK  5 JS endpoints = app routes | POST /poc/decide, GET /health, GET /poc/meta, GET /poc/shadow, POST /v1/systemone; fetch only via api() and 'examples.json' (static mount /poc/ui)
+OK  6 in-process integration (fake forward pass) | 8 predict calls → shadow 8 lines, counters {"ROUTE": 2, "FALLBACK": 5}; 401×5, 422×7, 413; PII/NFC masked before the model and in the log
+ALL OK: 6 checks

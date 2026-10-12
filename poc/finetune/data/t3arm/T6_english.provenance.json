@@ -1,0 +1,81 @@
+{
+ "items": "poc/finetune/data/t3arm/T6_english.pt",
+ "items_sha256": "7f671e509825f5568dc45fc24b9c2af3844a2ace5c63c09b705c82202056d9bc",
+ "task": "T6",
+ "base": "english",
+ "base_dir": "/Users/banhun/.cache/huggingface/hub/models--convaiinnovations--laya/snapshots/55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+ "script": "poc/finetune/laya_finetune_mps_patched.py",
+ "script_sha256": "d8dc1eb92db72c0f577ec9cf6dc3ad80558e0e0ff79897bd92dc3f87399db642",
+ "budget": {
+  "max_len": 512,
+  "head_max_len": 192
+ },
+ "seed": 13,
+ "n_items": 5400,
+ "n_train": 5000,
+ "n_calib": 400,
+ "calib_max": 400,
+ "rows": {
+  "train": {
+   "path": "poc/finetune/data/t3arm/T6_train.jsonl",
+   "sha256": "70db1ae28e3a81a182350614d40447a14d083acbc843d6e1156e10d0ce80a93e",
+   "rows_total": 5000,
+   "rows_used": 5000
+  },
+  "calib": {
+   "path": "poc/finetune/data/t3arm/T6_calib.jsonl",
+   "sha256": "b046e6b7722dbacde738fc2fa93f7f6038e244599f82dba0f10d739bebd7b68f",
+   "rows_total": 400,
+   "rows_used": 400
+  }
+ },
+ "subset": {
+  "n_train": 0,
+  "n_calib": 0,
+  "rule": "random.Random(seed).shuffle(row indices), rows taken until n items, row order kept"
+ },
+ "shuffle_options": "all",
+ "option_order": {
+  "train": "choice: random.Random(13 + item index).shuffle(criteria keys); score/noul fixed",
+  "calib": "canonical"
+ },
+ "options_reordered": {},
+ "gold_slot": {
+  "calib:score:0": 80,
+  "calib:score:1": 80,
+  "calib:score:2": 80,
+  "calib:score:3": 80,
+  "calib:score:4": 80,
+  "train:score:0": 1000,
+  "train:score:1": 1000,
+  "train:score:2": 1000,
+  "train:score:3": 1000,
+  "train:score:4": 1000
+ },
+ "permute_labels": null,
+ "v4_inference_identity": {
+  "checked": 25,
+  "identical": 25
+ },
+ "seq_len_train": {
+  "min": 51,
+  "p50": 71,
+  "p90": 88,
+  "max": 116,
+  "mean": 72.3,
+  "sum": 361355
+ },
+ "decoded_example": {
+  "src": "train:0:sentiment",
+  "label": 4,
+  "options": [
+   "level 0: very negative",
+   "level 1: negative",
+   "level 2: neutral",
+   "level 3: positive",
+   "level 4: very positive"
+  ],
+  "text": "[CLS]score question: How positive is the sentiment of `text`?[SEP][MASK] level 0: very negative[MASK] level 1: negative[MASK] level 2: neutral[MASK] level 3: positive[MASK] level 4: very positive[SEP]{\"text\": \"a stirring , funny and finally transporting re-imagining of beauty and the beast and 1930s horror films\"}[SEP]"
+ },
+ "run_with": "--items poc/finetune/data/t3arm/T6_english.pt --calib-max 400 (never --force-preprocess)"
+}

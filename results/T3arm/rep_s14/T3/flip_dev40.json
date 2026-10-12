@@ -1,0 +1,5576 @@
+{
+ "run_card": {
+  "tool": "scripts/probe_option_order.py",
+  "argv": [
+   "poc/finetune/data/t3arm/T3_dev40.jsonl",
+   "--model",
+   "poc/finetune/ckpt_t3arm_rep_s14/T3_run",
+   "--device",
+   "cpu",
+   "--permutations",
+   "5",
+   "--seed",
+   "13",
+   "--split",
+   "all",
+   "--splits",
+   "",
+   "--out",
+   "results/T3arm/rep_s14/T3/flip_dev40.json"
+  ],
+  "started_at": "2026-10-08T17:05:07+0900",
+  "laya_version": "0.3.23",
+  "torch": "2.14.1",
+  "transformers": "5.18.0",
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "amp_enabled": false,
+  "threads_intra_inter": [
+   10,
+   1
+  ],
+  "checkpoint": {
+   "path": "poc/finetune/ckpt_t3arm_rep_s14/T3_run",
+   "realpath": "/Users/banhun/banhun28/lab/benchmarkforLaya/poc/finetune/ckpt_t3arm_rep_s14/T3_run",
+   "snapshot_sha": null,
+   "weights_blob": null,
+   "head_max_len": 192,
+   "max_len": 512
+  },
+  "power": "Now drawing from 'AC Power' |  -InternalBattery-0 (id=22085731)\t100%; charged; 0:00 remaining present: true",
+  "git_sha": null,
+  "load_seconds": 3.6,
+  "warnings": [
+   "/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/laya/agent.py:1869: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using temperature[0]=5.606679916381836 -> 5. Treat confidence from the affected entries as uncalibrated."
+  ],
+  "finished_at": "2026-10-08T17:05:28+0900",
+  "total_seconds": 21.8
+ },
+ "params": {
+  "files": [
+   "poc/finetune/data/t3arm/T3_dev40.jsonl"
+  ],
+  "model": "poc/finetune/ckpt_t3arm_rep_s14/T3_run",
+  "device": "cpu",
+  "permutations": 5,
+  "seed": 13,
+  "split": "all",
+  "splits": "",
+  "reference": [],
+  "bootstrap": 1000,
+  "threads": 10,
+  "interop": 1,
+  "out": "results/T3arm/rep_s14/T3/flip_dev40.json"
+ },
+ "sets": [
+  {
+   "file": "poc/finetune/data/t3arm/T3_dev40.jsonl",
+   "set": "T3_dev40",
+   "dataset_sha256": "bd33d92e966ca3bed2918e390b84bf1f61430c7bf54a67d51b79da99ac46d888",
+   "split": "all",
+   "split_rule": "state sha256 % 2",
+   "split_check": null,
+   "seconds": 18.2,
+   "items": [
+    {
+     "row": 0,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:28",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.403,
+      "probs": {
+       "sadness": 0.403,
+       "joy": 0.1235,
+       "love": 0.117,
+       "anger": 0.1261,
+       "fear": 0.1154,
+       "surprise": 0.115
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "anger",
+        "sadness",
+        "fear",
+        "joy",
+        "surprise",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.3786,
+       "probs": {
+        "anger": 0.1281,
+        "sadness": 0.3786,
+        "fear": 0.1199,
+        "joy": 0.1312,
+        "surprise": 0.1197,
+        "love": 0.1225
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "sadness",
+        "love",
+        "fear",
+        "joy",
+        "surprise"
+       ],
+       "pred": "sadness",
+       "conf": 0.3814,
+       "probs": {
+        "anger": 0.1278,
+        "sadness": 0.3814,
+        "love": 0.1209,
+        "fear": 0.1192,
+        "joy": 0.1317,
+        "surprise": 0.1191
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "anger",
+        "love",
+        "surprise",
+        "sadness",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.3504,
+       "probs": {
+        "fear": 0.1138,
+        "anger": 0.1359,
+        "love": 0.1172,
+        "surprise": 0.1143,
+        "sadness": 0.3504,
+        "joy": 0.1683
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "surprise",
+        "love",
+        "joy",
+        "anger",
+        "sadness"
+       ],
+       "pred": "sadness",
+       "conf": 0.3579,
+       "probs": {
+        "fear": 0.1173,
+        "surprise": 0.1175,
+        "love": 0.12,
+        "joy": 0.147,
+        "anger": 0.1403,
+        "sadness": 0.3579
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "surprise",
+        "fear",
+        "sadness",
+        "joy",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.3953,
+       "probs": {
+        "anger": 0.123,
+        "surprise": 0.1161,
+        "fear": 0.1162,
+        "sadness": 0.3953,
+        "joy": 0.1306,
+        "love": 0.1189
+       }
+      }
+     ]
+    },
+    {
+     "row": 1,
+     "qid": "emotion",
+     "gold": "joy",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:61",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "joy",
+      "conf": 0.979,
+      "probs": {
+       "sadness": 0.0042,
+       "joy": 0.979,
+       "love": 0.0042,
+       "anger": 0.0042,
+       "fear": 0.0042,
+       "surprise": 0.0042
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sadness",
+        "love",
+        "fear",
+        "joy",
+        "anger",
+        "surprise"
+       ],
+       "pred": "joy",
+       "conf": 0.9786,
+       "probs": {
+        "sadness": 0.0043,
+        "love": 0.0043,
+        "fear": 0.0043,
+        "joy": 0.9786,
+        "anger": 0.0043,
+        "surprise": 0.0043
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "surprise",
+        "love",
+        "fear",
+        "anger",
+        "joy"
+       ],
+       "pred": "joy",
+       "conf": 0.9795,
+       "probs": {
+        "sadness": 0.0041,
+        "surprise": 0.0041,
+        "love": 0.0041,
+        "fear": 0.0041,
+        "anger": 0.0041,
+        "joy": 0.9795
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "fear",
+        "joy",
+        "sadness",
+        "love",
+        "anger"
+       ],
+       "pred": "joy",
+       "conf": 0.9786,
+       "probs": {
+        "surprise": 0.0042,
+        "fear": 0.0042,
+        "joy": 0.9786,
+        "sadness": 0.0043,
+        "love": 0.0043,
+        "anger": 0.0043
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "love",
+        "fear",
+        "joy",
+        "anger",
+        "surprise"
+       ],
+       "pred": "joy",
+       "conf": 0.9786,
+       "probs": {
+        "sadness": 0.0043,
+        "love": 0.0043,
+        "fear": 0.0043,
+        "joy": 0.9786,
+        "anger": 0.0043,
+        "surprise": 0.0043
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "anger",
+        "sadness",
+        "love",
+        "joy",
+        "fear"
+       ],
+       "pred": "joy",
+       "conf": 0.9787,
+       "probs": {
+        "surprise": 0.0042,
+        "anger": 0.0043,
+        "sadness": 0.0043,
+        "love": 0.0043,
+        "joy": 0.9787,
+        "fear": 0.0043
+       }
+      }
+     ]
+    },
+    {
+     "row": 2,
+     "qid": "emotion",
+     "gold": "anger",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:157",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "anger",
+      "conf": 0.9753,
+      "probs": {
+       "sadness": 0.0066,
+       "joy": 0.0046,
+       "love": 0.0045,
+       "anger": 0.9753,
+       "fear": 0.0045,
+       "surprise": 0.0045
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sadness",
+        "anger",
+        "joy",
+        "surprise",
+        "love",
+        "fear"
+       ],
+       "pred": "anger",
+       "conf": 0.9745,
+       "probs": {
+        "sadness": 0.0072,
+        "anger": 0.9745,
+        "joy": 0.0046,
+        "surprise": 0.0045,
+        "love": 0.0046,
+        "fear": 0.0046
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "sadness",
+        "joy",
+        "surprise",
+        "fear",
+        "love"
+       ],
+       "pred": "anger",
+       "conf": 0.9762,
+       "probs": {
+        "anger": 0.9762,
+        "sadness": 0.0057,
+        "joy": 0.0045,
+        "surprise": 0.0045,
+        "fear": 0.0045,
+        "love": 0.0045
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "sadness",
+        "love",
+        "joy",
+        "anger",
+        "fear"
+       ],
+       "pred": "anger",
+       "conf": 0.9758,
+       "probs": {
+        "surprise": 0.0046,
+        "sadness": 0.0058,
+        "love": 0.0046,
+        "joy": 0.0046,
+        "anger": 0.9758,
+        "fear": 0.0046
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "anger",
+        "sadness",
+        "surprise",
+        "love",
+        "joy"
+       ],
+       "pred": "anger",
+       "conf": 0.9751,
+       "probs": {
+        "fear": 0.0046,
+        "anger": 0.9751,
+        "sadness": 0.0063,
+        "surprise": 0.0046,
+        "love": 0.0047,
+        "joy": 0.0047
+       }
+      },
+      {
+       "order": [
+        "love",
+        "joy",
+        "sadness",
+        "fear",
+        "anger",
+        "surprise"
+       ],
+       "pred": "anger",
+       "conf": 0.9772,
+       "probs": {
+        "love": 0.0044,
+        "joy": 0.0045,
+        "sadness": 0.005,
+        "fear": 0.0044,
+        "anger": 0.9772,
+        "surprise": 0.0044
+       }
+      }
+     ]
+    },
+    {
+     "row": 3,
+     "qid": "emotion",
+     "gold": "anger",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:186",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "anger",
+      "conf": 0.9785,
+      "probs": {
+       "sadness": 0.0043,
+       "joy": 0.0043,
+       "love": 0.0043,
+       "anger": 0.9785,
+       "fear": 0.0043,
+       "surprise": 0.0043
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "surprise",
+        "love",
+        "anger",
+        "fear",
+        "joy",
+        "sadness"
+       ],
+       "pred": "anger",
+       "conf": 0.9779,
+       "probs": {
+        "surprise": 0.0044,
+        "love": 0.0044,
+        "anger": 0.9779,
+        "fear": 0.0044,
+        "joy": 0.0045,
+        "sadness": 0.0045
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "anger",
+        "fear",
+        "joy",
+        "love",
+        "surprise"
+       ],
+       "pred": "anger",
+       "conf": 0.9788,
+       "probs": {
+        "sadness": 0.0043,
+        "anger": 0.9788,
+        "fear": 0.0042,
+        "joy": 0.0043,
+        "love": 0.0042,
+        "surprise": 0.0042
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "joy",
+        "sadness",
+        "fear",
+        "love",
+        "surprise"
+       ],
+       "pred": "anger",
+       "conf": 0.979,
+       "probs": {
+        "anger": 0.979,
+        "joy": 0.0042,
+        "sadness": 0.0042,
+        "fear": 0.0042,
+        "love": 0.0042,
+        "surprise": 0.0042
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "anger",
+        "love",
+        "surprise",
+        "joy",
+        "fear"
+       ],
+       "pred": "anger",
+       "conf": 0.9783,
+       "probs": {
+        "sadness": 0.0044,
+        "anger": 0.9783,
+        "love": 0.0043,
+        "surprise": 0.0043,
+        "joy": 0.0044,
+        "fear": 0.0043
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "anger",
+        "love",
+        "sadness",
+        "fear",
+        "joy"
+       ],
+       "pred": "anger",
+       "conf": 0.9786,
+       "probs": {
+        "surprise": 0.0042,
+        "anger": 0.9786,
+        "love": 0.0043,
+        "sadness": 0.0043,
+        "fear": 0.0043,
+        "joy": 0.0043
+       }
+      }
+     ]
+    },
+    {
+     "row": 4,
+     "qid": "emotion",
+     "gold": "anger",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:259",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "anger",
+      "conf": 0.2591,
+      "probs": {
+       "sadness": 0.0809,
+       "joy": 0.1842,
+       "love": 0.1002,
+       "anger": 0.2591,
+       "fear": 0.1679,
+       "surprise": 0.2077
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "anger",
+        "joy",
+        "sadness",
+        "surprise",
+        "fear",
+        "love"
+       ],
+       "pred": "surprise",
+       "conf": 0.2574,
+       "probs": {
+        "anger": 0.2069,
+        "joy": 0.1793,
+        "sadness": 0.0794,
+        "surprise": 0.2574,
+        "fear": 0.1513,
+        "love": 0.1257
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "love",
+        "anger",
+        "sadness",
+        "surprise",
+        "joy"
+       ],
+       "pred": "surprise",
+       "conf": 0.2682,
+       "probs": {
+        "fear": 0.1324,
+        "love": 0.1054,
+        "anger": 0.2075,
+        "sadness": 0.0778,
+        "surprise": 0.2682,
+        "joy": 0.2087
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "love",
+        "joy",
+        "surprise",
+        "anger",
+        "sadness"
+       ],
+       "pred": "surprise",
+       "conf": 0.2751,
+       "probs": {
+        "fear": 0.13,
+        "love": 0.1031,
+        "joy": 0.1669,
+        "surprise": 0.2751,
+        "anger": 0.2407,
+        "sadness": 0.0842
+       }
+      },
+      {
+       "order": [
+        "love",
+        "joy",
+        "anger",
+        "fear",
+        "sadness",
+        "surprise"
+       ],
+       "pred": "anger",
+       "conf": 0.255,
+       "probs": {
+        "love": 0.0979,
+        "joy": 0.1873,
+        "anger": 0.255,
+        "fear": 0.1607,
+        "sadness": 0.0831,
+        "surprise": 0.2159
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "surprise",
+        "joy",
+        "love",
+        "anger",
+        "sadness"
+       ],
+       "pred": "surprise",
+       "conf": 0.2517,
+       "probs": {
+        "fear": 0.1255,
+        "surprise": 0.2517,
+        "joy": 0.1903,
+        "love": 0.096,
+        "anger": 0.249,
+        "sadness": 0.0874
+       }
+      }
+     ]
+    },
+    {
+     "row": 5,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:267",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.976,
+      "probs": {
+       "sadness": 0.976,
+       "joy": 0.0048,
+       "love": 0.0048,
+       "anger": 0.0049,
+       "fear": 0.0047,
+       "surprise": 0.0048
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "joy",
+        "surprise",
+        "sadness",
+        "love",
+        "fear",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.9761,
+       "probs": {
+        "joy": 0.0048,
+        "surprise": 0.0047,
+        "sadness": 0.9761,
+        "love": 0.0048,
+        "fear": 0.0047,
+        "anger": 0.0049
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "fear",
+        "anger",
+        "joy",
+        "surprise",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.9769,
+       "probs": {
+        "sadness": 0.9769,
+        "fear": 0.0045,
+        "anger": 0.0047,
+        "joy": 0.0047,
+        "surprise": 0.0046,
+        "love": 0.0046
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "fear",
+        "sadness",
+        "love",
+        "surprise",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.9752,
+       "probs": {
+        "anger": 0.005,
+        "fear": 0.0049,
+        "sadness": 0.9752,
+        "love": 0.0049,
+        "surprise": 0.0049,
+        "joy": 0.0051
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "love",
+        "anger",
+        "surprise",
+        "joy",
+        "fear"
+       ],
+       "pred": "sadness",
+       "conf": 0.9767,
+       "probs": {
+        "sadness": 0.9767,
+        "love": 0.0046,
+        "anger": 0.0047,
+        "surprise": 0.0046,
+        "joy": 0.0047,
+        "fear": 0.0046
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "sadness",
+        "fear",
+        "love",
+        "joy",
+        "surprise"
+       ],
+       "pred": "sadness",
+       "conf": 0.9743,
+       "probs": {
+        "anger": 0.0051,
+        "sadness": 0.9743,
+        "fear": 0.0051,
+        "love": 0.0051,
+        "joy": 0.0052,
+        "surprise": 0.0051
+       }
+      }
+     ]
+    },
+    {
+     "row": 6,
+     "qid": "emotion",
+     "gold": "anger",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:298",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "joy",
+      "conf": 0.9404,
+      "probs": {
+       "sadness": 0.0094,
+       "joy": 0.9404,
+       "love": 0.0105,
+       "anger": 0.021,
+       "fear": 0.0093,
+       "surprise": 0.0093
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "anger",
+        "sadness",
+        "fear",
+        "surprise",
+        "joy",
+        "love"
+       ],
+       "pred": "joy",
+       "conf": 0.9318,
+       "probs": {
+        "anger": 0.0228,
+        "sadness": 0.0113,
+        "fear": 0.011,
+        "surprise": 0.011,
+        "joy": 0.9318,
+        "love": 0.0121
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "joy",
+        "sadness",
+        "anger",
+        "love",
+        "surprise"
+       ],
+       "pred": "joy",
+       "conf": 0.9504,
+       "probs": {
+        "fear": 0.0072,
+        "joy": 0.9504,
+        "sadness": 0.0074,
+        "anger": 0.0168,
+        "love": 0.0109,
+        "surprise": 0.0073
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "love",
+        "fear",
+        "sadness",
+        "surprise",
+        "anger"
+       ],
+       "pred": "joy",
+       "conf": 0.9653,
+       "probs": {
+        "joy": 0.9653,
+        "love": 0.0059,
+        "fear": 0.0055,
+        "sadness": 0.0056,
+        "surprise": 0.0055,
+        "anger": 0.0123
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "joy",
+        "surprise",
+        "love",
+        "sadness",
+        "fear"
+       ],
+       "pred": "joy",
+       "conf": 0.9365,
+       "probs": {
+        "anger": 0.0156,
+        "joy": 0.9365,
+        "surprise": 0.0086,
+        "love": 0.0217,
+        "sadness": 0.009,
+        "fear": 0.0086
+       }
+      },
+      {
+       "order": [
+        "love",
+        "sadness",
+        "joy",
+        "surprise",
+        "fear",
+        "anger"
+       ],
+       "pred": "joy",
+       "conf": 0.9547,
+       "probs": {
+        "love": 0.0072,
+        "sadness": 0.007,
+        "joy": 0.9547,
+        "surprise": 0.0068,
+        "fear": 0.0068,
+        "anger": 0.0175
+       }
+      }
+     ]
+    },
+    {
+     "row": 7,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:379",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.9274,
+      "probs": {
+       "sadness": 0.9274,
+       "joy": 0.005,
+       "love": 0.0048,
+       "anger": 0.0533,
+       "fear": 0.0048,
+       "surprise": 0.0048
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "joy",
+        "surprise",
+        "sadness",
+        "anger",
+        "fear",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.9425,
+       "probs": {
+        "joy": 0.0045,
+        "surprise": 0.0044,
+        "sadness": 0.9425,
+        "anger": 0.0398,
+        "fear": 0.0044,
+        "love": 0.0044
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "anger",
+        "fear",
+        "love",
+        "surprise",
+        "sadness"
+       ],
+       "pred": "sadness",
+       "conf": 0.9029,
+       "probs": {
+        "joy": 0.0047,
+        "anger": 0.0785,
+        "fear": 0.0046,
+        "love": 0.0046,
+        "surprise": 0.0046,
+        "sadness": 0.9029
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "sadness",
+        "joy",
+        "anger",
+        "surprise",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.9578,
+       "probs": {
+        "fear": 0.0044,
+        "sadness": 0.9578,
+        "joy": 0.0047,
+        "anger": 0.024,
+        "surprise": 0.0045,
+        "love": 0.0045
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "surprise",
+        "fear",
+        "sadness",
+        "joy",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.901,
+       "probs": {
+        "anger": 0.0798,
+        "surprise": 0.0047,
+        "fear": 0.0048,
+        "sadness": 0.901,
+        "joy": 0.0049,
+        "love": 0.0048
+       }
+      },
+      {
+       "order": [
+        "love",
+        "joy",
+        "sadness",
+        "surprise",
+        "fear",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.9405,
+       "probs": {
+        "love": 0.0046,
+        "joy": 0.0047,
+        "sadness": 0.9405,
+        "surprise": 0.0046,
+        "fear": 0.0046,
+        "anger": 0.041
+       }
+      }
+     ]
+    },
+    {
+     "row": 8,
+     "qid": "emotion",
+     "gold": "anger",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:380",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "anger",
+      "conf": 0.9774,
+      "probs": {
+       "sadness": 0.0046,
+       "joy": 0.0045,
+       "love": 0.0045,
+       "anger": 0.9774,
+       "fear": 0.0045,
+       "surprise": 0.0045
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "surprise",
+        "anger",
+        "sadness",
+        "joy",
+        "love",
+        "fear"
+       ],
+       "pred": "anger",
+       "conf": 0.9783,
+       "probs": {
+        "surprise": 0.0043,
+        "anger": 0.9783,
+        "sadness": 0.0044,
+        "joy": 0.0044,
+        "love": 0.0043,
+        "fear": 0.0043
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "love",
+        "sadness",
+        "surprise",
+        "fear",
+        "joy"
+       ],
+       "pred": "anger",
+       "conf": 0.9782,
+       "probs": {
+        "anger": 0.9782,
+        "love": 0.0044,
+        "sadness": 0.0044,
+        "surprise": 0.0043,
+        "fear": 0.0043,
+        "joy": 0.0044
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "love",
+        "fear",
+        "sadness",
+        "joy",
+        "surprise"
+       ],
+       "pred": "anger",
+       "conf": 0.9782,
+       "probs": {
+        "anger": 0.9782,
+        "love": 0.0043,
+        "fear": 0.0043,
+        "sadness": 0.0044,
+        "joy": 0.0044,
+        "surprise": 0.0043
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "anger",
+        "surprise",
+        "fear",
+        "love",
+        "sadness"
+       ],
+       "pred": "anger",
+       "conf": 0.9784,
+       "probs": {
+        "joy": 0.0043,
+        "anger": 0.9784,
+        "surprise": 0.0043,
+        "fear": 0.0043,
+        "love": 0.0043,
+        "sadness": 0.0044
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "anger",
+        "love",
+        "fear",
+        "joy",
+        "surprise"
+       ],
+       "pred": "anger",
+       "conf": 0.9775,
+       "probs": {
+        "sadness": 0.0046,
+        "anger": 0.9775,
+        "love": 0.0045,
+        "fear": 0.0045,
+        "joy": 0.0045,
+        "surprise": 0.0045
+       }
+      }
+     ]
+    },
+    {
+     "row": 9,
+     "qid": "emotion",
+     "gold": "anger",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:431",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "anger",
+      "conf": 0.9774,
+      "probs": {
+       "sadness": 0.0045,
+       "joy": 0.0045,
+       "love": 0.0046,
+       "anger": 0.9774,
+       "fear": 0.0045,
+       "surprise": 0.0045
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "surprise",
+        "sadness",
+        "love",
+        "anger",
+        "fear",
+        "joy"
+       ],
+       "pred": "anger",
+       "conf": 0.9776,
+       "probs": {
+        "surprise": 0.0044,
+        "sadness": 0.0045,
+        "love": 0.0046,
+        "anger": 0.9776,
+        "fear": 0.0044,
+        "joy": 0.0045
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "anger",
+        "love",
+        "surprise",
+        "sadness",
+        "fear"
+       ],
+       "pred": "anger",
+       "conf": 0.9773,
+       "probs": {
+        "joy": 0.0045,
+        "anger": 0.9773,
+        "love": 0.0046,
+        "surprise": 0.0045,
+        "sadness": 0.0046,
+        "fear": 0.0045
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "sadness",
+        "joy",
+        "anger",
+        "love",
+        "fear"
+       ],
+       "pred": "anger",
+       "conf": 0.9787,
+       "probs": {
+        "surprise": 0.0042,
+        "sadness": 0.0042,
+        "joy": 0.0042,
+        "anger": 0.9787,
+        "love": 0.0044,
+        "fear": 0.0042
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "joy",
+        "sadness",
+        "surprise",
+        "love",
+        "fear"
+       ],
+       "pred": "anger",
+       "conf": 0.9783,
+       "probs": {
+        "anger": 0.9783,
+        "joy": 0.0044,
+        "sadness": 0.0043,
+        "surprise": 0.0043,
+        "love": 0.0045,
+        "fear": 0.0043
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "fear",
+        "love",
+        "joy",
+        "surprise",
+        "sadness"
+       ],
+       "pred": "anger",
+       "conf": 0.9784,
+       "probs": {
+        "anger": 0.9784,
+        "fear": 0.0043,
+        "love": 0.0044,
+        "joy": 0.0043,
+        "surprise": 0.0043,
+        "sadness": 0.0043
+       }
+      }
+     ]
+    },
+    {
+     "row": 10,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:459",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.9779,
+      "probs": {
+       "sadness": 0.9779,
+       "joy": 0.0044,
+       "love": 0.0044,
+       "anger": 0.0045,
+       "fear": 0.0044,
+       "surprise": 0.0044
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "anger",
+        "joy",
+        "surprise",
+        "love",
+        "fear",
+        "sadness"
+       ],
+       "pred": "sadness",
+       "conf": 0.9779,
+       "probs": {
+        "anger": 0.0045,
+        "joy": 0.0044,
+        "surprise": 0.0044,
+        "love": 0.0044,
+        "fear": 0.0044,
+        "sadness": 0.9779
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "fear",
+        "love",
+        "joy",
+        "anger",
+        "surprise"
+       ],
+       "pred": "sadness",
+       "conf": 0.978,
+       "probs": {
+        "sadness": 0.978,
+        "fear": 0.0043,
+        "love": 0.0044,
+        "joy": 0.0044,
+        "anger": 0.0045,
+        "surprise": 0.0044
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "love",
+        "joy",
+        "fear",
+        "surprise",
+        "sadness"
+       ],
+       "pred": "sadness",
+       "conf": 0.9783,
+       "probs": {
+        "anger": 0.0044,
+        "love": 0.0043,
+        "joy": 0.0044,
+        "fear": 0.0043,
+        "surprise": 0.0043,
+        "sadness": 0.9783
+       }
+      },
+      {
+       "order": [
+        "love",
+        "sadness",
+        "joy",
+        "fear",
+        "surprise",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.9781,
+       "probs": {
+        "love": 0.0043,
+        "sadness": 0.9781,
+        "joy": 0.0044,
+        "fear": 0.0043,
+        "surprise": 0.0043,
+        "anger": 0.0045
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "fear",
+        "sadness",
+        "love",
+        "anger",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.9772,
+       "probs": {
+        "surprise": 0.0045,
+        "fear": 0.0045,
+        "sadness": 0.9772,
+        "love": 0.0045,
+        "anger": 0.0047,
+        "joy": 0.0046
+       }
+      }
+     ]
+    },
+    {
+     "row": 11,
+     "qid": "emotion",
+     "gold": "anger",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:471",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "anger",
+      "conf": 0.9798,
+      "probs": {
+       "sadness": 0.0041,
+       "joy": 0.004,
+       "love": 0.004,
+       "anger": 0.9798,
+       "fear": 0.004,
+       "surprise": 0.004
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "anger",
+        "sadness",
+        "joy",
+        "surprise",
+        "love",
+        "fear"
+       ],
+       "pred": "anger",
+       "conf": 0.9798,
+       "probs": {
+        "anger": 0.9798,
+        "sadness": 0.0041,
+        "joy": 0.0041,
+        "surprise": 0.004,
+        "love": 0.004,
+        "fear": 0.004
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "surprise",
+        "sadness",
+        "anger",
+        "love",
+        "joy"
+       ],
+       "pred": "anger",
+       "conf": 0.9797,
+       "probs": {
+        "fear": 0.004,
+        "surprise": 0.004,
+        "sadness": 0.0041,
+        "anger": 0.9797,
+        "love": 0.0041,
+        "joy": 0.0041
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "fear",
+        "surprise",
+        "joy",
+        "love",
+        "anger"
+       ],
+       "pred": "anger",
+       "conf": 0.9792,
+       "probs": {
+        "sadness": 0.0042,
+        "fear": 0.0041,
+        "surprise": 0.0041,
+        "joy": 0.0042,
+        "love": 0.0041,
+        "anger": 0.9792
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "love",
+        "sadness",
+        "fear",
+        "anger",
+        "joy"
+       ],
+       "pred": "anger",
+       "conf": 0.9797,
+       "probs": {
+        "surprise": 0.004,
+        "love": 0.004,
+        "sadness": 0.0041,
+        "fear": 0.004,
+        "anger": 0.9797,
+        "joy": 0.0041
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "surprise",
+        "love",
+        "anger",
+        "sadness",
+        "fear"
+       ],
+       "pred": "anger",
+       "conf": 0.9804,
+       "probs": {
+        "joy": 0.0039,
+        "surprise": 0.0039,
+        "love": 0.0039,
+        "anger": 0.9804,
+        "sadness": 0.004,
+        "fear": 0.0039
+       }
+      }
+     ]
+    },
+    {
+     "row": 12,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:526",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.9774,
+      "probs": {
+       "sadness": 0.9774,
+       "joy": 0.0045,
+       "love": 0.0045,
+       "anger": 0.0047,
+       "fear": 0.0045,
+       "surprise": 0.0045
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "surprise",
+        "anger",
+        "love",
+        "fear",
+        "sadness",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.9756,
+       "probs": {
+        "surprise": 0.0048,
+        "anger": 0.0052,
+        "love": 0.0048,
+        "fear": 0.0048,
+        "sadness": 0.9756,
+        "joy": 0.0049
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "fear",
+        "surprise",
+        "anger",
+        "sadness",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.9744,
+       "probs": {
+        "joy": 0.0051,
+        "fear": 0.005,
+        "surprise": 0.005,
+        "anger": 0.0054,
+        "sadness": 0.9744,
+        "love": 0.0051
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "fear",
+        "love",
+        "sadness",
+        "anger",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.9767,
+       "probs": {
+        "surprise": 0.0046,
+        "fear": 0.0046,
+        "love": 0.0046,
+        "sadness": 0.9767,
+        "anger": 0.0049,
+        "joy": 0.0047
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "sadness",
+        "anger",
+        "love",
+        "joy",
+        "surprise"
+       ],
+       "pred": "sadness",
+       "conf": 0.977,
+       "probs": {
+        "fear": 0.0045,
+        "sadness": 0.977,
+        "anger": 0.0047,
+        "love": 0.0046,
+        "joy": 0.0046,
+        "surprise": 0.0046
+       }
+      },
+      {
+       "order": [
+        "love",
+        "fear",
+        "joy",
+        "anger",
+        "sadness",
+        "surprise"
+       ],
+       "pred": "sadness",
+       "conf": 0.9768,
+       "probs": {
+        "love": 0.0046,
+        "fear": 0.0046,
+        "joy": 0.0046,
+        "anger": 0.0048,
+        "sadness": 0.9768,
+        "surprise": 0.0046
+       }
+      }
+     ]
+    },
+    {
+     "row": 13,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:534",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.9804,
+      "probs": {
+       "sadness": 0.9804,
+       "joy": 0.0039,
+       "love": 0.0039,
+       "anger": 0.004,
+       "fear": 0.0039,
+       "surprise": 0.0039
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "love",
+        "joy",
+        "surprise",
+        "fear",
+        "sadness",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.9788,
+       "probs": {
+        "love": 0.0042,
+        "joy": 0.0042,
+        "surprise": 0.0042,
+        "fear": 0.0042,
+        "sadness": 0.9788,
+        "anger": 0.0044
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "joy",
+        "love",
+        "sadness",
+        "surprise",
+        "fear"
+       ],
+       "pred": "sadness",
+       "conf": 0.9792,
+       "probs": {
+        "anger": 0.0042,
+        "joy": 0.0042,
+        "love": 0.0041,
+        "sadness": 0.9792,
+        "surprise": 0.0041,
+        "fear": 0.0041
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "fear",
+        "surprise",
+        "sadness",
+        "joy",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.9795,
+       "probs": {
+        "anger": 0.0041,
+        "fear": 0.0041,
+        "surprise": 0.0041,
+        "sadness": 0.9795,
+        "joy": 0.0041,
+        "love": 0.0041
+       }
+      },
+      {
+       "order": [
+        "love",
+        "surprise",
+        "anger",
+        "sadness",
+        "fear",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.9794,
+       "probs": {
+        "love": 0.0041,
+        "surprise": 0.0041,
+        "anger": 0.0042,
+        "sadness": 0.9794,
+        "fear": 0.0041,
+        "joy": 0.0042
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "surprise",
+        "sadness",
+        "love",
+        "anger",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.979,
+       "probs": {
+        "fear": 0.0041,
+        "surprise": 0.0041,
+        "sadness": 0.979,
+        "love": 0.0042,
+        "anger": 0.0043,
+        "joy": 0.0042
+       }
+      }
+     ]
+    },
+    {
+     "row": 14,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:562",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.9766,
+      "probs": {
+       "sadness": 0.9766,
+       "joy": 0.0046,
+       "love": 0.0046,
+       "anger": 0.0049,
+       "fear": 0.0046,
+       "surprise": 0.0047
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "fear",
+        "sadness",
+        "anger",
+        "love",
+        "joy",
+        "surprise"
+       ],
+       "pred": "sadness",
+       "conf": 0.977,
+       "probs": {
+        "fear": 0.0045,
+        "sadness": 0.977,
+        "anger": 0.0047,
+        "love": 0.0045,
+        "joy": 0.0046,
+        "surprise": 0.0047
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "sadness",
+        "surprise",
+        "fear",
+        "joy",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.9755,
+       "probs": {
+        "anger": 0.0051,
+        "sadness": 0.9755,
+        "surprise": 0.0049,
+        "fear": 0.0048,
+        "joy": 0.0049,
+        "love": 0.0048
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "anger",
+        "love",
+        "surprise",
+        "sadness",
+        "fear"
+       ],
+       "pred": "sadness",
+       "conf": 0.9762,
+       "probs": {
+        "joy": 0.0047,
+        "anger": 0.0051,
+        "love": 0.0047,
+        "surprise": 0.0047,
+        "sadness": 0.9762,
+        "fear": 0.0046
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "love",
+        "joy",
+        "sadness",
+        "surprise",
+        "fear"
+       ],
+       "pred": "sadness",
+       "conf": 0.9776,
+       "probs": {
+        "anger": 0.0047,
+        "love": 0.0044,
+        "joy": 0.0044,
+        "sadness": 0.9776,
+        "surprise": 0.0045,
+        "fear": 0.0044
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "joy",
+        "love",
+        "surprise",
+        "fear",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.9766,
+       "probs": {
+        "sadness": 0.9766,
+        "joy": 0.0046,
+        "love": 0.0046,
+        "surprise": 0.0046,
+        "fear": 0.0046,
+        "anger": 0.005
+       }
+      }
+     ]
+    },
+    {
+     "row": 15,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:592",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.9783,
+      "probs": {
+       "sadness": 0.9783,
+       "joy": 0.0044,
+       "love": 0.0043,
+       "anger": 0.0044,
+       "fear": 0.0043,
+       "surprise": 0.0043
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "surprise",
+        "fear",
+        "joy",
+        "love",
+        "anger",
+        "sadness"
+       ],
+       "pred": "sadness",
+       "conf": 0.9773,
+       "probs": {
+        "surprise": 0.0045,
+        "fear": 0.0045,
+        "joy": 0.0046,
+        "love": 0.0045,
+        "anger": 0.0046,
+        "sadness": 0.9773
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "anger",
+        "love",
+        "joy",
+        "sadness",
+        "surprise"
+       ],
+       "pred": "sadness",
+       "conf": 0.9777,
+       "probs": {
+        "fear": 0.0044,
+        "anger": 0.0045,
+        "love": 0.0044,
+        "joy": 0.0045,
+        "sadness": 0.9777,
+        "surprise": 0.0044
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "love",
+        "joy",
+        "sadness",
+        "fear",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.9766,
+       "probs": {
+        "surprise": 0.0046,
+        "love": 0.0046,
+        "joy": 0.0047,
+        "sadness": 0.9766,
+        "fear": 0.0047,
+        "anger": 0.0048
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "surprise",
+        "joy",
+        "anger",
+        "sadness",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.9761,
+       "probs": {
+        "fear": 0.0047,
+        "surprise": 0.0047,
+        "joy": 0.0048,
+        "anger": 0.0049,
+        "sadness": 0.9761,
+        "love": 0.0048
+       }
+      },
+      {
+       "order": [
+        "love",
+        "joy",
+        "surprise",
+        "sadness",
+        "fear",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.9771,
+       "probs": {
+        "love": 0.0045,
+        "joy": 0.0046,
+        "surprise": 0.0045,
+        "sadness": 0.9771,
+        "fear": 0.0046,
+        "anger": 0.0047
+       }
+      }
+     ]
+    },
+    {
+     "row": 16,
+     "qid": "emotion",
+     "gold": "surprise",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:605",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "surprise",
+      "conf": 0.9808,
+      "probs": {
+       "sadness": 0.0038,
+       "joy": 0.0039,
+       "love": 0.0038,
+       "anger": 0.0038,
+       "fear": 0.0038,
+       "surprise": 0.9808
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "fear",
+        "anger",
+        "love",
+        "surprise",
+        "sadness",
+        "joy"
+       ],
+       "pred": "surprise",
+       "conf": 0.9813,
+       "probs": {
+        "fear": 0.0037,
+        "anger": 0.0037,
+        "love": 0.0037,
+        "surprise": 0.9813,
+        "sadness": 0.0037,
+        "joy": 0.0039
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "surprise",
+        "anger",
+        "joy",
+        "fear",
+        "love"
+       ],
+       "pred": "surprise",
+       "conf": 0.9808,
+       "probs": {
+        "sadness": 0.0038,
+        "surprise": 0.9808,
+        "anger": 0.0038,
+        "joy": 0.0039,
+        "fear": 0.0038,
+        "love": 0.0038
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "anger",
+        "love",
+        "surprise",
+        "joy",
+        "sadness"
+       ],
+       "pred": "surprise",
+       "conf": 0.9813,
+       "probs": {
+        "fear": 0.0037,
+        "anger": 0.0037,
+        "love": 0.0037,
+        "surprise": 0.9813,
+        "joy": 0.0038,
+        "sadness": 0.0037
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "fear",
+        "love",
+        "sadness",
+        "joy",
+        "surprise"
+       ],
+       "pred": "surprise",
+       "conf": 0.981,
+       "probs": {
+        "anger": 0.0038,
+        "fear": 0.0038,
+        "love": 0.0038,
+        "sadness": 0.0038,
+        "joy": 0.0039,
+        "surprise": 0.981
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "anger",
+        "sadness",
+        "love",
+        "joy",
+        "surprise"
+       ],
+       "pred": "surprise",
+       "conf": 0.9811,
+       "probs": {
+        "fear": 0.0038,
+        "anger": 0.0038,
+        "sadness": 0.0038,
+        "love": 0.0038,
+        "joy": 0.0039,
+        "surprise": 0.9811
+       }
+      }
+     ]
+    },
+    {
+     "row": 17,
+     "qid": "emotion",
+     "gold": "love",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:887",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "love",
+      "conf": 0.9775,
+      "probs": {
+       "sadness": 0.0045,
+       "joy": 0.0045,
+       "love": 0.9775,
+       "anger": 0.0045,
+       "fear": 0.0045,
+       "surprise": 0.0044
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "fear",
+        "love",
+        "anger",
+        "sadness",
+        "surprise",
+        "joy"
+       ],
+       "pred": "love",
+       "conf": 0.9785,
+       "probs": {
+        "fear": 0.0042,
+        "love": 0.9785,
+        "anger": 0.0043,
+        "sadness": 0.0043,
+        "surprise": 0.0043,
+        "joy": 0.0044
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "surprise",
+        "love",
+        "joy",
+        "fear",
+        "anger"
+       ],
+       "pred": "love",
+       "conf": 0.9778,
+       "probs": {
+        "sadness": 0.0044,
+        "surprise": 0.0044,
+        "love": 0.9778,
+        "joy": 0.0045,
+        "fear": 0.0044,
+        "anger": 0.0045
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "fear",
+        "love",
+        "anger",
+        "sadness",
+        "surprise"
+       ],
+       "pred": "love",
+       "conf": 0.9781,
+       "probs": {
+        "joy": 0.0044,
+        "fear": 0.0043,
+        "love": 0.9781,
+        "anger": 0.0044,
+        "sadness": 0.0044,
+        "surprise": 0.0043
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "fear",
+        "anger",
+        "love",
+        "surprise",
+        "sadness"
+       ],
+       "pred": "love",
+       "conf": 0.9773,
+       "probs": {
+        "joy": 0.0045,
+        "fear": 0.0045,
+        "anger": 0.0045,
+        "love": 0.9773,
+        "surprise": 0.0045,
+        "sadness": 0.0046
+       }
+      },
+      {
+       "order": [
+        "love",
+        "anger",
+        "sadness",
+        "joy",
+        "surprise",
+        "fear"
+       ],
+       "pred": "love",
+       "conf": 0.9787,
+       "probs": {
+        "love": 0.9787,
+        "anger": 0.0043,
+        "sadness": 0.0043,
+        "joy": 0.0043,
+        "surprise": 0.0042,
+        "fear": 0.0042
+       }
+      }
+     ]
+    },
+    {
+     "row": 18,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1092",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.9773,
+      "probs": {
+       "sadness": 0.9773,
+       "joy": 0.0046,
+       "love": 0.0045,
+       "anger": 0.0047,
+       "fear": 0.0045,
+       "surprise": 0.0045
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "fear",
+        "joy",
+        "sadness",
+        "surprise",
+        "anger",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.978,
+       "probs": {
+        "fear": 0.0043,
+        "joy": 0.0044,
+        "sadness": 0.978,
+        "surprise": 0.0043,
+        "anger": 0.0046,
+        "love": 0.0044
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "surprise",
+        "joy",
+        "anger",
+        "fear",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.9785,
+       "probs": {
+        "sadness": 0.9785,
+        "surprise": 0.0042,
+        "joy": 0.0043,
+        "anger": 0.0045,
+        "fear": 0.0042,
+        "love": 0.0043
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "anger",
+        "love",
+        "sadness",
+        "joy",
+        "surprise"
+       ],
+       "pred": "sadness",
+       "conf": 0.9783,
+       "probs": {
+        "fear": 0.0043,
+        "anger": 0.0044,
+        "love": 0.0043,
+        "sadness": 0.9783,
+        "joy": 0.0044,
+        "surprise": 0.0043
+       }
+      },
+      {
+       "order": [
+        "love",
+        "anger",
+        "surprise",
+        "fear",
+        "sadness",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.9776,
+       "probs": {
+        "love": 0.0045,
+        "anger": 0.0046,
+        "surprise": 0.0044,
+        "fear": 0.0044,
+        "sadness": 0.9776,
+        "joy": 0.0045
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "anger",
+        "sadness",
+        "love",
+        "fear",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.9774,
+       "probs": {
+        "surprise": 0.0044,
+        "anger": 0.0046,
+        "sadness": 0.9774,
+        "love": 0.0045,
+        "fear": 0.0045,
+        "joy": 0.0046
+       }
+      }
+     ]
+    },
+    {
+     "row": 19,
+     "qid": "emotion",
+     "gold": "love",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1244",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "love",
+      "conf": 0.9709,
+      "probs": {
+       "sadness": 0.0058,
+       "joy": 0.0059,
+       "love": 0.9709,
+       "anger": 0.0059,
+       "fear": 0.0058,
+       "surprise": 0.0057
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "love",
+        "joy",
+        "fear",
+        "sadness",
+        "surprise",
+        "anger"
+       ],
+       "pred": "love",
+       "conf": 0.9739,
+       "probs": {
+        "love": 0.9739,
+        "joy": 0.0053,
+        "fear": 0.0051,
+        "sadness": 0.0052,
+        "surprise": 0.0051,
+        "anger": 0.0053
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "love",
+        "fear",
+        "surprise",
+        "anger",
+        "joy"
+       ],
+       "pred": "love",
+       "conf": 0.9708,
+       "probs": {
+        "sadness": 0.0058,
+        "love": 0.9708,
+        "fear": 0.0058,
+        "surprise": 0.0057,
+        "anger": 0.0059,
+        "joy": 0.0061
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "joy",
+        "surprise",
+        "fear",
+        "sadness",
+        "love"
+       ],
+       "pred": "love",
+       "conf": 0.9715,
+       "probs": {
+        "anger": 0.0057,
+        "joy": 0.0059,
+        "surprise": 0.0056,
+        "fear": 0.0056,
+        "sadness": 0.0057,
+        "love": 0.9715
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "fear",
+        "joy",
+        "love",
+        "surprise",
+        "sadness"
+       ],
+       "pred": "love",
+       "conf": 0.9707,
+       "probs": {
+        "anger": 0.0058,
+        "fear": 0.0058,
+        "joy": 0.006,
+        "love": 0.9707,
+        "surprise": 0.0058,
+        "sadness": 0.0058
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "surprise",
+        "love",
+        "sadness",
+        "joy",
+        "anger"
+       ],
+       "pred": "love",
+       "conf": 0.9712,
+       "probs": {
+        "fear": 0.0057,
+        "surprise": 0.0057,
+        "love": 0.9712,
+        "sadness": 0.0058,
+        "joy": 0.0059,
+        "anger": 0.0058
+       }
+      }
+     ]
+    },
+    {
+     "row": 20,
+     "qid": "emotion",
+     "gold": "fear",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1321",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "fear",
+      "conf": 0.9792,
+      "probs": {
+       "sadness": 0.0042,
+       "joy": 0.0042,
+       "love": 0.0041,
+       "anger": 0.0042,
+       "fear": 0.9792,
+       "surprise": 0.0041
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sadness",
+        "fear",
+        "anger",
+        "surprise",
+        "love",
+        "joy"
+       ],
+       "pred": "fear",
+       "conf": 0.9793,
+       "probs": {
+        "sadness": 0.0041,
+        "fear": 0.9793,
+        "anger": 0.0042,
+        "surprise": 0.0041,
+        "love": 0.0041,
+        "joy": 0.0042
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "anger",
+        "joy",
+        "fear",
+        "love",
+        "sadness"
+       ],
+       "pred": "fear",
+       "conf": 0.9793,
+       "probs": {
+        "surprise": 0.0041,
+        "anger": 0.0041,
+        "joy": 0.0042,
+        "fear": 0.9793,
+        "love": 0.0041,
+        "sadness": 0.0041
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "love",
+        "anger",
+        "sadness",
+        "joy",
+        "surprise"
+       ],
+       "pred": "fear",
+       "conf": 0.9793,
+       "probs": {
+        "fear": 0.9793,
+        "love": 0.0041,
+        "anger": 0.0042,
+        "sadness": 0.0042,
+        "joy": 0.0042,
+        "surprise": 0.0041
+       }
+      },
+      {
+       "order": [
+        "love",
+        "surprise",
+        "sadness",
+        "anger",
+        "joy",
+        "fear"
+       ],
+       "pred": "fear",
+       "conf": 0.9788,
+       "probs": {
+        "love": 0.0042,
+        "surprise": 0.0042,
+        "sadness": 0.0043,
+        "anger": 0.0043,
+        "joy": 0.0043,
+        "fear": 0.9788
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "surprise",
+        "love",
+        "fear",
+        "anger",
+        "sadness"
+       ],
+       "pred": "fear",
+       "conf": 0.9792,
+       "probs": {
+        "joy": 0.0042,
+        "surprise": 0.0041,
+        "love": 0.0041,
+        "fear": 0.9792,
+        "anger": 0.0042,
+        "sadness": 0.0042
+       }
+      }
+     ]
+    },
+    {
+     "row": 21,
+     "qid": "emotion",
+     "gold": "love",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1341",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "love",
+      "conf": 0.9786,
+      "probs": {
+       "sadness": 0.0043,
+       "joy": 0.0043,
+       "love": 0.9786,
+       "anger": 0.0043,
+       "fear": 0.0043,
+       "surprise": 0.0042
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "love",
+        "surprise",
+        "sadness",
+        "anger",
+        "fear",
+        "joy"
+       ],
+       "pred": "love",
+       "conf": 0.9787,
+       "probs": {
+        "love": 0.9787,
+        "surprise": 0.0042,
+        "sadness": 0.0043,
+        "anger": 0.0043,
+        "fear": 0.0042,
+        "joy": 0.0043
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "fear",
+        "joy",
+        "surprise",
+        "love",
+        "anger"
+       ],
+       "pred": "love",
+       "conf": 0.9784,
+       "probs": {
+        "sadness": 0.0043,
+        "fear": 0.0043,
+        "joy": 0.0043,
+        "surprise": 0.0043,
+        "love": 0.9784,
+        "anger": 0.0044
+       }
+      },
+      {
+       "order": [
+        "love",
+        "surprise",
+        "anger",
+        "joy",
+        "fear",
+        "sadness"
+       ],
+       "pred": "love",
+       "conf": 0.9784,
+       "probs": {
+        "love": 0.9784,
+        "surprise": 0.0043,
+        "anger": 0.0043,
+        "joy": 0.0043,
+        "fear": 0.0043,
+        "sadness": 0.0044
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "love",
+        "joy",
+        "sadness",
+        "surprise",
+        "fear"
+       ],
+       "pred": "love",
+       "conf": 0.9784,
+       "probs": {
+        "anger": 0.0043,
+        "love": 0.9784,
+        "joy": 0.0044,
+        "sadness": 0.0044,
+        "surprise": 0.0043,
+        "fear": 0.0043
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "surprise",
+        "love",
+        "anger",
+        "fear",
+        "sadness"
+       ],
+       "pred": "love",
+       "conf": 0.9784,
+       "probs": {
+        "joy": 0.0043,
+        "surprise": 0.0043,
+        "love": 0.9784,
+        "anger": 0.0043,
+        "fear": 0.0043,
+        "sadness": 0.0044
+       }
+      }
+     ]
+    },
+    {
+     "row": 22,
+     "qid": "emotion",
+     "gold": "joy",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1370",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "joy",
+      "conf": 0.4563,
+      "probs": {
+       "sadness": 0.1087,
+       "joy": 0.4563,
+       "love": 0.1098,
+       "anger": 0.109,
+       "fear": 0.1082,
+       "surprise": 0.108
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "anger",
+        "love",
+        "surprise",
+        "joy",
+        "sadness",
+        "fear"
+       ],
+       "pred": "joy",
+       "conf": 0.5084,
+       "probs": {
+        "anger": 0.0981,
+        "love": 0.0993,
+        "surprise": 0.0978,
+        "joy": 0.5084,
+        "sadness": 0.0986,
+        "fear": 0.0978
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "love",
+        "joy",
+        "surprise",
+        "sadness",
+        "anger"
+       ],
+       "pred": "joy",
+       "conf": 0.4659,
+       "probs": {
+        "fear": 0.1057,
+        "love": 0.1082,
+        "joy": 0.4659,
+        "surprise": 0.1062,
+        "sadness": 0.1069,
+        "anger": 0.1072
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "anger",
+        "fear",
+        "joy",
+        "love",
+        "sadness"
+       ],
+       "pred": "joy",
+       "conf": 0.4849,
+       "probs": {
+        "surprise": 0.1019,
+        "anger": 0.1032,
+        "fear": 0.1026,
+        "joy": 0.4849,
+        "love": 0.1041,
+        "sadness": 0.1033
+       }
+      },
+      {
+       "order": [
+        "love",
+        "sadness",
+        "surprise",
+        "joy",
+        "fear",
+        "anger"
+       ],
+       "pred": "joy",
+       "conf": 0.4977,
+       "probs": {
+        "love": 0.1004,
+        "sadness": 0.1005,
+        "surprise": 0.0999,
+        "joy": 0.4977,
+        "fear": 0.1004,
+        "anger": 0.1011
+       }
+      },
+      {
+       "order": [
+        "love",
+        "joy",
+        "sadness",
+        "surprise",
+        "fear",
+        "anger"
+       ],
+       "pred": "joy",
+       "conf": 0.4492,
+       "probs": {
+        "love": 0.1104,
+        "joy": 0.4492,
+        "sadness": 0.1105,
+        "surprise": 0.1095,
+        "fear": 0.1097,
+        "anger": 0.1107
+       }
+      }
+     ]
+    },
+    {
+     "row": 23,
+     "qid": "emotion",
+     "gold": "anger",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1404",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "anger",
+      "conf": 0.9796,
+      "probs": {
+       "sadness": 0.0041,
+       "joy": 0.0041,
+       "love": 0.0041,
+       "anger": 0.9796,
+       "fear": 0.0041,
+       "surprise": 0.0041
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sadness",
+        "surprise",
+        "love",
+        "fear",
+        "joy",
+        "anger"
+       ],
+       "pred": "anger",
+       "conf": 0.9799,
+       "probs": {
+        "sadness": 0.004,
+        "surprise": 0.004,
+        "love": 0.004,
+        "fear": 0.004,
+        "joy": 0.004,
+        "anger": 0.9799
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "anger",
+        "love",
+        "fear",
+        "sadness",
+        "joy"
+       ],
+       "pred": "anger",
+       "conf": 0.9799,
+       "probs": {
+        "surprise": 0.004,
+        "anger": 0.9799,
+        "love": 0.004,
+        "fear": 0.004,
+        "sadness": 0.004,
+        "joy": 0.004
+       }
+      },
+      {
+       "order": [
+        "love",
+        "sadness",
+        "joy",
+        "surprise",
+        "fear",
+        "anger"
+       ],
+       "pred": "anger",
+       "conf": 0.9798,
+       "probs": {
+        "love": 0.004,
+        "sadness": 0.0041,
+        "joy": 0.004,
+        "surprise": 0.004,
+        "fear": 0.004,
+        "anger": 0.9798
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "love",
+        "joy",
+        "surprise",
+        "sadness",
+        "anger"
+       ],
+       "pred": "anger",
+       "conf": 0.9795,
+       "probs": {
+        "fear": 0.0041,
+        "love": 0.0041,
+        "joy": 0.0041,
+        "surprise": 0.0041,
+        "sadness": 0.0041,
+        "anger": 0.9795
+       }
+      },
+      {
+       "order": [
+        "love",
+        "joy",
+        "anger",
+        "surprise",
+        "fear",
+        "sadness"
+       ],
+       "pred": "anger",
+       "conf": 0.9798,
+       "probs": {
+        "love": 0.004,
+        "joy": 0.004,
+        "anger": 0.9798,
+        "surprise": 0.004,
+        "fear": 0.004,
+        "sadness": 0.0041
+       }
+      }
+     ]
+    },
+    {
+     "row": 24,
+     "qid": "emotion",
+     "gold": "love",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1405",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "love",
+      "conf": 0.9759,
+      "probs": {
+       "sadness": 0.0047,
+       "joy": 0.0051,
+       "love": 0.9759,
+       "anger": 0.0048,
+       "fear": 0.0047,
+       "surprise": 0.0047
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "anger",
+        "sadness",
+        "love",
+        "fear",
+        "joy",
+        "surprise"
+       ],
+       "pred": "love",
+       "conf": 0.9766,
+       "probs": {
+        "anger": 0.0046,
+        "sadness": 0.0046,
+        "love": 0.9766,
+        "fear": 0.0046,
+        "joy": 0.005,
+        "surprise": 0.0046
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "love",
+        "fear",
+        "joy",
+        "anger",
+        "sadness"
+       ],
+       "pred": "love",
+       "conf": 0.9779,
+       "probs": {
+        "surprise": 0.0043,
+        "love": 0.9779,
+        "fear": 0.0043,
+        "joy": 0.0046,
+        "anger": 0.0044,
+        "sadness": 0.0044
+       }
+      },
+      {
+       "order": [
+        "love",
+        "joy",
+        "fear",
+        "surprise",
+        "anger",
+        "sadness"
+       ],
+       "pred": "love",
+       "conf": 0.9779,
+       "probs": {
+        "love": 0.9779,
+        "joy": 0.0047,
+        "fear": 0.0043,
+        "surprise": 0.0043,
+        "anger": 0.0044,
+        "sadness": 0.0044
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "love",
+        "sadness",
+        "joy",
+        "anger",
+        "surprise"
+       ],
+       "pred": "love",
+       "conf": 0.9778,
+       "probs": {
+        "fear": 0.0043,
+        "love": 0.9778,
+        "sadness": 0.0044,
+        "joy": 0.0047,
+        "anger": 0.0045,
+        "surprise": 0.0043
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "fear",
+        "love",
+        "joy",
+        "sadness",
+        "surprise"
+       ],
+       "pred": "love",
+       "conf": 0.9765,
+       "probs": {
+        "anger": 0.0046,
+        "fear": 0.0045,
+        "love": 0.9765,
+        "joy": 0.0053,
+        "sadness": 0.0046,
+        "surprise": 0.0045
+       }
+      }
+     ]
+    },
+    {
+     "row": 25,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1506",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.9796,
+      "probs": {
+       "sadness": 0.9796,
+       "joy": 0.0041,
+       "love": 0.0041,
+       "anger": 0.0041,
+       "fear": 0.004,
+       "surprise": 0.004
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "surprise",
+        "fear",
+        "sadness",
+        "anger",
+        "joy",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.9801,
+       "probs": {
+        "surprise": 0.0039,
+        "fear": 0.0039,
+        "sadness": 0.9801,
+        "anger": 0.0041,
+        "joy": 0.004,
+        "love": 0.004
+       }
+      },
+      {
+       "order": [
+        "love",
+        "anger",
+        "surprise",
+        "joy",
+        "fear",
+        "sadness"
+       ],
+       "pred": "sadness",
+       "conf": 0.9804,
+       "probs": {
+        "love": 0.0039,
+        "anger": 0.004,
+        "surprise": 0.0039,
+        "joy": 0.004,
+        "fear": 0.0039,
+        "sadness": 0.9804
+       }
+      },
+      {
+       "order": [
+        "love",
+        "anger",
+        "joy",
+        "fear",
+        "surprise",
+        "sadness"
+       ],
+       "pred": "sadness",
+       "conf": 0.9804,
+       "probs": {
+        "love": 0.0039,
+        "anger": 0.004,
+        "joy": 0.004,
+        "fear": 0.0039,
+        "surprise": 0.0039,
+        "sadness": 0.9804
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "anger",
+        "love",
+        "sadness",
+        "fear",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.98,
+       "probs": {
+        "surprise": 0.0039,
+        "anger": 0.004,
+        "love": 0.004,
+        "sadness": 0.98,
+        "fear": 0.004,
+        "joy": 0.0041
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "surprise",
+        "love",
+        "joy",
+        "fear",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.9794,
+       "probs": {
+        "sadness": 0.9794,
+        "surprise": 0.0041,
+        "love": 0.0041,
+        "joy": 0.0041,
+        "fear": 0.0041,
+        "anger": 0.0042
+       }
+      }
+     ]
+    },
+    {
+     "row": 26,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1532",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.9781,
+      "probs": {
+       "sadness": 0.9781,
+       "joy": 0.0044,
+       "love": 0.0044,
+       "anger": 0.0044,
+       "fear": 0.0043,
+       "surprise": 0.0043
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "fear",
+        "sadness",
+        "anger",
+        "joy",
+        "love",
+        "surprise"
+       ],
+       "pred": "sadness",
+       "conf": 0.9777,
+       "probs": {
+        "fear": 0.0044,
+        "sadness": 0.9777,
+        "anger": 0.0045,
+        "joy": 0.0045,
+        "love": 0.0045,
+        "surprise": 0.0044
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "fear",
+        "love",
+        "sadness",
+        "surprise",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.9776,
+       "probs": {
+        "anger": 0.0045,
+        "fear": 0.0044,
+        "love": 0.0045,
+        "sadness": 0.9776,
+        "surprise": 0.0044,
+        "joy": 0.0046
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "surprise",
+        "love",
+        "anger",
+        "joy",
+        "fear"
+       ],
+       "pred": "sadness",
+       "conf": 0.9789,
+       "probs": {
+        "sadness": 0.9789,
+        "surprise": 0.0042,
+        "love": 0.0042,
+        "anger": 0.0043,
+        "joy": 0.0043,
+        "fear": 0.0042
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "sadness",
+        "surprise",
+        "fear",
+        "love",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.9778,
+       "probs": {
+        "anger": 0.0045,
+        "sadness": 0.9778,
+        "surprise": 0.0044,
+        "fear": 0.0044,
+        "love": 0.0045,
+        "joy": 0.0045
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "love",
+        "surprise",
+        "fear",
+        "anger",
+        "sadness"
+       ],
+       "pred": "sadness",
+       "conf": 0.9775,
+       "probs": {
+        "joy": 0.0045,
+        "love": 0.0045,
+        "surprise": 0.0045,
+        "fear": 0.0045,
+        "anger": 0.0046,
+        "sadness": 0.9775
+       }
+      }
+     ]
+    },
+    {
+     "row": 27,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1642",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.9767,
+      "probs": {
+       "sadness": 0.9767,
+       "joy": 0.0047,
+       "love": 0.0046,
+       "anger": 0.0048,
+       "fear": 0.0046,
+       "surprise": 0.0046
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "surprise",
+        "joy",
+        "fear",
+        "anger",
+        "sadness",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.9699,
+       "probs": {
+        "surprise": 0.0059,
+        "joy": 0.006,
+        "fear": 0.0059,
+        "anger": 0.0062,
+        "sadness": 0.9699,
+        "love": 0.006
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "anger",
+        "love",
+        "sadness",
+        "surprise",
+        "fear"
+       ],
+       "pred": "sadness",
+       "conf": 0.9757,
+       "probs": {
+        "joy": 0.0049,
+        "anger": 0.0049,
+        "love": 0.0049,
+        "sadness": 0.9757,
+        "surprise": 0.0048,
+        "fear": 0.0048
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "sadness",
+        "surprise",
+        "joy",
+        "love",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.9762,
+       "probs": {
+        "fear": 0.0046,
+        "sadness": 0.9762,
+        "surprise": 0.0047,
+        "joy": 0.0048,
+        "love": 0.0047,
+        "anger": 0.005
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "fear",
+        "sadness",
+        "love",
+        "anger",
+        "surprise"
+       ],
+       "pred": "sadness",
+       "conf": 0.9744,
+       "probs": {
+        "joy": 0.0051,
+        "fear": 0.005,
+        "sadness": 0.9744,
+        "love": 0.0051,
+        "anger": 0.0053,
+        "surprise": 0.0051
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "fear",
+        "surprise",
+        "anger",
+        "love",
+        "sadness"
+       ],
+       "pred": "sadness",
+       "conf": 0.974,
+       "probs": {
+        "joy": 0.0052,
+        "fear": 0.0051,
+        "surprise": 0.0051,
+        "anger": 0.0054,
+        "love": 0.0052,
+        "sadness": 0.974
+       }
+      }
+     ]
+    },
+    {
+     "row": 28,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1654",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.962,
+      "probs": {
+       "sadness": 0.962,
+       "joy": 0.0047,
+       "love": 0.0046,
+       "anger": 0.006,
+       "fear": 0.0181,
+       "surprise": 0.0046
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "joy",
+        "anger",
+        "fear",
+        "love",
+        "surprise",
+        "sadness"
+       ],
+       "pred": "sadness",
+       "conf": 0.9534,
+       "probs": {
+        "joy": 0.0044,
+        "anger": 0.0096,
+        "fear": 0.0239,
+        "love": 0.0044,
+        "surprise": 0.0044,
+        "sadness": 0.9534
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "joy",
+        "love",
+        "anger",
+        "fear",
+        "surprise"
+       ],
+       "pred": "sadness",
+       "conf": 0.962,
+       "probs": {
+        "sadness": 0.962,
+        "joy": 0.0047,
+        "love": 0.0046,
+        "anger": 0.006,
+        "fear": 0.0181,
+        "surprise": 0.0046
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "surprise",
+        "love",
+        "anger",
+        "sadness",
+        "fear"
+       ],
+       "pred": "sadness",
+       "conf": 0.9658,
+       "probs": {
+        "joy": 0.0046,
+        "surprise": 0.0046,
+        "love": 0.0046,
+        "anger": 0.0064,
+        "sadness": 0.9658,
+        "fear": 0.014
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "joy",
+        "sadness",
+        "surprise",
+        "love",
+        "fear"
+       ],
+       "pred": "sadness",
+       "conf": 0.9668,
+       "probs": {
+        "anger": 0.0054,
+        "joy": 0.0049,
+        "sadness": 0.9668,
+        "surprise": 0.0048,
+        "love": 0.0048,
+        "fear": 0.0134
+       }
+      },
+      {
+       "order": [
+        "love",
+        "fear",
+        "surprise",
+        "joy",
+        "sadness",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.9606,
+       "probs": {
+        "love": 0.0046,
+        "fear": 0.0183,
+        "surprise": 0.0046,
+        "joy": 0.0047,
+        "sadness": 0.9606,
+        "anger": 0.0073
+       }
+      }
+     ]
+    },
+    {
+     "row": 29,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1660",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.9742,
+      "probs": {
+       "sadness": 0.9742,
+       "joy": 0.0052,
+       "love": 0.0051,
+       "anger": 0.0054,
+       "fear": 0.0051,
+       "surprise": 0.0051
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "love",
+        "anger",
+        "surprise",
+        "joy",
+        "fear",
+        "sadness"
+       ],
+       "pred": "sadness",
+       "conf": 0.9748,
+       "probs": {
+        "love": 0.005,
+        "anger": 0.0052,
+        "surprise": 0.005,
+        "joy": 0.005,
+        "fear": 0.005,
+        "sadness": 0.9748
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "surprise",
+        "joy",
+        "anger",
+        "love",
+        "fear"
+       ],
+       "pred": "sadness",
+       "conf": 0.9745,
+       "probs": {
+        "sadness": 0.9745,
+        "surprise": 0.005,
+        "joy": 0.0051,
+        "anger": 0.0054,
+        "love": 0.005,
+        "fear": 0.005
+       }
+      },
+      {
+       "order": [
+        "love",
+        "fear",
+        "sadness",
+        "surprise",
+        "anger",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.9746,
+       "probs": {
+        "love": 0.005,
+        "fear": 0.005,
+        "sadness": 0.9746,
+        "surprise": 0.005,
+        "anger": 0.0054,
+        "joy": 0.0051
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "surprise",
+        "joy",
+        "fear",
+        "sadness",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.9733,
+       "probs": {
+        "anger": 0.0055,
+        "surprise": 0.0053,
+        "joy": 0.0053,
+        "fear": 0.0053,
+        "sadness": 0.9733,
+        "love": 0.0053
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "fear",
+        "love",
+        "sadness",
+        "anger",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.9748,
+       "probs": {
+        "surprise": 0.0049,
+        "fear": 0.0049,
+        "love": 0.005,
+        "sadness": 0.9748,
+        "anger": 0.0053,
+        "joy": 0.0051
+       }
+      }
+     ]
+    },
+    {
+     "row": 30,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1667",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.9793,
+      "probs": {
+       "sadness": 0.9793,
+       "joy": 0.0042,
+       "love": 0.0042,
+       "anger": 0.0042,
+       "fear": 0.0041,
+       "surprise": 0.0041
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "surprise",
+        "love",
+        "joy",
+        "sadness",
+        "fear",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.9794,
+       "probs": {
+        "surprise": 0.0041,
+        "love": 0.0041,
+        "joy": 0.0041,
+        "sadness": 0.9794,
+        "fear": 0.0041,
+        "anger": 0.0042
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "surprise",
+        "fear",
+        "love",
+        "sadness",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.9787,
+       "probs": {
+        "anger": 0.0042,
+        "surprise": 0.0042,
+        "fear": 0.0042,
+        "love": 0.0043,
+        "sadness": 0.9787,
+        "joy": 0.0043
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "surprise",
+        "love",
+        "joy",
+        "sadness",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.9793,
+       "probs": {
+        "fear": 0.0041,
+        "surprise": 0.0041,
+        "love": 0.0042,
+        "joy": 0.0041,
+        "sadness": 0.9793,
+        "anger": 0.0042
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "joy",
+        "surprise",
+        "anger",
+        "love",
+        "sadness"
+       ],
+       "pred": "sadness",
+       "conf": 0.9791,
+       "probs": {
+        "fear": 0.0041,
+        "joy": 0.0042,
+        "surprise": 0.0042,
+        "anger": 0.0042,
+        "love": 0.0043,
+        "sadness": 0.9791
+       }
+      },
+      {
+       "order": [
+        "love",
+        "fear",
+        "surprise",
+        "sadness",
+        "anger",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.9798,
+       "probs": {
+        "love": 0.004,
+        "fear": 0.004,
+        "surprise": 0.004,
+        "sadness": 0.9798,
+        "anger": 0.0041,
+        "joy": 0.0041
+       }
+      }
+     ]
+    },
+    {
+     "row": 31,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1721",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.9791,
+      "probs": {
+       "sadness": 0.9791,
+       "joy": 0.0043,
+       "love": 0.0042,
+       "anger": 0.0043,
+       "fear": 0.0041,
+       "surprise": 0.0041
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "fear",
+        "surprise",
+        "sadness",
+        "anger",
+        "love",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.9793,
+       "probs": {
+        "fear": 0.004,
+        "surprise": 0.004,
+        "sadness": 0.9793,
+        "anger": 0.0042,
+        "love": 0.0041,
+        "joy": 0.0043
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "love",
+        "sadness",
+        "anger",
+        "fear",
+        "surprise"
+       ],
+       "pred": "sadness",
+       "conf": 0.979,
+       "probs": {
+        "joy": 0.0043,
+        "love": 0.0042,
+        "sadness": 0.979,
+        "anger": 0.0043,
+        "fear": 0.0041,
+        "surprise": 0.0041
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "fear",
+        "surprise",
+        "joy",
+        "love",
+        "sadness"
+       ],
+       "pred": "sadness",
+       "conf": 0.9789,
+       "probs": {
+        "anger": 0.0043,
+        "fear": 0.0041,
+        "surprise": 0.0041,
+        "joy": 0.0043,
+        "love": 0.0042,
+        "sadness": 0.9789
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "surprise",
+        "anger",
+        "fear",
+        "love",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.9792,
+       "probs": {
+        "sadness": 0.9792,
+        "surprise": 0.004,
+        "anger": 0.0042,
+        "fear": 0.0041,
+        "love": 0.0042,
+        "joy": 0.0043
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "surprise",
+        "anger",
+        "sadness",
+        "love",
+        "fear"
+       ],
+       "pred": "sadness",
+       "conf": 0.9784,
+       "probs": {
+        "joy": 0.0044,
+        "surprise": 0.0042,
+        "anger": 0.0045,
+        "sadness": 0.9784,
+        "love": 0.0043,
+        "fear": 0.0042
+       }
+      }
+     ]
+    },
+    {
+     "row": 32,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1731",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.9787,
+      "probs": {
+       "sadness": 0.9787,
+       "joy": 0.0042,
+       "love": 0.0042,
+       "anger": 0.0045,
+       "fear": 0.0042,
+       "surprise": 0.0042
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "anger",
+        "surprise",
+        "fear",
+        "joy",
+        "sadness",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.9776,
+       "probs": {
+        "anger": 0.0048,
+        "surprise": 0.0044,
+        "fear": 0.0044,
+        "joy": 0.0044,
+        "sadness": 0.9776,
+        "love": 0.0044
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "love",
+        "joy",
+        "fear",
+        "surprise",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.9787,
+       "probs": {
+        "sadness": 0.9787,
+        "love": 0.0042,
+        "joy": 0.0042,
+        "fear": 0.0042,
+        "surprise": 0.0042,
+        "anger": 0.0046
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "joy",
+        "surprise",
+        "sadness",
+        "love",
+        "fear"
+       ],
+       "pred": "sadness",
+       "conf": 0.9776,
+       "probs": {
+        "anger": 0.0048,
+        "joy": 0.0044,
+        "surprise": 0.0044,
+        "sadness": 0.9776,
+        "love": 0.0044,
+        "fear": 0.0044
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "fear",
+        "sadness",
+        "anger",
+        "joy",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.9774,
+       "probs": {
+        "surprise": 0.0044,
+        "fear": 0.0044,
+        "sadness": 0.9774,
+        "anger": 0.0047,
+        "joy": 0.0045,
+        "love": 0.0045
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "love",
+        "anger",
+        "fear",
+        "sadness",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.9786,
+       "probs": {
+        "surprise": 0.0042,
+        "love": 0.0042,
+        "anger": 0.0046,
+        "fear": 0.0042,
+        "sadness": 0.9786,
+        "joy": 0.0042
+       }
+      }
+     ]
+    },
+    {
+     "row": 33,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1748",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "anger",
+      "conf": 0.5717,
+      "probs": {
+       "sadness": 0.1112,
+       "joy": 0.0315,
+       "love": 0.226,
+       "anger": 0.5717,
+       "fear": 0.0294,
+       "surprise": 0.0303
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "anger",
+        "sadness",
+        "surprise",
+        "fear",
+        "joy",
+        "love"
+       ],
+       "pred": "anger",
+       "conf": 0.883,
+       "probs": {
+        "anger": 0.883,
+        "sadness": 0.0292,
+        "surprise": 0.0158,
+        "fear": 0.0136,
+        "joy": 0.0148,
+        "love": 0.0435
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "fear",
+        "sadness",
+        "anger",
+        "love",
+        "surprise"
+       ],
+       "pred": "anger",
+       "conf": 0.6636,
+       "probs": {
+        "joy": 0.0329,
+        "fear": 0.0316,
+        "sadness": 0.0915,
+        "anger": 0.6636,
+        "love": 0.1473,
+        "surprise": 0.0332
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "anger",
+        "sadness",
+        "love",
+        "surprise",
+        "fear"
+       ],
+       "pred": "anger",
+       "conf": 0.7118,
+       "probs": {
+        "joy": 0.0247,
+        "anger": 0.7118,
+        "sadness": 0.05,
+        "love": 0.1652,
+        "surprise": 0.0247,
+        "fear": 0.0236
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "fear",
+        "joy",
+        "anger",
+        "love",
+        "surprise"
+       ],
+       "pred": "anger",
+       "conf": 0.692,
+       "probs": {
+        "sadness": 0.1009,
+        "fear": 0.0268,
+        "joy": 0.0278,
+        "anger": 0.692,
+        "love": 0.1244,
+        "surprise": 0.0281
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "love",
+        "joy",
+        "sadness",
+        "surprise",
+        "anger"
+       ],
+       "pred": "anger",
+       "conf": 0.6293,
+       "probs": {
+        "fear": 0.0131,
+        "love": 0.3068,
+        "joy": 0.0145,
+        "sadness": 0.0228,
+        "surprise": 0.0136,
+        "anger": 0.6293
+       }
+      }
+     ]
+    },
+    {
+     "row": 34,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1754",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.977,
+      "probs": {
+       "sadness": 0.977,
+       "joy": 0.0047,
+       "love": 0.0045,
+       "anger": 0.0046,
+       "fear": 0.0045,
+       "surprise": 0.0047
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sadness",
+        "anger",
+        "surprise",
+        "love",
+        "joy",
+        "fear"
+       ],
+       "pred": "sadness",
+       "conf": 0.9769,
+       "probs": {
+        "sadness": 0.9769,
+        "anger": 0.0046,
+        "surprise": 0.0046,
+        "love": 0.0046,
+        "joy": 0.0047,
+        "fear": 0.0046
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "surprise",
+        "love",
+        "sadness",
+        "fear",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.9743,
+       "probs": {
+        "joy": 0.0052,
+        "surprise": 0.0052,
+        "love": 0.0051,
+        "sadness": 0.9743,
+        "fear": 0.0051,
+        "anger": 0.0052
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "joy",
+        "fear",
+        "surprise",
+        "love",
+        "sadness"
+       ],
+       "pred": "sadness",
+       "conf": 0.9743,
+       "probs": {
+        "anger": 0.0051,
+        "joy": 0.0052,
+        "fear": 0.0051,
+        "surprise": 0.0052,
+        "love": 0.0051,
+        "sadness": 0.9743
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "joy",
+        "surprise",
+        "fear",
+        "anger",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.9769,
+       "probs": {
+        "sadness": 0.9769,
+        "joy": 0.0047,
+        "surprise": 0.0046,
+        "fear": 0.0046,
+        "anger": 0.0047,
+        "love": 0.0046
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "anger",
+        "love",
+        "surprise",
+        "sadness",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.9727,
+       "probs": {
+        "fear": 0.0053,
+        "anger": 0.0054,
+        "love": 0.0054,
+        "surprise": 0.0054,
+        "sadness": 0.9727,
+        "joy": 0.0057
+       }
+      }
+     ]
+    },
+    {
+     "row": 35,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1789",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.9781,
+      "probs": {
+       "sadness": 0.9781,
+       "joy": 0.0044,
+       "love": 0.0044,
+       "anger": 0.0045,
+       "fear": 0.0043,
+       "surprise": 0.0043
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "joy",
+        "anger",
+        "love",
+        "sadness",
+        "fear",
+        "surprise"
+       ],
+       "pred": "sadness",
+       "conf": 0.9777,
+       "probs": {
+        "joy": 0.0044,
+        "anger": 0.0046,
+        "love": 0.0045,
+        "sadness": 0.9777,
+        "fear": 0.0044,
+        "surprise": 0.0044
+       }
+      },
+      {
+       "order": [
+        "love",
+        "surprise",
+        "joy",
+        "fear",
+        "anger",
+        "sadness"
+       ],
+       "pred": "sadness",
+       "conf": 0.9781,
+       "probs": {
+        "love": 0.0044,
+        "surprise": 0.0043,
+        "joy": 0.0044,
+        "fear": 0.0043,
+        "anger": 0.0046,
+        "sadness": 0.9781
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "love",
+        "joy",
+        "sadness",
+        "fear",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.9784,
+       "probs": {
+        "surprise": 0.0042,
+        "love": 0.0043,
+        "joy": 0.0043,
+        "sadness": 0.9784,
+        "fear": 0.0042,
+        "anger": 0.0046
+       }
+      },
+      {
+       "order": [
+        "love",
+        "fear",
+        "joy",
+        "sadness",
+        "anger",
+        "surprise"
+       ],
+       "pred": "sadness",
+       "conf": 0.9789,
+       "probs": {
+        "love": 0.0042,
+        "fear": 0.0041,
+        "joy": 0.0042,
+        "sadness": 0.9789,
+        "anger": 0.0043,
+        "surprise": 0.0042
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "joy",
+        "sadness",
+        "surprise",
+        "anger",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.9792,
+       "probs": {
+        "fear": 0.004,
+        "joy": 0.0041,
+        "sadness": 0.9792,
+        "surprise": 0.0041,
+        "anger": 0.0044,
+        "love": 0.0042
+       }
+      }
+     ]
+    },
+    {
+     "row": 36,
+     "qid": "emotion",
+     "gold": "fear",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1794",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "fear",
+      "conf": 0.9804,
+      "probs": {
+       "sadness": 0.0039,
+       "joy": 0.0039,
+       "love": 0.0039,
+       "anger": 0.0039,
+       "fear": 0.9804,
+       "surprise": 0.0039
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "anger",
+        "sadness",
+        "joy",
+        "fear",
+        "love",
+        "surprise"
+       ],
+       "pred": "fear",
+       "conf": 0.9801,
+       "probs": {
+        "anger": 0.004,
+        "sadness": 0.004,
+        "joy": 0.004,
+        "fear": 0.9801,
+        "love": 0.004,
+        "surprise": 0.004
+       }
+      },
+      {
+       "order": [
+        "joy",
+        "fear",
+        "anger",
+        "surprise",
+        "love",
+        "sadness"
+       ],
+       "pred": "fear",
+       "conf": 0.9799,
+       "probs": {
+        "joy": 0.004,
+        "fear": 0.9799,
+        "anger": 0.004,
+        "surprise": 0.004,
+        "love": 0.004,
+        "sadness": 0.0041
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "joy",
+        "anger",
+        "fear",
+        "love",
+        "surprise"
+       ],
+       "pred": "fear",
+       "conf": 0.9799,
+       "probs": {
+        "sadness": 0.004,
+        "joy": 0.004,
+        "anger": 0.004,
+        "fear": 0.9799,
+        "love": 0.004,
+        "surprise": 0.004
+       }
+      },
+      {
+       "order": [
+        "love",
+        "joy",
+        "fear",
+        "surprise",
+        "anger",
+        "sadness"
+       ],
+       "pred": "fear",
+       "conf": 0.9803,
+       "probs": {
+        "love": 0.0039,
+        "joy": 0.0039,
+        "fear": 0.9803,
+        "surprise": 0.0039,
+        "anger": 0.004,
+        "sadness": 0.004
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "sadness",
+        "joy",
+        "love",
+        "surprise",
+        "anger"
+       ],
+       "pred": "fear",
+       "conf": 0.9789,
+       "probs": {
+        "fear": 0.9789,
+        "sadness": 0.0042,
+        "joy": 0.0042,
+        "love": 0.0042,
+        "surprise": 0.0042,
+        "anger": 0.0042
+       }
+      }
+     ]
+    },
+    {
+     "row": 37,
+     "qid": "emotion",
+     "gold": "fear",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1828",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "fear",
+      "conf": 0.9684,
+      "probs": {
+       "sadness": 0.0059,
+       "joy": 0.0056,
+       "love": 0.009,
+       "anger": 0.0057,
+       "fear": 0.9684,
+       "surprise": 0.0055
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "anger",
+        "fear",
+        "surprise",
+        "joy",
+        "love",
+        "sadness"
+       ],
+       "pred": "fear",
+       "conf": 0.9645,
+       "probs": {
+        "anger": 0.0055,
+        "fear": 0.9645,
+        "surprise": 0.0053,
+        "joy": 0.0056,
+        "love": 0.0109,
+        "sadness": 0.0082
+       }
+      },
+      {
+       "order": [
+        "love",
+        "anger",
+        "joy",
+        "fear",
+        "surprise",
+        "sadness"
+       ],
+       "pred": "fear",
+       "conf": 0.9728,
+       "probs": {
+        "love": 0.0064,
+        "anger": 0.005,
+        "joy": 0.0049,
+        "fear": 0.9728,
+        "surprise": 0.0048,
+        "sadness": 0.0061
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "sadness",
+        "love",
+        "anger",
+        "surprise",
+        "joy"
+       ],
+       "pred": "fear",
+       "conf": 0.9686,
+       "probs": {
+        "fear": 0.9686,
+        "sadness": 0.0077,
+        "love": 0.0083,
+        "anger": 0.0053,
+        "surprise": 0.0049,
+        "joy": 0.0051
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "joy",
+        "fear",
+        "sadness",
+        "love",
+        "surprise"
+       ],
+       "pred": "fear",
+       "conf": 0.9679,
+       "probs": {
+        "anger": 0.0057,
+        "joy": 0.0057,
+        "fear": 0.9679,
+        "sadness": 0.0063,
+        "love": 0.0087,
+        "surprise": 0.0056
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "love",
+        "joy",
+        "surprise",
+        "sadness",
+        "fear"
+       ],
+       "pred": "fear",
+       "conf": 0.9571,
+       "probs": {
+        "anger": 0.006,
+        "love": 0.0181,
+        "joy": 0.006,
+        "surprise": 0.0058,
+        "sadness": 0.0069,
+        "fear": 0.9571
+       }
+      }
+     ]
+    },
+    {
+     "row": 38,
+     "qid": "emotion",
+     "gold": "sadness",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1835",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.7944,
+      "probs": {
+       "sadness": 0.7944,
+       "joy": 0.0347,
+       "love": 0.0093,
+       "anger": 0.146,
+       "fear": 0.0078,
+       "surprise": 0.0078
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "fear",
+        "joy",
+        "surprise",
+        "love",
+        "anger",
+        "sadness"
+       ],
+       "pred": "sadness",
+       "conf": 0.8052,
+       "probs": {
+        "fear": 0.0083,
+        "joy": 0.0629,
+        "surprise": 0.0084,
+        "love": 0.009,
+        "anger": 0.1062,
+        "sadness": 0.8052
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "anger",
+        "fear",
+        "sadness",
+        "joy",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.8378,
+       "probs": {
+        "surprise": 0.0069,
+        "anger": 0.1225,
+        "fear": 0.007,
+        "sadness": 0.8378,
+        "joy": 0.0182,
+        "love": 0.0076
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "joy",
+        "surprise",
+        "love",
+        "sadness",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.8603,
+       "probs": {
+        "fear": 0.0071,
+        "joy": 0.0511,
+        "surprise": 0.0071,
+        "love": 0.0077,
+        "sadness": 0.8603,
+        "anger": 0.0667
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "surprise",
+        "sadness",
+        "anger",
+        "love",
+        "joy"
+       ],
+       "pred": "sadness",
+       "conf": 0.8997,
+       "probs": {
+        "fear": 0.0054,
+        "surprise": 0.0054,
+        "sadness": 0.8997,
+        "anger": 0.0646,
+        "love": 0.0065,
+        "joy": 0.0184
+       }
+      },
+      {
+       "order": [
+        "sadness",
+        "joy",
+        "love",
+        "surprise",
+        "fear",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.7888,
+       "probs": {
+        "sadness": 0.7888,
+        "joy": 0.0487,
+        "love": 0.0102,
+        "surprise": 0.0092,
+        "fear": 0.0093,
+        "anger": 0.1339
+       }
+      }
+     ]
+    },
+    {
+     "row": 39,
+     "qid": "emotion",
+     "gold": "love",
+     "options": [
+      "sadness",
+      "joy",
+      "love",
+      "anger",
+      "fear",
+      "surprise"
+     ],
+     "tags": [
+      "emotion",
+      "id:1865",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "sadness",
+      "conf": 0.9362,
+      "probs": {
+       "sadness": 0.9362,
+       "joy": 0.0111,
+       "love": 0.0253,
+       "anger": 0.0097,
+       "fear": 0.0088,
+       "surprise": 0.0088
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "surprise",
+        "sadness",
+        "fear",
+        "joy",
+        "anger",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.943,
+       "probs": {
+        "surprise": 0.008,
+        "sadness": 0.943,
+        "fear": 0.0081,
+        "joy": 0.0093,
+        "anger": 0.0088,
+        "love": 0.0228
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "love",
+        "fear",
+        "joy",
+        "anger",
+        "sadness"
+       ],
+       "pred": "sadness",
+       "conf": 0.9199,
+       "probs": {
+        "surprise": 0.0103,
+        "love": 0.036,
+        "fear": 0.0104,
+        "joy": 0.0121,
+        "anger": 0.0113,
+        "sadness": 0.9199
+       }
+      },
+      {
+       "order": [
+        "surprise",
+        "sadness",
+        "fear",
+        "joy",
+        "anger",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.943,
+       "probs": {
+        "surprise": 0.008,
+        "sadness": 0.943,
+        "fear": 0.0081,
+        "joy": 0.0093,
+        "anger": 0.0088,
+        "love": 0.0228
+       }
+      },
+      {
+       "order": [
+        "fear",
+        "joy",
+        "love",
+        "sadness",
+        "surprise",
+        "anger"
+       ],
+       "pred": "sadness",
+       "conf": 0.8923,
+       "probs": {
+        "fear": 0.0141,
+        "joy": 0.0175,
+        "love": 0.0462,
+        "sadness": 0.8923,
+        "surprise": 0.0142,
+        "anger": 0.0157
+       }
+      },
+      {
+       "order": [
+        "anger",
+        "joy",
+        "fear",
+        "sadness",
+        "surprise",
+        "love"
+       ],
+       "pred": "sadness",
+       "conf": 0.9212,
+       "probs": {
+        "anger": 0.0111,
+        "joy": 0.0125,
+        "fear": 0.0104,
+        "sadness": 0.9212,
+        "surprise": 0.0103,
+        "love": 0.0345
+       }
+      }
+     ]
+    }
+   ],
+   "questions_sha256": "bd7cc49e3561bf50d45db8c2d35820b8ddea855c9dfbc081303636596b4b4c97",
+   "metrics": {
+    "n_items": 40,
+    "n_options": 6,
+    "permutations": 5,
+    "identity_permutations": 1,
+    "orig_accuracy": 0.925,
+    "flip_rate_per_perm": 0.02,
+    "flip_rate_per_perm_ci": [
+     0.0,
+     0.06000000000000001
+    ],
+    "flip_rate_by_perm": [
+     0.025,
+     0.025,
+     0.025,
+     0.0,
+     0.025
+    ],
+    "any_flip_rate": 0.025,
+    "any_flip_rate_ci": [
+     0.0,
+     0.075
+    ],
+    "accuracy_by_perm": [
+     0.9,
+     0.9,
+     0.9,
+     0.925,
+     0.9
+    ],
+    "perm_accuracy_mean": 0.905,
+    "perm_accuracy_min": 0.9,
+    "perm_accuracy_max": 0.925,
+    "mean_abs_delta_answer_confidence": 0.008445999999999999,
+    "slots": {
+     "chosen_slot_share": [
+      0.155,
+      0.185,
+      0.155,
+      0.235,
+      0.13,
+      0.14
+     ],
+     "uniform": 0.16666666666666666,
+     "chi2": 8.799999999999999,
+     "df": 5,
+     "p": 0.11731235792385696,
+     "accuracy_by_gold_slot": [
+      [
+       0.8787878787878788,
+       33
+      ],
+      [
+       0.9393939393939394,
+       33
+      ],
+      [
+       0.8823529411764706,
+       34
+      ],
+      [
+       0.9534883720930233,
+       43
+      ],
+      [
+       0.9230769230769231,
+       26
+      ],
+      [
+       0.8387096774193549,
+       31
+      ]
+     ]
+    },
+    "pred_counts_orig": {
+     "sadness": 21,
+     "anger": 8,
+     "love": 4,
+     "joy": 3,
+     "fear": 3,
+     "surprise": 1
+    },
+    "pred_counts_perm_mean": {
+     "sadness": 21.0,
+     "anger": 7.2,
+     "love": 4.0,
+     "joy": 3.0,
+     "fear": 3.0,
+     "surprise": 1.8
+    },
+    "gold_counts": {
+     "sadness": 21,
+     "anger": 8,
+     "love": 5,
+     "fear": 3,
+     "joy": 2,
+     "surprise": 1
+    },
+    "by_gold": {
+     "anger": {
+      "n": 8,
+      "flip_rate_per_perm": 0.1,
+      "any_flip_rate": 0.125,
+      "orig_accuracy": 0.875,
+      "perm_accuracy": 0.775
+     },
+     "fear": {
+      "n": 3,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "joy": {
+      "n": 2,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "love": {
+      "n": 5,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.8,
+      "perm_accuracy": 0.8
+     },
+     "sadness": {
+      "n": 21,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.9523809523809523,
+      "perm_accuracy": 0.9523809523809523
+     },
+     "surprise": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     }
+    },
+    "by_orig_pred": {
+     "anger": {
+      "n": 8,
+      "flip_rate_per_perm": 0.1,
+      "any_flip_rate": 0.125,
+      "orig_accuracy": 0.875,
+      "perm_accuracy": 0.775
+     },
+     "fear": {
+      "n": 3,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "joy": {
+      "n": 3,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.6666666666666666,
+      "perm_accuracy": 0.6666666666666666
+     },
+     "love": {
+      "n": 4,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "sadness": {
+      "n": 21,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.9523809523809523,
+      "perm_accuracy": 0.9523809523809523
+     },
+     "surprise": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     }
+    },
+    "by_orig_conf": {
+     "[0.0, 0.5)": {
+      "n": 3,
+      "flip_rate_per_perm": 0.26666666666666666,
+      "any_flip_rate": 0.3333333333333333,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 0.7333333333333333
+     },
+     "[0.5, 0.7)": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.0,
+      "perm_accuracy": 0.0
+     },
+     "[0.7, 0.9)": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "[0.9, 1.0]": {
+      "n": 35,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.9428571428571428,
+      "perm_accuracy": 0.9428571428571428
+     }
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,109 @@
+{
+ "script": "poc/finetune/laya_finetune_mps_patched.py",
+ "script_sha256": "d8dc1eb92db72c0f577ec9cf6dc3ad80558e0e0ff79897bd92dc3f87399db642",
+ "zero_step": true,
+ "script_args": [
+  "models/laya-multilingual",
+  "poc/finetune/ckpt_calib_sep/T7",
+  "--items",
+  "poc/finetune/data/t3arm/T7_multilingual.pt",
+  "--calib-max",
+  "400",
+  "--epochs",
+  "0",
+  "--micro-batch",
+  "8",
+  "--grad-accum",
+  "4",
+  "--no-checkpointing",
+  "--device",
+  "mps"
+ ],
+ "seed": 13,
+ "keep_epoch_checkpoints": false,
+ "started_at": "2026-10-08T15:38:10+0900",
+ "versions": {
+  "torch": "2.14.1",
+  "python": "3.12.12",
+  "laya": "0.3.23"
+ },
+ "threads": {
+  "intra": 10,
+  "interop": 14
+ },
+ "load_before": {
+  "gpu_util_pct": 20,
+  "mps_fp32_matmul_tflops": 6.68,
+  "cotenant": [],
+  "sys_mem_used_gb": 21.4
+ },
+ "status": "ok",
+ "wall_s": 7.96,
+ "load_after": {
+  "gpu_util_pct": 95,
+  "mps_fp32_matmul_tflops": 6.69
+ },
+ "n_train_items": 5000,
+ "micro_batches": 0,
+ "optimizer_steps": 0,
+ "calibration_rows": {
+  "n": 400,
+  "accuracy": 0.705
+ },
+ "temperature_fits": [
+  {
+   "start": 7.546,
+   "end": 7.568,
+   "samples": 400
+  }
+ ],
+ "item_sources": {
+  "train": {},
+  "calibration": {
+   "calib": 400
+  }
+ },
+ "load_series": [
+  {
+   "t": 3.5,
+   "rss_gb": 1.235,
+   "mps_alloc_gb": 0.0,
+   "mps_driver_gb": 0.0,
+   "gpu_util_pct": 20,
+   "sys_cpu_pct": 17.8,
+   "sys_mem_used_gb": 20.6,
+   "cotenant": []
+  }
+ ],
+ "events": [
+  [
+   2.498,
+   "Using legacy cached training items without metadata: poc/finetune/data/t3arm/T7_multilingual.pt"
+  ],
+  [
+   4.16,
+   "Device: mps"
+  ],
+  [
+   4.16,
+   "Training items: 5000; calibration items: 400"
+  ],
+  [
+   4.16,
+   "micro_batch=8; grad_accum=4; epochs=0"
+  ],
+  [
+   4.16,
+   "Running temperature calibration ..."
+  ],
+  [
+   7.894,
+   "Model saved to poc/finetune/ckpt_calib_sep/T7"
+  ],
+  [
+   7.894,
+   "Temperatures: [2.0943410396575928, 1.2, 1.2]"
+  ]
+ ],
+ "micro_batch_trace": []
+}

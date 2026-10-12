@@ -1,0 +1,67 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "parity",
+   "results/B/20261002-1700_multilingual_ko_kmhas_type_8.json",
+   "results/B/20261002-1703_router_ko_kmhas_type_8.json",
+   "--out",
+   "results/B/metrics/parity_ko_kmhas_type_8_router.md",
+   "--json",
+   "results/B/metrics/parity_ko_kmhas_type_8_router.json"
+  ],
+  "generated_at": "2026-10-02T17:05:34+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1700_multilingual_ko_kmhas_type_8.json",
+    "dataset": "data/evals/ko_kmhas_type_8.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "5791b97163144d6ce806a790895c804bcc1031ec02ddfdbd0884eab5db4ce16c",
+    "questions_sha256": "3d6d4f200328097ff59f023c0f4d94823aa970a1543a20ed40676c5e8759772e",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "dev": 244,
+     "test": 256
+    }
+   },
+   {
+    "report": "results/B/20261002-1703_router_ko_kmhas_type_8.json",
+    "dataset": "data/evals/ko_kmhas_type_8.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "5791b97163144d6ce806a790895c804bcc1031ec02ddfdbd0884eab5db4ce16c",
+    "questions_sha256": "3d6d4f200328097ff59f023c0f4d94823aa970a1543a20ed40676c5e8759772e",
+    "revisions": {
+     "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "router (auto)",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "dev": 244,
+     "test": 256
+    }
+   }
+  ]
+ },
+ "reference": "results/B/20261002-1700_multilingual_ko_kmhas_type_8.json",
+ "results": [
+  {
+   "other": "results/B/20261002-1703_router_ko_kmhas_type_8.json",
+   "n": 500,
+   "agreement": 1.0,
+   "flips": 0,
+   "max_abs_dp": 0.027000000000000024,
+   "mean_abs_dconf": 5.4000000000000045e-05
+  }
+ ]
+}

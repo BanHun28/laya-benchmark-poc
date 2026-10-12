@@ -1,0 +1,54 @@
+2026-10-08 15:23:17 RUN_ALL START 20261008-1523 (SMOKE=1) tasks: T8; results results/T3arm/smoke_20261008-1523; checkpoints /var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.AA2BW4/ckpt
+2026-10-08 15:23:17 STEP global:preflight ...
+2026-10-08 15:23:17 STEP global:preflight OK (0 s)
+2026-10-08 15:23:17 STEP T8:items ...
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+/private/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T/t3arm_smoke.AA2BW4/T8_items.pt: 71 items (train 64 + calibration 7), seq_len {'min': 52, 'p50': 60, 'p90': 90, 'max': 184, 'mean': 69.1, 'sum': 4421}, sha256 cdfa5085c7c8; V4 25/25 identical; reordered {}; run with --items /private/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T/t3arm_smoke.AA2BW4/T8_items.pt --calib-max 7 (never --force-preprocess)
+2026-10-08 15:23:20 STEP T8:items OK (3 s)
+2026-10-08 15:23:20 STEP T8:preflight ...
+2026-10-08 15:23:20 STEP T8:preflight OK (0 s)
+2026-10-08 15:23:20 STEP T8:train ...
+2026-10-08 15:23:32 STEP T8:train OK (12 s)
+2026-10-08 15:23:32 STEP T8:dev_ep0 ...
+/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/laya/agent.py:1869: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+results/T3arm/smoke_20261008-1523/T8/dev_ep0.json: {"mean_confidence": 0.9753, "ece": 0.0539} load 2.3s eval 0.5s
+2026-10-08 15:23:36 STEP T8:dev_ep0 OK (4 s)
+2026-10-08 15:23:36 STEP T8:dev_final ...
+results/T3arm/smoke_20261008-1523/T8/dev_final.json: {"mean_confidence": 0.9959, "ece": 0.1209} load 2.6s eval 0.5s
+2026-10-08 15:23:40 STEP T8:dev_final OK (4 s)
+2026-10-08 15:23:40 STEP T8:select ...
+{"reports": ["results/T3arm/smoke_20261008-1523/T8/dev_final.json"], "dev_accuracy": [0.875], "selected": "results/T3arm/smoke_20261008-1523/T8/dev_final.json", "selected_index": 0, "rule": "highest dev accuracy; a tie goes to the earlier epoch (docs/11 \u00a74)"}
+2026-10-08 15:23:40 STEP T8:select OK (0 s)
+2026-10-08 15:23:40 STEP T8:jev_T8_prompt_injections_40 ...
+results/T3arm/smoke_20261008-1523/T8/jev_T8_prompt_injections_40.json: {"mean_confidence": 0.9984, "ece": 0.1234} load 2.2s eval 0.5s
+2026-10-08 15:23:44 STEP T8:jev_T8_prompt_injections_40 OK (4 s)
+2026-10-08 15:23:44 STEP T8:ext_T8_prompt_injections_test116 ...
+results/T3arm/smoke_20261008-1523/T8/ext_T8_prompt_injections_test116.json: {"mean_confidence": 0.9396, "ece": 0.084} load 2.3s eval 0.4s
+2026-10-08 15:23:48 STEP T8:ext_T8_prompt_injections_test116 OK (4 s)
+2026-10-08 15:23:48 STEP T8:vanilla_T8_prompt_injections_40 ...
+/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/laya/agent.py:1869: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+results/T3arm/smoke_20261008-1523/T8/vanilla_T8_prompt_injections_40.json: {"mean_confidence": 0.9952, "ece": 0.1202} load 2.3s eval 0.5s
+2026-10-08 15:23:51 STEP T8:vanilla_T8_prompt_injections_40 OK (3 s)
+2026-10-08 15:23:51 STEP T8:vanilla_T8_prompt_injections_test116 ...
+/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/laya/agent.py:1869: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+results/T3arm/smoke_20261008-1523/T8/vanilla_T8_prompt_injections_test116.json: {"mean_confidence": 0.9865, "ece": 0.0135} load 2.2s eval 0.4s
+2026-10-08 15:23:55 STEP T8:vanilla_T8_prompt_injections_test116 OK (4 s)
+2026-10-08 15:23:55 STEP T8:diagnostics ...
+{"task": "T8", "dev": {"epoch0_vanilla": {"report": "results/T3arm/smoke_20261008-1523/T8/dev_ep0.json", "accuracy": 0.9375}, "reports": ["results/T3arm/smoke_20261008-1523/T8/dev_final.json"], "accuracy": [0.875], "selected": "results/T3arm/smoke_20261008-1523/T8/dev_final.json", "rule": "highest dev accuracy; a tie goes to the earlier epoch (docs/11 \u00a74)"}, "training_failed": true, "train_vs_dev_gap": {"train_acc_last_window": 0.625, "dev_acc_selected": 0.875, "gap": -0.25, "note": "train acc = argmax vs target on each micro-batch's training forward (dropout on), last 10%"}, "selected_temperature": [1.2, 1.2, 1.0]}
+2026-10-08 15:23:55 STEP T8:diagnostics OK (0 s)
+2026-10-08 15:23:55 STEP T8:metrics ...
+| set | model | n | accuracy [Wilson 95%] | macro-F1 | Brier | ECE | NLL | mean conf | extra |
+|---|---|---|---|---|---|---|---|---|---|
+| T8_dev | english | 16 | 15/16 = 0.938 [0.717, 0.989] | 0.923 | 0.069 | 0.054 | 0.091 | 0.975 |  |
+| T8_dev | t3arm-T8-final | 16 | 14/16 = 0.875 [0.640, 0.965] | 0.833 | 0.238 | 0.121 | 0.508 | 0.996 |  |
+| T8_prompt_injections_test116 | t3arm-T8 | 8 | 7/8 = 0.875 [0.529, 0.978] | 0.873 | 0.090 | 0.084 | 0.123 | 0.940 |  |
+| T8_prompt_injections_40 | t3arm-T8 | 8 | 7/8 = 0.875 [0.529, 0.978] | 0.795 | 0.249 | 0.123 | 0.853 | 0.998 |  |
+{"a": "results/T3arm/smoke_20261008-1523/T8/vanilla_T8_prompt_injections_40.json", "b": "results/T3arm/smoke_20261008-1523/T8/jev_T8_prompt_injections_40.json", "n": 8, "acc_a": 0.875, "acc_b": 0.875, "delta_b_minus_a": 0.0, "b_only": 0, "a_only": 0, "mcnemar_p": 1.0}
+{"a": "results/T3arm/smoke_20261008-1523/T8/vanilla_T8_prompt_injections_test116.json", "b": "results/T3arm/smoke_20261008-1523/T8/ext_T8_prompt_injections_test116.json", "n": 8, "acc_a": 1.0, "acc_b": 0.875, "delta_b_minus_a": -0.125, "b_only": 0, "a_only": 1, "mcnemar_p": 1.0}
+2026-10-08 15:23:55 STEP T8:metrics OK (0 s)
+2026-10-08 15:23:55 STEP T8:cleanup ...
+2026-10-08 15:24:00 STEP T8:cleanup OK (5 s)
+2026-10-08 15:24:00 RUN_ALL FINISHED 20261008-1523

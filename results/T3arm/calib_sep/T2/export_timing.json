@@ -1,0 +1,109 @@
+{
+ "script": "poc/finetune/laya_finetune_mps_patched.py",
+ "script_sha256": "d8dc1eb92db72c0f577ec9cf6dc3ad80558e0e0ff79897bd92dc3f87399db642",
+ "zero_step": true,
+ "script_args": [
+  "models/laya",
+  "poc/finetune/ckpt_calib_sep/T2",
+  "--items",
+  "poc/finetune/data/t3arm/T2_english.pt",
+  "--calib-max",
+  "400",
+  "--epochs",
+  "0",
+  "--micro-batch",
+  "8",
+  "--grad-accum",
+  "4",
+  "--no-checkpointing",
+  "--device",
+  "mps"
+ ],
+ "seed": 13,
+ "keep_epoch_checkpoints": false,
+ "started_at": "2026-10-08T15:33:51+0900",
+ "versions": {
+  "torch": "2.14.1",
+  "python": "3.12.12",
+  "laya": "0.3.23"
+ },
+ "threads": {
+  "intra": 10,
+  "interop": 14
+ },
+ "load_before": {
+  "gpu_util_pct": 10,
+  "mps_fp32_matmul_tflops": 6.8,
+  "cotenant": [],
+  "sys_mem_used_gb": 20.9
+ },
+ "status": "ok",
+ "wall_s": 12.06,
+ "load_after": {
+  "gpu_util_pct": 97,
+  "mps_fp32_matmul_tflops": 6.64
+ },
+ "n_train_items": 5000,
+ "micro_batches": 0,
+ "optimizer_steps": 0,
+ "calibration_rows": {
+  "n": 400,
+  "accuracy": 0.945
+ },
+ "temperature_fits": [
+  {
+   "start": 11.581,
+   "end": 11.606,
+   "samples": 400
+  }
+ ],
+ "item_sources": {
+  "train": {},
+  "calibration": {
+   "calib": 400
+  }
+ },
+ "load_series": [
+  {
+   "t": 3.6,
+   "rss_gb": 1.475,
+   "mps_alloc_gb": 1.722,
+   "mps_driver_gb": 2.165,
+   "gpu_util_pct": 90,
+   "sys_cpu_pct": 23.9,
+   "sys_mem_used_gb": 22.9,
+   "cotenant": []
+  }
+ ],
+ "events": [
+  [
+   2.558,
+   "Using legacy cached training items without metadata: poc/finetune/data/t3arm/T2_english.pt"
+  ],
+  [
+   3.015,
+   "Device: mps"
+  ],
+  [
+   3.015,
+   "Training items: 5000; calibration items: 400"
+  ],
+  [
+   3.015,
+   "micro_batch=8; grad_accum=4; epochs=0"
+  ],
+  [
+   3.015,
+   "Running temperature calibration ..."
+  ],
+  [
+   11.986,
+   "Model saved to poc/finetune/ckpt_calib_sep/T2"
+  ],
+  [
+   11.987,
+   "Temperatures: [1.4747073650360107, 1.2, 1.2]"
+  ]
+ ],
+ "micro_batch_trace": []
+}

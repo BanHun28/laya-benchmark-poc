@@ -1,0 +1,720 @@
+{
+ "started": "2026-10-03T13:55:56+0900",
+ "checks": {
+  "auth": {
+   "pass": true,
+   "health_without_key": {
+    "status": "ok"
+   },
+   "statuses": {
+    "no_key": 401,
+    "wrong_key": 401,
+    "with_key": 200,
+    "meta_no_key": 401,
+    "shadow_no_key": 401,
+    "systemone_no_key": 401
+   },
+   "health": {
+    "status": "ok",
+    "loaded": [
+     "multilingual"
+    ],
+    "revisions": {
+     "multilingual": null
+    },
+    "device": "mps",
+    "device_is_preference": false,
+    "checkpoint_devices": {
+     "multilingual": "mps"
+    },
+    "cpu_fallbacks": {
+     "multilingual": {
+      "count": 0,
+      "last_reason": null
+     }
+    }
+   }
+  },
+  "meta": {
+   "pass": true,
+   "meta": {
+    "laya_version": "0.3.23",
+    "schema_version": "router_v1",
+    "schema_path": "poc/schema/router_v1.json",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "checkpoint": {
+     "path": "poc/finetune/ckpt_domain8_v1",
+     "sha256_of_rl_agent_config": "3270d480d05a68454004022b90e80f422c8b364ba1bd90ce43b004cde3ab9638",
+     "base": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "checkpoints": {
+     "multilingual": "poc/finetune/ckpt_domain8_v1 (ft-v1)",
+     "english": "models/laya (base 55cf4c4)"
+    },
+    "thresholds": {
+     "T": 0.907,
+     "source": {
+      "report": "results/P4/metrics/full_20261003-1156_coverage_2917.md",
+      "rule": "dev-1459에서 오류 <= 0.05인 최대 coverage(0.901) 지점 T = 0.907; test-1458에 적용 시 coverage 0.923, 오류 0.042",
+      "checkpoint": "poc/finetune/ckpt_domain8_v1",
+      "rl_agent_config_sha256": "3270d480d05a68454004022b90e80f422c8b364ba1bd90ce43b004cde3ab9638",
+      "weights_sha256": "b0609f547a2b097bdff54fc44bb9822852e49e147271c21f0a2b3ac21dce4446",
+      "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54"
+     }
+    },
+    "handlers": {
+     "productivity": "calendar-svc",
+     "media": "media-svc",
+     "smart_home": "iot-svc",
+     "info_qa": "qa-svc",
+     "communication": "comm-svc",
+     "lifestyle": "lifestyle-svc",
+     "transport": "transport-svc",
+     "general": "chat-svc"
+    },
+    "models_loaded": [
+     "multilingual"
+    ],
+    "metrics": {
+     "calls": 1,
+     "by_model": {
+      "multilingual": 1
+     },
+     "errors": 0,
+     "abstention": {
+      "passed": 1
+     },
+     "elapsed_ms": {
+      "n": 1,
+      "p50": 126.39,
+      "p95": 126.39
+     }
+    }
+   },
+   "p4_report": {
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "rl_agent_config_sha256": "3270d480d05a68454004022b90e80f422c8b364ba1bd90ce43b004cde3ab9638",
+    "weights_sha256": "b0609f547a2b097bdff54fc44bb9822852e49e147271c21f0a2b3ac21dce4446",
+    "revisions": {
+     "ft-v1": "local:poc/finetune/ckpt_domain8_v1 (base 55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851)"
+    }
+   }
+  },
+  "domains": {
+   "pass": true,
+   "route": 9,
+   "correct_argmax": 9,
+   "n": 9,
+   "rows": [
+    {
+     "text": "내일 아침 7시에 깨워줘",
+     "action": "ROUTE",
+     "domain": "productivity",
+     "p": 0.9236,
+     "handler": "calendar-svc",
+     "reason": "passed",
+     "abstention": "passed",
+     "routing": "multilingual",
+     "routing_reason": "explicit lang='ko'",
+     "elapsed_ms": 20.5,
+     "rt_ms": 21.2,
+     "input_tokens": 218,
+     "probabilities": {
+      "productivity": 0.9236,
+      "media": 0.0065,
+      "smart_home": 0.0067,
+      "info_qa": 0.0135,
+      "communication": 0.0132,
+      "lifestyle": 0.0122,
+      "transport": 0.0065,
+      "general": 0.0178
+     },
+     "expected": "productivity"
+    },
+    {
+     "text": "다음 주 화요일 오후 세 시에 치과 예약 일정 넣어줘",
+     "action": "ROUTE",
+     "domain": "productivity",
+     "p": 0.9431,
+     "handler": "calendar-svc",
+     "reason": "passed",
+     "abstention": "passed",
+     "routing": "multilingual",
+     "routing_reason": "explicit lang='ko'",
+     "elapsed_ms": 24.1,
+     "rt_ms": 24.9,
+     "input_tokens": 227,
+     "probabilities": {
+      "productivity": 0.9431,
+      "media": 0.0059,
+      "smart_home": 0.0058,
+      "info_qa": 0.0096,
+      "communication": 0.0074,
+      "lifestyle": 0.0111,
+      "transport": 0.0057,
+      "general": 0.0115
+     },
+     "expected": "productivity"
+    },
+    {
+     "text": "출근길에 들을 만한 잔잔한 재즈 좀 틀어줘",
+     "action": "ROUTE",
+     "domain": "media",
+     "p": 0.9441,
+     "handler": "media-svc",
+     "reason": "passed",
+     "abstention": "passed",
+     "routing": "multilingual",
+     "routing_reason": "explicit lang='ko'",
+     "elapsed_ms": 22.3,
+     "rt_ms": 23.0,
+     "input_tokens": 226,
+     "probabilities": {
+      "productivity": 0.0092,
+      "media": 0.9441,
+      "smart_home": 0.0062,
+      "info_qa": 0.0058,
+      "communication": 0.0062,
+      "lifestyle": 0.0096,
+      "transport": 0.0058,
+      "general": 0.0132
+     },
+     "expected": "media"
+    },
+    {
+     "text": "거실 조명 밝기를 절반으로 낮춰줘",
+     "action": "ROUTE",
+     "domain": "smart_home",
+     "p": 0.9492,
+     "handler": "iot-svc",
+     "reason": "passed",
+     "abstention": "passed",
+     "routing": "multilingual",
+     "routing_reason": "explicit lang='ko'",
+     "elapsed_ms": 22.8,
+     "rt_ms": 23.4,
+     "input_tokens": 220,
+     "probabilities": {
+      "productivity": 0.0097,
+      "media": 0.0056,
+      "smart_home": 0.9492,
+      "info_qa": 0.0062,
+      "communication": 0.0056,
+      "lifestyle": 0.0079,
+      "transport": 0.0058,
+      "general": 0.0101
+     },
+     "expected": "smart_home"
+    },
+    {
+     "text": "이번 주말에 부산에 비 온대?",
+     "action": "ROUTE",
+     "domain": "info_qa",
+     "p": 0.9572,
+     "handler": "qa-svc",
+     "reason": "passed",
+     "abstention": "passed",
+     "routing": "multilingual",
+     "routing_reason": "explicit lang='ko'",
+     "elapsed_ms": 19.1,
+     "rt_ms": 19.7,
+     "input_tokens": 218,
+     "probabilities": {
+      "productivity": 0.006,
+      "media": 0.0061,
+      "smart_home": 0.0061,
+      "info_qa": 0.9572,
+      "communication": 0.006,
+      "lifestyle": 0.006,
+      "transport": 0.0061,
+      "general": 0.0066
+     },
+     "expected": "info_qa"
+    },
+    {
+     "text": "팀장님께 오늘 회의록 첨부해서 메일 보내줘",
+     "action": "ROUTE",
+     "domain": "communication",
+     "p": 0.9401,
+     "handler": "comm-svc",
+     "reason": "passed",
+     "abstention": "passed",
+     "routing": "multilingual",
+     "routing_reason": "explicit lang='ko'",
+     "elapsed_ms": 22.8,
+     "rt_ms": 23.5,
+     "input_tokens": 224,
+     "probabilities": {
+      "productivity": 0.0221,
+      "media": 0.0057,
+      "smart_home": 0.0056,
+      "info_qa": 0.0057,
+      "communication": 0.9401,
+      "lifestyle": 0.0057,
+      "transport": 0.0056,
+      "general": 0.0095
+     },
+     "expected": "communication"
+    },
+    {
+     "text": "집 근처에서 늦게까지 하는 중국집 찾아서 짬뽕 배달시켜줘",
+     "action": "ROUTE",
+     "domain": "lifestyle",
+     "p": 0.9463,
+     "handler": "lifestyle-svc",
+     "reason": "passed",
+     "abstention": "passed",
+     "routing": "multilingual",
+     "routing_reason": "explicit lang='ko'",
+     "elapsed_ms": 23.3,
+     "rt_ms": 24.0,
+     "input_tokens": 229,
+     "probabilities": {
+      "productivity": 0.009,
+      "media": 0.0057,
+      "smart_home": 0.0061,
+      "info_qa": 0.008,
+      "communication": 0.0111,
+      "lifestyle": 0.9463,
+      "transport": 0.0057,
+      "general": 0.0081
+     },
+     "expected": "lifestyle"
+    },
+    {
+     "text": "퇴근길에 집까지 제일 빠른 길로 안내해줘",
+     "action": "ROUTE",
+     "domain": "transport",
+     "p": 0.9246,
+     "handler": "transport-svc",
+     "reason": "passed",
+     "abstention": "passed",
+     "routing": "multilingual",
+     "routing_reason": "explicit lang='ko'",
+     "elapsed_ms": 22.8,
+     "rt_ms": 23.6,
+     "input_tokens": 222,
+     "probabilities": {
+      "productivity": 0.0138,
+      "media": 0.0064,
+      "smart_home": 0.0065,
+      "info_qa": 0.0137,
+      "communication": 0.0097,
+      "lifestyle": 0.0123,
+      "transport": 0.9246,
+      "general": 0.013
+     },
+     "expected": "transport"
+    },
+    {
+     "text": "오늘 하루 너무 길었다, 웃긴 얘기 하나 해줘",
+     "action": "ROUTE",
+     "domain": "general",
+     "p": 0.9415,
+     "handler": "chat-svc",
+     "reason": "passed",
+     "abstention": "passed",
+     "routing": "multilingual",
+     "routing_reason": "explicit lang='ko'",
+     "elapsed_ms": 19.7,
+     "rt_ms": 20.5,
+     "input_tokens": 224,
+     "probabilities": {
+      "productivity": 0.011,
+      "media": 0.0062,
+      "smart_home": 0.0062,
+      "info_qa": 0.0102,
+      "communication": 0.0123,
+      "lifestyle": 0.0063,
+      "transport": 0.0063,
+      "general": 0.9415
+     },
+     "expected": "general"
+    }
+   ]
+  },
+  "fallback": {
+   "pass": true,
+   "nonsense_fallbacks": 2,
+   "rows": [
+    {
+     "text": "ㅁㄴㅇㄹ 쀍쀍 zxqv 7#@!",
+     "action": "FALLBACK",
+     "domain": "media",
+     "p": 0.2218,
+     "handler": null,
+     "reason": "abstained",
+     "abstention": "abstained",
+     "routing": "multilingual",
+     "routing_reason": "explicit lang='ko'",
+     "elapsed_ms": 23.5,
+     "rt_ms": 24.3,
+     "input_tokens": 223,
+     "probabilities": {
+      "productivity": 0.0778,
+      "media": 0.2218,
+      "smart_home": 0.0496,
+      "info_qa": 0.1822,
+      "communication": 0.1712,
+      "lifestyle": 0.0832,
+      "transport": 0.064,
+      "general": 0.1501
+     }
+    },
+    {
+     "text": "음악 틀어주고 불도 끄고 내일 날씨랑 메일도 확인해줘",
+     "action": "FALLBACK",
+     "domain": "media",
+     "p": 0.6694,
+     "handler": null,
+     "reason": "abstained",
+     "abstention": "abstained",
+     "routing": "multilingual",
+     "routing_reason": "explicit lang='ko'",
+     "elapsed_ms": 20.8,
+     "rt_ms": 21.5,
+     "input_tokens": 229,
+     "probabilities": {
+      "productivity": 0.0484,
+      "media": 0.6694,
+      "smart_home": 0.0221,
+      "info_qa": 0.0747,
+      "communication": 0.083,
+      "lifestyle": 0.0247,
+      "transport": 0.0201,
+      "general": 0.0578
+     }
+    },
+    {
+     "text": "내일 아침 7시에 깨워줘",
+     "min_confidence": 1.0,
+     "action": "FALLBACK",
+     "domain": "productivity",
+     "p": 0.9236,
+     "handler": null,
+     "reason": "abstained",
+     "abstention": "abstained",
+     "routing": "multilingual",
+     "routing_reason": "explicit lang='ko'",
+     "elapsed_ms": 19.4,
+     "rt_ms": 20.1,
+     "input_tokens": 218,
+     "probabilities": {
+      "productivity": 0.9236,
+      "media": 0.0065,
+      "smart_home": 0.0067,
+      "info_qa": 0.0135,
+      "communication": 0.0132,
+      "lifestyle": 0.0122,
+      "transport": 0.0065,
+      "general": 0.0178
+     }
+    },
+    {
+     "text": "음악 틀어주고 불도 끄고 내일 날씨랑 메일도 확인해줘",
+     "min_confidence": 0.5,
+     "action": "FALLBACK",
+     "domain": "media",
+     "p": 0.6694,
+     "handler": null,
+     "reason": "below T",
+     "abstention": "passed",
+     "routing": "multilingual",
+     "routing_reason": "explicit lang='ko'",
+     "elapsed_ms": 20.0,
+     "rt_ms": 20.7,
+     "input_tokens": 229,
+     "probabilities": {
+      "productivity": 0.0484,
+      "media": 0.6694,
+      "smart_home": 0.0221,
+      "info_qa": 0.0747,
+      "communication": 0.083,
+      "lifestyle": 0.0247,
+      "transport": 0.0201,
+      "general": 0.0578
+     }
+    }
+   ]
+  },
+  "english_lazy": {
+   "pass": true,
+   "row": {
+    "text": "내일 아침 7시에 깨워줘",
+    "model": "english",
+    "action": "FALLBACK",
+    "domain": "communication",
+    "p": 0.2151,
+    "handler": null,
+    "reason": "T not valid for english",
+    "abstention": "abstained",
+    "routing": "english",
+    "routing_reason": "explicit model='english'",
+    "elapsed_ms": 340.2,
+    "rt_ms": 341.0,
+    "input_tokens": 223,
+    "probabilities": {
+     "productivity": 0.0944,
+     "media": 0.1958,
+     "smart_home": 0.0619,
+     "info_qa": 0.0958,
+     "communication": 0.2151,
+     "lifestyle": 0.1626,
+     "transport": 0.0313,
+     "general": 0.1431
+    }
+   },
+   "loaded_after": [
+    "multilingual",
+    "english"
+   ]
+  },
+  "pii": {
+   "pass": true,
+   "row": {
+    "text": "김민수 팀장님(minsu.kim@example.com, 010-2345-6789)한테 카드 1234-5678-9012-3456 영수증 메일로 보내줘",
+    "action": "ROUTE",
+    "domain": "communication",
+    "p": 0.9431,
+    "handler": "comm-svc",
+    "reason": "passed",
+    "abstention": "passed",
+    "routing": "multilingual",
+    "routing_reason": "explicit lang='ko'",
+    "elapsed_ms": 24.2,
+    "rt_ms": 24.9,
+    "input_tokens": 234,
+    "probabilities": {
+     "productivity": 0.0128,
+     "media": 0.0058,
+     "smart_home": 0.0058,
+     "info_qa": 0.0091,
+     "communication": 0.9431,
+     "lifestyle": 0.0057,
+     "transport": 0.0057,
+     "general": 0.0119
+    }
+   },
+   "shadow_state": {
+    "utterance": "김민수 팀장님([email], [phone])한테 카드 [card] 영수증 메일로 보내줘"
+   },
+   "raw_parts_in_log": []
+  },
+  "systemone": {
+   "pass": true,
+   "status": 200,
+   "answer": {
+    "type": "choice",
+    "choice": "technical",
+    "probabilities": {
+     "billing": 0.0077,
+     "technical": 0.9848,
+     "sales": 0.0075
+    },
+    "confidence": 0.9188,
+    "answer_confidence": 0.9848,
+    "action": {
+     "act_probability": 1.0
+    }
+   },
+   "routing": {
+    "model": "multilingual",
+    "repo": "./poc/finetune/ckpt_domain8_v1",
+    "reason": "non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it",
+    "detection": {
+     "script": "hangul",
+     "script_profile": {
+      "hangul": 1.0
+     },
+     "language": null,
+     "is_english": false,
+     "language_undecided": true,
+     "diacritic_rate": 0.0,
+     "non_latin_fraction": 1.0,
+     "mixed_segment": null
+    },
+    "workflow": null
+   },
+   "x_inference_time_ms": "20.57",
+   "rt_ms": 21.1
+  },
+  "ui_static": {
+   "pass": true,
+   "content_type": "text/html; charset=utf-8",
+   "bytes": 63348
+  },
+  "latency": {
+   "pass": true,
+   "n": 30,
+   "warmup": 3,
+   "connection": "http.client keep-alive",
+   "rt_ms": {
+    "p50": 20.1,
+    "p95": 21.1,
+    "min": 19.6,
+    "max": 21.7
+   },
+   "server_elapsed_ms": {
+    "p50": 19.5,
+    "p95": 20.4
+   },
+   "rt_minus_elapsed_ms": {
+    "p50": 0.6,
+    "p95": 0.7
+   },
+   "samples_rt_ms": [
+    20.4,
+    20.4,
+    19.8,
+    19.9,
+    20.1,
+    20.8,
+    19.8,
+    19.8,
+    20.3,
+    20.3,
+    19.6,
+    20.3,
+    20.2,
+    20.5,
+    20.1,
+    21.1,
+    21.7,
+    20.8,
+    19.9,
+    19.6,
+    19.9,
+    20.4,
+    19.7,
+    19.9,
+    20.3,
+    20.4,
+    19.8,
+    19.7,
+    20.0,
+    20.1
+   ]
+  },
+  "shadow": {
+   "pass": true,
+   "lines_before": 0,
+   "lines_after": 50,
+   "counters": {
+    "total": 50,
+    "errors": 0,
+    "actions": {
+     "ROUTE": 44,
+     "FALLBACK": 5
+    },
+    "fallback_rate": 0.102,
+    "abstained": {
+     "count": 4,
+     "rate": 0.0816
+    },
+    "by_domain": {
+     "productivity": 9,
+     "media": 9,
+     "smart_home": 6,
+     "info_qa": 5,
+     "communication": 7,
+     "lifestyle": 5,
+     "transport": 4,
+     "general": 4
+    },
+    "elapsed_ms": {
+     "p50": 19.69,
+     "p95": 23.99
+    }
+   },
+   "metrics_hook": {
+    "calls": 50,
+    "by_model": {
+     "multilingual": 49,
+     "english": 1
+    },
+    "errors": 0,
+    "abstention": {
+     "passed": 45,
+     "abstained": 4
+    },
+    "elapsed_ms": {
+     "n": 50,
+     "p50": 19.69,
+     "p95": 23.99
+    }
+   }
+  },
+  "inprocess_parity": {
+   "pass": true,
+   "flips": 0,
+   "max_abs_dp": 0.0,
+   "rows": [
+    {
+     "text": "내일 아침 7시에 깨워줘",
+     "server": "productivity",
+     "inprocess_cpu": "productivity",
+     "max_abs_dp": 0.0
+    },
+    {
+     "text": "다음 주 화요일 오후 세 시에 치과 예약 일정 넣어줘",
+     "server": "productivity",
+     "inprocess_cpu": "productivity",
+     "max_abs_dp": 0.0
+    },
+    {
+     "text": "출근길에 들을 만한 잔잔한 재즈 좀 틀어줘",
+     "server": "media",
+     "inprocess_cpu": "media",
+     "max_abs_dp": 0.0
+    },
+    {
+     "text": "거실 조명 밝기를 절반으로 낮춰줘",
+     "server": "smart_home",
+     "inprocess_cpu": "smart_home",
+     "max_abs_dp": 0.0
+    },
+    {
+     "text": "이번 주말에 부산에 비 온대?",
+     "server": "info_qa",
+     "inprocess_cpu": "info_qa",
+     "max_abs_dp": 0.0
+    },
+    {
+     "text": "팀장님께 오늘 회의록 첨부해서 메일 보내줘",
+     "server": "communication",
+     "inprocess_cpu": "communication",
+     "max_abs_dp": 0.0
+    },
+    {
+     "text": "집 근처에서 늦게까지 하는 중국집 찾아서 짬뽕 배달시켜줘",
+     "server": "lifestyle",
+     "inprocess_cpu": "lifestyle",
+     "max_abs_dp": 0.0
+    },
+    {
+     "text": "퇴근길에 집까지 제일 빠른 길로 안내해줘",
+     "server": "transport",
+     "inprocess_cpu": "transport",
+     "max_abs_dp": 0.0
+    },
+    {
+     "text": "오늘 하루 너무 길었다, 웃긴 얘기 하나 해줘",
+     "server": "general",
+     "inprocess_cpu": "general",
+     "max_abs_dp": 0.0
+    }
+   ]
+  },
+  "cli_base": {
+   "note": "informational: laya CLI --model ml = base multilingual 55cf4c4 (zero-shot)",
+   "cmd": "내일 아침 7시에 깨워줘 --model ml --lang ko --questions poc/schema/router_v1.json --json",
+   "returncode": 0,
+   "choice": "smart_home",
+   "answer_confidence": 0.9949,
+   "server_ft_v1_choice": "productivity",
+   "server_ft_v1_p": 0.9236,
+   "stderr_tail": "\nFetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]\nFetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 257.10it/s]\n"
+  }
+ },
+ "finished": "2026-10-03T13:56:06+0900"
+}

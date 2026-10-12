@@ -1,0 +1,110 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/B/20261002-1650_multilingual_ko_massive_intent_20opt.json",
+   "results/B/20261002-1651_multilingual_en_massive_intent_20opt.json",
+   "--out",
+   "results/B/metrics/paired_penalty20_ko-ml_en-ml.md",
+   "--json",
+   "results/B/metrics/paired_penalty20_ko-ml_en-ml.json"
+  ],
+  "generated_at": "2026-10-02T17:05:32+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1650_multilingual_ko_massive_intent_20opt.json",
+    "dataset": "data/evals/ko_massive_intent_20opt.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "4e936ea663ba6072e8e7ab0cc5a4f22784824378ce74cb1266a8f955b4efb596",
+    "questions_sha256": "72baa7ba5b4d899bae87ce0b6cb67e9b6dce593e1ff5947e4957005554371e24",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 100,
+    "split_rows": {
+     "dev": 50,
+     "test": 50
+    }
+   },
+   {
+    "report": "results/B/20261002-1651_multilingual_en_massive_intent_20opt.json",
+    "dataset": "data/evals/en_massive_intent_20opt.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "de461b875166c454792aba5b13ba553fdf20c8514f8acb4f2ec9e93b7a427b9a",
+    "questions_sha256": "72baa7ba5b4d899bae87ce0b6cb67e9b6dce593e1ff5947e4957005554371e24",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 100,
+    "split_rows": {
+     "dev": 50,
+     "test": 50
+    }
+   }
+  ]
+ },
+ "a": "results/B/20261002-1650_multilingual_ko_massive_intent_20opt.json",
+ "b": "results/B/20261002-1651_multilingual_en_massive_intent_20opt.json",
+ "results": [
+  {
+   "qid": "intent",
+   "split": "all",
+   "n": 100,
+   "acc_a": 0.47,
+   "acc_b": 0.71,
+   "delta": 0.24,
+   "delta_ci": [
+    0.1287106545980254,
+    0.3512893454019746
+   ],
+   "b": 7,
+   "c": 31,
+   "p": 0.00011616700794547796,
+   "agreement": 0.47,
+   "same_state": 0.0
+  },
+  {
+   "qid": "intent",
+   "split": "dev",
+   "n": 50,
+   "acc_a": 0.48,
+   "acc_b": 0.64,
+   "delta": 0.16,
+   "delta_ci": [
+    -0.00028917867404523734,
+    0.32028917867404527
+   ],
+   "b": 5,
+   "c": 13,
+   "p": 0.09625244140625,
+   "agreement": 0.46,
+   "same_state": 0.0
+  },
+  {
+   "qid": "intent",
+   "split": "test",
+   "n": 50,
+   "acc_a": 0.46,
+   "acc_b": 0.78,
+   "delta": 0.32,
+   "delta_ci": [
+    0.1687875560676305,
+    0.4712124439323695
+   ],
+   "b": 2,
+   "c": 18,
+   "p": 0.0004024505615234375,
+   "agreement": 0.48,
+   "same_state": 0.0
+  }
+ ]
+}

@@ -1,0 +1,1959 @@
+{
+ "run_card": {
+  "tool": "scripts/probe_option_order.py",
+  "argv": [
+   "data/evals/jev_cmp/T2_ag_news_40.jsonl",
+   "--model",
+   "models/laya-multilingual",
+   "--device",
+   "cpu",
+   "--permutations",
+   "1",
+   "--seed",
+   "13",
+   "--split",
+   "all",
+   "--splits",
+   "",
+   "--reference",
+   "results/F/jev_cmp/laya/T2_ag_news_40_multilingual.json",
+   "--out",
+   "results/F/jev_cmp/T2_option_order_k1_multilingual.json"
+  ],
+  "started_at": "2026-10-06T09:37:16+0900",
+  "laya_version": "0.3.23",
+  "torch": "2.14.1",
+  "transformers": "5.18.0",
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "amp_enabled": false,
+  "threads_intra_inter": [
+   10,
+   1
+  ],
+  "checkpoint": {
+   "path": "models/laya-multilingual",
+   "realpath": "/Users/banhun/.cache/huggingface/hub/models--convaiinnovations--laya/snapshots/55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851/multilingual",
+   "snapshot_sha": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+   "weights_blob": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204",
+   "head_max_len": 256,
+   "max_len": 1024
+  },
+  "power": "Now drawing from 'Battery Power' |  -InternalBattery-0 (id=22085731)\t85%; discharging; 6:31 remaining present: true",
+  "git_sha": null,
+  "load_seconds": 3.7,
+  "warnings": [],
+  "finished_at": "2026-10-06T09:37:23+0900",
+  "total_seconds": 6.7
+ },
+ "params": {
+  "files": [
+   "data/evals/jev_cmp/T2_ag_news_40.jsonl"
+  ],
+  "model": "models/laya-multilingual",
+  "device": "cpu",
+  "permutations": 1,
+  "seed": 13,
+  "split": "all",
+  "splits": "",
+  "reference": [
+   "results/F/jev_cmp/laya/T2_ag_news_40_multilingual.json"
+  ],
+  "bootstrap": 1000,
+  "threads": 10,
+  "interop": 1,
+  "out": "results/F/jev_cmp/T2_option_order_k1_multilingual.json"
+ },
+ "sets": [
+  {
+   "file": "data/evals/jev_cmp/T2_ag_news_40.jsonl",
+   "set": "T2_ag_news_40",
+   "dataset_sha256": "555c7cd7d38c78d183fe884c62e1bbb102d040871bf6e66a8911269eba20fd21",
+   "split": "all",
+   "split_rule": "state sha256 % 2",
+   "split_check": null,
+   "seconds": 3.0,
+   "items": [
+    {
+     "row": 0,
+     "qid": "topic",
+     "gold": "sci_tech",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:63"
+     ],
+     "orig": {
+      "pred": "sci_tech",
+      "conf": 0.9997,
+      "probs": {
+       "world": 0.0001,
+       "sports": 0.0,
+       "business": 0.0001,
+       "sci_tech": 0.9997
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sci_tech",
+        "world",
+        "sports",
+        "business"
+       ],
+       "pred": "sci_tech",
+       "conf": 0.9996,
+       "probs": {
+        "sci_tech": 0.9996,
+        "world": 0.0001,
+        "sports": 0.0001,
+        "business": 0.0002
+       }
+      }
+     ]
+    },
+    {
+     "row": 1,
+     "qid": "topic",
+     "gold": "business",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:320"
+     ],
+     "orig": {
+      "pred": "business",
+      "conf": 0.9998,
+      "probs": {
+       "world": 0.0001,
+       "sports": 0.0,
+       "business": 0.9998,
+       "sci_tech": 0.0001
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sci_tech",
+        "world",
+        "business",
+        "sports"
+       ],
+       "pred": "business",
+       "conf": 0.9999,
+       "probs": {
+        "sci_tech": 0.0001,
+        "world": 0.0001,
+        "business": 0.9999,
+        "sports": 0.0
+       }
+      }
+     ]
+    },
+    {
+     "row": 2,
+     "qid": "topic",
+     "gold": "sports",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:501"
+     ],
+     "orig": {
+      "pred": "sports",
+      "conf": 0.9999,
+      "probs": {
+       "world": 0.0,
+       "sports": 0.9999,
+       "business": 0.0,
+       "sci_tech": 0.0
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sci_tech",
+        "world",
+        "business",
+        "sports"
+       ],
+       "pred": "sports",
+       "conf": 0.9998,
+       "probs": {
+        "sci_tech": 0.0001,
+        "world": 0.0001,
+        "business": 0.0001,
+        "sports": 0.9998
+       }
+      }
+     ]
+    },
+    {
+     "row": 3,
+     "qid": "topic",
+     "gold": "sci_tech",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:630"
+     ],
+     "orig": {
+      "pred": "sci_tech",
+      "conf": 0.9991,
+      "probs": {
+       "world": 0.0002,
+       "sports": 0.0001,
+       "business": 0.0007,
+       "sci_tech": 0.9991
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sci_tech",
+        "business",
+        "world",
+        "sports"
+       ],
+       "pred": "sci_tech",
+       "conf": 0.9981,
+       "probs": {
+        "sci_tech": 0.9981,
+        "business": 0.0016,
+        "world": 0.0002,
+        "sports": 0.0001
+       }
+      }
+     ]
+    },
+    {
+     "row": 4,
+     "qid": "topic",
+     "gold": "sports",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:974"
+     ],
+     "orig": {
+      "pred": "sports",
+      "conf": 1.0,
+      "probs": {
+       "world": 0.0,
+       "sports": 1.0,
+       "business": 0.0,
+       "sci_tech": 0.0
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sci_tech",
+        "sports",
+        "world",
+        "business"
+       ],
+       "pred": "sports",
+       "conf": 1.0,
+       "probs": {
+        "sci_tech": 0.0,
+        "sports": 1.0,
+        "world": 0.0,
+        "business": 0.0
+       }
+      }
+     ]
+    },
+    {
+     "row": 5,
+     "qid": "topic",
+     "gold": "sci_tech",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:1125"
+     ],
+     "orig": {
+      "pred": "sci_tech",
+      "conf": 0.9585,
+      "probs": {
+       "world": 0.0024,
+       "sports": 0.0001,
+       "business": 0.039,
+       "sci_tech": 0.9585
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sci_tech",
+        "world",
+        "business",
+        "sports"
+       ],
+       "pred": "sci_tech",
+       "conf": 0.9544,
+       "probs": {
+        "sci_tech": 0.9544,
+        "world": 0.0032,
+        "business": 0.0422,
+        "sports": 0.0001
+       }
+      }
+     ]
+    },
+    {
+     "row": 6,
+     "qid": "topic",
+     "gold": "sports",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:1145"
+     ],
+     "orig": {
+      "pred": "sports",
+      "conf": 0.9998,
+      "probs": {
+       "world": 0.0001,
+       "sports": 0.9998,
+       "business": 0.0001,
+       "sci_tech": 0.0001
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sports",
+        "sci_tech",
+        "world",
+        "business"
+       ],
+       "pred": "sports",
+       "conf": 0.9999,
+       "probs": {
+        "sports": 0.9999,
+        "sci_tech": 0.0,
+        "world": 0.0,
+        "business": 0.0
+       }
+      }
+     ]
+    },
+    {
+     "row": 7,
+     "qid": "topic",
+     "gold": "business",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:1223"
+     ],
+     "orig": {
+      "pred": "business",
+      "conf": 0.9997,
+      "probs": {
+       "world": 0.0002,
+       "sports": 0.0,
+       "business": 0.9997,
+       "sci_tech": 0.0
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "world",
+        "sci_tech",
+        "sports",
+        "business"
+       ],
+       "pred": "business",
+       "conf": 0.9998,
+       "probs": {
+        "world": 0.0001,
+        "sci_tech": 0.0,
+        "sports": 0.0,
+        "business": 0.9998
+       }
+      }
+     ]
+    },
+    {
+     "row": 8,
+     "qid": "topic",
+     "gold": "sports",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:1418"
+     ],
+     "orig": {
+      "pred": "sports",
+      "conf": 0.9999,
+      "probs": {
+       "world": 0.0,
+       "sports": 0.9999,
+       "business": 0.0,
+       "sci_tech": 0.0
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "world",
+        "business",
+        "sci_tech",
+        "sports"
+       ],
+       "pred": "sports",
+       "conf": 0.9999,
+       "probs": {
+        "world": 0.0,
+        "business": 0.0,
+        "sci_tech": 0.0,
+        "sports": 0.9999
+       }
+      }
+     ]
+    },
+    {
+     "row": 9,
+     "qid": "topic",
+     "gold": "world",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:1506"
+     ],
+     "orig": {
+      "pred": "world",
+      "conf": 0.9722,
+      "probs": {
+       "world": 0.9722,
+       "sports": 0.0008,
+       "business": 0.0256,
+       "sci_tech": 0.0014
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "world",
+        "business",
+        "sci_tech",
+        "sports"
+       ],
+       "pred": "world",
+       "conf": 0.9656,
+       "probs": {
+        "world": 0.9656,
+        "business": 0.0318,
+        "sci_tech": 0.0019,
+        "sports": 0.0007
+       }
+      }
+     ]
+    },
+    {
+     "row": 10,
+     "qid": "topic",
+     "gold": "sports",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:1740"
+     ],
+     "orig": {
+      "pred": "sports",
+      "conf": 0.9997,
+      "probs": {
+       "world": 0.0001,
+       "sports": 0.9997,
+       "business": 0.0001,
+       "sci_tech": 0.0001
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "world",
+        "sci_tech",
+        "sports",
+        "business"
+       ],
+       "pred": "sports",
+       "conf": 0.9998,
+       "probs": {
+        "world": 0.0001,
+        "sci_tech": 0.0001,
+        "sports": 0.9998,
+        "business": 0.0001
+       }
+      }
+     ]
+    },
+    {
+     "row": 11,
+     "qid": "topic",
+     "gold": "sports",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:1782"
+     ],
+     "orig": {
+      "pred": "sports",
+      "conf": 1.0,
+      "probs": {
+       "world": 0.0,
+       "sports": 1.0,
+       "business": 0.0,
+       "sci_tech": 0.0
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sci_tech",
+        "business",
+        "sports",
+        "world"
+       ],
+       "pred": "sports",
+       "conf": 1.0,
+       "probs": {
+        "sci_tech": 0.0,
+        "business": 0.0,
+        "sports": 1.0,
+        "world": 0.0
+       }
+      }
+     ]
+    },
+    {
+     "row": 12,
+     "qid": "topic",
+     "gold": "business",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:1958"
+     ],
+     "orig": {
+      "pred": "business",
+      "conf": 0.9997,
+      "probs": {
+       "world": 0.0001,
+       "sports": 0.0001,
+       "business": 0.9997,
+       "sci_tech": 0.0001
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sports",
+        "world",
+        "business",
+        "sci_tech"
+       ],
+       "pred": "business",
+       "conf": 0.9998,
+       "probs": {
+        "sports": 0.0,
+        "world": 0.0001,
+        "business": 0.9998,
+        "sci_tech": 0.0001
+       }
+      }
+     ]
+    },
+    {
+     "row": 13,
+     "qid": "topic",
+     "gold": "world",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:2053"
+     ],
+     "orig": {
+      "pred": "business",
+      "conf": 0.7569,
+      "probs": {
+       "world": 0.2406,
+       "sports": 0.0008,
+       "business": 0.7569,
+       "sci_tech": 0.0016
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "world",
+        "sports",
+        "business",
+        "sci_tech"
+       ],
+       "pred": "business",
+       "conf": 0.7569,
+       "probs": {
+        "world": 0.2406,
+        "sports": 0.0008,
+        "business": 0.7569,
+        "sci_tech": 0.0016
+       }
+      }
+     ]
+    },
+    {
+     "row": 14,
+     "qid": "topic",
+     "gold": "sci_tech",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:2185"
+     ],
+     "orig": {
+      "pred": "sci_tech",
+      "conf": 0.9519,
+      "probs": {
+       "world": 0.0478,
+       "sports": 0.0001,
+       "business": 0.0003,
+       "sci_tech": 0.9519
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "business",
+        "world",
+        "sci_tech",
+        "sports"
+       ],
+       "pred": "sci_tech",
+       "conf": 0.9711,
+       "probs": {
+        "business": 0.0001,
+        "world": 0.0287,
+        "sci_tech": 0.9711,
+        "sports": 0.0001
+       }
+      }
+     ]
+    },
+    {
+     "row": 15,
+     "qid": "topic",
+     "gold": "world",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:2306"
+     ],
+     "orig": {
+      "pred": "business",
+      "conf": 0.9801,
+      "probs": {
+       "world": 0.0162,
+       "sports": 0.0005,
+       "business": 0.9801,
+       "sci_tech": 0.0032
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "world",
+        "sci_tech",
+        "business",
+        "sports"
+       ],
+       "pred": "business",
+       "conf": 0.9577,
+       "probs": {
+        "world": 0.0344,
+        "sci_tech": 0.0068,
+        "business": 0.9577,
+        "sports": 0.001
+       }
+      }
+     ]
+    },
+    {
+     "row": 16,
+     "qid": "topic",
+     "gold": "business",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:2636"
+     ],
+     "orig": {
+      "pred": "business",
+      "conf": 0.9975,
+      "probs": {
+       "world": 0.0024,
+       "sports": 0.0001,
+       "business": 0.9975,
+       "sci_tech": 0.0001
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "world",
+        "sci_tech",
+        "sports",
+        "business"
+       ],
+       "pred": "business",
+       "conf": 0.9976,
+       "probs": {
+        "world": 0.0023,
+        "sci_tech": 0.0001,
+        "sports": 0.0001,
+        "business": 0.9976
+       }
+      }
+     ]
+    },
+    {
+     "row": 17,
+     "qid": "topic",
+     "gold": "business",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:3699"
+     ],
+     "orig": {
+      "pred": "business",
+      "conf": 1.0,
+      "probs": {
+       "world": 0.0,
+       "sports": 0.0,
+       "business": 1.0,
+       "sci_tech": 0.0
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "world",
+        "sports",
+        "sci_tech",
+        "business"
+       ],
+       "pred": "business",
+       "conf": 0.9999,
+       "probs": {
+        "world": 0.0,
+        "sports": 0.0,
+        "sci_tech": 0.0,
+        "business": 0.9999
+       }
+      }
+     ]
+    },
+    {
+     "row": 18,
+     "qid": "topic",
+     "gold": "business",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:4536"
+     ],
+     "orig": {
+      "pred": "business",
+      "conf": 0.9995,
+      "probs": {
+       "world": 0.0001,
+       "sports": 0.0,
+       "business": 0.9995,
+       "sci_tech": 0.0004
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "business",
+        "sports",
+        "world",
+        "sci_tech"
+       ],
+       "pred": "business",
+       "conf": 0.9997,
+       "probs": {
+        "business": 0.9997,
+        "sports": 0.0,
+        "world": 0.0001,
+        "sci_tech": 0.0002
+       }
+      }
+     ]
+    },
+    {
+     "row": 19,
+     "qid": "topic",
+     "gold": "sci_tech",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:5043"
+     ],
+     "orig": {
+      "pred": "business",
+      "conf": 0.7725,
+      "probs": {
+       "world": 0.001,
+       "sports": 0.0,
+       "business": 0.7725,
+       "sci_tech": 0.2264
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sci_tech",
+        "world",
+        "business",
+        "sports"
+       ],
+       "pred": "business",
+       "conf": 0.7054,
+       "probs": {
+        "sci_tech": 0.293,
+        "world": 0.0015,
+        "business": 0.7054,
+        "sports": 0.0001
+       }
+      }
+     ]
+    },
+    {
+     "row": 20,
+     "qid": "topic",
+     "gold": "sports",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:5209"
+     ],
+     "orig": {
+      "pred": "sports",
+      "conf": 0.996,
+      "probs": {
+       "world": 0.0001,
+       "sports": 0.996,
+       "business": 0.0001,
+       "sci_tech": 0.0038
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "world",
+        "sci_tech",
+        "business",
+        "sports"
+       ],
+       "pred": "sports",
+       "conf": 0.9985,
+       "probs": {
+        "world": 0.0001,
+        "sci_tech": 0.0013,
+        "business": 0.0001,
+        "sports": 0.9985
+       }
+      }
+     ]
+    },
+    {
+     "row": 21,
+     "qid": "topic",
+     "gold": "world",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:5236"
+     ],
+     "orig": {
+      "pred": "world",
+      "conf": 0.9993,
+      "probs": {
+       "world": 0.9993,
+       "sports": 0.0002,
+       "business": 0.0002,
+       "sci_tech": 0.0004
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "business",
+        "sci_tech",
+        "world",
+        "sports"
+       ],
+       "pred": "world",
+       "conf": 0.9992,
+       "probs": {
+        "business": 0.0002,
+        "sci_tech": 0.0004,
+        "world": 0.9992,
+        "sports": 0.0002
+       }
+      }
+     ]
+    },
+    {
+     "row": 22,
+     "qid": "topic",
+     "gold": "sports",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:5458"
+     ],
+     "orig": {
+      "pred": "sports",
+      "conf": 0.9999,
+      "probs": {
+       "world": 0.0,
+       "sports": 0.9999,
+       "business": 0.0,
+       "sci_tech": 0.0
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "business",
+        "world",
+        "sports",
+        "sci_tech"
+       ],
+       "pred": "sports",
+       "conf": 0.9999,
+       "probs": {
+        "business": 0.0,
+        "world": 0.0,
+        "sports": 0.9999,
+        "sci_tech": 0.0
+       }
+      }
+     ]
+    },
+    {
+     "row": 23,
+     "qid": "topic",
+     "gold": "world",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:5561"
+     ],
+     "orig": {
+      "pred": "world",
+      "conf": 0.9982,
+      "probs": {
+       "world": 0.9982,
+       "sports": 0.0005,
+       "business": 0.0007,
+       "sci_tech": 0.0007
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sports",
+        "business",
+        "world",
+        "sci_tech"
+       ],
+       "pred": "world",
+       "conf": 0.9973,
+       "probs": {
+        "sports": 0.0005,
+        "business": 0.0011,
+        "world": 0.9973,
+        "sci_tech": 0.0011
+       }
+      }
+     ]
+    },
+    {
+     "row": 24,
+     "qid": "topic",
+     "gold": "world",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:5568"
+     ],
+     "orig": {
+      "pred": "world",
+      "conf": 0.9997,
+      "probs": {
+       "world": 0.9997,
+       "sports": 0.0001,
+       "business": 0.0001,
+       "sci_tech": 0.0001
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "world",
+        "business",
+        "sci_tech",
+        "sports"
+       ],
+       "pred": "world",
+       "conf": 0.9998,
+       "probs": {
+        "world": 0.9998,
+        "business": 0.0001,
+        "sci_tech": 0.0001,
+        "sports": 0.0001
+       }
+      }
+     ]
+    },
+    {
+     "row": 25,
+     "qid": "topic",
+     "gold": "business",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:5751"
+     ],
+     "orig": {
+      "pred": "business",
+      "conf": 0.9996,
+      "probs": {
+       "world": 0.0002,
+       "sports": 0.0001,
+       "business": 0.9996,
+       "sci_tech": 0.0002
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sci_tech",
+        "sports",
+        "world",
+        "business"
+       ],
+       "pred": "business",
+       "conf": 0.9996,
+       "probs": {
+        "sci_tech": 0.0002,
+        "sports": 0.0001,
+        "world": 0.0002,
+        "business": 0.9996
+       }
+      }
+     ]
+    },
+    {
+     "row": 26,
+     "qid": "topic",
+     "gold": "sports",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:6060"
+     ],
+     "orig": {
+      "pred": "sports",
+      "conf": 0.9984,
+      "probs": {
+       "world": 0.0014,
+       "sports": 0.9984,
+       "business": 0.0001,
+       "sci_tech": 0.0001
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sci_tech",
+        "world",
+        "sports",
+        "business"
+       ],
+       "pred": "sports",
+       "conf": 0.9989,
+       "probs": {
+        "sci_tech": 0.0,
+        "world": 0.001,
+        "sports": 0.9989,
+        "business": 0.0
+       }
+      }
+     ]
+    },
+    {
+     "row": 27,
+     "qid": "topic",
+     "gold": "business",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:6183"
+     ],
+     "orig": {
+      "pred": "business",
+      "conf": 0.9967,
+      "probs": {
+       "world": 0.0023,
+       "sports": 0.0001,
+       "business": 0.9967,
+       "sci_tech": 0.001
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sports",
+        "world",
+        "sci_tech",
+        "business"
+       ],
+       "pred": "business",
+       "conf": 0.9931,
+       "probs": {
+        "sports": 0.0001,
+        "world": 0.0044,
+        "sci_tech": 0.0023,
+        "business": 0.9931
+       }
+      }
+     ]
+    },
+    {
+     "row": 28,
+     "qid": "topic",
+     "gold": "sci_tech",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:6492"
+     ],
+     "orig": {
+      "pred": "sci_tech",
+      "conf": 0.9908,
+      "probs": {
+       "world": 0.0061,
+       "sports": 0.0002,
+       "business": 0.0029,
+       "sci_tech": 0.9908
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "world",
+        "sci_tech",
+        "business",
+        "sports"
+       ],
+       "pred": "sci_tech",
+       "conf": 0.9902,
+       "probs": {
+        "world": 0.0063,
+        "sci_tech": 0.9902,
+        "business": 0.0032,
+        "sports": 0.0002
+       }
+      }
+     ]
+    },
+    {
+     "row": 29,
+     "qid": "topic",
+     "gold": "world",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:6514"
+     ],
+     "orig": {
+      "pred": "world",
+      "conf": 0.977,
+      "probs": {
+       "world": 0.977,
+       "sports": 0.0008,
+       "business": 0.016,
+       "sci_tech": 0.0062
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sci_tech",
+        "world",
+        "business",
+        "sports"
+       ],
+       "pred": "world",
+       "conf": 0.984,
+       "probs": {
+        "sci_tech": 0.0037,
+        "world": 0.984,
+        "business": 0.0116,
+        "sports": 0.0006
+       }
+      }
+     ]
+    },
+    {
+     "row": 30,
+     "qid": "topic",
+     "gold": "sci_tech",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:6653"
+     ],
+     "orig": {
+      "pred": "sci_tech",
+      "conf": 0.9997,
+      "probs": {
+       "world": 0.0001,
+       "sports": 0.0,
+       "business": 0.0001,
+       "sci_tech": 0.9997
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sci_tech",
+        "business",
+        "sports",
+        "world"
+       ],
+       "pred": "sci_tech",
+       "conf": 0.9997,
+       "probs": {
+        "sci_tech": 0.9997,
+        "business": 0.0001,
+        "sports": 0.0001,
+        "world": 0.0002
+       }
+      }
+     ]
+    },
+    {
+     "row": 31,
+     "qid": "topic",
+     "gold": "sci_tech",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:6815"
+     ],
+     "orig": {
+      "pred": "sci_tech",
+      "conf": 0.997,
+      "probs": {
+       "world": 0.0006,
+       "sports": 0.0,
+       "business": 0.0024,
+       "sci_tech": 0.997
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "business",
+        "world",
+        "sci_tech",
+        "sports"
+       ],
+       "pred": "sci_tech",
+       "conf": 0.997,
+       "probs": {
+        "business": 0.0022,
+        "world": 0.0008,
+        "sci_tech": 0.997,
+        "sports": 0.0001
+       }
+      }
+     ]
+    },
+    {
+     "row": 32,
+     "qid": "topic",
+     "gold": "business",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:6900"
+     ],
+     "orig": {
+      "pred": "business",
+      "conf": 0.9997,
+      "probs": {
+       "world": 0.0002,
+       "sports": 0.0001,
+       "business": 0.9997,
+       "sci_tech": 0.0001
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sci_tech",
+        "world",
+        "business",
+        "sports"
+       ],
+       "pred": "business",
+       "conf": 0.9997,
+       "probs": {
+        "sci_tech": 0.0001,
+        "world": 0.0001,
+        "business": 0.9997,
+        "sports": 0.0001
+       }
+      }
+     ]
+    },
+    {
+     "row": 33,
+     "qid": "topic",
+     "gold": "world",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:6942"
+     ],
+     "orig": {
+      "pred": "world",
+      "conf": 0.9937,
+      "probs": {
+       "world": 0.9937,
+       "sports": 0.0,
+       "business": 0.0,
+       "sci_tech": 0.0062
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sci_tech",
+        "business",
+        "world",
+        "sports"
+       ],
+       "pred": "world",
+       "conf": 0.9951,
+       "probs": {
+        "sci_tech": 0.0049,
+        "business": 0.0,
+        "world": 0.9951,
+        "sports": 0.0
+       }
+      }
+     ]
+    },
+    {
+     "row": 34,
+     "qid": "topic",
+     "gold": "business",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:6961"
+     ],
+     "orig": {
+      "pred": "business",
+      "conf": 0.9999,
+      "probs": {
+       "world": 0.0001,
+       "sports": 0.0,
+       "business": 0.9999,
+       "sci_tech": 0.0
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sports",
+        "world",
+        "business",
+        "sci_tech"
+       ],
+       "pred": "business",
+       "conf": 0.9998,
+       "probs": {
+        "sports": 0.0,
+        "world": 0.0001,
+        "business": 0.9998,
+        "sci_tech": 0.0
+       }
+      }
+     ]
+    },
+    {
+     "row": 35,
+     "qid": "topic",
+     "gold": "sci_tech",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:7120"
+     ],
+     "orig": {
+      "pred": "sci_tech",
+      "conf": 0.9998,
+      "probs": {
+       "world": 0.0,
+       "sports": 0.0,
+       "business": 0.0002,
+       "sci_tech": 0.9998
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "business",
+        "world",
+        "sports",
+        "sci_tech"
+       ],
+       "pred": "sci_tech",
+       "conf": 0.9995,
+       "probs": {
+        "business": 0.0004,
+        "world": 0.0,
+        "sports": 0.0,
+        "sci_tech": 0.9995
+       }
+      }
+     ]
+    },
+    {
+     "row": 36,
+     "qid": "topic",
+     "gold": "sports",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:7152"
+     ],
+     "orig": {
+      "pred": "sports",
+      "conf": 1.0,
+      "probs": {
+       "world": 0.0,
+       "sports": 1.0,
+       "business": 0.0,
+       "sci_tech": 0.0
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "business",
+        "sports",
+        "sci_tech",
+        "world"
+       ],
+       "pred": "sports",
+       "conf": 1.0,
+       "probs": {
+        "business": 0.0,
+        "sports": 1.0,
+        "sci_tech": 0.0,
+        "world": 0.0
+       }
+      }
+     ]
+    },
+    {
+     "row": 37,
+     "qid": "topic",
+     "gold": "world",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:7257"
+     ],
+     "orig": {
+      "pred": "world",
+      "conf": 0.9996,
+      "probs": {
+       "world": 0.9996,
+       "sports": 0.0001,
+       "business": 0.0002,
+       "sci_tech": 0.0002
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sci_tech",
+        "business",
+        "sports",
+        "world"
+       ],
+       "pred": "world",
+       "conf": 0.9996,
+       "probs": {
+        "sci_tech": 0.0002,
+        "business": 0.0001,
+        "sports": 0.0001,
+        "world": 0.9996
+       }
+      }
+     ]
+    },
+    {
+     "row": 38,
+     "qid": "topic",
+     "gold": "sci_tech",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:7302"
+     ],
+     "orig": {
+      "pred": "sci_tech",
+      "conf": 0.9969,
+      "probs": {
+       "world": 0.0003,
+       "sports": 0.0002,
+       "business": 0.0026,
+       "sci_tech": 0.9969
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "sports",
+        "world",
+        "sci_tech",
+        "business"
+       ],
+       "pred": "sci_tech",
+       "conf": 0.9943,
+       "probs": {
+        "sports": 0.0002,
+        "world": 0.0003,
+        "sci_tech": 0.9943,
+        "business": 0.0052
+       }
+      }
+     ]
+    },
+    {
+     "row": 39,
+     "qid": "topic",
+     "gold": "world",
+     "options": [
+      "world",
+      "sports",
+      "business",
+      "sci_tech"
+     ],
+     "tags": [
+      "ag_news",
+      "id:7460"
+     ],
+     "orig": {
+      "pred": "world",
+      "conf": 0.9924,
+      "probs": {
+       "world": 0.9924,
+       "sports": 0.0012,
+       "business": 0.005,
+       "sci_tech": 0.0014
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "world",
+        "sports",
+        "business",
+        "sci_tech"
+       ],
+       "pred": "world",
+       "conf": 0.9924,
+       "probs": {
+        "world": 0.9924,
+        "sports": 0.0012,
+        "business": 0.005,
+        "sci_tech": 0.0014
+       }
+      }
+     ]
+    }
+   ],
+   "questions_sha256": "c472cb1cb971dab3d01c811ccc0f997d39516555fd43f513a8c59654e0457be1",
+   "metrics": {
+    "n_items": 40,
+    "n_options": 4,
+    "permutations": 1,
+    "identity_permutations": 2,
+    "orig_accuracy": 0.925,
+    "flip_rate_per_perm": 0.0,
+    "flip_rate_per_perm_ci": [
+     0.0,
+     0.0
+    ],
+    "flip_rate_by_perm": [
+     0.0
+    ],
+    "any_flip_rate": 0.0,
+    "any_flip_rate_ci": [
+     0.0,
+     0.0
+    ],
+    "accuracy_by_perm": [
+     0.925
+    ],
+    "perm_accuracy_mean": 0.925,
+    "perm_accuracy_min": 0.925,
+    "perm_accuracy_max": 0.925,
+    "mean_abs_delta_answer_confidence": 0.003529999999999997,
+    "slots": {
+     "chosen_slot_share": [
+      0.225,
+      0.1,
+      0.425,
+      0.25
+     ],
+     "uniform": 0.25,
+     "chi2": 8.600000000000001,
+     "df": 3,
+     "p": 0.035110115675980914,
+     "accuracy_by_gold_slot": [
+      [
+       0.75,
+       12
+      ],
+      [
+       1.0,
+       4
+      ],
+      [
+       1.0,
+       14
+      ],
+      [
+       1.0,
+       10
+      ]
+     ]
+    },
+    "pred_counts_orig": {
+     "business": 13,
+     "sports": 10,
+     "sci_tech": 9,
+     "world": 8
+    },
+    "pred_counts_perm_mean": {
+     "business": 13.0,
+     "sports": 10.0,
+     "sci_tech": 9.0,
+     "world": 8.0
+    },
+    "gold_counts": {
+     "sci_tech": 10,
+     "business": 10,
+     "sports": 10,
+     "world": 10
+    },
+    "by_gold": {
+     "business": {
+      "n": 10,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "sci_tech": {
+      "n": 10,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.9,
+      "perm_accuracy": 0.9
+     },
+     "sports": {
+      "n": 10,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "world": {
+      "n": 10,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.8,
+      "perm_accuracy": 0.8
+     }
+    },
+    "by_orig_pred": {
+     "business": {
+      "n": 13,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.7692307692307693,
+      "perm_accuracy": 0.7692307692307693
+     },
+     "sci_tech": {
+      "n": 9,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "sports": {
+      "n": 10,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "world": {
+      "n": 8,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     }
+    },
+    "by_orig_conf": {
+     "[0.7, 0.9)": {
+      "n": 2,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.0,
+      "perm_accuracy": 0.0
+     },
+     "[0.9, 1.0]": {
+      "n": 38,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.9736842105263158,
+      "perm_accuracy": 0.9736842105263158
+     }
+    }
+   },
+   "reference_parity": {
+    "report": "results/F/jev_cmp/laya/T2_ag_news_40_multilingual.json",
+    "n": 40,
+    "argmax_agreement": 40,
+    "max_abs_dp": 0.0,
+    "ref_accuracy": 0.925
+   }
+  }
+ ]
+}

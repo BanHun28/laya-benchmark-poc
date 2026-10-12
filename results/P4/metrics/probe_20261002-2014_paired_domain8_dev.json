@@ -1,0 +1,91 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/P4/20261002-2014_multilingual_domain8_dev.json",
+   "results/P4/20261002-2014_ft-probe_domain8_dev.json",
+   "--out",
+   "results/P4/metrics/probe_20261002-2014_paired_domain8_dev.md",
+   "--json",
+   "results/P4/metrics/probe_20261002-2014_paired_domain8_dev.json"
+  ],
+  "generated_at": "2026-10-02T20:19:28+0900",
+  "reports": [
+   {
+    "report": "results/P4/20261002-2014_multilingual_domain8_dev.json",
+    "dataset": "poc/finetune/data/domain8_dev.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "957359aa686f099d04df0e9996150f3e75133252da40fed2bd1eb9818b993907",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 2012,
+    "split_rows": {
+     "dev": 2012
+    }
+   },
+   {
+    "report": "results/P4/20261002-2014_ft-probe_domain8_dev.json",
+    "dataset": "poc/finetune/data/domain8_dev.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "957359aa686f099d04df0e9996150f3e75133252da40fed2bd1eb9818b993907",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "ft-probe": "local:poc/finetune/ckpt_probe (base 55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851)"
+    },
+    "model": "ft-probe",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 2012,
+    "split_rows": {
+     "dev": 2012
+    }
+   }
+  ]
+ },
+ "a": "results/P4/20261002-2014_multilingual_domain8_dev.json",
+ "b": "results/P4/20261002-2014_ft-probe_domain8_dev.json",
+ "results": [
+  {
+   "qid": "domain",
+   "split": "all",
+   "n": 2012,
+   "acc_a": 0.4617296222664016,
+   "acc_b": 0.7162027833001988,
+   "delta": 0.2544731610337972,
+   "delta_ci": [
+    0.23163322876890857,
+    0.2773130932986858
+   ],
+   "b": 84,
+   "c": 596,
+   "p": 5.664038253975323e-96,
+   "agreement": 0.5278330019880716,
+   "same_state": 1.0
+  },
+  {
+   "qid": "domain",
+   "split": "dev",
+   "n": 2012,
+   "acc_a": 0.4617296222664016,
+   "acc_b": 0.7162027833001988,
+   "delta": 0.2544731610337972,
+   "delta_ci": [
+    0.23163322876890857,
+    0.2773130932986858
+   ],
+   "b": 84,
+   "c": 596,
+   "p": 5.664038253975323e-96,
+   "agreement": 0.5278330019880716,
+   "same_state": 1.0
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+load before: {"gpu_util_pct": 2, "mps_fp32_matmul_tflops": 6.89, "cotenant": [], "sys_mem_used_gb": 19.2}
+usage: laya_finetune_typed_decisions_mps.py [-h]
+                                            [--model-dir MODEL_DIR_OPTION]
+                                            [--output-dir OUTPUT_DIR_OPTION]
+                                            [--items ITEMS]
+                                            [--model-id MODEL_ID]
+                                            [--epochs EPOCHS]
+                                            [--micro-batch MICRO_BATCH]
+                                            [--grad-accum GRAD_ACCUM]
+                                            [--calib-max CALIB_MAX]
+                                            [--device {auto,mps,cpu}]
+                                            [--force-preprocess]
+                                            [--no-checkpointing]
+                                            [model_dir] [output_dir]
+laya_finetune_typed_decisions_mps.py: error: unrecognized arguments: --bogus-flag-failtest
+Traceback (most recent call last):
+  File "/Users/banhun/banhun28/lab/benchmarkforLaya/poc/finetune/run_ft.py", line 286, in main
+    ft.main()
+  File "/Users/banhun/banhun28/lab/benchmarkforLaya/third_party/laya/notebooks/laya_finetune_typed_decisions_mps.py", line 385, in main
+    args = parser.parse_args()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.12/Frameworks/Python.framework/Versions/3.12/lib/python3.12/argparse.py", line 1908, in parse_args
+    self.error(msg)
+  File "/opt/homebrew/Cellar/python@3.12/3.12.12/Frameworks/Python.framework/Versions/3.12/lib/python3.12/argparse.py", line 2650, in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+  File "/opt/homebrew/Cellar/python@3.12/3.12.12/Frameworks/Python.framework/Versions/3.12/lib/python3.12/argparse.py", line 2637, in exit
+    _sys.exit(status)
+SystemExit: 2
+
+{
+ "phases_s": null,
+ "throughput": null,
+ "micro_batch_s": null,
+ "memory_gb": null,
+ "calibration_rows": null,
+ "item_sources": null
+}
+report: results/P4/smoke_full/smoke_20261003-1147_timing_FAILED.json (wall 2.2s, status failed)

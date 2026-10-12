@@ -1,0 +1,1050 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laya Playground</title>
+<link rel="icon" href="data:,">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f6f7f9; --panel: #ffffff; --panel-2: #fafbfc; --line: #e3e6eb; --line-2: #cfd5dd;
+  --text: #151b26; --muted: #5d6879; --faint: #8b95a4;
+  --accent: #2350d8; --accent-soft: #eef2fe; --accent-line: #c8d5fb;
+  --ok: #13795b; --ok-soft: #e7f5ee; --warn: #9a5a06; --warn-soft: #fdf3e1; --err: #b42318; --err-soft: #fdeceb;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.55 var(--sans); }
+button, input, select, textarea { font: inherit; color: inherit; }
+a { color: var(--accent); }
+.label { font: 12px/1.4 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.mono { font-family: var(--mono); }
+.muted { color: var(--muted); }
+.faint { color: var(--faint); }
+.small { font-size: 13px; }
+[hidden] { display: none !important; }
+
+/* header */
+.topbar { position: sticky; top: 0; z-index: 20; background: #fff; border-bottom: 1px solid var(--line); }
+.topbar-in { max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; text-decoration: none; color: var(--text); }
+.logo { width: 30px; height: 30px; border-radius: 7px; background: var(--text); color: #fff; font: 700 14px var(--mono); display: grid; place-items: center; }
+.nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.nav a { color: var(--text); text-decoration: none; padding: 2px 0; border-bottom: 1px solid transparent; }
+.nav a:hover, .nav a.on { color: var(--accent); border-bottom-color: var(--accent); }
+.hbadge { margin-left: auto; font: 12px var(--mono); color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; }
+
+.wrap { max-width: 1200px; margin: 0 auto; padding: 24px; }
+
+/* hero */
+.hero { display: flex; gap: 24px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; }
+.eyebrow { font: 12px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+h1 { font-size: 40px; line-height: 1.15; letter-spacing: -.02em; margin: 6px 0; }
+.lede { color: var(--muted); margin: 0; max-width: 640px; }
+.hero-side { display: grid; gap: 10px; justify-items: end; }
+.trail { font-size: 13px; color: var(--muted); }
+.trail b { color: var(--accent); font-weight: 500; }
+.keybox { display: flex; gap: 6px; align-items: center; font-size: 13px; }
+.keybox input { width: 170px; }
+.keystate { font: 12px var(--mono); }
+
+/* controls */
+input[type=text], input[type=password], input[type=number], select, textarea {
+  border: 1px solid var(--line-2); border-radius: 6px; background: #fff; padding: 7px 9px; min-width: 0;
+}
+input:focus, select:focus, textarea:focus, button:focus-visible { outline: 2px solid var(--accent-line); outline-offset: 1px; border-color: var(--accent); }
+input:disabled, textarea:disabled, select:disabled { background: #f3f5f8; color: var(--muted); }
+textarea { width: 100%; resize: vertical; min-height: 92px; line-height: 1.5; }
+.seg { display: inline-flex; background: #eceff3; border-radius: 8px; padding: 3px; gap: 2px; }
+.seg button { border: 0; background: transparent; padding: 6px 14px; border-radius: 6px; color: var(--muted); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: #fff; color: var(--text); box-shadow: 0 1px 2px rgba(16, 24, 40, .1); }
+.seg button:disabled { cursor: not-allowed; opacity: .55; }
+.seg.sm button { padding: 4px 10px; font-size: 13px; }
+.btn { border: 1px solid var(--line-2); background: #fff; border-radius: 6px; padding: 6px 11px; cursor: pointer; font-size: 13px; }
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.link { border: 0; background: none; color: var(--accent); cursor: pointer; padding: 0; font-size: 13px; }
+.run { width: 100%; border: 0; border-radius: 7px; padding: 12px; background: var(--accent); color: #fff; font-weight: 600; cursor: pointer; font-size: 15px; }
+.run:disabled { opacity: .6; cursor: progress; }
+.tbadge { font: 600 10.5px var(--mono); letter-spacing: .08em; color: var(--muted); background: #e7eaef; padding: 2px 6px; border-radius: 4px; white-space: nowrap; }
+.tbadge.held { background: var(--warn-soft); color: var(--warn); }
+.tbadge.poc { background: var(--accent-soft); color: var(--accent); }
+
+/* mode + examples */
+.modebar { margin: 22px 0 14px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.examples { display: grid; grid-template-columns: 220px 1fr; gap: 14px; align-items: start; margin-bottom: 16px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: #f1f3f6; border-radius: 6px; padding: 7px 10px; cursor: pointer; font-size: 14px; }
+.chip:hover { border-color: var(--line-2); }
+.chip.active { background: var(--accent-soft); border-color: var(--accent-line); color: var(--accent); }
+.chip .arr { color: var(--faint); font-size: 12px; }
+
+/* workbench */
+.workbench { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border: 1px solid var(--line); border-radius: 10px; background: var(--panel); overflow: hidden; }
+.panel { padding: 22px; min-width: 0; }
+.panel.output { background: var(--panel-2); border-left: 1px solid var(--line); display: flex; flex-direction: column; }
+.phead { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+.pbadge { font: 12px var(--mono); border: 1px solid var(--line); background: #fff; border-radius: 6px; padding: 3px 8px; color: var(--muted); }
+.banner { border: 1px solid var(--accent-line); background: var(--accent-soft); color: var(--accent); border-radius: 7px; padding: 9px 12px; font-size: 14px; margin-bottom: 14px; }
+.lock { border: 1px dashed var(--accent-line); border-radius: 7px; padding: 9px 12px; font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+.field { margin-bottom: 16px; }
+.frow { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.fname { font-weight: 600; }
+.fdesc { font-size: 13px; color: var(--muted); margin: 2px 0 8px; }
+.inline { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; font-size: 13px; }
+.inline input[type=text] { width: 140px; }
+
+.qcard { border: 1px solid var(--line); border-radius: 8px; padding: 14px; margin-bottom: 12px; background: #fff; }
+.qtop { display: flex; gap: 8px; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; }
+.qtop .qtitle { font: 600 13px var(--mono); }
+.qtools { display: flex; gap: 4px; }
+.iconbtn { border: 1px solid var(--line); background: #fff; border-radius: 5px; width: 28px; height: 28px; cursor: pointer; color: var(--muted); }
+.iconbtn:hover:not(:disabled) { color: var(--accent); border-color: var(--accent); }
+.iconbtn:disabled { opacity: .4; cursor: not-allowed; }
+.qgrid { display: grid; grid-template-columns: 130px 1fr; gap: 8px 10px; align-items: center; margin-bottom: 10px; }
+.qgrid label { font-size: 13px; color: var(--muted); }
+.qgrid input { width: 100%; }
+.typebox { border: 1px dashed var(--line-2); border-radius: 7px; padding: 10px 12px; margin: 10px 0; }
+.typebox .label { margin-bottom: 4px; }
+.typebox p { margin: 0; font-size: 13px; color: var(--muted); }
+.opts { display: grid; gap: 6px; }
+.opt { display: grid; grid-template-columns: 30px minmax(110px, 1fr) minmax(0, 2fr) 28px; gap: 6px; align-items: center; }
+.opt .num { font: 12px var(--mono); color: var(--faint); text-align: right; }
+.optfoot { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; gap: 8px; flex-wrap: wrap; }
+.count { font: 12px var(--mono); color: var(--muted); }
+.warnbadge { display: inline-block; background: var(--warn-soft); color: var(--warn); border: 1px solid #f3d9a8; border-radius: 5px; padding: 3px 8px; font-size: 12px; }
+.problems { font-size: 13px; margin: 0 0 10px; padding-left: 18px; }
+.problems li.err { color: var(--err); }
+.problems li.warn { color: var(--warn); }
+details.adv { border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; margin: 4px 0 16px; background: #fff; }
+details.adv summary { cursor: pointer; font: 12px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.advgrid { display: grid; grid-template-columns: 130px 1fr; gap: 10px; align-items: center; margin-top: 12px; font-size: 13px; }
+.advgrid .note { grid-column: 2; color: var(--faint); font-size: 12px; margin-top: -6px; }
+.mcrow { display: flex; gap: 8px; align-items: center; }
+.mcrow input[type=range] { flex: 1; }
+.runnote { text-align: center; font-size: 13px; color: var(--muted); margin-top: 8px; }
+
+/* output */
+.empty { flex: 1; display: grid; place-content: center; text-align: center; gap: 6px; padding: 40px 0; }
+.glyph { font: 34px var(--mono); color: #8a97ab; letter-spacing: .2em; }
+.empty h3 { margin: 6px 0 0; font-weight: 500; font-size: 18px; }
+.flow { display: flex; gap: 8px; align-items: center; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
+.flow span.box { font: 12.5px var(--mono); border: 1px solid var(--line-2); border-radius: 4px; padding: 4px 9px; background: #fff; }
+.loading { padding: 40px 0; text-align: center; color: var(--muted); }
+.errbox { border: 1px solid #f5c2bd; background: var(--err-soft); border-radius: 8px; padding: 14px; }
+.errbox h3 { margin: 0 0 6px; font-size: 16px; color: var(--err); }
+.errbox pre { margin: 8px 0 0; white-space: pre-wrap; word-break: break-word; font: 12.5px var(--mono); color: var(--text); }
+.decision { border: 1px solid var(--line); border-radius: 9px; background: #fff; padding: 14px; margin-bottom: 12px; }
+.decision.route { border-color: #a8dcc4; box-shadow: inset 4px 0 0 var(--ok); }
+.decision.fallback { border-color: #f0d29b; box-shadow: inset 4px 0 0 var(--warn); }
+.act { display: inline-block; font: 700 13px var(--mono); letter-spacing: .08em; padding: 3px 9px; border-radius: 5px; }
+.act.ROUTE { background: var(--ok-soft); color: var(--ok); }
+.act.FALLBACK { background: var(--warn-soft); color: var(--warn); }
+.dline { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-top: 8px; }
+.dline .big { font-size: 22px; font-weight: 650; }
+.kv { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); margin-top: 8px; }
+.kv b { color: var(--text); font-weight: 600; font-family: var(--mono); }
+.acard { border: 1px solid var(--line); border-radius: 9px; background: #fff; padding: 14px; margin-bottom: 12px; }
+.ahead { display: flex; justify-content: space-between; gap: 8px; align-items: center; flex-wrap: wrap; }
+.ans { font-size: 22px; font-weight: 650; margin: 6px 0 2px; word-break: break-word; }
+.gate { font: 600 11px var(--mono); padding: 2px 7px; border-radius: 4px; letter-spacing: .05em; }
+.gate.passed { background: var(--ok-soft); color: var(--ok); }
+.gate.abstained { background: var(--warn-soft); color: var(--warn); }
+.gate.unevaluated { background: #eceff3; color: var(--muted); }
+.meter { display: grid; grid-template-columns: minmax(80px, 34%) 1fr 56px; gap: 8px; align-items: center; font-size: 13px; margin-top: 5px; }
+.meter .lab { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.meter .val { font-family: var(--mono); text-align: right; font-size: 12.5px; }
+.meter.top .lab { font-weight: 600; }
+.bar { position: relative; height: 7px; background: #eceff3; border-radius: 4px; }
+.bar > i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent); border-radius: 4px; }
+.meter:not(.top) .bar > i { background: #9db3ef; }
+.bar > .tmark { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--text); }
+.metarow { font: 12.5px var(--mono); color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 4px 0 12px; }
+.tools { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.copied { font-size: 12px; color: var(--ok); }
+pre.code { background: #fff; border: 1px solid var(--line); border-radius: 7px; padding: 10px; font: 12px/1.5 var(--mono); white-space: pre-wrap; word-break: break-word; max-height: 360px; overflow: auto; margin: 10px 0 0; }
+.outfoot { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+.outfoot::before { content: "▪ "; color: var(--accent); }
+.under { font-size: 13px; color: var(--muted); padding: 10px 0 18px; border-bottom: 1px solid var(--line); }
+
+/* sections */
+section.block { padding: 34px 0 10px; border-bottom: 1px solid var(--line); }
+section.block h2 { font-size: 26px; letter-spacing: -.01em; margin: 0 0 6px; }
+section.block > p.lede { margin-bottom: 18px; }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.card { border-top: 1px solid var(--line-2); padding-top: 14px; }
+.card h3 { margin: 6px 0; font-size: 17px; }
+.card p { margin: 0 0 10px; font-size: 14px; color: var(--muted); }
+.card .chips { margin-top: 8px; }
+.card .chip { font-size: 13px; padding: 5px 8px; }
+.counters { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin-bottom: 14px; }
+.counter { border: 1px solid var(--line); border-radius: 8px; background: #fff; padding: 10px 12px; }
+.counter .v { font: 600 20px var(--mono); margin-top: 2px; }
+.counter .s { font-size: 12px; color: var(--muted); }
+.dist { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.dist span { font: 12px var(--mono); background: #fff; border: 1px solid var(--line); border-radius: 5px; padding: 3px 7px; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { font: 11.5px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); background: var(--panel-2); }
+td.txt { white-space: normal; min-width: 220px; }
+td.num { font-family: var(--mono); text-align: right; }
+.statusline { font-size: 12px; color: var(--faint); margin: 8px 0 0; }
+.docs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.doclist { list-style: none; padding: 0; margin: 0; }
+.doclist li { display: flex; gap: 10px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 14px; flex-wrap: wrap; }
+.doclist code { font: 12.5px var(--mono); }
+dl.kvs { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 6px 12px; margin: 0; font-size: 13px; }
+dl.kvs dt { color: var(--muted); }
+dl.kvs dd { margin: 0; font-family: var(--mono); word-break: break-all; }
+footer { max-width: 1200px; margin: 0 auto; padding: 22px 24px 40px; font-size: 13px; color: var(--muted); }
+
+@media (max-width: 899px) {
+  .workbench { grid-template-columns: minmax(0, 1fr); }
+  .panel.output { border-left: 0; border-top: 1px solid var(--line); }
+  .examples { grid-template-columns: minmax(0, 1fr); }
+  .cards, .docs { grid-template-columns: minmax(0, 1fr); }
+  .counters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hbadge { margin-left: 0; }
+  .hero-side { justify-items: start; }
+  h1 { font-size: 30px; }
+  .wrap { padding: 16px; }
+  .opt { grid-template-columns: 26px minmax(70px, 1fr) minmax(0, 1.6fr) 28px; }
+  .qgrid, .advgrid { grid-template-columns: minmax(0, 1fr); }
+  .advgrid .note { grid-column: 1; }
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="#top" aria-label="Laya Playground 맨 위로"><span class="logo">L:</span>Laya Playground</a>
+    <nav class="nav" aria-label="주요 메뉴">
+      <a href="#top" id="nav-play" class="on">Playground</a>
+      <a href="#workbench" id="nav-poc">PoC 라우터</a>
+      <a href="#shadow">Shadow 로그</a>
+      <a href="#docs">문서</a>
+      <a href="#status">상태</a>
+    </nav>
+    <span class="hbadge" id="hbadge">로컬 실행 · laya — · 체크포인트 —</span>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <section class="hero">
+    <div>
+      <div class="eyebrow">One forward pass, calibrated probabilities</div>
+      <h1>Laya Playground</h1>
+      <p class="lede">한국어 요청을 로컬 laya 체크포인트로 한 번의 forward pass에 판정하고, 결정·확률·정책(ROUTE/FALLBACK)을 그대로 보여주는 PoC 검토 화면입니다.</p>
+    </div>
+    <div class="hero-side">
+      <div class="trail"><b>✓ 로컬 체크포인트</b> / multilingual·english / 네트워크 없음</div>
+      <div class="keybox">
+        <label for="apikey" class="muted">API 키</label>
+        <input id="apikey" type="password" autocomplete="off" placeholder="LAYA_API_KEY">
+        <button class="btn" id="keysave" type="button">저장</button>
+      </div>
+      <div class="keystate faint" id="keystate">키 없음 · sessionStorage에만 저장</div>
+    </div>
+  </section>
+
+  <div class="modebar">
+    <div class="seg" role="group" aria-label="질문 모드">
+      <button type="button" id="mode-single" aria-pressed="true">단일 질문</button>
+      <button type="button" id="mode-multi" aria-pressed="false">다중 질문</button>
+    </div>
+    <span class="small muted" id="endpoint-note"></span>
+  </div>
+
+  <div class="examples">
+    <div class="label">Choose an example — ready to run</div>
+    <div class="chips" id="chips"><span class="small faint">예시를 불러오는 중…</span></div>
+  </div>
+
+  <div class="workbench" id="workbench">
+    <section class="panel input" aria-label="입력">
+      <div class="phead"><span class="label">Input</span><span class="pbadge" id="endpoint-badge">POST /v1/systemone</span></div>
+      <div class="banner" id="banner" hidden>✓ 예시가 로드됨. 그대로 실행하거나 아무 필드나 수정하세요.</div>
+      <div class="lock" id="poclock" hidden>
+        PoC 모드: 서버가 <span class="mono">poc/schema/router_v1.json</span>(questions_sha256 <span class="mono" id="lock-qsha">—</span>)을 그대로 쓰고 §5 정책을 적용합니다. 질문은 편집할 수 없습니다.
+        <button class="link" type="button" id="to-general">일반 모드로 전환(편집 가능, /v1/systemone)</button>
+      </div>
+
+      <div class="field">
+        <div class="frow"><span class="fname">State</span><span class="count" id="charcount">0자</span></div>
+        <div class="fdesc" id="state-desc">Laya가 읽을 맥락입니다. 텍스트는 {state_key: 텍스트} dict로 감싸 보냅니다.</div>
+        <div class="inline">
+          <div class="seg sm" role="group" aria-label="state 형태">
+            <button type="button" id="fmt-text" aria-pressed="true">텍스트</button>
+            <button type="button" id="fmt-json" aria-pressed="false">JSON</button>
+          </div>
+          <label for="statekey" class="muted">state_key</label>
+          <input type="text" id="statekey" value="message" spellcheck="false">
+        </div>
+        <textarea id="state" rows="4" spellcheck="false" aria-label="State"></textarea>
+      </div>
+
+      <div class="field">
+        <div class="frow"><span class="fname" id="q-title">Question</span><span class="count" id="qcount"></span></div>
+        <div class="fdesc">instructions는 영어, 선택지 설명은 한국어 서술형이 PoC 규칙입니다(05 §4). key는 모델이 읽는 옵션 텍스트라 ASCII로 씁니다.</div>
+        <div id="qlist"></div>
+        <button class="btn" type="button" id="addq" hidden>+ 질문 추가</button>
+      </div>
+
+      <details class="adv" id="adv">
+        <summary>고급</summary>
+        <div class="advgrid">
+          <label for="adv-model">model</label>
+          <select id="adv-model">
+            <option value="auto">auto (Router 라우팅)</option>
+            <option value="multilingual">multilingual = ft-v1</option>
+            <option value="english">english = base 55cf4c4</option>
+            <option value="typed-decisions">typed-decisions (일반 모드만)</option>
+          </select>
+          <label for="adv-mc-on">min_confidence</label>
+          <div class="mcrow">
+            <input type="checkbox" id="adv-mc-on" aria-label="min_confidence 사용">
+            <input type="range" id="adv-mc" min="0.5" max="0.95" step="0.005" value="0.9" aria-label="min_confidence 값">
+            <span class="mono small" id="adv-mc-val">0.900</span>
+          </div>
+          <span class="note" id="adv-mc-note">꺼짐: abstention을 보고하지 않습니다.</span>
+          <label for="adv-lang">lang</label>
+          <input type="text" id="adv-lang" placeholder="비우면 감지 (예: ko)" spellcheck="false">
+          <label for="adv-langguess">lang_guess</label>
+          <input type="text" id="adv-langguess" placeholder="소프트 힌트 (예: ko)" spellcheck="false">
+          <label for="adv-maxlen">max_len</label>
+          <input type="number" id="adv-maxlen" min="1" placeholder="체크포인트 기본값">
+          <label for="adv-headmax">head_max_len</label>
+          <input type="number" id="adv-headmax" min="1" placeholder="체크포인트 기본값">
+        </div>
+      </details>
+
+      <ul class="problems" id="problems" hidden></ul>
+      <button class="run" type="button" id="run">Run Laya ↗</button>
+      <div class="runnote">로컬 체크포인트에서 실행 · 네트워크 없음 · <span class="mono">Ctrl+Enter</span></div>
+    </section>
+
+    <section class="panel output" aria-label="출력" aria-live="polite">
+      <div class="phead"><span class="label">Output</span><span class="pbadge" id="out-badge">laya-serve</span></div>
+      <div id="out">
+        <div class="empty">
+          <div class="glyph">[ · ]</div>
+          <h3>결정이 여기에 표시됩니다.</h3>
+          <div class="muted small">state와 typed question을 주고 실행하면 결정과 확률이 보입니다.</div>
+          <div class="flow"><span class="box">State + Question</span><span class="faint">→</span><span class="box">Laya</span><span class="faint">→</span><span class="box">Decision + Probability</span></div>
+        </div>
+      </div>
+      <div class="outfoot">실제 로컬 모델 실행. 시뮬레이션 없음.</div>
+    </section>
+  </div>
+  <div class="under">예시를 그대로 실행한 뒤 입력을 고치거나 다른 예시를 골라 보세요. 결정은 검토용이며 어떤 액션도 실행하지 않습니다.</div>
+
+  <section class="block" id="scenarios">
+    <h2>PoC 시나리오로 시험하기</h2>
+    <p class="lede">05 §2의 세 후보. C가 채택된 시나리오이고 A는 보류, B는 비교용입니다.</p>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section class="block" id="shadow">
+    <h2>Shadow 로그</h2>
+    <p class="lede"><span class="mono">poc/logs/shadow.jsonl</span>의 최근 50건. RedactHook(NFC + PII 마스킹)을 거친 텍스트만 기록됩니다. 5초마다 다시 읽습니다.</p>
+    <div class="counters" id="counters"></div>
+    <div class="dist" id="dist"></div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>시각</th><th>발화 (앞 40자)</th><th>domain</th><th>answer_confidence</th><th>결정</th><th>elapsed_ms</th></tr></thead>
+        <tbody id="shadow-rows"><tr><td colspan="6" class="faint">아직 불러오지 않았습니다.</td></tr></tbody>
+      </table>
+    </div>
+    <p class="statusline" id="shadow-status">—</p>
+  </section>
+
+  <section class="block" id="docs">
+    <h2>문서와 상태</h2>
+    <p class="lede">문서는 저장소 기준 경로입니다(서버는 docs/를 서빙하지 않음). 상태는 <span class="mono">GET /health</span>와 <span class="mono">GET /poc/meta</span>에서 읽습니다.</p>
+    <div class="docs">
+      <div>
+        <div class="label" style="margin-bottom:8px">문서 00~07</div>
+        <ul class="doclist" id="doclist"></ul>
+      </div>
+      <div id="status">
+        <div class="label" style="margin-bottom:8px">/health</div>
+        <dl class="kvs" id="health"><dt>status</dt><dd>—</dd></dl>
+        <div class="label" style="margin:16px 0 8px">/poc/meta</div>
+        <dl class="kvs" id="meta"><dt>schema_version</dt><dd>—</dd></dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>내부 PoC 검토 도구. 운영 배포 대상 아님. 액션을 실행하지 않음(docs/staged-adoption.md).</div>
+  <div class="faint" style="margin-top:6px">구조 참고: 독립 제3자 Jev 플레이그라운드(2026-10-02 열람). 백엔드는 로컬 laya-serve의 같은 <span class="mono">POST /v1/systemone</span> 프로토콜입니다.</div>
+</footer>
+
+<script>
+'use strict';
+/* pure:start — DOM을 쓰지 않는 함수. results/poc/P2_offline_check.py가 node로 따로 실행해 검증한다. */
+const ROUTES = { decide: '/poc/decide', shadow: '/poc/shadow', meta: '/poc/meta', systemone: '/v1/systemone', health: '/health' };
+const MAX_RECOMMENDED_OPTIONS = 20;
+const TYPE_HELP = {
+  choice: ['Select one', '라벨 하나를 고르고 라벨별 확률을 돌려준다.'],
+  noul: ['True or false', '진술이 참일 확률 P(true)를 돌려준다. Jev의 Boolean에 대응한다.'],
+  score: ['Rate on levels', '레벨 설명 목록에 대한 기대 레벨과 레벨별 확률을 돌려준다(0부터 시작하는 인덱스).'],
+};
+
+function blankQuestion(id) {
+  return { id: id || 'q1', type: 'choice', instructions: '',
+           options: [{ key: '', desc: '' }, { key: '', desc: '' }], levels: ['', ''],
+           noulOn: false, noulTrue: '', noulFalse: '' };
+}
+
+function asText(v) { return v == null ? '' : (typeof v === 'string' ? v : JSON.stringify(v)); }
+
+function questionFromDef(qid, d) {
+  const q = blankQuestion(qid);
+  q.type = d.type;
+  q.instructions = d.instructions || '';
+  if (d.type === 'choice') q.options = Object.entries(d.criteria || {}).map(([key, desc]) => ({ key, desc: asText(desc) }));
+  if (d.type === 'score') q.levels = (d.criteria || []).map(asText);
+  if (d.type === 'noul' && d.criteria) {
+    q.noulOn = true; q.noulTrue = asText(d.criteria.true); q.noulFalse = asText(d.criteria.false);
+  }
+  return q;
+}
+
+function defFromQuestion(q) {
+  const d = { type: q.type, instructions: q.instructions };
+  if (q.type === 'choice') d.criteria = Object.fromEntries(q.options.map(o => [o.key.trim(), o.desc === '' ? null : o.desc]));
+  else if (q.type === 'score') d.criteria = q.levels.slice();
+  else if (q.noulOn) d.criteria = { true: q.noulTrue, false: q.noulFalse };
+  return d;
+}
+
+function questionsFromList(list) {
+  return Object.fromEntries(list.map(q => [q.id.trim(), defFromQuestion(q)]));
+}
+
+function findProblems(s) {
+  const errs = [], warns = [];
+  if (!s.stateText.trim()) errs.push('state가 비어 있습니다.');
+  if (s.poc) return { errs, warns };
+  if (s.stateFormat === 'json') {
+    try { JSON.parse(s.stateText); } catch (e) { errs.push('JSON state를 파싱할 수 없습니다: ' + e.message); }
+  } else if (!s.stateKey.trim()) errs.push('state_key가 비어 있습니다.');
+  const seen = new Set();
+  s.questions.forEach((q, i) => {
+    const id = q.id.trim(), tag = 'Q' + (i + 1) + (id ? ' (' + id + ')' : '');
+    if (!id) errs.push(tag + ': 질문 id가 비어 있습니다.');
+    else if (seen.has(id)) errs.push(tag + ': 질문 id가 중복입니다.');
+    else if (!/^[\x21-\x7e]+$/.test(id)) warns.push(tag + ': 질문 id는 ASCII를 권장합니다.');
+    seen.add(id);
+    if (!q.instructions.trim()) errs.push(tag + ': instructions가 비어 있습니다.');
+    if (q.type === 'choice') {
+      const keys = q.options.map(o => o.key.trim());
+      if (keys.length < 2) errs.push(tag + ': 선택지가 2개 이상 필요합니다.');
+      if (keys.some(k => !k)) errs.push(tag + ': 비어 있는 선택지 key가 있습니다.');
+      if (new Set(keys).size !== keys.length) errs.push(tag + ': 선택지 key가 중복입니다.');
+      if (keys.some(k => k && !/^[\x20-\x7e]+$/.test(k))) warns.push(tag + ': key는 ASCII를 권장합니다(모델이 읽는 옵션 텍스트).');
+      if (keys.length > MAX_RECOMMENDED_OPTIONS) warns.push(tag + ': 선택지 ' + keys.length + '개, head_max_len 예산 초과 가능(README Honest limits), 03 Track C6 참고.');
+    }
+    if (q.type === 'score' && (q.levels.length < 2 || q.levels.some(l => !l.trim()))) errs.push(tag + ': 레벨 설명이 2~7개 모두 필요합니다.');
+    if (q.type === 'noul' && q.noulOn && (!q.noulTrue.trim() || !q.noulFalse.trim())) errs.push(tag + ': true/false 설명을 모두 채우거나 끄세요.');
+  });
+  return { errs, warns };
+}
+
+function buildRequest(s) {
+  const a = s.adv, body = {};
+  if (s.poc) {
+    body.utterance = s.stateText;
+    body.lang = a.lang.trim() || null;
+    if (a.mcOn) body.min_confidence = Number(a.mc);
+    if (a.model !== 'auto') body.model = a.model;
+    return { path: ROUTES.decide, body };
+  }
+  body.state = s.stateFormat === 'json' ? JSON.parse(s.stateText) : { [s.stateKey.trim()]: s.stateText };
+  body.questions = questionsFromList(s.mode === 'single' ? s.questions.slice(0, 1) : s.questions);
+  if (a.model !== 'auto') body.model = a.model;
+  if (a.mcOn) body.min_confidence = Number(a.mc);
+  if (a.lang.trim()) body.lang = a.lang.trim();
+  if (a.langGuess.trim()) body.lang_guess = a.langGuess.trim();
+  if (String(a.maxLen).trim()) body.max_len = parseInt(a.maxLen, 10);
+  if (String(a.headMaxLen).trim()) body.head_max_len = parseInt(a.headMaxLen, 10);
+  return { path: ROUTES.systemone, body };
+}
+
+function shq(s) { return "'" + String(s).replace(/'/g, "'\\''") + "'"; }
+
+function curlSnippet(req, origin) {
+  return 'curl -s ' + shq(origin + req.path) + ' \\\n' +
+    '  -H "Authorization: Bearer $LAYA_API_KEY" -H \'content-type: application/json\' \\\n' +
+    '  -d ' + shq(JSON.stringify(req.body));
+}
+
+function pythonSnippet(req, origin) {
+  return [
+    'import json, os, urllib.request',
+    '',
+    'body = json.loads(' + JSON.stringify(JSON.stringify(req.body)) + ')',
+    'req = urllib.request.Request(' + JSON.stringify(origin + req.path) + ', data=json.dumps(body).encode("utf-8"), method="POST",',
+    '                             headers={"content-type": "application/json",',
+    '                                      "Authorization": "Bearer " + os.environ.get("LAYA_API_KEY", "")})',
+    'with urllib.request.urlopen(req) as resp:',
+    '    print(json.dumps(json.load(resp), ensure_ascii=False, indent=2))',
+  ].join('\n');
+}
+
+function cliSnippet(req) {
+  const caveat = '# 주의: laya CLI의 --model은 이름만 받아 Hub base 체크포인트(55cf4c4)를 쓴다. 이 서버의 multilingual 슬롯은 ft-v1이라 답이 다를 수 있다.';
+  const b = req.body, flags = [];
+  const modelFlag = { multilingual: 'ml', english: 'en', 'typed-decisions': 'typed-decisions' }[b.model];
+  if (modelFlag) flags.push('--model', modelFlag);
+  if (b.lang) flags.push('--lang', shq(b.lang));
+  if (b.lang_guess) flags.push('--lang-guess', shq(b.lang_guess));
+  if (b.min_confidence != null) flags.push('--min-confidence', String(b.min_confidence));
+  if (b.max_len != null) flags.push('--max-len', String(b.max_len));
+  if (b.head_max_len != null) flags.push('--head-max-len', String(b.head_max_len));
+  if (req.path === ROUTES.decide) {
+    return [caveat, ['laya', shq(b.utterance)].concat(flags, ['--questions', 'poc/schema/router_v1.json', '--json']).join(' ')].join('\n');
+  }
+  const keys = Object.keys(b.state);
+  if (keys.length !== 1 || typeof b.state[keys[0]] !== 'string') {
+    return '# laya CLI는 state를 {state_key: 텍스트}로만 만든다. 이 state는 "curl 복사" 또는 "Python 복사"를 쓸 것.';
+  }
+  const key = keys[0];
+  return [caveat,
+    "cat > /tmp/laya_questions.json <<'EOF'",
+    JSON.stringify({ state_key: key, questions: b.questions }),
+    'EOF',
+    ['laya', shq(b.state[key])].concat(flags, ['--questions', '/tmp/laya_questions.json', '--json']).join(' ')].join('\n');
+}
+
+function textPreview(state, n) {
+  let t = state;
+  if (state && typeof state === 'object') {
+    const firstStr = Object.values(state).find(v => typeof v === 'string');
+    t = firstStr !== undefined ? firstStr : JSON.stringify(state);
+  }
+  t = String(t == null ? '' : t);
+  return t.length > n ? t.slice(0, n) + '…' : t;
+}
+
+function fmtP(p) { return p == null ? '—' : Number(p).toFixed(3); }
+/* pure:end */
+
+/* ---------- DOM ---------- */
+const BASE = location.pathname.replace(/\/poc\/ui(\/.*)?$/, '');
+const ORIGIN = location.origin + BASE;
+const KEY_STORE = 'laya_poc_api_key';
+const DOCS = [
+  ['00_README.md', '진행 순서, Go/No-Go 기준'], ['01_laya_analysis.md', '아키텍처, Honest limits, 가설'],
+  ['02_environment_setup.md', '환경, 스모크'], ['03_benchmark_plan.md', 'Track A~F 프로토콜'],
+  ['04_korean_evalset_spec.md', '한국어 평가셋 스펙'], ['05_poc_plan.md', 'PoC 계획 (이 화면: §3)'],
+  ['06_templates.md', 'run card, REPORT, ADR'], ['07_korean_support_audit.md', '한국어 지원 감사'],
+];
+
+const S = {
+  examples: null, exampleId: null, mode: 'single', poc: false,
+  stateFormat: 'text', stateKey: 'message', stateText: '',
+  questions: [blankQuestion('q1')],
+  adv: { model: 'auto', mcOn: false, mc: 0.9, lang: '', langGuess: '', maxLen: '', headMaxLen: '' },
+  meta: null, lastReq: null, lastResp: null, showJson: false, snippet: '',
+};
+
+function $(id) { return document.getElementById(id); }
+
+function el(tag, props, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(props || {})) {
+    if (v == null || v === false) continue;
+    if (k === 'class') n.className = v;
+    else if (k === 'text') n.textContent = v;
+    else if (k.startsWith('on')) n.addEventListener(k.slice(2), v);
+    else if (k === 'value') n.value = v;
+    else n.setAttribute(k, v === true ? '' : v);
+  }
+  for (const kid of kids.flat()) {
+    if (kid == null || kid === false) continue;
+    n.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
+  }
+  return n;
+}
+
+function getKey() { try { return sessionStorage.getItem(KEY_STORE) || ''; } catch (e) { return ''; } }
+function setKey(v) { try { if (v) sessionStorage.setItem(KEY_STORE, v); else sessionStorage.removeItem(KEY_STORE); } catch (e) { /* 저장 불가 브라우저 */ } }
+
+async function api(method, path, body) {
+  const headers = {};
+  if (body !== undefined) headers['content-type'] = 'application/json';
+  const key = getKey();
+  if (key) headers.Authorization = 'Bearer ' + key;
+  const t0 = performance.now();
+  let res;
+  try {
+    res = await fetch(BASE + path, { method, headers, body: body === undefined ? undefined : JSON.stringify(body) });
+  } catch (e) {
+    return { ok: false, status: 0, error: String(e), rtMs: performance.now() - t0 };
+  }
+  const text = await res.text();
+  let json = null;
+  try { json = JSON.parse(text); } catch (e) { /* JSON이 아닌 오류 본문 */ }
+  return { ok: res.ok, status: res.status, json, text, headers: res.headers, rtMs: performance.now() - t0 };
+}
+
+/* ---------- examples ---------- */
+async function loadExamples() {
+  try {
+    const res = await fetch('examples.json');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    S.examples = await res.json();
+  } catch (e) {
+    $('chips').replaceChildren(el('span', { class: 'small', style: 'color:var(--err)', text: 'examples.json을 읽지 못했습니다: ' + e }));
+    return;
+  }
+  renderCards();
+  loadExample(S.examples.single[0]);
+}
+
+function loadExample(ex, overrides) {
+  const o = overrides || {};
+  S.exampleId = ex.id;
+  S.lastResp = null;               // 글자 수 옆 '입력 토큰'은 새 입력으로 다시 실행할 때까지 숨긴다
+  S.poc = !!ex.poc;
+  S.mode = ex.type === 'MULTI' ? 'multi' : 'single';
+  S.stateFormat = ex.state_format === 'json' ? 'json' : 'text';
+  S.stateKey = ex.state_key || 'message';
+  S.stateText = o.state != null ? o.state : (typeof ex.state === 'string' ? ex.state : JSON.stringify(ex.state, null, 2));
+  S.questions = Object.entries(ex.questions).map(([qid, d]) => questionFromDef(qid, d));
+  S.adv.lang = S.poc ? 'ko' : '';
+  if (S.poc && S.adv.model === 'typed-decisions') S.adv.model = 'auto';
+  $('banner').hidden = false;
+  $('banner').textContent = '✓ 예시가 로드됨. 그대로 실행하거나 아무 필드나 수정하세요.' + (ex.held ? ' (보류 시나리오: ' + (ex.note || '') + ')' : '');
+  renderAll();
+}
+
+function renderChips() {
+  const box = $('chips');
+  box.replaceChildren();
+  if (!S.examples) return;
+  const list = S.mode === 'multi' ? S.examples.multi : S.examples.single;
+  for (const ex of list) {
+    box.append(el('button', {
+      type: 'button', class: 'chip' + (S.exampleId === ex.id ? ' active' : ''), title: ex.note || ex.source || '',
+      onclick: () => loadExample(ex),
+    }, ex.title, el('span', { class: 'tbadge' + (ex.poc ? ' poc' : ''), text: ex.poc ? 'POC · ' + ex.type : ex.type }),
+       ex.held ? el('span', { class: 'tbadge held', text: '보류' }) : null, el('span', { class: 'arr', text: '↗' })));
+  }
+}
+
+function renderCards() {
+  const ex = S.examples, router = ex.single.find(e => e.poc);
+  const utter = ex.domain_utterances.map(u => el('button', {
+    type: 'button', class: 'chip', title: u.text, onclick: () => { loadExample(router, { state: u.text }); scrollToBench(); },
+  }, u.domain));
+  const triage = ex.multi.find(e => e.held), guard = ex.multi.find(e => e.id === 'guard');
+  $('cards').replaceChildren(
+    el('div', { class: 'card' },
+      el('span', { class: 'tbadge poc', text: 'C · 기본' }),
+      el('h3', { text: '한국어 도메인 라우터' }),
+      el('p', { text: 'router_v1(8도메인) + 파인튜닝 체크포인트 ft-v1 + 단일 T 게이트. answer_confidence ≥ T면 ROUTE, 아니면 FALLBACK(LLM 또는 사람 검수).' }),
+      el('button', { type: 'button', class: 'btn', onclick: () => { loadExample(router); scrollToBench(); } }, 'router_v1 로드'),
+      ' ',
+      el('button', { type: 'button', class: 'btn', onclick: () => { loadExample(ex.ynat); scrollToBench(); } }, 'YNAT 7토픽 질문으로 전환'),
+      el('div', { class: 'small faint', style: 'margin-top:10px' }, '8도메인 예시 발화 (직접 작성, test half 아님)'),
+      el('div', { class: 'chips' }, utter)),
+    el('div', { class: 'card' },
+      el('span', { class: 'tbadge held', text: 'A · 보류' }),
+      el('h3', { text: 'CS triage + gateway' }),
+      el('p', { text: '7문항(choice·noul·score). zero-shot G1 미달, P4 파인튜닝 후보 (results/poc/P0b_20261002.md).' }),
+      el('button', { type: 'button', class: 'btn', onclick: () => { loadExample(triage); scrollToBench(); } }, '7문항 로드')),
+    el('div', { class: 'card' },
+      el('span', { class: 'tbadge', text: 'B' }),
+      el('h3', { text: '프롬프트 가드레일' }),
+      el('p', { text: 'guard preset(noul 3 + score + choice). 리스크: upstream held-out 가드레일 0.708~0.762 (BENCHMARKS.md §Themes).' }),
+      el('button', { type: 'button', class: 'btn', onclick: () => { loadExample(guard); scrollToBench(); } }, 'guard preset 로드')));
+}
+
+function scrollToBench() { $('workbench').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+
+/* ---------- input panel ---------- */
+function renderAll() {
+  $('mode-single').setAttribute('aria-pressed', String(S.mode === 'single'));
+  $('mode-multi').setAttribute('aria-pressed', String(S.mode === 'multi'));
+  $('fmt-text').setAttribute('aria-pressed', String(S.stateFormat === 'text'));
+  $('fmt-json').setAttribute('aria-pressed', String(S.stateFormat === 'json'));
+  $('fmt-json').disabled = S.poc;
+  $('statekey').value = S.poc ? 'utterance' : S.stateKey;
+  $('statekey').disabled = S.poc || S.stateFormat === 'json';
+  $('state').value = S.stateText;
+  $('state-desc').textContent = S.poc ? '/poc/decide는 {"utterance": 텍스트}로 보냅니다(한국어 채널, lang 기본 "ko").'
+    : (S.stateFormat === 'json' ? 'JSON state는 그대로 보냅니다(state_key 미사용).' : 'Laya가 읽을 맥락입니다. 텍스트는 {state_key: 텍스트} dict로 감싸 보냅니다.');
+  $('poclock').hidden = !S.poc;
+  $('endpoint-badge').textContent = S.poc ? 'POST /poc/decide' : 'POST /v1/systemone';
+  $('endpoint-note').textContent = S.poc ? 'PoC 모드 · 정책 카드 포함' : '일반 모드 · laya-serve 그대로';
+  $('nav-poc').classList.toggle('on', S.poc);
+  $('nav-play').classList.toggle('on', !S.poc);
+  $('addq').hidden = S.mode !== 'multi' || S.poc;
+  $('adv-model').value = S.adv.model;
+  $('adv-model').querySelector('option[value="typed-decisions"]').disabled = S.poc;
+  $('adv-mc-on').checked = S.adv.mcOn;
+  $('adv-mc').value = S.adv.mc;
+  $('adv-mc').disabled = !S.adv.mcOn;
+  $('adv-lang').value = S.adv.lang;
+  for (const id of ['adv-langguess', 'adv-maxlen', 'adv-headmax']) $(id).disabled = S.poc;
+  renderMcNote();
+  renderChars();
+  renderQuestions();
+  renderChips();
+  renderProblems();
+}
+
+function renderChars() {
+  const usage = S.lastResp && S.lastResp.usage;
+  $('charcount').textContent = [...S.stateText].length + '자' + (usage ? ' · 입력 토큰 ' + usage.input_tokens : '');
+}
+
+function renderMcNote() {
+  const T = S.meta && S.meta.thresholds ? S.meta.thresholds.T : null;
+  $('adv-mc-val').textContent = Number(S.adv.mc).toFixed(3);
+  $('adv-mc-note').textContent = S.adv.mcOn ? 'abstention 배지를 이 값으로 계산합니다.'
+    : (S.poc ? '꺼짐: 서버가 T' + (T ? '=' + T : '') + '로 abstention을 보고합니다.' : '꺼짐: abstention을 보고하지 않습니다.');
+}
+
+function renderQuestions() {
+  const list = $('qlist');
+  list.replaceChildren();
+  const shown = S.mode === 'multi' ? S.questions : S.questions.slice(0, 1);
+  $('q-title').textContent = S.mode === 'multi' ? 'Questions' : 'Question';
+  $('qcount').textContent = S.mode === 'multi' ? shown.length + '문항 · 한 번의 forward pass' : '';
+  shown.forEach((q, i) => list.append(questionCard(q, i, shown.length)));
+}
+
+function questionCard(q, i, n) {
+  const ro = S.poc;
+  const set = (field) => (e) => { q[field] = e.target.value; renderProblems(); };
+  const top = el('div', { class: 'qtop' },
+    el('span', { class: 'qtitle', text: (S.mode === 'multi' ? 'Q' + (i + 1) + ' · ' : '') + q.type.toUpperCase() }),
+    S.mode === 'multi' && !ro ? el('span', { class: 'qtools' },
+      el('button', { type: 'button', class: 'iconbtn', title: '위로', 'aria-label': '위로', disabled: i === 0, onclick: () => moveQ(i, -1) }, '↑'),
+      el('button', { type: 'button', class: 'iconbtn', title: '아래로', 'aria-label': '아래로', disabled: i === n - 1, onclick: () => moveQ(i, 1) }, '↓'),
+      el('button', { type: 'button', class: 'iconbtn', title: '삭제', 'aria-label': '질문 삭제', disabled: n === 1, onclick: () => { S.questions.splice(i, 1); renderAll(); } }, '×')) : null);
+  const seg = el('div', { class: 'seg sm', role: 'group', 'aria-label': 'Decision type' },
+    ...[['choice', 'Choice'], ['noul', 'Noul (Boolean)'], ['score', 'Score']].map(([t, label]) => el('button', {
+      type: 'button', 'aria-pressed': String(q.type === t), disabled: ro, onclick: () => { q.type = t; renderAll(); },
+    }, label)));
+  const grid = el('div', { class: 'qgrid' },
+    el('label', { text: '질문 id (ASCII)' }),
+    el('input', { type: 'text', value: q.id, spellcheck: 'false', disabled: ro, 'aria-label': '질문 id', oninput: set('id') }),
+    el('label', { text: 'instructions' }),
+    el('input', { type: 'text', value: q.instructions, disabled: ro, 'aria-label': 'instructions', oninput: set('instructions') }),
+    el('label', { text: 'Decision type' }), seg);
+  const help = TYPE_HELP[q.type];
+  const box = el('div', { class: 'typebox' }, el('div', { class: 'label', text: help[0] }), el('p', { text: help[1] }));
+  let body;
+  if (q.type === 'choice') body = choiceEditor(q, ro);
+  else if (q.type === 'score') body = scoreEditor(q, ro);
+  else body = noulEditor(q, ro);
+  return el('div', { class: 'qcard' }, top, grid, box, body);
+}
+
+function choiceEditor(q, ro) {
+  const rows = q.options.map((o, j) => el('div', { class: 'opt' },
+    el('span', { class: 'num', text: String(j + 1).padStart(2, '0') }),
+    el('input', { type: 'text', value: o.key, placeholder: 'key', spellcheck: 'false', disabled: ro, 'aria-label': '선택지 ' + (j + 1) + ' key', oninput: (e) => { o.key = e.target.value; renderProblems(); } }),
+    el('input', { type: 'text', value: o.desc, placeholder: '설명 (한국어, 비우면 key만)', disabled: ro, 'aria-label': '선택지 ' + (j + 1) + ' 설명', oninput: (e) => { o.desc = e.target.value; } }),
+    el('button', { type: 'button', class: 'iconbtn', title: '선택지 제거', 'aria-label': '선택지 ' + (j + 1) + ' 제거', disabled: ro || q.options.length <= 2, onclick: () => { q.options.splice(j, 1); renderAll(); } }, '×')));
+  const over = q.options.length > MAX_RECOMMENDED_OPTIONS;
+  return el('div', null,
+    el('div', { class: 'frow', style: 'margin-bottom:6px' }, el('span', { class: 'small muted', text: '선택지 (key + 설명)' }),
+      el('span', { class: 'count', text: q.options.length + ' / ' + MAX_RECOMMENDED_OPTIONS })),
+    el('div', { class: 'opts' }, rows),
+    el('div', { class: 'optfoot' },
+      ro ? el('span') : el('button', { type: 'button', class: 'link', onclick: () => { q.options.push({ key: '', desc: '' }); renderAll(); } }, '+ 선택지 추가'),
+      over ? el('span', { class: 'warnbadge', role: 'status', text: '⚠ head_max_len 예산 초과 가능(README Honest limits), 03 Track C6 참고 · 서버 한도 100 초과는 413' }) : null));
+}
+
+function scoreEditor(q, ro) {
+  const rows = q.levels.map((l, j) => el('div', { class: 'opt' },
+    el('span', { class: 'num', text: String(j) }),
+    el('input', { type: 'text', value: l, placeholder: '레벨 ' + j + ' 설명', disabled: ro, style: 'grid-column: span 2', 'aria-label': '레벨 ' + j + ' 설명', oninput: (e) => { q.levels[j] = e.target.value; renderProblems(); } }),
+    el('button', { type: 'button', class: 'iconbtn', title: '레벨 제거', 'aria-label': '레벨 ' + j + ' 제거', disabled: ro || q.levels.length <= 2, onclick: () => { q.levels.splice(j, 1); renderAll(); } }, '×')));
+  return el('div', null,
+    el('div', { class: 'frow', style: 'margin-bottom:6px' }, el('span', { class: 'small muted', text: '레벨 설명 (expected는 0부터)' }),
+      el('span', { class: 'count', text: q.levels.length + ' / 7' })),
+    el('div', { class: 'opts' }, rows),
+    el('div', { class: 'optfoot' }, ro ? el('span') : el('button', { type: 'button', class: 'link', disabled: q.levels.length >= 7, onclick: () => { q.levels.push(''); renderAll(); } }, '+ 레벨 추가')));
+}
+
+function noulEditor(q, ro) {
+  const fields = q.noulOn ? el('div', { class: 'qgrid', style: 'margin-top:8px' },
+    el('label', { text: 'true 설명' }), el('input', { type: 'text', value: q.noulTrue, disabled: ro, 'aria-label': 'true 설명', oninput: (e) => { q.noulTrue = e.target.value; renderProblems(); } }),
+    el('label', { text: 'false 설명' }), el('input', { type: 'text', value: q.noulFalse, disabled: ro, 'aria-label': 'false 설명', oninput: (e) => { q.noulFalse = e.target.value; renderProblems(); } })) : null;
+  return el('div', null,
+    el('label', { class: 'small' }, el('input', { type: 'checkbox', checked: q.noulOn, disabled: ro, onchange: (e) => { q.noulOn = e.target.checked; renderAll(); } }),
+      ' true/false 설명 사용 (criteria 전송, 기본 꺼짐 = v1 정책)'), fields);
+}
+
+function moveQ(i, d) {
+  const q = S.questions.splice(i, 1)[0];
+  S.questions.splice(i + d, 0, q);
+  renderAll();
+}
+
+function renderProblems() {
+  const { errs, warns } = findProblems(activeState());
+  const ul = $('problems');
+  ul.replaceChildren(...errs.map(t => el('li', { class: 'err', text: t })), ...warns.map(t => el('li', { class: 'warn', text: t })));
+  ul.hidden = !(errs.length + warns.length);
+  return errs;
+}
+
+function activeState() {
+  return Object.assign({}, S, { questions: S.mode === 'multi' ? S.questions : S.questions.slice(0, 1) });
+}
+
+/* ---------- run ---------- */
+async function run() {
+  const errs = renderProblems();
+  if (errs.length) return;
+  const req = buildRequest(S);
+  S.lastReq = req;
+  S.snippet = '';
+  const btn = $('run');
+  btn.disabled = true;
+  $('out').replaceChildren(el('div', { class: 'loading', text: '실행 중… ' + req.path }));
+  const r = await api('POST', req.path, req.body);
+  btn.disabled = false;
+  if (!r.ok || !r.json || !r.json.answers) { renderError(r, req); return; }
+  S.lastResp = r.json;
+  renderResult(r, req);
+  renderChars();
+  refreshShadow();
+}
+
+function renderError(r, req) {
+  S.lastResp = null;
+  renderChars();
+  const lines = [];
+  if (r.status === 0) lines.push('서버에 연결할 수 없습니다: ' + r.error);
+  else {
+    lines.push('HTTP ' + r.status + ' · POST ' + req.path);
+    const detail = r.json && r.json.detail !== undefined ? r.json.detail : r.text;
+    lines.push(typeof detail === 'string' ? detail : JSON.stringify(detail, null, 2));
+    if (r.status === 503 && r.headers.get('Retry-After')) lines.push('Retry-After: ' + r.headers.get('Retry-After') + ' s');
+    if (r.status === 401) lines.push('상단 "API 키"에 LAYA_API_KEY 값을 넣고 저장하세요.');
+  }
+  $('out').replaceChildren(el('div', { class: 'errbox', role: 'alert' },
+    el('h3', { text: '결정이 생성되지 않았습니다. 입력은 유지됩니다.' }), el('pre', { text: lines.join('\n') })));
+}
+
+function shaFor(model) {
+  if (model === 'multilingual') return 'ft-v1 · ' + (S.meta ? S.meta.checkpoint.sha256_of_rl_agent_config.slice(0, 7) : '…');
+  if (model === 'english') return 'base · 55cf4c4';
+  return model || '—';
+}
+
+let lastResult = null;
+
+function renderResult(r, req) {
+  lastResult = r;
+  const resp = r.json;
+  const routing = resp.routing || {};
+  $('out-badge').textContent = (routing.model || 'laya') + ' · ' + shaFor(routing.model);
+  const T = resp.thresholds ? resp.thresholds.T : null;
+  const parts = [];
+  if (resp.policy) parts.push(policyCard(resp, T));
+  for (const [qid, a] of Object.entries(resp.answers)) parts.push(answerCard(qid, a, resp.policy && qid === 'domain' ? T : null));
+  const hdr = r.headers.get('X-Inference-Time-Ms');
+  const serverMs = resp.elapsed_ms != null ? resp.elapsed_ms : (hdr == null ? NaN : Number(hdr));
+  const u = resp.usage || {};
+  parts.push(el('div', { class: 'metarow' },
+    el('span', { text: '서버 ' + (isFinite(serverMs) ? serverMs.toFixed(1) : '—') + ' ms' }),
+    el('span', { text: '왕복 ' + r.rtMs.toFixed(1) + ' ms' }),
+    el('span', { text: '토큰 in ' + (u.input_tokens != null ? u.input_tokens : '—') + ' / out ' + (u.output_tokens != null ? u.output_tokens : '—') }),
+    el('span', { text: 'routing: ' + (routing.model || '—') + ' · ' + (routing.reason || '—') })));
+  const status = el('span', { class: 'copied', id: 'copied' });
+  const copy = (label, make) => el('button', { type: 'button', class: 'btn', onclick: () => copySnippet(label, make()) }, label);
+  parts.push(el('div', { class: 'tools' },
+    el('button', { type: 'button', class: 'btn', 'aria-pressed': String(S.showJson), onclick: () => { S.showJson = !S.showJson; renderResult(r, req); } }, S.showJson ? 'JSON 숨기기' : 'JSON 보기'),
+    copy('curl 복사', () => curlSnippet(req, ORIGIN)),
+    copy('Python 복사', () => pythonSnippet(req, ORIGIN)),
+    copy('CLI 복사', () => cliSnippet(req)), status));
+  if (S.snippet) parts.push(el('pre', { class: 'code', 'aria-label': '복사한 코드', text: S.snippet }));
+  if (S.showJson) parts.push(el('pre', { class: 'code', 'aria-label': '응답 JSON', text: JSON.stringify(resp, null, 2) }));
+  $('out').replaceChildren(...parts);
+}
+
+async function copyText(text) {
+  try { await navigator.clipboard.writeText(text); return true; } catch (e) { return false; }
+}
+
+async function copySnippet(label, text) {
+  S.snippet = text;
+  const ok = await copyText(text);
+  if (lastResult) renderResult(lastResult, S.lastReq);
+  const st = $('copied');
+  if (st) st.textContent = ok ? '✓ ' + label + '됨' : '클립보드 접근 불가: 아래 코드를 직접 복사하세요';
+}
+
+function policyCard(resp, T) {
+  const p = resp.policy, route = p.action === 'ROUTE';
+  return el('div', { class: 'decision ' + (route ? 'route' : 'fallback') },
+    el('div', { class: 'ahead' }, el('span', { class: 'label', text: '라우팅 결과 · /poc/decide' }), el('span', { class: 'act ' + p.action, text: p.action })),
+    el('div', { class: 'dline' },
+      el('span', { class: 'big', text: route ? p.domain : 'FALLBACK' }),
+      el('span', { class: 'muted', text: route ? '→ ' + p.handler : '→ LLM fallback 또는 사람 검수 (top: ' + p.domain + ')' })),
+    meter('p = ' + fmtP(p.p), p.p, T, true),
+    el('div', { class: 'kv' },
+      el('span', null, 'p ', el('b', { text: fmtP(p.p) }), route ? ' ≥ ' : ' vs ', 'T ', el('b', { text: T == null ? '—' : String(T) })),
+      el('span', null, 'reason ', el('b', { text: p.reason })),
+      el('span', null, 'handler ', el('b', { text: p.handler || '—' })),
+      el('span', null, 'questions_sha256 ', el('b', { text: (resp.questions_sha256 || '').slice(0, 12) }))));
+}
+
+function meter(label, value, mark, top) {
+  const v = Math.max(0, Math.min(1, Number(value) || 0));
+  const bar = el('div', { class: 'bar' }, el('i', { style: 'width:' + (v * 100).toFixed(1) + '%' }),
+    mark != null ? el('span', { class: 'tmark', style: 'left:calc(' + (mark * 100).toFixed(1) + '% - 1px)', title: '임계값 ' + mark }) : null);
+  return el('div', { class: 'meter' + (top ? ' top' : '') }, el('span', { class: 'lab', title: label, text: label }), bar, el('span', { class: 'val', text: fmtP(value) }));
+}
+
+function answerCard(qid, a, T) {
+  const gate = a.abstention ? el('span', { class: 'gate ' + a.abstention, title: 'abstention_threshold ' + a.abstention_threshold, text: a.abstention }) : null;
+  let answer, probs = [];
+  if (a.type === 'choice') {
+    answer = a.choice;
+    probs = Object.entries(a.probabilities || {}).map(([k, v]) => meter(k, v, null, k === a.choice));
+  } else if (a.type === 'score') {
+    const levels = Object.keys(a.probabilities || {});
+    answer = Number(a.score).toFixed(2) + ' / ' + (levels.length - 1);
+    probs = levels.map(k => meter(k + ' · ' + ((a.legend || {})[k] || ''), a.probabilities[k], null, String(Math.round(a.score)) === k));
+  } else {
+    answer = 'P(true) ' + fmtP(a.noul) + ' → ' + (a.noul >= 0.5 ? '참' : '거짓') + ' (0.5 기준)';
+    probs = [meter('true', a.noul, 0.5, a.noul >= 0.5), meter('false', 1 - a.noul, null, a.noul < 0.5)];
+  }
+  const mark = a.abstention_threshold != null ? a.abstention_threshold : T;   // 배지를 만든 임계값. 정책 카드는 T를 따로 표시
+  return el('div', { class: 'acard' },
+    el('div', { class: 'ahead' }, el('span', { class: 'mono small', text: qid + ' · ' + String(a.type).toUpperCase() }), gate),
+    el('div', { class: 'ans', text: answer }),
+    meter('answer_confidence', a.answer_confidence, mark, true),
+    el('div', { class: 'small faint', style: 'margin:8px 0 2px' }, a.type === 'noul' ? 'P(true) / P(false)' : 'probabilities'),
+    probs);
+}
+
+/* ---------- shadow / meta / health ---------- */
+async function refreshShadow() {
+  const r = await api('GET', ROUTES.shadow + '?limit=50');
+  const now = new Date().toLocaleTimeString('ko-KR', { hour12: false });
+  if (!r.ok) {
+    $('shadow-status').textContent = (r.status === 401 ? 'API 키 필요 (401)' : '조회 실패: ' + (r.status || r.error)) + ' · ' + now;
+    return;
+  }
+  const c = r.json.counters;
+  const pct = (x) => x == null ? '—' : (x * 100).toFixed(1) + '%';
+  const counter = (label, v, sub) => el('div', { class: 'counter' }, el('div', { class: 'label', text: label }), el('div', { class: 'v', text: v }), el('div', { class: 's', text: sub || '' }));
+  $('counters').replaceChildren(
+    counter('total', String(c.total), '오류 ' + c.errors),
+    counter('ROUTE / FALLBACK', c.actions.ROUTE + ' / ' + c.actions.FALLBACK, 'router_v1 결정만'),
+    counter('fallback rate', pct(c.fallback_rate), 'FALLBACK ÷ 결정'),
+    counter('abstention', pct(c.abstained.rate), 'abstained ' + c.abstained.count),
+    counter('elapsed p50 / p95', (c.elapsed_ms.p50 == null ? '—' : c.elapsed_ms.p50) + ' / ' + (c.elapsed_ms.p95 == null ? '—' : c.elapsed_ms.p95), 'ms, hook 기준'));
+  $('dist').replaceChildren(...Object.entries(c.by_domain).sort((x, y) => y[1] - x[1]).map(([d, n]) => el('span', { text: d + ' ' + n })));
+  const rows = r.json.records.slice().reverse().map(rec => {
+    const dom = rec.policy ? rec.policy.domain : null;   // router_v1 결정만. 다른 질문 세트의 'domain' 질문과 섞지 않는다
+    const first = rec.answers ? Object.values(rec.answers)[0] : null;
+    const p = rec.policy ? rec.policy.p : (first ? first.answer_confidence : null);
+    const t = rec.ts ? rec.ts.slice(11, 19) : '—';
+    return el('tr', null,
+      el('td', { class: 'mono', text: t }),
+      el('td', { class: 'txt', text: textPreview(rec.state, 40) }),
+      el('td', { class: 'mono', text: dom || '—' }),
+      el('td', { class: 'num', text: fmtP(p) }),
+      el('td', null, rec.policy ? el('span', { class: 'act ' + rec.policy.action, text: rec.policy.action }) : el('span', { class: 'faint', text: rec.error ? 'error' : '—' })),
+      el('td', { class: 'num', text: rec.elapsed_ms == null ? '—' : rec.elapsed_ms.toFixed(1) }));
+  });
+  $('shadow-rows').replaceChildren(...(rows.length ? rows : [el('tr', null, el('td', { colspan: '6', class: 'faint', text: '기록 없음' }))]));
+  $('shadow-status').textContent = '마지막 갱신 ' + now + ' · 5초마다 · 파일 전체 ' + c.total + '건 중 최근 ' + rows.length + '건';
+}
+
+function kvs(target, pairs) {
+  $(target).replaceChildren(...pairs.flatMap(([k, v]) => [el('dt', { text: k }), el('dd', { text: v == null ? '—' : String(v) })]));
+}
+
+async function refreshMeta() {
+  const r = await api('GET', ROUTES.meta);
+  if (!r.ok) {
+    $('hbadge').textContent = '로컬 실행 · ' + (r.status === 401 ? 'API 키 필요' : '메타 조회 실패');
+    kvs('meta', [['상태', r.status === 401 ? 'API 키 필요 (401)' : '조회 실패 ' + (r.status || r.error)]]);
+    return;
+  }
+  const m = S.meta = r.json;
+  $('hbadge').textContent = '로컬 실행 · laya ' + m.laya_version + ' · 체크포인트 ' + m.checkpoint.base.slice(0, 7) + ' → ft-v1 ' + m.checkpoint.sha256_of_rl_agent_config.slice(0, 7);
+  $('lock-qsha').textContent = m.questions_sha256.slice(0, 12) + '…';
+  kvs('meta', [['laya_version', m.laya_version], ['schema_version', m.schema_version], ['schema_path', m.schema_path],
+    ['questions_sha256', m.questions_sha256], ['checkpoint.path', m.checkpoint.path],
+    ['sha256(rl_agent_config)', m.checkpoint.sha256_of_rl_agent_config], ['base', m.checkpoint.base],
+    ['T', m.thresholds.T + ' (' + m.thresholds.source.report + ')'], ['models_loaded', (m.models_loaded || []).join(', ')],
+    ['metrics', JSON.stringify(m.metrics)]]);
+  renderMcNote();
+}
+
+async function refreshHealth() {
+  const r = await api('GET', ROUTES.health);
+  if (!r.ok || !r.json) { kvs('health', [['status', '조회 실패 ' + (r.status || r.error)]]); return; }
+  const h = r.json;
+  if (Object.keys(h).length === 1) { kvs('health', [['status', h.status], ['상세', 'API 키를 넣으면 체크포인트·디바이스가 보입니다']]); return; }
+  kvs('health', [['status', h.status], ['loaded', (h.loaded || []).join(', ')], ['device', h.device + (h.device_is_preference ? ' (설정값)' : '')],
+    ['checkpoint_devices', JSON.stringify(h.checkpoint_devices)], ['revisions', JSON.stringify(h.revisions)], ['cpu_fallbacks', JSON.stringify(h.cpu_fallbacks)]]);
+}
+
+function renderDocs() {
+  const local = location.protocol === 'file:';
+  $('doclist').replaceChildren(...DOCS.map(([file, desc]) => {
+    const path = 'docs/' + file;
+    const name = local ? el('a', { href: '../../../' + path, text: path }) : el('code', { text: path });
+    return el('li', null, name, el('span', { class: 'muted', text: desc }),
+      local ? null : el('button', { type: 'button', class: 'link', onclick: () => copyText(path) }, '경로 복사'));
+  }));
+}
+
+function refreshStatus() { refreshMeta(); refreshHealth(); refreshShadow(); }
+
+/* ---------- wiring ---------- */
+$('mode-single').addEventListener('click', () => { S.mode = 'single'; renderAll(); });
+$('mode-multi').addEventListener('click', () => { S.mode = 'multi'; if (S.poc) S.poc = false; renderAll(); });
+$('fmt-text').addEventListener('click', () => { S.stateFormat = 'text'; renderAll(); });
+$('fmt-json').addEventListener('click', () => { S.stateFormat = 'json'; renderAll(); });
+$('statekey').addEventListener('input', (e) => { S.stateKey = e.target.value; renderProblems(); });
+$('state').addEventListener('input', (e) => { S.stateText = e.target.value; renderChars(); renderProblems(); });
+$('to-general').addEventListener('click', () => { S.poc = false; renderAll(); });
+$('addq').addEventListener('click', () => { S.questions.push(blankQuestion('q' + (S.questions.length + 1))); renderAll(); });
+$('nav-poc').addEventListener('click', (e) => { if (S.examples) { e.preventDefault(); loadExample(S.examples.single.find(x => x.poc)); scrollToBench(); } });
+$('adv-model').addEventListener('change', (e) => { S.adv.model = e.target.value; });
+$('adv-mc-on').addEventListener('change', (e) => { S.adv.mcOn = e.target.checked; $('adv-mc').disabled = !S.adv.mcOn; renderMcNote(); });
+$('adv-mc').addEventListener('input', (e) => { S.adv.mc = Number(e.target.value); renderMcNote(); });
+$('adv-lang').addEventListener('input', (e) => { S.adv.lang = e.target.value; });
+$('adv-langguess').addEventListener('input', (e) => { S.adv.langGuess = e.target.value; });
+$('adv-maxlen').addEventListener('input', (e) => { S.adv.maxLen = e.target.value; });
+$('adv-headmax').addEventListener('input', (e) => { S.adv.headMaxLen = e.target.value; });
+$('run').addEventListener('click', run);
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); if (!$('run').disabled) run(); }
+});
+$('apikey').value = getKey();
+function renderKeyState() { $('keystate').textContent = (getKey() ? '키 설정됨' : '키 없음') + ' · sessionStorage에만 저장'; }
+$('keysave').addEventListener('click', () => { setKey($('apikey').value.trim()); renderKeyState(); refreshStatus(); });
+$('apikey').addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.ctrlKey && !e.metaKey) { e.preventDefault(); $('keysave').click(); } });
+
+renderKeyState();
+renderDocs();
+renderAll();
+loadExamples();
+refreshStatus();
+setInterval(() => { if (!document.hidden) refreshShadow(); }, 5000);
+</script>
+</body>
+</html>

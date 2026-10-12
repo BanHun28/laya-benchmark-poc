@@ -1,0 +1,6985 @@
+{
+ "run_card": {
+  "tool": "scripts/probe_option_order.py",
+  "argv": [
+   "poc/finetune/data/t3arm/T1_dev40.jsonl",
+   "--model",
+   "poc/finetune/ckpt_t3arm/T1_run",
+   "--device",
+   "cpu",
+   "--permutations",
+   "5",
+   "--seed",
+   "13",
+   "--split",
+   "all",
+   "--splits",
+   "",
+   "--out",
+   "results/T3arm/T1/flip_dev40.json"
+  ],
+  "started_at": "2026-10-08T11:45:38+0900",
+  "laya_version": "0.3.23",
+  "torch": "2.14.1",
+  "transformers": "5.18.0",
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "amp_enabled": false,
+  "threads_intra_inter": [
+   10,
+   1
+  ],
+  "checkpoint": {
+   "path": "poc/finetune/ckpt_t3arm/T1_run",
+   "realpath": "/Users/banhun/banhun28/lab/benchmarkforLaya/poc/finetune/ckpt_t3arm/T1_run",
+   "snapshot_sha": null,
+   "weights_blob": null,
+   "head_max_len": 192,
+   "max_len": 512
+  },
+  "power": "Now drawing from 'AC Power' |  -InternalBattery-0 (id=22085731)\t100%; charged; 0:00 remaining present: true",
+  "git_sha": null,
+  "load_seconds": 2.3,
+  "warnings": [],
+  "finished_at": "2026-10-08T11:46:26+0900",
+  "total_seconds": 47.9
+ },
+ "params": {
+  "files": [
+   "poc/finetune/data/t3arm/T1_dev40.jsonl"
+  ],
+  "model": "poc/finetune/ckpt_t3arm/T1_run",
+  "device": "cpu",
+  "permutations": 5,
+  "seed": 13,
+  "split": "all",
+  "splits": "",
+  "reference": [],
+  "bootstrap": 1000,
+  "threads": 10,
+  "interop": 1,
+  "out": "results/T3arm/T1/flip_dev40.json"
+ },
+ "sets": [
+  {
+   "file": "poc/finetune/data/t3arm/T1_dev40.jsonl",
+   "set": "T1_dev40",
+   "dataset_sha256": "04f272e72cd3bf756be60e234e87f6035038213ba69717501b92f7b29a192ce8",
+   "split": "all",
+   "split_rule": "state sha256 % 2",
+   "split_check": null,
+   "seconds": 45.6,
+   "items": [
+    {
+     "row": 0,
+     "qid": "action",
+     "gold": "continue",
+     "options": [
+      "continue",
+      "human_review",
+      "observe",
+      "stop"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000017",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "continue",
+      "conf": 0.4232,
+      "probs": {
+       "continue": 0.4232,
+       "human_review": 0.1262,
+       "observe": 0.4079,
+       "stop": 0.0428
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "stop",
+        "continue",
+        "human_review",
+        "observe"
+       ],
+       "pred": "continue",
+       "conf": 0.4089,
+       "probs": {
+        "stop": 0.0529,
+        "continue": 0.4089,
+        "human_review": 0.1294,
+        "observe": 0.4087
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "continue",
+        "observe",
+        "human_review"
+       ],
+       "pred": "continue",
+       "conf": 0.4188,
+       "probs": {
+        "stop": 0.0533,
+        "continue": 0.4188,
+        "observe": 0.4118,
+        "human_review": 0.1161
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "continue",
+        "observe",
+        "human_review"
+       ],
+       "pred": "continue",
+       "conf": 0.4188,
+       "probs": {
+        "stop": 0.0533,
+        "continue": 0.4188,
+        "observe": 0.4118,
+        "human_review": 0.1161
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "observe",
+        "continue",
+        "human_review"
+       ],
+       "pred": "continue",
+       "conf": 0.4785,
+       "probs": {
+        "stop": 0.0517,
+        "observe": 0.3582,
+        "continue": 0.4785,
+        "human_review": 0.1116
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "human_review",
+        "continue",
+        "observe"
+       ],
+       "pred": "continue",
+       "conf": 0.4656,
+       "probs": {
+        "stop": 0.048,
+        "human_review": 0.1406,
+        "continue": 0.4656,
+        "observe": 0.3458
+       }
+      }
+     ]
+    },
+    {
+     "row": 0,
+     "qid": "outcome",
+     "gold": "success",
+     "options": [
+      "failure",
+      "harmful",
+      "partial",
+      "success"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000017",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "success",
+      "conf": 0.6477,
+      "probs": {
+       "failure": 0.0657,
+       "harmful": 0.0271,
+       "partial": 0.2595,
+       "success": 0.6477
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "success",
+        "failure",
+        "partial",
+        "harmful"
+       ],
+       "pred": "success",
+       "conf": 0.6651,
+       "probs": {
+        "success": 0.6651,
+        "failure": 0.0637,
+        "partial": 0.2456,
+        "harmful": 0.0256
+       }
+      },
+      {
+       "order": [
+        "harmful",
+        "success",
+        "failure",
+        "partial"
+       ],
+       "pred": "success",
+       "conf": 0.6331,
+       "probs": {
+        "harmful": 0.0246,
+        "success": 0.6331,
+        "failure": 0.0736,
+        "partial": 0.2688
+       }
+      },
+      {
+       "order": [
+        "failure",
+        "success",
+        "harmful",
+        "partial"
+       ],
+       "pred": "success",
+       "conf": 0.5976,
+       "probs": {
+        "failure": 0.068,
+        "success": 0.5976,
+        "harmful": 0.0265,
+        "partial": 0.3079
+       }
+      },
+      {
+       "order": [
+        "failure",
+        "partial",
+        "success",
+        "harmful"
+       ],
+       "pred": "success",
+       "conf": 0.6564,
+       "probs": {
+        "failure": 0.0703,
+        "partial": 0.2484,
+        "success": 0.6564,
+        "harmful": 0.0249
+       }
+      },
+      {
+       "order": [
+        "failure",
+        "partial",
+        "success",
+        "harmful"
+       ],
+       "pred": "success",
+       "conf": 0.6564,
+       "probs": {
+        "failure": 0.0703,
+        "partial": 0.2484,
+        "success": 0.6564,
+        "harmful": 0.0249
+       }
+      }
+     ]
+    },
+    {
+     "row": 1,
+     "qid": "action",
+     "gold": "continue",
+     "options": [
+      "continue",
+      "human_review",
+      "observe",
+      "stop"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000047",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "observe",
+      "conf": 0.4526,
+      "probs": {
+       "continue": 0.2401,
+       "human_review": 0.2616,
+       "observe": 0.4526,
+       "stop": 0.0457
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "continue",
+        "stop",
+        "human_review",
+        "observe"
+       ],
+       "pred": "observe",
+       "conf": 0.4441,
+       "probs": {
+        "continue": 0.2296,
+        "stop": 0.05,
+        "human_review": 0.2763,
+        "observe": 0.4441
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "observe",
+        "human_review",
+        "continue"
+       ],
+       "pred": "observe",
+       "conf": 0.4085,
+       "probs": {
+        "stop": 0.0487,
+        "observe": 0.4085,
+        "human_review": 0.2654,
+        "continue": 0.2774
+       }
+      },
+      {
+       "order": [
+        "human_review",
+        "continue",
+        "observe",
+        "stop"
+       ],
+       "pred": "observe",
+       "conf": 0.4256,
+       "probs": {
+        "human_review": 0.2424,
+        "continue": 0.2877,
+        "observe": 0.4256,
+        "stop": 0.0444
+       }
+      },
+      {
+       "order": [
+        "continue",
+        "human_review",
+        "observe",
+        "stop"
+       ],
+       "pred": "observe",
+       "conf": 0.4526,
+       "probs": {
+        "continue": 0.2401,
+        "human_review": 0.2616,
+        "observe": 0.4526,
+        "stop": 0.0457
+       }
+      },
+      {
+       "order": [
+        "observe",
+        "continue",
+        "stop",
+        "human_review"
+       ],
+       "pred": "observe",
+       "conf": 0.4004,
+       "probs": {
+        "observe": 0.4004,
+        "continue": 0.2801,
+        "stop": 0.0481,
+        "human_review": 0.2714
+       }
+      }
+     ]
+    },
+    {
+     "row": 1,
+     "qid": "outcome",
+     "gold": "success",
+     "options": [
+      "failure",
+      "harmful",
+      "partial",
+      "success"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000047",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "partial",
+      "conf": 0.4718,
+      "probs": {
+       "failure": 0.1874,
+       "harmful": 0.031,
+       "partial": 0.4718,
+       "success": 0.3099
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "failure",
+        "success",
+        "partial",
+        "harmful"
+       ],
+       "pred": "partial",
+       "conf": 0.4637,
+       "probs": {
+        "failure": 0.1991,
+        "success": 0.3093,
+        "partial": 0.4637,
+        "harmful": 0.0279
+       }
+      },
+      {
+       "order": [
+        "failure",
+        "success",
+        "harmful",
+        "partial"
+       ],
+       "pred": "partial",
+       "conf": 0.4886,
+       "probs": {
+        "failure": 0.1935,
+        "success": 0.2879,
+        "harmful": 0.03,
+        "partial": 0.4886
+       }
+      },
+      {
+       "order": [
+        "failure",
+        "harmful",
+        "success",
+        "partial"
+       ],
+       "pred": "partial",
+       "conf": 0.4647,
+       "probs": {
+        "failure": 0.1997,
+        "harmful": 0.027,
+        "success": 0.3086,
+        "partial": 0.4647
+       }
+      },
+      {
+       "order": [
+        "partial",
+        "harmful",
+        "failure",
+        "success"
+       ],
+       "pred": "partial",
+       "conf": 0.445,
+       "probs": {
+        "partial": 0.445,
+        "harmful": 0.0302,
+        "failure": 0.201,
+        "success": 0.3238
+       }
+      },
+      {
+       "order": [
+        "success",
+        "failure",
+        "partial",
+        "harmful"
+       ],
+       "pred": "partial",
+       "conf": 0.4491,
+       "probs": {
+        "success": 0.3369,
+        "failure": 0.1856,
+        "partial": 0.4491,
+        "harmful": 0.0284
+       }
+      }
+     ]
+    },
+    {
+     "row": 2,
+     "qid": "action",
+     "gold": "human_review",
+     "options": [
+      "continue",
+      "human_review",
+      "observe",
+      "stop"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000103",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "human_review",
+      "conf": 0.4954,
+      "probs": {
+       "continue": 0.1223,
+       "human_review": 0.4954,
+       "observe": 0.3265,
+       "stop": 0.0558
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "continue",
+        "stop",
+        "observe",
+        "human_review"
+       ],
+       "pred": "human_review",
+       "conf": 0.5038,
+       "probs": {
+        "continue": 0.109,
+        "stop": 0.0585,
+        "observe": 0.3287,
+        "human_review": 0.5038
+       }
+      },
+      {
+       "order": [
+        "observe",
+        "stop",
+        "continue",
+        "human_review"
+       ],
+       "pred": "human_review",
+       "conf": 0.5104,
+       "probs": {
+        "observe": 0.2903,
+        "stop": 0.0587,
+        "continue": 0.1406,
+        "human_review": 0.5104
+       }
+      },
+      {
+       "order": [
+        "observe",
+        "continue",
+        "human_review",
+        "stop"
+       ],
+       "pred": "human_review",
+       "conf": 0.5048,
+       "probs": {
+        "observe": 0.2981,
+        "continue": 0.1451,
+        "human_review": 0.5048,
+        "stop": 0.052
+       }
+      },
+      {
+       "order": [
+        "human_review",
+        "observe",
+        "continue",
+        "stop"
+       ],
+       "pred": "human_review",
+       "conf": 0.5026,
+       "probs": {
+        "human_review": 0.5026,
+        "observe": 0.305,
+        "continue": 0.1389,
+        "stop": 0.0536
+       }
+      },
+      {
+       "order": [
+        "continue",
+        "observe",
+        "stop",
+        "human_review"
+       ],
+       "pred": "human_review",
+       "conf": 0.5167,
+       "probs": {
+        "continue": 0.1109,
+        "observe": 0.3113,
+        "stop": 0.0611,
+        "human_review": 0.5167
+       }
+      }
+     ]
+    },
+    {
+     "row": 2,
+     "qid": "outcome",
+     "gold": "partial",
+     "options": [
+      "failure",
+      "harmful",
+      "partial",
+      "success"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000103",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "partial",
+      "conf": 0.4581,
+      "probs": {
+       "failure": 0.2639,
+       "harmful": 0.0463,
+       "partial": 0.4581,
+       "success": 0.2316
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "success",
+        "harmful",
+        "failure",
+        "partial"
+       ],
+       "pred": "partial",
+       "conf": 0.4408,
+       "probs": {
+        "success": 0.2181,
+        "harmful": 0.0433,
+        "failure": 0.2978,
+        "partial": 0.4408
+       }
+      },
+      {
+       "order": [
+        "success",
+        "failure",
+        "harmful",
+        "partial"
+       ],
+       "pred": "partial",
+       "conf": 0.4447,
+       "probs": {
+        "success": 0.2525,
+        "failure": 0.2531,
+        "harmful": 0.0497,
+        "partial": 0.4447
+       }
+      },
+      {
+       "order": [
+        "harmful",
+        "failure",
+        "success",
+        "partial"
+       ],
+       "pred": "partial",
+       "conf": 0.438,
+       "probs": {
+        "harmful": 0.0432,
+        "failure": 0.3111,
+        "success": 0.2076,
+        "partial": 0.438
+       }
+      },
+      {
+       "order": [
+        "failure",
+        "success",
+        "partial",
+        "harmful"
+       ],
+       "pred": "partial",
+       "conf": 0.4388,
+       "probs": {
+        "failure": 0.283,
+        "success": 0.2332,
+        "partial": 0.4388,
+        "harmful": 0.045
+       }
+      },
+      {
+       "order": [
+        "success",
+        "failure",
+        "partial",
+        "harmful"
+       ],
+       "pred": "partial",
+       "conf": 0.4226,
+       "probs": {
+        "success": 0.2593,
+        "failure": 0.2732,
+        "partial": 0.4226,
+        "harmful": 0.045
+       }
+      }
+     ]
+    },
+    {
+     "row": 3,
+     "qid": "action",
+     "gold": "observe",
+     "options": [
+      "continue",
+      "human_review",
+      "observe",
+      "stop"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000120",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "observe",
+      "conf": 0.4461,
+      "probs": {
+       "continue": 0.243,
+       "human_review": 0.2692,
+       "observe": 0.4461,
+       "stop": 0.0417
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "stop",
+        "observe",
+        "human_review",
+        "continue"
+       ],
+       "pred": "observe",
+       "conf": 0.4264,
+       "probs": {
+        "stop": 0.0461,
+        "observe": 0.4264,
+        "human_review": 0.2665,
+        "continue": 0.261
+       }
+      },
+      {
+       "order": [
+        "observe",
+        "continue",
+        "stop",
+        "human_review"
+       ],
+       "pred": "observe",
+       "conf": 0.415,
+       "probs": {
+        "observe": 0.415,
+        "continue": 0.265,
+        "stop": 0.0423,
+        "human_review": 0.2777
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "continue",
+        "observe",
+        "human_review"
+       ],
+       "pred": "observe",
+       "conf": 0.4311,
+       "probs": {
+        "stop": 0.0456,
+        "continue": 0.2417,
+        "observe": 0.4311,
+        "human_review": 0.2815
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "observe",
+        "continue",
+        "human_review"
+       ],
+       "pred": "observe",
+       "conf": 0.4268,
+       "probs": {
+        "stop": 0.0456,
+        "observe": 0.4268,
+        "continue": 0.2559,
+        "human_review": 0.2717
+       }
+      },
+      {
+       "order": [
+        "human_review",
+        "continue",
+        "observe",
+        "stop"
+       ],
+       "pred": "observe",
+       "conf": 0.4339,
+       "probs": {
+        "human_review": 0.2541,
+        "continue": 0.2716,
+        "observe": 0.4339,
+        "stop": 0.0404
+       }
+      }
+     ]
+    },
+    {
+     "row": 3,
+     "qid": "outcome",
+     "gold": "partial",
+     "options": [
+      "failure",
+      "harmful",
+      "partial",
+      "success"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000120",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "partial",
+      "conf": 0.4536,
+      "probs": {
+       "failure": 0.1873,
+       "harmful": 0.0317,
+       "partial": 0.4536,
+       "success": 0.3273
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "partial",
+        "failure",
+        "harmful",
+        "success"
+       ],
+       "pred": "partial",
+       "conf": 0.4306,
+       "probs": {
+        "partial": 0.4306,
+        "failure": 0.2005,
+        "harmful": 0.0304,
+        "success": 0.3385
+       }
+      },
+      {
+       "order": [
+        "partial",
+        "harmful",
+        "success",
+        "failure"
+       ],
+       "pred": "partial",
+       "conf": 0.4334,
+       "probs": {
+        "partial": 0.4334,
+        "harmful": 0.0293,
+        "success": 0.3682,
+        "failure": 0.1691
+       }
+      },
+      {
+       "order": [
+        "success",
+        "partial",
+        "harmful",
+        "failure"
+       ],
+       "pred": "partial",
+       "conf": 0.4039,
+       "probs": {
+        "success": 0.3629,
+        "partial": 0.4039,
+        "harmful": 0.0287,
+        "failure": 0.2045
+       }
+      },
+      {
+       "order": [
+        "harmful",
+        "failure",
+        "success",
+        "partial"
+       ],
+       "pred": "partial",
+       "conf": 0.4193,
+       "probs": {
+        "harmful": 0.0262,
+        "failure": 0.2251,
+        "success": 0.3294,
+        "partial": 0.4193
+       }
+      },
+      {
+       "order": [
+        "failure",
+        "harmful",
+        "partial",
+        "success"
+       ],
+       "pred": "partial",
+       "conf": 0.4536,
+       "probs": {
+        "failure": 0.1873,
+        "harmful": 0.0317,
+        "partial": 0.4536,
+        "success": 0.3273
+       }
+      }
+     ]
+    },
+    {
+     "row": 4,
+     "qid": "action",
+     "gold": "human_review",
+     "options": [
+      "continue",
+      "human_review",
+      "observe",
+      "stop"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000149",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "human_review",
+      "conf": 0.6435,
+      "probs": {
+       "continue": 0.0721,
+       "human_review": 0.6435,
+       "observe": 0.1818,
+       "stop": 0.1026
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "observe",
+        "human_review",
+        "stop",
+        "continue"
+       ],
+       "pred": "human_review",
+       "conf": 0.7021,
+       "probs": {
+        "observe": 0.1349,
+        "human_review": 0.7021,
+        "stop": 0.0882,
+        "continue": 0.0749
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "human_review",
+        "continue",
+        "observe"
+       ],
+       "pred": "human_review",
+       "conf": 0.6406,
+       "probs": {
+        "stop": 0.0885,
+        "human_review": 0.6406,
+        "continue": 0.0786,
+        "observe": 0.1923
+       }
+      },
+      {
+       "order": [
+        "human_review",
+        "observe",
+        "continue",
+        "stop"
+       ],
+       "pred": "human_review",
+       "conf": 0.6539,
+       "probs": {
+        "human_review": 0.6539,
+        "observe": 0.1673,
+        "continue": 0.0767,
+        "stop": 0.1021
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "human_review",
+        "continue",
+        "observe"
+       ],
+       "pred": "human_review",
+       "conf": 0.6406,
+       "probs": {
+        "stop": 0.0885,
+        "human_review": 0.6406,
+        "continue": 0.0786,
+        "observe": 0.1923
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "continue",
+        "observe",
+        "human_review"
+       ],
+       "pred": "human_review",
+       "conf": 0.6671,
+       "probs": {
+        "stop": 0.0858,
+        "continue": 0.0751,
+        "observe": 0.172,
+        "human_review": 0.6671
+       }
+      }
+     ]
+    },
+    {
+     "row": 4,
+     "qid": "outcome",
+     "gold": "harmful",
+     "options": [
+      "failure",
+      "harmful",
+      "partial",
+      "success"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000149",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "harmful",
+      "conf": 0.6935,
+      "probs": {
+       "failure": 0.1338,
+       "harmful": 0.6935,
+       "partial": 0.1298,
+       "success": 0.0429
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "success",
+        "failure",
+        "harmful",
+        "partial"
+       ],
+       "pred": "harmful",
+       "conf": 0.6505,
+       "probs": {
+        "success": 0.0435,
+        "failure": 0.1629,
+        "harmful": 0.6505,
+        "partial": 0.143
+       }
+      },
+      {
+       "order": [
+        "success",
+        "failure",
+        "harmful",
+        "partial"
+       ],
+       "pred": "harmful",
+       "conf": 0.6505,
+       "probs": {
+        "success": 0.0435,
+        "failure": 0.1629,
+        "harmful": 0.6505,
+        "partial": 0.143
+       }
+      },
+      {
+       "order": [
+        "success",
+        "harmful",
+        "failure",
+        "partial"
+       ],
+       "pred": "harmful",
+       "conf": 0.6879,
+       "probs": {
+        "success": 0.0435,
+        "harmful": 0.6879,
+        "failure": 0.13,
+        "partial": 0.1386
+       }
+      },
+      {
+       "order": [
+        "partial",
+        "harmful",
+        "failure",
+        "success"
+       ],
+       "pred": "harmful",
+       "conf": 0.6958,
+       "probs": {
+        "partial": 0.0978,
+        "harmful": 0.6958,
+        "failure": 0.1643,
+        "success": 0.0422
+       }
+      },
+      {
+       "order": [
+        "partial",
+        "harmful",
+        "failure",
+        "success"
+       ],
+       "pred": "harmful",
+       "conf": 0.6958,
+       "probs": {
+        "partial": 0.0978,
+        "harmful": 0.6958,
+        "failure": 0.1643,
+        "success": 0.0422
+       }
+      }
+     ]
+    },
+    {
+     "row": 5,
+     "qid": "action",
+     "gold": "human_review",
+     "options": [
+      "continue",
+      "human_review",
+      "observe",
+      "stop"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000157",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "human_review",
+      "conf": 0.6343,
+      "probs": {
+       "continue": 0.0775,
+       "human_review": 0.6343,
+       "observe": 0.1852,
+       "stop": 0.103
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "observe",
+        "continue",
+        "human_review",
+        "stop"
+       ],
+       "pred": "human_review",
+       "conf": 0.7169,
+       "probs": {
+        "observe": 0.1132,
+        "continue": 0.0722,
+        "human_review": 0.7169,
+        "stop": 0.0977
+       }
+      },
+      {
+       "order": [
+        "human_review",
+        "observe",
+        "stop",
+        "continue"
+       ],
+       "pred": "human_review",
+       "conf": 0.6629,
+       "probs": {
+        "human_review": 0.6629,
+        "observe": 0.1554,
+        "stop": 0.1033,
+        "continue": 0.0783
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "human_review",
+        "continue",
+        "observe"
+       ],
+       "pred": "human_review",
+       "conf": 0.649,
+       "probs": {
+        "stop": 0.0942,
+        "human_review": 0.649,
+        "continue": 0.0828,
+        "observe": 0.174
+       }
+      },
+      {
+       "order": [
+        "continue",
+        "human_review",
+        "observe",
+        "stop"
+       ],
+       "pred": "human_review",
+       "conf": 0.6343,
+       "probs": {
+        "continue": 0.0775,
+        "human_review": 0.6343,
+        "observe": 0.1852,
+        "stop": 0.103
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "human_review",
+        "continue",
+        "observe"
+       ],
+       "pred": "human_review",
+       "conf": 0.649,
+       "probs": {
+        "stop": 0.0942,
+        "human_review": 0.649,
+        "continue": 0.0828,
+        "observe": 0.174
+       }
+      }
+     ]
+    },
+    {
+     "row": 5,
+     "qid": "outcome",
+     "gold": "harmful",
+     "options": [
+      "failure",
+      "harmful",
+      "partial",
+      "success"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000157",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "harmful",
+      "conf": 0.6536,
+      "probs": {
+       "failure": 0.1546,
+       "harmful": 0.6536,
+       "partial": 0.1503,
+       "success": 0.0415
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "harmful",
+        "partial",
+        "failure",
+        "success"
+       ],
+       "pred": "harmful",
+       "conf": 0.6671,
+       "probs": {
+        "harmful": 0.6671,
+        "partial": 0.115,
+        "failure": 0.1766,
+        "success": 0.0413
+       }
+      },
+      {
+       "order": [
+        "partial",
+        "harmful",
+        "success",
+        "failure"
+       ],
+       "pred": "harmful",
+       "conf": 0.6889,
+       "probs": {
+        "partial": 0.1107,
+        "harmful": 0.6889,
+        "success": 0.0419,
+        "failure": 0.1585
+       }
+      },
+      {
+       "order": [
+        "partial",
+        "success",
+        "failure",
+        "harmful"
+       ],
+       "pred": "harmful",
+       "conf": 0.6669,
+       "probs": {
+        "partial": 0.1148,
+        "success": 0.0398,
+        "failure": 0.1785,
+        "harmful": 0.6669
+       }
+      },
+      {
+       "order": [
+        "failure",
+        "harmful",
+        "success",
+        "partial"
+       ],
+       "pred": "harmful",
+       "conf": 0.6813,
+       "probs": {
+        "failure": 0.149,
+        "harmful": 0.6813,
+        "success": 0.0396,
+        "partial": 0.1301
+       }
+      },
+      {
+       "order": [
+        "success",
+        "harmful",
+        "failure",
+        "partial"
+       ],
+       "pred": "harmful",
+       "conf": 0.6565,
+       "probs": {
+        "success": 0.0449,
+        "harmful": 0.6565,
+        "failure": 0.1549,
+        "partial": 0.1437
+       }
+      }
+     ]
+    },
+    {
+     "row": 6,
+     "qid": "action",
+     "gold": "observe",
+     "options": [
+      "continue",
+      "human_review",
+      "observe",
+      "stop"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000164",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "observe",
+      "conf": 0.4498,
+      "probs": {
+       "continue": 0.2699,
+       "human_review": 0.2422,
+       "observe": 0.4498,
+       "stop": 0.0382
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "observe",
+        "stop",
+        "continue",
+        "human_review"
+       ],
+       "pred": "observe",
+       "conf": 0.4016,
+       "probs": {
+        "observe": 0.4016,
+        "stop": 0.0442,
+        "continue": 0.3001,
+        "human_review": 0.2541
+       }
+      },
+      {
+       "order": [
+        "continue",
+        "observe",
+        "human_review",
+        "stop"
+       ],
+       "pred": "observe",
+       "conf": 0.4471,
+       "probs": {
+        "continue": 0.2712,
+        "observe": 0.4471,
+        "human_review": 0.2433,
+        "stop": 0.0385
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "observe",
+        "human_review",
+        "continue"
+       ],
+       "pred": "observe",
+       "conf": 0.4423,
+       "probs": {
+        "stop": 0.0422,
+        "observe": 0.4423,
+        "human_review": 0.2383,
+        "continue": 0.2772
+       }
+      },
+      {
+       "order": [
+        "observe",
+        "stop",
+        "continue",
+        "human_review"
+       ],
+       "pred": "observe",
+       "conf": 0.4016,
+       "probs": {
+        "observe": 0.4016,
+        "stop": 0.0442,
+        "continue": 0.3001,
+        "human_review": 0.2541
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "continue",
+        "observe",
+        "human_review"
+       ],
+       "pred": "observe",
+       "conf": 0.4357,
+       "probs": {
+        "stop": 0.045,
+        "continue": 0.2676,
+        "observe": 0.4357,
+        "human_review": 0.2518
+       }
+      }
+     ]
+    },
+    {
+     "row": 6,
+     "qid": "outcome",
+     "gold": "partial",
+     "options": [
+      "failure",
+      "harmful",
+      "partial",
+      "success"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000164",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "partial",
+      "conf": 0.4412,
+      "probs": {
+       "failure": 0.16,
+       "harmful": 0.0304,
+       "partial": 0.4412,
+       "success": 0.3684
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "harmful",
+        "partial",
+        "success",
+        "failure"
+       ],
+       "pred": "partial",
+       "conf": 0.4377,
+       "probs": {
+        "harmful": 0.0282,
+        "partial": 0.4377,
+        "success": 0.3826,
+        "failure": 0.1516
+       }
+      },
+      {
+       "order": [
+        "success",
+        "partial",
+        "harmful",
+        "failure"
+       ],
+       "pred": "success",
+       "conf": 0.4122,
+       "probs": {
+        "success": 0.4122,
+        "partial": 0.3764,
+        "harmful": 0.0276,
+        "failure": 0.1839
+       }
+      },
+      {
+       "order": [
+        "success",
+        "partial",
+        "harmful",
+        "failure"
+       ],
+       "pred": "success",
+       "conf": 0.4122,
+       "probs": {
+        "success": 0.4122,
+        "partial": 0.3764,
+        "harmful": 0.0276,
+        "failure": 0.1839
+       }
+      },
+      {
+       "order": [
+        "success",
+        "partial",
+        "failure",
+        "harmful"
+       ],
+       "pred": "success",
+       "conf": 0.4211,
+       "probs": {
+        "success": 0.4211,
+        "partial": 0.3856,
+        "failure": 0.164,
+        "harmful": 0.0293
+       }
+      },
+      {
+       "order": [
+        "failure",
+        "success",
+        "partial",
+        "harmful"
+       ],
+       "pred": "partial",
+       "conf": 0.4378,
+       "probs": {
+        "failure": 0.1595,
+        "success": 0.3741,
+        "partial": 0.4378,
+        "harmful": 0.0286
+       }
+      }
+     ]
+    },
+    {
+     "row": 7,
+     "qid": "action",
+     "gold": "human_review",
+     "options": [
+      "continue",
+      "human_review",
+      "observe",
+      "stop"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000202",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "human_review",
+      "conf": 0.4455,
+      "probs": {
+       "continue": 0.145,
+       "human_review": 0.4455,
+       "observe": 0.3555,
+       "stop": 0.054
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "continue",
+        "stop",
+        "observe",
+        "human_review"
+       ],
+       "pred": "human_review",
+       "conf": 0.4835,
+       "probs": {
+        "continue": 0.1223,
+        "stop": 0.057,
+        "observe": 0.3372,
+        "human_review": 0.4835
+       }
+      },
+      {
+       "order": [
+        "human_review",
+        "stop",
+        "observe",
+        "continue"
+       ],
+       "pred": "human_review",
+       "conf": 0.4199,
+       "probs": {
+        "human_review": 0.4199,
+        "stop": 0.0558,
+        "observe": 0.3277,
+        "continue": 0.1966
+       }
+      },
+      {
+       "order": [
+        "human_review",
+        "stop",
+        "observe",
+        "continue"
+       ],
+       "pred": "human_review",
+       "conf": 0.4199,
+       "probs": {
+        "human_review": 0.4199,
+        "stop": 0.0558,
+        "observe": 0.3277,
+        "continue": 0.1966
+       }
+      },
+      {
+       "order": [
+        "continue",
+        "human_review",
+        "stop",
+        "observe"
+       ],
+       "pred": "human_review",
+       "conf": 0.4623,
+       "probs": {
+        "continue": 0.1309,
+        "human_review": 0.4623,
+        "stop": 0.0599,
+        "observe": 0.3469
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "human_review",
+        "continue",
+        "observe"
+       ],
+       "pred": "human_review",
+       "conf": 0.4418,
+       "probs": {
+        "stop": 0.0544,
+        "human_review": 0.4418,
+        "continue": 0.1706,
+        "observe": 0.3331
+       }
+      }
+     ]
+    },
+    {
+     "row": 7,
+     "qid": "outcome",
+     "gold": "success",
+     "options": [
+      "failure",
+      "harmful",
+      "partial",
+      "success"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000202",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "partial",
+      "conf": 0.4668,
+      "probs": {
+       "failure": 0.2135,
+       "harmful": 0.037,
+       "partial": 0.4668,
+       "success": 0.2827
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "success",
+        "harmful",
+        "failure",
+        "partial"
+       ],
+       "pred": "partial",
+       "conf": 0.4654,
+       "probs": {
+        "success": 0.2583,
+        "harmful": 0.0347,
+        "failure": 0.2416,
+        "partial": 0.4654
+       }
+      },
+      {
+       "order": [
+        "harmful",
+        "partial",
+        "success",
+        "failure"
+       ],
+       "pred": "partial",
+       "conf": 0.4766,
+       "probs": {
+        "harmful": 0.0419,
+        "partial": 0.4766,
+        "success": 0.2833,
+        "failure": 0.1983
+       }
+      },
+      {
+       "order": [
+        "partial",
+        "harmful",
+        "success",
+        "failure"
+       ],
+       "pred": "partial",
+       "conf": 0.4495,
+       "probs": {
+        "partial": 0.4495,
+        "harmful": 0.0382,
+        "success": 0.2932,
+        "failure": 0.2191
+       }
+      },
+      {
+       "order": [
+        "success",
+        "partial",
+        "harmful",
+        "failure"
+       ],
+       "pred": "partial",
+       "conf": 0.4427,
+       "probs": {
+        "success": 0.2917,
+        "partial": 0.4427,
+        "harmful": 0.0388,
+        "failure": 0.2268
+       }
+      },
+      {
+       "order": [
+        "failure",
+        "success",
+        "partial",
+        "harmful"
+       ],
+       "pred": "partial",
+       "conf": 0.4647,
+       "probs": {
+        "failure": 0.2302,
+        "success": 0.2669,
+        "partial": 0.4647,
+        "harmful": 0.0383
+       }
+      }
+     ]
+    },
+    {
+     "row": 8,
+     "qid": "action",
+     "gold": "human_review",
+     "options": [
+      "continue",
+      "human_review",
+      "observe",
+      "stop"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000249",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "human_review",
+      "conf": 0.6464,
+      "probs": {
+       "continue": 0.0722,
+       "human_review": 0.6464,
+       "observe": 0.179,
+       "stop": 0.1024
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "human_review",
+        "observe",
+        "stop",
+        "continue"
+       ],
+       "pred": "human_review",
+       "conf": 0.661,
+       "probs": {
+        "human_review": 0.661,
+        "observe": 0.1637,
+        "stop": 0.098,
+        "continue": 0.0774
+       }
+      },
+      {
+       "order": [
+        "continue",
+        "stop",
+        "human_review",
+        "observe"
+       ],
+       "pred": "human_review",
+       "conf": 0.6607,
+       "probs": {
+        "continue": 0.0654,
+        "stop": 0.0969,
+        "human_review": 0.6607,
+        "observe": 0.177
+       }
+      },
+      {
+       "order": [
+        "continue",
+        "observe",
+        "human_review",
+        "stop"
+       ],
+       "pred": "human_review",
+       "conf": 0.6799,
+       "probs": {
+        "continue": 0.0642,
+        "observe": 0.1625,
+        "human_review": 0.6799,
+        "stop": 0.0934
+       }
+      },
+      {
+       "order": [
+        "observe",
+        "stop",
+        "continue",
+        "human_review"
+       ],
+       "pred": "human_review",
+       "conf": 0.7238,
+       "probs": {
+        "observe": 0.1262,
+        "stop": 0.0801,
+        "continue": 0.0699,
+        "human_review": 0.7238
+       }
+      },
+      {
+       "order": [
+        "human_review",
+        "stop",
+        "continue",
+        "observe"
+       ],
+       "pred": "human_review",
+       "conf": 0.6526,
+       "probs": {
+        "human_review": 0.6526,
+        "stop": 0.0906,
+        "continue": 0.0747,
+        "observe": 0.1821
+       }
+      }
+     ]
+    },
+    {
+     "row": 8,
+     "qid": "outcome",
+     "gold": "harmful",
+     "options": [
+      "failure",
+      "harmful",
+      "partial",
+      "success"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000249",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "harmful",
+      "conf": 0.6772,
+      "probs": {
+       "failure": 0.1442,
+       "harmful": 0.6772,
+       "partial": 0.1331,
+       "success": 0.0456
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "failure",
+        "success",
+        "harmful",
+        "partial"
+       ],
+       "pred": "harmful",
+       "conf": 0.6477,
+       "probs": {
+        "failure": 0.1804,
+        "success": 0.0404,
+        "harmful": 0.6477,
+        "partial": 0.1315
+       }
+      },
+      {
+       "order": [
+        "partial",
+        "success",
+        "failure",
+        "harmful"
+       ],
+       "pred": "harmful",
+       "conf": 0.67,
+       "probs": {
+        "partial": 0.1133,
+        "success": 0.047,
+        "failure": 0.1698,
+        "harmful": 0.67
+       }
+      },
+      {
+       "order": [
+        "partial",
+        "harmful",
+        "failure",
+        "success"
+       ],
+       "pred": "harmful",
+       "conf": 0.6904,
+       "probs": {
+        "partial": 0.1009,
+        "harmful": 0.6904,
+        "failure": 0.1655,
+        "success": 0.0432
+       }
+      },
+      {
+       "order": [
+        "partial",
+        "failure",
+        "harmful",
+        "success"
+       ],
+       "pred": "harmful",
+       "conf": 0.6705,
+       "probs": {
+        "partial": 0.1051,
+        "failure": 0.1778,
+        "harmful": 0.6705,
+        "success": 0.0466
+       }
+      },
+      {
+       "order": [
+        "failure",
+        "harmful",
+        "partial",
+        "success"
+       ],
+       "pred": "harmful",
+       "conf": 0.6772,
+       "probs": {
+        "failure": 0.1442,
+        "harmful": 0.6772,
+        "partial": 0.1331,
+        "success": 0.0456
+       }
+      }
+     ]
+    },
+    {
+     "row": 9,
+     "qid": "action",
+     "gold": "human_review",
+     "options": [
+      "continue",
+      "human_review",
+      "observe",
+      "stop"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000268",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "human_review",
+      "conf": 0.4467,
+      "probs": {
+       "continue": 0.1391,
+       "human_review": 0.4467,
+       "observe": 0.3607,
+       "stop": 0.0535
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "continue",
+        "observe",
+        "stop",
+        "human_review"
+       ],
+       "pred": "human_review",
+       "conf": 0.474,
+       "probs": {
+        "continue": 0.1329,
+        "observe": 0.3339,
+        "stop": 0.0593,
+        "human_review": 0.474
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "observe",
+        "continue",
+        "human_review"
+       ],
+       "pred": "human_review",
+       "conf": 0.4469,
+       "probs": {
+        "stop": 0.0578,
+        "observe": 0.3268,
+        "continue": 0.1685,
+        "human_review": 0.4469
+       }
+      },
+      {
+       "order": [
+        "human_review",
+        "continue",
+        "observe",
+        "stop"
+       ],
+       "pred": "human_review",
+       "conf": 0.4366,
+       "probs": {
+        "human_review": 0.4366,
+        "continue": 0.1655,
+        "observe": 0.3444,
+        "stop": 0.0536
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "observe",
+        "continue",
+        "human_review"
+       ],
+       "pred": "human_review",
+       "conf": 0.4469,
+       "probs": {
+        "stop": 0.0578,
+        "observe": 0.3268,
+        "continue": 0.1685,
+        "human_review": 0.4469
+       }
+      },
+      {
+       "order": [
+        "observe",
+        "continue",
+        "stop",
+        "human_review"
+       ],
+       "pred": "human_review",
+       "conf": 0.4832,
+       "probs": {
+        "observe": 0.3001,
+        "continue": 0.1584,
+        "stop": 0.0584,
+        "human_review": 0.4832
+       }
+      }
+     ]
+    },
+    {
+     "row": 9,
+     "qid": "outcome",
+     "gold": "success",
+     "options": [
+      "failure",
+      "harmful",
+      "partial",
+      "success"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000268",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "partial",
+      "conf": 0.4708,
+      "probs": {
+       "failure": 0.2182,
+       "harmful": 0.0408,
+       "partial": 0.4708,
+       "success": 0.2702
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "harmful",
+        "failure",
+        "partial",
+        "success"
+       ],
+       "pred": "partial",
+       "conf": 0.4324,
+       "probs": {
+        "harmful": 0.0405,
+        "failure": 0.2579,
+        "partial": 0.4324,
+        "success": 0.2692
+       }
+      },
+      {
+       "order": [
+        "failure",
+        "success",
+        "partial",
+        "harmful"
+       ],
+       "pred": "partial",
+       "conf": 0.4544,
+       "probs": {
+        "failure": 0.2211,
+        "success": 0.2814,
+        "partial": 0.4544,
+        "harmful": 0.0431
+       }
+      },
+      {
+       "order": [
+        "harmful",
+        "success",
+        "partial",
+        "failure"
+       ],
+       "pred": "partial",
+       "conf": 0.4415,
+       "probs": {
+        "harmful": 0.0408,
+        "success": 0.3183,
+        "partial": 0.4415,
+        "failure": 0.1994
+       }
+      },
+      {
+       "order": [
+        "partial",
+        "failure",
+        "success",
+        "harmful"
+       ],
+       "pred": "partial",
+       "conf": 0.424,
+       "probs": {
+        "partial": 0.424,
+        "failure": 0.2363,
+        "success": 0.2953,
+        "harmful": 0.0444
+       }
+      },
+      {
+       "order": [
+        "success",
+        "harmful",
+        "partial",
+        "failure"
+       ],
+       "pred": "partial",
+       "conf": 0.4567,
+       "probs": {
+        "success": 0.2786,
+        "harmful": 0.0401,
+        "partial": 0.4567,
+        "failure": 0.2246
+       }
+      }
+     ]
+    },
+    {
+     "row": 10,
+     "qid": "action",
+     "gold": "human_review",
+     "options": [
+      "continue",
+      "human_review",
+      "observe",
+      "stop"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000292",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "human_review",
+      "conf": 0.4132,
+      "probs": {
+       "continue": 0.1469,
+       "human_review": 0.4132,
+       "observe": 0.3817,
+       "stop": 0.0583
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "stop",
+        "human_review",
+        "continue",
+        "observe"
+       ],
+       "pred": "human_review",
+       "conf": 0.3868,
+       "probs": {
+        "stop": 0.0568,
+        "human_review": 0.3868,
+        "continue": 0.1887,
+        "observe": 0.3678
+       }
+      },
+      {
+       "order": [
+        "human_review",
+        "stop",
+        "observe",
+        "continue"
+       ],
+       "pred": "human_review",
+       "conf": 0.3907,
+       "probs": {
+        "human_review": 0.3907,
+        "stop": 0.0614,
+        "observe": 0.3516,
+        "continue": 0.1963
+       }
+      },
+      {
+       "order": [
+        "observe",
+        "continue",
+        "stop",
+        "human_review"
+       ],
+       "pred": "human_review",
+       "conf": 0.4418,
+       "probs": {
+        "observe": 0.3158,
+        "continue": 0.1825,
+        "stop": 0.0599,
+        "human_review": 0.4418
+       }
+      },
+      {
+       "order": [
+        "observe",
+        "continue",
+        "human_review",
+        "stop"
+       ],
+       "pred": "human_review",
+       "conf": 0.4243,
+       "probs": {
+        "observe": 0.3272,
+        "continue": 0.1889,
+        "human_review": 0.4243,
+        "stop": 0.0596
+       }
+      },
+      {
+       "order": [
+        "stop",
+        "human_review",
+        "observe",
+        "continue"
+       ],
+       "pred": "human_review",
+       "conf": 0.3928,
+       "probs": {
+        "stop": 0.0592,
+        "human_review": 0.3928,
+        "observe": 0.3531,
+        "continue": 0.1948
+       }
+      }
+     ]
+    },
+    {
+     "row": 10,
+     "qid": "outcome",
+     "gold": "success",
+     "options": [
+      "failure",
+      "harmful",
+      "partial",
+      "success"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:agent_trace_observability",
+      "id:tr_agent_trace_observability_000292",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "partial",
+      "conf": 0.4413,
+      "probs": {
+       "failure": 0.1799,
+       "harmful": 0.0395,
+       "partial": 0.4413,
+       "success": 0.3393
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "success",
+        "failure",
+        "partial",
+        "harmful"
+       ],
+       "pred": "partial",
+       "conf": 0.4045,
+       "probs": {
+        "success": 0.3673,
+        "failure": 0.1856,
+        "partial": 0.4045,
+        "harmful": 0.0426
+       }
+      },
+      {
+       "order": [
+        "partial",
+        "success",
+        "harmful",
+        "failure"
+       ],
+       "pred": "partial",
+       "conf": 0.4042,
+       "probs": {
+        "partial": 0.4042,
+        "success": 0.333,
+        "harmful": 0.0405,
+        "failure": 0.2222
+       }
+      },
+      {
+       "order": [
+        "partial",
+        "failure",
+        "harmful",
+        "success"
+       ],
+       "pred": "partial",
+       "conf": 0.3909,
+       "probs": {
+        "partial": 0.3909,
+        "failure": 0.194,
+        "harmful": 0.0424,
+        "success": 0.3727
+       }
+      },
+      {
+       "order": [
+        "harmful",
+        "failure",
+        "success",
+        "partial"
+       ],
+       "pred": "partial",
+       "conf": 0.4101,
+       "probs": {
+        "harmful": 0.0365,
+        "failure": 0.2178,
+        "success": 0.3356,
+        "partial": 0.4101
+       }
+      },
+      {
+       "order": [
+        "harmful",
+        "failure",
+        "success",
+        "partial"
+       ],
+       "pred": "partial",
+       "conf": 0.4101,
+       "probs": {
+        "harmful": 0.0365,
+        "failure": 0.2178,
+        "success": 0.3356,
+        "partial": 0.4101
+       }
+      }
+     ]
+    },
+    {
+     "row": 11,
+     "qid": "action",
+     "gold": "escalate_to_human",
+     "options": [
+      "answer_directly",
+      "close_no_action",
+      "escalate_to_human",
+      "execute_refund",
+      "request_information"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:customer_service",
+      "id:tr_customer_service_000037",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "escalate_to_human",
+      "conf": 0.5147,
+      "probs": {
+       "answer_directly": 0.1771,
+       "close_no_action": 0.0169,
+       "escalate_to_human": 0.5147,
+       "execute_refund": 0.0319,
+       "request_information": 0.2595
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "execute_refund",
+        "request_information",
+        "answer_directly",
+        "close_no_action",
+        "escalate_to_human"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.5192,
+       "probs": {
+        "execute_refund": 0.0218,
+        "request_information": 0.1634,
+        "answer_directly": 0.2818,
+        "close_no_action": 0.0138,
+        "escalate_to_human": 0.5192
+       }
+      },
+      {
+       "order": [
+        "close_no_action",
+        "escalate_to_human",
+        "execute_refund",
+        "answer_directly",
+        "request_information"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.4955,
+       "probs": {
+        "close_no_action": 0.014,
+        "escalate_to_human": 0.4955,
+        "execute_refund": 0.0277,
+        "answer_directly": 0.2413,
+        "request_information": 0.2216
+       }
+      },
+      {
+       "order": [
+        "execute_refund",
+        "escalate_to_human",
+        "close_no_action",
+        "answer_directly",
+        "request_information"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.4939,
+       "probs": {
+        "execute_refund": 0.0242,
+        "escalate_to_human": 0.4939,
+        "close_no_action": 0.0144,
+        "answer_directly": 0.2494,
+        "request_information": 0.2181
+       }
+      },
+      {
+       "order": [
+        "answer_directly",
+        "close_no_action",
+        "escalate_to_human",
+        "request_information",
+        "execute_refund"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.5511,
+       "probs": {
+        "answer_directly": 0.1723,
+        "close_no_action": 0.0168,
+        "escalate_to_human": 0.5511,
+        "request_information": 0.2279,
+        "execute_refund": 0.0319
+       }
+      },
+      {
+       "order": [
+        "request_information",
+        "close_no_action",
+        "escalate_to_human",
+        "execute_refund",
+        "answer_directly"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.4848,
+       "probs": {
+        "request_information": 0.1756,
+        "close_no_action": 0.0138,
+        "escalate_to_human": 0.4848,
+        "execute_refund": 0.0264,
+        "answer_directly": 0.2994
+       }
+      }
+     ]
+    },
+    {
+     "row": 11,
+     "qid": "category",
+     "gold": "delivery",
+     "options": [
+      "account",
+      "billing",
+      "delivery",
+      "refund",
+      "technical"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:customer_service",
+      "id:tr_customer_service_000037",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "delivery",
+      "conf": 0.9502,
+      "probs": {
+       "account": 0.0105,
+       "billing": 0.0093,
+       "delivery": 0.9502,
+       "refund": 0.0224,
+       "technical": 0.0076
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "billing",
+        "account",
+        "technical",
+        "refund",
+        "delivery"
+       ],
+       "pred": "delivery",
+       "conf": 0.9346,
+       "probs": {
+        "billing": 0.0094,
+        "account": 0.0138,
+        "technical": 0.0109,
+        "refund": 0.0314,
+        "delivery": 0.9346
+       }
+      },
+      {
+       "order": [
+        "refund",
+        "account",
+        "technical",
+        "delivery",
+        "billing"
+       ],
+       "pred": "delivery",
+       "conf": 0.9578,
+       "probs": {
+        "refund": 0.0147,
+        "account": 0.0105,
+        "technical": 0.0092,
+        "delivery": 0.9578,
+        "billing": 0.0078
+       }
+      },
+      {
+       "order": [
+        "delivery",
+        "account",
+        "billing",
+        "technical",
+        "refund"
+       ],
+       "pred": "delivery",
+       "conf": 0.9597,
+       "probs": {
+        "delivery": 0.9597,
+        "account": 0.0085,
+        "billing": 0.0072,
+        "technical": 0.008,
+        "refund": 0.0166
+       }
+      },
+      {
+       "order": [
+        "account",
+        "delivery",
+        "billing",
+        "technical",
+        "refund"
+       ],
+       "pred": "delivery",
+       "conf": 0.9586,
+       "probs": {
+        "account": 0.0105,
+        "delivery": 0.9586,
+        "billing": 0.0076,
+        "technical": 0.0069,
+        "refund": 0.0164
+       }
+      },
+      {
+       "order": [
+        "delivery",
+        "billing",
+        "refund",
+        "account",
+        "technical"
+       ],
+       "pred": "delivery",
+       "conf": 0.9579,
+       "probs": {
+        "delivery": 0.9579,
+        "billing": 0.008,
+        "refund": 0.0177,
+        "account": 0.0085,
+        "technical": 0.0079
+       }
+      }
+     ]
+    },
+    {
+     "row": 12,
+     "qid": "action",
+     "gold": "escalate_to_human",
+     "options": [
+      "answer_directly",
+      "close_no_action",
+      "escalate_to_human",
+      "execute_refund",
+      "request_information"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:customer_service",
+      "id:tr_customer_service_000067",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "execute_refund",
+      "conf": 0.4443,
+      "probs": {
+       "answer_directly": 0.1929,
+       "close_no_action": 0.0114,
+       "escalate_to_human": 0.223,
+       "execute_refund": 0.4443,
+       "request_information": 0.1284
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "escalate_to_human",
+        "request_information",
+        "execute_refund",
+        "answer_directly",
+        "close_no_action"
+       ],
+       "pred": "execute_refund",
+       "conf": 0.4052,
+       "probs": {
+        "escalate_to_human": 0.2581,
+        "request_information": 0.1504,
+        "execute_refund": 0.4052,
+        "answer_directly": 0.176,
+        "close_no_action": 0.0103
+       }
+      },
+      {
+       "order": [
+        "answer_directly",
+        "request_information",
+        "execute_refund",
+        "close_no_action",
+        "escalate_to_human"
+       ],
+       "pred": "execute_refund",
+       "conf": 0.4289,
+       "probs": {
+        "answer_directly": 0.1622,
+        "request_information": 0.1629,
+        "execute_refund": 0.4289,
+        "close_no_action": 0.0096,
+        "escalate_to_human": 0.2363
+       }
+      },
+      {
+       "order": [
+        "execute_refund",
+        "request_information",
+        "escalate_to_human",
+        "close_no_action",
+        "answer_directly"
+       ],
+       "pred": "execute_refund",
+       "conf": 0.3755,
+       "probs": {
+        "execute_refund": 0.3755,
+        "request_information": 0.1474,
+        "escalate_to_human": 0.2526,
+        "close_no_action": 0.0103,
+        "answer_directly": 0.2142
+       }
+      },
+      {
+       "order": [
+        "escalate_to_human",
+        "execute_refund",
+        "request_information",
+        "close_no_action",
+        "answer_directly"
+       ],
+       "pred": "execute_refund",
+       "conf": 0.3819,
+       "probs": {
+        "escalate_to_human": 0.2504,
+        "execute_refund": 0.3819,
+        "request_information": 0.1616,
+        "close_no_action": 0.011,
+        "answer_directly": 0.1951
+       }
+      },
+      {
+       "order": [
+        "request_information",
+        "execute_refund",
+        "answer_directly",
+        "escalate_to_human",
+        "close_no_action"
+       ],
+       "pred": "execute_refund",
+       "conf": 0.3507,
+       "probs": {
+        "request_information": 0.1516,
+        "execute_refund": 0.3507,
+        "answer_directly": 0.2108,
+        "escalate_to_human": 0.2764,
+        "close_no_action": 0.0105
+       }
+      }
+     ]
+    },
+    {
+     "row": 12,
+     "qid": "category",
+     "gold": "refund",
+     "options": [
+      "account",
+      "billing",
+      "delivery",
+      "refund",
+      "technical"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:customer_service",
+      "id:tr_customer_service_000067",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "refund",
+      "conf": 0.8255,
+      "probs": {
+       "account": 0.0071,
+       "billing": 0.156,
+       "delivery": 0.0053,
+       "refund": 0.8255,
+       "technical": 0.0061
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "refund",
+        "delivery",
+        "account",
+        "technical",
+        "billing"
+       ],
+       "pred": "refund",
+       "conf": 0.8497,
+       "probs": {
+        "refund": 0.8497,
+        "delivery": 0.0046,
+        "account": 0.0056,
+        "technical": 0.0052,
+        "billing": 0.1349
+       }
+      },
+      {
+       "order": [
+        "technical",
+        "account",
+        "delivery",
+        "refund",
+        "billing"
+       ],
+       "pred": "refund",
+       "conf": 0.8625,
+       "probs": {
+        "technical": 0.0047,
+        "account": 0.0063,
+        "delivery": 0.0046,
+        "refund": 0.8625,
+        "billing": 0.1219
+       }
+      },
+      {
+       "order": [
+        "delivery",
+        "technical",
+        "billing",
+        "account",
+        "refund"
+       ],
+       "pred": "refund",
+       "conf": 0.8019,
+       "probs": {
+        "delivery": 0.0048,
+        "technical": 0.0049,
+        "billing": 0.1828,
+        "account": 0.0056,
+        "refund": 0.8019
+       }
+      },
+      {
+       "order": [
+        "delivery",
+        "refund",
+        "billing",
+        "technical",
+        "account"
+       ],
+       "pred": "refund",
+       "conf": 0.8243,
+       "probs": {
+        "delivery": 0.0051,
+        "refund": 0.8243,
+        "billing": 0.1606,
+        "technical": 0.0049,
+        "account": 0.0052
+       }
+      },
+      {
+       "order": [
+        "delivery",
+        "refund",
+        "account",
+        "billing",
+        "technical"
+       ],
+       "pred": "refund",
+       "conf": 0.8127,
+       "probs": {
+        "delivery": 0.0047,
+        "refund": 0.8127,
+        "account": 0.0054,
+        "billing": 0.1718,
+        "technical": 0.0054
+       }
+      }
+     ]
+    },
+    {
+     "row": 13,
+     "qid": "action",
+     "gold": "answer_directly",
+     "options": [
+      "answer_directly",
+      "close_no_action",
+      "escalate_to_human",
+      "execute_refund",
+      "request_information"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:customer_service",
+      "id:tr_customer_service_000072",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "answer_directly",
+      "conf": 0.4167,
+      "probs": {
+       "answer_directly": 0.4167,
+       "close_no_action": 0.0171,
+       "escalate_to_human": 0.3352,
+       "execute_refund": 0.1027,
+       "request_information": 0.1283
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "request_information",
+        "answer_directly",
+        "close_no_action",
+        "execute_refund",
+        "escalate_to_human"
+       ],
+       "pred": "answer_directly",
+       "conf": 0.5334,
+       "probs": {
+        "request_information": 0.1273,
+        "answer_directly": 0.5334,
+        "close_no_action": 0.0147,
+        "execute_refund": 0.0943,
+        "escalate_to_human": 0.2302
+       }
+      },
+      {
+       "order": [
+        "answer_directly",
+        "close_no_action",
+        "execute_refund",
+        "request_information",
+        "escalate_to_human"
+       ],
+       "pred": "answer_directly",
+       "conf": 0.4411,
+       "probs": {
+        "answer_directly": 0.4411,
+        "close_no_action": 0.0154,
+        "execute_refund": 0.0936,
+        "request_information": 0.1844,
+        "escalate_to_human": 0.2655
+       }
+      },
+      {
+       "order": [
+        "close_no_action",
+        "answer_directly",
+        "execute_refund",
+        "request_information",
+        "escalate_to_human"
+       ],
+       "pred": "answer_directly",
+       "conf": 0.5119,
+       "probs": {
+        "close_no_action": 0.0165,
+        "answer_directly": 0.5119,
+        "execute_refund": 0.0864,
+        "request_information": 0.1579,
+        "escalate_to_human": 0.2274
+       }
+      },
+      {
+       "order": [
+        "close_no_action",
+        "escalate_to_human",
+        "execute_refund",
+        "request_information",
+        "answer_directly"
+       ],
+       "pred": "answer_directly",
+       "conf": 0.3884,
+       "probs": {
+        "close_no_action": 0.0166,
+        "escalate_to_human": 0.3419,
+        "execute_refund": 0.1059,
+        "request_information": 0.1471,
+        "answer_directly": 0.3884
+       }
+      },
+      {
+       "order": [
+        "close_no_action",
+        "execute_refund",
+        "request_information",
+        "escalate_to_human",
+        "answer_directly"
+       ],
+       "pred": "answer_directly",
+       "conf": 0.4714,
+       "probs": {
+        "close_no_action": 0.0138,
+        "execute_refund": 0.0719,
+        "request_information": 0.2113,
+        "escalate_to_human": 0.2317,
+        "answer_directly": 0.4714
+       }
+      }
+     ]
+    },
+    {
+     "row": 13,
+     "qid": "category",
+     "gold": "billing",
+     "options": [
+      "account",
+      "billing",
+      "delivery",
+      "refund",
+      "technical"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:customer_service",
+      "id:tr_customer_service_000072",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "billing",
+      "conf": 0.9193,
+      "probs": {
+       "account": 0.0312,
+       "billing": 0.9193,
+       "delivery": 0.0098,
+       "refund": 0.0307,
+       "technical": 0.0091
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "billing",
+        "refund",
+        "account",
+        "delivery",
+        "technical"
+       ],
+       "pred": "billing",
+       "conf": 0.9159,
+       "probs": {
+        "billing": 0.9159,
+        "refund": 0.045,
+        "account": 0.0247,
+        "delivery": 0.0069,
+        "technical": 0.0075
+       }
+      },
+      {
+       "order": [
+        "billing",
+        "account",
+        "delivery",
+        "technical",
+        "refund"
+       ],
+       "pred": "billing",
+       "conf": 0.9434,
+       "probs": {
+        "billing": 0.9434,
+        "account": 0.0247,
+        "delivery": 0.0079,
+        "technical": 0.0076,
+        "refund": 0.0165
+       }
+      },
+      {
+       "order": [
+        "delivery",
+        "billing",
+        "technical",
+        "refund",
+        "account"
+       ],
+       "pred": "billing",
+       "conf": 0.9105,
+       "probs": {
+        "delivery": 0.0128,
+        "billing": 0.9105,
+        "technical": 0.0115,
+        "refund": 0.038,
+        "account": 0.0271
+       }
+      },
+      {
+       "order": [
+        "account",
+        "delivery",
+        "technical",
+        "refund",
+        "billing"
+       ],
+       "pred": "billing",
+       "conf": 0.8824,
+       "probs": {
+        "account": 0.0496,
+        "delivery": 0.013,
+        "technical": 0.0127,
+        "refund": 0.0423,
+        "billing": 0.8824
+       }
+      },
+      {
+       "order": [
+        "refund",
+        "billing",
+        "delivery",
+        "technical",
+        "account"
+       ],
+       "pred": "billing",
+       "conf": 0.9146,
+       "probs": {
+        "refund": 0.0423,
+        "billing": 0.9146,
+        "delivery": 0.01,
+        "technical": 0.0095,
+        "account": 0.0236
+       }
+      }
+     ]
+    },
+    {
+     "row": 14,
+     "qid": "action",
+     "gold": "escalate_to_human",
+     "options": [
+      "answer_directly",
+      "close_no_action",
+      "escalate_to_human",
+      "execute_refund",
+      "request_information"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:customer_service",
+      "id:tr_customer_service_000094",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "request_information",
+      "conf": 0.3796,
+      "probs": {
+       "answer_directly": 0.2326,
+       "close_no_action": 0.0119,
+       "escalate_to_human": 0.356,
+       "execute_refund": 0.0198,
+       "request_information": 0.3796
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "execute_refund",
+        "escalate_to_human",
+        "close_no_action",
+        "request_information",
+        "answer_directly"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.4351,
+       "probs": {
+        "execute_refund": 0.0272,
+        "escalate_to_human": 0.4351,
+        "close_no_action": 0.0131,
+        "request_information": 0.2925,
+        "answer_directly": 0.2321
+       }
+      },
+      {
+       "order": [
+        "close_no_action",
+        "escalate_to_human",
+        "request_information",
+        "execute_refund",
+        "answer_directly"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.4398,
+       "probs": {
+        "close_no_action": 0.0109,
+        "escalate_to_human": 0.4398,
+        "request_information": 0.2845,
+        "execute_refund": 0.0158,
+        "answer_directly": 0.2491
+       }
+      },
+      {
+       "order": [
+        "escalate_to_human",
+        "execute_refund",
+        "answer_directly",
+        "close_no_action",
+        "request_information"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.3775,
+       "probs": {
+        "escalate_to_human": 0.3775,
+        "execute_refund": 0.021,
+        "answer_directly": 0.2695,
+        "close_no_action": 0.0117,
+        "request_information": 0.3203
+       }
+      },
+      {
+       "order": [
+        "escalate_to_human",
+        "answer_directly",
+        "request_information",
+        "execute_refund",
+        "close_no_action"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.4377,
+       "probs": {
+        "escalate_to_human": 0.4377,
+        "answer_directly": 0.2327,
+        "request_information": 0.3035,
+        "execute_refund": 0.0151,
+        "close_no_action": 0.0109
+       }
+      },
+      {
+       "order": [
+        "answer_directly",
+        "execute_refund",
+        "close_no_action",
+        "request_information",
+        "escalate_to_human"
+       ],
+       "pred": "request_information",
+       "conf": 0.3512,
+       "probs": {
+        "answer_directly": 0.2798,
+        "execute_refund": 0.0211,
+        "close_no_action": 0.0118,
+        "request_information": 0.3512,
+        "escalate_to_human": 0.3361
+       }
+      }
+     ]
+    },
+    {
+     "row": 14,
+     "qid": "category",
+     "gold": "billing",
+     "options": [
+      "account",
+      "billing",
+      "delivery",
+      "refund",
+      "technical"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:customer_service",
+      "id:tr_customer_service_000094",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "billing",
+      "conf": 0.9091,
+      "probs": {
+       "account": 0.0398,
+       "billing": 0.9091,
+       "delivery": 0.0067,
+       "refund": 0.0152,
+       "technical": 0.0292
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "technical",
+        "delivery",
+        "refund",
+        "account",
+        "billing"
+       ],
+       "pred": "billing",
+       "conf": 0.9146,
+       "probs": {
+        "technical": 0.0226,
+        "delivery": 0.0061,
+        "refund": 0.0151,
+        "account": 0.0416,
+        "billing": 0.9146
+       }
+      },
+      {
+       "order": [
+        "account",
+        "refund",
+        "delivery",
+        "billing",
+        "technical"
+       ],
+       "pred": "billing",
+       "conf": 0.89,
+       "probs": {
+        "account": 0.0444,
+        "refund": 0.0181,
+        "delivery": 0.0068,
+        "billing": 0.89,
+        "technical": 0.0407
+       }
+      },
+      {
+       "order": [
+        "delivery",
+        "billing",
+        "technical",
+        "refund",
+        "account"
+       ],
+       "pred": "billing",
+       "conf": 0.9086,
+       "probs": {
+        "delivery": 0.0065,
+        "billing": 0.9086,
+        "technical": 0.0376,
+        "refund": 0.0163,
+        "account": 0.0309
+       }
+      },
+      {
+       "order": [
+        "delivery",
+        "technical",
+        "account",
+        "billing",
+        "refund"
+       ],
+       "pred": "billing",
+       "conf": 0.9164,
+       "probs": {
+        "delivery": 0.0063,
+        "technical": 0.0205,
+        "account": 0.0416,
+        "billing": 0.9164,
+        "refund": 0.0152
+       }
+      },
+      {
+       "order": [
+        "technical",
+        "delivery",
+        "billing",
+        "refund",
+        "account"
+       ],
+       "pred": "billing",
+       "conf": 0.926,
+       "probs": {
+        "technical": 0.0185,
+        "delivery": 0.0065,
+        "billing": 0.926,
+        "refund": 0.0177,
+        "account": 0.0313
+       }
+      }
+     ]
+    },
+    {
+     "row": 15,
+     "qid": "action",
+     "gold": "request_information",
+     "options": [
+      "answer_directly",
+      "close_no_action",
+      "escalate_to_human",
+      "execute_refund",
+      "request_information"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:customer_service",
+      "id:tr_customer_service_000192",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "escalate_to_human",
+      "conf": 0.5077,
+      "probs": {
+       "answer_directly": 0.2183,
+       "close_no_action": 0.0135,
+       "escalate_to_human": 0.5077,
+       "execute_refund": 0.0138,
+       "request_information": 0.2467
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "escalate_to_human",
+        "answer_directly",
+        "close_no_action",
+        "request_information",
+        "execute_refund"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.526,
+       "probs": {
+        "escalate_to_human": 0.526,
+        "answer_directly": 0.2073,
+        "close_no_action": 0.0133,
+        "request_information": 0.2389,
+        "execute_refund": 0.0145
+       }
+      },
+      {
+       "order": [
+        "escalate_to_human",
+        "answer_directly",
+        "execute_refund",
+        "close_no_action",
+        "request_information"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.5133,
+       "probs": {
+        "escalate_to_human": 0.5133,
+        "answer_directly": 0.1789,
+        "execute_refund": 0.0137,
+        "close_no_action": 0.013,
+        "request_information": 0.2811
+       }
+      },
+      {
+       "order": [
+        "execute_refund",
+        "escalate_to_human",
+        "close_no_action",
+        "answer_directly",
+        "request_information"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.5253,
+       "probs": {
+        "execute_refund": 0.0166,
+        "escalate_to_human": 0.5253,
+        "close_no_action": 0.0139,
+        "answer_directly": 0.179,
+        "request_information": 0.2651
+       }
+      },
+      {
+       "order": [
+        "close_no_action",
+        "request_information",
+        "escalate_to_human",
+        "execute_refund",
+        "answer_directly"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.5988,
+       "probs": {
+        "close_no_action": 0.0131,
+        "request_information": 0.2576,
+        "escalate_to_human": 0.5988,
+        "execute_refund": 0.014,
+        "answer_directly": 0.1164
+       }
+      },
+      {
+       "order": [
+        "close_no_action",
+        "execute_refund",
+        "escalate_to_human",
+        "answer_directly",
+        "request_information"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.5207,
+       "probs": {
+        "close_no_action": 0.0135,
+        "execute_refund": 0.0158,
+        "escalate_to_human": 0.5207,
+        "answer_directly": 0.1771,
+        "request_information": 0.2728
+       }
+      }
+     ]
+    },
+    {
+     "row": 15,
+     "qid": "category",
+     "gold": "technical",
+     "options": [
+      "account",
+      "billing",
+      "delivery",
+      "refund",
+      "technical"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:customer_service",
+      "id:tr_customer_service_000192",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "delivery",
+      "conf": 0.6753,
+      "probs": {
+       "account": 0.0209,
+       "billing": 0.0234,
+       "delivery": 0.6753,
+       "refund": 0.018,
+       "technical": 0.2624
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "delivery",
+        "technical",
+        "refund",
+        "billing",
+        "account"
+       ],
+       "pred": "delivery",
+       "conf": 0.7265,
+       "probs": {
+        "delivery": 0.7265,
+        "technical": 0.2325,
+        "refund": 0.0162,
+        "billing": 0.0129,
+        "account": 0.0119
+       }
+      },
+      {
+       "order": [
+        "technical",
+        "account",
+        "billing",
+        "delivery",
+        "refund"
+       ],
+       "pred": "technical",
+       "conf": 0.4966,
+       "probs": {
+        "technical": 0.4966,
+        "account": 0.0191,
+        "billing": 0.0212,
+        "delivery": 0.4474,
+        "refund": 0.0157
+       }
+      },
+      {
+       "order": [
+        "account",
+        "refund",
+        "technical",
+        "billing",
+        "delivery"
+       ],
+       "pred": "technical",
+       "conf": 0.549,
+       "probs": {
+        "account": 0.0234,
+        "refund": 0.0185,
+        "technical": 0.549,
+        "billing": 0.0193,
+        "delivery": 0.3898
+       }
+      },
+      {
+       "order": [
+        "delivery",
+        "account",
+        "technical",
+        "billing",
+        "refund"
+       ],
+       "pred": "delivery",
+       "conf": 0.7934,
+       "probs": {
+        "delivery": 0.7934,
+        "account": 0.0161,
+        "technical": 0.1645,
+        "billing": 0.0136,
+        "refund": 0.0124
+       }
+      },
+      {
+       "order": [
+        "delivery",
+        "billing",
+        "account",
+        "technical",
+        "refund"
+       ],
+       "pred": "delivery",
+       "conf": 0.7674,
+       "probs": {
+        "delivery": 0.7674,
+        "billing": 0.0141,
+        "account": 0.0141,
+        "technical": 0.1925,
+        "refund": 0.0118
+       }
+      }
+     ]
+    },
+    {
+     "row": 16,
+     "qid": "action",
+     "gold": "request_information",
+     "options": [
+      "answer_directly",
+      "close_no_action",
+      "escalate_to_human",
+      "execute_refund",
+      "request_information"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:customer_service",
+      "id:tr_customer_service_000251",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "escalate_to_human",
+      "conf": 0.4633,
+      "probs": {
+       "answer_directly": 0.1383,
+       "close_no_action": 0.0121,
+       "escalate_to_human": 0.4633,
+       "execute_refund": 0.012,
+       "request_information": 0.3742
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "request_information",
+        "answer_directly",
+        "escalate_to_human",
+        "close_no_action",
+        "execute_refund"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.4535,
+       "probs": {
+        "request_information": 0.3735,
+        "answer_directly": 0.149,
+        "escalate_to_human": 0.4535,
+        "close_no_action": 0.0118,
+        "execute_refund": 0.0122
+       }
+      },
+      {
+       "order": [
+        "close_no_action",
+        "escalate_to_human",
+        "answer_directly",
+        "execute_refund",
+        "request_information"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.4961,
+       "probs": {
+        "close_no_action": 0.0118,
+        "escalate_to_human": 0.4961,
+        "answer_directly": 0.1381,
+        "execute_refund": 0.0123,
+        "request_information": 0.3417
+       }
+      },
+      {
+       "order": [
+        "execute_refund",
+        "escalate_to_human",
+        "close_no_action",
+        "request_information",
+        "answer_directly"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.516,
+       "probs": {
+        "execute_refund": 0.0143,
+        "escalate_to_human": 0.516,
+        "close_no_action": 0.0118,
+        "request_information": 0.3507,
+        "answer_directly": 0.1072
+       }
+      },
+      {
+       "order": [
+        "escalate_to_human",
+        "answer_directly",
+        "request_information",
+        "close_no_action",
+        "execute_refund"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.4778,
+       "probs": {
+        "escalate_to_human": 0.4778,
+        "answer_directly": 0.1536,
+        "request_information": 0.345,
+        "close_no_action": 0.0118,
+        "execute_refund": 0.0118
+       }
+      },
+      {
+       "order": [
+        "answer_directly",
+        "close_no_action",
+        "escalate_to_human",
+        "request_information",
+        "execute_refund"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.4918,
+       "probs": {
+        "answer_directly": 0.1347,
+        "close_no_action": 0.013,
+        "escalate_to_human": 0.4918,
+        "request_information": 0.348,
+        "execute_refund": 0.0125
+       }
+      }
+     ]
+    },
+    {
+     "row": 16,
+     "qid": "category",
+     "gold": "technical",
+     "options": [
+      "account",
+      "billing",
+      "delivery",
+      "refund",
+      "technical"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:customer_service",
+      "id:tr_customer_service_000251",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "technical",
+      "conf": 0.8668,
+      "probs": {
+       "account": 0.0829,
+       "billing": 0.0245,
+       "delivery": 0.0114,
+       "refund": 0.0144,
+       "technical": 0.8668
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "delivery",
+        "billing",
+        "refund",
+        "technical",
+        "account"
+       ],
+       "pred": "technical",
+       "conf": 0.9027,
+       "probs": {
+        "delivery": 0.0113,
+        "billing": 0.0189,
+        "refund": 0.0138,
+        "technical": 0.9027,
+        "account": 0.0534
+       }
+      },
+      {
+       "order": [
+        "refund",
+        "account",
+        "delivery",
+        "technical",
+        "billing"
+       ],
+       "pred": "technical",
+       "conf": 0.897,
+       "probs": {
+        "refund": 0.015,
+        "account": 0.0569,
+        "delivery": 0.0109,
+        "technical": 0.897,
+        "billing": 0.0203
+       }
+      },
+      {
+       "order": [
+        "billing",
+        "technical",
+        "delivery",
+        "refund",
+        "account"
+       ],
+       "pred": "technical",
+       "conf": 0.8919,
+       "probs": {
+        "billing": 0.0288,
+        "technical": 0.8919,
+        "delivery": 0.0106,
+        "refund": 0.0126,
+        "account": 0.0561
+       }
+      },
+      {
+       "order": [
+        "delivery",
+        "billing",
+        "account",
+        "technical",
+        "refund"
+       ],
+       "pred": "technical",
+       "conf": 0.8635,
+       "probs": {
+        "delivery": 0.0123,
+        "billing": 0.0403,
+        "account": 0.0673,
+        "technical": 0.8635,
+        "refund": 0.0165
+       }
+      },
+      {
+       "order": [
+        "technical",
+        "delivery",
+        "refund",
+        "billing",
+        "account"
+       ],
+       "pred": "technical",
+       "conf": 0.8978,
+       "probs": {
+        "technical": 0.8978,
+        "delivery": 0.0114,
+        "refund": 0.0125,
+        "billing": 0.0166,
+        "account": 0.0617
+       }
+      }
+     ]
+    },
+    {
+     "row": 17,
+     "qid": "action",
+     "gold": "answer_directly",
+     "options": [
+      "answer_directly",
+      "close_no_action",
+      "escalate_to_human",
+      "execute_refund",
+      "request_information"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:customer_service",
+      "id:tr_customer_service_000267",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "escalate_to_human",
+      "conf": 0.5334,
+      "probs": {
+       "answer_directly": 0.1874,
+       "close_no_action": 0.0177,
+       "escalate_to_human": 0.5334,
+       "execute_refund": 0.1176,
+       "request_information": 0.1439
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "execute_refund",
+        "escalate_to_human",
+        "answer_directly",
+        "close_no_action",
+        "request_information"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.4916,
+       "probs": {
+        "execute_refund": 0.1293,
+        "escalate_to_human": 0.4916,
+        "answer_directly": 0.1873,
+        "close_no_action": 0.0165,
+        "request_information": 0.1753
+       }
+      },
+      {
+       "order": [
+        "execute_refund",
+        "request_information",
+        "escalate_to_human",
+        "close_no_action",
+        "answer_directly"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.5248,
+       "probs": {
+        "execute_refund": 0.0924,
+        "request_information": 0.132,
+        "escalate_to_human": 0.5248,
+        "close_no_action": 0.0178,
+        "answer_directly": 0.2331
+       }
+      },
+      {
+       "order": [
+        "answer_directly",
+        "execute_refund",
+        "request_information",
+        "close_no_action",
+        "escalate_to_human"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.5121,
+       "probs": {
+        "answer_directly": 0.1888,
+        "execute_refund": 0.13,
+        "request_information": 0.153,
+        "close_no_action": 0.0161,
+        "escalate_to_human": 0.5121
+       }
+      },
+      {
+       "order": [
+        "request_information",
+        "escalate_to_human",
+        "answer_directly",
+        "execute_refund",
+        "close_no_action"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.5181,
+       "probs": {
+        "request_information": 0.1414,
+        "escalate_to_human": 0.5181,
+        "answer_directly": 0.2147,
+        "execute_refund": 0.1083,
+        "close_no_action": 0.0175
+       }
+      },
+      {
+       "order": [
+        "close_no_action",
+        "escalate_to_human",
+        "request_information",
+        "execute_refund",
+        "answer_directly"
+       ],
+       "pred": "escalate_to_human",
+       "conf": 0.535,
+       "probs": {
+        "close_no_action": 0.0135,
+        "escalate_to_human": 0.535,
+        "request_information": 0.1672,
+        "execute_refund": 0.0901,
+        "answer_directly": 0.1941
+       }
+      }
+     ]
+    },
+    {
+     "row": 17,
+     "qid": "category",
+     "gold": "account",
+     "options": [
+      "account",
+      "billing",
+      "delivery",
+      "refund",
+      "technical"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:customer_service",
+      "id:tr_customer_service_000267",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "billing",
+      "conf": 0.7915,
+      "probs": {
+       "account": 0.1601,
+       "billing": 0.7915,
+       "delivery": 0.0061,
+       "refund": 0.0139,
+       "technical": 0.0283
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "delivery",
+        "refund",
+        "billing",
+        "account",
+        "technical"
+       ],
+       "pred": "billing",
+       "conf": 0.8414,
+       "probs": {
+        "delivery": 0.0067,
+        "refund": 0.0278,
+        "billing": 0.8414,
+        "account": 0.0907,
+        "technical": 0.0334
+       }
+      },
+      {
+       "order": [
+        "technical",
+        "refund",
+        "delivery",
+        "account",
+        "billing"
+       ],
+       "pred": "billing",
+       "conf": 0.8232,
+       "probs": {
+        "technical": 0.031,
+        "refund": 0.0223,
+        "delivery": 0.0061,
+        "account": 0.1174,
+        "billing": 0.8232
+       }
+      },
+      {
+       "order": [
+        "account",
+        "technical",
+        "delivery",
+        "billing",
+        "refund"
+       ],
+       "pred": "billing",
+       "conf": 0.8025,
+       "probs": {
+        "account": 0.1375,
+        "technical": 0.0327,
+        "delivery": 0.0071,
+        "billing": 0.8025,
+        "refund": 0.0203
+       }
+      },
+      {
+       "order": [
+        "technical",
+        "account",
+        "refund",
+        "billing",
+        "delivery"
+       ],
+       "pred": "billing",
+       "conf": 0.8177,
+       "probs": {
+        "technical": 0.0304,
+        "account": 0.1147,
+        "refund": 0.0304,
+        "billing": 0.8177,
+        "delivery": 0.0069
+       }
+      },
+      {
+       "order": [
+        "refund",
+        "account",
+        "delivery",
+        "technical",
+        "billing"
+       ],
+       "pred": "billing",
+       "conf": 0.8063,
+       "probs": {
+        "refund": 0.0309,
+        "account": 0.1229,
+        "delivery": 0.0065,
+        "technical": 0.0334,
+        "billing": 0.8063
+       }
+      }
+     ]
+    },
+    {
+     "row": 18,
+     "qid": "disposition",
+     "gold": "approve",
+     "options": [
+      "approve",
+      "hold",
+      "manual_review",
+      "reject"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:invoice_processing",
+      "id:tr_invoice_processing_000035",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "approve",
+      "conf": 0.5581,
+      "probs": {
+       "approve": 0.5581,
+       "hold": 0.1054,
+       "manual_review": 0.2707,
+       "reject": 0.0658
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "hold",
+        "approve",
+        "manual_review",
+        "reject"
+       ],
+       "pred": "approve",
+       "conf": 0.5626,
+       "probs": {
+        "hold": 0.0973,
+        "approve": 0.5626,
+        "manual_review": 0.2756,
+        "reject": 0.0645
+       }
+      },
+      {
+       "order": [
+        "approve",
+        "hold",
+        "manual_review",
+        "reject"
+       ],
+       "pred": "approve",
+       "conf": 0.5581,
+       "probs": {
+        "approve": 0.5581,
+        "hold": 0.1054,
+        "manual_review": 0.2707,
+        "reject": 0.0658
+       }
+      },
+      {
+       "order": [
+        "approve",
+        "manual_review",
+        "reject",
+        "hold"
+       ],
+       "pred": "approve",
+       "conf": 0.5261,
+       "probs": {
+        "approve": 0.5261,
+        "manual_review": 0.2662,
+        "reject": 0.0637,
+        "hold": 0.144
+       }
+      },
+      {
+       "order": [
+        "hold",
+        "manual_review",
+        "approve",
+        "reject"
+       ],
+       "pred": "approve",
+       "conf": 0.5529,
+       "probs": {
+        "hold": 0.1016,
+        "manual_review": 0.2792,
+        "approve": 0.5529,
+        "reject": 0.0662
+       }
+      },
+      {
+       "order": [
+        "manual_review",
+        "approve",
+        "hold",
+        "reject"
+       ],
+       "pred": "approve",
+       "conf": 0.524,
+       "probs": {
+        "manual_review": 0.3099,
+        "approve": 0.524,
+        "hold": 0.1004,
+        "reject": 0.0657
+       }
+      }
+     ]
+    },
+    {
+     "row": 19,
+     "qid": "disposition",
+     "gold": "manual_review",
+     "options": [
+      "approve",
+      "hold",
+      "manual_review",
+      "reject"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:invoice_processing",
+      "id:tr_invoice_processing_000086",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "approve",
+      "conf": 0.5173,
+      "probs": {
+       "approve": 0.5173,
+       "hold": 0.1224,
+       "manual_review": 0.2925,
+       "reject": 0.0678
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "manual_review",
+        "approve",
+        "reject",
+        "hold"
+       ],
+       "pred": "approve",
+       "conf": 0.4769,
+       "probs": {
+        "manual_review": 0.3039,
+        "approve": 0.4769,
+        "reject": 0.062,
+        "hold": 0.1572
+       }
+      },
+      {
+       "order": [
+        "manual_review",
+        "hold",
+        "approve",
+        "reject"
+       ],
+       "pred": "approve",
+       "conf": 0.5054,
+       "probs": {
+        "manual_review": 0.3083,
+        "hold": 0.1157,
+        "approve": 0.5054,
+        "reject": 0.0707
+       }
+      },
+      {
+       "order": [
+        "hold",
+        "reject",
+        "manual_review",
+        "approve"
+       ],
+       "pred": "approve",
+       "conf": 0.5097,
+       "probs": {
+        "hold": 0.1282,
+        "reject": 0.0669,
+        "manual_review": 0.2952,
+        "approve": 0.5097
+       }
+      },
+      {
+       "order": [
+        "manual_review",
+        "approve",
+        "hold",
+        "reject"
+       ],
+       "pred": "approve",
+       "conf": 0.4988,
+       "probs": {
+        "manual_review": 0.3176,
+        "approve": 0.4988,
+        "hold": 0.1135,
+        "reject": 0.07
+       }
+      },
+      {
+       "order": [
+        "manual_review",
+        "hold",
+        "approve",
+        "reject"
+       ],
+       "pred": "approve",
+       "conf": 0.5054,
+       "probs": {
+        "manual_review": 0.3083,
+        "hold": 0.1157,
+        "approve": 0.5054,
+        "reject": 0.0707
+       }
+      }
+     ]
+    },
+    {
+     "row": 20,
+     "qid": "disposition",
+     "gold": "approve",
+     "options": [
+      "approve",
+      "hold",
+      "manual_review",
+      "reject"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:invoice_processing",
+      "id:tr_invoice_processing_000102",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "manual_review",
+      "conf": 0.402,
+      "probs": {
+       "approve": 0.2517,
+       "hold": 0.2857,
+       "manual_review": 0.402,
+       "reject": 0.0607
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "hold",
+        "reject",
+        "approve",
+        "manual_review"
+       ],
+       "pred": "manual_review",
+       "conf": 0.3991,
+       "probs": {
+        "hold": 0.2816,
+        "reject": 0.0579,
+        "approve": 0.2615,
+        "manual_review": 0.3991
+       }
+      },
+      {
+       "order": [
+        "reject",
+        "manual_review",
+        "hold",
+        "approve"
+       ],
+       "pred": "manual_review",
+       "conf": 0.4107,
+       "probs": {
+        "reject": 0.0601,
+        "manual_review": 0.4107,
+        "hold": 0.2681,
+        "approve": 0.2611
+       }
+      },
+      {
+       "order": [
+        "hold",
+        "manual_review",
+        "reject",
+        "approve"
+       ],
+       "pred": "manual_review",
+       "conf": 0.4122,
+       "probs": {
+        "hold": 0.2781,
+        "manual_review": 0.4122,
+        "reject": 0.0576,
+        "approve": 0.2521
+       }
+      },
+      {
+       "order": [
+        "manual_review",
+        "reject",
+        "hold",
+        "approve"
+       ],
+       "pred": "manual_review",
+       "conf": 0.4088,
+       "probs": {
+        "manual_review": 0.4088,
+        "reject": 0.0555,
+        "hold": 0.29,
+        "approve": 0.2457
+       }
+      },
+      {
+       "order": [
+        "approve",
+        "reject",
+        "manual_review",
+        "hold"
+       ],
+       "pred": "manual_review",
+       "conf": 0.4236,
+       "probs": {
+        "approve": 0.2409,
+        "reject": 0.0656,
+        "manual_review": 0.4236,
+        "hold": 0.2699
+       }
+      }
+     ]
+    },
+    {
+     "row": 21,
+     "qid": "disposition",
+     "gold": "manual_review",
+     "options": [
+      "approve",
+      "hold",
+      "manual_review",
+      "reject"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:invoice_processing",
+      "id:tr_invoice_processing_000161",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "approve",
+      "conf": 0.5281,
+      "probs": {
+       "approve": 0.5281,
+       "hold": 0.1145,
+       "manual_review": 0.3011,
+       "reject": 0.0563
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "hold",
+        "approve",
+        "manual_review",
+        "reject"
+       ],
+       "pred": "approve",
+       "conf": 0.5291,
+       "probs": {
+        "hold": 0.1092,
+        "approve": 0.5291,
+        "manual_review": 0.3059,
+        "reject": 0.0559
+       }
+      },
+      {
+       "order": [
+        "hold",
+        "approve",
+        "manual_review",
+        "reject"
+       ],
+       "pred": "approve",
+       "conf": 0.5291,
+       "probs": {
+        "hold": 0.1092,
+        "approve": 0.5291,
+        "manual_review": 0.3059,
+        "reject": 0.0559
+       }
+      },
+      {
+       "order": [
+        "approve",
+        "hold",
+        "reject",
+        "manual_review"
+       ],
+       "pred": "approve",
+       "conf": 0.5002,
+       "probs": {
+        "approve": 0.5002,
+        "hold": 0.1139,
+        "reject": 0.0582,
+        "manual_review": 0.3278
+       }
+      },
+      {
+       "order": [
+        "reject",
+        "manual_review",
+        "hold",
+        "approve"
+       ],
+       "pred": "approve",
+       "conf": 0.5226,
+       "probs": {
+        "reject": 0.0545,
+        "manual_review": 0.3007,
+        "hold": 0.1222,
+        "approve": 0.5226
+       }
+      },
+      {
+       "order": [
+        "hold",
+        "reject",
+        "manual_review",
+        "approve"
+       ],
+       "pred": "approve",
+       "conf": 0.5182,
+       "probs": {
+        "hold": 0.1194,
+        "reject": 0.0541,
+        "manual_review": 0.3083,
+        "approve": 0.5182
+       }
+      }
+     ]
+    },
+    {
+     "row": 22,
+     "qid": "disposition",
+     "gold": "hold",
+     "options": [
+      "approve",
+      "hold",
+      "manual_review",
+      "reject"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:invoice_processing",
+      "id:tr_invoice_processing_000205",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "manual_review",
+      "conf": 0.3794,
+      "probs": {
+       "approve": 0.2836,
+       "hold": 0.2785,
+       "manual_review": 0.3794,
+       "reject": 0.0585
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "hold",
+        "reject",
+        "approve",
+        "manual_review"
+       ],
+       "pred": "manual_review",
+       "conf": 0.373,
+       "probs": {
+        "hold": 0.2804,
+        "reject": 0.0593,
+        "approve": 0.2873,
+        "manual_review": 0.373
+       }
+      },
+      {
+       "order": [
+        "manual_review",
+        "reject",
+        "approve",
+        "hold"
+       ],
+       "pred": "manual_review",
+       "conf": 0.4075,
+       "probs": {
+        "manual_review": 0.4075,
+        "reject": 0.0579,
+        "approve": 0.2769,
+        "hold": 0.2577
+       }
+      },
+      {
+       "order": [
+        "approve",
+        "hold",
+        "reject",
+        "manual_review"
+       ],
+       "pred": "manual_review",
+       "conf": 0.3784,
+       "probs": {
+        "approve": 0.2799,
+        "hold": 0.2808,
+        "reject": 0.0609,
+        "manual_review": 0.3784
+       }
+      },
+      {
+       "order": [
+        "approve",
+        "hold",
+        "reject",
+        "manual_review"
+       ],
+       "pred": "manual_review",
+       "conf": 0.3784,
+       "probs": {
+        "approve": 0.2799,
+        "hold": 0.2808,
+        "reject": 0.0609,
+        "manual_review": 0.3784
+       }
+      },
+      {
+       "order": [
+        "manual_review",
+        "approve",
+        "reject",
+        "hold"
+       ],
+       "pred": "manual_review",
+       "conf": 0.4062,
+       "probs": {
+        "manual_review": 0.4062,
+        "approve": 0.2465,
+        "reject": 0.0578,
+        "hold": 0.2895
+       }
+      }
+     ]
+    },
+    {
+     "row": 23,
+     "qid": "disposition",
+     "gold": "manual_review",
+     "options": [
+      "approve",
+      "hold",
+      "manual_review",
+      "reject"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:invoice_processing",
+      "id:tr_invoice_processing_000225",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "manual_review",
+      "conf": 0.402,
+      "probs": {
+       "approve": 0.2433,
+       "hold": 0.2967,
+       "manual_review": 0.402,
+       "reject": 0.058
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "reject",
+        "hold",
+        "manual_review",
+        "approve"
+       ],
+       "pred": "manual_review",
+       "conf": 0.3952,
+       "probs": {
+        "reject": 0.0539,
+        "hold": 0.3178,
+        "manual_review": 0.3952,
+        "approve": 0.2331
+       }
+      },
+      {
+       "order": [
+        "hold",
+        "reject",
+        "approve",
+        "manual_review"
+       ],
+       "pred": "manual_review",
+       "conf": 0.3949,
+       "probs": {
+        "hold": 0.3062,
+        "reject": 0.0541,
+        "approve": 0.2448,
+        "manual_review": 0.3949
+       }
+      },
+      {
+       "order": [
+        "reject",
+        "approve",
+        "hold",
+        "manual_review"
+       ],
+       "pred": "manual_review",
+       "conf": 0.3813,
+       "probs": {
+        "reject": 0.053,
+        "approve": 0.2575,
+        "hold": 0.3082,
+        "manual_review": 0.3813
+       }
+      },
+      {
+       "order": [
+        "hold",
+        "manual_review",
+        "approve",
+        "reject"
+       ],
+       "pred": "manual_review",
+       "conf": 0.4227,
+       "probs": {
+        "hold": 0.2977,
+        "manual_review": 0.4227,
+        "approve": 0.2223,
+        "reject": 0.0572
+       }
+      },
+      {
+       "order": [
+        "hold",
+        "approve",
+        "manual_review",
+        "reject"
+       ],
+       "pred": "manual_review",
+       "conf": 0.4199,
+       "probs": {
+        "hold": 0.2741,
+        "approve": 0.2498,
+        "manual_review": 0.4199,
+        "reject": 0.0561
+       }
+      }
+     ]
+    },
+    {
+     "row": 24,
+     "qid": "disposition",
+     "gold": "hold",
+     "options": [
+      "approve",
+      "hold",
+      "manual_review",
+      "reject"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:invoice_processing",
+      "id:tr_invoice_processing_000240",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "manual_review",
+      "conf": 0.4243,
+      "probs": {
+       "approve": 0.2194,
+       "hold": 0.2885,
+       "manual_review": 0.4243,
+       "reject": 0.0678
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "approve",
+        "hold",
+        "manual_review",
+        "reject"
+       ],
+       "pred": "manual_review",
+       "conf": 0.4243,
+       "probs": {
+        "approve": 0.2194,
+        "hold": 0.2885,
+        "manual_review": 0.4243,
+        "reject": 0.0678
+       }
+      },
+      {
+       "order": [
+        "reject",
+        "approve",
+        "manual_review",
+        "hold"
+       ],
+       "pred": "manual_review",
+       "conf": 0.4268,
+       "probs": {
+        "reject": 0.0686,
+        "approve": 0.2439,
+        "manual_review": 0.4268,
+        "hold": 0.2608
+       }
+      },
+      {
+       "order": [
+        "reject",
+        "hold",
+        "approve",
+        "manual_review"
+       ],
+       "pred": "manual_review",
+       "conf": 0.4006,
+       "probs": {
+        "reject": 0.0596,
+        "hold": 0.3067,
+        "approve": 0.2332,
+        "manual_review": 0.4006
+       }
+      },
+      {
+       "order": [
+        "hold",
+        "manual_review",
+        "approve",
+        "reject"
+       ],
+       "pred": "manual_review",
+       "conf": 0.4351,
+       "probs": {
+        "hold": 0.2822,
+        "manual_review": 0.4351,
+        "approve": 0.2129,
+        "reject": 0.0698
+       }
+      },
+      {
+       "order": [
+        "reject",
+        "hold",
+        "approve",
+        "manual_review"
+       ],
+       "pred": "manual_review",
+       "conf": 0.4006,
+       "probs": {
+        "reject": 0.0596,
+        "hold": 0.3067,
+        "approve": 0.2332,
+        "manual_review": 0.4006
+       }
+      }
+     ]
+    },
+    {
+     "row": 25,
+     "qid": "disposition",
+     "gold": "approve",
+     "options": [
+      "approve",
+      "hold",
+      "manual_review",
+      "reject"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:invoice_processing",
+      "id:tr_invoice_processing_000271",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "approve",
+      "conf": 0.5292,
+      "probs": {
+       "approve": 0.5292,
+       "hold": 0.1209,
+       "manual_review": 0.2927,
+       "reject": 0.0572
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "manual_review",
+        "hold",
+        "approve",
+        "reject"
+       ],
+       "pred": "approve",
+       "conf": 0.5269,
+       "probs": {
+        "manual_review": 0.2989,
+        "hold": 0.1158,
+        "approve": 0.5269,
+        "reject": 0.0583
+       }
+      },
+      {
+       "order": [
+        "approve",
+        "reject",
+        "manual_review",
+        "hold"
+       ],
+       "pred": "approve",
+       "conf": 0.4938,
+       "probs": {
+        "approve": 0.4938,
+        "reject": 0.0599,
+        "manual_review": 0.3035,
+        "hold": 0.1428
+       }
+      },
+      {
+       "order": [
+        "manual_review",
+        "reject",
+        "hold",
+        "approve"
+       ],
+       "pred": "approve",
+       "conf": 0.4707,
+       "probs": {
+        "manual_review": 0.3381,
+        "reject": 0.0535,
+        "hold": 0.1378,
+        "approve": 0.4707
+       }
+      },
+      {
+       "order": [
+        "approve",
+        "manual_review",
+        "reject",
+        "hold"
+       ],
+       "pred": "approve",
+       "conf": 0.4995,
+       "probs": {
+        "approve": 0.4995,
+        "manual_review": 0.2868,
+        "reject": 0.0568,
+        "hold": 0.1569
+       }
+      },
+      {
+       "order": [
+        "approve",
+        "manual_review",
+        "reject",
+        "hold"
+       ],
+       "pred": "approve",
+       "conf": 0.4995,
+       "probs": {
+        "approve": 0.4995,
+        "manual_review": 0.2868,
+        "reject": 0.0568,
+        "hold": 0.1569
+       }
+      }
+     ]
+    },
+    {
+     "row": 26,
+     "qid": "disposition",
+     "gold": "investigate",
+     "options": [
+      "close_benign",
+      "contain",
+      "investigate",
+      "monitor"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:security_incidents",
+      "id:tr_security_incidents_000019",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "investigate",
+      "conf": 0.5179,
+      "probs": {
+       "close_benign": 0.0774,
+       "contain": 0.2645,
+       "investigate": 0.5179,
+       "monitor": 0.1402
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "monitor",
+        "investigate",
+        "close_benign",
+        "contain"
+       ],
+       "pred": "investigate",
+       "conf": 0.5562,
+       "probs": {
+        "monitor": 0.1516,
+        "investigate": 0.5562,
+        "close_benign": 0.0836,
+        "contain": 0.2086
+       }
+      },
+      {
+       "order": [
+        "contain",
+        "monitor",
+        "close_benign",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.5751,
+       "probs": {
+        "contain": 0.1884,
+        "monitor": 0.1538,
+        "close_benign": 0.0827,
+        "investigate": 0.5751
+       }
+      },
+      {
+       "order": [
+        "investigate",
+        "monitor",
+        "close_benign",
+        "contain"
+       ],
+       "pred": "investigate",
+       "conf": 0.5165,
+       "probs": {
+        "investigate": 0.5165,
+        "monitor": 0.163,
+        "close_benign": 0.0885,
+        "contain": 0.232
+       }
+      },
+      {
+       "order": [
+        "close_benign",
+        "contain",
+        "monitor",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.535,
+       "probs": {
+        "close_benign": 0.0797,
+        "contain": 0.2273,
+        "monitor": 0.1581,
+        "investigate": 0.535
+       }
+      },
+      {
+       "order": [
+        "contain",
+        "monitor",
+        "close_benign",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.5751,
+       "probs": {
+        "contain": 0.1884,
+        "monitor": 0.1538,
+        "close_benign": 0.0827,
+        "investigate": 0.5751
+       }
+      }
+     ]
+    },
+    {
+     "row": 27,
+     "qid": "disposition",
+     "gold": "close_benign",
+     "options": [
+      "close_benign",
+      "contain",
+      "investigate",
+      "monitor"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:security_incidents",
+      "id:tr_security_incidents_000050",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "investigate",
+      "conf": 0.4955,
+      "probs": {
+       "close_benign": 0.0758,
+       "contain": 0.2762,
+       "investigate": 0.4955,
+       "monitor": 0.1525
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "investigate",
+        "close_benign",
+        "monitor",
+        "contain"
+       ],
+       "pred": "investigate",
+       "conf": 0.4696,
+       "probs": {
+        "investigate": 0.4696,
+        "close_benign": 0.0996,
+        "monitor": 0.1819,
+        "contain": 0.2489
+       }
+      },
+      {
+       "order": [
+        "monitor",
+        "investigate",
+        "close_benign",
+        "contain"
+       ],
+       "pred": "investigate",
+       "conf": 0.5159,
+       "probs": {
+        "monitor": 0.1667,
+        "investigate": 0.5159,
+        "close_benign": 0.0851,
+        "contain": 0.2323
+       }
+      },
+      {
+       "order": [
+        "close_benign",
+        "investigate",
+        "contain",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.4968,
+       "probs": {
+        "close_benign": 0.0776,
+        "investigate": 0.4968,
+        "contain": 0.2626,
+        "monitor": 0.1629
+       }
+      },
+      {
+       "order": [
+        "close_benign",
+        "monitor",
+        "contain",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.4949,
+       "probs": {
+        "close_benign": 0.072,
+        "monitor": 0.1645,
+        "contain": 0.2686,
+        "investigate": 0.4949
+       }
+      },
+      {
+       "order": [
+        "monitor",
+        "contain",
+        "investigate",
+        "close_benign"
+       ],
+       "pred": "investigate",
+       "conf": 0.5354,
+       "probs": {
+        "monitor": 0.149,
+        "contain": 0.2362,
+        "investigate": 0.5354,
+        "close_benign": 0.0794
+       }
+      }
+     ]
+    },
+    {
+     "row": 28,
+     "qid": "disposition",
+     "gold": "investigate",
+     "options": [
+      "close_benign",
+      "contain",
+      "investigate",
+      "monitor"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:security_incidents",
+      "id:tr_security_incidents_000065",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "investigate",
+      "conf": 0.5442,
+      "probs": {
+       "close_benign": 0.0724,
+       "contain": 0.2705,
+       "investigate": 0.5442,
+       "monitor": 0.1129
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "contain",
+        "close_benign",
+        "monitor",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.6146,
+       "probs": {
+        "contain": 0.1851,
+        "close_benign": 0.0627,
+        "monitor": 0.1377,
+        "investigate": 0.6146
+       }
+      },
+      {
+       "order": [
+        "investigate",
+        "contain",
+        "close_benign",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.5791,
+       "probs": {
+        "investigate": 0.5791,
+        "contain": 0.2197,
+        "close_benign": 0.0664,
+        "monitor": 0.1348
+       }
+      },
+      {
+       "order": [
+        "monitor",
+        "investigate",
+        "close_benign",
+        "contain"
+       ],
+       "pred": "investigate",
+       "conf": 0.5568,
+       "probs": {
+        "monitor": 0.1223,
+        "investigate": 0.5568,
+        "close_benign": 0.0744,
+        "contain": 0.2465
+       }
+      },
+      {
+       "order": [
+        "investigate",
+        "monitor",
+        "close_benign",
+        "contain"
+       ],
+       "pred": "investigate",
+       "conf": 0.5417,
+       "probs": {
+        "investigate": 0.5417,
+        "monitor": 0.13,
+        "close_benign": 0.0822,
+        "contain": 0.2461
+       }
+      },
+      {
+       "order": [
+        "monitor",
+        "investigate",
+        "close_benign",
+        "contain"
+       ],
+       "pred": "investigate",
+       "conf": 0.5568,
+       "probs": {
+        "monitor": 0.1223,
+        "investigate": 0.5568,
+        "close_benign": 0.0744,
+        "contain": 0.2465
+       }
+      }
+     ]
+    },
+    {
+     "row": 29,
+     "qid": "disposition",
+     "gold": "investigate",
+     "options": [
+      "close_benign",
+      "contain",
+      "investigate",
+      "monitor"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:security_incidents",
+      "id:tr_security_incidents_000122",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "investigate",
+      "conf": 0.5235,
+      "probs": {
+       "close_benign": 0.096,
+       "contain": 0.2227,
+       "investigate": 0.5235,
+       "monitor": 0.1578
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "monitor",
+        "close_benign",
+        "contain",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.5261,
+       "probs": {
+        "monitor": 0.1547,
+        "close_benign": 0.0994,
+        "contain": 0.2198,
+        "investigate": 0.5261
+       }
+      },
+      {
+       "order": [
+        "close_benign",
+        "monitor",
+        "investigate",
+        "contain"
+       ],
+       "pred": "investigate",
+       "conf": 0.5639,
+       "probs": {
+        "close_benign": 0.1011,
+        "monitor": 0.1781,
+        "investigate": 0.5639,
+        "contain": 0.157
+       }
+      },
+      {
+       "order": [
+        "investigate",
+        "contain",
+        "monitor",
+        "close_benign"
+       ],
+       "pred": "investigate",
+       "conf": 0.5164,
+       "probs": {
+        "investigate": 0.5164,
+        "contain": 0.2065,
+        "monitor": 0.175,
+        "close_benign": 0.1021
+       }
+      },
+      {
+       "order": [
+        "close_benign",
+        "investigate",
+        "contain",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.5284,
+       "probs": {
+        "close_benign": 0.1034,
+        "investigate": 0.5284,
+        "contain": 0.2023,
+        "monitor": 0.1659
+       }
+      },
+      {
+       "order": [
+        "investigate",
+        "close_benign",
+        "contain",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.5081,
+       "probs": {
+        "investigate": 0.5081,
+        "close_benign": 0.1021,
+        "contain": 0.209,
+        "monitor": 0.1808
+       }
+      }
+     ]
+    },
+    {
+     "row": 30,
+     "qid": "disposition",
+     "gold": "investigate",
+     "options": [
+      "close_benign",
+      "contain",
+      "investigate",
+      "monitor"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:security_incidents",
+      "id:tr_security_incidents_000147",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "investigate",
+      "conf": 0.5073,
+      "probs": {
+       "close_benign": 0.1006,
+       "contain": 0.2248,
+       "investigate": 0.5073,
+       "monitor": 0.1673
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "close_benign",
+        "contain",
+        "monitor",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.501,
+       "probs": {
+        "close_benign": 0.1064,
+        "contain": 0.1907,
+        "monitor": 0.2019,
+        "investigate": 0.501
+       }
+      },
+      {
+       "order": [
+        "close_benign",
+        "investigate",
+        "monitor",
+        "contain"
+       ],
+       "pred": "investigate",
+       "conf": 0.4978,
+       "probs": {
+        "close_benign": 0.1174,
+        "investigate": 0.4978,
+        "monitor": 0.1984,
+        "contain": 0.1864
+       }
+      },
+      {
+       "order": [
+        "investigate",
+        "close_benign",
+        "contain",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.4702,
+       "probs": {
+        "investigate": 0.4702,
+        "close_benign": 0.1173,
+        "contain": 0.2045,
+        "monitor": 0.2079
+       }
+      },
+      {
+       "order": [
+        "investigate",
+        "monitor",
+        "close_benign",
+        "contain"
+       ],
+       "pred": "investigate",
+       "conf": 0.4708,
+       "probs": {
+        "investigate": 0.4708,
+        "monitor": 0.2053,
+        "close_benign": 0.126,
+        "contain": 0.1978
+       }
+      },
+      {
+       "order": [
+        "monitor",
+        "contain",
+        "investigate",
+        "close_benign"
+       ],
+       "pred": "investigate",
+       "conf": 0.531,
+       "probs": {
+        "monitor": 0.1775,
+        "contain": 0.1878,
+        "investigate": 0.531,
+        "close_benign": 0.1038
+       }
+      }
+     ]
+    },
+    {
+     "row": 31,
+     "qid": "disposition",
+     "gold": "investigate",
+     "options": [
+      "close_benign",
+      "contain",
+      "investigate",
+      "monitor"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:security_incidents",
+      "id:tr_security_incidents_000182",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "investigate",
+      "conf": 0.5188,
+      "probs": {
+       "close_benign": 0.1288,
+       "contain": 0.1617,
+       "investigate": 0.5188,
+       "monitor": 0.1907
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "close_benign",
+        "monitor",
+        "contain",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.5191,
+       "probs": {
+        "close_benign": 0.1325,
+        "monitor": 0.1898,
+        "contain": 0.1587,
+        "investigate": 0.5191
+       }
+      },
+      {
+       "order": [
+        "contain",
+        "investigate",
+        "close_benign",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.5101,
+       "probs": {
+        "contain": 0.1555,
+        "investigate": 0.5101,
+        "close_benign": 0.1182,
+        "monitor": 0.2162
+       }
+      },
+      {
+       "order": [
+        "close_benign",
+        "monitor",
+        "investigate",
+        "contain"
+       ],
+       "pred": "investigate",
+       "conf": 0.5424,
+       "probs": {
+        "close_benign": 0.128,
+        "monitor": 0.1946,
+        "investigate": 0.5424,
+        "contain": 0.135
+       }
+      },
+      {
+       "order": [
+        "contain",
+        "monitor",
+        "investigate",
+        "close_benign"
+       ],
+       "pred": "investigate",
+       "conf": 0.5398,
+       "probs": {
+        "contain": 0.1403,
+        "monitor": 0.1974,
+        "investigate": 0.5398,
+        "close_benign": 0.1225
+       }
+      },
+      {
+       "order": [
+        "monitor",
+        "contain",
+        "investigate",
+        "close_benign"
+       ],
+       "pred": "investigate",
+       "conf": 0.5411,
+       "probs": {
+        "monitor": 0.1798,
+        "contain": 0.1514,
+        "investigate": 0.5411,
+        "close_benign": 0.1277
+       }
+      }
+     ]
+    },
+    {
+     "row": 32,
+     "qid": "disposition",
+     "gold": "investigate",
+     "options": [
+      "close_benign",
+      "contain",
+      "investigate",
+      "monitor"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:security_incidents",
+      "id:tr_security_incidents_000205",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "investigate",
+      "conf": 0.4563,
+      "probs": {
+       "close_benign": 0.0624,
+       "contain": 0.3634,
+       "investigate": 0.4563,
+       "monitor": 0.1179
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "investigate",
+        "close_benign",
+        "contain",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.4391,
+       "probs": {
+        "investigate": 0.4391,
+        "close_benign": 0.0686,
+        "contain": 0.3661,
+        "monitor": 0.1262
+       }
+      },
+      {
+       "order": [
+        "contain",
+        "close_benign",
+        "investigate",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.5274,
+       "probs": {
+        "contain": 0.261,
+        "close_benign": 0.074,
+        "investigate": 0.5274,
+        "monitor": 0.1376
+       }
+      },
+      {
+       "order": [
+        "close_benign",
+        "monitor",
+        "contain",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.4605,
+       "probs": {
+        "close_benign": 0.0627,
+        "monitor": 0.1321,
+        "contain": 0.3447,
+        "investigate": 0.4605
+       }
+      },
+      {
+       "order": [
+        "investigate",
+        "monitor",
+        "contain",
+        "close_benign"
+       ],
+       "pred": "investigate",
+       "conf": 0.4659,
+       "probs": {
+        "investigate": 0.4659,
+        "monitor": 0.148,
+        "contain": 0.3197,
+        "close_benign": 0.0664
+       }
+      },
+      {
+       "order": [
+        "close_benign",
+        "monitor",
+        "contain",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.4605,
+       "probs": {
+        "close_benign": 0.0627,
+        "monitor": 0.1321,
+        "contain": 0.3447,
+        "investigate": 0.4605
+       }
+      }
+     ]
+    },
+    {
+     "row": 33,
+     "qid": "disposition",
+     "gold": "close_benign",
+     "options": [
+      "close_benign",
+      "contain",
+      "investigate",
+      "monitor"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:security_incidents",
+      "id:tr_security_incidents_000259",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "investigate",
+      "conf": 0.5103,
+      "probs": {
+       "close_benign": 0.0819,
+       "contain": 0.2962,
+       "investigate": 0.5103,
+       "monitor": 0.1116
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "close_benign",
+        "investigate",
+        "monitor",
+        "contain"
+       ],
+       "pred": "investigate",
+       "conf": 0.5031,
+       "probs": {
+        "close_benign": 0.0908,
+        "investigate": 0.5031,
+        "monitor": 0.1489,
+        "contain": 0.2573
+       }
+      },
+      {
+       "order": [
+        "monitor",
+        "close_benign",
+        "contain",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.5512,
+       "probs": {
+        "monitor": 0.1205,
+        "close_benign": 0.0782,
+        "contain": 0.2501,
+        "investigate": 0.5512
+       }
+      },
+      {
+       "order": [
+        "investigate",
+        "monitor",
+        "contain",
+        "close_benign"
+       ],
+       "pred": "investigate",
+       "conf": 0.4994,
+       "probs": {
+        "investigate": 0.4994,
+        "monitor": 0.1392,
+        "contain": 0.2894,
+        "close_benign": 0.072
+       }
+      },
+      {
+       "order": [
+        "investigate",
+        "monitor",
+        "close_benign",
+        "contain"
+       ],
+       "pred": "investigate",
+       "conf": 0.4734,
+       "probs": {
+        "investigate": 0.4734,
+        "monitor": 0.1389,
+        "close_benign": 0.075,
+        "contain": 0.3128
+       }
+      },
+      {
+       "order": [
+        "close_benign",
+        "contain",
+        "monitor",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.546,
+       "probs": {
+        "close_benign": 0.0844,
+        "contain": 0.2264,
+        "monitor": 0.1432,
+        "investigate": 0.546
+       }
+      }
+     ]
+    },
+    {
+     "row": 34,
+     "qid": "disposition",
+     "gold": "investigate",
+     "options": [
+      "close_benign",
+      "contain",
+      "investigate",
+      "monitor"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:security_incidents",
+      "id:tr_security_incidents_000261",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "investigate",
+      "conf": 0.5028,
+      "probs": {
+       "close_benign": 0.0864,
+       "contain": 0.2482,
+       "investigate": 0.5028,
+       "monitor": 0.1626
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "investigate",
+        "monitor",
+        "contain",
+        "close_benign"
+       ],
+       "pred": "investigate",
+       "conf": 0.4795,
+       "probs": {
+        "investigate": 0.4795,
+        "monitor": 0.1951,
+        "contain": 0.237,
+        "close_benign": 0.0884
+       }
+      },
+      {
+       "order": [
+        "close_benign",
+        "monitor",
+        "investigate",
+        "contain"
+       ],
+       "pred": "investigate",
+       "conf": 0.5486,
+       "probs": {
+        "close_benign": 0.0786,
+        "monitor": 0.1804,
+        "investigate": 0.5486,
+        "contain": 0.1924
+       }
+      },
+      {
+       "order": [
+        "close_benign",
+        "investigate",
+        "contain",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.529,
+       "probs": {
+        "close_benign": 0.0873,
+        "investigate": 0.529,
+        "contain": 0.2221,
+        "monitor": 0.1616
+       }
+      },
+      {
+       "order": [
+        "contain",
+        "investigate",
+        "close_benign",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.518,
+       "probs": {
+        "contain": 0.2112,
+        "investigate": 0.518,
+        "close_benign": 0.0789,
+        "monitor": 0.1919
+       }
+      },
+      {
+       "order": [
+        "contain",
+        "monitor",
+        "close_benign",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.5704,
+       "probs": {
+        "contain": 0.1775,
+        "monitor": 0.1745,
+        "close_benign": 0.0777,
+        "investigate": 0.5704
+       }
+      }
+     ]
+    },
+    {
+     "row": 35,
+     "qid": "disposition",
+     "gold": "investigate",
+     "options": [
+      "close_benign",
+      "contain",
+      "investigate",
+      "monitor"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:security_incidents",
+      "id:tr_security_incidents_000276",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "investigate",
+      "conf": 0.4569,
+      "probs": {
+       "close_benign": 0.0693,
+       "contain": 0.3298,
+       "investigate": 0.4569,
+       "monitor": 0.144
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "contain",
+        "investigate",
+        "monitor",
+        "close_benign"
+       ],
+       "pred": "investigate",
+       "conf": 0.4944,
+       "probs": {
+        "contain": 0.264,
+        "investigate": 0.4944,
+        "monitor": 0.1623,
+        "close_benign": 0.0792
+       }
+      },
+      {
+       "order": [
+        "investigate",
+        "monitor",
+        "contain",
+        "close_benign"
+       ],
+       "pred": "investigate",
+       "conf": 0.4499,
+       "probs": {
+        "investigate": 0.4499,
+        "monitor": 0.1591,
+        "contain": 0.3194,
+        "close_benign": 0.0716
+       }
+      },
+      {
+       "order": [
+        "investigate",
+        "monitor",
+        "close_benign",
+        "contain"
+       ],
+       "pred": "investigate",
+       "conf": 0.4498,
+       "probs": {
+        "investigate": 0.4498,
+        "monitor": 0.1614,
+        "close_benign": 0.086,
+        "contain": 0.3027
+       }
+      },
+      {
+       "order": [
+        "close_benign",
+        "monitor",
+        "investigate",
+        "contain"
+       ],
+       "pred": "investigate",
+       "conf": 0.4998,
+       "probs": {
+        "close_benign": 0.0648,
+        "monitor": 0.1464,
+        "investigate": 0.4998,
+        "contain": 0.289
+       }
+      },
+      {
+       "order": [
+        "monitor",
+        "contain",
+        "investigate",
+        "close_benign"
+       ],
+       "pred": "investigate",
+       "conf": 0.4864,
+       "probs": {
+        "monitor": 0.1375,
+        "contain": 0.3084,
+        "investigate": 0.4864,
+        "close_benign": 0.0677
+       }
+      }
+     ]
+    },
+    {
+     "row": 36,
+     "qid": "disposition",
+     "gold": "investigate",
+     "options": [
+      "close_benign",
+      "contain",
+      "investigate",
+      "monitor"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:security_incidents",
+      "id:tr_security_incidents_000284",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "investigate",
+      "conf": 0.5251,
+      "probs": {
+       "close_benign": 0.0871,
+       "contain": 0.2359,
+       "investigate": 0.5251,
+       "monitor": 0.1519
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "investigate",
+        "contain",
+        "monitor",
+        "close_benign"
+       ],
+       "pred": "investigate",
+       "conf": 0.525,
+       "probs": {
+        "investigate": 0.525,
+        "contain": 0.2033,
+        "monitor": 0.1891,
+        "close_benign": 0.0826
+       }
+      },
+      {
+       "order": [
+        "investigate",
+        "contain",
+        "close_benign",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.5209,
+       "probs": {
+        "investigate": 0.5209,
+        "contain": 0.2123,
+        "close_benign": 0.0707,
+        "monitor": 0.1961
+       }
+      },
+      {
+       "order": [
+        "monitor",
+        "contain",
+        "close_benign",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.5721,
+       "probs": {
+        "monitor": 0.1458,
+        "contain": 0.2132,
+        "close_benign": 0.0688,
+        "investigate": 0.5721
+       }
+      },
+      {
+       "order": [
+        "contain",
+        "monitor",
+        "close_benign",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.5978,
+       "probs": {
+        "contain": 0.1775,
+        "monitor": 0.1523,
+        "close_benign": 0.0724,
+        "investigate": 0.5978
+       }
+      },
+      {
+       "order": [
+        "contain",
+        "close_benign",
+        "investigate",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.5647,
+       "probs": {
+        "contain": 0.1862,
+        "close_benign": 0.0819,
+        "investigate": 0.5647,
+        "monitor": 0.1672
+       }
+      }
+     ]
+    },
+    {
+     "row": 37,
+     "qid": "disposition",
+     "gold": "investigate",
+     "options": [
+      "close_benign",
+      "contain",
+      "investigate",
+      "monitor"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:security_incidents",
+      "id:tr_security_incidents_000287",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "investigate",
+      "conf": 0.5636,
+      "probs": {
+       "close_benign": 0.0992,
+       "contain": 0.172,
+       "investigate": 0.5636,
+       "monitor": 0.1652
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "investigate",
+        "contain",
+        "close_benign",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.5473,
+       "probs": {
+        "investigate": 0.5473,
+        "contain": 0.1401,
+        "close_benign": 0.092,
+        "monitor": 0.2206
+       }
+      },
+      {
+       "order": [
+        "investigate",
+        "contain",
+        "close_benign",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.5473,
+       "probs": {
+        "investigate": 0.5473,
+        "contain": 0.1401,
+        "close_benign": 0.092,
+        "monitor": 0.2206
+       }
+      },
+      {
+       "order": [
+        "investigate",
+        "contain",
+        "close_benign",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.5473,
+       "probs": {
+        "investigate": 0.5473,
+        "contain": 0.1401,
+        "close_benign": 0.092,
+        "monitor": 0.2206
+       }
+      },
+      {
+       "order": [
+        "close_benign",
+        "contain",
+        "investigate",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.5636,
+       "probs": {
+        "close_benign": 0.0992,
+        "contain": 0.172,
+        "investigate": 0.5636,
+        "monitor": 0.1652
+       }
+      },
+      {
+       "order": [
+        "close_benign",
+        "monitor",
+        "contain",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.5689,
+       "probs": {
+        "close_benign": 0.0953,
+        "monitor": 0.1882,
+        "contain": 0.1477,
+        "investigate": 0.5689
+       }
+      }
+     ]
+    },
+    {
+     "row": 38,
+     "qid": "disposition",
+     "gold": "monitor",
+     "options": [
+      "close_benign",
+      "contain",
+      "investigate",
+      "monitor"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:security_incidents",
+      "id:tr_security_incidents_000289",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "investigate",
+      "conf": 0.4485,
+      "probs": {
+       "close_benign": 0.1646,
+       "contain": 0.1426,
+       "investigate": 0.4485,
+       "monitor": 0.2443
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "investigate",
+        "close_benign",
+        "monitor",
+        "contain"
+       ],
+       "pred": "investigate",
+       "conf": 0.4437,
+       "probs": {
+        "investigate": 0.4437,
+        "close_benign": 0.1697,
+        "monitor": 0.2578,
+        "contain": 0.1287
+       }
+      },
+      {
+       "order": [
+        "investigate",
+        "monitor",
+        "contain",
+        "close_benign"
+       ],
+       "pred": "investigate",
+       "conf": 0.4495,
+       "probs": {
+        "investigate": 0.4495,
+        "monitor": 0.2563,
+        "contain": 0.1292,
+        "close_benign": 0.165
+       }
+      },
+      {
+       "order": [
+        "close_benign",
+        "contain",
+        "investigate",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.4485,
+       "probs": {
+        "close_benign": 0.1646,
+        "contain": 0.1426,
+        "investigate": 0.4485,
+        "monitor": 0.2443
+       }
+      },
+      {
+       "order": [
+        "monitor",
+        "close_benign",
+        "contain",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.447,
+       "probs": {
+        "monitor": 0.2437,
+        "close_benign": 0.1651,
+        "contain": 0.1442,
+        "investigate": 0.447
+       }
+      },
+      {
+       "order": [
+        "contain",
+        "close_benign",
+        "investigate",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.442,
+       "probs": {
+        "contain": 0.1437,
+        "close_benign": 0.1683,
+        "investigate": 0.442,
+        "monitor": 0.246
+       }
+      }
+     ]
+    },
+    {
+     "row": 39,
+     "qid": "disposition",
+     "gold": "investigate",
+     "options": [
+      "close_benign",
+      "contain",
+      "investigate",
+      "monitor"
+     ],
+     "tags": [
+      "typed_decisions",
+      "workflow:security_incidents",
+      "id:tr_security_incidents_000292",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "investigate",
+      "conf": 0.4558,
+      "probs": {
+       "close_benign": 0.0744,
+       "contain": 0.3093,
+       "investigate": 0.4558,
+       "monitor": 0.1605
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "investigate",
+        "close_benign",
+        "contain",
+        "monitor"
+       ],
+       "pred": "investigate",
+       "conf": 0.4142,
+       "probs": {
+        "investigate": 0.4142,
+        "close_benign": 0.0758,
+        "contain": 0.337,
+        "monitor": 0.1731
+       }
+      },
+      {
+       "order": [
+        "close_benign",
+        "monitor",
+        "contain",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.4773,
+       "probs": {
+        "close_benign": 0.071,
+        "monitor": 0.1513,
+        "contain": 0.3005,
+        "investigate": 0.4773
+       }
+      },
+      {
+       "order": [
+        "monitor",
+        "contain",
+        "investigate",
+        "close_benign"
+       ],
+       "pred": "investigate",
+       "conf": 0.508,
+       "probs": {
+        "monitor": 0.1423,
+        "contain": 0.2716,
+        "investigate": 0.508,
+        "close_benign": 0.0781
+       }
+      },
+      {
+       "order": [
+        "contain",
+        "monitor",
+        "investigate",
+        "close_benign"
+       ],
+       "pred": "investigate",
+       "conf": 0.5452,
+       "probs": {
+        "contain": 0.1791,
+        "monitor": 0.1878,
+        "investigate": 0.5452,
+        "close_benign": 0.0879
+       }
+      },
+      {
+       "order": [
+        "contain",
+        "close_benign",
+        "monitor",
+        "investigate"
+       ],
+       "pred": "investigate",
+       "conf": 0.5284,
+       "probs": {
+        "contain": 0.2165,
+        "close_benign": 0.0779,
+        "monitor": 0.1773,
+        "investigate": 0.5284
+       }
+      }
+     ]
+    }
+   ],
+   "questions_sha256": "d46ef26a6ec2f2f8c6fc0cfa1e81715751dda05f173cd028ae3eaaa4b9d519cb",
+   "metrics": {
+    "n_items": 58,
+    "n_options": 4,
+    "permutations": 5,
+    "identity_permutations": 8,
+    "orig_accuracy": 0.6551724137931034,
+    "flip_rate_per_perm": 0.031034482758620686,
+    "flip_rate_per_perm_ci": [
+     0.0,
+     0.06905172413793095
+    ],
+    "flip_rate_by_perm": [
+     0.017241379310344827,
+     0.05172413793103448,
+     0.05172413793103448,
+     0.034482758620689655,
+     0.0
+    ],
+    "any_flip_rate": 0.05172413793103448,
+    "any_flip_rate_ci": [
+     0.0,
+     0.1206896551724138
+    ],
+    "accuracy_by_perm": [
+     0.6724137931034483,
+     0.6724137931034483,
+     0.6724137931034483,
+     0.6551724137931034,
+     0.6551724137931034
+    ],
+    "perm_accuracy_mean": 0.6655172413793103,
+    "perm_accuracy_min": 0.6551724137931034,
+    "perm_accuracy_max": 0.6724137931034483,
+    "mean_abs_delta_answer_confidence": 0.024283103448275865,
+    "slots": {
+     "chosen_slot_share": [
+      0.2642857142857143,
+      0.26785714285714285,
+      0.2392857142857143,
+      0.22857142857142856
+     ],
+     "uniform": 0.25,
+     "chi2": 1.2285714285714286,
+     "df": 3,
+     "p": 0.7461601733472272,
+     "accuracy_by_gold_slot": [
+      [
+       0.6712328767123288,
+       73
+      ],
+      [
+       0.6923076923076923,
+       78
+      ],
+      [
+       0.6833333333333333,
+       60
+      ],
+      [
+       0.65625,
+       64
+      ]
+     ]
+    },
+    "pred_counts_orig": {
+     "investigate": 14,
+     "partial": 7,
+     "human_review": 7,
+     "escalate_to_human": 4,
+     "approve": 4,
+     "manual_review": 4,
+     "observe": 3,
+     "harmful": 3,
+     "billing": 3,
+     "delivery": 2,
+     "continue": 1,
+     "success": 1,
+     "execute_refund": 1,
+     "refund": 1,
+     "answer_directly": 1,
+     "request_information": 1,
+     "technical": 1
+    },
+    "pred_counts_perm_mean": {
+     "investigate": 14.0,
+     "human_review": 7.0,
+     "partial": 6.4,
+     "escalate_to_human": 4.8,
+     "approve": 4.0,
+     "manual_review": 4.0,
+     "observe": 3.0,
+     "harmful": 3.0,
+     "billing": 3.0,
+     "success": 1.6,
+     "delivery": 1.6,
+     "technical": 1.4,
+     "continue": 1.0,
+     "execute_refund": 1.0,
+     "refund": 1.0,
+     "answer_directly": 1.0,
+     "request_information": 0.2
+    },
+    "gold_counts": {
+     "investigate": 11,
+     "human_review": 7,
+     "success": 5,
+     "partial": 3,
+     "harmful": 3,
+     "escalate_to_human": 3,
+     "approve": 3,
+     "manual_review": 3,
+     "continue": 2,
+     "observe": 2,
+     "answer_directly": 2,
+     "billing": 2,
+     "request_information": 2,
+     "technical": 2,
+     "hold": 2,
+     "close_benign": 2,
+     "delivery": 1,
+     "refund": 1,
+     "account": 1,
+     "monitor": 1
+    },
+    "by_gold": {
+     "account": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.0,
+      "perm_accuracy": 0.0
+     },
+     "answer_directly": {
+      "n": 2,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.5,
+      "perm_accuracy": 0.5
+     },
+     "approve": {
+      "n": 3,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.6666666666666666,
+      "perm_accuracy": 0.6666666666666666
+     },
+     "billing": {
+      "n": 2,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "close_benign": {
+      "n": 2,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.0,
+      "perm_accuracy": 0.0
+     },
+     "continue": {
+      "n": 2,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.5,
+      "perm_accuracy": 0.5
+     },
+     "delivery": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "escalate_to_human": {
+      "n": 3,
+      "flip_rate_per_perm": 0.26666666666666666,
+      "any_flip_rate": 0.3333333333333333,
+      "orig_accuracy": 0.3333333333333333,
+      "perm_accuracy": 0.6
+     },
+     "harmful": {
+      "n": 3,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "hold": {
+      "n": 2,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.0,
+      "perm_accuracy": 0.0
+     },
+     "human_review": {
+      "n": 7,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "investigate": {
+      "n": 11,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "manual_review": {
+      "n": 3,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.3333333333333333,
+      "perm_accuracy": 0.3333333333333333
+     },
+     "monitor": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.0,
+      "perm_accuracy": 0.0
+     },
+     "observe": {
+      "n": 2,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "partial": {
+      "n": 3,
+      "flip_rate_per_perm": 0.19999999999999998,
+      "any_flip_rate": 0.3333333333333333,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 0.8
+     },
+     "refund": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "request_information": {
+      "n": 2,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.0,
+      "perm_accuracy": 0.0
+     },
+     "success": {
+      "n": 5,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.2,
+      "perm_accuracy": 0.2
+     },
+     "technical": {
+      "n": 2,
+      "flip_rate_per_perm": 0.2,
+      "any_flip_rate": 0.5,
+      "orig_accuracy": 0.5,
+      "perm_accuracy": 0.7
+     }
+    },
+    "by_orig_pred": {
+     "answer_directly": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "approve": {
+      "n": 4,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.5,
+      "perm_accuracy": 0.5
+     },
+     "billing": {
+      "n": 3,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.6666666666666666,
+      "perm_accuracy": 0.6666666666666666
+     },
+     "continue": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "delivery": {
+      "n": 2,
+      "flip_rate_per_perm": 0.2,
+      "any_flip_rate": 0.5,
+      "orig_accuracy": 0.5,
+      "perm_accuracy": 0.7
+     },
+     "escalate_to_human": {
+      "n": 4,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.25,
+      "perm_accuracy": 0.25
+     },
+     "execute_refund": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.0,
+      "perm_accuracy": 0.0
+     },
+     "harmful": {
+      "n": 3,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "human_review": {
+      "n": 7,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "investigate": {
+      "n": 14,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.7857142857142857,
+      "perm_accuracy": 0.7857142857142857
+     },
+     "manual_review": {
+      "n": 4,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.25,
+      "perm_accuracy": 0.25
+     },
+     "observe": {
+      "n": 3,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.6666666666666666,
+      "perm_accuracy": 0.6666666666666666
+     },
+     "partial": {
+      "n": 7,
+      "flip_rate_per_perm": 0.08571428571428572,
+      "any_flip_rate": 0.14285714285714285,
+      "orig_accuracy": 0.42857142857142855,
+      "perm_accuracy": 0.34285714285714286
+     },
+     "refund": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "request_information": {
+      "n": 1,
+      "flip_rate_per_perm": 0.8,
+      "any_flip_rate": 1.0,
+      "orig_accuracy": 0.0,
+      "perm_accuracy": 0.8
+     },
+     "success": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "technical": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     }
+    },
+    "by_orig_conf": {
+     "[0.0, 0.5)": {
+      "n": 28,
+      "flip_rate_per_perm": 0.049999999999999996,
+      "any_flip_rate": 0.07142857142857142,
+      "orig_accuracy": 0.5357142857142857,
+      "perm_accuracy": 0.5428571428571428
+     },
+     "[0.5, 0.7)": {
+      "n": 24,
+      "flip_rate_per_perm": 0.016666666666666666,
+      "any_flip_rate": 0.041666666666666664,
+      "orig_accuracy": 0.75,
+      "perm_accuracy": 0.7666666666666667
+     },
+     "[0.7, 0.9)": {
+      "n": 3,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 0.6666666666666666,
+      "perm_accuracy": 0.6666666666666666
+     },
+     "[0.9, 1.0]": {
+      "n": 3,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     }
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,71 @@
+load before: {"gpu_util_pct": 0, "mps_fp32_matmul_tflops": 6.87, "cotenant": [], "sys_mem_used_gb": 13.5}
+[     2.6s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T10_english.pt
+[     3.1s] Device: mps
+[     3.1s] Training items: 5000; calibration items: 400
+[     3.1s] micro_batch=8; grad_accum=4; epochs=2
+[   131.4s] epoch 1/2, step 100, loss=1.9677
+[   259.7s] epoch 1/2, step 200, loss=1.8327
+[   388.8s] epoch 1/2, step 300, loss=1.7725
+[   516.8s] epoch 1/2, step 400, loss=2.4741
+[   641.5s] epoch 1/2, step 500, loss=2.7733
+[   765.5s] epoch 1/2, step 600, loss=1.4632
+[   796.8s] Epoch 1/2 complete; avg_loss=1.6997
+[   922.8s] epoch 2/2, step 100, loss=1.4797
+[  1051.6s] epoch 2/2, step 200, loss=1.0835
+[  1179.0s] epoch 2/2, step 300, loss=1.7096
+[  1306.7s] epoch 2/2, step 400, loss=1.7221
+[  1431.3s] epoch 2/2, step 500, loss=2.0046
+[  1556.8s] epoch 2/2, step 600, loss=1.6616
+[  1589.6s] Epoch 2/2 complete; avg_loss=1.5991
+[  1591.2s] Running temperature calibration ...
+[  1608.6s] Model saved to poc/finetune/ckpt_t3arm_rep_s14/T10_run
+[  1608.6s] Temperatures: [1.3222179412841797, 1.2, 1.2]
+{
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 0.48,
+  "train_loop": 1585.24,
+  "epoch_checkpoint_saves": 1.79,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 1.05,
+  "calibration (forward + fit_temperature)": 16.47,
+  "export (final save + configs)": 0.97,
+  "train() total": 1606.03
+ },
+ "throughput": {
+  "train_items_per_s": 6.308,
+  "s_per_optimizer_step": 5.049,
+  "s_per_micro_batch_mean": 1.2682
+ },
+ "micro_batch_s": {
+  "median_all": 1.092,
+  "median_repeat_shape_no_step": 1.028,
+  "median_repeat_shape_with_step": 1.7634,
+  "optimizer_step_overhead": 0.7354,
+  "median_first_shape": 1.3161,
+  "first_shape_count": 154,
+  "repeat_shape_count": 1096,
+  "first_shape_extra_total_s": 46.9
+ },
+ "memory_gb": {
+  "ru_maxrss": 4.55,
+  "rss_peak_sampled": 4.41,
+  "mps_current_allocated_peak": 18.15,
+  "mps_driver_allocated_peak": 22.76,
+  "mps_recommended_max": 40.2
+ },
+ "calibration_rows": {
+  "n": 400,
+  "ce_before_T": 1.7911,
+  "accuracy": 0.36
+ },
+ "item_sources": {
+  "train": {
+   "train": 10000
+  },
+  "calibration": {
+   "calib": 400
+  }
+ }
+}
+report: results/T3arm/rep_s14/T10/train_timing.json (wall 1608.7s, status ok)

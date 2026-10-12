@@ -1,0 +1,361 @@
+{
+ "script": "third_party/laya/notebooks/laya_finetune_typed_decisions_mps.py",
+ "script_args": [
+  "models/laya-multilingual",
+  "poc/finetune/ckpt_smoke",
+  "--items",
+  "poc/finetune/data/items_smoke.pt",
+  "--calib-max",
+  "4",
+  "--epochs",
+  "2",
+  "--micro-batch",
+  "8",
+  "--grad-accum",
+  "4",
+  "--no-checkpointing",
+  "--device",
+  "mps"
+ ],
+ "seed": 13,
+ "keep_epoch_checkpoints": true,
+ "started_at": "2026-10-02T20:21:20+0900",
+ "versions": {
+  "torch": "2.14.1",
+  "python": "3.12.12",
+  "laya": "0.3.23"
+ },
+ "threads": {
+  "intra": 10,
+  "interop": 14
+ },
+ "load_before": {
+  "gpu_util_pct": 99,
+  "mps_fp32_matmul_tflops": 3.66,
+  "cotenant": [
+   "/opt/homebrew/Cellar/python@3.12/3.12.12/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python experiments/kt_scores.py --model Qwen/Qwen2.5-7B --run-id rmt-mixed-precision-20261002-ktscores-qwen25-7b",
+   "/opt/homebrew/Cellar/python@3.12/3.12.12/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python experiments/kt2_layer_sensitivity.py --model Qwen/Qwen2.5-7B --run-id rmt-mixed-precision-20261002-kt2-qwen25-7b",
+   "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1790924480641-s06bu1.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'cd /Users/banhun/banhun28/lab/spectral-compression; L=results/rmt-mixed-precision/kt_queue.log; until grep -qE \"STEP (OK|FAIL) kt2_qwen25-7b\" $L && grep -qE \"STEP (OK|FAIL) kt_scores_qwen25-7b\" $L; do sleep 60; done; grep -E \"STEP (OK|FAIL) (kt2|kt_scores)_qwen25-7b|STEP START kt1e2_qwen\" $L | cut -c1-110; echo \"--- two-model KT-2 analysis ---\"; .venv/bin/python experiments/kt_analysis.py 2>&1 | sed -n '\"'\"'/## KT-2/,$p'\"'\"'' < /dev/null && pwd -P >| /tmp/claude-c8d9-cwd"
+  ],
+  "sys_mem_used_gb": 28.6
+ },
+ "status": "ok",
+ "wall_s": 44.47,
+ "load_after": {
+  "gpu_util_pct": 100,
+  "mps_fp32_matmul_tflops": 3.66
+ },
+ "micro_batch": 8,
+ "grad_accum": 4,
+ "epochs": 2,
+ "n_train_items": 40,
+ "micro_batches": 10,
+ "optimizer_steps": 4,
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 2.45,
+  "train_loop": 32.92,
+  "epoch_checkpoint_saves": 2.57,
+  "calibration (forward + fit_temperature)": 0.58,
+  "export (final save + configs)": 1.24,
+  "train() total": 41.11
+ },
+ "throughput": {
+  "train_items_per_s": 2.43,
+  "s_per_optimizer_step": 8.23,
+  "s_per_micro_batch_mean": 3.292
+ },
+ "micro_batch_s": {
+  "median_all": 3.1309,
+  "median_repeat_shape_no_step": 2.7672,
+  "median_repeat_shape_with_step": 3.6383,
+  "optimizer_step_overhead": 0.8711,
+  "median_first_shape": 3.0168,
+  "first_shape_count": 5,
+  "repeat_shape_count": 5,
+  "first_shape_extra_total_s": 0.5
+ },
+ "memory_gb": {
+  "ru_maxrss": 2.96,
+  "rss_peak_sampled": 1.42,
+  "mps_current_allocated_peak": 7.8,
+  "mps_driver_allocated_peak": 10.92,
+  "mps_recommended_max": 40.2
+ },
+ "loss_log_script": [
+  "Epoch 1/2 complete; avg_loss=1.7701",
+  "Epoch 2/2 complete; avg_loss=1.0534"
+ ],
+ "train_ce_windows": [
+  3.7251,
+  0.9451,
+  1.7528,
+  0.634,
+  1.144,
+  0.3589,
+  0.8142,
+  1.1096,
+  0.8682,
+  1.4256
+ ],
+ "train_acc_windows": [
+  0.375,
+  0.5,
+  0.375,
+  0.875,
+  0.5,
+  1.0,
+  0.75,
+  0.75,
+  0.625,
+  0.75
+ ],
+ "calibration_rows": {
+  "n": 4,
+  "ce_before_T": 1.0266,
+  "accuracy": 0.5
+ },
+ "temperature_fits": [
+  {
+   "start": 43.085,
+   "end": 43.085,
+   "samples": 4
+  }
+ ],
+ "item_sources": {
+  "train": {
+   "train": 80
+  },
+  "calibration": {
+   "validation": 4
+  }
+ },
+ "cotenant_found": true,
+ "load_series": [
+  {
+   "t": 4.3,
+   "rss_gb": 1.214,
+   "mps_alloc_gb": 0.0,
+   "mps_driver_gb": 0.0,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 22.4,
+   "sys_mem_used_gb": 26.9,
+   "cotenant": [
+    {
+     "pid": 63186,
+     "cpu_pct": 106.1,
+     "rss_gb": 7.42
+    },
+    {
+     "pid": 63187,
+     "cpu_pct": 12.3,
+     "rss_gb": 0.04
+    },
+    {
+     "pid": 64280,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    }
+   ]
+  },
+  {
+   "t": 15.0,
+   "rss_gb": 0.587,
+   "mps_alloc_gb": 5.177,
+   "mps_driver_gb": 6.527,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 21.0,
+   "sys_mem_used_gb": 29.0,
+   "cotenant": [
+    {
+     "pid": 63186,
+     "cpu_pct": 104.6,
+     "rss_gb": 5.22
+    },
+    {
+     "pid": 63187,
+     "cpu_pct": 25.4,
+     "rss_gb": 0.04
+    },
+    {
+     "pid": 64280,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    }
+   ]
+  },
+  {
+   "t": 25.1,
+   "rss_gb": 1.401,
+   "mps_alloc_gb": 5.194,
+   "mps_driver_gb": 9.345,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 27.0,
+   "sys_mem_used_gb": 29.8,
+   "cotenant": [
+    {
+     "pid": 63186,
+     "cpu_pct": 105.3,
+     "rss_gb": 4.57
+    },
+    {
+     "pid": 63187,
+     "cpu_pct": 37.2,
+     "rss_gb": 0.04
+    },
+    {
+     "pid": 64280,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    }
+   ]
+  },
+  {
+   "t": 35.2,
+   "rss_gb": 1.053,
+   "mps_alloc_gb": 3.891,
+   "mps_driver_gb": 10.134,
+   "gpu_util_pct": 100,
+   "sys_cpu_pct": 29.4,
+   "sys_mem_used_gb": 30.9,
+   "cotenant": [
+    {
+     "pid": 63186,
+     "cpu_pct": 109.1,
+     "rss_gb": 4.03
+    },
+    {
+     "pid": 63187,
+     "cpu_pct": 26.6,
+     "rss_gb": 0.04
+    },
+    {
+     "pid": 64280,
+     "cpu_pct": 0.0,
+     "rss_gb": 0.0
+    }
+   ]
+  }
+ ],
+ "events": [
+  [
+   3.245,
+   "Using legacy cached training items without metadata: poc/finetune/data/items_smoke.pt"
+  ],
+  [
+   5.697,
+   "Device: mps"
+  ],
+  [
+   5.697,
+   "Training items: 40; calibration items: 4"
+  ],
+  [
+   5.697,
+   "micro_batch=8; grad_accum=4; epochs=2"
+  ],
+  [
+   21.595,
+   "Epoch 1/2 complete; avg_loss=1.7701"
+  ],
+  [
+   40.884,
+   "Epoch 2/2 complete; avg_loss=1.0534"
+  ],
+  [
+   42.51,
+   "Running temperature calibration ..."
+  ],
+  [
+   44.328,
+   "Model saved to poc/finetune/ckpt_smoke"
+  ],
+  [
+   44.331,
+   "Temperatures: [1.0, 1.2, 1.2]"
+  ]
+ ],
+ "micro_batch_trace": [
+  [
+   5.6972,
+   8,
+   227,
+   2.9162,
+   3.7251,
+   0.375
+  ],
+  [
+   8.6134,
+   8,
+   230,
+   3.0168,
+   0.94508,
+   0.5
+  ],
+  [
+   11.6302,
+   8,
+   229,
+   2.1163,
+   1.75281,
+   0.375
+  ],
+  [
+   13.7465,
+   8,
+   222,
+   4.6034,
+   0.63398,
+   0.875
+  ],
+  [
+   18.3499,
+   8,
+   222,
+   3.2451,
+   1.14399,
+   0.5
+  ],
+  [
+   23.8615,
+   8,
+   230,
+   2.5965,
+   0.35893,
+   1.0
+  ],
+  [
+   26.458,
+   8,
+   222,
+   3.5102,
+   0.81421,
+   0.75
+  ],
+  [
+   29.9682,
+   8,
+   227,
+   2.7672,
+   1.1096,
+   0.75
+  ],
+  [
+   32.7354,
+   8,
+   224,
+   4.117,
+   0.86817,
+   0.625
+  ],
+  [
+   36.8524,
+   8,
+   229,
+   4.0316,
+   1.42563,
+   0.75
+  ]
+ ]
+}

@@ -1,0 +1,66 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "parity",
+   "results/korean_support/K2_intent20_ko_english.json",
+   "results/B/20261002-1650_english_ko_massive_intent_20opt.json",
+   "--out",
+   "results/B/metrics/parity_a3_english.md",
+   "--json",
+   "results/B/metrics/parity_a3_english.json"
+  ],
+  "generated_at": "2026-10-02T17:05:34+0900",
+  "reports": [
+   {
+    "report": "results/korean_support/K2_intent20_ko_english.json",
+    "dataset": "results/korean_support/K2_intent20_ko.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "38ebcd80736d95a7dec418b953264075c3fe25c48e5283005eeb62d83d261dbc",
+    "questions_sha256": "72baa7ba5b4d899bae87ce0b6cb67e9b6dce593e1ff5947e4957005554371e24",
+    "revisions": {
+     "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "english",
+    "device": "cpu",
+    "batch_size": 8,
+    "split_rule": "state sha256 % 2",
+    "rows": 100,
+    "split_rows": {
+     "test": 51,
+     "dev": 49
+    }
+   },
+   {
+    "report": "results/B/20261002-1650_english_ko_massive_intent_20opt.json",
+    "dataset": "data/evals/ko_massive_intent_20opt.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "4e936ea663ba6072e8e7ab0cc5a4f22784824378ce74cb1266a8f955b4efb596",
+    "questions_sha256": "72baa7ba5b4d899bae87ce0b6cb67e9b6dce593e1ff5947e4957005554371e24",
+    "revisions": {
+     "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "english",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 100,
+    "split_rows": {
+     "dev": 50,
+     "test": 50
+    }
+   }
+  ]
+ },
+ "reference": "results/korean_support/K2_intent20_ko_english.json",
+ "results": [
+  {
+   "other": "results/B/20261002-1650_english_ko_massive_intent_20opt.json",
+   "n": 100,
+   "agreement": 1.0,
+   "flips": 0,
+   "max_abs_dp": 0.0,
+   "mean_abs_dconf": 0.0
+  }
+ ]
+}

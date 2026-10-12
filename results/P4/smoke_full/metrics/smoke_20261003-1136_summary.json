@@ -1,0 +1,2504 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "summary",
+   "results/P4/smoke_full/smoke_20261003-1136_ft-smoke-ep1_domain8_dev.json",
+   "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_domain8_dev.json",
+   "results/P4/20261002-2014_multilingual_domain8_dev.json",
+   "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_ko_massive_domain_8.json",
+   "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+   "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_ko_massive_domain_8_full.json",
+   "results/P4/smoke_full/smoke_20261003-1136_multilingual_ko_massive_domain_8_full.json",
+   "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_ko_klue_ynat_7_dev.json",
+   "results/P4/20261002-2014_multilingual_ko_klue_ynat_7_dev.json",
+   "--out",
+   "results/P4/smoke_full/metrics/smoke_20261003-1136_summary.md",
+   "--json",
+   "results/P4/smoke_full/metrics/smoke_20261003-1136_summary.json"
+  ],
+  "generated_at": "2026-10-03T11:43:33+0900",
+  "reports": [
+   {
+    "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke-ep1_domain8_dev.json",
+    "dataset": "poc/finetune/data/domain8_dev.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "957359aa686f099d04df0e9996150f3e75133252da40fed2bd1eb9818b993907",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "ft-smoke-ep1": "local:results/P4/smoke_full/ckpt_20261003-1136 (base 55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851) epoch 1"
+    },
+    "model": "ft-smoke-ep1",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 2012,
+    "split_rows": {
+     "dev": 2012
+    }
+   },
+   {
+    "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_domain8_dev.json",
+    "dataset": "poc/finetune/data/domain8_dev.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "957359aa686f099d04df0e9996150f3e75133252da40fed2bd1eb9818b993907",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "ft-smoke": "local:results/P4/smoke_full/ckpt_20261003-1136 (base 55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851)"
+    },
+    "model": "ft-smoke",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 2012,
+    "split_rows": {
+     "dev": 2012
+    }
+   },
+   {
+    "report": "results/P4/20261002-2014_multilingual_domain8_dev.json",
+    "dataset": "poc/finetune/data/domain8_dev.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "957359aa686f099d04df0e9996150f3e75133252da40fed2bd1eb9818b993907",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 2012,
+    "split_rows": {
+     "dev": 2012
+    }
+   },
+   {
+    "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_ko_massive_domain_8.json",
+    "dataset": "data/evals/ko_massive_domain_8.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "edf33079033640fa9656c3b583a422c1ededc4bcd75eaafbfb84c5adf613f46b",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "ft-smoke": "local:results/P4/smoke_full/ckpt_20261003-1136 (base 55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851)"
+    },
+    "model": "ft-smoke",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 500,
+    "split_rows": {
+     "dev": 250,
+     "test": 250
+    }
+   },
+   {
+    "report": "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+    "dataset": "data/evals/ko_massive_domain_8.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "edf33079033640fa9656c3b583a422c1ededc4bcd75eaafbfb84c5adf613f46b",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 500,
+    "split_rows": {
+     "dev": 250,
+     "test": 250
+    }
+   },
+   {
+    "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_ko_massive_domain_8_full.json",
+    "dataset": "results/P4/evalsets_full/ko_massive_domain_8.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "e5fc26498e836cda5660f73b24d9a10d2eae04193d77ac86a4394c758eb09bf9",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "ft-smoke": "local:results/P4/smoke_full/ckpt_20261003-1136 (base 55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851)"
+    },
+    "model": "ft-smoke",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 2917,
+    "split_rows": {
+     "dev": 1459,
+     "test": 1458
+    }
+   },
+   {
+    "report": "results/P4/smoke_full/smoke_20261003-1136_multilingual_ko_massive_domain_8_full.json",
+    "dataset": "results/P4/evalsets_full/ko_massive_domain_8.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "e5fc26498e836cda5660f73b24d9a10d2eae04193d77ac86a4394c758eb09bf9",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 2917,
+    "split_rows": {
+     "dev": 1459,
+     "test": 1458
+    }
+   },
+   {
+    "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_ko_klue_ynat_7_dev.json",
+    "dataset": "results/P4/dev/ko_klue_ynat_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "e47494226f0464463ec0dfbf8352bf6884a8297581b5283efd3803c8769d16ae",
+    "questions_sha256": "2eec39b823fd3a6eec8d54cb1bfb8caafccd93375fe2ef33c608d232ad37f260",
+    "revisions": {
+     "ft-smoke": "local:results/P4/smoke_full/ckpt_20261003-1136 (base 55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851)"
+    },
+    "model": "ft-smoke",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 245,
+    "split_rows": {
+     "dev": 245
+    }
+   },
+   {
+    "report": "results/P4/20261002-2014_multilingual_ko_klue_ynat_7_dev.json",
+    "dataset": "results/P4/dev/ko_klue_ynat_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "e47494226f0464463ec0dfbf8352bf6884a8297581b5283efd3803c8769d16ae",
+    "questions_sha256": "2eec39b823fd3a6eec8d54cb1bfb8caafccd93375fe2ef33c608d232ad37f260",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 245,
+    "split_rows": {
+     "dev": 245
+    }
+   }
+  ]
+ },
+ "results": [
+  {
+   "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke-ep1_domain8_dev.json",
+   "set": "domain8_dev",
+   "model": "ft-smoke-ep1",
+   "qid": "domain",
+   "split": "all",
+   "n": 2012,
+   "accuracy": 0.5695825049701789,
+   "macro_f1_union": 0.5660615843408816,
+   "macro_f1_gold": 0.5660615843408816,
+   "brier": 0.5998777848558648,
+   "ece": 0.1583446322067596,
+   "mean_confidence": 0.7279271371769382,
+   "acc_at_50_coverage": 0.7693836978131213,
+   "majority": 0.26192842942345923,
+   "majority_label": "productivity",
+   "random": 0.125,
+   "delta_vs_majority": 0.3076540755467197,
+   "accuracy_ci": [
+    0.5487077534791253,
+    0.5914512922465208
+   ],
+   "ece_ci": [
+    0.14106412524850862,
+    0.1791703044234594
+   ],
+   "recall": {
+    "communication": [
+     141,
+     225
+    ],
+    "general": [
+     33,
+     120
+    ],
+    "info_qa": [
+     255,
+     417
+    ],
+    "lifestyle": [
+     104,
+     156
+    ],
+    "media": [
+     173,
+     346
+    ],
+    "productivity": [
+     248,
+     527
+    ],
+    "smart_home": [
+     86,
+     112
+    ],
+    "transport": [
+     106,
+     109
+    ]
+   },
+   "pred_counts": {
+    "info_qa": 461,
+    "productivity": 362,
+    "lifestyle": 237,
+    "general": 220,
+    "media": 193,
+    "smart_home": 182,
+    "communication": 182,
+    "transport": 175
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 527,
+    "pred_n": 362
+   },
+   "confusions_top5": [
+    [
+     "productivity",
+     "info_qa",
+     102
+    ],
+    [
+     "productivity",
+     "general",
+     61
+    ],
+    [
+     "productivity",
+     "lifestyle",
+     50
+    ],
+    [
+     "general",
+     "info_qa",
+     46
+    ],
+    [
+     "media",
+     "smart_home",
+     46
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 2012
+   }
+  },
+  {
+   "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke-ep1_domain8_dev.json",
+   "set": "domain8_dev",
+   "model": "ft-smoke-ep1",
+   "qid": "domain",
+   "split": "dev",
+   "n": 2012,
+   "accuracy": 0.5695825049701789,
+   "macro_f1_union": 0.5660615843408816,
+   "macro_f1_gold": 0.5660615843408816,
+   "brier": 0.5998777848558648,
+   "ece": 0.1583446322067596,
+   "mean_confidence": 0.7279271371769382,
+   "acc_at_50_coverage": 0.7693836978131213,
+   "majority": 0.26192842942345923,
+   "majority_label": "productivity",
+   "random": 0.125,
+   "delta_vs_majority": 0.3076540755467197,
+   "accuracy_ci": [
+    0.5487077534791253,
+    0.5914512922465208
+   ],
+   "ece_ci": [
+    0.14106412524850862,
+    0.1791703044234594
+   ],
+   "recall": {
+    "communication": [
+     141,
+     225
+    ],
+    "general": [
+     33,
+     120
+    ],
+    "info_qa": [
+     255,
+     417
+    ],
+    "lifestyle": [
+     104,
+     156
+    ],
+    "media": [
+     173,
+     346
+    ],
+    "productivity": [
+     248,
+     527
+    ],
+    "smart_home": [
+     86,
+     112
+    ],
+    "transport": [
+     106,
+     109
+    ]
+   },
+   "pred_counts": {
+    "info_qa": 461,
+    "productivity": 362,
+    "lifestyle": 237,
+    "general": 220,
+    "media": 193,
+    "smart_home": 182,
+    "communication": 182,
+    "transport": 175
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 527,
+    "pred_n": 362
+   },
+   "confusions_top5": [
+    [
+     "productivity",
+     "info_qa",
+     102
+    ],
+    [
+     "productivity",
+     "general",
+     61
+    ],
+    [
+     "productivity",
+     "lifestyle",
+     50
+    ],
+    [
+     "general",
+     "info_qa",
+     46
+    ],
+    [
+     "media",
+     "smart_home",
+     46
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 2012
+   }
+  },
+  {
+   "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_domain8_dev.json",
+   "set": "domain8_dev",
+   "model": "ft-smoke",
+   "qid": "domain",
+   "split": "all",
+   "n": 2012,
+   "accuracy": 0.5695825049701789,
+   "macro_f1_union": 0.5660615843408816,
+   "macro_f1_gold": 0.5660615843408816,
+   "brier": 0.5998777848558648,
+   "ece": 0.1583446322067596,
+   "mean_confidence": 0.7279271371769382,
+   "acc_at_50_coverage": 0.7693836978131213,
+   "majority": 0.26192842942345923,
+   "majority_label": "productivity",
+   "random": 0.125,
+   "delta_vs_majority": 0.3076540755467197,
+   "accuracy_ci": [
+    0.5487077534791253,
+    0.5914512922465208
+   ],
+   "ece_ci": [
+    0.14106412524850862,
+    0.1791703044234594
+   ],
+   "recall": {
+    "communication": [
+     141,
+     225
+    ],
+    "general": [
+     33,
+     120
+    ],
+    "info_qa": [
+     255,
+     417
+    ],
+    "lifestyle": [
+     104,
+     156
+    ],
+    "media": [
+     173,
+     346
+    ],
+    "productivity": [
+     248,
+     527
+    ],
+    "smart_home": [
+     86,
+     112
+    ],
+    "transport": [
+     106,
+     109
+    ]
+   },
+   "pred_counts": {
+    "info_qa": 461,
+    "productivity": 362,
+    "lifestyle": 237,
+    "general": 220,
+    "media": 193,
+    "smart_home": 182,
+    "communication": 182,
+    "transport": 175
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 527,
+    "pred_n": 362
+   },
+   "confusions_top5": [
+    [
+     "productivity",
+     "info_qa",
+     102
+    ],
+    [
+     "productivity",
+     "general",
+     61
+    ],
+    [
+     "productivity",
+     "lifestyle",
+     50
+    ],
+    [
+     "general",
+     "info_qa",
+     46
+    ],
+    [
+     "media",
+     "smart_home",
+     46
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 2012
+   }
+  },
+  {
+   "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_domain8_dev.json",
+   "set": "domain8_dev",
+   "model": "ft-smoke",
+   "qid": "domain",
+   "split": "dev",
+   "n": 2012,
+   "accuracy": 0.5695825049701789,
+   "macro_f1_union": 0.5660615843408816,
+   "macro_f1_gold": 0.5660615843408816,
+   "brier": 0.5998777848558648,
+   "ece": 0.1583446322067596,
+   "mean_confidence": 0.7279271371769382,
+   "acc_at_50_coverage": 0.7693836978131213,
+   "majority": 0.26192842942345923,
+   "majority_label": "productivity",
+   "random": 0.125,
+   "delta_vs_majority": 0.3076540755467197,
+   "accuracy_ci": [
+    0.5487077534791253,
+    0.5914512922465208
+   ],
+   "ece_ci": [
+    0.14106412524850862,
+    0.1791703044234594
+   ],
+   "recall": {
+    "communication": [
+     141,
+     225
+    ],
+    "general": [
+     33,
+     120
+    ],
+    "info_qa": [
+     255,
+     417
+    ],
+    "lifestyle": [
+     104,
+     156
+    ],
+    "media": [
+     173,
+     346
+    ],
+    "productivity": [
+     248,
+     527
+    ],
+    "smart_home": [
+     86,
+     112
+    ],
+    "transport": [
+     106,
+     109
+    ]
+   },
+   "pred_counts": {
+    "info_qa": 461,
+    "productivity": 362,
+    "lifestyle": 237,
+    "general": 220,
+    "media": 193,
+    "smart_home": 182,
+    "communication": 182,
+    "transport": 175
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 527,
+    "pred_n": 362
+   },
+   "confusions_top5": [
+    [
+     "productivity",
+     "info_qa",
+     102
+    ],
+    [
+     "productivity",
+     "general",
+     61
+    ],
+    [
+     "productivity",
+     "lifestyle",
+     50
+    ],
+    [
+     "general",
+     "info_qa",
+     46
+    ],
+    [
+     "media",
+     "smart_home",
+     46
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 2012
+   }
+  },
+  {
+   "report": "results/P4/20261002-2014_multilingual_domain8_dev.json",
+   "set": "domain8_dev",
+   "model": "multilingual",
+   "qid": "domain",
+   "split": "all",
+   "n": 2012,
+   "accuracy": 0.4617296222664016,
+   "macro_f1_union": 0.48867717627951535,
+   "macro_f1_gold": 0.48867717627951535,
+   "brier": 0.7553181352186878,
+   "ece": 0.2485788270377738,
+   "mean_confidence": 0.710308449304175,
+   "acc_at_50_coverage": 0.647117296222664,
+   "majority": 0.26192842942345923,
+   "majority_label": "productivity",
+   "random": 0.125,
+   "delta_vs_majority": 0.19980119284294234,
+   "accuracy_ci": [
+    0.4398608349900596,
+    0.48361083499005963
+   ],
+   "ece_ci": [
+    0.22850267768389715,
+    0.26845030069582526
+   ],
+   "recall": {
+    "communication": [
+     141,
+     225
+    ],
+    "general": [
+     38,
+     120
+    ],
+    "info_qa": [
+     154,
+     417
+    ],
+    "lifestyle": [
+     90,
+     156
+    ],
+    "media": [
+     164,
+     346
+    ],
+    "productivity": [
+     131,
+     527
+    ],
+    "smart_home": [
+     105,
+     112
+    ],
+    "transport": [
+     106,
+     109
+    ]
+   },
+   "pred_counts": {
+    "smart_home": 495,
+    "general": 341,
+    "info_qa": 262,
+    "lifestyle": 199,
+    "media": 184,
+    "productivity": 179,
+    "communication": 177,
+    "transport": 175
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 527,
+    "pred_n": 179
+   },
+   "confusions_top5": [
+    [
+     "productivity",
+     "smart_home",
+     147
+    ],
+    [
+     "productivity",
+     "general",
+     118
+    ],
+    [
+     "media",
+     "smart_home",
+     112
+    ],
+    [
+     "info_qa",
+     "general",
+     101
+    ],
+    [
+     "info_qa",
+     "smart_home",
+     63
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 2012
+   }
+  },
+  {
+   "report": "results/P4/20261002-2014_multilingual_domain8_dev.json",
+   "set": "domain8_dev",
+   "model": "multilingual",
+   "qid": "domain",
+   "split": "dev",
+   "n": 2012,
+   "accuracy": 0.4617296222664016,
+   "macro_f1_union": 0.48867717627951535,
+   "macro_f1_gold": 0.48867717627951535,
+   "brier": 0.7553181352186878,
+   "ece": 0.2485788270377738,
+   "mean_confidence": 0.710308449304175,
+   "acc_at_50_coverage": 0.647117296222664,
+   "majority": 0.26192842942345923,
+   "majority_label": "productivity",
+   "random": 0.125,
+   "delta_vs_majority": 0.19980119284294234,
+   "accuracy_ci": [
+    0.4398608349900596,
+    0.48361083499005963
+   ],
+   "ece_ci": [
+    0.22850267768389715,
+    0.26845030069582526
+   ],
+   "recall": {
+    "communication": [
+     141,
+     225
+    ],
+    "general": [
+     38,
+     120
+    ],
+    "info_qa": [
+     154,
+     417
+    ],
+    "lifestyle": [
+     90,
+     156
+    ],
+    "media": [
+     164,
+     346
+    ],
+    "productivity": [
+     131,
+     527
+    ],
+    "smart_home": [
+     105,
+     112
+    ],
+    "transport": [
+     106,
+     109
+    ]
+   },
+   "pred_counts": {
+    "smart_home": 495,
+    "general": 341,
+    "info_qa": 262,
+    "lifestyle": 199,
+    "media": 184,
+    "productivity": 179,
+    "communication": 177,
+    "transport": 175
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 527,
+    "pred_n": 179
+   },
+   "confusions_top5": [
+    [
+     "productivity",
+     "smart_home",
+     147
+    ],
+    [
+     "productivity",
+     "general",
+     118
+    ],
+    [
+     "media",
+     "smart_home",
+     112
+    ],
+    [
+     "info_qa",
+     "general",
+     101
+    ],
+    [
+     "info_qa",
+     "smart_home",
+     63
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 2012
+   }
+  },
+  {
+   "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_ko_massive_domain_8.json",
+   "set": "ko_massive_domain_8",
+   "model": "ft-smoke",
+   "qid": "domain",
+   "split": "all",
+   "n": 500,
+   "accuracy": 0.586,
+   "macro_f1_union": 0.5879116442249296,
+   "macro_f1_gold": 0.5879116442249296,
+   "brier": 0.58049281638,
+   "ece": 0.17017320000000014,
+   "mean_confidence": 0.7558512,
+   "acc_at_50_coverage": 0.808,
+   "majority": 0.126,
+   "majority_label": "info_qa",
+   "random": 0.125,
+   "delta_vs_majority": 0.45999999999999996,
+   "accuracy_ci": [
+    0.542,
+    0.62405
+   ],
+   "ece_ci": [
+    0.14064693499999986,
+    0.21124075000000006
+   ],
+   "recall": {
+    "communication": [
+     42,
+     62
+    ],
+    "general": [
+     18,
+     62
+    ],
+    "info_qa": [
+     35,
+     63
+    ],
+    "lifestyle": [
+     40,
+     62
+    ],
+    "media": [
+     29,
+     63
+    ],
+    "productivity": [
+     25,
+     63
+    ],
+    "smart_home": [
+     46,
+     63
+    ],
+    "transport": [
+     58,
+     62
+    ]
+   },
+   "pred_counts": {
+    "info_qa": 92,
+    "transport": 77,
+    "lifestyle": 76,
+    "general": 65,
+    "smart_home": 59,
+    "communication": 54,
+    "productivity": 46,
+    "media": 31
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 63,
+    "pred_n": 46
+   },
+   "confusions_top5": [
+    [
+     "general",
+     "info_qa",
+     24
+    ],
+    [
+     "info_qa",
+     "general",
+     13
+    ],
+    [
+     "productivity",
+     "info_qa",
+     11
+    ],
+    [
+     "media",
+     "general",
+     9
+    ],
+    [
+     "productivity",
+     "general",
+     9
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 500
+   }
+  },
+  {
+   "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_ko_massive_domain_8.json",
+   "set": "ko_massive_domain_8",
+   "model": "ft-smoke",
+   "qid": "domain",
+   "split": "dev",
+   "n": 250,
+   "accuracy": 0.592,
+   "macro_f1_union": 0.5923135659301845,
+   "macro_f1_gold": 0.5923135659301845,
+   "brier": 0.56088305208,
+   "ece": 0.16162519999999997,
+   "mean_confidence": 0.7513715999999999,
+   "acc_at_50_coverage": 0.84,
+   "majority": 0.148,
+   "majority_label": "media",
+   "random": 0.125,
+   "delta_vs_majority": 0.44399999999999995,
+   "accuracy_ci": [
+    0.532,
+    0.652
+   ],
+   "ece_ci": [
+    0.1247737099999999,
+    0.21497886999999993
+   ],
+   "recall": {
+    "communication": [
+     20,
+     30
+    ],
+    "general": [
+     9,
+     30
+    ],
+    "info_qa": [
+     17,
+     31
+    ],
+    "lifestyle": [
+     16,
+     27
+    ],
+    "media": [
+     20,
+     37
+    ],
+    "productivity": [
+     15,
+     33
+    ],
+    "smart_home": [
+     21,
+     30
+    ],
+    "transport": [
+     30,
+     32
+    ]
+   },
+   "pred_counts": {
+    "info_qa": 41,
+    "transport": 41,
+    "lifestyle": 36,
+    "general": 33,
+    "communication": 30,
+    "smart_home": 27,
+    "productivity": 22,
+    "media": 20
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 33,
+    "pred_n": 22
+   },
+   "confusions_top5": [
+    [
+     "general",
+     "info_qa",
+     8
+    ],
+    [
+     "info_qa",
+     "general",
+     7
+    ],
+    [
+     "general",
+     "lifestyle",
+     5
+    ],
+    [
+     "media",
+     "general",
+     5
+    ],
+    [
+     "info_qa",
+     "lifestyle",
+     5
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 250
+   }
+  },
+  {
+   "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_ko_massive_domain_8.json",
+   "set": "ko_massive_domain_8",
+   "model": "ft-smoke",
+   "qid": "domain",
+   "split": "test",
+   "n": 250,
+   "accuracy": 0.58,
+   "macro_f1_union": 0.5769089625057245,
+   "macro_f1_gold": 0.5769089625057245,
+   "brier": 0.60010258068,
+   "ece": 0.18316839999999981,
+   "mean_confidence": 0.7603308000000001,
+   "acc_at_50_coverage": 0.784,
+   "majority": 0.14,
+   "majority_label": "lifestyle",
+   "random": 0.125,
+   "delta_vs_majority": 0.43999999999999995,
+   "accuracy_ci": [
+    0.52,
+    0.64
+   ],
+   "ece_ci": [
+    0.15144034999999978,
+    0.24838841999999994
+   ],
+   "recall": {
+    "communication": [
+     22,
+     32
+    ],
+    "general": [
+     9,
+     32
+    ],
+    "info_qa": [
+     18,
+     32
+    ],
+    "lifestyle": [
+     24,
+     35
+    ],
+    "media": [
+     9,
+     26
+    ],
+    "productivity": [
+     10,
+     30
+    ],
+    "smart_home": [
+     25,
+     33
+    ],
+    "transport": [
+     28,
+     30
+    ]
+   },
+   "pred_counts": {
+    "info_qa": 51,
+    "lifestyle": 40,
+    "transport": 36,
+    "smart_home": 32,
+    "general": 32,
+    "productivity": 24,
+    "communication": 24,
+    "media": 11
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 30,
+    "pred_n": 24
+   },
+   "confusions_top5": [
+    [
+     "general",
+     "info_qa",
+     16
+    ],
+    [
+     "info_qa",
+     "general",
+     6
+    ],
+    [
+     "productivity",
+     "general",
+     6
+    ],
+    [
+     "productivity",
+     "info_qa",
+     6
+    ],
+    [
+     "media",
+     "smart_home",
+     5
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 250
+   }
+  },
+  {
+   "report": "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+   "set": "ko_massive_domain_8",
+   "model": "multilingual",
+   "qid": "domain",
+   "split": "all",
+   "n": 500,
+   "accuracy": 0.526,
+   "macro_f1_union": 0.5175425156294887,
+   "macro_f1_gold": 0.5175425156294887,
+   "brier": 0.6640767897599998,
+   "ece": 0.22929720000000003,
+   "mean_confidence": 0.7552972,
+   "acc_at_50_coverage": 0.764,
+   "majority": 0.126,
+   "majority_label": "info_qa",
+   "random": 0.125,
+   "delta_vs_majority": 0.4,
+   "accuracy_ci": [
+    0.48595,
+    0.5680499999999999
+   ],
+   "ece_ci": [
+    0.19697405999999956,
+    0.2713091999999996
+   ],
+   "recall": {
+    "communication": [
+     41,
+     62
+    ],
+    "general": [
+     19,
+     62
+    ],
+    "info_qa": [
+     21,
+     63
+    ],
+    "lifestyle": [
+     33,
+     62
+    ],
+    "media": [
+     28,
+     63
+    ],
+    "productivity": [
+     10,
+     63
+    ],
+    "smart_home": [
+     51,
+     63
+    ],
+    "transport": [
+     60,
+     62
+    ]
+   },
+   "pred_counts": {
+    "smart_home": 140,
+    "general": 80,
+    "transport": 76,
+    "lifestyle": 54,
+    "communication": 53,
+    "info_qa": 46,
+    "media": 32,
+    "productivity": 19
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 63,
+    "pred_n": 19
+   },
+   "confusions_top5": [
+    [
+     "media",
+     "smart_home",
+     24
+    ],
+    [
+     "general",
+     "smart_home",
+     22
+    ],
+    [
+     "info_qa",
+     "general",
+     22
+    ],
+    [
+     "productivity",
+     "smart_home",
+     22
+    ],
+    [
+     "productivity",
+     "general",
+     13
+    ]
+   ],
+   "models": {
+    "multilingual": 500
+   }
+  },
+  {
+   "report": "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+   "set": "ko_massive_domain_8",
+   "model": "multilingual",
+   "qid": "domain",
+   "split": "dev",
+   "n": 250,
+   "accuracy": 0.56,
+   "macro_f1_union": 0.5548009063471409,
+   "macro_f1_gold": 0.5548009063471409,
+   "brier": 0.6336493200400001,
+   "ece": 0.20020359999999987,
+   "mean_confidence": 0.7558228,
+   "acc_at_50_coverage": 0.792,
+   "majority": 0.148,
+   "majority_label": "media",
+   "random": 0.125,
+   "delta_vs_majority": 0.41200000000000003,
+   "accuracy_ci": [
+    0.5,
+    0.62
+   ],
+   "ece_ci": [
+    0.16106868000000005,
+    0.26073445999999995
+   ],
+   "recall": {
+    "communication": [
+     19,
+     30
+    ],
+    "general": [
+     11,
+     30
+    ],
+    "info_qa": [
+     10,
+     31
+    ],
+    "lifestyle": [
+     14,
+     27
+    ],
+    "media": [
+     20,
+     37
+    ],
+    "productivity": [
+     10,
+     33
+    ],
+    "smart_home": [
+     25,
+     30
+    ],
+    "transport": [
+     31,
+     32
+    ]
+   },
+   "pred_counts": {
+    "smart_home": 66,
+    "general": 40,
+    "transport": 38,
+    "communication": 28,
+    "lifestyle": 26,
+    "media": 21,
+    "info_qa": 19,
+    "productivity": 12
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 33,
+    "pred_n": 12
+   },
+   "confusions_top5": [
+    [
+     "general",
+     "smart_home",
+     12
+    ],
+    [
+     "info_qa",
+     "general",
+     11
+    ],
+    [
+     "media",
+     "smart_home",
+     10
+    ],
+    [
+     "productivity",
+     "smart_home",
+     9
+    ],
+    [
+     "productivity",
+     "communication",
+     6
+    ]
+   ],
+   "models": {
+    "multilingual": 250
+   }
+  },
+  {
+   "report": "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+   "set": "ko_massive_domain_8",
+   "model": "multilingual",
+   "qid": "domain",
+   "split": "test",
+   "n": 250,
+   "accuracy": 0.492,
+   "macro_f1_union": 0.46769536540058343,
+   "macro_f1_gold": 0.46769536540058343,
+   "brier": 0.6945042594799999,
+   "ece": 0.2627715999999998,
+   "mean_confidence": 0.7547716,
+   "acc_at_50_coverage": 0.752,
+   "majority": 0.14,
+   "majority_label": "lifestyle",
+   "random": 0.125,
+   "delta_vs_majority": 0.352,
+   "accuracy_ci": [
+    0.432,
+    0.552
+   ],
+   "ece_ci": [
+    0.21697796999999994,
+    0.31969356000000004
+   ],
+   "recall": {
+    "communication": [
+     22,
+     32
+    ],
+    "general": [
+     8,
+     32
+    ],
+    "info_qa": [
+     11,
+     32
+    ],
+    "lifestyle": [
+     19,
+     35
+    ],
+    "media": [
+     8,
+     26
+    ],
+    "productivity": [
+     0,
+     30
+    ],
+    "smart_home": [
+     26,
+     33
+    ],
+    "transport": [
+     29,
+     30
+    ]
+   },
+   "pred_counts": {
+    "smart_home": 74,
+    "general": 40,
+    "transport": 38,
+    "lifestyle": 28,
+    "info_qa": 27,
+    "communication": 25,
+    "media": 11,
+    "productivity": 7
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 30,
+    "pred_n": 7
+   },
+   "confusions_top5": [
+    [
+     "media",
+     "smart_home",
+     14
+    ],
+    [
+     "productivity",
+     "smart_home",
+     13
+    ],
+    [
+     "info_qa",
+     "general",
+     11
+    ],
+    [
+     "general",
+     "smart_home",
+     10
+    ],
+    [
+     "productivity",
+     "general",
+     10
+    ]
+   ],
+   "models": {
+    "multilingual": 250
+   }
+  },
+  {
+   "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_ko_massive_domain_8_full.json",
+   "set": "ko_massive_domain_8",
+   "model": "ft-smoke",
+   "qid": "domain",
+   "split": "all",
+   "n": 2917,
+   "accuracy": 0.5584504628042509,
+   "macro_f1_union": 0.55373324547817,
+   "macro_f1_gold": 0.55373324547817,
+   "brier": 0.6155277619883442,
+   "ece": 0.1804237915666783,
+   "mean_confidence": 0.7388742543709289,
+   "acc_at_50_coverage": 0.7688614540466392,
+   "majority": 0.25197120329105244,
+   "majority_label": "productivity",
+   "random": 0.125,
+   "delta_vs_majority": 0.3064792595131985,
+   "accuracy_ci": [
+    0.540615358244772,
+    0.5769712032910524
+   ],
+   "ece_ci": [
+    0.16413005227973945,
+    0.1962445491943779
+   ],
+   "recall": {
+    "communication": [
+     260,
+     374
+    ],
+    "general": [
+     57,
+     189
+    ],
+    "info_qa": [
+     342,
+     556
+    ],
+    "lifestyle": [
+     127,
+     222
+    ],
+    "media": [
+     285,
+     522
+    ],
+    "productivity": [
+     292,
+     735
+    ],
+    "smart_home": [
+     151,
+     195
+    ],
+    "transport": [
+     115,
+     124
+    ]
+   },
+   "pred_counts": {
+    "info_qa": 656,
+    "productivity": 422,
+    "communication": 343,
+    "lifestyle": 336,
+    "general": 332,
+    "media": 314,
+    "smart_home": 283,
+    "transport": 231
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 735,
+    "pred_n": 422
+   },
+   "confusions_top5": [
+    [
+     "productivity",
+     "info_qa",
+     153
+    ],
+    [
+     "productivity",
+     "general",
+     87
+    ],
+    [
+     "general",
+     "info_qa",
+     75
+    ],
+    [
+     "productivity",
+     "lifestyle",
+     70
+    ],
+    [
+     "info_qa",
+     "general",
+     65
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 2917
+   }
+  },
+  {
+   "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_ko_massive_domain_8_full.json",
+   "set": "ko_massive_domain_8",
+   "model": "ft-smoke",
+   "qid": "domain",
+   "split": "dev",
+   "n": 1459,
+   "accuracy": 0.5538039753255655,
+   "macro_f1_union": 0.5496300702107981,
+   "macro_f1_gold": 0.5496300702107981,
+   "brier": 0.6178730666552433,
+   "ece": 0.18079342015078798,
+   "mean_confidence": 0.7345973954763536,
+   "acc_at_50_coverage": 0.7681755829903978,
+   "majority": 0.2446881425633996,
+   "majority_label": "productivity",
+   "random": 0.125,
+   "delta_vs_majority": 0.30911583276216587,
+   "accuracy_ci": [
+    0.5291295407813571,
+    0.5778101439342015
+   ],
+   "ece_ci": [
+    0.16047228752570286,
+    0.20368020047978044
+   ],
+   "recall": {
+    "communication": [
+     127,
+     186
+    ],
+    "general": [
+     34,
+     97
+    ],
+    "info_qa": [
+     167,
+     271
+    ],
+    "lifestyle": [
+     62,
+     110
+    ],
+    "media": [
+     143,
+     269
+    ],
+    "productivity": [
+     139,
+     357
+    ],
+    "smart_home": [
+     79,
+     107
+    ],
+    "transport": [
+     57,
+     62
+    ]
+   },
+   "pred_counts": {
+    "info_qa": 327,
+    "productivity": 204,
+    "lifestyle": 174,
+    "general": 166,
+    "communication": 162,
+    "media": 158,
+    "smart_home": 150,
+    "transport": 118
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 357,
+    "pred_n": 204
+   },
+   "confusions_top5": [
+    [
+     "productivity",
+     "info_qa",
+     71
+    ],
+    [
+     "productivity",
+     "lifestyle",
+     44
+    ],
+    [
+     "productivity",
+     "general",
+     40
+    ],
+    [
+     "general",
+     "info_qa",
+     39
+    ],
+    [
+     "media",
+     "general",
+     36
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 1459
+   }
+  },
+  {
+   "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_ko_massive_domain_8_full.json",
+   "set": "ko_massive_domain_8",
+   "model": "ft-smoke",
+   "qid": "domain",
+   "split": "test",
+   "n": 1458,
+   "accuracy": 0.5631001371742113,
+   "macro_f1_union": 0.5582358888154517,
+   "macro_f1_gold": 0.5582358888154517,
+   "brier": 0.613180848744856,
+   "ece": 0.1800539094650207,
+   "mean_confidence": 0.7431540466392318,
+   "acc_at_50_coverage": 0.7654320987654321,
+   "majority": 0.25925925925925924,
+   "majority_label": "productivity",
+   "random": 0.125,
+   "delta_vs_majority": 0.303840877914952,
+   "accuracy_ci": [
+    0.5377229080932785,
+    0.5877914951989026
+   ],
+   "ece_ci": [
+    0.1593155709876546,
+    0.2029007990397808
+   ],
+   "recall": {
+    "communication": [
+     133,
+     188
+    ],
+    "general": [
+     23,
+     92
+    ],
+    "info_qa": [
+     175,
+     285
+    ],
+    "lifestyle": [
+     65,
+     112
+    ],
+    "media": [
+     142,
+     253
+    ],
+    "productivity": [
+     153,
+     378
+    ],
+    "smart_home": [
+     72,
+     88
+    ],
+    "transport": [
+     58,
+     62
+    ]
+   },
+   "pred_counts": {
+    "info_qa": 329,
+    "productivity": 218,
+    "communication": 181,
+    "general": 166,
+    "lifestyle": 162,
+    "media": 156,
+    "smart_home": 133,
+    "transport": 113
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 378,
+    "pred_n": 218
+   },
+   "confusions_top5": [
+    [
+     "productivity",
+     "info_qa",
+     82
+    ],
+    [
+     "productivity",
+     "general",
+     47
+    ],
+    [
+     "general",
+     "info_qa",
+     36
+    ],
+    [
+     "info_qa",
+     "general",
+     34
+    ],
+    [
+     "productivity",
+     "communication",
+     30
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 1458
+   }
+  },
+  {
+   "report": "results/P4/smoke_full/smoke_20261003-1136_multilingual_ko_massive_domain_8_full.json",
+   "set": "ko_massive_domain_8",
+   "model": "multilingual",
+   "qid": "domain",
+   "split": "all",
+   "n": 2917,
+   "accuracy": 0.47514569763455605,
+   "macro_f1_union": 0.49091603681237295,
+   "macro_f1_gold": 0.49091603681237295,
+   "brier": 0.7493847897360301,
+   "ece": 0.2534308878985262,
+   "mean_confidence": 0.7282783339046965,
+   "acc_at_50_coverage": 0.6611796982167353,
+   "majority": 0.25197120329105244,
+   "majority_label": "productivity",
+   "random": 0.125,
+   "delta_vs_majority": 0.22317449434350362,
+   "accuracy_ci": [
+    0.4573191635241687,
+    0.49331504970860474
+   ],
+   "ece_ci": [
+    0.2367805699348647,
+    0.27018396811792944
+   ],
+   "recall": {
+    "communication": [
+     262,
+     374
+    ],
+    "general": [
+     62,
+     189
+    ],
+    "info_qa": [
+     224,
+     556
+    ],
+    "lifestyle": [
+     111,
+     222
+    ],
+    "media": [
+     262,
+     522
+    ],
+    "productivity": [
+     177,
+     735
+    ],
+    "smart_home": [
+     173,
+     195
+    ],
+    "transport": [
+     115,
+     124
+    ]
+   },
+   "pred_counts": {
+    "smart_home": 697,
+    "general": 485,
+    "info_qa": 386,
+    "communication": 337,
+    "media": 293,
+    "lifestyle": 270,
+    "productivity": 237,
+    "transport": 212
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 735,
+    "pred_n": 237
+   },
+   "confusions_top5": [
+    [
+     "productivity",
+     "smart_home",
+     206
+    ],
+    [
+     "productivity",
+     "general",
+     161
+    ],
+    [
+     "media",
+     "smart_home",
+     146
+    ],
+    [
+     "info_qa",
+     "general",
+     133
+    ],
+    [
+     "productivity",
+     "info_qa",
+     75
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 2917
+   }
+  },
+  {
+   "report": "results/P4/smoke_full/smoke_20261003-1136_multilingual_ko_massive_domain_8_full.json",
+   "set": "ko_massive_domain_8",
+   "model": "multilingual",
+   "qid": "domain",
+   "split": "dev",
+   "n": 1459,
+   "accuracy": 0.46812885538039756,
+   "macro_f1_union": 0.48464903757756284,
+   "macro_f1_gold": 0.48464903757756284,
+   "brier": 0.7521902129952023,
+   "ece": 0.26096442769019884,
+   "mean_confidence": 0.7282235092529128,
+   "acc_at_50_coverage": 0.6666666666666666,
+   "majority": 0.2446881425633996,
+   "majority_label": "productivity",
+   "random": 0.125,
+   "delta_vs_majority": 0.22344071281699796,
+   "accuracy_ci": [
+    0.4420836189170665,
+    0.4928204249485949
+   ],
+   "ece_ci": [
+    0.23919530671692948,
+    0.28381190712817
+   ],
+   "recall": {
+    "communication": [
+     129,
+     186
+    ],
+    "general": [
+     37,
+     97
+    ],
+    "info_qa": [
+     104,
+     271
+    ],
+    "lifestyle": [
+     56,
+     110
+    ],
+    "media": [
+     131,
+     269
+    ],
+    "productivity": [
+     77,
+     357
+    ],
+    "smart_home": [
+     93,
+     107
+    ],
+    "transport": [
+     56,
+     62
+    ]
+   },
+   "pred_counts": {
+    "smart_home": 360,
+    "general": 256,
+    "info_qa": 184,
+    "communication": 163,
+    "media": 147,
+    "lifestyle": 140,
+    "transport": 108,
+    "productivity": 101
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 357,
+    "pred_n": 101
+   },
+   "confusions_top5": [
+    [
+     "productivity",
+     "smart_home",
+     99
+    ],
+    [
+     "productivity",
+     "general",
+     79
+    ],
+    [
+     "media",
+     "smart_home",
+     75
+    ],
+    [
+     "info_qa",
+     "general",
+     71
+    ],
+    [
+     "info_qa",
+     "smart_home",
+     43
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 1459
+   }
+  },
+  {
+   "report": "results/P4/smoke_full/smoke_20261003-1136_multilingual_ko_massive_domain_8_full.json",
+   "set": "ko_massive_domain_8",
+   "model": "multilingual",
+   "qid": "domain",
+   "split": "test",
+   "n": 1458,
+   "accuracy": 0.4821673525377229,
+   "macro_f1_union": 0.49637363625549125,
+   "macro_f1_gold": 0.49637363625549125,
+   "brier": 0.7465774423182442,
+   "ece": 0.24616584362139923,
+   "mean_confidence": 0.7283331961591221,
+   "acc_at_50_coverage": 0.6570644718792867,
+   "majority": 0.25925925925925924,
+   "majority_label": "productivity",
+   "random": 0.125,
+   "delta_vs_majority": 0.22290809327846367,
+   "accuracy_ci": [
+    0.4567901234567901,
+    0.5075445816186557
+   ],
+   "ece_ci": [
+    0.2223499159807956,
+    0.2703927297668038
+   ],
+   "recall": {
+    "communication": [
+     133,
+     188
+    ],
+    "general": [
+     25,
+     92
+    ],
+    "info_qa": [
+     120,
+     285
+    ],
+    "lifestyle": [
+     55,
+     112
+    ],
+    "media": [
+     131,
+     253
+    ],
+    "productivity": [
+     100,
+     378
+    ],
+    "smart_home": [
+     80,
+     88
+    ],
+    "transport": [
+     59,
+     62
+    ]
+   },
+   "pred_counts": {
+    "smart_home": 337,
+    "general": 229,
+    "info_qa": 202,
+    "communication": 174,
+    "media": 146,
+    "productivity": 136,
+    "lifestyle": 130,
+    "transport": 104
+   },
+   "first_option": {
+    "label": "productivity",
+    "gold_n": 378,
+    "pred_n": 136
+   },
+   "confusions_top5": [
+    [
+     "productivity",
+     "smart_home",
+     107
+    ],
+    [
+     "productivity",
+     "general",
+     82
+    ],
+    [
+     "media",
+     "smart_home",
+     71
+    ],
+    [
+     "info_qa",
+     "general",
+     62
+    ],
+    [
+     "productivity",
+     "info_qa",
+     41
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 1458
+   }
+  },
+  {
+   "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_ko_klue_ynat_7_dev.json",
+   "set": "ko_klue_ynat_7",
+   "model": "ft-smoke",
+   "qid": "topic",
+   "split": "all",
+   "n": 245,
+   "accuracy": 0.6081632653061224,
+   "macro_f1_union": 0.5999203757866126,
+   "macro_f1_gold": 0.5999203757866126,
+   "brier": 0.585997669877551,
+   "ece": 0.20386244897959185,
+   "mean_confidence": 0.7968216326530612,
+   "acc_at_50_coverage": 0.7622950819672131,
+   "majority": 0.16326530612244897,
+   "majority_label": "world",
+   "random": 0.1428571428571428,
+   "delta_vs_majority": 0.4448979591836735,
+   "accuracy_ci": [
+    0.5428571428571428,
+    0.6693877551020408
+   ],
+   "ece_ci": [
+    0.15188997959183675,
+    0.26732903061224483
+   ],
+   "recall": {
+    "culture_life": [
+     22,
+     39
+    ],
+    "economy": [
+     29,
+     34
+    ],
+    "it_science": [
+     25,
+     30
+    ],
+    "politics": [
+     19,
+     38
+    ],
+    "society": [
+     9,
+     31
+    ],
+    "sports": [
+     25,
+     33
+    ],
+    "world": [
+     20,
+     40
+    ]
+   },
+   "pred_counts": {
+    "economy": 56,
+    "it_science": 42,
+    "politics": 36,
+    "world": 33,
+    "sports": 32,
+    "culture_life": 26,
+    "society": 20
+   },
+   "first_option": {
+    "label": "it_science",
+    "gold_n": 30,
+    "pred_n": 42
+   },
+   "confusions_top5": [
+    [
+     "society",
+     "economy",
+     12
+    ],
+    [
+     "world",
+     "politics",
+     10
+    ],
+    [
+     "politics",
+     "world",
+     7
+    ],
+    [
+     "society",
+     "it_science",
+     6
+    ],
+    [
+     "world",
+     "society",
+     5
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 245
+   }
+  },
+  {
+   "report": "results/P4/smoke_full/smoke_20261003-1136_ft-smoke_ko_klue_ynat_7_dev.json",
+   "set": "ko_klue_ynat_7",
+   "model": "ft-smoke",
+   "qid": "topic",
+   "split": "dev",
+   "n": 245,
+   "accuracy": 0.6081632653061224,
+   "macro_f1_union": 0.5999203757866126,
+   "macro_f1_gold": 0.5999203757866126,
+   "brier": 0.585997669877551,
+   "ece": 0.20386244897959185,
+   "mean_confidence": 0.7968216326530612,
+   "acc_at_50_coverage": 0.7622950819672131,
+   "majority": 0.16326530612244897,
+   "majority_label": "world",
+   "random": 0.1428571428571428,
+   "delta_vs_majority": 0.4448979591836735,
+   "accuracy_ci": [
+    0.5428571428571428,
+    0.6693877551020408
+   ],
+   "ece_ci": [
+    0.15188997959183675,
+    0.26732903061224483
+   ],
+   "recall": {
+    "culture_life": [
+     22,
+     39
+    ],
+    "economy": [
+     29,
+     34
+    ],
+    "it_science": [
+     25,
+     30
+    ],
+    "politics": [
+     19,
+     38
+    ],
+    "society": [
+     9,
+     31
+    ],
+    "sports": [
+     25,
+     33
+    ],
+    "world": [
+     20,
+     40
+    ]
+   },
+   "pred_counts": {
+    "economy": 56,
+    "it_science": 42,
+    "politics": 36,
+    "world": 33,
+    "sports": 32,
+    "culture_life": 26,
+    "society": 20
+   },
+   "first_option": {
+    "label": "it_science",
+    "gold_n": 30,
+    "pred_n": 42
+   },
+   "confusions_top5": [
+    [
+     "society",
+     "economy",
+     12
+    ],
+    [
+     "world",
+     "politics",
+     10
+    ],
+    [
+     "politics",
+     "world",
+     7
+    ],
+    [
+     "society",
+     "it_science",
+     6
+    ],
+    [
+     "world",
+     "society",
+     5
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 245
+   }
+  },
+  {
+   "report": "results/P4/20261002-2014_multilingual_ko_klue_ynat_7_dev.json",
+   "set": "ko_klue_ynat_7",
+   "model": "multilingual",
+   "qid": "topic",
+   "split": "all",
+   "n": 245,
+   "accuracy": 0.6122448979591837,
+   "macro_f1_union": 0.6008813175495291,
+   "macro_f1_gold": 0.6008813175495291,
+   "brier": 0.5749010315102041,
+   "ece": 0.2017004081632654,
+   "mean_confidence": 0.8124897959183673,
+   "acc_at_50_coverage": 0.7950819672131147,
+   "majority": 0.16326530612244897,
+   "majority_label": "world",
+   "random": 0.1428571428571428,
+   "delta_vs_majority": 0.44897959183673475,
+   "accuracy_ci": [
+    0.5469387755102041,
+    0.673469387755102
+   ],
+   "ece_ci": [
+    0.16368567346938798,
+    0.2683085714285715
+   ],
+   "recall": {
+    "culture_life": [
+     23,
+     39
+    ],
+    "economy": [
+     28,
+     34
+    ],
+    "it_science": [
+     25,
+     30
+    ],
+    "politics": [
+     19,
+     38
+    ],
+    "society": [
+     8,
+     31
+    ],
+    "sports": [
+     27,
+     33
+    ],
+    "world": [
+     20,
+     40
+    ]
+   },
+   "pred_counts": {
+    "economy": 55,
+    "it_science": 42,
+    "politics": 35,
+    "sports": 35,
+    "world": 33,
+    "culture_life": 28,
+    "society": 17
+   },
+   "first_option": {
+    "label": "it_science",
+    "gold_n": 30,
+    "pred_n": 42
+   },
+   "confusions_top5": [
+    [
+     "society",
+     "economy",
+     12
+    ],
+    [
+     "world",
+     "politics",
+     9
+    ],
+    [
+     "politics",
+     "world",
+     7
+    ],
+    [
+     "society",
+     "it_science",
+     6
+    ],
+    [
+     "world",
+     "society",
+     5
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 245
+   }
+  },
+  {
+   "report": "results/P4/20261002-2014_multilingual_ko_klue_ynat_7_dev.json",
+   "set": "ko_klue_ynat_7",
+   "model": "multilingual",
+   "qid": "topic",
+   "split": "dev",
+   "n": 245,
+   "accuracy": 0.6122448979591837,
+   "macro_f1_union": 0.6008813175495291,
+   "macro_f1_gold": 0.6008813175495291,
+   "brier": 0.5749010315102041,
+   "ece": 0.2017004081632654,
+   "mean_confidence": 0.8124897959183673,
+   "acc_at_50_coverage": 0.7950819672131147,
+   "majority": 0.16326530612244897,
+   "majority_label": "world",
+   "random": 0.1428571428571428,
+   "delta_vs_majority": 0.44897959183673475,
+   "accuracy_ci": [
+    0.5469387755102041,
+    0.673469387755102
+   ],
+   "ece_ci": [
+    0.16368567346938798,
+    0.2683085714285715
+   ],
+   "recall": {
+    "culture_life": [
+     23,
+     39
+    ],
+    "economy": [
+     28,
+     34
+    ],
+    "it_science": [
+     25,
+     30
+    ],
+    "politics": [
+     19,
+     38
+    ],
+    "society": [
+     8,
+     31
+    ],
+    "sports": [
+     27,
+     33
+    ],
+    "world": [
+     20,
+     40
+    ]
+   },
+   "pred_counts": {
+    "economy": 55,
+    "it_science": 42,
+    "politics": 35,
+    "sports": 35,
+    "world": 33,
+    "culture_life": 28,
+    "society": 17
+   },
+   "first_option": {
+    "label": "it_science",
+    "gold_n": 30,
+    "pred_n": 42
+   },
+   "confusions_top5": [
+    [
+     "society",
+     "economy",
+     12
+    ],
+    [
+     "world",
+     "politics",
+     9
+    ],
+    [
+     "politics",
+     "world",
+     7
+    ],
+    [
+     "society",
+     "it_science",
+     6
+    ],
+    [
+     "world",
+     "society",
+     5
+    ]
+   ],
+   "models": {
+    "laya-rl-agent": 245
+   }
+  }
+ ]
+}

@@ -1,0 +1,148 @@
+{
+ "task": "T8",
+ "timing_report": "results/T3arm/T8/train_timing.json",
+ "status": "ok",
+ "throughput": {
+  "train_items_per_s": 10.484,
+  "s_per_optimizer_step": 3.025,
+  "s_per_micro_batch_mean": 0.7562
+ },
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 0.73,
+  "train_loop": 84.7,
+  "epoch_checkpoint_saves": 1.22,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 0.85,
+  "calibration (forward + fit_temperature)": 1.29,
+  "export (final save + configs)": 0.41,
+  "train() total": 89.22
+ },
+ "memory_gb": {
+  "ru_maxrss": 3.18,
+  "rss_peak_sampled": 1.95,
+  "mps_current_allocated_peak": 20.77,
+  "mps_driver_allocated_peak": 25.99,
+  "mps_recommended_max": 40.2
+ },
+ "optimizer_steps": 28,
+ "n_train_items": 444,
+ "loss_log_script": [
+  "Epoch 1/2 complete; avg_loss=0.3588",
+  "Epoch 2/2 complete; avg_loss=0.2280"
+ ],
+ "train_ce_windows": [
+  0.6419,
+  0.4004,
+  0.2598,
+  0.0771,
+  0.5659,
+  0.055,
+  0.0396,
+  0.2367,
+  0.7783,
+  0.0333,
+  0.0
+ ],
+ "train_acc_windows": [
+  0.841,
+  0.83,
+  0.886,
+  0.977,
+  0.932,
+  0.989,
+  0.989,
+  0.989,
+  0.955,
+  0.989,
+  1.0
+ ],
+ "calibration_rows": {
+  "n": 40,
+  "ce_before_T": 0.0,
+  "accuracy": 1.0
+ },
+ "temperature_fits_script": [
+  {
+   "start": 91.212,
+   "end": 91.228,
+   "samples": 40
+  }
+ ],
+ "dev": {
+  "epoch0_vanilla": {
+   "report": "results/T3arm/T8/dev_ep0.json",
+   "accuracy": 0.6833333333333333
+  },
+  "reports": [
+   "results/T3arm/T8/dev_ep1.json",
+   "results/T3arm/T8/dev_final.json"
+  ],
+  "accuracy": [
+   0.9666666666666667,
+   0.95
+  ],
+  "selected": "results/T3arm/T8/dev_ep1.json",
+  "rule": "highest dev accuracy; a tie goes to the earlier epoch (docs/11 §4)"
+ },
+ "training_failed": false,
+ "class_recall_dev": {
+  "epoch0_vanilla": {
+   "False": 1.0,
+   "True": 0.3667
+  },
+  "selected": {
+   "False": 1.0,
+   "True": 0.9333
+  }
+ },
+ "train_vs_dev_gap": {
+  "train_acc_last_window": 1.0,
+  "dev_acc_selected": 0.9666666666666667,
+  "gap": 0.0333,
+  "note": "train acc = argmax vs target on each micro-batch's training forward (dropout on), last 10%"
+ },
+ "selected_ckpt": "poc/finetune/ckpt_t3arm/T8_sel",
+ "selected_temperature": [
+  1.2,
+  1.2,
+  1.8595075607299805
+ ],
+ "temperature_clamp": {
+  "script_fit_range": [
+   0.1,
+   10.0
+  ],
+  "load_range": [
+   0.5,
+   5.0
+  ],
+  "outside_load_range": [],
+  "at_script_bound": [],
+  "default_1.2_for_types_without_calibration_rows": [
+   0,
+   1
+  ]
+ },
+ "selected_temperature_by_options": null,
+ "selected_max_len": [
+  512,
+  192
+ ],
+ "recalibrated_epoch": {
+  "ckpt": "poc/finetune/ckpt_t3arm/T8_sel",
+  "from": "poc/finetune/ckpt_t3arm/T8_run/epoch_1",
+  "temperatures": [
+   1.2,
+   1.2,
+   1.8595075607299805
+  ],
+  "calibration_items": 40,
+  "samples_per_type": [
+   0,
+   0,
+   40
+  ],
+  "seconds": 1.8
+ }
+}

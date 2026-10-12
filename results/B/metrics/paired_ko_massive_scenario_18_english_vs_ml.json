@@ -1,0 +1,110 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "paired",
+   "results/B/20261002-1648_english_ko_massive_scenario_18.json",
+   "results/B/20261002-1647_multilingual_ko_massive_scenario_18.json",
+   "--out",
+   "results/B/metrics/paired_ko_massive_scenario_18_english_vs_ml.md",
+   "--json",
+   "results/B/metrics/paired_ko_massive_scenario_18_english_vs_ml.json"
+  ],
+  "generated_at": "2026-10-02T17:05:32+0900",
+  "reports": [
+   {
+    "report": "results/B/20261002-1648_english_ko_massive_scenario_18.json",
+    "dataset": "data/evals/ko_massive_scenario_18.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "28694e08bfed61ee6e4cf5a02bb024c33ffb7c3228012267d4a022f3de0ac03e",
+    "questions_sha256": "7bf1c9b1b314f6bdd03e49cbcd471106c2a7209c06407698e82bcdb182f30a44",
+    "revisions": {
+     "english": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "english",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 100,
+    "split_rows": {
+     "test": 51,
+     "dev": 49
+    }
+   },
+   {
+    "report": "results/B/20261002-1647_multilingual_ko_massive_scenario_18.json",
+    "dataset": "data/evals/ko_massive_scenario_18.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "28694e08bfed61ee6e4cf5a02bb024c33ffb7c3228012267d4a022f3de0ac03e",
+    "questions_sha256": "7bf1c9b1b314f6bdd03e49cbcd471106c2a7209c06407698e82bcdb182f30a44",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 100,
+    "split_rows": {
+     "test": 51,
+     "dev": 49
+    }
+   }
+  ]
+ },
+ "a": "results/B/20261002-1648_english_ko_massive_scenario_18.json",
+ "b": "results/B/20261002-1647_multilingual_ko_massive_scenario_18.json",
+ "results": [
+  {
+   "qid": "scenario",
+   "split": "all",
+   "n": 100,
+   "acc_a": 0.31,
+   "acc_b": 0.52,
+   "delta": 0.21,
+   "delta_ci": [
+    0.08512784778021962,
+    0.3348721522197804
+   ],
+   "b": 12,
+   "c": 33,
+   "p": 0.0024589003220967243,
+   "agreement": 0.22,
+   "same_state": 1.0
+  },
+  {
+   "qid": "scenario",
+   "split": "dev",
+   "n": 49,
+   "acc_a": 0.3469387755102041,
+   "acc_b": 0.5510204081632653,
+   "delta": 0.20408163265306123,
+   "delta_ci": [
+    0.008289156092926214,
+    0.3998741092131962
+   ],
+   "b": 8,
+   "c": 18,
+   "p": 0.07551869750022888,
+   "agreement": 0.20408163265306123,
+   "same_state": 1.0
+  },
+  {
+   "qid": "scenario",
+   "split": "test",
+   "n": 51,
+   "acc_a": 0.27450980392156865,
+   "acc_b": 0.49019607843137253,
+   "delta": 0.21568627450980393,
+   "delta_ci": [
+    0.05897554463145141,
+    0.3723970043881565
+   ],
+   "b": 4,
+   "c": 15,
+   "p": 0.0192108154296875,
+   "agreement": 0.23529411764705882,
+   "same_state": 1.0
+  }
+ ]
+}

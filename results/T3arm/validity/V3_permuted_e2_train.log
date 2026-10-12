@@ -1,0 +1,71 @@
+load before: {"gpu_util_pct": 16, "mps_fp32_matmul_tflops": 6.77, "cotenant": [], "sys_mem_used_gb": 13.9}
+[     2.4s] Using legacy cached training items without metadata: results/T3arm/validity/V3_T3_permuted.pt
+[     2.9s] Device: mps
+[     2.9s] Training items: 5000; calibration items: 400
+[     2.9s] micro_batch=8; grad_accum=4; epochs=2
+[    53.8s] epoch 1/2, step 100, loss=1.5971
+[   102.2s] epoch 1/2, step 200, loss=1.9526
+[   151.7s] epoch 1/2, step 300, loss=1.4224
+[   200.4s] epoch 1/2, step 400, loss=1.5559
+[   249.7s] epoch 1/2, step 500, loss=1.8776
+[   299.5s] epoch 1/2, step 600, loss=1.7228
+[   312.2s] Epoch 1/2 complete; avg_loss=1.6899
+[   362.2s] epoch 2/2, step 100, loss=1.3327
+[   411.1s] epoch 2/2, step 200, loss=2.0337
+[   459.9s] epoch 2/2, step 300, loss=1.6176
+[   509.6s] epoch 2/2, step 400, loss=2.0012
+[   557.9s] epoch 2/2, step 500, loss=1.4951
+[   606.7s] epoch 2/2, step 600, loss=1.2313
+[   619.5s] Epoch 2/2 complete; avg_loss=1.7184
+[   620.6s] Running temperature calibration ...
+[   625.6s] Model saved to poc/finetune/ckpt_t3arm/_v3_permuted_e2
+[   625.6s] Temperatures: [0.7402235865592957, 1.2, 1.2]
+{
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 0.46,
+  "train_loop": 615.95,
+  "epoch_checkpoint_saves": 0.96,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 0.77,
+  "calibration (forward + fit_temperature)": 4.81,
+  "export (final save + configs)": 0.24,
+  "train() total": 623.2
+ },
+ "throughput": {
+  "train_items_per_s": 16.235,
+  "s_per_optimizer_step": 1.962,
+  "s_per_micro_batch_mean": 0.4928
+ },
+ "micro_batch_s": {
+  "median_all": 0.3197,
+  "median_repeat_shape_no_step": 0.3021,
+  "median_repeat_shape_with_step": 1.0374,
+  "optimizer_step_overhead": 0.7353,
+  "median_first_shape": 0.3873,
+  "first_shape_count": 52,
+  "repeat_shape_count": 1198,
+  "first_shape_extra_total_s": 11.1
+ },
+ "memory_gb": {
+  "ru_maxrss": 3.19,
+  "rss_peak_sampled": 2.65,
+  "mps_current_allocated_peak": 8.85,
+  "mps_driver_allocated_peak": 16.25,
+  "mps_recommended_max": 40.2
+ },
+ "calibration_rows": {
+  "n": 400,
+  "ce_before_T": 1.729,
+  "accuracy": 0.34
+ },
+ "item_sources": {
+  "train": {
+   "train": 10000
+  },
+  "calibration": {
+   "calib": 400
+  }
+ }
+}
+report: results/T3arm/validity/V3_permuted_e2_timing.json (wall 625.7s, status ok)

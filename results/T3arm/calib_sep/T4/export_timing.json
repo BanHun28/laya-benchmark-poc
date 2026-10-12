@@ -1,0 +1,109 @@
+{
+ "script": "poc/finetune/laya_finetune_mps_patched.py",
+ "script_sha256": "d8dc1eb92db72c0f577ec9cf6dc3ad80558e0e0ff79897bd92dc3f87399db642",
+ "zero_step": true,
+ "script_args": [
+  "models/laya",
+  "poc/finetune/ckpt_calib_sep/T4",
+  "--items",
+  "poc/finetune/data/t3arm/T4_english.pt",
+  "--calib-max",
+  "400",
+  "--epochs",
+  "0",
+  "--micro-batch",
+  "8",
+  "--grad-accum",
+  "4",
+  "--no-checkpointing",
+  "--device",
+  "mps"
+ ],
+ "seed": 13,
+ "keep_epoch_checkpoints": false,
+ "started_at": "2026-10-08T15:35:12+0900",
+ "versions": {
+  "torch": "2.14.1",
+  "python": "3.12.12",
+  "laya": "0.3.23"
+ },
+ "threads": {
+  "intra": 10,
+  "interop": 14
+ },
+ "load_before": {
+  "gpu_util_pct": 0,
+  "mps_fp32_matmul_tflops": 6.78,
+  "cotenant": [],
+  "sys_mem_used_gb": 21.1
+ },
+ "status": "ok",
+ "wall_s": 9.57,
+ "load_after": {
+  "gpu_util_pct": 0,
+  "mps_fp32_matmul_tflops": 6.04
+ },
+ "n_train_items": 5000,
+ "micro_batches": 0,
+ "optimizer_steps": 0,
+ "calibration_rows": {
+  "n": 400,
+  "accuracy": 0.8625
+ },
+ "temperature_fits": [
+  {
+   "start": 9.147,
+   "end": 9.162,
+   "samples": 400
+  }
+ ],
+ "item_sources": {
+  "train": {},
+  "calibration": {
+   "calib": 400
+  }
+ },
+ "load_series": [
+  {
+   "t": 3.5,
+   "rss_gb": 1.482,
+   "mps_alloc_gb": 1.689,
+   "mps_driver_gb": 2.161,
+   "gpu_util_pct": 93,
+   "sys_cpu_pct": 22.5,
+   "sys_mem_used_gb": 23.2,
+   "cotenant": []
+  }
+ ],
+ "events": [
+  [
+   2.518,
+   "Using legacy cached training items without metadata: poc/finetune/data/t3arm/T4_english.pt"
+  ],
+  [
+   3.008,
+   "Device: mps"
+  ],
+  [
+   3.008,
+   "Training items: 5000; calibration items: 400"
+  ],
+  [
+   3.008,
+   "micro_batch=8; grad_accum=4; epochs=0"
+  ],
+  [
+   3.008,
+   "Running temperature calibration ..."
+  ],
+  [
+   9.491,
+   "Model saved to poc/finetune/ckpt_calib_sep/T4"
+  ],
+  [
+   9.491,
+   "Temperatures: [1.161874532699585, 1.2, 1.2]"
+  ]
+ ],
+ "micro_batch_trace": []
+}

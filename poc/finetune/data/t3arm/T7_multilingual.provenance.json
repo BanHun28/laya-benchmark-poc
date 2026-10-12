@@ -1,0 +1,99 @@
+{
+ "items": "poc/finetune/data/t3arm/T7_multilingual.pt",
+ "items_sha256": "d3aa73b607e69680e03f3bdc97cb8647ff309c90193ab60cffd3d510b35a5486",
+ "task": "T7",
+ "base": "multilingual",
+ "base_dir": "/Users/banhun/.cache/huggingface/hub/models--convaiinnovations--laya/snapshots/55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851/multilingual",
+ "script": "poc/finetune/laya_finetune_mps_patched.py",
+ "script_sha256": "d8dc1eb92db72c0f577ec9cf6dc3ad80558e0e0ff79897bd92dc3f87399db642",
+ "budget": {
+  "max_len": 1024,
+  "head_max_len": 256
+ },
+ "seed": 13,
+ "n_items": 5400,
+ "n_train": 5000,
+ "n_calib": 400,
+ "calib_max": 400,
+ "rows": {
+  "train": {
+   "path": "poc/finetune/data/t3arm/T7_train.jsonl",
+   "sha256": "c097061e6ffeba55824b60cc81aa30a4befd828fa0416d2d148575619aa7eb0b",
+   "rows_total": 5000,
+   "rows_used": 5000
+  },
+  "calib": {
+   "path": "poc/finetune/data/t3arm/T7_calib.jsonl",
+   "sha256": "e5589c32dd5e4c7f1f53fb5d44ba6ff6cabdd8a5dd5e0bfd99605053bf263f8e",
+   "rows_total": 400,
+   "rows_used": 400
+  }
+ },
+ "subset": {
+  "n_train": 0,
+  "n_calib": 0,
+  "rule": "random.Random(seed).shuffle(row indices), rows taken until n items, row order kept"
+ },
+ "shuffle_options": "all",
+ "option_order": {
+  "train": "choice: random.Random(13 + item index).shuffle(criteria keys); score/noul fixed",
+  "calib": "canonical"
+ },
+ "options_reordered": {
+  "train": 5000,
+  "calib": 0
+ },
+ "gold_slot": {
+  "calib:choice:0": 31,
+  "calib:choice:1": 41,
+  "calib:choice:2": 32,
+  "calib:choice:3": 42,
+  "calib:choice:4": 36,
+  "calib:choice:5": 40,
+  "calib:choice:6": 38,
+  "calib:choice:7": 50,
+  "calib:choice:8": 52,
+  "calib:choice:9": 38,
+  "train:choice:0": 511,
+  "train:choice:1": 532,
+  "train:choice:2": 529,
+  "train:choice:3": 485,
+  "train:choice:4": 528,
+  "train:choice:5": 458,
+  "train:choice:6": 519,
+  "train:choice:7": 507,
+  "train:choice:8": 458,
+  "train:choice:9": 473
+ },
+ "permute_labels": null,
+ "v4_inference_identity": {
+  "checked": 25,
+  "identical": 25
+ },
+ "seq_len_train": {
+  "min": 98,
+  "p50": 117,
+  "p90": 128,
+  "max": 154,
+  "mean": 117.7,
+  "sum": 588372
+ },
+ "decoded_example": {
+  "src": "train:0:intent",
+  "label": 6,
+  "options": [
+   "datetime_convert: datetime convert",
+   "takeaway_order: takeaway order",
+   "qa_definition: qa definition",
+   "qa_factoid: qa factoid",
+   "email_sendemail: email sendemail",
+   "email_query: email query",
+   "iot_cleaning: iot cleaning",
+   "qa_currency: qa currency",
+   "general_joke: general joke",
+   "transport_ticket: transport ticket"
+  ],
+  "text": "<bos> choice question: What is the user asking for in `utterance`?<eos><mask> datetime_convert: datetime convert<mask> takeaway_order: takeaway order<mask> qa_definition: qa definition<mask> qa_factoid: qa factoid<mask> email_sendemail: email sendemail<mask> email_query: email query<mask> iot_cleaning: iot cleaning<mask> qa_currency: qa currency<mask> general_joke: general joke<mask> transport_ticket: transport ticket<eos> {\"utterance\": \"vacuum the house\"}<eos>"
+ },
+ "run_with": "--items poc/finetune/data/t3arm/T7_multilingual.pt --calib-max 400 (never --force-preprocess)"
+}

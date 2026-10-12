@@ -1,0 +1,252 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "summary",
+   "results/C/schemas_v2/20261002-1734_multilingual_router_v2d_dev.json",
+   "--bootstrap",
+   "1000",
+   "--seed",
+   "13",
+   "--out",
+   "results/C/schemas_v2/metrics/summary_v2d.md",
+   "--json",
+   "results/C/schemas_v2/metrics/summary_v2d.json"
+  ],
+  "generated_at": "2026-10-02T17:35:26+0900",
+  "reports": [
+   {
+    "report": "results/C/schemas_v2/20261002-1734_multilingual_router_v2d_dev.json",
+    "dataset": "results/C/schemas_v2/router_v2d_dev.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "da73a646a05a92a211f823c73dfb936a774ce8cdbbc7356527685507c43a0147",
+    "questions_sha256": "5bdac5b744e7fc4bffdb32e9856f8f52f116f8a51a8bdb4c62c8500ea94283e6",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 250,
+    "split_rows": {
+     "dev": 250
+    }
+   }
+  ]
+ },
+ "results": [
+  {
+   "report": "results/C/schemas_v2/20261002-1734_multilingual_router_v2d_dev.json",
+   "set": "router_v2d_dev",
+   "model": "multilingual",
+   "qid": "domain",
+   "split": "all",
+   "n": 250,
+   "accuracy": 0.516,
+   "macro_f1_union": 0.5017251139440835,
+   "macro_f1_gold": 0.5017251139440835,
+   "brier": 0.6830309531200001,
+   "ece": 0.21087440000000005,
+   "mean_confidence": 0.7268743999999999,
+   "acc_at_50_coverage": 0.736,
+   "majority": 0.148,
+   "majority_label": "media",
+   "random": 0.125,
+   "delta_vs_majority": 0.368,
+   "accuracy_ci": [
+    0.4559,
+    0.576
+   ],
+   "ece_ci": [
+    0.17223321999999996,
+    0.26701188000000003
+   ],
+   "recall": {
+    "communication": [
+     19,
+     30
+    ],
+    "general": [
+     7,
+     30
+    ],
+    "info_qa": [
+     12,
+     31
+    ],
+    "lifestyle": [
+     16,
+     27
+    ],
+    "media": [
+     20,
+     37
+    ],
+    "productivity": [
+     5,
+     33
+    ],
+    "smart_home": [
+     20,
+     30
+    ],
+    "transport": [
+     30,
+     32
+    ]
+   },
+   "pred_counts": {
+    "smart_home": 60,
+    "transport": 43,
+    "lifestyle": 39,
+    "communication": 27,
+    "media": 24,
+    "general": 20,
+    "productivity": 19,
+    "info_qa": 18
+   },
+   "first_option": {
+    "label": "general",
+    "gold_n": 30,
+    "pred_n": 20
+   },
+   "confusions_top5": [
+    [
+     "general",
+     "smart_home",
+     11
+    ],
+    [
+     "productivity",
+     "smart_home",
+     10
+    ],
+    [
+     "media",
+     "smart_home",
+     9
+    ],
+    [
+     "smart_home",
+     "productivity",
+     6
+    ],
+    [
+     "info_qa",
+     "general",
+     6
+    ]
+   ],
+   "models": {
+    "multilingual": 250
+   }
+  },
+  {
+   "report": "results/C/schemas_v2/20261002-1734_multilingual_router_v2d_dev.json",
+   "set": "router_v2d_dev",
+   "model": "multilingual",
+   "qid": "domain",
+   "split": "dev",
+   "n": 250,
+   "accuracy": 0.516,
+   "macro_f1_union": 0.5017251139440835,
+   "macro_f1_gold": 0.5017251139440835,
+   "brier": 0.6830309531200001,
+   "ece": 0.21087440000000005,
+   "mean_confidence": 0.7268743999999999,
+   "acc_at_50_coverage": 0.736,
+   "majority": 0.148,
+   "majority_label": "media",
+   "random": 0.125,
+   "delta_vs_majority": 0.368,
+   "accuracy_ci": [
+    0.4559,
+    0.576
+   ],
+   "ece_ci": [
+    0.17223321999999996,
+    0.26701188000000003
+   ],
+   "recall": {
+    "communication": [
+     19,
+     30
+    ],
+    "general": [
+     7,
+     30
+    ],
+    "info_qa": [
+     12,
+     31
+    ],
+    "lifestyle": [
+     16,
+     27
+    ],
+    "media": [
+     20,
+     37
+    ],
+    "productivity": [
+     5,
+     33
+    ],
+    "smart_home": [
+     20,
+     30
+    ],
+    "transport": [
+     30,
+     32
+    ]
+   },
+   "pred_counts": {
+    "smart_home": 60,
+    "transport": 43,
+    "lifestyle": 39,
+    "communication": 27,
+    "media": 24,
+    "general": 20,
+    "productivity": 19,
+    "info_qa": 18
+   },
+   "first_option": {
+    "label": "general",
+    "gold_n": 30,
+    "pred_n": 20
+   },
+   "confusions_top5": [
+    [
+     "general",
+     "smart_home",
+     11
+    ],
+    [
+     "productivity",
+     "smart_home",
+     10
+    ],
+    [
+     "media",
+     "smart_home",
+     9
+    ],
+    [
+     "smart_home",
+     "productivity",
+     6
+    ],
+    [
+     "info_qa",
+     "general",
+     6
+    ]
+   ],
+   "models": {
+    "multilingual": 250
+   }
+  }
+ ]
+}

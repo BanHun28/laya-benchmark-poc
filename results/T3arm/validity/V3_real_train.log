@@ -1,0 +1,64 @@
+load before: {"gpu_util_pct": 41, "mps_fp32_matmul_tflops": 5.99, "cotenant": [], "sys_mem_used_gb": 15.1}
+[     2.6s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T3_english.pt
+[     3.5s] Device: mps
+[     3.5s] Training items: 5000; calibration items: 400
+[     3.5s] micro_batch=8; grad_accum=4; epochs=1
+[    54.7s] epoch 1/1, step 100, loss=0.3556
+[   103.3s] epoch 1/1, step 200, loss=1.0818
+[   153.2s] epoch 1/1, step 300, loss=1.0239
+[   202.8s] epoch 1/1, step 400, loss=0.1533
+[   252.3s] epoch 1/1, step 500, loss=0.9523
+[   302.6s] epoch 1/1, step 600, loss=0.3379
+[   315.8s] Epoch 1/1 complete; avg_loss=0.5948
+[   316.0s] Running temperature calibration ...
+[   321.1s] Model saved to poc/finetune/ckpt_t3arm/_v3_real
+[   321.1s] Temperatures: [1.1564682722091675, 1.2, 1.2]
+{
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 0.83,
+  "train_loop": 312.29,
+  "epoch_checkpoint_saves": 0.28,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 0,
+  "calibration (forward + fit_temperature)": 4.84,
+  "export (final save + configs)": 0.21,
+  "train() total": 318.46
+ },
+ "throughput": {
+  "train_items_per_s": 16.011,
+  "s_per_optimizer_step": 1.989,
+  "s_per_micro_batch_mean": 0.4997
+ },
+ "micro_batch_s": {
+  "median_all": 0.3223,
+  "median_repeat_shape_no_step": 0.3029,
+  "median_repeat_shape_with_step": 1.04,
+  "optimizer_step_overhead": 0.7371,
+  "median_first_shape": 0.3815,
+  "first_shape_count": 52,
+  "repeat_shape_count": 573,
+  "first_shape_extra_total_s": 11.3
+ },
+ "memory_gb": {
+  "ru_maxrss": 3.18,
+  "rss_peak_sampled": 2.25,
+  "mps_current_allocated_peak": 8.75,
+  "mps_driver_allocated_peak": 16.25,
+  "mps_recommended_max": 40.2
+ },
+ "calibration_rows": {
+  "n": 400,
+  "ce_before_T": 0.4481,
+  "accuracy": 0.87
+ },
+ "item_sources": {
+  "train": {
+   "train": 5000
+  },
+  "calibration": {
+   "calib": 400
+  }
+ }
+}
+report: results/T3arm/validity/V3_real_timing.json (wall 321.2s, status ok)

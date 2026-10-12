@@ -1,0 +1,139 @@
+{
+ "script": "poc/finetune/laya_finetune_mps_patched.py",
+ "script_sha256": "d8dc1eb92db72c0f577ec9cf6dc3ad80558e0e0ff79897bd92dc3f87399db642",
+ "zero_step": true,
+ "script_args": [
+  "models/laya",
+  "poc/finetune/ckpt_calib_sep/T1",
+  "--items",
+  "poc/finetune/data/t3arm/T1_english.pt",
+  "--calib-max",
+  "400",
+  "--epochs",
+  "0",
+  "--micro-batch",
+  "8",
+  "--grad-accum",
+  "4",
+  "--no-checkpointing",
+  "--device",
+  "mps"
+ ],
+ "seed": 13,
+ "keep_epoch_checkpoints": false,
+ "started_at": "2026-10-08T15:29:01+0900",
+ "versions": {
+  "torch": "2.14.1",
+  "python": "3.12.12",
+  "laya": "0.3.23"
+ },
+ "threads": {
+  "intra": 10,
+  "interop": 14
+ },
+ "load_before": {
+  "gpu_util_pct": 11,
+  "mps_fp32_matmul_tflops": 6.71,
+  "cotenant": [],
+  "sys_mem_used_gb": 20.1
+ },
+ "status": "ok",
+ "wall_s": 25.51,
+ "load_after": {
+  "gpu_util_pct": 0,
+  "mps_fp32_matmul_tflops": 6.69
+ },
+ "n_train_items": 5000,
+ "micro_batches": 0,
+ "optimizer_steps": 0,
+ "calibration_rows": {
+  "n": 400,
+  "accuracy": 0.3425
+ },
+ "temperature_fits": [
+  {
+   "start": 24.773,
+   "end": 24.805,
+   "samples": 120
+  },
+  {
+   "start": 24.805,
+   "end": 24.827,
+   "samples": 160
+  },
+  {
+   "start": 24.827,
+   "end": 24.857,
+   "samples": 120
+  }
+ ],
+ "item_sources": {
+  "train": {},
+  "calibration": {
+   "calib": 400
+  }
+ },
+ "load_series": [
+  {
+   "t": 3.4,
+   "rss_gb": 1.494,
+   "mps_alloc_gb": 1.689,
+   "mps_driver_gb": 2.165,
+   "gpu_util_pct": 92,
+   "sys_cpu_pct": 21.4,
+   "sys_mem_used_gb": 21.7,
+   "cotenant": []
+  },
+  {
+   "t": 13.5,
+   "rss_gb": 1.541,
+   "mps_alloc_gb": 1.689,
+   "mps_driver_gb": 3.248,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.6,
+   "sys_mem_used_gb": 22.8,
+   "cotenant": []
+  },
+  {
+   "t": 23.6,
+   "rss_gb": 1.599,
+   "mps_alloc_gb": 1.689,
+   "mps_driver_gb": 3.249,
+   "gpu_util_pct": 99,
+   "sys_cpu_pct": 10.3,
+   "sys_mem_used_gb": 23.1,
+   "cotenant": []
+  }
+ ],
+ "events": [
+  [
+   2.381,
+   "Using legacy cached training items without metadata: poc/finetune/data/t3arm/T1_english.pt"
+  ],
+  [
+   2.908,
+   "Device: mps"
+  ],
+  [
+   2.908,
+   "Training items: 5000; calibration items: 400"
+  ],
+  [
+   2.908,
+   "micro_batch=8; grad_accum=4; epochs=0"
+  ],
+  [
+   2.908,
+   "Running temperature calibration ..."
+  ],
+  [
+   25.428,
+   "Model saved to poc/finetune/ckpt_calib_sep/T1"
+  ],
+  [
+   25.429,
+   "Temperatures: [7.6129350662231445, 4.175991058349609, 10.0]"
+  ]
+ ],
+ "micro_batch_trace": []
+}

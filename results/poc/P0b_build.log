@@ -1,0 +1,161 @@
+gateway_v1b.json == gateway_v1.json + 05_poc_plan.md:268 needs_llm criteria {'true': '개별 상황 설명, 설득, 복합 질의처럼 생성형 답변이 필요함', 'false': '정형 액션(큐 배정, 템플릿 답변, 상태 조회)으로 처리 가능함'}
+
+## V0_v1 -> results/poc/P0b_V0_v1.jsonl, questions_sha256=6b8bdadc8f9c718ed40f2510134caf52079a5dc0260e142d93d2132bee722c8a, state={"message": ...}
+  intent           choice ins='What does the customer want in `message`?'
+                          options=['refund: 환불, 결제 취소, 중복 결제 환급을 요구', 'technical_help: 버그, 오류, 접속 불가, 연동 문제 등 기술적 도움 요청', 'billing_question: 청구서, 요금제, 결제 수단, 금액에 대한 문의', 'information: 일반 정보, 가격, 사용 방법 문의', 'cancellation: 해지, 탈퇴, 다운그레이드 요청', 'other: 위 어느 것에도 해당하지 않음']
+  is_urgent        noul   ins='Does `message` communicate time pressure or a deadline?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  frustration      score  ins='How frustrated does the customer sound in `message`?'
+                          options=['level 0: 차분하고 중립적', 'level 1: 걱정하지만 정중함', 'level 2: 분명히 짜증남', 'level 3: 매우 화남 또는 강한 표현 사용']
+  refund_requested noul   ins='Does the customer ask for money back?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  churn_risk       noul   ins='Does `message` suggest the customer may leave for a competitor or cancel?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  needs_llm        noul   ins='Does answering `message` require a free-form generated reply rather than a templated action?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  complexity       choice ins='How complex is the request in `message`?'
+                          options=['canned: 인사, 표준 FAQ, 단순 상태 확인', 'structured: API나 템플릿으로 결정적으로 처리 가능한 요청', 'complex: 생성형 답변, 다단계 추론, 복합 분석이 필요한 요청']
+
+## V1_criteria -> results/poc/P0b_V1_criteria.jsonl, questions_sha256=8ea18279f62ef606f642930f91c81350e5c2c0a20713a6fb5fc3b60660100819, state={"message": ...}
+  intent           choice ins='What does the customer want in `message`?'
+                          options=['refund: 환불, 결제 취소, 중복 결제 환급을 요구', 'technical_help: 버그, 오류, 접속 불가, 연동 문제 등 기술적 도움 요청', 'billing_question: 청구서, 요금제, 결제 수단, 금액에 대한 문의', 'information: 일반 정보, 가격, 사용 방법 문의', 'cancellation: 해지, 탈퇴, 다운그레이드 요청', 'other: 위 어느 것에도 해당하지 않음']
+  is_urgent        noul   ins='Does `message` communicate time pressure or a deadline?'
+                          options=['false: 시간 압박이 없음', 'true: 기한, 마감, 즉시 처리 요구, 서비스 중단 등 시간 압박이 있음']
+  frustration      score  ins='How frustrated does the customer sound in `message`?'
+                          options=['level 0: 차분하고 중립적', 'level 1: 걱정하지만 정중함', 'level 2: 분명히 짜증남', 'level 3: 매우 화남 또는 강한 표현 사용']
+  refund_requested noul   ins='Does the customer ask for money back?'
+                          options=['false: 환불 요구가 없음', 'true: 돈을 돌려달라고 명시적으로 요구함']
+  churn_risk       noul   ins='Does `message` suggest the customer may leave for a competitor or cancel?'
+                          options=['false: 이탈 신호가 없음', 'true: 해지, 타사 이동, 거래 중단 의사나 위협이 드러남']
+  needs_llm        noul   ins='Does answering `message` require a free-form generated reply rather than a templated action?'
+                          options=['false: 정형 액션(큐 배정, 템플릿 답변, 상태 조회)으로 처리 가능함', 'true: 개별 상황 설명, 설득, 복합 질의처럼 생성형 답변이 필요함']
+  complexity       choice ins='How complex is the request in `message`?'
+                          options=['canned: 인사, 표준 FAQ, 단순 상태 확인', 'structured: API나 템플릿으로 결정적으로 처리 가능한 요청', 'complex: 생성형 답변, 다단계 추론, 복합 분석이 필요한 요청']
+
+## V2_labels_ab -> results/poc/P0b_V2_labels_ab.jsonl, questions_sha256=ca6e10c9909568d4022a31bc16ab3c94bdc9d41bdb77dbba532e44f986b022d9, state={"message": ...}
+  intent           choice ins='What does the customer want in `message`?'
+                          options=['refund: 환불, 결제 취소, 중복 결제 환급을 요구', 'technical_help: 버그, 오류, 접속 불가, 연동 문제 등 기술적 도움 요청', 'billing_question: 청구서, 요금제, 결제 수단, 금액에 대한 문의', 'information: 일반 정보, 가격, 사용 방법 문의', 'cancellation: 해지, 탈퇴, 다운그레이드 요청', 'other: 위 어느 것에도 해당하지 않음']
+  is_urgent        noul   ins='Does `message` communicate time pressure or a deadline?'
+                          options=['B: no, the statement does not hold', 'A: yes, the statement holds']
+  frustration      score  ins='How frustrated does the customer sound in `message`?'
+                          options=['level 0: 차분하고 중립적', 'level 1: 걱정하지만 정중함', 'level 2: 분명히 짜증남', 'level 3: 매우 화남 또는 강한 표현 사용']
+  refund_requested noul   ins='Does the customer ask for money back?'
+                          options=['B: no, the statement does not hold', 'A: yes, the statement holds']
+  churn_risk       noul   ins='Does `message` suggest the customer may leave for a competitor or cancel?'
+                          options=['B: no, the statement does not hold', 'A: yes, the statement holds']
+  needs_llm        noul   ins='Does answering `message` require a free-form generated reply rather than a templated action?'
+                          options=['B: no, the statement does not hold', 'A: yes, the statement holds']
+  complexity       choice ins='How complex is the request in `message`?'
+                          options=['canned: 인사, 표준 FAQ, 단순 상태 확인', 'structured: API나 템플릿으로 결정적으로 처리 가능한 요청', 'complex: 생성형 답변, 다단계 추론, 복합 분석이 필요한 요청']
+
+## V3a_choice_ab -> results/poc/P0b_V3a_choice_ab.jsonl, questions_sha256=186315603eae89574282da0cf56d3922b388eb16d2621929ed0dc6f9b2cb0dba, state={"message": ...}
+  intent           choice ins='What does the customer want in `message`?'
+                          options=['refund: 환불, 결제 취소, 중복 결제 환급을 요구', 'technical_help: 버그, 오류, 접속 불가, 연동 문제 등 기술적 도움 요청', 'billing_question: 청구서, 요금제, 결제 수단, 금액에 대한 문의', 'information: 일반 정보, 가격, 사용 방법 문의', 'cancellation: 해지, 탈퇴, 다운그레이드 요청', 'other: 위 어느 것에도 해당하지 않음']
+  is_urgent        choice ins='Does `message` communicate time pressure or a deadline?'
+                          options=['A: 기한, 마감, 즉시 처리 요구 등 시간 압박이 있음', 'B: 시간 압박이 없음']
+  frustration      score  ins='How frustrated does the customer sound in `message`?'
+                          options=['level 0: 차분하고 중립적', 'level 1: 걱정하지만 정중함', 'level 2: 분명히 짜증남', 'level 3: 매우 화남 또는 강한 표현 사용']
+  refund_requested choice ins='Does the customer ask for money back?'
+                          options=['A: 돈을 돌려달라고 명시적으로 요구함', 'B: 환불 요구가 없음']
+  churn_risk       choice ins='Does `message` suggest the customer may leave for a competitor or cancel?'
+                          options=['A: 해지, 타사 이동, 거래 중단 의사나 위협이 드러남', 'B: 이탈 신호가 없음']
+  needs_llm        choice ins='Does answering `message` require a free-form generated reply rather than a templated action?'
+                          options=['A: 개별 상황 설명, 설득, 복합 질의처럼 생성형 답변이 필요함', 'B: 정형 액션(큐 배정, 템플릿 답변, 상태 조회)으로 처리 가능함']
+  complexity       choice ins='How complex is the request in `message`?'
+                          options=['canned: 인사, 표준 FAQ, 단순 상태 확인', 'structured: API나 템플릿으로 결정적으로 처리 가능한 요청', 'complex: 생성형 답변, 다단계 추론, 복합 분석이 필요한 요청']
+
+## V3b_choice_semantic -> results/poc/P0b_V3b_choice_semantic.jsonl, questions_sha256=0938ff3c86e2665c25e57ccb43bc4003c32f8d49936240f85b84aa961aa2d6f3, state={"message": ...}
+  intent           choice ins='What does the customer want in `message`?'
+                          options=['refund: 환불, 결제 취소, 중복 결제 환급을 요구', 'technical_help: 버그, 오류, 접속 불가, 연동 문제 등 기술적 도움 요청', 'billing_question: 청구서, 요금제, 결제 수단, 금액에 대한 문의', 'information: 일반 정보, 가격, 사용 방법 문의', 'cancellation: 해지, 탈퇴, 다운그레이드 요청', 'other: 위 어느 것에도 해당하지 않음']
+  is_urgent        choice ins='Does `message` communicate time pressure or a deadline?'
+                          options=['urgent: 기한, 마감, 즉시 처리 요구 등 시간 압박이 있음', 'not_urgent: 시간 압박이 없음']
+  frustration      score  ins='How frustrated does the customer sound in `message`?'
+                          options=['level 0: 차분하고 중립적', 'level 1: 걱정하지만 정중함', 'level 2: 분명히 짜증남', 'level 3: 매우 화남 또는 강한 표현 사용']
+  refund_requested choice ins='Does the customer ask for money back?'
+                          options=['refund_requested: 돈을 돌려달라고 명시적으로 요구함', 'no_refund_request: 환불 요구가 없음']
+  churn_risk       choice ins='Does `message` suggest the customer may leave for a competitor or cancel?'
+                          options=['churn_risk: 해지, 타사 이동, 거래 중단 의사나 위협이 드러남', 'no_churn_risk: 이탈 신호가 없음']
+  needs_llm        choice ins='Does answering `message` require a free-form generated reply rather than a templated action?'
+                          options=['needs_llm: 개별 상황 설명, 설득, 복합 질의처럼 생성형 답변이 필요함', 'templated_ok: 정형 액션(큐 배정, 템플릿 답변, 상태 조회)으로 처리 가능함']
+  complexity       choice ins='How complex is the request in `message`?'
+                          options=['canned: 인사, 표준 FAQ, 단순 상태 확인', 'structured: API나 템플릿으로 결정적으로 처리 가능한 요청', 'complex: 생성형 답변, 다단계 추론, 복합 분석이 필요한 요청']
+
+## V4_ko_instructions -> results/poc/P0b_V4_ko_instructions.jsonl, questions_sha256=5684b276c8cc174f743fae6f738706cb1c52955d87cdc2023056a94dcb5f538f, state={"message": ...}
+  intent           choice ins='`message`에서 고객이 원하는 것은 무엇인가요?'
+                          options=['refund: 환불, 결제 취소, 중복 결제 환급을 요구', 'technical_help: 버그, 오류, 접속 불가, 연동 문제 등 기술적 도움 요청', 'billing_question: 청구서, 요금제, 결제 수단, 금액에 대한 문의', 'information: 일반 정보, 가격, 사용 방법 문의', 'cancellation: 해지, 탈퇴, 다운그레이드 요청', 'other: 위 어느 것에도 해당하지 않음']
+  is_urgent        noul   ins='`message`에 시간 압박이나 기한이 드러나 있나요?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  frustration      score  ins='`message`에서 고객이 얼마나 짜증 난 것으로 느껴지나요?'
+                          options=['level 0: 차분하고 중립적', 'level 1: 걱정하지만 정중함', 'level 2: 분명히 짜증남', 'level 3: 매우 화남 또는 강한 표현 사용']
+  refund_requested noul   ins='고객이 돈을 돌려달라고 요청하나요?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  churn_risk       noul   ins='`message`에 고객이 경쟁사로 옮기거나 해지할 수 있다는 신호가 있나요?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  needs_llm        noul   ins='`message`에 답하려면 템플릿 액션이 아니라 자유 형식으로 생성한 답변이 필요한가요?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  complexity       choice ins='`message`의 요청은 얼마나 복잡한가요?'
+                          options=['canned: 인사, 표준 FAQ, 단순 상태 확인', 'structured: API나 템플릿으로 결정적으로 처리 가능한 요청', 'complex: 생성형 답변, 다단계 추론, 복합 분석이 필요한 요청']
+
+## V5_intent4 -> results/poc/P0b_V5_intent4.jsonl, questions_sha256=7ac4bb26c5abdadc214ca46a74287ffbed1777318bfca6b6fd58fc872756f302, state={"message": ...}
+  intent           choice ins='What does the customer want in `message`?'
+                          options=['billing: 환불, 중복 결제, 청구서, 요금제, 결제 수단 등 돈과 관련된 요청', 'technical: 오류, 장애, 접속 불가, 연동 문제', 'cancellation: 해지, 탈퇴, 다운그레이드', 'other: 정보 문의, 사용 방법, 감사 인사, 그 외']
+  is_urgent        noul   ins='Does `message` communicate time pressure or a deadline?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  frustration      score  ins='How frustrated does the customer sound in `message`?'
+                          options=['level 0: 차분하고 중립적', 'level 1: 걱정하지만 정중함', 'level 2: 분명히 짜증남', 'level 3: 매우 화남 또는 강한 표현 사용']
+  refund_requested noul   ins='Does the customer ask for money back?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  churn_risk       noul   ins='Does `message` suggest the customer may leave for a competitor or cancel?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  needs_llm        noul   ins='Does answering `message` require a free-form generated reply rather than a templated action?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  complexity       choice ins='How complex is the request in `message`?'
+                          options=['canned: 인사, 표준 FAQ, 단순 상태 확인', 'structured: API나 템플릿으로 결정적으로 처리 가능한 요청', 'complex: 생성형 답변, 다단계 추론, 복합 분석이 필요한 요청']
+
+## V6_en_descriptions -> results/poc/P0b_V6_en_descriptions.jsonl, questions_sha256=1ae2d91472069e43eb24ef8e9e07e82c9855097779ad927df5d363e6fb6b9fbd, state={"message": ...}
+  intent           choice ins='What does the customer want in `message`?'
+                          options=['refund: request for a refund, a payment cancellation, or reimbursement of a duplicate charge', 'technical_help: request for technical help with bugs, errors, access failures, or integration problems', 'billing_question: question about invoices, pricing plans, payment methods, or amounts charged', 'information: question about general information, prices, or how to use the product', 'cancellation: request to cancel, close the account, or downgrade', 'other: none of the above applies']
+  is_urgent        noul   ins='Does `message` communicate time pressure or a deadline?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  frustration      score  ins='How frustrated does the customer sound in `message`?'
+                          options=['level 0: 차분하고 중립적', 'level 1: 걱정하지만 정중함', 'level 2: 분명히 짜증남', 'level 3: 매우 화남 또는 강한 표현 사용']
+  refund_requested noul   ins='Does the customer ask for money back?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  churn_risk       noul   ins='Does `message` suggest the customer may leave for a competitor or cancel?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  needs_llm        noul   ins='Does answering `message` require a free-form generated reply rather than a templated action?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  complexity       choice ins='How complex is the request in `message`?'
+                          options=['canned: greetings, standard FAQs, simple status checks', 'structured: a request that can be handled deterministically with an API or a template', 'complex: a request that needs a generated reply, multi-step reasoning, or compound analysis']
+
+## V7_plain_state -> results/poc/P0b_V7_plain_state.jsonl, questions_sha256=05918e3c81314379e8c1488a1c3a6fc4e5049682b5317ab720877a29880a2df5, state=plain str
+  intent           choice ins='What does the customer want?'
+                          options=['refund: 환불, 결제 취소, 중복 결제 환급을 요구', 'technical_help: 버그, 오류, 접속 불가, 연동 문제 등 기술적 도움 요청', 'billing_question: 청구서, 요금제, 결제 수단, 금액에 대한 문의', 'information: 일반 정보, 가격, 사용 방법 문의', 'cancellation: 해지, 탈퇴, 다운그레이드 요청', 'other: 위 어느 것에도 해당하지 않음']
+  is_urgent        noul   ins='Does the message communicate time pressure or a deadline?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  frustration      score  ins='How frustrated does the customer sound?'
+                          options=['level 0: 차분하고 중립적', 'level 1: 걱정하지만 정중함', 'level 2: 분명히 짜증남', 'level 3: 매우 화남 또는 강한 표현 사용']
+  refund_requested noul   ins='Does the customer ask for money back?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  churn_risk       noul   ins='Does the message suggest the customer may leave for a competitor or cancel?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  needs_llm        noul   ins='Does answering the message require a free-form generated reply rather than a templated action?'
+                          options=['false: no, the statement does not hold', 'true: yes, the statement holds']
+  complexity       choice ins='How complex is the request?'
+                          options=['canned: 인사, 표준 FAQ, 단순 상태 확인', 'structured: API나 템플릿으로 결정적으로 처리 가능한 요청', 'complex: 생성형 답변, 다단계 추론, 복합 분석이 필요한 요청']
+
+## V8_combo -> results/poc/P0b_V8_combo.jsonl, questions_sha256=0f3536c007f3823e6520831fd5fb86637ff922ad212d4ce48f0ddf71d616d22c, state={"message": ...}
+  intent           choice ins='What does the customer want in `message`?'
+                          options=['refund: request for a refund, a payment cancellation, or reimbursement of a duplicate charge', 'technical_help: request for technical help with bugs, errors, access failures, or integration problems', 'billing_question: question about invoices, pricing plans, payment methods, or amounts charged', 'information: question about general information, prices, or how to use the product', 'cancellation: request to cancel, close the account, or downgrade', 'other: none of the above applies']
+  is_urgent        noul   ins='Does `message` communicate time pressure or a deadline?'
+                          options=['B: no, the statement does not hold', 'A: yes, the statement holds']
+  frustration      score  ins='How frustrated does the customer sound in `message`?'
+                          options=['level 0: 차분하고 중립적', 'level 1: 걱정하지만 정중함', 'level 2: 분명히 짜증남', 'level 3: 매우 화남 또는 강한 표현 사용']
+  refund_requested noul   ins='Does the customer ask for money back?'
+                          options=['B: no, the statement does not hold', 'A: yes, the statement holds']
+  churn_risk       noul   ins='Does `message` suggest the customer may leave for a competitor or cancel?'
+                          options=['B: no, the statement does not hold', 'A: yes, the statement holds']
+  needs_llm        noul   ins='Does answering `message` require a free-form generated reply rather than a templated action?'
+                          options=['B: no, the statement does not hold', 'A: yes, the statement holds']
+  complexity       choice ins='How complex is the request in `message`?'
+                          options=['canned: 인사, 표준 FAQ, 단순 상태 확인', 'structured: API나 템플릿으로 결정적으로 처리 가능한 요청', 'complex: 생성형 답변, 다단계 추론, 복합 분석이 필요한 요청']

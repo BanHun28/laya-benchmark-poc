@@ -1,0 +1,48 @@
+| # | group | input | script | lang | is_en | hangul/letters | route (default english) | reason | default=multilingual | verdict |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | pure_ko | 같은 달 요금이 두 번 빠져나갔어요. 중복 결제된 금액 환불 부탁드립니다. | hangul | - | False | 29/29 (1.00) | **multilingual** | non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 2 | pure_ko | 앱이 자꾸 튕겨요 | hangul | - | False | 7/7 (1.00) | **multilingual** | non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 3 | pure_ko | 로그인이 안 돼요. 비밀번호를 바꿨는데도 계속 오류가 납니다. | hangul | - | False | 25/25 (1.00) | **multilingual** | non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 4 | pure_ko | {"message": "다음 달부터 요금제를 해지하고 싶습니다."} | hangul | - | False | 17/17 (1.00) | **multilingual** | non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 5 | pure_ko | 환불해 주세요 | hangul | - | False | 14/14 (1.00) | **multilingual** | non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 6 | ko_en_terms | 결제 API가 500 에러를 냅니다 | hangul | - | False | 9/12 (0.75) | **multilingual** | non-Latin script (hangul, 75% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 7 | ko_en_terms | 로그인 시 OAuth redirect_uri mismatch 에러가 발생합니다 | hangul | - | False | 12/36 (0.33) | **multilingual** | non-Latin script (hangul, 33% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 8 | ko_en_terms | Stripe webhook이 timeout 나요 | latin | - | True | 3/23 (0.13) | **english** | Latin script, language not identified and no non-English letters; using default (english) | multilingual | FAIL with stock default (ok with default=multilingual) |
+| 9 | ko_en_terms | Kubernetes pod가 CrashLoopBackOff 상태예요 | latin | - | True | 5/34 (0.15) | **english** | Latin script, language not identified and no non-English letters; using default (english) | multilingual | FAIL with stock default (ok with default=multilingual) |
+| 10 | ko_en_terms | AWS S3 bucket policy 설정 문의드립니다 | hangul | - | False | 8/24 (0.33) | **multilingual** | non-Latin script (hangul, 33% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 11 | ko_en_terms | iPhone 15 Pro Max 환불 | latin | - | True | 2/14 (0.14) | **english** | Latin script, language not identified and no non-English letters; using default (english) | multilingual | FAIL with stock default (ok with default=multilingual) |
+| 12 | ko_en_terms | Samsung Galaxy 주문이 아직 안 왔어요 | hangul | - | False | 9/22 (0.41) | **multilingual** | non-Latin script (hangul, 41% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 13 | ko_en_terms | TypeError: Cannot read properties of undefined (reading 'map') 이 에러... | latin | en | True | 6/56 (0.11) | **english** | English Latin text | english | FAIL |
+| 14 | ko_num_email_url | 주문번호 20231005-77 확인 부탁드려요 | hangul | - | False | 11/11 (1.00) | **multilingual** | non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 15 | ko_num_email_url | 010-1234-5678로 연락 주세요 | hangul | - | False | 6/6 (1.00) | **multilingual** | non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 16 | ko_num_email_url | kim.minsu@example.co.kr 로 영수증 보내주세요 | hangul | - | False | 9/28 (0.32) | **multilingual** | non-Latin script (hangul, 32% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 17 | ko_num_email_url | 영수증: https://billing.example.com/invoices/INV-2024-000123/download?... | latin | - | True | 3/53 (0.06) | **english** | Latin script, language not identified and no non-English letters; using default (english) | multilingual | FAIL with stock default (ok with default=multilingual) |
+| 18 | ko_num_email_url | 환불 요청: https://shop.example.com/orders/ABCD-1234?ref=newsletter | latin | - | True | 4/46 (0.09) | **english** | Latin script, language not identified and no non-English letters; using default (english) | multilingual | FAIL with stock default (ok with default=multilingual) |
+| 19 | mostly_en | Please check my order, 감사합니다 | hangul | - | False | 5/23 (0.22) | **multilingual** | non-Latin script (hangul, 22% of letters); the English checkpoint cannot read it | multilingual | ok (either) |
+| 20 | mostly_en | I was charged twice for my subscription, 환불 please | latin | en | True | 2/41 (0.05) | **english** | English Latin text | english | ok (either) |
+| 21 | mostly_en | Hi team, the 정산 report for March is wrong | latin | en | True | 2/32 (0.06) | **english** | English Latin text | english | ok (either) |
+| 22 | mostly_en | The 결제 failed again | latin | en | True | 2/16 (0.12) | **english** | English Latin text | english | ok (either) |
+| 23 | romanized | gyeoljega du beon dwaesseoyo | latin | - | True | 0/25 (0.00) | **english** | Latin script, language not identified and no non-English letters; using default (english) | multilingual | default-dependent |
+| 24 | romanized | hwanbul hae juseyo | latin | - | True | 0/16 (0.00) | **english** | Latin script, language not identified and no non-English letters; using default (english) | multilingual | default-dependent |
+| 25 | romanized | annyeonghaseyo, jumun beonho hwagin buthakdeuryeoyo | latin | - | True | 0/46 (0.00) | **english** | Latin script, language not identified and no non-English letters; using default (english) | multilingual | default-dependent |
+| 26 | emoji_chat | 환불해주세요 😡😡 | hangul | - | False | 6/6 (1.00) | **multilingual** | non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 27 | emoji_chat | ㅠㅠ | hangul | - | False | 2/2 (1.00) | **multilingual** | non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 28 | emoji_chat | ㅋㅋㅋ ok | hangul | - | False | 3/5 (0.60) | **multilingual** | non-Latin script (hangul, 60% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 29 | emoji_chat | 😡😡😡 | unknown | - | True | 0/0 (0.00) | **english** | no letters detected in state; using default (english) | multilingual | default-dependent |
+| 30 | very_short | 환불 | hangul | - | False | 2/2 (1.00) | **multilingual** | non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 31 | very_short | ㅇㅋ | hangul | - | False | 2/2 (1.00) | **multilingual** | non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 32 | very_short | 네 | hangul | - | False | 1/1 (1.00) | **multilingual** | non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 33 | very_short | 네 OK | latin | - | True | 1/3 (0.33) | **english** | Latin script, language not identified and no non-English letters; using default (english) | multilingual | FAIL with stock default (ok with default=multilingual) |
+| 34 | very_short | OK 감사 | hangul | - | False | 2/4 (0.50) | **multilingual** | non-Latin script (hangul, 50% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 35 | hanja_mixed | 北 미사일 발사에 美 강력 규탄 | hangul | - | False | 10/12 (0.83) | **multilingual** | non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 36 | hanja_mixed | 與野, 추경 합의 불발 | hangul | - | False | 6/8 (0.75) | **multilingual** | non-Latin script (hangul, 100% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 37 | hanja_mixed | 大韓民國 憲法 第1條 | han | - | False | 0/8 (0.00) | **multilingual** | non-Latin script (han, 100% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 38 | structured | {"ticket_id": "TCK-88213", "channel": "web chat", "agent_notes": "C... | latin | en | True | 6/72 (0.08) | **english** | English Latin text | english | FAIL |
+| 39 | structured | {"ticket_id": "TCK-88213", "channel": "web chat", "agent_notes": "C... | hangul | - | False | 19/85 (0.22) | **multilingual** | non-Latin script (hangul, 22% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 40 | structured | [{"role": "agent", "text": "Hello! Thanks for contacting support. H... | latin | en | True | 7/66 (0.11) | **english** | English Latin text | english | FAIL |
+| 41 | structured | Ticket #4411⏎Channel: web chat⏎Agent notes: Customer asked about a ... | latin | en | True | 19/248 (0.08) | **english** | English Latin text | english | FAIL |
+| 42 | structured | {"ticket": "Ticket #4411\nChannel: web chat\nAgent notes: Customer ... | latin | - | False | 19/248 (0.08) | **multilingual** | Latin script, language not identified but 0% non-English letters; not safe for the English checkpoint | multilingual | ok |
+| 43 | structured | {"고객_메시지": "Please cancel my plan"} | latin | en | True | 0/18 (0.00) | **english** | English Latin text | english | ok |
+| 44 | control | 二重に請求されました。返金をお願いします。 | kana | - | False | 0/19 (0.00) | **multilingual** | non-Latin script (kana, 100% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 45 | control | 客户被重复扣款要求退款 | han | - | False | 0/11 (0.00) | **multilingual** | non-Latin script (han, 100% of letters); the English checkpoint cannot read it | multilingual | ok |
+| 46 | control | I was charged twice, please refund the duplicate. | latin | en | True | 0/40 (0.00) | **english** | English Latin text | english | ok |

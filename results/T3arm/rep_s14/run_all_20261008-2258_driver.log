@@ -1,0 +1,126 @@
+2026-10-08 22:58:42 RUN_ALL START 20261008-2258 (SMOKE=0) tasks: T9 T10; results results/T3arm/rep_s14; checkpoints poc/finetune/ckpt_t3arm_rep_s14
+2026-10-08 22:58:42 STEP global:preflight ...
+2026-10-08 22:58:42 STEP global:preflight OK (0 s)
+2026-10-08 22:58:42 expected train loop (fit on the prep runs' micro-batch traces): 1.13 h for T9 T10 (T9 0.69 h, T10 0.45 h) + evaluation (see results/T3arm/PREP_*.md)
+2026-10-08 22:58:42 STEP T9:preflight ...
+2026-10-08 22:58:42 STEP T9:preflight OK (0 s)
+2026-10-08 22:58:42 STEP T9:train ...
+2026-10-08 23:42:11 STEP T9:train OK (2609 s)
+2026-10-08 23:42:11 STEP T9:dev_ep0 ...
+/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/laya/agent.py:1869: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+results/T3arm/rep_s14/T9/dev_ep0.json: {"mean_confidence": 0.9859, "ece": 0.0112} load 3.6s eval 134.8s
+2026-10-08 23:44:31 STEP T9:dev_ep0 OK (140 s)
+2026-10-08 23:44:31 STEP T9:dev_ep1 ...
+/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/laya/agent.py:1869: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+results/T3arm/rep_s14/T9/dev_ep1.json: {"mean_confidence": 0.9966, "ece": 0.0096} load 3.0s eval 134.9s
+2026-10-08 23:46:50 STEP T9:dev_ep1 OK (139 s)
+2026-10-08 23:46:50 STEP T9:dev_final ...
+results/T3arm/rep_s14/T9/dev_final.json: {"mean_confidence": 0.9897, "ece": 0.0048} load 2.7s eval 134.4s
+2026-10-08 23:49:08 STEP T9:dev_final OK (138 s)
+2026-10-08 23:49:08 STEP T9:select ...
+{"reports": ["results/T3arm/rep_s14/T9/dev_ep1.json", "results/T3arm/rep_s14/T9/dev_final.json"], "dev_accuracy": [0.987, 0.993], "selected": "results/T3arm/rep_s14/T9/dev_final.json", "selected_index": 1, "rule": "highest dev accuracy; a tie goes to the earlier epoch (docs/11 \u00a74)"}
+2026-10-08 23:49:08 STEP T9:select OK (0 s)
+2026-10-08 23:49:08 STEP T9:jev_T9_enron_spam_40 ...
+results/T3arm/rep_s14/T9/jev_T9_enron_spam_40.json: {"mean_confidence": 0.9898, "ece": 0.0148} load 2.2s eval 5.3s
+2026-10-08 23:49:17 STEP T9:jev_T9_enron_spam_40 OK (9 s)
+2026-10-08 23:49:17 STEP T9:ext_T9_enron_spam_ext500 ...
+results/T3arm/rep_s14/T9/ext_T9_enron_spam_ext500.json: {"mean_confidence": 0.9877, "ece": 0.0035} load 2.2s eval 67.4s
+2026-10-08 23:50:27 STEP T9:ext_T9_enron_spam_ext500 OK (70 s)
+2026-10-08 23:50:27 STEP T9:diagnostics ...
+{"task": "T9", "dev": {"epoch0_vanilla": {"report": "results/T3arm/rep_s14/T9/dev_ep0.json", "accuracy": 0.996}, "reports": ["results/T3arm/rep_s14/T9/dev_ep1.json", "results/T3arm/rep_s14/T9/dev_final.json"], "accuracy": [0.987, 0.993], "selected": "results/T3arm/rep_s14/T9/dev_final.json", "rule": "highest dev accuracy; a tie goes to the earlier epoch (docs/11 \u00a74)"}, "training_failed": true, "train_vs_dev_gap": {"train_acc_last_window": 0.991, "dev_acc_selected": 0.993, "gap": -0.002, "note": "train acc = argmax vs target on each micro-batch's training forward (dropout on), last 10%"}, "selected_temperature": [1.2, 1.2, 4.23809814453125]}
+2026-10-08 23:50:27 STEP T9:diagnostics OK (0 s)
+2026-10-08 23:50:27 STEP T9:metrics ...
+| set | model | n | accuracy [Wilson 95%] | macro-F1 | Brier | ECE | NLL | mean conf | extra |
+|---|---|---|---|---|---|---|---|---|---|
+| T9_dev | english | 1000 | 996/1000 = 0.996 [0.990, 0.998] | 0.996 | 0.009 | 0.011 | 0.019 | 0.986 |  |
+| T9_dev | t3arm-T9-ep1 | 1000 | 987/1000 = 0.987 [0.978, 0.992] | 0.987 | 0.018 | 0.010 | 0.099 | 0.997 |  |
+| T9_dev | t3arm-T9-final | 1000 | 993/1000 = 0.993 [0.986, 0.997] | 0.993 | 0.013 | 0.005 | 0.038 | 0.990 |  |
+| T9_enron_spam_ext500 | t3arm-T9 | 500 | 494/500 = 0.988 [0.974, 0.994] | 0.988 | 0.024 | 0.003 | 0.058 | 0.988 |  |
+| T9_enron_spam_40 | t3arm-T9 | 40 | 39/40 = 0.975 [0.871, 0.996] | 0.975 | 0.049 | 0.015 | 0.117 | 0.990 |  |
+{"a": "results/T3arm/vanilla/T9_enron_spam_40_english.json", "b": "results/T3arm/rep_s14/T9/jev_T9_enron_spam_40.json", "n": 40, "acc_a": 1.0, "acc_b": 0.975, "delta_b_minus_a": -0.025000000000000022, "b_only": 0, "a_only": 1, "mcnemar_p": 1.0}
+{"a": "results/T3arm/vanilla/T9_enron_spam_ext500_english.json", "b": "results/T3arm/rep_s14/T9/ext_T9_enron_spam_ext500.json", "n": 500, "acc_a": 0.992, "acc_b": 0.988, "delta_b_minus_a": -0.0040000000000000036, "b_only": 2, "a_only": 4, "mcnemar_p": 0.6875}
+2026-10-08 23:50:28 STEP T9:metrics OK (1 s)
+2026-10-08 23:50:28 STEP T9:cleanup ...
+2026-10-08 23:50:35 STEP T9:cleanup OK (7 s)
+2026-10-08 23:50:35 STEP T10:preflight ...
+2026-10-08 23:50:35 STEP T10:preflight OK (0 s)
+2026-10-08 23:50:35 STEP T10:train ...
+2026-10-09 00:17:26 STEP T10:train OK (1611 s)
+2026-10-09 00:17:26 STEP T10:dev_ep0 ...
+/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/laya/agent.py:1869: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+results/T3arm/rep_s14/T10/dev_ep0.json: {"choice_accuracy": 0.419, "mean_confidence": 0.4728, "ece": 0.0613} load 3.4s eval 84.7s
+2026-10-09 00:18:55 STEP T10:dev_ep0 OK (89 s)
+2026-10-09 00:18:55 STEP T10:dev_ep1 ...
+/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/laya/agent.py:1869: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+results/T3arm/rep_s14/T10/dev_ep1.json: {"choice_accuracy": 0.349, "mean_confidence": 0.2849, "ece": 0.0802} load 2.6s eval 84.8s
+2026-10-09 00:20:24 STEP T10:dev_ep1 OK (89 s)
+2026-10-09 00:20:24 STEP T10:dev_final ...
+results/T3arm/rep_s14/T10/dev_final.json: {"choice_accuracy": 0.37, "mean_confidence": 0.3551, "ece": 0.0325} load 2.7s eval 84.8s
+2026-10-09 00:21:53 STEP T10:dev_final OK (89 s)
+2026-10-09 00:21:53 STEP T10:select ...
+{"reports": ["results/T3arm/rep_s14/T10/dev_ep1.json", "results/T3arm/rep_s14/T10/dev_final.json"], "dev_accuracy": [0.349, 0.37], "selected": "results/T3arm/rep_s14/T10/dev_final.json", "selected_index": 1, "rule": "highest dev accuracy; a tie goes to the earlier epoch (docs/11 \u00a74)"}
+2026-10-09 00:21:53 STEP T10:select OK (0 s)
+2026-10-09 00:21:53 STEP T10:jev_T10_support_tickets_queue_40 ...
+results/T3arm/rep_s14/T10/jev_T10_support_tickets_queue_40.json: {"choice_accuracy": 0.425, "mean_confidence": 0.4309, "ece": 0.0984} load 2.2s eval 3.2s
+2026-10-09 00:21:59 STEP T10:jev_T10_support_tickets_queue_40 OK (6 s)
+2026-10-09 00:21:59 STEP T10:ext_T10_support_tickets_queue_ext500 ...
+results/T3arm/rep_s14/T10/ext_T10_support_tickets_queue_ext500.json: {"choice_accuracy": 0.34, "mean_confidence": 0.3685, "ece": 0.0372} load 2.2s eval 40.7s
+2026-10-09 00:22:43 STEP T10:ext_T10_support_tickets_queue_ext500 OK (44 s)
+2026-10-09 00:22:43 STEP T10:flip_dev40 ...
+T10_dev40: n=40 per-perm flip 0.165 any-flip 0.425 orig acc 0.400 perm acc 0.390 (26s)
+2026-10-09 00:23:12 STEP T10:flip_dev40 OK (29 s)
+2026-10-09 00:23:12 STEP T10:diagnostics ...
+{"task": "T10", "dev": {"epoch0_vanilla": {"report": "results/T3arm/rep_s14/T10/dev_ep0.json", "accuracy": 0.419}, "reports": ["results/T3arm/rep_s14/T10/dev_ep1.json", "results/T3arm/rep_s14/T10/dev_final.json"], "accuracy": [0.349, 0.37], "selected": "results/T3arm/rep_s14/T10/dev_final.json", "rule": "highest dev accuracy; a tie goes to the earlier epoch (docs/11 \u00a74)"}, "training_failed": true, "train_vs_dev_gap": {"train_acc_last_window": 0.48, "dev_acc_selected": 0.37, "gap": 0.11, "note": "train acc = argmax vs target on each micro-batch's training forward (dropout on), last 10%"}, "selected_temperature": [1.3222179412841797, 1.2, 1.2]}
+2026-10-09 00:23:12 STEP T10:diagnostics OK (0 s)
+2026-10-09 00:23:12 STEP T10:metrics ...
+| set | model | n | accuracy [Wilson 95%] | macro-F1 | Brier | ECE | NLL | mean conf | extra |
+|---|---|---|---|---|---|---|---|---|---|
+| T10_dev | english | 1000 | 419/1000 = 0.419 [0.389, 0.450] | 0.361 | 0.697 | 0.061 | 1.571 | 0.473 |  |
+| T10_dev | t3arm-T10-ep1 | 1000 | 349/1000 = 0.349 [0.320, 0.379] | 0.286 | 0.752 | 0.080 | 1.831 | 0.285 |  |
+| T10_dev | t3arm-T10-final | 1000 | 370/1000 = 0.370 [0.341, 0.400] | 0.305 | 0.729 | 0.032 | 1.718 | 0.355 |  |
+| T10_support_tickets_queue_ext500 | t3arm-T10 | 500 | 170/500 = 0.340 [0.300, 0.383] | 0.342 | 0.753 | 0.037 | 1.863 | 0.369 |  |
+| T10_support_tickets_queue_40 | t3arm-T10 | 40 | 17/40 = 0.425 [0.285, 0.578] | 0.376 | 0.693 | 0.098 | 1.660 | 0.431 |  |
+{"a": "results/T3arm/vanilla/T10_support_tickets_queue_40_english.json", "b": "results/T3arm/rep_s14/T10/jev_T10_support_tickets_queue_40.json", "n": 40, "acc_a": 0.3, "acc_b": 0.425, "delta_b_minus_a": 0.125, "b_only": 6, "a_only": 1, "mcnemar_p": 0.125}
+{"a": "results/T3arm/vanilla/T10_support_tickets_queue_ext500_english.json", "b": "results/T3arm/rep_s14/T10/ext_T10_support_tickets_queue_ext500.json", "n": 500, "acc_a": 0.264, "acc_b": 0.34, "delta_b_minus_a": 0.07600000000000001, "b_only": 74, "a_only": 36, "mcnemar_p": 0.00037125120307886537}
+2026-10-09 00:23:13 STEP T10:metrics OK (1 s)
+2026-10-09 00:23:13 STEP T10:cleanup ...
+2026-10-09 00:23:19 STEP T10:cleanup OK (6 s)
+2026-10-09 00:23:19 STEP global:summary ...
+| set | model | n | accuracy [Wilson 95%] | macro-F1 | Brier | ECE | NLL | mean conf | extra |
+|---|---|---|---|---|---|---|---|---|---|
+| T1_typed_decisions_test400 | t3arm-T1 | 2000 | 1470/2000 = 0.735 [0.715, 0.754] | - | 0.391 | 0.144 | 0.677 | 0.592 | accuracy_vs_upstream_label 0.735; soft_accuracy 0.491; brier_vs_soft 0.063; score_mae 0.262; within_1_level 0.995 |
+| T1_typed_decisions_40 | t3arm-T1 | 200 | 156/200 = 0.780 [0.718, 0.832] | - | 0.370 | 0.190 | 0.652 | 0.596 | accuracy_vs_upstream_label 0.775; soft_accuracy 0.497; brier_vs_soft 0.060; score_mae 0.241; within_1_level 1.000 |
+| T10_support_tickets_queue_ext500 | t3arm-T10 | 500 | 170/500 = 0.340 [0.300, 0.383] | 0.342 | 0.753 | 0.037 | 1.863 | 0.369 |  |
+| T10_support_tickets_queue_40 | t3arm-T10 | 40 | 17/40 = 0.425 [0.285, 0.578] | 0.376 | 0.693 | 0.098 | 1.660 | 0.431 |  |
+| T2_ag_news_ext500 | t3arm-T2 | 500 | 471/500 = 0.942 [0.918, 0.959] | 0.942 | 0.102 | 0.028 | 0.214 | 0.950 |  |
+| T2_ag_news_40 | t3arm-T2 | 40 | 39/40 = 0.975 [0.871, 0.996] | 0.975 | 0.042 | 0.041 | 0.085 | 0.974 |  |
+| T3_emotion_ext500 | t3arm-T3 | 500 | 443/500 = 0.886 [0.855, 0.911] | 0.886 | 0.182 | 0.053 | 0.418 | 0.916 |  |
+| T3_emotion_40 | t3arm-T3 | 40 | 37/40 = 0.925 [0.801, 0.974] | 0.922 | 0.129 | 0.047 | 0.309 | 0.938 |  |
+| T4_banking77_10opt_ext500 | t3arm-T4 | 500 | 481/500 = 0.962 [0.941, 0.976] | 0.962 | 0.070 | 0.027 | 0.173 | 0.954 |  |
+| T4_banking77_10opt_40 | t3arm-T4 | 40 | 37/40 = 0.925 [0.801, 0.974] | 0.873 | 0.097 | 0.071 | 0.223 | 0.948 |  |
+| T5_boolq_ext500 | t3arm-T5 | 500 | 419/500 = 0.838 [0.803, 0.868] | 0.838 | 0.305 | 0.140 | 0.614 | 0.975 |  |
+| T5_boolq_40 | t3arm-T5 | 40 | 28/40 = 0.700 [0.546, 0.819] | 0.699 | 0.574 | 0.278 | 1.157 | 0.978 |  |
+| T6_sst5_ext500 | t3arm-T6 | 500 | 289/500 = 0.578 [0.534, 0.621] | 0.580 | 0.538 | 0.039 | 0.962 | 0.590 | score_mae_expected_level 0.546; within_1_level 0.842 |
+| T6_sst5_40 | t3arm-T6 | 40 | 29/40 = 0.725 [0.572, 0.839] | 0.731 | 0.435 | 0.141 | 0.792 | 0.584 | score_mae_expected_level 0.446; within_1_level 0.925 |
+| T7_massive_intent_10opt_de_ext100 | t3arm-T7 | 100 | 86/100 = 0.860 [0.779, 0.915] | 0.863 | 0.215 | 0.063 | 0.531 | 0.871 |  |
+| T7_massive_intent_10opt_en_ext100 | t3arm-T7 | 100 | 90/100 = 0.900 [0.826, 0.945] | 0.874 | 0.185 | 0.063 | 0.474 | 0.900 |  |
+| T7_massive_intent_10opt_ja_ext100 | t3arm-T7 | 100 | 93/100 = 0.930 [0.863, 0.966] | 0.921 | 0.135 | 0.079 | 0.359 | 0.895 |  |
+| T7_massive_intent_10opt_ko_ext100 | t3arm-T7 | 100 | 83/100 = 0.830 [0.745, 0.891] | 0.810 | 0.305 | 0.148 | 0.715 | 0.902 |  |
+| T7_massive_intent_10opt_zh-CN_ext100 | t3arm-T7 | 100 | 89/100 = 0.890 [0.814, 0.937] | 0.866 | 0.200 | 0.117 | 0.484 | 0.893 |  |
+| T7_massive_intent_10opt_de_20 | t3arm-T7 | 20 | 14/20 = 0.700 [0.481, 0.855] | 0.567 | 0.430 | 0.200 | 1.071 | 0.845 |  |
+| T7_massive_intent_10opt_en_20 | t3arm-T7 | 20 | 20/20 = 1.000 [0.839, 1.000] | 1.000 | 0.040 | 0.109 | 0.146 | 0.891 |  |
+| T7_massive_intent_10opt_ja_20 | t3arm-T7 | 20 | 19/20 = 0.950 [0.764, 0.991] | 0.917 | 0.043 | 0.072 | 0.150 | 0.897 |  |
+| T7_massive_intent_10opt_ko_20 | t3arm-T7 | 20 | 16/20 = 0.800 [0.584, 0.919] | 0.630 | 0.232 | 0.097 | 0.604 | 0.824 |  |
+| T7_massive_intent_10opt_zh-CN_20 | t3arm-T7 | 20 | 18/20 = 0.900 [0.699, 0.972] | 0.815 | 0.248 | 0.149 | 0.603 | 0.855 |  |
+| T8_prompt_injections_test116 | t3arm-T8 | 116 | 111/116 = 0.957 [0.903, 0.981] | 0.957 | 0.063 | 0.047 | 0.100 | 0.976 |  |
+| T8_prompt_injections_40 | t3arm-T8 | 40 | 40/40 = 1.000 [0.912, 1.000] | 1.000 | 0.001 | 0.014 | 0.014 | 0.986 |  |
+| T9_enron_spam_ext500 | t3arm-T9 | 500 | 494/500 = 0.988 [0.974, 0.994] | 0.988 | 0.024 | 0.003 | 0.058 | 0.988 |  |
+| T9_enron_spam_40 | t3arm-T9 | 40 | 39/40 = 0.975 [0.871, 0.996] | 0.975 | 0.049 | 0.015 | 0.117 | 0.990 |  |
+| T7_massive_intent_10opt_ALL_ext100 | t3arm-T7 | 500 | 441/500 = 0.882 [0.851, 0.907] | 0.874 | 0.208 | 0.079 | 0.513 | 0.892 |  |
+| T7_massive_intent_10opt_ALL_20 | t3arm-T7 | 100 | 87/100 = 0.870 [0.790, 0.922] | 0.618 | 0.199 | 0.088 | 0.515 | 0.862 |  |
+2026-10-09 00:23:20 STEP global:summary OK (1 s)
+2026-10-09 00:23:20 RUN_ALL FINISHED 20261008-2258

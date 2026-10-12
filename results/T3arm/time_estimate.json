@@ -1,0 +1,208 @@
+{
+ "fits": {
+  "english": {
+   "reports": [
+    "results/T3arm/validity/V5_english_timing.json",
+    "results/T3arm/validity/V3_permuted_timing.json",
+    "results/T3arm/validity/V3_real_timing.json"
+   ],
+   "n_micro_batches": 1150,
+   "c0_s": 0.011551663547868825,
+   "c1_s_per_token": 0.0005016023142019332,
+   "c2_step_s": 0.7382530161242092,
+   "r2": 0.9969176698520263
+  },
+  "multilingual": {
+   "reports": [
+    "results/T3arm/validity/V5_multilingual_timing.json",
+    "results/P4/full_20261003-1156_timing.json"
+   ],
+   "n_micro_batches": 4132,
+   "c0_s": -0.013357771119577885,
+   "c1_s_per_token": 0.00021364781322845606,
+   "c2_step_s": 0.5653751311225144,
+   "r2": 0.9989225733299913
+  }
+ },
+ "tasks": {
+  "T1": {
+   "base": "english",
+   "items": "poc/finetune/data/t3arm/T1_english.pt",
+   "n_train": 5000,
+   "epochs": 2,
+   "micro_batches": 1250,
+   "padded_tokens": 4111944,
+   "train_loop_h": 0.641
+  },
+  "T2": {
+   "base": "english",
+   "items": "poc/finetune/data/t3arm/T2_english.pt",
+   "n_train": 5000,
+   "epochs": 2,
+   "micro_batches": 1250,
+   "padded_tokens": 1302744,
+   "train_loop_h": 0.25
+  },
+  "T3": {
+   "base": "english",
+   "items": "poc/finetune/data/t3arm/T3_english.pt",
+   "n_train": 5000,
+   "epochs": 2,
+   "micro_batches": 1250,
+   "padded_tokens": 739864,
+   "train_loop_h": 0.171
+  },
+  "T4": {
+   "base": "english",
+   "items": "poc/finetune/data/t3arm/T4_english.pt",
+   "n_train": 5000,
+   "epochs": 2,
+   "micro_batches": 1250,
+   "padded_tokens": 943384,
+   "train_loop_h": 0.2
+  },
+  "T5": {
+   "base": "english",
+   "items": "poc/finetune/data/t3arm/T5_english.pt",
+   "n_train": 5000,
+   "epochs": 2,
+   "micro_batches": 1250,
+   "padded_tokens": 2883488,
+   "train_loop_h": 0.47
+  },
+  "T6": {
+   "base": "english",
+   "items": "poc/finetune/data/t3arm/T6_english.pt",
+   "n_train": 5000,
+   "epochs": 2,
+   "micro_batches": 1250,
+   "padded_tokens": 900704,
+   "train_loop_h": 0.194
+  },
+  "T7": {
+   "base": "multilingual",
+   "items": "poc/finetune/data/t3arm/T7_multilingual.pt",
+   "n_train": 5000,
+   "epochs": 2,
+   "micro_batches": 1250,
+   "padded_tokens": 1294184,
+   "train_loop_h": 0.121
+  },
+  "T8": {
+   "base": "english",
+   "items": "poc/finetune/data/t3arm/T8_english.pt",
+   "n_train": 444,
+   "epochs": 3,
+   "micro_batches": 168,
+   "padded_tokens": 184316,
+   "train_loop_h": 0.035
+  },
+  "T9": {
+   "base": "english",
+   "items": "poc/finetune/data/t3arm/T9_english.pt",
+   "n_train": 5000,
+   "epochs": 2,
+   "micro_batches": 1250,
+   "padded_tokens": 4425840,
+   "train_loop_h": 0.685
+  },
+  "T10": {
+   "base": "english",
+   "items": "poc/finetune/data/t3arm/T10_english.pt",
+   "n_train": 5000,
+   "epochs": 2,
+   "micro_batches": 1250,
+   "padded_tokens": 2734848,
+   "train_loop_h": 0.449
+  }
+ },
+ "train_loop_total_h": 3.22,
+ "eval": {
+  "source": "results/T3arm/vanilla/logs/run_times.log (vanilla ext runs, measured while V2 trained on the GPU)",
+  "formula": "(epochs + 1) dev evals + Jev set(s) + ext set(s) at the task's measured CPU s/decision (+5 s load each), + option-order probe 6 single-state passes x choice items x 1.5, + 90 s per task for setup, epoch saves/copies, calibration forward, export and cleanup",
+  "tasks": {
+   "T1": {
+    "per_decision_s": 0.148,
+    "dev_decisions": 600,
+    "dev_evals": 3,
+    "eval_min": 11.6,
+    "overhead_min": 1.5,
+    "total_h": 0.86
+   },
+   "T2": {
+    "per_decision_s": 0.052,
+    "dev_decisions": 1000,
+    "dev_evals": 3,
+    "eval_min": 3.8,
+    "overhead_min": 1.5,
+    "total_h": 0.34
+   },
+   "T3": {
+    "per_decision_s": 0.032,
+    "dev_decisions": 1000,
+    "dev_evals": 3,
+    "eval_min": 2.5,
+    "overhead_min": 1.5,
+    "total_h": 0.24
+   },
+   "T4": {
+    "per_decision_s": 0.092,
+    "dev_decisions": 1000,
+    "dev_evals": 3,
+    "eval_min": 6.4,
+    "overhead_min": 1.5,
+    "total_h": 0.33
+   },
+   "T5": {
+    "per_decision_s": 0.116,
+    "dev_decisions": 1000,
+    "dev_evals": 3,
+    "eval_min": 7.3,
+    "overhead_min": 1.5,
+    "total_h": 0.62
+   },
+   "T6": {
+    "per_decision_s": 0.04,
+    "dev_decisions": 700,
+    "dev_evals": 3,
+    "eval_min": 2.2,
+    "overhead_min": 1.5,
+    "total_h": 0.26
+   },
+   "T7": {
+    "per_decision_s": 0.058,
+    "dev_decisions": 1000,
+    "dev_evals": 3,
+    "eval_min": 4.9,
+    "overhead_min": 1.5,
+    "total_h": 0.23
+   },
+   "T8": {
+    "per_decision_s": 0.069,
+    "dev_decisions": 60,
+    "dev_evals": 4,
+    "eval_min": 1.0,
+    "overhead_min": 1.5,
+    "total_h": 0.08
+   },
+   "T9": {
+    "per_decision_s": 0.184,
+    "dev_decisions": 1000,
+    "dev_evals": 3,
+    "eval_min": 11.3,
+    "overhead_min": 1.5,
+    "total_h": 0.9
+   },
+   "T10": {
+    "per_decision_s": 0.108,
+    "dev_decisions": 1000,
+    "dev_evals": 3,
+    "eval_min": 7.4,
+    "overhead_min": 1.5,
+    "total_h": 0.6
+   }
+  }
+ },
+ "total_h": 4.46,
+ "eval_total_h": 1.22
+}

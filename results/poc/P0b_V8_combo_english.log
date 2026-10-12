@@ -1,0 +1,22 @@
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 1661.11it/s]
+/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/laya/router.py:594: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  agent = Agent(repo, **kwargs)
+choice_accuracy    0.2667
+cost_per_decision_p50_ms 622.3099
+cost_per_decision_p95_ms 1069.8134
+ece                0.1622
+latency_p50_ms     4978.4793
+latency_p95_ms     8558.5069
+mean_confidence    0.6579
+noul_accuracy      0.7000
+score_mae          0.8802
+  qid=churn_risk  ece=0.1347 mean_confidence=0.6994 noul_accuracy=0.7333
+  qid=complexity  choice_accuracy=0.4333 ece=0.3102 mean_confidence=0.4068
+  qid=frustration  mean_confidence=0.5610 score_mae=0.8802
+  qid=intent  choice_accuracy=0.1000 ece=0.5982 mean_confidence=0.6982
+  qid=is_urgent  ece=0.1475 mean_confidence=0.7737 noul_accuracy=0.8000
+  qid=needs_llm  ece=0.2516 mean_confidence=0.6746 noul_accuracy=0.5000
+  qid=refund_requested  ece=0.1228 mean_confidence=0.7919 noul_accuracy=0.7667
+real 22.23
+user 73.39
+sys 2.59

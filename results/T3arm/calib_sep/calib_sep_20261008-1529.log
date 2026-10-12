@@ -1,0 +1,526 @@
+2026-10-08 15:29:01 CALIB_SEP START 20261008-1529 tasks: T1 T2 T3 T4 T5 T6 T7 T8 T9 T10; results results/T3arm/calib_sep; exports poc/finetune/ckpt_calib_sep
+2026-10-08 15:29:01 STEP T1:export ...
+load before: {"gpu_util_pct": 11, "mps_fp32_matmul_tflops": 6.71, "cotenant": [], "sys_mem_used_gb": 20.1}
+[     2.4s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T1_english.pt
+[     2.9s] Device: mps
+[     2.9s] Training items: 5000; calibration items: 400
+[     2.9s] micro_batch=8; grad_accum=4; epochs=0
+[     2.9s] Running temperature calibration ...
+[    25.4s] Model saved to poc/finetune/ckpt_calib_sep/T1
+[    25.4s] Temperatures: [7.6129350662231445, 4.175991058349609, 10.0]
+{
+ "phases_s": null,
+ "throughput": null,
+ "micro_batch_s": null,
+ "memory_gb": null,
+ "calibration_rows": {
+  "n": 400,
+  "accuracy": 0.3425
+ },
+ "item_sources": {
+  "train": {},
+  "calibration": {
+   "calib": 400
+  }
+ }
+}
+report: results/T3arm/calib_sep/T1/export_timing.json (wall 25.5s, status ok)
+2026-10-08 15:29:27 STEP T1:export OK (26 s)
+2026-10-08 15:29:27 STEP T1:export_diff ...
+{"tensors": 206, "same_names": true, "values_equal": 206, "dtype_changed": {"temperature": ["torch.float32", "torch.float16"]}, "weights_sha256": {"base": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c", "export": "a87929b1f9599ac659d97a89662a6f8806ff5ae15ad1c1e27e89e55ae24187e4"}, "fitted_temperature": [7.6129350662231445, 4.175991058349609, 10.0], "config_diff": {"fine_tuned": {"base": null, "export": true}, "max_tokens_per_batch": {"base": null, "export": 2048}, "temperature": {"base": [1.6369030475616455, 1.2514300346374512, 1.983399510383606], "export": [7.6129350662231445, 4.175991058349609, 10.0]}, "temperature_by_options": {"base": {"choice:3-5": 1.7601518630981445, "choice:6-10": 1.0000158548355103, "score:3-5": 1.2514300346374512, "noul:2": 1.983399510383606, "choice:11+": 0.10058280825614929, "choice:2": 1.9063563346862793}, "export": null}}}
+2026-10-08 15:29:29 STEP T1:export_diff OK (2 s)
+2026-10-08 15:29:29 STEP T1:jev_T1_typed_decisions_40 ...
+/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/laya/agent.py:1869: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using temperature[0]=7.6129350662231445 -> 5, temperature[2]=10.0 -> 5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+results/T3arm/calib_sep/T1/jev_T1_typed_decisions_40.json: {"choice_accuracy": 0.2333, "mean_confidence": 0.3872, "ece": 0.1309} load 2.3s eval 23.5s
+2026-10-08 15:29:56 STEP T1:jev_T1_typed_decisions_40 OK (27 s)
+2026-10-08 15:29:56 STEP T1:same_T1_typed_decisions_40 ...
+{"ref": "results/F/jev_cmp/laya/T1_typed_decisions_40_english.json", "other": "results/T3arm/calib_sep/T1/jev_T1_typed_decisions_40.json", "dataset_sha256": "749a24c4c0db977686f29eeecd41201e16b97629a9fbd641a6ffb5dfe6163834", "decisions": 200, "answers_identical": 0, "argmax_agreement": 200, "correct_identical": 200, "max_abs_dp": 0.4131, "mean_abs_dp": 0.1402965, "overall_identical_except_timing": false, "accuracy": [0.33, 0.33], "ece": [0.21616833333333335, 0.13090666666666673]}
+{"decisions": 200, "argmax_agreement": 200, "argmax_agreement_ties_agree": 200}
+2026-10-08 15:29:56 STEP T1:same_T1_typed_decisions_40 OK (0 s)
+2026-10-08 15:29:56 STEP T1:ext_T1_typed_decisions_test400 ...
+/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/laya/agent.py:1869: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using temperature[0]=7.6129350662231445 -> 5, temperature[2]=10.0 -> 5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+results/T3arm/calib_sep/T1/ext_T1_typed_decisions_test400.json: {"choice_accuracy": 0.29, "mean_confidence": 0.3913, "ece": 0.0707} load 2.4s eval 230.3s
+2026-10-08 15:33:50 STEP T1:ext_T1_typed_decisions_test400 OK (234 s)
+2026-10-08 15:33:50 STEP T1:same_T1_typed_decisions_test400 ...
+{"ref": "results/T3arm/vanilla/T1_typed_decisions_test400_english.json", "other": "results/T3arm/calib_sep/T1/ext_T1_typed_decisions_test400.json", "dataset_sha256": "1c241c8b1084d0ecf5dcedf074f91570d302edcad9894116b27f5f1c1a66b3ae", "decisions": 2000, "answers_identical": 0, "argmax_agreement": 2000, "correct_identical": 2000, "max_abs_dp": 0.4233, "mean_abs_dp": 0.14590635, "overall_identical_except_timing": false, "accuracy": [0.3635, 0.3635], "ece": [0.16016566666666662, 0.07068174999999996]}
+{"decisions": 2000, "argmax_agreement": 2000, "argmax_agreement_ties_agree": 2000}
+2026-10-08 15:33:50 STEP T1:same_T1_typed_decisions_test400 OK (0 s)
+2026-10-08 15:33:50 STEP T1:cleanup ...
+2026-10-08 15:33:50 STEP T1:cleanup OK (0 s)
+2026-10-08 15:33:50 STEP T2:export ...
+load before: {"gpu_util_pct": 10, "mps_fp32_matmul_tflops": 6.8, "cotenant": [], "sys_mem_used_gb": 20.9}
+[     2.6s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T2_english.pt
+[     3.0s] Device: mps
+[     3.0s] Training items: 5000; calibration items: 400
+[     3.0s] micro_batch=8; grad_accum=4; epochs=0
+[     3.0s] Running temperature calibration ...
+[    12.0s] Model saved to poc/finetune/ckpt_calib_sep/T2
+[    12.0s] Temperatures: [1.4747073650360107, 1.2, 1.2]
+{
+ "phases_s": null,
+ "throughput": null,
+ "micro_batch_s": null,
+ "memory_gb": null,
+ "calibration_rows": {
+  "n": 400,
+  "accuracy": 0.945
+ },
+ "item_sources": {
+  "train": {},
+  "calibration": {
+   "calib": 400
+  }
+ }
+}
+report: results/T3arm/calib_sep/T2/export_timing.json (wall 12.1s, status ok)
+2026-10-08 15:34:04 STEP T2:export OK (14 s)
+2026-10-08 15:34:04 STEP T2:export_diff ...
+{"tensors": 206, "same_names": true, "values_equal": 206, "dtype_changed": {"temperature": ["torch.float32", "torch.float16"]}, "weights_sha256": {"base": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c", "export": "a87929b1f9599ac659d97a89662a6f8806ff5ae15ad1c1e27e89e55ae24187e4"}, "fitted_temperature": [1.4747073650360107, 1.2, 1.2], "config_diff": {"fine_tuned": {"base": null, "export": true}, "max_tokens_per_batch": {"base": null, "export": 2048}, "temperature": {"base": [1.6369030475616455, 1.2514300346374512, 1.983399510383606], "export": [1.4747073650360107, 1.2, 1.2]}, "temperature_by_options": {"base": {"choice:3-5": 1.7601518630981445, "choice:6-10": 1.0000158548355103, "score:3-5": 1.2514300346374512, "noul:2": 1.983399510383606, "choice:11+": 0.10058280825614929, "choice:2": 1.9063563346862793}, "export": null}}}
+2026-10-08 15:34:06 STEP T2:export_diff OK (2 s)
+2026-10-08 15:34:06 STEP T2:jev_T2_ag_news_40 ...
+results/T3arm/calib_sep/T2/jev_T2_ag_news_40.json: {"choice_accuracy": 0.975, "mean_confidence": 0.9518, "ece": 0.0637} load 2.4s eval 1.9s
+2026-10-08 15:34:11 STEP T2:jev_T2_ag_news_40 OK (5 s)
+2026-10-08 15:34:11 STEP T2:same_T2_ag_news_40 ...
+{"ref": "results/F/jev_cmp/laya/T2_ag_news_40_english.json", "other": "results/T3arm/calib_sep/T2/jev_T2_ag_news_40.json", "dataset_sha256": "555c7cd7d38c78d183fe884c62e1bbb102d040871bf6e66a8911269eba20fd21", "decisions": 40, "answers_identical": 0, "argmax_agreement": 40, "correct_identical": 40, "max_abs_dp": 0.05520000000000003, "mean_abs_dp": 0.021492500000000008, "overall_identical_except_timing": false, "accuracy": [0.975, 0.975], "ece": [0.08276749999999997, 0.063665]}
+{"decisions": 40, "argmax_agreement": 40, "argmax_agreement_ties_agree": 40}
+2026-10-08 15:34:11 STEP T2:same_T2_ag_news_40 OK (0 s)
+2026-10-08 15:34:11 STEP T2:ext_T2_ag_news_ext500 ...
+results/T3arm/calib_sep/T2/ext_T2_ag_news_ext500.json: {"choice_accuracy": 0.94, "mean_confidence": 0.942, "ece": 0.0196} load 2.4s eval 22.6s
+2026-10-08 15:34:38 STEP T2:ext_T2_ag_news_ext500 OK (27 s)
+2026-10-08 15:34:38 STEP T2:same_T2_ag_news_ext500 ...
+{"ref": "results/T3arm/vanilla/T2_ag_news_ext500_english.json", "other": "results/T3arm/calib_sep/T2/ext_T2_ag_news_ext500.json", "dataset_sha256": "cc4f936e2b3a743d77c21f8465da594495b49ad65405e4373cae216e17a03125", "decisions": 500, "answers_identical": 0, "argmax_agreement": 500, "correct_identical": 500, "max_abs_dp": 0.07179999999999997, "mean_abs_dp": 0.023567800000000007, "overall_identical_except_timing": false, "accuracy": [0.94, 0.94], "ece": [0.03150419999999999, 0.019623600000000088]}
+{"decisions": 500, "argmax_agreement": 500, "argmax_agreement_ties_agree": 500}
+2026-10-08 15:34:38 STEP T2:same_T2_ag_news_ext500 OK (0 s)
+2026-10-08 15:34:38 STEP T2:cleanup ...
+2026-10-08 15:34:38 STEP T2:cleanup OK (0 s)
+2026-10-08 15:34:38 STEP T3:export ...
+load before: {"gpu_util_pct": 11, "mps_fp32_matmul_tflops": 6.68, "cotenant": [], "sys_mem_used_gb": 20.9}
+[     2.5s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T3_english.pt
+[     2.9s] Device: mps
+[     2.9s] Training items: 5000; calibration items: 400
+[     2.9s] micro_batch=8; grad_accum=4; epochs=0
+[     2.9s] Running temperature calibration ...
+[     8.5s] Model saved to poc/finetune/ckpt_calib_sep/T3
+[     8.5s] Temperatures: [3.5747876167297363, 1.2, 1.2]
+{
+ "phases_s": null,
+ "throughput": null,
+ "micro_batch_s": null,
+ "memory_gb": null,
+ "calibration_rows": {
+  "n": 400,
+  "accuracy": 0.54
+ },
+ "item_sources": {
+  "train": {},
+  "calibration": {
+   "calib": 400
+  }
+ }
+}
+report: results/T3arm/calib_sep/T3/export_timing.json (wall 8.6s, status ok)
+2026-10-08 15:34:47 STEP T3:export OK (9 s)
+2026-10-08 15:34:47 STEP T3:export_diff ...
+{"tensors": 206, "same_names": true, "values_equal": 206, "dtype_changed": {"temperature": ["torch.float32", "torch.float16"]}, "weights_sha256": {"base": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c", "export": "a87929b1f9599ac659d97a89662a6f8806ff5ae15ad1c1e27e89e55ae24187e4"}, "fitted_temperature": [3.5747876167297363, 1.2, 1.2], "config_diff": {"fine_tuned": {"base": null, "export": true}, "max_tokens_per_batch": {"base": null, "export": 2048}, "temperature": {"base": [1.6369030475616455, 1.2514300346374512, 1.983399510383606], "export": [3.5747876167297363, 1.2, 1.2]}, "temperature_by_options": {"base": {"choice:3-5": 1.7601518630981445, "choice:6-10": 1.0000158548355103, "score:3-5": 1.2514300346374512, "noul:2": 1.983399510383606, "choice:11+": 0.10058280825614929, "choice:2": 1.9063563346862793}, "export": null}}}
+2026-10-08 15:34:49 STEP T3:export_diff OK (2 s)
+2026-10-08 15:34:49 STEP T3:jev_T3_emotion_40 ...
+results/T3arm/calib_sep/T3/jev_T3_emotion_40.json: {"choice_accuracy": 0.75, "mean_confidence": 0.5414, "ece": 0.2086} load 2.3s eval 1.1s
+2026-10-08 15:34:54 STEP T3:jev_T3_emotion_40 OK (5 s)
+2026-10-08 15:34:54 STEP T3:same_T3_emotion_40 ...
+{"ref": "results/F/jev_cmp/laya/T3_emotion_40_english.json", "other": "results/T3arm/calib_sep/T3/jev_T3_emotion_40.json", "dataset_sha256": "2246b5f04b1ed714ef9789548d6e0cf932db1fa40aed95a4b9a3f616a11510cb", "decisions": 40, "answers_identical": 0, "argmax_agreement": 40, "correct_identical": 40, "max_abs_dp": 0.475, "mean_abs_dp": 0.3589925, "overall_identical_except_timing": false, "accuracy": [0.75, 0.75], "ece": [0.17421999999999993, 0.20858750000000004]}
+{"decisions": 40, "argmax_agreement": 40, "argmax_agreement_ties_agree": 40}
+2026-10-08 15:34:54 STEP T3:same_T3_emotion_40 OK (0 s)
+2026-10-08 15:34:54 STEP T3:ext_T3_emotion_ext500 ...
+results/T3arm/calib_sep/T3/ext_T3_emotion_ext500.json: {"choice_accuracy": 0.488, "mean_confidence": 0.549, "ece": 0.0744} load 2.4s eval 14.1s
+2026-10-08 15:35:12 STEP T3:ext_T3_emotion_ext500 OK (18 s)
+2026-10-08 15:35:12 STEP T3:same_T3_emotion_ext500 ...
+{"ref": "results/T3arm/vanilla/T3_emotion_ext500_english.json", "other": "results/T3arm/calib_sep/T3/ext_T3_emotion_ext500.json", "dataset_sha256": "62865b1c9c90868524897ccfd0f7bb9b47d2fbabbc846672057180e65ae07f69", "decisions": 500, "answers_identical": 0, "argmax_agreement": 500, "correct_identical": 500, "max_abs_dp": 0.537, "mean_abs_dp": 0.34800200000000003, "overall_identical_except_timing": false, "accuracy": [0.488, 0.488], "ece": [0.4105924000000001, 0.07442800000000001]}
+{"decisions": 500, "argmax_agreement": 500, "argmax_agreement_ties_agree": 500}
+2026-10-08 15:35:12 STEP T3:same_T3_emotion_ext500 OK (0 s)
+2026-10-08 15:35:12 STEP T3:cleanup ...
+2026-10-08 15:35:12 STEP T3:cleanup OK (0 s)
+2026-10-08 15:35:12 STEP T4:export ...
+load before: {"gpu_util_pct": 0, "mps_fp32_matmul_tflops": 6.78, "cotenant": [], "sys_mem_used_gb": 21.1}
+[     2.5s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T4_english.pt
+[     3.0s] Device: mps
+[     3.0s] Training items: 5000; calibration items: 400
+[     3.0s] micro_batch=8; grad_accum=4; epochs=0
+[     3.0s] Running temperature calibration ...
+[     9.5s] Model saved to poc/finetune/ckpt_calib_sep/T4
+[     9.5s] Temperatures: [1.161874532699585, 1.2, 1.2]
+{
+ "phases_s": null,
+ "throughput": null,
+ "micro_batch_s": null,
+ "memory_gb": null,
+ "calibration_rows": {
+  "n": 400,
+  "accuracy": 0.8625
+ },
+ "item_sources": {
+  "train": {},
+  "calibration": {
+   "calib": 400
+  }
+ }
+}
+report: results/T3arm/calib_sep/T4/export_timing.json (wall 9.6s, status ok)
+2026-10-08 15:35:23 STEP T4:export OK (11 s)
+2026-10-08 15:35:23 STEP T4:export_diff ...
+{"tensors": 206, "same_names": true, "values_equal": 206, "dtype_changed": {"temperature": ["torch.float32", "torch.float16"]}, "weights_sha256": {"base": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c", "export": "a87929b1f9599ac659d97a89662a6f8806ff5ae15ad1c1e27e89e55ae24187e4"}, "fitted_temperature": [1.161874532699585, 1.2, 1.2], "config_diff": {"fine_tuned": {"base": null, "export": true}, "max_tokens_per_batch": {"base": null, "export": 2048}, "temperature": {"base": [1.6369030475616455, 1.2514300346374512, 1.983399510383606], "export": [1.161874532699585, 1.2, 1.2]}, "temperature_by_options": {"base": {"choice:3-5": 1.7601518630981445, "choice:6-10": 1.0000158548355103, "score:3-5": 1.2514300346374512, "noul:2": 1.983399510383606, "choice:11+": 0.10058280825614929, "choice:2": 1.9063563346862793}, "export": null}}}
+2026-10-08 15:35:25 STEP T4:export_diff OK (2 s)
+2026-10-08 15:35:25 STEP T4:jev_T4_banking77_10opt_40 ...
+results/T3arm/calib_sep/T4/jev_T4_banking77_10opt_40.json: {"choice_accuracy": 0.725, "mean_confidence": 0.8329, "ece": 0.155} load 2.4s eval 2.9s
+2026-10-08 15:35:31 STEP T4:jev_T4_banking77_10opt_40 OK (6 s)
+2026-10-08 15:35:31 STEP T4:same_T4_banking77_10opt_40 ...
+{"ref": "results/F/jev_cmp/laya/T4_banking77_10opt_40_english.json", "other": "results/T3arm/calib_sep/T4/jev_T4_banking77_10opt_40.json", "dataset_sha256": "b124b7fb685abe85de45689984013d9b012c7e0e361d1b29ee55eb12dd2d23bc", "decisions": 40, "answers_identical": 3, "argmax_agreement": 40, "correct_identical": 40, "max_abs_dp": 0.08540000000000003, "mean_abs_dp": 0.027547500000000003, "overall_identical_except_timing": false, "accuracy": [0.725, 0.725], "ece": [0.15010500000000002, 0.15500750000000002]}
+{"decisions": 40, "argmax_agreement": 40, "argmax_agreement_ties_agree": 40}
+2026-10-08 15:35:31 STEP T4:same_T4_banking77_10opt_40 OK (0 s)
+2026-10-08 15:35:31 STEP T4:ext_T4_banking77_10opt_ext500 ...
+results/T3arm/calib_sep/T4/ext_T4_banking77_10opt_ext500.json: {"choice_accuracy": 0.876, "mean_confidence": 0.8652, "ece": 0.0774} load 2.3s eval 35.6s
+2026-10-08 15:36:10 STEP T4:ext_T4_banking77_10opt_ext500 OK (39 s)
+2026-10-08 15:36:10 STEP T4:same_T4_banking77_10opt_ext500 ...
+{"ref": "results/T3arm/vanilla/T4_banking77_10opt_ext500_english.json", "other": "results/T3arm/calib_sep/T4/ext_T4_banking77_10opt_ext500.json", "dataset_sha256": "bf2a2f5fe6edce61b10fe5fe038c000be30fc4e8094716b1ad83762d65f54f25", "decisions": 500, "answers_identical": 78, "argmax_agreement": 500, "correct_identical": 500, "max_abs_dp": 0.09489999999999998, "mean_abs_dp": 0.022415599999999997, "overall_identical_except_timing": false, "accuracy": [0.876, 0.876], "ece": [0.07384660000000007, 0.07737459999999999]}
+{"decisions": 500, "argmax_agreement": 500, "argmax_agreement_ties_agree": 500}
+2026-10-08 15:36:10 STEP T4:same_T4_banking77_10opt_ext500 OK (0 s)
+2026-10-08 15:36:10 STEP T4:cleanup ...
+2026-10-08 15:36:11 STEP T4:cleanup OK (1 s)
+2026-10-08 15:36:11 STEP T5:export ...
+load before: {"gpu_util_pct": 32, "mps_fp32_matmul_tflops": 6.66, "cotenant": [], "sys_mem_used_gb": 21.7}
+[     2.5s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T5_english.pt
+[     2.9s] Device: mps
+[     2.9s] Training items: 5000; calibration items: 400
+[     2.9s] micro_batch=8; grad_accum=4; epochs=0
+[     2.9s] Running temperature calibration ...
+[    21.3s] Model saved to poc/finetune/ckpt_calib_sep/T5
+[    21.3s] Temperatures: [1.2, 1.2, 1.1076292991638184]
+{
+ "phases_s": null,
+ "throughput": null,
+ "micro_batch_s": null,
+ "memory_gb": null,
+ "calibration_rows": {
+  "n": 400,
+  "accuracy": 0.99
+ },
+ "item_sources": {
+  "train": {},
+  "calibration": {
+   "calib": 400
+  }
+ }
+}
+report: results/T3arm/calib_sep/T5/export_timing.json (wall 21.3s, status ok)
+2026-10-08 15:36:33 STEP T5:export OK (22 s)
+2026-10-08 15:36:33 STEP T5:export_diff ...
+{"tensors": 206, "same_names": true, "values_equal": 206, "dtype_changed": {"temperature": ["torch.float32", "torch.float16"]}, "weights_sha256": {"base": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c", "export": "a87929b1f9599ac659d97a89662a6f8806ff5ae15ad1c1e27e89e55ae24187e4"}, "fitted_temperature": [1.2, 1.2, 1.1076292991638184], "config_diff": {"fine_tuned": {"base": null, "export": true}, "max_tokens_per_batch": {"base": null, "export": 2048}, "temperature": {"base": [1.6369030475616455, 1.2514300346374512, 1.983399510383606], "export": [1.2, 1.2, 1.1076292991638184]}, "temperature_by_options": {"base": {"choice:3-5": 1.7601518630981445, "choice:6-10": 1.0000158548355103, "score:3-5": 1.2514300346374512, "noul:2": 1.983399510383606, "choice:11+": 0.10058280825614929, "choice:2": 1.9063563346862793}, "export": null}}}
+2026-10-08 15:36:35 STEP T5:export_diff OK (2 s)
+2026-10-08 15:36:35 STEP T5:jev_T5_boolq_40 ...
+results/T3arm/calib_sep/T5/jev_T5_boolq_40.json: {"mean_confidence": 0.9543, "ece": 0.2293} load 2.3s eval 3.3s
+2026-10-08 15:36:42 STEP T5:jev_T5_boolq_40 OK (7 s)
+2026-10-08 15:36:42 STEP T5:same_T5_boolq_40 ...
+{"ref": "results/F/jev_cmp/laya/T5_boolq_40_english.json", "other": "results/T3arm/calib_sep/T5/jev_T5_boolq_40.json", "dataset_sha256": "2b140a293790121b93dce29fb5c2804054570ee23238618b43a7915a6fe0786a", "decisions": 40, "answers_identical": 2, "argmax_agreement": 40, "correct_identical": 40, "max_abs_dp": 0.1272, "mean_abs_dp": 0.05698250000000001, "overall_identical_except_timing": false, "accuracy": [0.725, 0.725], "ece": [0.19023250000000008, 0.22934499999999997]}
+{"decisions": 40, "argmax_agreement": 40, "argmax_agreement_ties_agree": 40}
+2026-10-08 15:36:42 STEP T5:same_T5_boolq_40 OK (0 s)
+2026-10-08 15:36:42 STEP T5:ext_T5_boolq_ext500 ...
+results/T3arm/calib_sep/T5/ext_T5_boolq_ext500.json: {"mean_confidence": 0.9682, "ece": 0.1374} load 2.3s eval 46.2s
+2026-10-08 15:37:32 STEP T5:ext_T5_boolq_ext500 OK (50 s)
+2026-10-08 15:37:32 STEP T5:same_T5_boolq_ext500 ...
+{"ref": "results/T3arm/vanilla/T5_boolq_ext500_english.json", "other": "results/T3arm/calib_sep/T5/ext_T5_boolq_ext500.json", "dataset_sha256": "a7b205a2509fb12f149aa11c7fd75e5213006b753e7bc7bd3ed3fdc8983a7a51", "decisions": 500, "answers_identical": 42, "argmax_agreement": 500, "correct_identical": 500, "max_abs_dp": 0.1274, "mean_abs_dp": 0.053586800000000004, "overall_identical_except_timing": false, "accuracy": [0.834, 0.834], "ece": [0.0826396, 0.13738720000000013]}
+{"decisions": 500, "argmax_agreement": 500, "argmax_agreement_ties_agree": 500}
+2026-10-08 15:37:32 STEP T5:same_T5_boolq_ext500 OK (0 s)
+2026-10-08 15:37:32 STEP T5:cleanup ...
+2026-10-08 15:37:32 STEP T5:cleanup OK (0 s)
+2026-10-08 15:37:32 STEP T6:export ...
+load before: {"gpu_util_pct": 21, "mps_fp32_matmul_tflops": 6.63, "cotenant": [], "sys_mem_used_gb": 21.6}
+[     2.5s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T6_english.pt
+[     3.0s] Device: mps
+[     3.0s] Training items: 5000; calibration items: 400
+[     3.0s] micro_batch=8; grad_accum=4; epochs=0
+[     3.0s] Running temperature calibration ...
+[     9.4s] Model saved to poc/finetune/ckpt_calib_sep/T6
+[     9.4s] Temperatures: [1.2, 3.826307535171509, 1.2]
+{
+ "phases_s": null,
+ "throughput": null,
+ "micro_batch_s": null,
+ "memory_gb": null,
+ "calibration_rows": {
+  "n": 400,
+  "accuracy": 0.3375
+ },
+ "item_sources": {
+  "train": {},
+  "calibration": {
+   "calib": 400
+  }
+ }
+}
+report: results/T3arm/calib_sep/T6/export_timing.json (wall 9.5s, status ok)
+2026-10-08 15:37:42 STEP T6:export OK (10 s)
+2026-10-08 15:37:42 STEP T6:export_diff ...
+{"tensors": 206, "same_names": true, "values_equal": 206, "dtype_changed": {"temperature": ["torch.float32", "torch.float16"]}, "weights_sha256": {"base": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c", "export": "a87929b1f9599ac659d97a89662a6f8806ff5ae15ad1c1e27e89e55ae24187e4"}, "fitted_temperature": [1.2, 3.826307535171509, 1.2], "config_diff": {"fine_tuned": {"base": null, "export": true}, "max_tokens_per_batch": {"base": null, "export": 2048}, "temperature": {"base": [1.6369030475616455, 1.2514300346374512, 1.983399510383606], "export": [1.2, 3.826307535171509, 1.2]}, "temperature_by_options": {"base": {"choice:3-5": 1.7601518630981445, "choice:6-10": 1.0000158548355103, "score:3-5": 1.2514300346374512, "noul:2": 1.983399510383606, "choice:11+": 0.10058280825614929, "choice:2": 1.9063563346862793}, "export": null}}}
+2026-10-08 15:37:44 STEP T6:export_diff OK (2 s)
+2026-10-08 15:37:44 STEP T6:jev_T6_sst5_40 ...
+results/T3arm/calib_sep/T6/jev_T6_sst5_40.json: {"mean_confidence": 0.3831} load 2.4s eval 1.3s
+2026-10-08 15:37:49 STEP T6:jev_T6_sst5_40 OK (5 s)
+2026-10-08 15:37:49 STEP T6:same_T6_sst5_40 ...
+{"ref": "results/F/jev_cmp/laya/T6_sst5_40_english.json", "other": "results/T3arm/calib_sep/T6/jev_T6_sst5_40.json", "dataset_sha256": "f56ebc3bb73ed687db54f3f273645911ee0727bdd2806664e2b86cd9e01904f0", "decisions": 40, "answers_identical": 0, "argmax_agreement": 40, "correct_identical": 40, "max_abs_dp": 0.40840000000000004, "mean_abs_dp": 0.2710575, "overall_identical_except_timing": false, "accuracy": [0.425, 0.425], "ece": [null, null]}
+{"decisions": 40, "argmax_agreement": 40, "argmax_agreement_ties_agree": 40}
+2026-10-08 15:37:49 STEP T6:same_T6_sst5_40 OK (0 s)
+2026-10-08 15:37:49 STEP T6:ext_T6_sst5_ext500 ...
+results/T3arm/calib_sep/T6/ext_T6_sst5_ext500.json: {"mean_confidence": 0.3917} load 2.4s eval 16.1s
+2026-10-08 15:38:09 STEP T6:ext_T6_sst5_ext500 OK (20 s)
+2026-10-08 15:38:09 STEP T6:same_T6_sst5_ext500 ...
+{"ref": "results/T3arm/vanilla/T6_sst5_ext500_english.json", "other": "results/T3arm/calib_sep/T6/ext_T6_sst5_ext500.json", "dataset_sha256": "a6c7525d7d2a430d525b6603b2f7f6523dd8340163e1487edb0297d1349fb533", "decisions": 500, "answers_identical": 0, "argmax_agreement": 499, "correct_identical": 500, "max_abs_dp": 0.4333, "mean_abs_dp": 0.2588002, "overall_identical_except_timing": false, "accuracy": [0.338, 0.338], "ece": [null, null]}
+{"decisions": 500, "argmax_agreement": 499, "argmax_agreement_ties_agree": 500}
+2026-10-08 15:38:09 STEP T6:same_T6_sst5_ext500 OK (0 s)
+2026-10-08 15:38:09 STEP T6:cleanup ...
+2026-10-08 15:38:09 STEP T6:cleanup OK (0 s)
+2026-10-08 15:38:09 STEP T7:export ...
+load before: {"gpu_util_pct": 20, "mps_fp32_matmul_tflops": 6.68, "cotenant": [], "sys_mem_used_gb": 21.4}
+[     2.5s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T7_multilingual.pt
+[     4.2s] Device: mps
+[     4.2s] Training items: 5000; calibration items: 400
+[     4.2s] micro_batch=8; grad_accum=4; epochs=0
+[     4.2s] Running temperature calibration ...
+[     7.9s] Model saved to poc/finetune/ckpt_calib_sep/T7
+[     7.9s] Temperatures: [2.0943410396575928, 1.2, 1.2]
+{
+ "phases_s": null,
+ "throughput": null,
+ "micro_batch_s": null,
+ "memory_gb": null,
+ "calibration_rows": {
+  "n": 400,
+  "accuracy": 0.705
+ },
+ "item_sources": {
+  "train": {},
+  "calibration": {
+   "calib": 400
+  }
+ }
+}
+report: results/T3arm/calib_sep/T7/export_timing.json (wall 8.0s, status ok)
+2026-10-08 15:38:18 STEP T7:export OK (9 s)
+2026-10-08 15:38:18 STEP T7:export_diff ...
+{"tensors": 170, "same_names": true, "values_equal": 170, "dtype_changed": {"temperature": ["torch.float32", "torch.float16"]}, "weights_sha256": {"base": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204", "export": "a61d75fc57dc2d512a0986cbda859e8378c7502232d8882f559f45887abe4fcd"}, "fitted_temperature": [2.0943410396575928, 1.2, 1.2], "config_diff": {"fine_tuned": {"base": null, "export": true}, "max_tokens_per_batch": {"base": null, "export": 2048}, "temperature": {"base": [1.0, 1.0, 1.0], "export": [2.0943410396575928, 1.2, 1.2]}, "temperature_by_options": {"base": {}, "export": null}}}
+2026-10-08 15:38:20 STEP T7:export_diff OK (2 s)
+2026-10-08 15:38:20 STEP T7:jev_T7_massive_intent_10opt_en_20 ...
+results/T3arm/calib_sep/T7/jev_T7_massive_intent_10opt_en_20.json: {"choice_accuracy": 0.85, "mean_confidence": 0.6976, "ece": 0.2031} load 3.2s eval 0.8s
+2026-10-08 15:38:25 STEP T7:jev_T7_massive_intent_10opt_en_20 OK (5 s)
+2026-10-08 15:38:25 STEP T7:same_T7_massive_intent_10opt_en_20 ...
+{"ref": "results/F/jev_cmp/laya/T7_massive_intent_10opt_en_20_multilingual.json", "other": "results/T3arm/calib_sep/T7/jev_T7_massive_intent_10opt_en_20.json", "dataset_sha256": "034e2c88a730463215407fc1f3883093f08bde494dc5bd933be44834913bf04f", "decisions": 20, "answers_identical": 0, "argmax_agreement": 20, "correct_identical": 20, "max_abs_dp": 0.39730000000000004, "mean_abs_dp": 0.19748000000000002, "overall_identical_except_timing": false, "accuracy": [0.85, 0.85], "ece": [0.18419000000000002, 0.20307000000000003]}
+{"decisions": 20, "argmax_agreement": 20, "argmax_agreement_ties_agree": 20}
+2026-10-08 15:38:25 STEP T7:same_T7_massive_intent_10opt_en_20 OK (0 s)
+2026-10-08 15:38:25 STEP T7:jev_T7_massive_intent_10opt_de_20 ...
+results/T3arm/calib_sep/T7/jev_T7_massive_intent_10opt_de_20.json: {"choice_accuracy": 0.4, "mean_confidence": 0.6084, "ece": 0.2968} load 3.1s eval 0.8s
+2026-10-08 15:38:30 STEP T7:jev_T7_massive_intent_10opt_de_20 OK (5 s)
+2026-10-08 15:38:30 STEP T7:same_T7_massive_intent_10opt_de_20 ...
+{"ref": "results/F/jev_cmp/laya/T7_massive_intent_10opt_de_20_multilingual.json", "other": "results/T3arm/calib_sep/T7/jev_T7_massive_intent_10opt_de_20.json", "dataset_sha256": "56e7943c697a3bc551d4750d0789b60c8730f3c8e003c876d936da8d79372f72", "decisions": 20, "answers_identical": 0, "argmax_agreement": 20, "correct_identical": 20, "max_abs_dp": 0.33570000000000005, "mean_abs_dp": 0.18889000000000003, "overall_identical_except_timing": false, "accuracy": [0.4, 0.4], "ece": [0.4533149999999999, 0.29680500000000004]}
+{"decisions": 20, "argmax_agreement": 20, "argmax_agreement_ties_agree": 20}
+2026-10-08 15:38:30 STEP T7:same_T7_massive_intent_10opt_de_20 OK (0 s)
+2026-10-08 15:38:30 STEP T7:jev_T7_massive_intent_10opt_ja_20 ...
+results/T3arm/calib_sep/T7/jev_T7_massive_intent_10opt_ja_20.json: {"choice_accuracy": 0.8, "mean_confidence": 0.6587, "ece": 0.2741} load 3.2s eval 0.8s
+2026-10-08 15:38:35 STEP T7:jev_T7_massive_intent_10opt_ja_20 OK (5 s)
+2026-10-08 15:38:35 STEP T7:same_T7_massive_intent_10opt_ja_20 ...
+{"ref": "results/F/jev_cmp/laya/T7_massive_intent_10opt_ja_20_multilingual.json", "other": "results/T3arm/calib_sep/T7/jev_T7_massive_intent_10opt_ja_20.json", "dataset_sha256": "dd2169a2ce4d50d6da036241ae7d19e13c46a8dbf12192cbb9fdbbaecedac9d8", "decisions": 20, "answers_identical": 0, "argmax_agreement": 20, "correct_identical": 20, "max_abs_dp": 0.40219999999999995, "mean_abs_dp": 0.21108500000000002, "overall_identical_except_timing": false, "accuracy": [0.8, 0.8], "ece": [0.19923500000000008, 0.27414000000000005]}
+{"decisions": 20, "argmax_agreement": 20, "argmax_agreement_ties_agree": 20}
+2026-10-08 15:38:35 STEP T7:same_T7_massive_intent_10opt_ja_20 OK (0 s)
+2026-10-08 15:38:35 STEP T7:jev_T7_massive_intent_10opt_zh-CN_20 ...
+results/T3arm/calib_sep/T7/jev_T7_massive_intent_10opt_zh-CN_20.json: {"choice_accuracy": 0.6, "mean_confidence": 0.5684, "ece": 0.187} load 3.1s eval 0.8s
+2026-10-08 15:38:40 STEP T7:jev_T7_massive_intent_10opt_zh-CN_20 OK (5 s)
+2026-10-08 15:38:40 STEP T7:same_T7_massive_intent_10opt_zh-CN_20 ...
+{"ref": "results/F/jev_cmp/laya/T7_massive_intent_10opt_zh-CN_20_multilingual.json", "other": "results/T3arm/calib_sep/T7/jev_T7_massive_intent_10opt_zh-CN_20.json", "dataset_sha256": "0dfe24d6f0fb09aa0331a8854cf182a9faaea97abeaf5582bacbeff74a74b7ef", "decisions": 20, "answers_identical": 0, "argmax_agreement": 20, "correct_identical": 20, "max_abs_dp": 0.4135, "mean_abs_dp": 0.21310500000000002, "overall_identical_except_timing": false, "accuracy": [0.6, 0.6], "ece": [0.31927, 0.18704500000000002]}
+{"decisions": 20, "argmax_agreement": 20, "argmax_agreement_ties_agree": 20}
+2026-10-08 15:38:41 STEP T7:same_T7_massive_intent_10opt_zh-CN_20 OK (1 s)
+2026-10-08 15:38:41 STEP T7:jev_T7_massive_intent_10opt_ko_20 ...
+results/T3arm/calib_sep/T7/jev_T7_massive_intent_10opt_ko_20.json: {"choice_accuracy": 0.45, "mean_confidence": 0.6079, "ece": 0.1791} load 3.2s eval 0.8s
+2026-10-08 15:38:46 STEP T7:jev_T7_massive_intent_10opt_ko_20 OK (5 s)
+2026-10-08 15:38:46 STEP T7:same_T7_massive_intent_10opt_ko_20 ...
+{"ref": "results/F/jev_cmp/laya/T7_massive_intent_10opt_ko_20_multilingual.json", "other": "results/T3arm/calib_sep/T7/jev_T7_massive_intent_10opt_ko_20.json", "dataset_sha256": "e17bfac7605ad315c0727b80632010b60ec864b81268ab7e53c1a3164deb95d2", "decisions": 20, "answers_identical": 0, "argmax_agreement": 20, "correct_identical": 20, "max_abs_dp": 0.42260000000000003, "mean_abs_dp": 0.20749499999999999, "overall_identical_except_timing": false, "accuracy": [0.45, 0.45], "ece": [0.36537000000000003, 0.17908499999999994]}
+{"decisions": 20, "argmax_agreement": 20, "argmax_agreement_ties_agree": 20}
+2026-10-08 15:38:46 STEP T7:same_T7_massive_intent_10opt_ko_20 OK (0 s)
+2026-10-08 15:38:46 STEP T7:ext_T7_massive_intent_10opt_de_ext100 ...
+results/T3arm/calib_sep/T7/ext_T7_massive_intent_10opt_de_ext100.json: {"choice_accuracy": 0.66, "mean_confidence": 0.681, "ece": 0.1138} load 3.2s eval 4.2s
+2026-10-08 15:38:54 STEP T7:ext_T7_massive_intent_10opt_de_ext100 OK (8 s)
+2026-10-08 15:38:54 STEP T7:same_T7_massive_intent_10opt_de_ext100 ...
+{"ref": "results/T3arm/vanilla/T7_massive_intent_10opt_de_ext100_multilingual.json", "other": "results/T3arm/calib_sep/T7/ext_T7_massive_intent_10opt_de_ext100.json", "dataset_sha256": "72c04e49510851c93df4ec5e07fc20ff00a1ce277035d99fda001a1b3dcc3fe0", "decisions": 100, "answers_identical": 0, "argmax_agreement": 100, "correct_identical": 100, "max_abs_dp": 0.42699999999999994, "mean_abs_dp": 0.17823499999999995, "overall_identical_except_timing": false, "accuracy": [0.66, 0.66], "ece": [0.2277999999999999, 0.11375100000000005]}
+{"decisions": 100, "argmax_agreement": 100, "argmax_agreement_ties_agree": 100}
+2026-10-08 15:38:54 STEP T7:same_T7_massive_intent_10opt_de_ext100 OK (0 s)
+2026-10-08 15:38:54 STEP T7:ext_T7_massive_intent_10opt_en_ext100 ...
+results/T3arm/calib_sep/T7/ext_T7_massive_intent_10opt_en_ext100.json: {"choice_accuracy": 0.73, "mean_confidence": 0.7607, "ece": 0.1463} load 3.2s eval 4.2s
+2026-10-08 15:39:03 STEP T7:ext_T7_massive_intent_10opt_en_ext100 OK (9 s)
+2026-10-08 15:39:03 STEP T7:same_T7_massive_intent_10opt_en_ext100 ...
+{"ref": "results/T3arm/vanilla/T7_massive_intent_10opt_en_ext100_multilingual.json", "other": "results/T3arm/calib_sep/T7/ext_T7_massive_intent_10opt_en_ext100.json", "dataset_sha256": "767ad0a7857227609a4e24a2c8fcb5381585203126c8ad769b851b8452e8b877", "decisions": 100, "answers_identical": 0, "argmax_agreement": 100, "correct_identical": 100, "max_abs_dp": 0.41530000000000006, "mean_abs_dp": 0.12123099999999999, "overall_identical_except_timing": false, "accuracy": [0.73, 0.73], "ece": [0.200042, 0.146281]}
+{"decisions": 100, "argmax_agreement": 100, "argmax_agreement_ties_agree": 100}
+2026-10-08 15:39:03 STEP T7:same_T7_massive_intent_10opt_en_ext100 OK (0 s)
+2026-10-08 15:39:03 STEP T7:ext_T7_massive_intent_10opt_ja_ext100 ...
+results/T3arm/calib_sep/T7/ext_T7_massive_intent_10opt_ja_ext100.json: {"choice_accuracy": 0.76, "mean_confidence": 0.6884, "ece": 0.1808} load 3.2s eval 4.1s
+2026-10-08 15:39:11 STEP T7:ext_T7_massive_intent_10opt_ja_ext100 OK (8 s)
+2026-10-08 15:39:11 STEP T7:same_T7_massive_intent_10opt_ja_ext100 ...
+{"ref": "results/T3arm/vanilla/T7_massive_intent_10opt_ja_ext100_multilingual.json", "other": "results/T3arm/calib_sep/T7/ext_T7_massive_intent_10opt_ja_ext100.json", "dataset_sha256": "8c429a9d9d99504182f54dcd1d6b41fa8496016e16dd9b9e4eac8cd523515aee", "decisions": 100, "answers_identical": 0, "argmax_agreement": 100, "correct_identical": 100, "max_abs_dp": 0.4289, "mean_abs_dp": 0.158335, "overall_identical_except_timing": false, "accuracy": [0.76, 0.76], "ece": [0.20857000000000003, 0.18076699999999996]}
+{"decisions": 100, "argmax_agreement": 100, "argmax_agreement_ties_agree": 100}
+2026-10-08 15:39:11 STEP T7:same_T7_massive_intent_10opt_ja_ext100 OK (0 s)
+2026-10-08 15:39:11 STEP T7:ext_T7_massive_intent_10opt_ko_ext100 ...
+results/T3arm/calib_sep/T7/ext_T7_massive_intent_10opt_ko_ext100.json: {"choice_accuracy": 0.64, "mean_confidence": 0.6012, "ece": 0.1106} load 3.2s eval 4.2s
+2026-10-08 15:39:20 STEP T7:ext_T7_massive_intent_10opt_ko_ext100 OK (9 s)
+2026-10-08 15:39:20 STEP T7:same_T7_massive_intent_10opt_ko_ext100 ...
+{"ref": "results/T3arm/vanilla/T7_massive_intent_10opt_ko_ext100_multilingual.json", "other": "results/T3arm/calib_sep/T7/ext_T7_massive_intent_10opt_ko_ext100.json", "dataset_sha256": "7fef975cd10917022050473f12582d26d319c552c99a9811cd6552993d5d9b46", "decisions": 100, "answers_identical": 0, "argmax_agreement": 100, "correct_identical": 100, "max_abs_dp": 0.42769999999999997, "mean_abs_dp": 0.21063400000000002, "overall_identical_except_timing": false, "accuracy": [0.64, 0.64], "ece": [0.21166199999999996, 0.11060499999999998]}
+{"decisions": 100, "argmax_agreement": 100, "argmax_agreement_ties_agree": 100}
+2026-10-08 15:39:20 STEP T7:same_T7_massive_intent_10opt_ko_ext100 OK (0 s)
+2026-10-08 15:39:20 STEP T7:ext_T7_massive_intent_10opt_zh-CN_ext100 ...
+results/T3arm/calib_sep/T7/ext_T7_massive_intent_10opt_zh-CN_ext100.json: {"choice_accuracy": 0.67, "mean_confidence": 0.7062, "ece": 0.1518} load 3.2s eval 4.1s
+2026-10-08 15:39:28 STEP T7:ext_T7_massive_intent_10opt_zh-CN_ext100 OK (8 s)
+2026-10-08 15:39:28 STEP T7:same_T7_massive_intent_10opt_zh-CN_ext100 ...
+{"ref": "results/T3arm/vanilla/T7_massive_intent_10opt_zh-CN_ext100_multilingual.json", "other": "results/T3arm/calib_sep/T7/ext_T7_massive_intent_10opt_zh-CN_ext100.json", "dataset_sha256": "6736363c52c8cdf1dd5f0b4a5da6cea559f7627ccfbd6b3a5e1aaa96d3edbe83", "decisions": 100, "answers_identical": 0, "argmax_agreement": 100, "correct_identical": 100, "max_abs_dp": 0.4247, "mean_abs_dp": 0.167153, "overall_identical_except_timing": false, "accuracy": [0.67, 0.67], "ece": [0.23439399999999994, 0.15182900000000002]}
+{"decisions": 100, "argmax_agreement": 100, "argmax_agreement_ties_agree": 100}
+2026-10-08 15:39:28 STEP T7:same_T7_massive_intent_10opt_zh-CN_ext100 OK (0 s)
+2026-10-08 15:39:28 STEP T7:cleanup ...
+2026-10-08 15:39:28 STEP T7:cleanup OK (0 s)
+2026-10-08 15:39:28 STEP T8:export ...
+load before: {"gpu_util_pct": 18, "mps_fp32_matmul_tflops": 6.44, "cotenant": [], "sys_mem_used_gb": 21.4}
+[     2.5s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T8_english.pt
+[     3.0s] Device: mps
+[     3.0s] Training items: 444; calibration items: 40
+[     3.0s] micro_batch=8; grad_accum=4; epochs=0
+[     3.0s] Running temperature calibration ...
+[     4.7s] Model saved to poc/finetune/ckpt_calib_sep/T8
+[     4.7s] Temperatures: [1.2, 1.2, 10.0]
+{
+ "phases_s": null,
+ "throughput": null,
+ "micro_batch_s": null,
+ "memory_gb": null,
+ "calibration_rows": {
+  "n": 40,
+  "accuracy": 0.725
+ },
+ "item_sources": {
+  "train": {},
+  "calibration": {
+   "calib": 40
+  }
+ }
+}
+report: results/T3arm/calib_sep/T8/export_timing.json (wall 4.8s, status ok)
+2026-10-08 15:39:34 STEP T8:export OK (6 s)
+2026-10-08 15:39:34 STEP T8:export_diff ...
+{"tensors": 206, "same_names": true, "values_equal": 206, "dtype_changed": {"temperature": ["torch.float32", "torch.float16"]}, "weights_sha256": {"base": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c", "export": "a87929b1f9599ac659d97a89662a6f8806ff5ae15ad1c1e27e89e55ae24187e4"}, "fitted_temperature": [1.2, 1.2, 10.0], "config_diff": {"fine_tuned": {"base": null, "export": true}, "max_tokens_per_batch": {"base": null, "export": 2048}, "temperature": {"base": [1.6369030475616455, 1.2514300346374512, 1.983399510383606], "export": [1.2, 1.2, 10.0]}, "temperature_by_options": {"base": {"choice:3-5": 1.7601518630981445, "choice:6-10": 1.0000158548355103, "score:3-5": 1.2514300346374512, "noul:2": 1.983399510383606, "choice:11+": 0.10058280825614929, "choice:2": 1.9063563346862793}, "export": null}}}
+2026-10-08 15:39:36 STEP T8:export_diff OK (2 s)
+2026-10-08 15:39:36 STEP T8:jev_T8_prompt_injections_40 ...
+/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/laya/agent.py:1869: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using temperature[2]=10.0 -> 5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+results/T3arm/calib_sep/T8/jev_T8_prompt_injections_40.json: {"mean_confidence": 0.9149, "ece": 0.1682} load 2.3s eval 2.2s
+2026-10-08 15:39:42 STEP T8:jev_T8_prompt_injections_40 OK (6 s)
+2026-10-08 15:39:42 STEP T8:same_T8_prompt_injections_40 ...
+{"ref": "results/F/jev_cmp/laya/T8_prompt_injections_40_english.json", "other": "results/T3arm/calib_sep/T8/jev_T8_prompt_injections_40.json", "dataset_sha256": "ced9111cc7f717749e8acb5e7fff9f1873d2cfc673349f30cea0c4638c7347eb", "decisions": 40, "answers_identical": 0, "argmax_agreement": 40, "correct_identical": 40, "max_abs_dp": 0.19330000000000003, "mean_abs_dp": 0.04683750000000002, "overall_identical_except_timing": false, "accuracy": [0.775, 0.775], "ece": [0.22330750000000005, 0.16822000000000006]}
+{"decisions": 40, "argmax_agreement": 40, "argmax_agreement_ties_agree": 40}
+2026-10-08 15:39:42 STEP T8:same_T8_prompt_injections_40 OK (0 s)
+2026-10-08 15:39:42 STEP T8:ext_T8_prompt_injections_test116 ...
+/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/laya/agent.py:1869: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using temperature[2]=10.0 -> 5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+results/T3arm/calib_sep/T8/ext_T8_prompt_injections_test116.json: {"mean_confidence": 0.9042, "ece": 0.2074} load 2.4s eval 5.7s
+2026-10-08 15:39:51 STEP T8:ext_T8_prompt_injections_test116 OK (9 s)
+2026-10-08 15:39:51 STEP T8:same_T8_prompt_injections_test116 ...
+{"ref": "results/T3arm/vanilla/T8_prompt_injections_test116_english.json", "other": "results/T3arm/calib_sep/T8/ext_T8_prompt_injections_test116.json", "dataset_sha256": "b31fb8a7b47512c43fd388f0073b6ec72eb34fcbd5e02f4d277f81423d8cdd17", "decisions": 116, "answers_identical": 0, "argmax_agreement": 116, "correct_identical": 116, "max_abs_dp": 0.19540000000000002, "mean_abs_dp": 0.056106034482758624, "overall_identical_except_timing": false, "accuracy": [0.6982758620689655, 0.6982758620689655], "ece": [0.2620387931034483, 0.20743793103448283]}
+{"decisions": 116, "argmax_agreement": 116, "argmax_agreement_ties_agree": 116}
+2026-10-08 15:39:52 STEP T8:same_T8_prompt_injections_test116 OK (1 s)
+2026-10-08 15:39:52 STEP T8:cleanup ...
+2026-10-08 15:39:52 STEP T8:cleanup OK (0 s)
+2026-10-08 15:39:52 STEP T9:export ...
+load before: {"gpu_util_pct": 24, "mps_fp32_matmul_tflops": 6.67, "cotenant": [], "sys_mem_used_gb": 21.8}
+[     2.5s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T9_english.pt
+[     3.0s] Device: mps
+[     3.0s] Training items: 5000; calibration items: 400
+[     3.0s] micro_batch=8; grad_accum=4; epochs=0
+[     3.0s] Running temperature calibration ...
+[    32.6s] Model saved to poc/finetune/ckpt_calib_sep/T9
+[    32.7s] Temperatures: [1.2, 1.2, 1.0770622491836548]
+{
+ "phases_s": null,
+ "throughput": null,
+ "micro_batch_s": null,
+ "memory_gb": null,
+ "calibration_rows": {
+  "n": 400,
+  "accuracy": 0.995
+ },
+ "item_sources": {
+  "train": {},
+  "calibration": {
+   "calib": 400
+  }
+ }
+}
+report: results/T3arm/calib_sep/T9/export_timing.json (wall 32.7s, status ok)
+2026-10-08 15:40:26 STEP T9:export OK (34 s)
+2026-10-08 15:40:26 STEP T9:export_diff ...
+{"tensors": 206, "same_names": true, "values_equal": 206, "dtype_changed": {"temperature": ["torch.float32", "torch.float16"]}, "weights_sha256": {"base": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c", "export": "a87929b1f9599ac659d97a89662a6f8806ff5ae15ad1c1e27e89e55ae24187e4"}, "fitted_temperature": [1.2, 1.2, 1.0770622491836548], "config_diff": {"fine_tuned": {"base": null, "export": true}, "max_tokens_per_batch": {"base": null, "export": 2048}, "temperature": {"base": [1.6369030475616455, 1.2514300346374512, 1.983399510383606], "export": [1.2, 1.2, 1.0770622491836548]}, "temperature_by_options": {"base": {"choice:3-5": 1.7601518630981445, "choice:6-10": 1.0000158548355103, "score:3-5": 1.2514300346374512, "noul:2": 1.983399510383606, "choice:11+": 0.10058280825614929, "choice:2": 1.9063563346862793}, "export": null}}}
+2026-10-08 15:40:27 STEP T9:export_diff OK (1 s)
+2026-10-08 15:40:27 STEP T9:jev_T9_enron_spam_40 ...
+results/T3arm/calib_sep/T9/jev_T9_enron_spam_40.json: {"mean_confidence": 0.9955, "ece": 0.0045} load 2.3s eval 5.4s
+2026-10-08 15:40:36 STEP T9:jev_T9_enron_spam_40 OK (9 s)
+2026-10-08 15:40:36 STEP T9:same_T9_enron_spam_40 ...
+{"ref": "results/T3arm/vanilla/T9_enron_spam_40_english.json", "other": "results/T3arm/calib_sep/T9/jev_T9_enron_spam_40.json", "dataset_sha256": "3ba26d0895e28f0a856e997c27103cbda88b6bc3c4252649d1d69f36cd6b8303", "decisions": 40, "answers_identical": 34, "argmax_agreement": 40, "correct_identical": 40, "max_abs_dp": 0.1331, "mean_abs_dp": 0.0096775, "overall_identical_except_timing": false, "accuracy": [1.0, 1.0], "ece": [0.014155000000000141, 0.004477499999999962]}
+{"decisions": 40, "argmax_agreement": 40, "argmax_agreement_ties_agree": 40}
+2026-10-08 15:40:36 STEP T9:same_T9_enron_spam_40 OK (0 s)
+2026-10-08 15:40:36 STEP T9:ext_T9_enron_spam_ext500 ...
+results/T3arm/calib_sep/T9/ext_T9_enron_spam_ext500.json: {"mean_confidence": 0.9942, "ece": 0.0063} load 2.4s eval 70.4s
+2026-10-08 15:41:50 STEP T9:ext_T9_enron_spam_ext500 OK (74 s)
+2026-10-08 15:41:50 STEP T9:same_T9_enron_spam_ext500 ...
+{"ref": "results/T3arm/vanilla/T9_enron_spam_ext500_english.json", "other": "results/T3arm/calib_sep/T9/ext_T9_enron_spam_ext500.json", "dataset_sha256": "a298b8ccfed8d1dea6a20eef891cd69b8cea1309f4300876877a6ad65f965d13", "decisions": 500, "answers_identical": 440, "argmax_agreement": 500, "correct_identical": 500, "max_abs_dp": 0.13319999999999999, "mean_abs_dp": 0.005532600000000002, "overall_identical_except_timing": false, "accuracy": [0.992, 0.992], "ece": [0.00590559999999995, 0.006318999999999965]}
+{"decisions": 500, "argmax_agreement": 500, "argmax_agreement_ties_agree": 500}
+2026-10-08 15:41:50 STEP T9:same_T9_enron_spam_ext500 OK (0 s)
+2026-10-08 15:41:50 STEP T9:cleanup ...
+2026-10-08 15:41:51 STEP T9:cleanup OK (1 s)
+2026-10-08 15:41:51 STEP T10:export ...
+load before: {"gpu_util_pct": 16, "mps_fp32_matmul_tflops": 6.72, "cotenant": [], "sys_mem_used_gb": 22.5}
+[     2.5s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T10_english.pt
+[     2.9s] Device: mps
+[     2.9s] Training items: 5000; calibration items: 400
+[     2.9s] micro_batch=8; grad_accum=4; epochs=0
+[     2.9s] Running temperature calibration ...
+[    19.9s] Model saved to poc/finetune/ckpt_calib_sep/T10
+[    19.9s] Temperatures: [1.8350909948349, 1.2, 1.2]
+{
+ "phases_s": null,
+ "throughput": null,
+ "micro_batch_s": null,
+ "memory_gb": null,
+ "calibration_rows": {
+  "n": 400,
+  "accuracy": 0.295
+ },
+ "item_sources": {
+  "train": {},
+  "calibration": {
+   "calib": 400
+  }
+ }
+}
+report: results/T3arm/calib_sep/T10/export_timing.json (wall 20.0s, status ok)
+2026-10-08 15:42:12 STEP T10:export OK (21 s)
+2026-10-08 15:42:12 STEP T10:export_diff ...
+{"tensors": 206, "same_names": true, "values_equal": 206, "dtype_changed": {"temperature": ["torch.float32", "torch.float16"]}, "weights_sha256": {"base": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c", "export": "a87929b1f9599ac659d97a89662a6f8806ff5ae15ad1c1e27e89e55ae24187e4"}, "fitted_temperature": [1.8350909948349, 1.2, 1.2], "config_diff": {"fine_tuned": {"base": null, "export": true}, "max_tokens_per_batch": {"base": null, "export": 2048}, "temperature": {"base": [1.6369030475616455, 1.2514300346374512, 1.983399510383606], "export": [1.8350909948349, 1.2, 1.2]}, "temperature_by_options": {"base": {"choice:3-5": 1.7601518630981445, "choice:6-10": 1.0000158548355103, "score:3-5": 1.2514300346374512, "noul:2": 1.983399510383606, "choice:11+": 0.10058280825614929, "choice:2": 1.9063563346862793}, "export": null}}}
+2026-10-08 15:42:14 STEP T10:export_diff OK (2 s)
+2026-10-08 15:42:14 STEP T10:jev_T10_support_tickets_queue_40 ...
+results/T3arm/calib_sep/T10/jev_T10_support_tickets_queue_40.json: {"choice_accuracy": 0.3, "mean_confidence": 0.3581, "ece": 0.1616} load 2.4s eval 3.4s
+2026-10-08 15:42:20 STEP T10:jev_T10_support_tickets_queue_40 OK (6 s)
+2026-10-08 15:42:20 STEP T10:same_T10_support_tickets_queue_40 ...
+{"ref": "results/T3arm/vanilla/T10_support_tickets_queue_40_english.json", "other": "results/T3arm/calib_sep/T10/jev_T10_support_tickets_queue_40.json", "dataset_sha256": "e2c573561b8336dc4ba282f015c56617eb1c2aafd3042d7ad470833104236f40", "decisions": 40, "answers_identical": 0, "argmax_agreement": 40, "correct_identical": 40, "max_abs_dp": 0.3253, "mean_abs_dp": 0.14569000000000001, "overall_identical_except_timing": false, "accuracy": [0.3, 0.3], "ece": [0.2527025, 0.1615625]}
+{"decisions": 40, "argmax_agreement": 40, "argmax_agreement_ties_agree": 40}
+2026-10-08 15:42:21 STEP T10:same_T10_support_tickets_queue_40 OK (1 s)
+2026-10-08 15:42:21 STEP T10:ext_T10_support_tickets_queue_ext500 ...
+results/T3arm/calib_sep/T10/ext_T10_support_tickets_queue_ext500.json: {"choice_accuracy": 0.264, "mean_confidence": 0.3108, "ece": 0.0882} load 2.3s eval 42.3s
+2026-10-08 15:43:06 STEP T10:ext_T10_support_tickets_queue_ext500 OK (45 s)
+2026-10-08 15:43:06 STEP T10:same_T10_support_tickets_queue_ext500 ...
+{"ref": "results/T3arm/vanilla/T10_support_tickets_queue_ext500_english.json", "other": "results/T3arm/calib_sep/T10/ext_T10_support_tickets_queue_ext500.json", "dataset_sha256": "fa2063f1e065e260661aef19b319fa6c8f45ed87bc452ca7fa876a81f7c20d52", "decisions": 500, "answers_identical": 0, "argmax_agreement": 500, "correct_identical": 500, "max_abs_dp": 0.32400000000000007, "mean_abs_dp": 0.1466306, "overall_identical_except_timing": false, "accuracy": [0.264, 0.264], "ece": [0.20148879999999997, 0.08817500000000002]}
+{"decisions": 500, "argmax_agreement": 500, "argmax_agreement_ties_agree": 500}
+2026-10-08 15:43:07 STEP T10:same_T10_support_tickets_queue_ext500 OK (1 s)
+2026-10-08 15:43:07 STEP T10:cleanup ...
+2026-10-08 15:43:07 STEP T10:cleanup OK (0 s)
+2026-10-08 15:43:07 CALIB_SEP FINISHED 20261008-1529

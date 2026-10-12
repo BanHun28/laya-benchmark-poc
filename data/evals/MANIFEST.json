@@ -1,0 +1,735 @@
+{
+ "version": 1,
+ "builder_version": "0.1.0",
+ "laya_version": "0.3.23",
+ "created_at": "2026-10-07T16:40:31+09:00",
+ "files": {
+  "en_massive_domain_8.jsonl": {
+   "path": "data/evals/en_massive_domain_8.jsonl",
+   "sha256": "c52a5f4ef33ee2eca77424de6e6b466c175910e8096f3b095f249c6180362b0a",
+   "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+   "n": 500,
+   "source": {
+    "dataset": "mteb/amazon_massive_intent",
+    "config": "en",
+    "split": "test",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+   },
+   "license": "CC BY 4.0 (원 저장소 alexa/massive 기준; HF 미러 mteb/amazon_massive_intent·_scenario 카드의 license 필드는 apache-2.0, 2026-10-02 확인) (확인 필요)",
+   "in_training_mix": "held out (upstream build_benchmark_nb.py:760-762; base checkpoints. ft-v1 was trained on MASSIVE ko train, see results/P4)",
+   "build_args": {
+    "command": "massive",
+    "n": 500,
+    "seed": 13,
+    "instructions": "en",
+    "descriptions": "ko",
+    "lang": "en",
+    "mode": "domain"
+   },
+   "label_distribution": {
+    "info_qa": 63,
+    "media": 63,
+    "productivity": 63,
+    "smart_home": 63,
+    "communication": 62,
+    "general": 62,
+    "lifestyle": 62,
+    "transport": 62
+   },
+   "majority_rate": 0.126,
+   "duplicates": 1,
+   "derived_from": null,
+   "label_policy_sha256": null
+  },
+  "en_massive_intent_20opt.jsonl": {
+   "path": "data/evals/en_massive_intent_20opt.jsonl",
+   "sha256": "de461b875166c454792aba5b13ba553fdf20c8514f8acb4f2ec9e93b7a427b9a",
+   "questions_sha256": "72baa7ba5b4d899bae87ce0b6cb67e9b6dce593e1ff5947e4957005554371e24",
+   "n": 100,
+   "source": {
+    "dataset": "mteb/amazon_massive_intent",
+    "config": "en",
+    "split": "test",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+   },
+   "license": "CC BY 4.0 (원 저장소 alexa/massive 기준; HF 미러 mteb/amazon_massive_intent·_scenario 카드의 license 필드는 apache-2.0, 2026-10-02 확인) (확인 필요)",
+   "in_training_mix": "held out (upstream build_benchmark_nb.py:760-762; base checkpoints. ft-v1 was trained on MASSIVE ko train, see results/P4)",
+   "build_args": {
+    "command": "massive",
+    "n": 100,
+    "seed": 13,
+    "instructions": "en",
+    "descriptions": "en",
+    "lang": "en",
+    "mode": "20opt"
+   },
+   "label_distribution": {
+    "play_music": 17,
+    "weather_query": 13,
+    "news_query": 9,
+    "datetime_query": 8,
+    "audio_volume_mute": 4,
+    "general_joke": 4,
+    "iot_cleaning": 4,
+    "iot_hue_lightoff": 4,
+    "takeaway_query": 4,
+    "alarm_remove": 3,
+    "audio_volume_up": 3,
+    "iot_hue_lightchange": 3,
+    "iot_wemo_on": 3,
+    "music_likeness": 3,
+    "alarm_query": 2,
+    "alarm_set": 2,
+    "general_quirky": 2,
+    "iot_hue_lightdim": 2,
+    "iot_hue_lighton": 2,
+    "takeaway_order": 2,
+    "datetime_convert": 1,
+    "general_greet": 1,
+    "iot_coffee": 1,
+    "iot_hue_lightup": 1,
+    "iot_wemo_off": 1,
+    "music_query": 1
+   },
+   "majority_rate": 0.17,
+   "duplicates": 0,
+   "derived_from": null,
+   "label_policy_sha256": null
+  },
+  "ko_3i4k_speechact_7.jsonl": {
+   "path": "data/evals/ko_3i4k_speechact_7.jsonl",
+   "sha256": "88e47bec5b3966b5b2747b385744ecb1d738b2e3fb2b7a186755c85d48c6f741",
+   "questions_sha256": "bc89af6329eca2b09e2ac19c4d6f6deea507e7fb01b964bf5067822f213274e7",
+   "n": 500,
+   "source": {
+    "url": "https://raw.githubusercontent.com/warnikchow/3i4k/master/data/train_val_test/fci_test.txt",
+    "sha256": "d74c5b376c7d231bd4d5a94de855e47b6e70c96abeeaaf75cffbdb8506a87ff2",
+    "commit": "cfa90c15f808becafca2d8ef8649b8b71f6bbe71",
+    "path": "data/raw/3i4k/fci_test.txt"
+   },
+   "license": "CC BY-SA 4.0 (확인 필요)",
+   "in_training_mix": "unknown",
+   "build_args": {
+    "command": "i4k",
+    "n": 500,
+    "seed": 13,
+    "instructions": "en",
+    "descriptions": "ko"
+   },
+   "label_distribution": {
+    "fragment": 72,
+    "question": 72,
+    "statement": 72,
+    "command": 71,
+    "intonation_dependent": 71,
+    "rhetorical_command": 71,
+    "rhetorical_question": 71
+   },
+   "majority_rate": 0.144,
+   "duplicates": 0,
+   "derived_from": null,
+   "label_policy_sha256": null
+  },
+  "ko_klue_nli_3.jsonl": {
+   "path": "data/evals/ko_klue_nli_3.jsonl",
+   "sha256": "ae2787b1350acfe99e75d33e713004b72f30435bab8edb37f24e160f842086ff",
+   "questions_sha256": "3f131f442bc7f0fd83b45e1c06454dc27b432b063dd8af7f374cffcd823986ec",
+   "n": 500,
+   "source": {
+    "dataset": "klue/klue",
+    "config": "nli",
+    "split": "validation",
+    "revision": "349481ec73fff722f88e0453ca05c77a447d967c"
+   },
+   "license": "CC BY-SA 4.0 (확인 필요)",
+   "in_training_mix": "unknown",
+   "build_args": {
+    "command": "nli",
+    "n": 500,
+    "seed": 13,
+    "instructions": "en",
+    "descriptions": "ko"
+   },
+   "label_distribution": {
+    "entailment": 167,
+    "neutral": 167,
+    "contradiction": 166
+   },
+   "majority_rate": 0.334,
+   "duplicates": 0,
+   "derived_from": null,
+   "label_policy_sha256": null
+  },
+  "ko_klue_ynat_7.jsonl": {
+   "path": "data/evals/ko_klue_ynat_7.jsonl",
+   "sha256": "52c1af160c0433405763a919c593afea3d4f62c51c3d893a84b6ea2610da991f",
+   "questions_sha256": "2eec39b823fd3a6eec8d54cb1bfb8caafccd93375fe2ef33c608d232ad37f260",
+   "n": 500,
+   "source": {
+    "dataset": "klue/klue",
+    "config": "ynat",
+    "split": "validation",
+    "revision": "349481ec73fff722f88e0453ca05c77a447d967c"
+   },
+   "license": "CC BY-SA 4.0 (확인 필요)",
+   "in_training_mix": "unknown",
+   "build_args": {
+    "command": "ynat",
+    "n": 500,
+    "seed": 13,
+    "instructions": "en",
+    "descriptions": "ko"
+   },
+   "label_distribution": {
+    "economy": 72,
+    "it_science": 72,
+    "society": 72,
+    "culture_life": 71,
+    "politics": 71,
+    "sports": 71,
+    "world": 71
+   },
+   "majority_rate": 0.144,
+   "duplicates": 0,
+   "derived_from": null,
+   "label_policy_sha256": null
+  },
+  "ko_klue_ynat_7_en-desc.jsonl": {
+   "path": "data/evals/ko_klue_ynat_7_en-desc.jsonl",
+   "sha256": "d6ccc77f21317c21e7ac1d5764fca13a20d83bb3f2f8931f282547647c5b489c",
+   "questions_sha256": "76a972f1309983a590e9a2c459a4645dea8fd9b34d86a9f4956d2114d741d1f9",
+   "n": 500,
+   "source": {
+    "dataset": "klue/klue",
+    "config": "ynat",
+    "split": "validation",
+    "revision": "349481ec73fff722f88e0453ca05c77a447d967c"
+   },
+   "license": "CC BY-SA 4.0 (확인 필요)",
+   "in_training_mix": "unknown",
+   "build_args": {
+    "command": "ynat",
+    "n": 500,
+    "seed": 13,
+    "instructions": "en",
+    "descriptions": "en"
+   },
+   "label_distribution": {
+    "economy": 72,
+    "it_science": 72,
+    "society": 72,
+    "culture_life": 71,
+    "politics": 71,
+    "sports": 71,
+    "world": 71
+   },
+   "majority_rate": 0.144,
+   "duplicates": 0,
+   "derived_from": null,
+   "label_policy_sha256": null
+  },
+  "ko_klue_ynat_7_ko-instr.jsonl": {
+   "path": "data/evals/ko_klue_ynat_7_ko-instr.jsonl",
+   "sha256": "b2776227d755cba4f46aa1bbfd2b9a886d7713d8fe413760c78975bc726fd09a",
+   "questions_sha256": "da716935ac306caa48da5786cac233d7dabe4dbba8ff1bd957c9f7fa344c5c93",
+   "n": 500,
+   "source": {
+    "dataset": "klue/klue",
+    "config": "ynat",
+    "split": "validation",
+    "revision": "349481ec73fff722f88e0453ca05c77a447d967c"
+   },
+   "license": "CC BY-SA 4.0 (확인 필요)",
+   "in_training_mix": "unknown",
+   "build_args": {
+    "command": "ynat",
+    "n": 500,
+    "seed": 13,
+    "instructions": "ko",
+    "descriptions": "ko"
+   },
+   "label_distribution": {
+    "economy": 72,
+    "it_science": 72,
+    "society": 72,
+    "culture_life": 71,
+    "politics": 71,
+    "sports": 71,
+    "world": 71
+   },
+   "majority_rate": 0.144,
+   "duplicates": 0,
+   "derived_from": null,
+   "label_policy_sha256": null
+  },
+  "ko_kmhas_hate.jsonl": {
+   "path": "data/evals/ko_kmhas_hate.jsonl",
+   "sha256": "4e15c044a81e71fcad18f90a4d8cfd3452bdb6921a401f83ba012bc1f45e72c6",
+   "questions_sha256": "ae97133388aac00d0eb6b8707db941904acf249795e7c0b551c28adf41fec213",
+   "n": 500,
+   "source": {
+    "dataset": "jeanlee/kmhas_korean_hate_speech",
+    "config": "default",
+    "split": "test",
+    "revision": "5df3b7429d68f0ffc89dfbd0159cc72f29fad63c",
+    "data_files": "default/test/0000.parquet",
+    "script_revision": "c657d15baf277c48d467f0625f7d33c50d4352ef"
+   },
+   "license": "CC BY-SA 4.0 (확인 필요)",
+   "in_training_mix": "unknown",
+   "build_args": {
+    "command": "kmhas",
+    "n": 500,
+    "seed": 13,
+    "instructions": "en",
+    "descriptions": "ko"
+   },
+   "label_distribution": {
+    "false": 250,
+    "true": 250
+   },
+   "majority_rate": 0.5,
+   "duplicates": 0,
+   "derived_from": null,
+   "label_policy_sha256": null
+  },
+  "ko_kmhas_type_8.jsonl": {
+   "path": "data/evals/ko_kmhas_type_8.jsonl",
+   "sha256": "5791b97163144d6ce806a790895c804bcc1031ec02ddfdbd0884eab5db4ce16c",
+   "questions_sha256": "3d6d4f200328097ff59f023c0f4d94823aa970a1543a20ed40676c5e8759772e",
+   "n": 500,
+   "source": {
+    "dataset": "jeanlee/kmhas_korean_hate_speech",
+    "config": "default",
+    "split": "test",
+    "revision": "5df3b7429d68f0ffc89dfbd0159cc72f29fad63c",
+    "data_files": "default/test/0000.parquet",
+    "script_revision": "c657d15baf277c48d467f0625f7d33c50d4352ef"
+   },
+   "license": "CC BY-SA 4.0 (확인 필요)",
+   "in_training_mix": "unknown",
+   "build_args": {
+    "command": "kmhas",
+    "n": 500,
+    "seed": 13,
+    "instructions": "en",
+    "descriptions": "ko"
+   },
+   "label_distribution": {
+    "politics": 72,
+    "origin": 70,
+    "profanity": 69,
+    "physical": 68,
+    "gender": 66,
+    "age": 65,
+    "religion": 63,
+    "race": 27
+   },
+   "majority_rate": 0.144,
+   "duplicates": 0,
+   "derived_from": null,
+   "label_policy_sha256": null
+  },
+  "ko_massive_domain_8.jsonl": {
+   "path": "data/evals/ko_massive_domain_8.jsonl",
+   "sha256": "edf33079033640fa9656c3b583a422c1ededc4bcd75eaafbfb84c5adf613f46b",
+   "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+   "n": 500,
+   "source": {
+    "dataset": "mteb/amazon_massive_intent",
+    "config": "ko",
+    "split": "test",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+   },
+   "license": "CC BY 4.0 (원 저장소 alexa/massive 기준; HF 미러 mteb/amazon_massive_intent·_scenario 카드의 license 필드는 apache-2.0, 2026-10-02 확인) (확인 필요)",
+   "in_training_mix": "held out (upstream build_benchmark_nb.py:760-762; base checkpoints. ft-v1 was trained on MASSIVE ko train, see results/P4)",
+   "build_args": {
+    "command": "massive",
+    "n": 500,
+    "seed": 13,
+    "instructions": "en",
+    "descriptions": "ko",
+    "lang": "ko",
+    "mode": "domain"
+   },
+   "label_distribution": {
+    "info_qa": 63,
+    "media": 63,
+    "productivity": 63,
+    "smart_home": 63,
+    "communication": 62,
+    "general": 62,
+    "lifestyle": 62,
+    "transport": 62
+   },
+   "majority_rate": 0.126,
+   "duplicates": 0,
+   "derived_from": null,
+   "label_policy_sha256": null
+  },
+  "ko_massive_domain_8_en-desc.jsonl": {
+   "path": "data/evals/ko_massive_domain_8_en-desc.jsonl",
+   "sha256": "fc111af8efa30340ea1513a2db0f09e8dc9b9575ce64d2b6365ec2370781943b",
+   "questions_sha256": "c3ab76c59d099b54016d035d4a6092ccdf81af32802542b368d7bf7121784264",
+   "n": 500,
+   "source": {
+    "dataset": "mteb/amazon_massive_intent",
+    "config": "ko",
+    "split": "test",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+   },
+   "license": "CC BY 4.0 (원 저장소 alexa/massive 기준; HF 미러 mteb/amazon_massive_intent·_scenario 카드의 license 필드는 apache-2.0, 2026-10-02 확인) (확인 필요)",
+   "in_training_mix": "held out (upstream build_benchmark_nb.py:760-762; base checkpoints. ft-v1 was trained on MASSIVE ko train, see results/P4)",
+   "build_args": {
+    "command": "massive",
+    "n": 500,
+    "seed": 13,
+    "instructions": "en",
+    "descriptions": "en",
+    "lang": "ko",
+    "mode": "domain"
+   },
+   "label_distribution": {
+    "info_qa": 63,
+    "media": 63,
+    "productivity": 63,
+    "smart_home": 63,
+    "communication": 62,
+    "general": 62,
+    "lifestyle": 62,
+    "transport": 62
+   },
+   "majority_rate": 0.126,
+   "duplicates": 0,
+   "derived_from": null,
+   "label_policy_sha256": null
+  },
+  "ko_massive_domain_8_ko-instr.jsonl": {
+   "path": "data/evals/ko_massive_domain_8_ko-instr.jsonl",
+   "sha256": "75ec50dccd35fc47ee0d064123646deb07cdd6f4812e97972c5d3676fd444fb1",
+   "questions_sha256": "e924d75af7fc83b50c5eeb2a446a757ed9484de5c596e05912f7d0a65b5d64f8",
+   "n": 500,
+   "source": {
+    "dataset": "mteb/amazon_massive_intent",
+    "config": "ko",
+    "split": "test",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+   },
+   "license": "CC BY 4.0 (원 저장소 alexa/massive 기준; HF 미러 mteb/amazon_massive_intent·_scenario 카드의 license 필드는 apache-2.0, 2026-10-02 확인) (확인 필요)",
+   "in_training_mix": "held out (upstream build_benchmark_nb.py:760-762; base checkpoints. ft-v1 was trained on MASSIVE ko train, see results/P4)",
+   "build_args": {
+    "command": "massive",
+    "n": 500,
+    "seed": 13,
+    "instructions": "ko",
+    "descriptions": "ko",
+    "lang": "ko",
+    "mode": "domain"
+   },
+   "label_distribution": {
+    "info_qa": 63,
+    "media": 63,
+    "productivity": 63,
+    "smart_home": 63,
+    "communication": 62,
+    "general": 62,
+    "lifestyle": 62,
+    "transport": 62
+   },
+   "majority_rate": 0.126,
+   "duplicates": 0,
+   "derived_from": null,
+   "label_policy_sha256": null
+  },
+  "ko_massive_intent_20opt.jsonl": {
+   "path": "data/evals/ko_massive_intent_20opt.jsonl",
+   "sha256": "4e936ea663ba6072e8e7ab0cc5a4f22784824378ce74cb1266a8f955b4efb596",
+   "questions_sha256": "72baa7ba5b4d899bae87ce0b6cb67e9b6dce593e1ff5947e4957005554371e24",
+   "n": 100,
+   "source": {
+    "dataset": "mteb/amazon_massive_intent",
+    "config": "ko",
+    "split": "test",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+   },
+   "license": "CC BY 4.0 (원 저장소 alexa/massive 기준; HF 미러 mteb/amazon_massive_intent·_scenario 카드의 license 필드는 apache-2.0, 2026-10-02 확인) (확인 필요)",
+   "in_training_mix": "held out (upstream build_benchmark_nb.py:760-762; base checkpoints. ft-v1 was trained on MASSIVE ko train, see results/P4)",
+   "build_args": {
+    "command": "massive",
+    "n": 100,
+    "seed": 13,
+    "instructions": "en",
+    "descriptions": "en",
+    "lang": "ko",
+    "mode": "20opt"
+   },
+   "label_distribution": {
+    "play_music": 17,
+    "weather_query": 13,
+    "news_query": 9,
+    "datetime_query": 8,
+    "audio_volume_mute": 4,
+    "general_joke": 4,
+    "iot_cleaning": 4,
+    "iot_hue_lightoff": 4,
+    "takeaway_query": 4,
+    "alarm_remove": 3,
+    "audio_volume_up": 3,
+    "iot_hue_lightchange": 3,
+    "iot_wemo_on": 3,
+    "music_likeness": 3,
+    "alarm_query": 2,
+    "alarm_set": 2,
+    "general_quirky": 2,
+    "iot_hue_lightdim": 2,
+    "iot_hue_lighton": 2,
+    "takeaway_order": 2,
+    "datetime_convert": 1,
+    "general_greet": 1,
+    "iot_coffee": 1,
+    "iot_hue_lightup": 1,
+    "iot_wemo_off": 1,
+    "music_query": 1
+   },
+   "majority_rate": 0.17,
+   "duplicates": 3,
+   "derived_from": null,
+   "label_policy_sha256": null
+  },
+  "ko_massive_intent_full60.jsonl": {
+   "path": "data/evals/ko_massive_intent_full60.jsonl",
+   "sha256": "85c9ac025e3775344c27ae8291305c5f8b208cf2f484df4922ea780022a65653",
+   "questions_sha256": "8478290c21af86ab0ddc8f25da3b095d8daacdcb72a011af93eb6c2c1bc55ad0",
+   "n": 100,
+   "source": {
+    "dataset": "mteb/amazon_massive_intent",
+    "config": "ko",
+    "split": "test",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+   },
+   "license": "CC BY 4.0 (원 저장소 alexa/massive 기준; HF 미러 mteb/amazon_massive_intent·_scenario 카드의 license 필드는 apache-2.0, 2026-10-02 확인) (확인 필요)",
+   "in_training_mix": "held out (upstream build_benchmark_nb.py:760-762; base checkpoints. ft-v1 was trained on MASSIVE ko train, see results/P4)",
+   "build_args": {
+    "command": "massive",
+    "n": 100,
+    "seed": 13,
+    "instructions": "en",
+    "descriptions": "en",
+    "lang": "ko",
+    "mode": "full"
+   },
+   "label_distribution": {
+    "play_music": 17,
+    "weather_query": 13,
+    "news_query": 9,
+    "datetime_query": 8,
+    "audio_volume_mute": 4,
+    "general_joke": 4,
+    "iot_cleaning": 4,
+    "iot_hue_lightoff": 4,
+    "takeaway_query": 4,
+    "alarm_remove": 3,
+    "audio_volume_up": 3,
+    "iot_hue_lightchange": 3,
+    "iot_wemo_on": 3,
+    "music_likeness": 3,
+    "alarm_query": 2,
+    "alarm_set": 2,
+    "general_quirky": 2,
+    "iot_hue_lightdim": 2,
+    "iot_hue_lighton": 2,
+    "takeaway_order": 2,
+    "datetime_convert": 1,
+    "general_greet": 1,
+    "iot_coffee": 1,
+    "iot_hue_lightup": 1,
+    "iot_wemo_off": 1,
+    "music_query": 1
+   },
+   "majority_rate": 0.17,
+   "duplicates": 3,
+   "derived_from": null,
+   "label_policy_sha256": null
+  },
+  "ko_massive_scenario_18.jsonl": {
+   "path": "data/evals/ko_massive_scenario_18.jsonl",
+   "sha256": "28694e08bfed61ee6e4cf5a02bb024c33ffb7c3228012267d4a022f3de0ac03e",
+   "questions_sha256": "7bf1c9b1b314f6bdd03e49cbcd471106c2a7209c06407698e82bcdb182f30a44",
+   "n": 100,
+   "source": {
+    "dataset": "mteb/amazon_massive_intent",
+    "config": "ko",
+    "split": "test",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+   },
+   "license": "CC BY 4.0 (원 저장소 alexa/massive 기준; HF 미러 mteb/amazon_massive_intent·_scenario 카드의 license 필드는 apache-2.0, 2026-10-02 확인) (확인 필요)",
+   "in_training_mix": "held out (upstream build_benchmark_nb.py:760-762; base checkpoints. ft-v1 was trained on MASSIVE ko train, see results/P4)",
+   "build_args": {
+    "command": "massive",
+    "n": 100,
+    "seed": 13,
+    "instructions": "en",
+    "descriptions": "ko",
+    "lang": "ko",
+    "mode": "scenario"
+   },
+   "label_distribution": {
+    "iot": 21,
+    "play": 17,
+    "weather": 13,
+    "datetime": 9,
+    "news": 9,
+    "alarm": 7,
+    "audio": 7,
+    "general": 7,
+    "takeaway": 6,
+    "music": 4
+   },
+   "majority_rate": 0.21,
+   "duplicates": 3,
+   "derived_from": null,
+   "label_policy_sha256": null
+  },
+  "ko_massive_scenario_18_en-desc.jsonl": {
+   "path": "data/evals/ko_massive_scenario_18_en-desc.jsonl",
+   "sha256": "b27aa789d29e6f269e7ab4d84ff8d4d5bab8e961a0d564804f68429de7768756",
+   "questions_sha256": "233520130f429820bf54b950d333db61a991e637addf592f3925b18c0245e85e",
+   "n": 100,
+   "source": {
+    "dataset": "mteb/amazon_massive_intent",
+    "config": "ko",
+    "split": "test",
+    "revision": "940fd47a81eaa7f2cc7b129674d945d618ac38c2"
+   },
+   "license": "CC BY 4.0 (원 저장소 alexa/massive 기준; HF 미러 mteb/amazon_massive_intent·_scenario 카드의 license 필드는 apache-2.0, 2026-10-02 확인) (확인 필요)",
+   "in_training_mix": "held out (upstream build_benchmark_nb.py:760-762; base checkpoints. ft-v1 was trained on MASSIVE ko train, see results/P4)",
+   "build_args": {
+    "command": "massive",
+    "n": 100,
+    "seed": 13,
+    "instructions": "en",
+    "descriptions": "en",
+    "lang": "ko",
+    "mode": "scenario"
+   },
+   "label_distribution": {
+    "iot": 21,
+    "play": 17,
+    "weather": 13,
+    "datetime": 9,
+    "news": 9,
+    "alarm": 7,
+    "audio": 7,
+    "general": 7,
+    "takeaway": 6,
+    "music": 4
+   },
+   "majority_rate": 0.21,
+   "duplicates": 3,
+   "derived_from": null,
+   "label_policy_sha256": null
+  },
+  "ko_nsmc_sentiment.jsonl": {
+   "path": "data/evals/ko_nsmc_sentiment.jsonl",
+   "sha256": "68efeccdcbcc93d8856be721af93e4275e344293b00ef8eb6646b12e40639f1d",
+   "questions_sha256": "c76e85a04f5bbbc4d45f27a81ec2d7a6bdf76cfc958d27be0ef78c0f07668a98",
+   "n": 500,
+   "source": {
+    "url": "https://raw.githubusercontent.com/e9t/nsmc/master/ratings_test.txt",
+    "sha256": "8ac9f64052f11dbf6ae0acb5e038f03d90a76f0eda7820cfb3a92d02edfcebda",
+    "commit": "cc0670e872d4ac27bfe36c87456783004b39ef6c",
+    "path": "data/raw/nsmc/ratings_test.txt"
+   },
+   "license": "CC0 1.0 (확인 필요)",
+   "in_training_mix": "unknown",
+   "build_args": {
+    "command": "nsmc",
+    "n": 500,
+    "seed": 13,
+    "instructions": "en",
+    "descriptions": "ko",
+    "opaque_keys": false,
+    "opaque_labels": false
+   },
+   "label_distribution": {
+    "sentiment_noul": {
+     "false": 250,
+     "true": 250
+    },
+    "sentiment_choice": {
+     "negative": 250,
+     "positive": 250
+    }
+   },
+   "majority_rate": {
+    "sentiment_noul": 0.5,
+    "sentiment_choice": 0.5
+   },
+   "duplicates": 0,
+   "derived_from": null,
+   "label_policy_sha256": null
+  },
+  "ko_nsmc_sentiment_choice.jsonl": {
+   "path": "data/evals/ko_nsmc_sentiment_choice.jsonl",
+   "sha256": "f740f910bb2e9f6ebdb8956aa1e1a8a87da6f445f0e76ba6bb2993cd8056f15d",
+   "questions_sha256": "a1ea66944eae8f18d0006fde3ec79ae509d179a3f99e19c1974996c64770a9d8",
+   "n": 500,
+   "source": {
+    "url": "https://raw.githubusercontent.com/e9t/nsmc/master/ratings_test.txt",
+    "sha256": "8ac9f64052f11dbf6ae0acb5e038f03d90a76f0eda7820cfb3a92d02edfcebda",
+    "commit": "cc0670e872d4ac27bfe36c87456783004b39ef6c",
+    "path": "data/raw/nsmc/ratings_test.txt"
+   },
+   "license": "CC0 1.0 (확인 필요)",
+   "in_training_mix": "unknown",
+   "build_args": {
+    "command": "nsmc",
+    "n": 500,
+    "seed": 13,
+    "instructions": "en",
+    "descriptions": "ko",
+    "opaque_keys": false,
+    "opaque_labels": false
+   },
+   "label_distribution": {
+    "negative": 250,
+    "positive": 250
+   },
+   "majority_rate": 0.5,
+   "duplicates": 0,
+   "derived_from": "ko_nsmc_sentiment.jsonl",
+   "label_policy_sha256": null
+  },
+  "ko_nsmc_sentiment_noul.jsonl": {
+   "path": "data/evals/ko_nsmc_sentiment_noul.jsonl",
+   "sha256": "44820d0de83081352ef9859173b8900ad34c6165684c4e784e5a203c8f2ff9d2",
+   "questions_sha256": "97cbeb0efb7d866a194a53e3000760480ba91b8c5b5027bad6cd864f3eba1704",
+   "n": 500,
+   "source": {
+    "url": "https://raw.githubusercontent.com/e9t/nsmc/master/ratings_test.txt",
+    "sha256": "8ac9f64052f11dbf6ae0acb5e038f03d90a76f0eda7820cfb3a92d02edfcebda",
+    "commit": "cc0670e872d4ac27bfe36c87456783004b39ef6c",
+    "path": "data/raw/nsmc/ratings_test.txt"
+   },
+   "license": "CC0 1.0 (확인 필요)",
+   "in_training_mix": "unknown",
+   "build_args": {
+    "command": "nsmc",
+    "n": 500,
+    "seed": 13,
+    "instructions": "en",
+    "descriptions": "ko",
+    "opaque_keys": false,
+    "opaque_labels": false
+   },
+   "label_distribution": {
+    "false": 250,
+    "true": 250
+   },
+   "majority_rate": 0.5,
+   "duplicates": 0,
+   "derived_from": "ko_nsmc_sentiment.jsonl",
+   "label_policy_sha256": null
+  }
+ }
+}

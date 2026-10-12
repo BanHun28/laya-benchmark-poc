@@ -1,0 +1,32 @@
+2026-10-08 09:12:24 V5 english: items (T1, 200 train + 20 calibration)
+2026-10-08 09:12:27 V5 english: train 1 epoch
+2026-10-08 09:13:26 V5 english: laya.load + eval T1_typed_decisions_40.jsonl
+2026-10-08 09:13:59 V5 english OK
+2026-10-08 09:13:59 V5 multilingual: items (T7, 200 train + 20 calibration)
+2026-10-08 09:14:03 V5 multilingual: train 1 epoch
+2026-10-08 09:14:19 V5 multilingual: laya.load + eval T7_massive_intent_10opt_ko_20.jsonl
+2026-10-08 09:14:28 V5 multilingual OK
+2026-10-08 09:14:49 V1 english: zero-step export (T2 items: its 400 calibration items fit the temperature)
+2026-10-08 09:15:04 V1 english: eval T2_ag_news_40.jsonl vs vanilla results/F/jev_cmp/laya/T2_ag_news_40_english.json
+2026-10-08 09:15:11 V1 english OK
+2026-10-08 09:15:11 V1 multilingual: zero-step export (T7 items: its 400 calibration items fit the temperature)
+2026-10-08 09:15:21 V1 multilingual: eval T7_massive_intent_10opt_ko_20.jsonl vs vanilla results/F/jev_cmp/laya/T7_massive_intent_10opt_ko_20_multilingual.json
+2026-10-08 09:15:27 V1 multilingual OK
+2026-10-08 09:15:56 V1 english: zero-step export (T2 items: its 400 calibration items fit the temperature)
+2026-10-08 09:16:11 V1 english: eval T2_ag_news_40.jsonl vs vanilla results/F/jev_cmp/laya/T2_ag_news_40_english.json
+2026-10-08 09:16:26 V1 english OK
+2026-10-08 09:16:26 V1 multilingual: zero-step export (T7 items: its 400 calibration items fit the temperature)
+2026-10-08 09:16:36 V1 multilingual: eval T7_massive_intent_10opt_ko_20.jsonl vs vanilla results/F/jev_cmp/laya/T7_massive_intent_10opt_ko_20_multilingual.json
+2026-10-08 09:16:50 V1 multilingual OK
+2026-10-08 09:24:57 V3: items with permuted labels
+2026-10-08 09:25:01 V3 permuted: train 1 epoch
+2026-10-08 09:30:57 V3 permuted OK
+2026-10-08 09:30:57 V3 real: train 1 epoch
+2026-10-08 09:36:55 V3 real OK
+2026-10-08 09:37:02 V2: train T1 (english, 5,000 decisions x 2 epochs)
+2026-10-08 10:19:48 V2: upstream laya-typed-decisions on data/evals/jev_cmp_ext/T1_typed_decisions_test400.jsonl
+2026-10-08 10:24:09 V2: dev (600 decisions) per epoch
+2026-10-08 10:26:45 V2: ours on data/evals/jev_cmp_ext/T1_typed_decisions_test400.jsonl (final export = epoch 2 + fitted T; epoch 1 too)
+2026-10-08 10:35:18 V2 OK
+2026-10-08 10:37:17 V3 permuted, 2 epochs: train
+2026-10-08 10:48:51 V3 permuted, 2 epochs OK

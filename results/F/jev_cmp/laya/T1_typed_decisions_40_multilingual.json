@@ -1,0 +1,7415 @@
+{
+  "cases": [
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6491,
+        "choice": "continue",
+        "confidence": 0.3307,
+        "probabilities": {
+          "continue": 0.6491,
+          "human_review": 0.0095,
+          "observe": 0.1629,
+          "stop": 0.1785
+        },
+        "type": "choice"
+      },
+      "confidence": 0.6491,
+      "correct": true,
+      "expected": "continue",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.6491,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5483,
+        "confidence": 0.5483,
+        "noul": 0.4517,
+        "type": "noul"
+      },
+      "confidence": 0.5483,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5483,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7815,
+        "choice": "success",
+        "confidence": 0.4584,
+        "probabilities": {
+          "failure": 0.0483,
+          "harmful": 0.0598,
+          "partial": 0.1105,
+          "success": 0.7815
+        },
+        "type": "choice"
+      },
+      "confidence": 0.7815,
+      "correct": true,
+      "expected": "success",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.7815,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5205,
+        "confidence": 0.346,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.0252,
+          "1": 0.0319,
+          "2": 0.5205,
+          "3": 0.4224
+        },
+        "score": 2.34,
+        "type": "score"
+      },
+      "confidence": 0.5205,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5205,
+        "noul_accuracy": null,
+        "score_mae": 2.34
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4627,
+        "confidence": 0.0868,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.132,
+          "1": 0.2339,
+          "2": 0.1714,
+          "3": 0.4627
+        },
+        "score": 1.9649,
+        "type": "score"
+      },
+      "confidence": 0.4627,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4627,
+        "noul_accuracy": null,
+        "score_mae": 1.9649
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5868,
+        "choice": "stop",
+        "confidence": 0.3093,
+        "probabilities": {
+          "continue": 0.2952,
+          "human_review": 0.0092,
+          "observe": 0.1089,
+          "stop": 0.5868
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5868,
+      "correct": false,
+      "expected": "continue",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5868,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.911,
+        "confidence": 0.911,
+        "noul": 0.911,
+        "type": "noul"
+      },
+      "confidence": 0.911,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.911,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8249,
+        "choice": "success",
+        "confidence": 0.5656,
+        "probabilities": {
+          "failure": 0.0405,
+          "harmful": 0.0135,
+          "partial": 0.1211,
+          "success": 0.8249
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8249,
+      "correct": true,
+      "expected": "success",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.8249,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4469,
+        "confidence": 0.1512,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.0831,
+          "1": 0.1095,
+          "2": 0.3605,
+          "3": 0.4469
+        },
+        "score": 2.1712,
+        "type": "score"
+      },
+      "confidence": 0.4469,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4469,
+        "noul_accuracy": null,
+        "score_mae": 2.1712
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2881,
+        "confidence": 0.0104,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1808,
+          "1": 0.2881,
+          "2": 0.2618,
+          "3": 0.2693
+        },
+        "score": 1.6197,
+        "type": "score"
+      },
+      "confidence": 0.2881,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2881,
+        "noul_accuracy": null,
+        "score_mae": 0.6196999999999999
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4887,
+        "choice": "continue",
+        "confidence": 0.2897,
+        "probabilities": {
+          "continue": 0.4887,
+          "human_review": 0.0092,
+          "observe": 0.0965,
+          "stop": 0.4056
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4887,
+      "correct": true,
+      "expected": "continue",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.4887,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000028"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.82,
+        "confidence": 0.82,
+        "noul": 0.18,
+        "type": "noul"
+      },
+      "confidence": 0.82,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.82,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000028"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6346,
+        "choice": "success",
+        "confidence": 0.305,
+        "probabilities": {
+          "failure": 0.1586,
+          "harmful": 0.0162,
+          "partial": 0.1906,
+          "success": 0.6346
+        },
+        "type": "choice"
+      },
+      "confidence": 0.6346,
+      "correct": true,
+      "expected": "success",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.6346,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000028"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7623,
+        "confidence": 0.457,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.0172,
+          "1": 0.0769,
+          "2": 0.7623,
+          "3": 0.1437
+        },
+        "score": 2.0324,
+        "type": "score"
+      },
+      "confidence": 0.7623,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7623,
+        "noul_accuracy": null,
+        "score_mae": 2.0324
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000028"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3281,
+        "confidence": 0.0247,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.2494,
+          "1": 0.2705,
+          "2": 0.152,
+          "3": 0.3281
+        },
+        "score": 1.5588,
+        "type": "score"
+      },
+      "confidence": 0.3281,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3281,
+        "noul_accuracy": null,
+        "score_mae": 1.5588
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000028"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8206,
+        "choice": "stop",
+        "confidence": 0.6043,
+        "probabilities": {
+          "continue": 0.1557,
+          "human_review": 0.0025,
+          "observe": 0.0212,
+          "stop": 0.8206
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8206,
+      "correct": false,
+      "expected": "observe",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.8206,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9532,
+        "confidence": 0.9532,
+        "noul": 0.0468,
+        "type": "noul"
+      },
+      "confidence": 0.9532,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9532,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5967,
+        "choice": "success",
+        "confidence": 0.2875,
+        "probabilities": {
+          "failure": 0.1396,
+          "harmful": 0.0135,
+          "partial": 0.2502,
+          "success": 0.5967
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5967,
+      "correct": false,
+      "expected": "partial",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5967,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.862,
+        "confidence": 0.6593,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.009,
+          "1": 0.011,
+          "2": 0.862,
+          "3": 0.1179
+        },
+        "score": 2.0889,
+        "type": "score"
+      },
+      "confidence": 0.862,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.862,
+        "noul_accuracy": null,
+        "score_mae": 1.0889000000000002
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4058,
+        "confidence": 0.0445,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.2202,
+          "1": 0.1691,
+          "2": 0.2049,
+          "3": 0.4058
+        },
+        "score": 1.7963,
+        "type": "score"
+      },
+      "confidence": 0.4058,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4058,
+        "noul_accuracy": null,
+        "score_mae": 0.7963
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8841,
+        "choice": "stop",
+        "confidence": 0.696,
+        "probabilities": {
+          "continue": 0.0969,
+          "human_review": 0.0051,
+          "observe": 0.0139,
+          "stop": 0.8841
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8841,
+      "correct": false,
+      "expected": "human_review",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.8841,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8717,
+        "confidence": 0.8717,
+        "noul": 0.1283,
+        "type": "noul"
+      },
+      "confidence": 0.8717,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8717,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5162,
+        "choice": "failure",
+        "confidence": 0.2235,
+        "probabilities": {
+          "failure": 0.5162,
+          "harmful": 0.028,
+          "partial": 0.1349,
+          "success": 0.3209
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5162,
+      "correct": false,
+      "expected": "harmful",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5162,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5385,
+        "confidence": 0.2134,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.0257,
+          "1": 0.2332,
+          "2": 0.5385,
+          "3": 0.2027
+        },
+        "score": 1.9181,
+        "type": "score"
+      },
+      "confidence": 0.5385,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5385,
+        "noul_accuracy": null,
+        "score_mae": 1.0819
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4364,
+        "confidence": 0.0791,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1086,
+          "1": 0.4364,
+          "2": 0.2276,
+          "3": 0.2275
+        },
+        "score": 1.5739,
+        "type": "score"
+      },
+      "confidence": 0.4364,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4364,
+        "noul_accuracy": null,
+        "score_mae": 1.4261
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8469,
+        "choice": "stop",
+        "confidence": 0.602,
+        "probabilities": {
+          "continue": 0.0611,
+          "human_review": 0.0055,
+          "observe": 0.0865,
+          "stop": 0.8469
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8469,
+      "correct": false,
+      "expected": "human_review",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.8469,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9634,
+        "confidence": 0.9634,
+        "noul": 0.0366,
+        "type": "noul"
+      },
+      "confidence": 0.9634,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9634,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5241,
+        "choice": "success",
+        "confidence": 0.275,
+        "probabilities": {
+          "failure": 0.0856,
+          "harmful": 0.0236,
+          "partial": 0.3668,
+          "success": 0.5241
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5241,
+      "correct": false,
+      "expected": "harmful",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5241,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6495,
+        "confidence": 0.331,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.0149,
+          "1": 0.1187,
+          "2": 0.6495,
+          "3": 0.217
+        },
+        "score": 2.0686,
+        "type": "score"
+      },
+      "confidence": 0.6495,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6495,
+        "noul_accuracy": null,
+        "score_mae": 0.9314
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4101,
+        "confidence": 0.0966,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0707,
+          "1": 0.2728,
+          "2": 0.2463,
+          "3": 0.4101
+        },
+        "score": 1.9959,
+        "type": "score"
+      },
+      "confidence": 0.4101,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4101,
+        "noul_accuracy": null,
+        "score_mae": 1.0041
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8252,
+        "choice": "stop",
+        "confidence": 0.5895,
+        "probabilities": {
+          "continue": 0.1345,
+          "human_review": 0.0033,
+          "observe": 0.0371,
+          "stop": 0.8252
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8252,
+      "correct": false,
+      "expected": "human_review",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.8252,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000082"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7108,
+        "confidence": 0.7108,
+        "noul": 0.7108,
+        "type": "noul"
+      },
+      "confidence": 0.7108,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7108,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000082"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6471,
+        "choice": "success",
+        "confidence": 0.3045,
+        "probabilities": {
+          "failure": 0.16,
+          "harmful": 0.0237,
+          "partial": 0.1692,
+          "success": 0.6471
+        },
+        "type": "choice"
+      },
+      "confidence": 0.6471,
+      "correct": false,
+      "expected": "failure",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.6471,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000082"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5618,
+        "confidence": 0.3267,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.0221,
+          "1": 0.0539,
+          "2": 0.3622,
+          "3": 0.5618
+        },
+        "score": 2.4637,
+        "type": "score"
+      },
+      "confidence": 0.5618,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5618,
+        "noul_accuracy": null,
+        "score_mae": 2.4637
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000082"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8356,
+        "confidence": 0.5546,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0355,
+          "1": 0.0816,
+          "2": 0.0473,
+          "3": 0.8356
+        },
+        "score": 2.6829,
+        "type": "score"
+      },
+      "confidence": 0.8356,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8356,
+        "noul_accuracy": null,
+        "score_mae": 1.6829
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000082"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6407,
+        "choice": "stop",
+        "confidence": 0.3569,
+        "probabilities": {
+          "continue": 0.2638,
+          "human_review": 0.0093,
+          "observe": 0.0862,
+          "stop": 0.6407
+        },
+        "type": "choice"
+      },
+      "confidence": 0.6407,
+      "correct": false,
+      "expected": "observe",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.6407,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000083"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7974,
+        "confidence": 0.7974,
+        "noul": 0.2026,
+        "type": "noul"
+      },
+      "confidence": 0.7974,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7974,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000083"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4937,
+        "choice": "failure",
+        "confidence": 0.3071,
+        "probabilities": {
+          "failure": 0.4937,
+          "harmful": 0.0146,
+          "partial": 0.07,
+          "success": 0.4217
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4937,
+      "correct": false,
+      "expected": "success",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4937,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000083"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9244,
+        "confidence": 0.7595,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.0107,
+          "1": 0.0148,
+          "2": 0.9244,
+          "3": 0.0501
+        },
+        "score": 2.014,
+        "type": "score"
+      },
+      "confidence": 0.9244,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9244,
+        "noul_accuracy": null,
+        "score_mae": 1.0139999999999998
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000083"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3523,
+        "confidence": 0.0364,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1351,
+          "1": 0.2575,
+          "2": 0.3523,
+          "3": 0.255
+        },
+        "score": 1.7272,
+        "type": "score"
+      },
+      "confidence": 0.3523,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3523,
+        "noul_accuracy": null,
+        "score_mae": 0.7272000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000083"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8699,
+        "choice": "stop",
+        "confidence": 0.6435,
+        "probabilities": {
+          "continue": 0.083,
+          "human_review": 0.0085,
+          "observe": 0.0386,
+          "stop": 0.8699
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8699,
+      "correct": false,
+      "expected": "continue",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.8699,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000085"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7869,
+        "confidence": 0.7869,
+        "noul": 0.2131,
+        "type": "noul"
+      },
+      "confidence": 0.7869,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7869,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000085"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4277,
+        "choice": "failure",
+        "confidence": 0.068,
+        "probabilities": {
+          "failure": 0.4277,
+          "harmful": 0.1372,
+          "partial": 0.1776,
+          "success": 0.2574
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4277,
+      "correct": false,
+      "expected": "partial",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4277,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000085"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8912,
+        "confidence": 0.7008,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.007,
+          "1": 0.0164,
+          "2": 0.8912,
+          "3": 0.0854
+        },
+        "score": 2.055,
+        "type": "score"
+      },
+      "confidence": 0.8912,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8912,
+        "noul_accuracy": null,
+        "score_mae": 2.055
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000085"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6599,
+        "confidence": 0.2781,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0719,
+          "1": 0.1191,
+          "2": 0.1491,
+          "3": 0.6599
+        },
+        "score": 2.3969,
+        "type": "score"
+      },
+      "confidence": 0.6599,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6599,
+        "noul_accuracy": null,
+        "score_mae": 2.3969
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000085"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.647,
+        "choice": "stop",
+        "confidence": 0.4134,
+        "probabilities": {
+          "continue": 0.3037,
+          "human_review": 0.0076,
+          "observe": 0.0417,
+          "stop": 0.647
+        },
+        "type": "choice"
+      },
+      "confidence": 0.647,
+      "correct": false,
+      "expected": "observe",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.647,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9174,
+        "confidence": 0.9174,
+        "noul": 0.0826,
+        "type": "noul"
+      },
+      "confidence": 0.9174,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_review",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9174,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5958,
+        "choice": "success",
+        "confidence": 0.2567,
+        "probabilities": {
+          "failure": 0.1611,
+          "harmful": 0.0266,
+          "partial": 0.2166,
+          "success": 0.5958
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5958,
+      "correct": false,
+      "expected": "partial",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "outcome",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5958,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.942,
+        "confidence": 0.7971,
+        "legend": {
+          "0": "Benign: read-only or clearly safe actions.",
+          "1": "Low: routine writes within scope.",
+          "2": "Moderate: irreversible or out-of-scope actions.",
+          "3": "High: destructive, security-relevant, or policy-violating actions."
+        },
+        "probabilities": {
+          "0": 0.0099,
+          "1": 0.0265,
+          "2": 0.942,
+          "3": 0.0216
+        },
+        "score": 1.9753,
+        "type": "score"
+      },
+      "confidence": 0.942,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.942,
+        "noul_accuracy": null,
+        "score_mae": 1.9753
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3845,
+        "confidence": 0.0532,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1507,
+          "1": 0.3845,
+          "2": 0.2974,
+          "3": 0.1674
+        },
+        "score": 1.4816,
+        "type": "score"
+      },
+      "confidence": 0.3845,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3845,
+        "noul_accuracy": null,
+        "score_mae": 1.4816
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:agent_trace_observability",
+        "id:agent_trace_observability_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8365,
+        "choice": "close_no_action",
+        "confidence": 0.6228,
+        "probabilities": {
+          "answer_directly": 0.109,
+          "close_no_action": 0.8365,
+          "escalate_to_human": 0.0178,
+          "execute_refund": 0.0253,
+          "request_information": 0.0116
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8365,
+      "correct": false,
+      "expected": "request_information",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.8365,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000003"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6107,
+        "choice": "account",
+        "confidence": 0.4393,
+        "probabilities": {
+          "account": 0.6107,
+          "billing": 0.048,
+          "delivery": 0.004,
+          "refund": 0.0169,
+          "technical": 0.3205
+        },
+        "type": "choice"
+      },
+      "confidence": 0.6107,
+      "correct": false,
+      "expected": "billing",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.6107,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000003"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5963,
+        "confidence": 0.267,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.1107,
+          "1": 0.5963,
+          "2": 0.2593,
+          "3": 0.0337
+        },
+        "score": 1.2161,
+        "type": "score"
+      },
+      "confidence": 0.5963,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5963,
+        "noul_accuracy": null,
+        "score_mae": 0.7839
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000003"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5212,
+        "confidence": 0.5212,
+        "noul": 0.4788,
+        "type": "noul"
+      },
+      "confidence": 0.5212,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5212,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000003"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.468,
+        "confidence": 0.0802,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1762,
+          "1": 0.468,
+          "2": 0.1871,
+          "3": 0.1687
+        },
+        "score": 1.3482,
+        "type": "score"
+      },
+      "confidence": 0.468,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.468,
+        "noul_accuracy": null,
+        "score_mae": 1.6518
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000003"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9413,
+        "choice": "execute_refund",
+        "confidence": 0.8329,
+        "probabilities": {
+          "answer_directly": 0.0432,
+          "close_no_action": 0.0115,
+          "escalate_to_human": 0.0015,
+          "execute_refund": 0.9413,
+          "request_information": 0.0025
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9413,
+      "correct": false,
+      "expected": "escalate_to_human",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.9413,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000009"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "billing",
+        "confidence": 1.0,
+        "probabilities": {
+          "account": 0.0,
+          "billing": 1.0,
+          "delivery": 0.0,
+          "refund": 0.0,
+          "technical": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "billing",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000009"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.814,
+        "confidence": 0.5334,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.0267,
+          "1": 0.1191,
+          "2": 0.814,
+          "3": 0.0402
+        },
+        "score": 1.8677,
+        "type": "score"
+      },
+      "confidence": 0.814,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.814,
+        "noul_accuracy": null,
+        "score_mae": 0.13230000000000008
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000009"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.827,
+        "confidence": 0.827,
+        "noul": 0.827,
+        "type": "noul"
+      },
+      "confidence": 0.827,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.827,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000009"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3975,
+        "confidence": 0.1424,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0468,
+          "1": 0.1832,
+          "2": 0.3725,
+          "3": 0.3975
+        },
+        "score": 2.1206,
+        "type": "score"
+      },
+      "confidence": 0.3975,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3975,
+        "noul_accuracy": null,
+        "score_mae": 0.12060000000000004
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000009"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.678,
+        "choice": "close_no_action",
+        "confidence": 0.4769,
+        "probabilities": {
+          "answer_directly": 0.2576,
+          "close_no_action": 0.678,
+          "escalate_to_human": 0.0168,
+          "execute_refund": 0.0048,
+          "request_information": 0.0428
+        },
+        "type": "choice"
+      },
+      "confidence": 0.678,
+      "correct": false,
+      "expected": "answer_directly",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.678,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8903,
+        "choice": "delivery",
+        "confidence": 0.7289,
+        "probabilities": {
+          "account": 0.0818,
+          "billing": 0.0046,
+          "delivery": 0.8903,
+          "refund": 0.0098,
+          "technical": 0.0135
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8903,
+      "correct": true,
+      "expected": "delivery",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.8903,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3783,
+        "confidence": 0.0478,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.1631,
+          "1": 0.3783,
+          "2": 0.2947,
+          "3": 0.1639
+        },
+        "score": 1.4594,
+        "type": "score"
+      },
+      "confidence": 0.3783,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3783,
+        "noul_accuracy": null,
+        "score_mae": 1.4594
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7254,
+        "confidence": 0.7254,
+        "noul": 0.7254,
+        "type": "noul"
+      },
+      "confidence": 0.7254,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7254,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4246,
+        "confidence": 0.0784,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.4246,
+          "1": 0.2854,
+          "2": 0.1689,
+          "3": 0.1212
+        },
+        "score": 0.9866,
+        "type": "score"
+      },
+      "confidence": 0.4246,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4246,
+        "noul_accuracy": null,
+        "score_mae": 1.0133999999999999
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8943,
+        "choice": "execute_refund",
+        "confidence": 0.7528,
+        "probabilities": {
+          "answer_directly": 0.0896,
+          "close_no_action": 0.0097,
+          "escalate_to_human": 0.0027,
+          "execute_refund": 0.8943,
+          "request_information": 0.0037
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8943,
+      "correct": true,
+      "expected": "execute_refund",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.8943,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "billing",
+        "confidence": 1.0,
+        "probabilities": {
+          "account": 0.0,
+          "billing": 1.0,
+          "delivery": 0.0,
+          "refund": 0.0,
+          "technical": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "billing",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4847,
+        "confidence": 0.1538,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.1067,
+          "1": 0.4847,
+          "2": 0.3169,
+          "3": 0.0918
+        },
+        "score": 1.3937,
+        "type": "score"
+      },
+      "confidence": 0.4847,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4847,
+        "noul_accuracy": null,
+        "score_mae": 0.39369999999999994
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5441,
+        "confidence": 0.5441,
+        "noul": 0.5441,
+        "type": "noul"
+      },
+      "confidence": 0.5441,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5441,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4826,
+        "confidence": 0.1749,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0682,
+          "1": 0.4826,
+          "2": 0.3396,
+          "3": 0.1096
+        },
+        "score": 1.4907,
+        "type": "score"
+      },
+      "confidence": 0.4826,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4826,
+        "noul_accuracy": null,
+        "score_mae": 0.4906999999999999
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000023"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6464,
+        "choice": "close_no_action",
+        "confidence": 0.5193,
+        "probabilities": {
+          "answer_directly": 0.3262,
+          "close_no_action": 0.6464,
+          "escalate_to_human": 0.0104,
+          "execute_refund": 0.0127,
+          "request_information": 0.0043
+        },
+        "type": "choice"
+      },
+      "confidence": 0.6464,
+      "correct": false,
+      "expected": "escalate_to_human",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.6464,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000027"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "billing",
+        "confidence": 0.9999,
+        "probabilities": {
+          "account": 0.0,
+          "billing": 1.0,
+          "delivery": 0.0,
+          "refund": 0.0,
+          "technical": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": false,
+      "expected": "account",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000027"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6307,
+        "confidence": 0.369,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.0302,
+          "1": 0.6307,
+          "2": 0.3046,
+          "3": 0.0345
+        },
+        "score": 1.3433,
+        "type": "score"
+      },
+      "confidence": 0.6307,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6307,
+        "noul_accuracy": null,
+        "score_mae": 0.6567000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000027"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8133,
+        "confidence": 0.8133,
+        "noul": 0.1867,
+        "type": "noul"
+      },
+      "confidence": 0.8133,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8133,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000027"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4828,
+        "confidence": 0.0929,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1471,
+          "1": 0.4828,
+          "2": 0.1756,
+          "3": 0.1945
+        },
+        "score": 1.4175,
+        "type": "score"
+      },
+      "confidence": 0.4828,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4828,
+        "noul_accuracy": null,
+        "score_mae": 0.5825
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000027"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.916,
+        "choice": "answer_directly",
+        "confidence": 0.7898,
+        "probabilities": {
+          "answer_directly": 0.916,
+          "close_no_action": 0.0702,
+          "escalate_to_human": 0.0085,
+          "execute_refund": 0.0036,
+          "request_information": 0.0016
+        },
+        "type": "choice"
+      },
+      "confidence": 0.916,
+      "correct": false,
+      "expected": "escalate_to_human",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.916,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9848,
+        "choice": "delivery",
+        "confidence": 0.9417,
+        "probabilities": {
+          "account": 0.0032,
+          "billing": 0.0026,
+          "delivery": 0.9848,
+          "refund": 0.0002,
+          "technical": 0.0092
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9848,
+      "correct": true,
+      "expected": "delivery",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9848,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7688,
+        "confidence": 0.4733,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.0343,
+          "1": 0.1619,
+          "2": 0.7688,
+          "3": 0.035
+        },
+        "score": 1.8045,
+        "type": "score"
+      },
+      "confidence": 0.7688,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7688,
+        "noul_accuracy": null,
+        "score_mae": 0.1955
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8025,
+        "confidence": 0.8025,
+        "noul": 0.1975,
+        "type": "noul"
+      },
+      "confidence": 0.8025,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8025,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5952,
+        "confidence": 0.2115,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1061,
+          "1": 0.5952,
+          "2": 0.0931,
+          "3": 0.2056
+        },
+        "score": 1.3982,
+        "type": "score"
+      },
+      "confidence": 0.5952,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5952,
+        "noul_accuracy": null,
+        "score_mae": 0.3982000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000037"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5409,
+        "choice": "answer_directly",
+        "confidence": 0.3876,
+        "probabilities": {
+          "answer_directly": 0.5409,
+          "close_no_action": 0.0314,
+          "escalate_to_human": 0.0342,
+          "execute_refund": 0.3789,
+          "request_information": 0.0145
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5409,
+      "correct": false,
+      "expected": "execute_refund",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5409,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 1.0,
+        "choice": "billing",
+        "confidence": 1.0,
+        "probabilities": {
+          "account": 0.0,
+          "billing": 1.0,
+          "delivery": 0.0,
+          "refund": 0.0,
+          "technical": 0.0
+        },
+        "type": "choice"
+      },
+      "confidence": 1.0,
+      "correct": true,
+      "expected": "billing",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 1.0,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6358,
+        "confidence": 0.2668,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.1084,
+          "1": 0.6358,
+          "2": 0.1963,
+          "3": 0.0595
+        },
+        "score": 1.2069,
+        "type": "score"
+      },
+      "confidence": 0.6358,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6358,
+        "noul_accuracy": null,
+        "score_mae": 0.7930999999999999
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.702,
+        "confidence": 0.702,
+        "noul": 0.702,
+        "type": "noul"
+      },
+      "confidence": 0.702,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.702,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5998,
+        "confidence": 0.2367,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0836,
+          "1": 0.2358,
+          "2": 0.5998,
+          "3": 0.0809
+        },
+        "score": 1.678,
+        "type": "score"
+      },
+      "confidence": 0.5998,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5998,
+        "noul_accuracy": null,
+        "score_mae": 0.32200000000000006
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4332,
+        "choice": "answer_directly",
+        "confidence": 0.3258,
+        "probabilities": {
+          "answer_directly": 0.4332,
+          "close_no_action": 0.4206,
+          "escalate_to_human": 0.1229,
+          "execute_refund": 0.0061,
+          "request_information": 0.0171
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4332,
+      "correct": true,
+      "expected": "answer_directly",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.4332,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000068"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.868,
+        "choice": "delivery",
+        "confidence": 0.672,
+        "probabilities": {
+          "account": 0.0328,
+          "billing": 0.0166,
+          "delivery": 0.868,
+          "refund": 0.005,
+          "technical": 0.0775
+        },
+        "type": "choice"
+      },
+      "confidence": 0.868,
+      "correct": true,
+      "expected": "delivery",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.868,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000068"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5205,
+        "confidence": 0.126,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.1285,
+          "1": 0.5205,
+          "2": 0.1974,
+          "3": 0.1536
+        },
+        "score": 1.3762,
+        "type": "score"
+      },
+      "confidence": 0.5205,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5205,
+        "noul_accuracy": null,
+        "score_mae": 0.6237999999999999
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000068"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7246,
+        "confidence": 0.7246,
+        "noul": 0.2754,
+        "type": "noul"
+      },
+      "confidence": 0.7246,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7246,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000068"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5312,
+        "confidence": 0.2549,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.3474,
+          "1": 0.5312,
+          "2": 0.0855,
+          "3": 0.0358
+        },
+        "score": 0.8098,
+        "type": "score"
+      },
+      "confidence": 0.5312,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5312,
+        "noul_accuracy": null,
+        "score_mae": 1.1902
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000068"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8043,
+        "choice": "close_no_action",
+        "confidence": 0.5903,
+        "probabilities": {
+          "answer_directly": 0.1333,
+          "close_no_action": 0.8043,
+          "escalate_to_human": 0.0107,
+          "execute_refund": 0.0477,
+          "request_information": 0.004
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8043,
+      "correct": false,
+      "expected": "escalate_to_human",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.8043,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000093"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.911,
+        "choice": "technical",
+        "confidence": 0.775,
+        "probabilities": {
+          "account": 0.0703,
+          "billing": 0.0124,
+          "delivery": 0.0036,
+          "refund": 0.0026,
+          "technical": 0.911
+        },
+        "type": "choice"
+      },
+      "confidence": 0.911,
+      "correct": true,
+      "expected": "technical",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.911,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000093"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5562,
+        "confidence": 0.2888,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.0308,
+          "1": 0.3434,
+          "2": 0.5562,
+          "3": 0.0695
+        },
+        "score": 1.6644,
+        "type": "score"
+      },
+      "confidence": 0.5562,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5562,
+        "noul_accuracy": null,
+        "score_mae": 1.3356
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000093"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9168,
+        "confidence": 0.9168,
+        "noul": 0.9168,
+        "type": "noul"
+      },
+      "confidence": 0.9168,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9168,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000093"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5414,
+        "confidence": 0.1391,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1489,
+          "1": 0.5414,
+          "2": 0.1524,
+          "3": 0.1573
+        },
+        "score": 1.3181,
+        "type": "score"
+      },
+      "confidence": 0.5414,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5414,
+        "noul_accuracy": null,
+        "score_mae": 1.6819
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000093"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8541,
+        "choice": "execute_refund",
+        "confidence": 0.6343,
+        "probabilities": {
+          "answer_directly": 0.0602,
+          "close_no_action": 0.0505,
+          "escalate_to_human": 0.029,
+          "execute_refund": 0.8541,
+          "request_information": 0.0061
+        },
+        "type": "choice"
+      },
+      "confidence": 0.8541,
+      "correct": false,
+      "expected": "request_information",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "action",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.8541,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9207,
+        "choice": "delivery",
+        "confidence": 0.7919,
+        "probabilities": {
+          "account": 0.0064,
+          "billing": 0.0595,
+          "delivery": 0.9207,
+          "refund": 0.0002,
+          "technical": 0.0132
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9207,
+      "correct": true,
+      "expected": "delivery",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "category",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.9207,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6117,
+        "confidence": 0.3577,
+        "legend": {
+          "0": "No sign of dissatisfaction.",
+          "1": "Mild frustration, but the relationship is intact.",
+          "2": "Clearly unhappy; repeat problems or explicit complaints.",
+          "3": "Imminent: threatening to cancel, dispute or leave."
+        },
+        "probabilities": {
+          "0": 0.0469,
+          "1": 0.3202,
+          "2": 0.6117,
+          "3": 0.0211
+        },
+        "score": 1.6071,
+        "type": "score"
+      },
+      "confidence": 0.6117,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "churn_risk",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6117,
+        "noul_accuracy": null,
+        "score_mae": 0.6071
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8058,
+        "confidence": 0.8058,
+        "noul": 0.1942,
+        "type": "noul"
+      },
+      "confidence": 0.8058,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "needs_human",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8058,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4531,
+        "confidence": 0.1147,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0847,
+          "1": 0.4531,
+          "2": 0.2944,
+          "3": 0.1678
+        },
+        "score": 1.5453,
+        "type": "score"
+      },
+      "confidence": 0.4531,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4531,
+        "noul_accuracy": null,
+        "score_mae": 0.5452999999999999
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:customer_service",
+        "id:customer_service_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6064,
+        "confidence": 0.2763,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.0669,
+          "1": 0.2682,
+          "2": 0.6064,
+          "3": 0.0585
+        },
+        "score": 1.6566,
+        "type": "score"
+      },
+      "confidence": 0.6064,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6064,
+        "noul_accuracy": null,
+        "score_mae": 1.3434
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000001"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5601,
+        "choice": "approve",
+        "confidence": 0.2604,
+        "probabilities": {
+          "approve": 0.5601,
+          "hold": 0.1304,
+          "manual_review": 0.0192,
+          "reject": 0.2903
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5601,
+      "correct": false,
+      "expected": "manual_review",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5601,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000001"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9795,
+        "confidence": 0.9795,
+        "noul": 0.9795,
+        "type": "noul"
+      },
+      "confidence": 0.9795,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9795,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000001"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9258,
+        "confidence": 0.9258,
+        "noul": 0.9258,
+        "type": "noul"
+      },
+      "confidence": 0.9258,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9258,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000001"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4953,
+        "confidence": 0.1503,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0833,
+          "1": 0.4953,
+          "2": 0.2934,
+          "3": 0.1279
+        },
+        "score": 1.466,
+        "type": "score"
+      },
+      "confidence": 0.4953,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4953,
+        "noul_accuracy": null,
+        "score_mae": 0.534
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000001"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6501,
+        "confidence": 0.3272,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.0467,
+          "1": 0.2452,
+          "2": 0.6501,
+          "3": 0.0579
+        },
+        "score": 1.7193,
+        "type": "score"
+      },
+      "confidence": 0.6501,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6501,
+        "noul_accuracy": null,
+        "score_mae": 1.7193
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000010"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.521,
+        "choice": "approve",
+        "confidence": 0.2127,
+        "probabilities": {
+          "approve": 0.521,
+          "hold": 0.2827,
+          "manual_review": 0.0251,
+          "reject": 0.1711
+        },
+        "type": "choice"
+      },
+      "confidence": 0.521,
+      "correct": true,
+      "expected": "approve",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.521,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000010"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9862,
+        "confidence": 0.9862,
+        "noul": 0.9862,
+        "type": "noul"
+      },
+      "confidence": 0.9862,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9862,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000010"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9666,
+        "confidence": 0.9666,
+        "noul": 0.9666,
+        "type": "noul"
+      },
+      "confidence": 0.9666,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9666,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000010"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3972,
+        "confidence": 0.077,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1276,
+          "1": 0.3972,
+          "2": 0.3248,
+          "3": 0.1504
+        },
+        "score": 1.498,
+        "type": "score"
+      },
+      "confidence": 0.3972,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3972,
+        "noul_accuracy": null,
+        "score_mae": 0.502
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000010"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.733,
+        "confidence": 0.4094,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.0408,
+          "1": 0.1721,
+          "2": 0.733,
+          "3": 0.054
+        },
+        "score": 1.8003,
+        "type": "score"
+      },
+      "confidence": 0.733,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.733,
+        "noul_accuracy": null,
+        "score_mae": 1.1997
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3854,
+        "choice": "reject",
+        "confidence": 0.1599,
+        "probabilities": {
+          "approve": 0.3741,
+          "hold": 0.2124,
+          "manual_review": 0.0281,
+          "reject": 0.3854
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3854,
+      "correct": false,
+      "expected": "manual_review",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3854,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9791,
+        "confidence": 0.9791,
+        "noul": 0.9791,
+        "type": "noul"
+      },
+      "confidence": 0.9791,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9791,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9614,
+        "confidence": 0.9614,
+        "noul": 0.9614,
+        "type": "noul"
+      },
+      "confidence": 0.9614,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9614,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3658,
+        "confidence": 0.039,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1733,
+          "1": 0.3658,
+          "2": 0.2906,
+          "3": 0.1703
+        },
+        "score": 1.4579,
+        "type": "score"
+      },
+      "confidence": 0.3658,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3658,
+        "noul_accuracy": null,
+        "score_mae": 0.5421
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000016"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5372,
+        "confidence": 0.2443,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.0607,
+          "1": 0.3374,
+          "2": 0.5372,
+          "3": 0.0647
+        },
+        "score": 1.6058,
+        "type": "score"
+      },
+      "confidence": 0.5372,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5372,
+        "noul_accuracy": null,
+        "score_mae": 1.3942
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4808,
+        "choice": "approve",
+        "confidence": 0.1724,
+        "probabilities": {
+          "approve": 0.4808,
+          "hold": 0.2049,
+          "manual_review": 0.0335,
+          "reject": 0.2808
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4808,
+      "correct": false,
+      "expected": "manual_review",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4808,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9873,
+        "confidence": 0.9873,
+        "noul": 0.9873,
+        "type": "noul"
+      },
+      "confidence": 0.9873,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9873,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9682,
+        "confidence": 0.9682,
+        "noul": 0.9682,
+        "type": "noul"
+      },
+      "confidence": 0.9682,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9682,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4537,
+        "confidence": 0.0956,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.097,
+          "1": 0.4537,
+          "2": 0.2457,
+          "3": 0.2036
+        },
+        "score": 1.5558,
+        "type": "score"
+      },
+      "confidence": 0.4537,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4537,
+        "noul_accuracy": null,
+        "score_mae": 1.4442
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000018"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6348,
+        "confidence": 0.3233,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.0531,
+          "1": 0.2662,
+          "2": 0.6348,
+          "3": 0.0459
+        },
+        "score": 1.6735,
+        "type": "score"
+      },
+      "confidence": 0.6348,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6348,
+        "noul_accuracy": null,
+        "score_mae": 1.3265
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5047,
+        "choice": "reject",
+        "confidence": 0.1915,
+        "probabilities": {
+          "approve": 0.2827,
+          "hold": 0.181,
+          "manual_review": 0.0316,
+          "reject": 0.5047
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5047,
+      "correct": false,
+      "expected": "manual_review",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5047,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.973,
+        "confidence": 0.973,
+        "noul": 0.973,
+        "type": "noul"
+      },
+      "confidence": 0.973,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.973,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9397,
+        "confidence": 0.9397,
+        "noul": 0.9397,
+        "type": "noul"
+      },
+      "confidence": 0.9397,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9397,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4716,
+        "confidence": 0.1051,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1027,
+          "1": 0.4716,
+          "2": 0.2494,
+          "3": 0.1763
+        },
+        "score": 1.4994,
+        "type": "score"
+      },
+      "confidence": 0.4716,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4716,
+        "noul_accuracy": null,
+        "score_mae": 0.49940000000000007
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000033"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5117,
+        "confidence": 0.2451,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.0487,
+          "1": 0.3681,
+          "2": 0.5117,
+          "3": 0.0716
+        },
+        "score": 1.6061,
+        "type": "score"
+      },
+      "confidence": 0.5117,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5117,
+        "noul_accuracy": null,
+        "score_mae": 1.3939
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000035"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4953,
+        "choice": "reject",
+        "confidence": 0.2538,
+        "probabilities": {
+          "approve": 0.3791,
+          "hold": 0.1037,
+          "manual_review": 0.0219,
+          "reject": 0.4953
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4953,
+      "correct": false,
+      "expected": "manual_review",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4953,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000035"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9847,
+        "confidence": 0.9847,
+        "noul": 0.9847,
+        "type": "noul"
+      },
+      "confidence": 0.9847,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9847,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000035"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9746,
+        "confidence": 0.9746,
+        "noul": 0.9746,
+        "type": "noul"
+      },
+      "confidence": 0.9746,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9746,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000035"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5406,
+        "confidence": 0.1667,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0841,
+          "1": 0.5406,
+          "2": 0.2376,
+          "3": 0.1377
+        },
+        "score": 1.4288,
+        "type": "score"
+      },
+      "confidence": 0.5406,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5406,
+        "noul_accuracy": null,
+        "score_mae": 0.5711999999999999
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000035"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5782,
+        "confidence": 0.2565,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.0721,
+          "1": 0.2918,
+          "2": 0.5782,
+          "3": 0.0578
+        },
+        "score": 1.6217,
+        "type": "score"
+      },
+      "confidence": 0.5782,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5782,
+        "noul_accuracy": null,
+        "score_mae": 1.6217
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000057"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6073,
+        "choice": "approve",
+        "confidence": 0.2819,
+        "probabilities": {
+          "approve": 0.6073,
+          "hold": 0.1707,
+          "manual_review": 0.0157,
+          "reject": 0.2062
+        },
+        "type": "choice"
+      },
+      "confidence": 0.6073,
+      "correct": true,
+      "expected": "approve",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.6073,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000057"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9869,
+        "confidence": 0.9869,
+        "noul": 0.9869,
+        "type": "noul"
+      },
+      "confidence": 0.9869,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9869,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000057"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9389,
+        "confidence": 0.9389,
+        "noul": 0.9389,
+        "type": "noul"
+      },
+      "confidence": 0.9389,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9389,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000057"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5231,
+        "confidence": 0.1456,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.117,
+          "1": 0.5231,
+          "2": 0.2434,
+          "3": 0.1165
+        },
+        "score": 1.3594,
+        "type": "score"
+      },
+      "confidence": 0.5231,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5231,
+        "noul_accuracy": null,
+        "score_mae": 0.6406000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000057"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7595,
+        "confidence": 0.431,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.0498,
+          "1": 0.1357,
+          "2": 0.7595,
+          "3": 0.0549
+        },
+        "score": 1.8196,
+        "type": "score"
+      },
+      "confidence": 0.7595,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7595,
+        "noul_accuracy": null,
+        "score_mae": 1.1804
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000077"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6173,
+        "choice": "reject",
+        "confidence": 0.3099,
+        "probabilities": {
+          "approve": 0.2648,
+          "hold": 0.0971,
+          "manual_review": 0.0208,
+          "reject": 0.6173
+        },
+        "type": "choice"
+      },
+      "confidence": 0.6173,
+      "correct": false,
+      "expected": "manual_review",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.6173,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000077"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.968,
+        "confidence": 0.968,
+        "noul": 0.968,
+        "type": "noul"
+      },
+      "confidence": 0.968,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.968,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000077"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9344,
+        "confidence": 0.9344,
+        "noul": 0.9344,
+        "type": "noul"
+      },
+      "confidence": 0.9344,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9344,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000077"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4032,
+        "confidence": 0.0962,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.101,
+          "1": 0.4032,
+          "2": 0.3417,
+          "3": 0.1541
+        },
+        "score": 1.549,
+        "type": "score"
+      },
+      "confidence": 0.4032,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4032,
+        "noul_accuracy": null,
+        "score_mae": 0.5489999999999999
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000077"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6319,
+        "confidence": 0.298,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.0658,
+          "1": 0.248,
+          "2": 0.6319,
+          "3": 0.0544
+        },
+        "score": 1.6748,
+        "type": "score"
+      },
+      "confidence": 0.6319,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6319,
+        "noul_accuracy": null,
+        "score_mae": 1.3252
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5121,
+        "choice": "approve",
+        "confidence": 0.249,
+        "probabilities": {
+          "approve": 0.5121,
+          "hold": 0.1326,
+          "manual_review": 0.0152,
+          "reject": 0.3401
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5121,
+      "correct": false,
+      "expected": "hold",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5121,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9608,
+        "confidence": 0.9608,
+        "noul": 0.9608,
+        "type": "noul"
+      },
+      "confidence": 0.9608,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9608,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.952,
+        "confidence": 0.952,
+        "noul": 0.952,
+        "type": "noul"
+      },
+      "confidence": 0.952,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.952,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4005,
+        "confidence": 0.0741,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1158,
+          "1": 0.4005,
+          "2": 0.3094,
+          "3": 0.1743
+        },
+        "score": 1.5421,
+        "type": "score"
+      },
+      "confidence": 0.4005,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4005,
+        "noul_accuracy": null,
+        "score_mae": 0.4579
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000087"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6804,
+        "confidence": 0.3545,
+        "legend": {
+          "0": "None: everything reconciles.",
+          "1": "Trivial: rounding or a cosmetic difference.",
+          "2": "Moderate: a real difference worth confirming.",
+          "3": "Material: a large or unexplained difference."
+        },
+        "probabilities": {
+          "0": 0.0416,
+          "1": 0.2183,
+          "2": 0.6804,
+          "3": 0.0597
+        },
+        "score": 1.7583,
+        "type": "score"
+      },
+      "confidence": 0.6804,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "discrepancy_severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6804,
+        "noul_accuracy": null,
+        "score_mae": 1.2417
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.519,
+        "choice": "approve",
+        "confidence": 0.2201,
+        "probabilities": {
+          "approve": 0.519,
+          "hold": 0.1555,
+          "manual_review": 0.0241,
+          "reject": 0.3014
+        },
+        "type": "choice"
+      },
+      "confidence": 0.519,
+      "correct": false,
+      "expected": "manual_review",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.519,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9794,
+        "confidence": 0.9794,
+        "noul": 0.9794,
+        "type": "noul"
+      },
+      "confidence": 0.9794,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "duplicate",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9794,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9476,
+        "confidence": 0.9476,
+        "noul": 0.9476,
+        "type": "noul"
+      },
+      "confidence": 0.9476,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "matches_order",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9476,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5607,
+        "confidence": 0.2066,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0847,
+          "1": 0.5607,
+          "2": 0.2665,
+          "3": 0.0881
+        },
+        "score": 1.3581,
+        "type": "score"
+      },
+      "confidence": 0.5607,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5607,
+        "noul_accuracy": null,
+        "score_mae": 0.6418999999999999
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:invoice_processing",
+        "id:invoice_processing_000095"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9942,
+        "confidence": 0.9942,
+        "noul": 0.9942,
+        "type": "noul"
+      },
+      "confidence": 0.9942,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9942,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000017"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9204,
+        "choice": "monitor",
+        "confidence": 0.7569,
+        "probabilities": {
+          "close_benign": 0.0086,
+          "contain": 0.0592,
+          "investigate": 0.0118,
+          "monitor": 0.9204
+        },
+        "type": "choice"
+      },
+      "confidence": 0.9204,
+      "correct": false,
+      "expected": "investigate",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.9204,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000017"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5018,
+        "confidence": 0.2384,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.5018,
+          "1": 0.113,
+          "2": 0.2984,
+          "3": 0.042,
+          "4": 0.0448
+        },
+        "score": 1.0152,
+        "type": "score"
+      },
+      "confidence": 0.5018,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5018,
+        "noul_accuracy": null,
+        "score_mae": 0.9847999999999999
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000017"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9899,
+        "confidence": 0.9899,
+        "noul": 0.9899,
+        "type": "noul"
+      },
+      "confidence": 0.9899,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9899,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000017"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7504,
+        "confidence": 0.4146,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0403,
+          "1": 0.129,
+          "2": 0.7504,
+          "3": 0.0804
+        },
+        "score": 1.8709,
+        "type": "score"
+      },
+      "confidence": 0.7504,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7504,
+        "noul_accuracy": null,
+        "score_mae": 0.1291
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000017"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9991,
+        "confidence": 0.9991,
+        "noul": 0.9991,
+        "type": "noul"
+      },
+      "confidence": 0.9991,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9991,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7177,
+        "choice": "contain",
+        "confidence": 0.4158,
+        "probabilities": {
+          "close_benign": 0.0117,
+          "contain": 0.7177,
+          "investigate": 0.1883,
+          "monitor": 0.0823
+        },
+        "type": "choice"
+      },
+      "confidence": 0.7177,
+      "correct": false,
+      "expected": "investigate",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.7177,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7053,
+        "confidence": 0.3718,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.0668,
+          "1": 0.7053,
+          "2": 0.0944,
+          "3": 0.0639,
+          "4": 0.0696
+        },
+        "score": 1.3641,
+        "type": "score"
+      },
+      "confidence": 0.7053,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7053,
+        "noul_accuracy": null,
+        "score_mae": 1.6359
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9961,
+        "confidence": 0.9961,
+        "noul": 0.9961,
+        "type": "noul"
+      },
+      "confidence": 0.9961,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9961,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3863,
+        "confidence": 0.0979,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1203,
+          "1": 0.3678,
+          "2": 0.1255,
+          "3": 0.3863
+        },
+        "score": 1.7779,
+        "type": "score"
+      },
+      "confidence": 0.3863,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3863,
+        "noul_accuracy": null,
+        "score_mae": 1.2221
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000029"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5989,
+        "confidence": 0.5989,
+        "noul": 0.4011,
+        "type": "noul"
+      },
+      "confidence": 0.5989,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5989,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000032"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6252,
+        "choice": "monitor",
+        "confidence": 0.2513,
+        "probabilities": {
+          "close_benign": 0.0544,
+          "contain": 0.1723,
+          "investigate": 0.1481,
+          "monitor": 0.6252
+        },
+        "type": "choice"
+      },
+      "confidence": 0.6252,
+      "correct": false,
+      "expected": "close_benign",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.6252,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000032"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5163,
+        "confidence": 0.204,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.0767,
+          "1": 0.5163,
+          "2": 0.2527,
+          "3": 0.075,
+          "4": 0.0794
+        },
+        "score": 1.564,
+        "type": "score"
+      },
+      "confidence": 0.5163,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5163,
+        "noul_accuracy": null,
+        "score_mae": 0.43599999999999994
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000032"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9059,
+        "confidence": 0.9059,
+        "noul": 0.0941,
+        "type": "noul"
+      },
+      "confidence": 0.9059,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9059,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000032"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6485,
+        "confidence": 0.2673,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0765,
+          "1": 0.6485,
+          "2": 0.1056,
+          "3": 0.1694
+        },
+        "score": 1.3678,
+        "type": "score"
+      },
+      "confidence": 0.6485,
+      "correct": null,
+      "expected": 0,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6485,
+        "noul_accuracy": null,
+        "score_mae": 1.3678
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000032"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6567,
+        "confidence": 0.6567,
+        "noul": 0.6567,
+        "type": "noul"
+      },
+      "confidence": 0.6567,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.6567,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000045"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4282,
+        "choice": "monitor",
+        "confidence": 0.1455,
+        "probabilities": {
+          "close_benign": 0.1637,
+          "contain": 0.3541,
+          "investigate": 0.054,
+          "monitor": 0.4282
+        },
+        "type": "choice"
+      },
+      "confidence": 0.4282,
+      "correct": false,
+      "expected": "investigate",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.4282,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000045"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4474,
+        "confidence": 0.1302,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.1283,
+          "1": 0.4474,
+          "2": 0.2455,
+          "3": 0.0901,
+          "4": 0.0887
+        },
+        "score": 1.5636,
+        "type": "score"
+      },
+      "confidence": 0.4474,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4474,
+        "noul_accuracy": null,
+        "score_mae": 0.4363999999999999
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000045"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7304,
+        "confidence": 0.7304,
+        "noul": 0.7304,
+        "type": "noul"
+      },
+      "confidence": 0.7304,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7304,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000045"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4164,
+        "confidence": 0.0486,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.182,
+          "1": 0.4164,
+          "2": 0.1895,
+          "3": 0.2121
+        },
+        "score": 1.4317,
+        "type": "score"
+      },
+      "confidence": 0.4164,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4164,
+        "noul_accuracy": null,
+        "score_mae": 0.5683
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000045"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7831,
+        "confidence": 0.7831,
+        "noul": 0.2169,
+        "type": "noul"
+      },
+      "confidence": 0.7831,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7831,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000054"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3299,
+        "choice": "contain",
+        "confidence": 0.0312,
+        "probabilities": {
+          "close_benign": 0.1541,
+          "contain": 0.3299,
+          "investigate": 0.2072,
+          "monitor": 0.3088
+        },
+        "type": "choice"
+      },
+      "confidence": 0.3299,
+      "correct": false,
+      "expected": "investigate",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.3299,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000054"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3459,
+        "confidence": 0.0694,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.1462,
+          "1": 0.3459,
+          "2": 0.2755,
+          "3": 0.1424,
+          "4": 0.0899
+        },
+        "score": 1.6839,
+        "type": "score"
+      },
+      "confidence": 0.3459,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3459,
+        "noul_accuracy": null,
+        "score_mae": 1.3161
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000054"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8485,
+        "confidence": 0.8485,
+        "noul": 0.1515,
+        "type": "noul"
+      },
+      "confidence": 0.8485,
+      "correct": false,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8485,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000054"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4587,
+        "confidence": 0.0955,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1009,
+          "1": 0.238,
+          "2": 0.2024,
+          "3": 0.4587
+        },
+        "score": 2.0189,
+        "type": "score"
+      },
+      "confidence": 0.4587,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4587,
+        "noul_accuracy": null,
+        "score_mae": 0.9811000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000054"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9368,
+        "confidence": 0.9368,
+        "noul": 0.0632,
+        "type": "noul"
+      },
+      "confidence": 0.9368,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9368,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7991,
+        "choice": "monitor",
+        "confidence": 0.4895,
+        "probabilities": {
+          "close_benign": 0.1008,
+          "contain": 0.0386,
+          "investigate": 0.0616,
+          "monitor": 0.7991
+        },
+        "type": "choice"
+      },
+      "confidence": 0.7991,
+      "correct": false,
+      "expected": "investigate",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.7991,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3144,
+        "confidence": 0.0421,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.1463,
+          "1": 0.3144,
+          "2": 0.2565,
+          "3": 0.1691,
+          "4": 0.1136
+        },
+        "score": 1.7894,
+        "type": "score"
+      },
+      "confidence": 0.3144,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3144,
+        "noul_accuracy": null,
+        "score_mae": 0.7894000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7134,
+        "confidence": 0.7134,
+        "noul": 0.7134,
+        "type": "noul"
+      },
+      "confidence": 0.7134,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7134,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4206,
+        "confidence": 0.0881,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.0944,
+          "1": 0.2916,
+          "2": 0.1934,
+          "3": 0.4206
+        },
+        "score": 1.9402,
+        "type": "score"
+      },
+      "confidence": 0.4206,
+      "correct": null,
+      "expected": 1,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4206,
+        "noul_accuracy": null,
+        "score_mae": 0.9401999999999999
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000055"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5722,
+        "confidence": 0.5722,
+        "noul": 0.4278,
+        "type": "noul"
+      },
+      "confidence": 0.5722,
+      "correct": true,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.5722,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000062"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5523,
+        "choice": "monitor",
+        "confidence": 0.2623,
+        "probabilities": {
+          "close_benign": 0.0812,
+          "contain": 0.328,
+          "investigate": 0.0385,
+          "monitor": 0.5523
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5523,
+      "correct": false,
+      "expected": "investigate",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5523,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000062"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4621,
+        "confidence": 0.1545,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.0982,
+          "1": 0.4621,
+          "2": 0.2665,
+          "3": 0.084,
+          "4": 0.0892
+        },
+        "score": 1.604,
+        "type": "score"
+      },
+      "confidence": 0.4621,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4621,
+        "noul_accuracy": null,
+        "score_mae": 1.396
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000062"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.7654,
+        "confidence": 0.7654,
+        "noul": 0.7654,
+        "type": "noul"
+      },
+      "confidence": 0.7654,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.7654,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000062"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3414,
+        "confidence": 0.0411,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1605,
+          "1": 0.3252,
+          "2": 0.1729,
+          "3": 0.3414
+        },
+        "score": 1.6952,
+        "type": "score"
+      },
+      "confidence": 0.3414,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3414,
+        "noul_accuracy": null,
+        "score_mae": 0.30479999999999996
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000062"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9579,
+        "confidence": 0.9579,
+        "noul": 0.9579,
+        "type": "noul"
+      },
+      "confidence": 0.9579,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9579,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000070"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.6489,
+        "choice": "monitor",
+        "confidence": 0.272,
+        "probabilities": {
+          "close_benign": 0.1783,
+          "contain": 0.0732,
+          "investigate": 0.0996,
+          "monitor": 0.6489
+        },
+        "type": "choice"
+      },
+      "confidence": 0.6489,
+      "correct": false,
+      "expected": "investigate",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.6489,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000070"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.3359,
+        "confidence": 0.0379,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.1446,
+          "1": 0.2183,
+          "2": 0.3359,
+          "3": 0.153,
+          "4": 0.1482
+        },
+        "score": 1.9418,
+        "type": "score"
+      },
+      "confidence": 0.3359,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.3359,
+        "noul_accuracy": null,
+        "score_mae": 0.05820000000000003
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000070"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9615,
+        "confidence": 0.9615,
+        "noul": 0.9615,
+        "type": "noul"
+      },
+      "confidence": 0.9615,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9615,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000070"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4264,
+        "confidence": 0.0634,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1335,
+          "1": 0.2158,
+          "2": 0.2243,
+          "3": 0.4264
+        },
+        "score": 1.9436,
+        "type": "score"
+      },
+      "confidence": 0.4264,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4264,
+        "noul_accuracy": null,
+        "score_mae": 0.056400000000000006
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000070"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9889,
+        "confidence": 0.9889,
+        "noul": 0.9889,
+        "type": "noul"
+      },
+      "confidence": 0.9889,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9889,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000072"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5068,
+        "choice": "monitor",
+        "confidence": 0.1267,
+        "probabilities": {
+          "close_benign": 0.1825,
+          "contain": 0.214,
+          "investigate": 0.0967,
+          "monitor": 0.5068
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5068,
+      "correct": false,
+      "expected": "investigate",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 0.0,
+        "mean_confidence": 0.5068,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000072"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4919,
+        "confidence": 0.1664,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.1875,
+          "1": 0.4919,
+          "2": 0.1833,
+          "3": 0.0684,
+          "4": 0.0689
+        },
+        "score": 1.3393,
+        "type": "score"
+      },
+      "confidence": 0.4919,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4919,
+        "noul_accuracy": null,
+        "score_mae": 1.6607
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000072"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.8593,
+        "confidence": 0.8593,
+        "noul": 0.8593,
+        "type": "noul"
+      },
+      "confidence": 0.8593,
+      "correct": false,
+      "expected": false,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.8593,
+        "noul_accuracy": 0.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000072"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4061,
+        "confidence": 0.0477,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.1557,
+          "1": 0.4061,
+          "2": 0.2075,
+          "3": 0.2307
+        },
+        "score": 1.5131,
+        "type": "score"
+      },
+      "confidence": 0.4061,
+      "correct": null,
+      "expected": 2,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4061,
+        "noul_accuracy": null,
+        "score_mae": 0.4869000000000001
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000072"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.991,
+        "confidence": 0.991,
+        "noul": 0.991,
+        "type": "noul"
+      },
+      "confidence": 0.991,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "credential_compromise",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.991,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000096"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.5012,
+        "choice": "investigate",
+        "confidence": 0.138,
+        "probabilities": {
+          "close_benign": 0.2029,
+          "contain": 0.0726,
+          "investigate": 0.5012,
+          "monitor": 0.2233
+        },
+        "type": "choice"
+      },
+      "confidence": 0.5012,
+      "correct": true,
+      "expected": "investigate",
+      "language": "en",
+      "model": "multilingual",
+      "qid": "disposition",
+      "scores": {
+        "choice_accuracy": 1.0,
+        "mean_confidence": 0.5012,
+        "noul_accuracy": null,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000096"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.2418,
+        "confidence": 0.0126,
+        "legend": {
+          "0": "Negligible: no access to anything sensitive.",
+          "1": "Low: limited access, easily reversed.",
+          "2": "Moderate: access to internal systems or non-public data.",
+          "3": "High: access to production, secrets or customer data.",
+          "4": "Critical: active compromise of crown-jewel systems."
+        },
+        "probabilities": {
+          "0": 0.1697,
+          "1": 0.24,
+          "2": 0.2418,
+          "3": 0.1405,
+          "4": 0.208
+        },
+        "score": 1.9771,
+        "type": "score"
+      },
+      "confidence": 0.2418,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "severity",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.2418,
+        "noul_accuracy": null,
+        "score_mae": 1.0229
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000096"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.9611,
+        "confidence": 0.9611,
+        "noul": 0.9611,
+        "type": "noul"
+      },
+      "confidence": 0.9611,
+      "correct": true,
+      "expected": true,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "true_positive",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.9611,
+        "noul_accuracy": 1.0,
+        "score_mae": null
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000096"
+      ]
+    },
+    {
+      "answer": {
+        "action": {
+          "act_probability": 1.0
+        },
+        "answer_confidence": 0.4713,
+        "confidence": 0.0851,
+        "legend": {
+          "0": "No time pressure; can wait indefinitely.",
+          "1": "Routine; handle within the normal queue.",
+          "2": "Elevated; should be handled within the same week.",
+          "3": "Critical; requires action within the same day."
+        },
+        "probabilities": {
+          "0": 0.146,
+          "1": 0.1955,
+          "2": 0.1872,
+          "3": 0.4713
+        },
+        "score": 1.9838,
+        "type": "score"
+      },
+      "confidence": 0.4713,
+      "correct": null,
+      "expected": 3,
+      "language": "en",
+      "model": "multilingual",
+      "qid": "urgency",
+      "scores": {
+        "choice_accuracy": null,
+        "mean_confidence": 0.4713,
+        "noul_accuracy": null,
+        "score_mae": 1.0162
+      },
+      "tags": [
+        "typed_decisions",
+        "workflow:security_incidents",
+        "id:security_incidents_000096"
+      ]
+    }
+  ],
+  "config": {
+    "dataset": "data/evals/jev_cmp/T1_typed_decisions_40.jsonl",
+    "dataset_sha256": "749a24c4c0db977686f29eeecd41201e16b97629a9fbd641a6ffb5dfe6163834",
+    "device": "cpu",
+    "laya_version": "0.3.23",
+    "model": "multilingual",
+    "questions_sha256": "d46ef26a6ec2f2f8c6fc0cfa1e81715751dda05f173cd028ae3eaaa4b9d519cb",
+    "revisions": {
+      "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "schema": "laya-evals-report/1",
+    "thresholds": {
+      "baseline_tolerance": {},
+      "max": {},
+      "min": {}
+    },
+    "timing": {
+      "batch_form": "states",
+      "batch_size": 8,
+      "chunks": 8,
+      "cost_metric": "per decision: that call divided by its own chunk size",
+      "latency_metric": "per request: the wall time of the call that returned it, unsplit",
+      "max_chunk": 8,
+      "min_confidence": null,
+      "min_confidence_sent": false,
+      "rows_alone": 0,
+      "rows_grouped": 40,
+      "sort_by_length": false,
+      "sort_by_length_sent": false
+    }
+  },
+  "overall": {
+    "choice_accuracy": 0.3,
+    "cost_per_decision_p50_ms": 279.8448437533807,
+    "cost_per_decision_p95_ms": 601.7050051304977,
+    "ece": 0.4119308333333334,
+    "latency_p50_ms": 2222.737915988546,
+    "latency_p95_ms": 4813.640041043982,
+    "mean_confidence": 0.6804564999999999,
+    "noul_accuracy": 0.43333333333333335,
+    "score_mae": 1.034095
+  },
+  "slices": {
+    "language": {
+      "en": {
+        "choice_accuracy": 0.3,
+        "ece": 0.4119308333333334,
+        "mean_confidence": 0.6804564999999999,
+        "noul_accuracy": 0.43333333333333335,
+        "score_mae": 1.034095
+      }
+    },
+    "model": {
+      "multilingual": {
+        "choice_accuracy": 0.3,
+        "ece": 0.4119308333333334,
+        "mean_confidence": 0.6804564999999999,
+        "noul_accuracy": 0.43333333333333335,
+        "score_mae": 1.034095
+      }
+    },
+    "qid": {
+      "action": {
+        "choice_accuracy": 0.2,
+        "ece": 0.64801,
+        "mean_confidence": 0.7402
+      },
+      "category": {
+        "choice_accuracy": 0.8,
+        "ece": 0.20054999999999998,
+        "mean_confidence": 0.91855
+      },
+      "churn_risk": {
+        "mean_confidence": 0.5997,
+        "score_mae": 0.69811
+      },
+      "credential_compromise": {
+        "ece": 0.32570000000000005,
+        "mean_confidence": 0.84788,
+        "noul_accuracy": 0.8
+      },
+      "discrepancy_severity": {
+        "mean_confidence": 0.63232,
+        "score_mae": 1.3746
+      },
+      "disposition": {
+        "choice_accuracy": 0.15,
+        "ece": 0.41163500000000003,
+        "mean_confidence": 0.561635
+      },
+      "duplicate": {
+        "ece": 0.9784900000000001,
+        "mean_confidence": 0.9784900000000001,
+        "noul_accuracy": 0.0
+      },
+      "matches_order": {
+        "ece": 0.75092,
+        "mean_confidence": 0.95092,
+        "noul_accuracy": 0.2
+      },
+      "needs_human": {
+        "ece": 0.35491000000000006,
+        "mean_confidence": 0.73827,
+        "noul_accuracy": 0.4
+      },
+      "needs_review": {
+        "ece": 0.49533000000000005,
+        "mean_confidence": 0.8280100000000001,
+        "noul_accuracy": 0.6
+      },
+      "outcome": {
+        "choice_accuracy": 0.3,
+        "ece": 0.38295,
+        "mean_confidence": 0.60423
+      },
+      "risk": {
+        "mean_confidence": 0.70991,
+        "score_mae": 1.7153800000000001
+      },
+      "severity": {
+        "mean_confidence": 0.43628,
+        "score_mae": 0.97364
+      },
+      "true_positive": {
+        "ece": 0.31025,
+        "mean_confidence": 0.8731500000000001,
+        "noul_accuracy": 0.6
+      },
+      "urgency": {
+        "mean_confidence": 0.4719375,
+        "score_mae": 0.8777575000000001
+      }
+    },
+    "tag": {
+      "id:agent_trace_observability_000018": {
+        "choice_accuracy": 1.0,
+        "ece": 0.3403666666666666,
+        "mean_confidence": 0.59242,
+        "noul_accuracy": 1.0,
+        "score_mae": 2.15245
+      },
+      "id:agent_trace_observability_000023": {
+        "choice_accuracy": 0.5,
+        "ece": 0.5576333333333333,
+        "mean_confidence": 0.61154,
+        "noul_accuracy": 0.0,
+        "score_mae": 1.3954499999999999
+      },
+      "id:agent_trace_observability_000028": {
+        "choice_accuracy": 1.0,
+        "ece": 0.3522333333333333,
+        "mean_confidence": 0.6067400000000001,
+        "noul_accuracy": 1.0,
+        "score_mae": 1.7955999999999999
+      },
+      "id:agent_trace_observability_000029": {
+        "choice_accuracy": 0.0,
+        "ece": 0.7901666666666666,
+        "mean_confidence": 0.72766,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.9426000000000001
+      },
+      "id:agent_trace_observability_000033": {
+        "choice_accuracy": 0.0,
+        "ece": 0.7573333333333332,
+        "mean_confidence": 0.6493800000000001,
+        "noul_accuracy": 0.0,
+        "score_mae": 1.254
+      },
+      "id:agent_trace_observability_000037": {
+        "choice_accuracy": 0.0,
+        "ece": 0.7781333333333333,
+        "mean_confidence": 0.6788000000000001,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.96775
+      },
+      "id:agent_trace_observability_000082": {
+        "choice_accuracy": 0.0,
+        "ece": 0.5871666666666666,
+        "mean_confidence": 0.7161,
+        "noul_accuracy": 1.0,
+        "score_mae": 2.0732999999999997
+      },
+      "id:agent_trace_observability_000083": {
+        "choice_accuracy": 0.0,
+        "ece": 0.44566666666666666,
+        "mean_confidence": 0.6416999999999999,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.8705999999999999
+      },
+      "id:agent_trace_observability_000085": {
+        "choice_accuracy": 0.0,
+        "ece": 0.5035666666666666,
+        "mean_confidence": 0.72712,
+        "noul_accuracy": 1.0,
+        "score_mae": 2.22595
+      },
+      "id:agent_trace_observability_000087": {
+        "choice_accuracy": 0.0,
+        "ece": 0.4418,
+        "mean_confidence": 0.69734,
+        "noul_accuracy": 1.0,
+        "score_mae": 1.72845
+      },
+      "id:customer_service_000003": {
+        "choice_accuracy": 0.0,
+        "ece": 0.6561333333333332,
+        "mean_confidence": 0.6065400000000001,
+        "noul_accuracy": 0.0,
+        "score_mae": 1.2178499999999999
+      },
+      "id:customer_service_000009": {
+        "choice_accuracy": 0.5,
+        "ece": 0.37143333333333334,
+        "mean_confidence": 0.79596,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.12645000000000006
+      },
+      "id:customer_service_000016": {
+        "choice_accuracy": 0.5,
+        "ece": 0.5043666666666666,
+        "mean_confidence": 0.61932,
+        "noul_accuracy": 0.0,
+        "score_mae": 1.2364
+      },
+      "id:customer_service_000023": {
+        "choice_accuracy": 1.0,
+        "ece": 0.21660000000000001,
+        "mean_confidence": 0.68114,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.4421999999999999
+      },
+      "id:customer_service_000027": {
+        "choice_accuracy": 0.0,
+        "ece": 0.8199,
+        "mean_confidence": 0.7146399999999999,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.6196
+      },
+      "id:customer_service_000037": {
+        "choice_accuracy": 0.5,
+        "ece": 0.5779,
+        "mean_confidence": 0.8134600000000001,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.29685000000000006
+      },
+      "id:customer_service_000055": {
+        "choice_accuracy": 0.5,
+        "ece": 0.27963333333333334,
+        "mean_confidence": 0.6957,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.55755
+      },
+      "id:customer_service_000068": {
+        "choice_accuracy": 1.0,
+        "ece": 0.32473333333333326,
+        "mean_confidence": 0.6155,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.9069999999999999
+      },
+      "id:customer_service_000093": {
+        "choice_accuracy": 0.5,
+        "ece": 0.32550000000000007,
+        "mean_confidence": 0.74594,
+        "noul_accuracy": 1.0,
+        "score_mae": 1.50875
+      },
+      "id:customer_service_000095": {
+        "choice_accuracy": 0.5,
+        "ece": 0.5797333333333332,
+        "mean_confidence": 0.72908,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.5761999999999999
+      },
+      "id:invoice_processing_000001": {
+        "choice_accuracy": 0.0,
+        "ece": 0.8218,
+        "mean_confidence": 0.7134199999999999,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.9387
+      },
+      "id:invoice_processing_000010": {
+        "choice_accuracy": 1.0,
+        "ece": 0.4772666666666666,
+        "mean_confidence": 0.7042200000000001,
+        "noul_accuracy": 0.5,
+        "score_mae": 1.1106500000000001
+      },
+      "id:invoice_processing_000016": {
+        "choice_accuracy": 0.0,
+        "ece": 0.7753000000000001,
+        "mean_confidence": 0.68494,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.8709
+      },
+      "id:invoice_processing_000018": {
+        "choice_accuracy": 0.0,
+        "ece": 0.8120999999999999,
+        "mean_confidence": 0.68544,
+        "noul_accuracy": 0.0,
+        "score_mae": 1.4192
+      },
+      "id:invoice_processing_000033": {
+        "choice_accuracy": 0.0,
+        "ece": 0.8058,
+        "mean_confidence": 0.70476,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.91295
+      },
+      "id:invoice_processing_000035": {
+        "choice_accuracy": 0.0,
+        "ece": 0.8182,
+        "mean_confidence": 0.70138,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.9825499999999999
+      },
+      "id:invoice_processing_000057": {
+        "choice_accuracy": 1.0,
+        "ece": 0.4395,
+        "mean_confidence": 0.72688,
+        "noul_accuracy": 0.5,
+        "score_mae": 1.1311499999999999
+      },
+      "id:invoice_processing_000077": {
+        "choice_accuracy": 0.0,
+        "ece": 0.8399,
+        "mean_confidence": 0.73648,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.8646999999999999
+      },
+      "id:invoice_processing_000087": {
+        "choice_accuracy": 0.0,
+        "ece": 0.8082999999999999,
+        "mean_confidence": 0.69146,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.89155
+      },
+      "id:invoice_processing_000095": {
+        "choice_accuracy": 0.0,
+        "ece": 0.8153333333333332,
+        "mean_confidence": 0.73742,
+        "noul_accuracy": 0.0,
+        "score_mae": 0.9418
+      },
+      "id:security_incidents_000017": {
+        "choice_accuracy": 0.0,
+        "ece": 0.3121,
+        "mean_confidence": 0.83134,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.55695
+      },
+      "id:security_incidents_000029": {
+        "choice_accuracy": 0.0,
+        "ece": 0.2408333333333333,
+        "mean_confidence": 0.7609,
+        "noul_accuracy": 1.0,
+        "score_mae": 1.4289999999999998
+      },
+      "id:security_incidents_000032": {
+        "choice_accuracy": 0.0,
+        "ece": 0.3734666666666666,
+        "mean_confidence": 0.65896,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.9018999999999999
+      },
+      "id:security_incidents_000045": {
+        "choice_accuracy": 0.0,
+        "ece": 0.3470333333333333,
+        "mean_confidence": 0.53582,
+        "noul_accuracy": 1.0,
+        "score_mae": 0.50235
+      },
+      "id:security_incidents_000054": {
+        "choice_accuracy": 0.0,
+        "ece": 0.46509999999999996,
+        "mean_confidence": 0.55322,
+        "noul_accuracy": 0.5,
+        "score_mae": 1.1486
+      },
+      "id:security_incidents_000055": {
+        "choice_accuracy": 0.0,
+        "ece": 0.5252333333333333,
+        "mean_confidence": 0.63686,
+        "noul_accuracy": 0.5,
+        "score_mae": 0.8648
+      },
+      "id:security_incidents_000062": {
+        "choice_accuracy": 0.0,
+        "ece": 0.29663333333333336,
+        "mean_confidence": 0.53868,
+        "noul_accuracy": 0.5,
+        "score_mae": 0.8503999999999999
+      },
+      "id:security_incidents_000070": {
+        "choice_accuracy": 0.0,
+        "ece": 0.5227666666666666,
+        "mean_confidence": 0.66612,
+        "noul_accuracy": 0.5,
+        "score_mae": 0.05730000000000002
+      },
+      "id:security_incidents_000072": {
+        "choice_accuracy": 0.0,
+        "ece": 0.7849999999999999,
+        "mean_confidence": 0.6506000000000001,
+        "noul_accuracy": 0.0,
+        "score_mae": 1.0738
+      },
+      "id:security_incidents_000096": {
+        "choice_accuracy": 1.0,
+        "ece": 0.18223333333333336,
+        "mean_confidence": 0.63328,
+        "noul_accuracy": 1.0,
+        "score_mae": 1.01955
+      },
+      "typed_decisions": {
+        "choice_accuracy": 0.3,
+        "ece": 0.4119308333333334,
+        "mean_confidence": 0.6804564999999999,
+        "noul_accuracy": 0.43333333333333335,
+        "score_mae": 1.034095
+      },
+      "workflow:agent_trace_observability": {
+        "choice_accuracy": 0.25,
+        "ece": 0.4142733333333334,
+        "mean_confidence": 0.66488,
+        "noul_accuracy": 0.6,
+        "score_mae": 1.540615
+      },
+      "workflow:customer_service": {
+        "choice_accuracy": 0.5,
+        "ece": 0.3748933333333334,
+        "mean_confidence": 0.7017279999999999,
+        "noul_accuracy": 0.4,
+        "score_mae": 0.7488849999999999
+      },
+      "workflow:invoice_processing": {
+        "choice_accuracy": 0.2,
+        "ece": 0.6832366666666666,
+        "mean_confidence": 0.70864,
+        "noul_accuracy": 0.1,
+        "score_mae": 1.006415
+      },
+      "workflow:security_incidents": {
+        "choice_accuracy": 0.1,
+        "ece": 0.2931066666666667,
+        "mean_confidence": 0.646578,
+        "noul_accuracy": 0.7,
+        "score_mae": 0.840465
+      }
+    }
+  }
+}

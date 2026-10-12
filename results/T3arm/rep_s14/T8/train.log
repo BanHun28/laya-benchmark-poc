@@ -1,0 +1,59 @@
+load before: {"gpu_util_pct": 1, "mps_fp32_matmul_tflops": 2.32, "cotenant": ["uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step143000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step143000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100", "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1791356222128-5vm37w.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model qwen3-1.7b --n-seq 300 --n-seq-layer 20 --n-seq-head 100 --n-ret 500 --n-seq-layer-shuf 10 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage2_qwen3-1.7b.log' < /dev/null && pwd -P >| /tmp/claude-5e1a-cwd", "uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model qwen3-1.7b --n-seq 300 --n-seq-layer 20 --n-seq-head 100 --n-ret 500 --n-seq-layer-shuf 10", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_fixedpoint_ladder.py --stage 2 --model qwen3-1.7b --n-seq 300 --n-seq-layer 20 --n-seq-head 100 --n-ret 500 --n-seq-layer-shuf 10", "uv run python experiments/poc_output_hopfield.py --capture --model gpt2", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_output_hopfield.py --capture --model gpt2", "uv run python experiments/poc_output_hopfield.py --capture --model pythia-160m", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_output_hopfield.py --capture --model pythia-160m", "uv run python experiments/poc_output_hopfield.py --capture --model Qwen3-0.6B", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_output_hopfield.py --capture --model Qwen3-0.6B", "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1791356222128-5vm37w.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model gpt2 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage2_gpt2.log' < /dev/null && pwd -P >| /tmp/claude-714c-cwd", "uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model gpt2 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_fixedpoint_ladder.py --stage 2 --model gpt2 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100", "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1791356222128-5vm37w.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval '(uv run python experiments/poc_fixedpoint_ladder.py --stage 1 --model pythia-160m-step143000 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage1_pythia-160m-step143000.log; uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step143000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage2_pythia-160m-step143000.log)' < /dev/null && pwd -P >| /tmp/claude-2b07-cwd", "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1791356222128-5vm37w.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval '(uv run python experiments/poc_fixedpoint_ladder.py --stage 1 --model pythia-160m-step143000 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage1_pythia-160m-step143000.log; uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step143000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage2_pythia-160m-step143000.log)' < /dev/null && pwd -P >| /tmp/claude-2b07-cwd", "/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1791356222128-5vm37w.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step2000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100 2>&1 | grep -v \"Loading weights\" > results/poc_fixedpoint_ladder_2026-10-08/logs/stage2_pythia-160m-step2000.log' < /dev/null && pwd -P >| /tmp/claude-4d8d-cwd", "uv run python experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step2000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/poc_fixedpoint_ladder.py --stage 2 --model pythia-160m-step2000 --n-seq 300 --n-seq-layer 300 --n-seq-head 50 --n-ret 1000 --n-seq-layer-shuf 100"], "sys_mem_used_gb": 31.8}
+[     3.7s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T8_english.pt
+[     4.8s] Device: mps
+[     4.8s] Training items: 444; calibration items: 40
+[     4.8s] micro_batch=8; grad_accum=4; epochs=2
+[   140.4s] Epoch 1/2 complete; avg_loss=0.3800
+[   373.9s] Epoch 2/2 complete; avg_loss=0.0925
+[   379.2s] Running temperature calibration ...
+[   390.0s] Model saved to poc/finetune/ckpt_t3arm_rep_s14/T8_run
+[   390.0s] Temperatures: [1.2, 1.2, 1.979012370109558]
+{
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 1.16,
+  "train_loop": 365.59,
+  "epoch_checkpoint_saves": 6.0,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 2.78,
+  "calibration (forward + fit_temperature)": 6.01,
+  "export (final save + configs)": 4.82,
+  "train() total": 386.41
+ },
+ "throughput": {
+  "train_items_per_s": 2.429,
+  "s_per_optimizer_step": 13.057,
+  "s_per_micro_batch_mean": 3.2642
+ },
+ "micro_batch_s": {
+  "median_all": 1.9857,
+  "median_repeat_shape_no_step": 1.5001,
+  "median_repeat_shape_with_step": 2.8993,
+  "optimizer_step_overhead": 1.3992,
+  "median_first_shape": 2.2442,
+  "first_shape_count": 59,
+  "repeat_shape_count": 53,
+  "first_shape_extra_total_s": 72.9
+ },
+ "memory_gb": {
+  "ru_maxrss": 3.19,
+  "rss_peak_sampled": 1.87,
+  "mps_current_allocated_peak": 20.76,
+  "mps_driver_allocated_peak": 25.86,
+  "mps_recommended_max": 40.2
+ },
+ "calibration_rows": {
+  "n": 40,
+  "ce_before_T": 0.1206,
+  "accuracy": 0.975
+ },
+ "item_sources": {
+  "train": {
+   "train": 888
+  },
+  "calibration": {
+   "calib": 40
+  }
+ }
+}
+report: results/T3arm/rep_s14/T8/train_timing.json (wall 391.3s, status ok)

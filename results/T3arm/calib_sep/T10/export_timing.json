@@ -1,0 +1,119 @@
+{
+ "script": "poc/finetune/laya_finetune_mps_patched.py",
+ "script_sha256": "d8dc1eb92db72c0f577ec9cf6dc3ad80558e0e0ff79897bd92dc3f87399db642",
+ "zero_step": true,
+ "script_args": [
+  "models/laya",
+  "poc/finetune/ckpt_calib_sep/T10",
+  "--items",
+  "poc/finetune/data/t3arm/T10_english.pt",
+  "--calib-max",
+  "400",
+  "--epochs",
+  "0",
+  "--micro-batch",
+  "8",
+  "--grad-accum",
+  "4",
+  "--no-checkpointing",
+  "--device",
+  "mps"
+ ],
+ "seed": 13,
+ "keep_epoch_checkpoints": false,
+ "started_at": "2026-10-08T15:41:51+0900",
+ "versions": {
+  "torch": "2.14.1",
+  "python": "3.12.12",
+  "laya": "0.3.23"
+ },
+ "threads": {
+  "intra": 10,
+  "interop": 14
+ },
+ "load_before": {
+  "gpu_util_pct": 16,
+  "mps_fp32_matmul_tflops": 6.72,
+  "cotenant": [],
+  "sys_mem_used_gb": 22.5
+ },
+ "status": "ok",
+ "wall_s": 20.01,
+ "load_after": {
+  "gpu_util_pct": 99,
+  "mps_fp32_matmul_tflops": 6.62
+ },
+ "n_train_items": 5000,
+ "micro_batches": 0,
+ "optimizer_steps": 0,
+ "calibration_rows": {
+  "n": 400,
+  "accuracy": 0.295
+ },
+ "temperature_fits": [
+  {
+   "start": 19.445,
+   "end": 19.467,
+   "samples": 400
+  }
+ ],
+ "item_sources": {
+  "train": {},
+  "calibration": {
+   "calib": 400
+  }
+ },
+ "load_series": [
+  {
+   "t": 3.5,
+   "rss_gb": 1.48,
+   "mps_alloc_gb": 1.689,
+   "mps_driver_gb": 2.167,
+   "gpu_util_pct": 96,
+   "sys_cpu_pct": 15.9,
+   "sys_mem_used_gb": 24.2,
+   "cotenant": []
+  },
+  {
+   "t": 13.6,
+   "rss_gb": 1.547,
+   "mps_alloc_gb": 1.689,
+   "mps_driver_gb": 2.169,
+   "gpu_util_pct": 98,
+   "sys_cpu_pct": 10.8,
+   "sys_mem_used_gb": 24.5,
+   "cotenant": []
+  }
+ ],
+ "events": [
+  [
+   2.487,
+   "Using legacy cached training items without metadata: poc/finetune/data/t3arm/T10_english.pt"
+  ],
+  [
+   2.939,
+   "Device: mps"
+  ],
+  [
+   2.939,
+   "Training items: 5000; calibration items: 400"
+  ],
+  [
+   2.939,
+   "micro_batch=8; grad_accum=4; epochs=0"
+  ],
+  [
+   2.939,
+   "Running temperature calibration ..."
+  ],
+  [
+   19.93,
+   "Model saved to poc/finetune/ckpt_calib_sep/T10"
+  ],
+  [
+   19.931,
+   "Temperatures: [1.8350909948349, 1.2, 1.2]"
+  ]
+ ],
+ "micro_batch_trace": []
+}

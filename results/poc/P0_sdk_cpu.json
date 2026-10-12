@@ -1,0 +1,160 @@
+{
+  "device": "cpu",
+  "agent_device": "cpu",
+  "versions": {
+    "torch": "2.14.1",
+    "laya": "0.3.23"
+  },
+  "threads": {
+    "intra_op": 10,
+    "inter_op": 1,
+    "OMP_NUM_THREADS": "10"
+  },
+  "agent_dtype": "torch.float32",
+  "dtype_for_7": "torch.float32",
+  "mps_amp_min_rows": 5,
+  "LAYA_MPS_AMP_MIN_ROWS": null,
+  "load_s": 2.894,
+  "first_call_ms": 167.19,
+  "warmup_ms": [
+    150.27,
+    144.94,
+    147.85
+  ],
+  "timed_ms": [
+    147.84,
+    145.44,
+    144.54,
+    147.84,
+    148.2,
+    143.88,
+    145.89,
+    145.87,
+    148.34,
+    145.37
+  ],
+  "median_ms": 145.88,
+  "min_ms": 143.88,
+  "max_ms": 148.34,
+  "answers_identical_across_calls": true,
+  "has_routing_key": false,
+  "warnings": [],
+  "result": {
+    "model": "laya-rl-agent",
+    "answers": {
+      "intent": {
+        "type": "choice",
+        "choice": "cancellation",
+        "probabilities": {
+          "refund": 0.2721,
+          "technical_help": 0.0006,
+          "billing_question": 0.3112,
+          "information": 0.0005,
+          "cancellation": 0.4141,
+          "other": 0.0015
+        },
+        "confidence": 0.3857,
+        "answer_confidence": 0.4141,
+        "action": {
+          "act_probability": 1.0
+        },
+        "low_confidence": true,
+        "abstention": "abstained",
+        "abstention_threshold": 0.7
+      },
+      "is_urgent": {
+        "type": "noul",
+        "noul": 0.0641,
+        "confidence": 0.9359,
+        "answer_confidence": 0.9359,
+        "action": {
+          "act_probability": 1.0
+        },
+        "abstention": "passed",
+        "abstention_threshold": 0.7
+      },
+      "frustration": {
+        "type": "score",
+        "score": 1.5098,
+        "legend": {
+          "0": "차분하고 중립적",
+          "1": "걱정하지만 정중함",
+          "2": "분명히 짜증남",
+          "3": "매우 화남 또는 강한 표현 사용"
+        },
+        "probabilities": {
+          "0": 0.0652,
+          "1": 0.4684,
+          "2": 0.3579,
+          "3": 0.1086
+        },
+        "confidence": 0.1762,
+        "answer_confidence": 0.4684,
+        "action": {
+          "act_probability": 1.0
+        },
+        "low_confidence": true,
+        "abstention": "abstained",
+        "abstention_threshold": 0.7
+      },
+      "refund_requested": {
+        "type": "noul",
+        "noul": 0.0659,
+        "confidence": 0.9341,
+        "answer_confidence": 0.9341,
+        "action": {
+          "act_probability": 1.0
+        },
+        "abstention": "passed",
+        "abstention_threshold": 0.7
+      },
+      "churn_risk": {
+        "type": "noul",
+        "noul": 0.025,
+        "confidence": 0.975,
+        "answer_confidence": 0.975,
+        "action": {
+          "act_probability": 1.0
+        },
+        "abstention": "passed",
+        "abstention_threshold": 0.7
+      },
+      "needs_llm": {
+        "type": "noul",
+        "noul": 0.0116,
+        "confidence": 0.9884,
+        "answer_confidence": 0.9884,
+        "action": {
+          "act_probability": 1.0
+        },
+        "abstention": "passed",
+        "abstention_threshold": 0.7
+      },
+      "complexity": {
+        "type": "choice",
+        "choice": "structured",
+        "probabilities": {
+          "canned": 0.2509,
+          "structured": 0.6834,
+          "complex": 0.0657
+        },
+        "confidence": 0.2845,
+        "answer_confidence": 0.6834,
+        "action": {
+          "act_probability": 1.0
+        },
+        "low_confidence": true,
+        "abstention": "abstained",
+        "abstention_threshold": 0.7
+      }
+    },
+    "usage": {
+      "input_tokens": 661,
+      "output_tokens": 0,
+      "state_tokens": 34,
+      "state_tokens_dropped": 0,
+      "truncated": false,
+      "truncated_questions": []
+    }
+  }
+}

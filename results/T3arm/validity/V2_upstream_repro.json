@@ -1,0 +1,115 @@
+{
+ "set": "data/evals/jev_cmp_ext/T1_typed_decisions_test400.jsonl (400 cases / 2,000 decisions)",
+ "models": {
+  "typed-decisions": {
+   "n": 2000,
+   "accuracy_vs_label (upstream's)": 0.766,
+   "accuracy_vs_argmax_gold": 0.767,
+   "soft_accuracy": 0.4706585202062531,
+   "brier_vs_soft": 0.0614646475170795,
+   "ece": 0.21423495000000004,
+   "score_mae": 0.24240776250000004,
+   "by_question_type": {
+    "choice": 0.7333333333333333,
+    "noul": 0.8583333333333333,
+    "score": 0.72375
+   },
+   "published": [
+    0.766,
+    0.471,
+    0.061,
+    0.213,
+    0.242
+   ]
+  },
+  "english": {
+   "n": 2000,
+   "accuracy_vs_label (upstream's)": 0.3615,
+   "accuracy_vs_argmax_gold": 0.3635,
+   "soft_accuracy": 0.33147902128639584,
+   "brier_vs_soft": 0.3155101081122004,
+   "ece": 0.1726505,
+   "score_mae": 0.69372242,
+   "by_question_type": {
+    "choice": 0.29,
+    "noul": 0.48833333333333334,
+    "score": 0.325
+   },
+   "published": [
+    0.362,
+    0.332,
+    0.316,
+    0.175,
+    0.694
+   ]
+  },
+  "multilingual": {
+   "n": 2000,
+   "accuracy_vs_label (upstream's)": 0.352,
+   "accuracy_vs_argmax_gold": 0.351,
+   "soft_accuracy": 0.32801871314329023,
+   "brier_vs_soft": 0.4626420483193632,
+   "ece": 0.3159169,
+   "score_mae": 0.7603940075,
+   "by_question_type": {
+    "choice": 0.29,
+    "noul": 0.49833333333333335,
+    "score": 0.28625
+   },
+   "published": [
+    0.352,
+    0.328,
+    0.463,
+    0.314,
+    0.76
+   ]
+  },
+  "v2-T1-ep1": {
+   "n": 2000,
+   "accuracy_vs_label (upstream's)": 0.7045,
+   "accuracy_vs_argmax_gold": 0.7045,
+   "soft_accuracy": 0.44164323652203186,
+   "brier_vs_soft": 0.09044407212388489,
+   "ece": 0.18225585000000002,
+   "score_mae": 0.325228175,
+   "by_question_type": {
+    "choice": 0.6766666666666666,
+    "noul": 0.8216666666666667,
+    "score": 0.6375
+   },
+   "published": null
+  },
+  "v2-T1": {
+   "n": 2000,
+   "accuracy_vs_label (upstream's)": 0.747,
+   "accuracy_vs_argmax_gold": 0.746,
+   "soft_accuracy": 0.49461308000703375,
+   "brier_vs_soft": 0.05922897595328613,
+   "ece": 0.14817320000000003,
+   "score_mae": 0.25308343,
+   "by_question_type": {
+    "choice": 0.7316666666666667,
+    "noul": 0.8316666666666667,
+    "score": 0.6925
+   },
+   "published": null
+  }
+ },
+ "criteria": {
+  "(a) |typed-decisions acc - 0.766| <= 0.02": true,
+  "(b) ours >= 0.562": true,
+  "(b) ours > majority 0.461": true
+ },
+ "gap_ours_minus_upstream_ckpt": {
+  "accuracy_vs_label (upstream's)": -0.019000000000000017,
+  "accuracy_vs_argmax_gold": -0.02100000000000002,
+  "soft_accuracy": 0.02395455980078065,
+  "brier_vs_soft": -0.0022356715637933747,
+  "ece": -0.06606175,
+  "score_mae": 0.010675667499999958
+ },
+ "budget": {
+  "upstream": "Kaggle 2xT4 notebook: all 6,000 train decisions minus 400 calibration = 5,600 x 4 epochs = 22,400 item-passes, effective batch 64 (350 steps), fp16 autocast, max_len 1024 / head 256",
+  "ours": "5,000 decisions x 2 epochs = 10,000 item-passes, effective batch 32 (313 steps), MPS fp32, max_len 512 / head 192 (english base budget), option-order shuffle on choice questions"
+ }
+}

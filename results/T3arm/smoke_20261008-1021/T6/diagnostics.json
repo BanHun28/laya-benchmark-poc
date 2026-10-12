@@ -1,0 +1,127 @@
+{
+ "task": "T6",
+ "timing_report": "results/T3arm/smoke_20261008-1021/T6/train_timing.json",
+ "status": "ok",
+ "throughput": {
+  "train_items_per_s": 12.621,
+  "s_per_optimizer_step": 2.535,
+  "s_per_micro_batch_mean": 0.6339
+ },
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 0.54,
+  "train_loop": 5.07,
+  "epoch_checkpoint_saves": 0.23,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 0.43,
+  "calibration (forward + fit_temperature)": 0.12,
+  "export (final save + configs)": 0.48,
+  "train() total": 6.88
+ },
+ "memory_gb": {
+  "ru_maxrss": 3.19,
+  "rss_peak_sampled": 1.63,
+  "mps_current_allocated_peak": 8.88,
+  "mps_driver_allocated_peak": 10.02,
+  "mps_recommended_max": 40.2
+ },
+ "optimizer_steps": 2,
+ "n_train_items": 64,
+ "loss_log_script": [
+  "Epoch 1/1 complete; avg_loss=1.3331"
+ ],
+ "train_ce_windows": [
+  1.8437,
+  2.1976,
+  1.4606,
+  2.7785,
+  0.8347,
+  0.9476,
+  1.3289,
+  0.9882
+ ],
+ "train_acc_windows": [
+  0.375,
+  0.25,
+  0.375,
+  0.0,
+  0.5,
+  0.625,
+  0.625,
+  0.375
+ ],
+ "calibration_rows": {
+  "n": 7,
+  "ce_before_T": 1.1742,
+  "accuracy": 0.4286
+ },
+ "temperature_fits_script": [
+  {
+   "start": 9.347,
+   "end": 9.347,
+   "samples": 7
+  }
+ ],
+ "dev": {
+  "epoch0_vanilla": {
+   "report": "results/T3arm/smoke_20261008-1021/T6/dev_ep0.json",
+   "accuracy": 0.3125
+  },
+  "reports": [
+   "results/T3arm/smoke_20261008-1021/T6/dev_final.json"
+  ],
+  "accuracy": [
+   0.375
+  ],
+  "selected": "results/T3arm/smoke_20261008-1021/T6/dev_final.json",
+  "rule": "highest dev accuracy; a tie goes to the earlier epoch (docs/11 §4)"
+ },
+ "training_failed": false,
+ "class_recall_dev": {
+  "epoch0_vanilla": {
+   "0": 1.0,
+   "1": 0.25,
+   "2": 0.2857,
+   "3": 0.0
+  },
+  "selected": {
+   "0": 0.5,
+   "1": 0.5,
+   "2": 0.2857,
+   "3": 0.3333
+  }
+ },
+ "train_vs_dev_gap": {
+  "train_acc_last_window": 0.375,
+  "dev_acc_selected": 0.375,
+  "gap": 0.0,
+  "note": "train acc = argmax vs target on each micro-batch's training forward (dropout on), last 10%"
+ },
+ "selected_ckpt": "/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.E01Th9/ckpt/T6_run",
+ "selected_temperature": [
+  1.2,
+  1.0,
+  1.2
+ ],
+ "temperature_clamp": {
+  "script_fit_range": [
+   0.1,
+   10.0
+  ],
+  "load_range": [
+   0.5,
+   5.0
+  ],
+  "outside_load_range": [],
+  "at_script_bound": [],
+  "default_1.2_for_types_without_calibration_rows": [
+   0,
+   2
+  ]
+ },
+ "selected_temperature_by_options": null,
+ "selected_max_len": [
+  512,
+  192
+ ]
+}

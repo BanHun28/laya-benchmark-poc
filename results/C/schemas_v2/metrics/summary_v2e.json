@@ -1,0 +1,222 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "summary",
+   "results/C/schemas_v2/20261002-1734_multilingual_router_v2e_dev.json",
+   "--bootstrap",
+   "1000",
+   "--seed",
+   "13",
+   "--out",
+   "results/C/schemas_v2/metrics/summary_v2e.md",
+   "--json",
+   "results/C/schemas_v2/metrics/summary_v2e.json"
+  ],
+  "generated_at": "2026-10-02T17:35:26+0900",
+  "reports": [
+   {
+    "report": "results/C/schemas_v2/20261002-1734_multilingual_router_v2e_dev.json",
+    "dataset": "results/C/schemas_v2/router_v2e_dev.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "8cabdc1523e3d25b95191de7478e6280df44491e82bef41ba3c4761e68502a4d",
+    "questions_sha256": "4eeb2f06eb82ccc71fc85556d74857e5b79473586e73f50f3050f4c36d957866",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "pre-split copy (dev)",
+    "rows": 220,
+    "split_rows": {
+     "dev": 220
+    }
+   }
+  ]
+ },
+ "results": [
+  {
+   "report": "results/C/schemas_v2/20261002-1734_multilingual_router_v2e_dev.json",
+   "set": "router_v2e_dev",
+   "model": "multilingual",
+   "qid": "domain",
+   "split": "all",
+   "n": 220,
+   "accuracy": 0.5363636363636364,
+   "macro_f1_union": 0.553031413031413,
+   "macro_f1_gold": 0.553031413031413,
+   "brier": 0.6642752453181817,
+   "ece": 0.2125268181818181,
+   "mean_confidence": 0.7415595454545455,
+   "acc_at_50_coverage": 0.6636363636363637,
+   "majority": 0.2863636363636364,
+   "majority_label": "assistant_tasks",
+   "random": 0.2,
+   "delta_vs_majority": 0.25,
+   "accuracy_ci": [
+    0.4681818181818182,
+    0.6045454545454545
+   ],
+   "ece_ci": [
+    0.17071151136363638,
+    0.2859763863636363
+   ],
+   "recall": {
+    "assistant_tasks": [
+     30,
+     63
+    ],
+    "daily_life": [
+     19,
+     59
+    ],
+    "info_qa": [
+     18,
+     31
+    ],
+    "media": [
+     24,
+     37
+    ],
+    "smart_home": [
+     27,
+     30
+    ]
+   },
+   "pred_counts": {
+    "smart_home": 78,
+    "assistant_tasks": 42,
+    "daily_life": 40,
+    "info_qa": 32,
+    "media": 28
+   },
+   "first_option": {
+    "label": "assistant_tasks",
+    "gold_n": 63,
+    "pred_n": 42
+   },
+   "confusions_top5": [
+    [
+     "daily_life",
+     "smart_home",
+     26
+    ],
+    [
+     "assistant_tasks",
+     "smart_home",
+     11
+    ],
+    [
+     "assistant_tasks",
+     "daily_life",
+     10
+    ],
+    [
+     "assistant_tasks",
+     "info_qa",
+     10
+    ],
+    [
+     "media",
+     "smart_home",
+     9
+    ]
+   ],
+   "models": {
+    "multilingual": 220
+   }
+  },
+  {
+   "report": "results/C/schemas_v2/20261002-1734_multilingual_router_v2e_dev.json",
+   "set": "router_v2e_dev",
+   "model": "multilingual",
+   "qid": "domain",
+   "split": "dev",
+   "n": 220,
+   "accuracy": 0.5363636363636364,
+   "macro_f1_union": 0.553031413031413,
+   "macro_f1_gold": 0.553031413031413,
+   "brier": 0.6642752453181817,
+   "ece": 0.2125268181818181,
+   "mean_confidence": 0.7415595454545455,
+   "acc_at_50_coverage": 0.6636363636363637,
+   "majority": 0.2863636363636364,
+   "majority_label": "assistant_tasks",
+   "random": 0.2,
+   "delta_vs_majority": 0.25,
+   "accuracy_ci": [
+    0.4681818181818182,
+    0.6045454545454545
+   ],
+   "ece_ci": [
+    0.17071151136363638,
+    0.2859763863636363
+   ],
+   "recall": {
+    "assistant_tasks": [
+     30,
+     63
+    ],
+    "daily_life": [
+     19,
+     59
+    ],
+    "info_qa": [
+     18,
+     31
+    ],
+    "media": [
+     24,
+     37
+    ],
+    "smart_home": [
+     27,
+     30
+    ]
+   },
+   "pred_counts": {
+    "smart_home": 78,
+    "assistant_tasks": 42,
+    "daily_life": 40,
+    "info_qa": 32,
+    "media": 28
+   },
+   "first_option": {
+    "label": "assistant_tasks",
+    "gold_n": 63,
+    "pred_n": 42
+   },
+   "confusions_top5": [
+    [
+     "daily_life",
+     "smart_home",
+     26
+    ],
+    [
+     "assistant_tasks",
+     "smart_home",
+     11
+    ],
+    [
+     "assistant_tasks",
+     "daily_life",
+     10
+    ],
+    [
+     "assistant_tasks",
+     "info_qa",
+     10
+    ],
+    [
+     "media",
+     "smart_home",
+     9
+    ]
+   ],
+   "models": {
+    "multilingual": 220
+   }
+  }
+ ]
+}

@@ -1,0 +1,255 @@
+{
+ "T1": {
+  "items": "poc/finetune/data/t3arm/T1_english.pt",
+  "items_sha256": "e50adcd63db80d80e68b225e44205ec59fb4ebcc6419494515ca65c095c95451",
+  "base": "english",
+  "budget": {
+   "max_len": 512,
+   "head_max_len": 192
+  },
+  "v4_inference_identity": {
+   "checked": 25,
+   "identical": 25
+  },
+  "all_items_options_decoded_and_targets_checked": 5400,
+  "jev_rows_reproduced_by_row_builder": 40,
+  "options_reordered": {
+   "train": 1442,
+   "calib": 0
+  },
+  "decoded_example": [
+   "stop: Halt the agent now.",
+   "continue: Let the agent proceed without interruption.",
+   "human_review: Queue this trace for a human to review.",
+   "observe: Keep running, but flag the trace for later sampling."
+  ]
+ },
+ "T2": {
+  "items": "poc/finetune/data/t3arm/T2_english.pt",
+  "items_sha256": "93b8d8420543369bb29c3611761a3f57199b4208e42ba1364a6ca4dddcbbd658",
+  "base": "english",
+  "budget": {
+   "max_len": 512,
+   "head_max_len": 192
+  },
+  "v4_inference_identity": {
+   "checked": 25,
+   "identical": 25
+  },
+  "all_items_options_decoded_and_targets_checked": 5400,
+  "jev_rows_reproduced_by_row_builder": 40,
+  "options_reordered": {
+   "train": 4787,
+   "calib": 0
+  },
+  "decoded_example": [
+   "sci_tech: science and technology",
+   "world: world news and international politics",
+   "sports: sports",
+   "business: business and economy"
+  ]
+ },
+ "T3": {
+  "items": "poc/finetune/data/t3arm/T3_english.pt",
+  "items_sha256": "be7394826d835342f8c5c20a292c043d0658a8d6edac28a8385bd592312a4573",
+  "base": "english",
+  "budget": {
+   "max_len": 512,
+   "head_max_len": 192
+  },
+  "v4_inference_identity": {
+   "checked": 25,
+   "identical": 25
+  },
+  "all_items_options_decoded_and_targets_checked": 5400,
+  "jev_rows_reproduced_by_row_builder": 40,
+  "options_reordered": {
+   "train": 4991,
+   "calib": 0
+  },
+  "decoded_example": [
+   "anger",
+   "sadness",
+   "fear",
+   "joy",
+   "surprise",
+   "love"
+  ]
+ },
+ "T4": {
+  "items": "poc/finetune/data/t3arm/T4_english.pt",
+  "items_sha256": "24eb23d7f6f82e166896d24fc0803133664ffe8d3c0874a4b6e81c1d9ab44596",
+  "base": "english",
+  "budget": {
+   "max_len": 512,
+   "head_max_len": 192
+  },
+  "v4_inference_identity": {
+   "checked": 25,
+   "identical": 25
+  },
+  "all_items_options_decoded_and_targets_checked": 5400,
+  "jev_rows_reproduced_by_row_builder": 40,
+  "options_reordered": {
+   "train": 5000,
+   "calib": 0
+  },
+  "decoded_example": [
+   "get physical card",
+   "getting spare card",
+   "cash withdrawal not recognised",
+   "balance not updated after bank transfer",
+   "card arrival",
+   "disposable card limits",
+   "transfer into account",
+   "compromised card",
+   "transfer not received by recipient",
+   "pending card payment"
+  ]
+ },
+ "T5": {
+  "items": "poc/finetune/data/t3arm/T5_english.pt",
+  "items_sha256": "6a98151408e2e666006c97b424826798bb32b6cb48aea9d80548c3a1cb345828",
+  "base": "english",
+  "budget": {
+   "max_len": 512,
+   "head_max_len": 192
+  },
+  "v4_inference_identity": {
+   "checked": 25,
+   "identical": 25
+  },
+  "all_items_options_decoded_and_targets_checked": 5400,
+  "jev_rows_reproduced_by_row_builder": 40,
+  "options_reordered": {},
+  "decoded_example": [
+   "false: no, the statement does not hold",
+   "true: yes, the statement holds"
+  ]
+ },
+ "T6": {
+  "items": "poc/finetune/data/t3arm/T6_english.pt",
+  "items_sha256": "7f671e509825f5568dc45fc24b9c2af3844a2ace5c63c09b705c82202056d9bc",
+  "base": "english",
+  "budget": {
+   "max_len": 512,
+   "head_max_len": 192
+  },
+  "v4_inference_identity": {
+   "checked": 25,
+   "identical": 25
+  },
+  "all_items_options_decoded_and_targets_checked": 5400,
+  "jev_rows_reproduced_by_row_builder": 40,
+  "options_reordered": {},
+  "decoded_example": [
+   "level 0: very negative",
+   "level 1: negative",
+   "level 2: neutral",
+   "level 3: positive",
+   "level 4: very positive"
+  ]
+ },
+ "T7": {
+  "items": "poc/finetune/data/t3arm/T7_multilingual.pt",
+  "items_sha256": "d3aa73b607e69680e03f3bdc97cb8647ff309c90193ab60cffd3d510b35a5486",
+  "base": "multilingual",
+  "budget": {
+   "max_len": 1024,
+   "head_max_len": 256
+  },
+  "v4_inference_identity": {
+   "checked": 25,
+   "identical": 25
+  },
+  "all_items_options_decoded_and_targets_checked": 5400,
+  "jev_rows_reproduced_by_row_builder": 100,
+  "options_reordered": {
+   "train": 5000,
+   "calib": 0
+  },
+  "decoded_example": [
+   "datetime_convert: datetime convert",
+   "takeaway_order: takeaway order",
+   "qa_definition: qa definition",
+   "qa_factoid: qa factoid",
+   "email_sendemail: email sendemail",
+   "email_query: email query",
+   "iot_cleaning: iot cleaning",
+   "qa_currency: qa currency",
+   "general_joke: general joke",
+   "transport_ticket: transport ticket"
+  ]
+ },
+ "T8": {
+  "items": "poc/finetune/data/t3arm/T8_english.pt",
+  "items_sha256": "938f540e4539c0f53fab721331f70d34ffa9ce74dd958f96bb77edcda4e814b9",
+  "base": "english",
+  "budget": {
+   "max_len": 512,
+   "head_max_len": 192
+  },
+  "v4_inference_identity": {
+   "checked": 25,
+   "identical": 25
+  },
+  "all_items_options_decoded_and_targets_checked": 484,
+  "jev_rows_reproduced_by_row_builder": 40,
+  "options_reordered": {},
+  "decoded_example": [
+   "false: no, the statement does not hold",
+   "true: yes, the statement holds"
+  ]
+ },
+ "T9": {
+  "items": "poc/finetune/data/t3arm/T9_english.pt",
+  "items_sha256": "325fc050e7ae995d23d1727f7bd2a274c99fa816bc03c4f233e713a5ddd7e9ad",
+  "base": "english",
+  "budget": {
+   "max_len": 512,
+   "head_max_len": 192
+  },
+  "v4_inference_identity": {
+   "checked": 25,
+   "identical": 25
+  },
+  "all_items_options_decoded_and_targets_checked": 5400,
+  "jev_rows_reproduced_by_row_builder": 40,
+  "options_reordered": {},
+  "decoded_example": [
+   "false: no, the statement does not hold",
+   "true: yes, the statement holds"
+  ]
+ },
+ "T10": {
+  "items": "poc/finetune/data/t3arm/T10_english.pt",
+  "items_sha256": "ae31a26d65e4036296002ba9d7065020c65d888624b7fcc5489ee0baf1ef915a",
+  "base": "english",
+  "budget": {
+   "max_len": 512,
+   "head_max_len": 192
+  },
+  "v4_inference_identity": {
+   "checked": 25,
+   "identical": 25
+  },
+  "all_items_options_decoded_and_targets_checked": 5400,
+  "jev_rows_reproduced_by_row_builder": 40,
+  "options_reordered": {
+   "train": 5000,
+   "calib": 0
+  },
+  "decoded_example": [
+   "IT Support: internal IT, devices, access, networks",
+   "Technical Support: technical problems, bugs, outages, integrations",
+   "Sales and Pre-Sales: pricing, quotes, buying",
+   "Human Resources: employment, payroll, leave, hiring",
+   "Service Outages and Maintenance: downtime, outages, scheduled maintenance",
+   "Product Support: help using a product or feature",
+   "Returns and Exchanges: returning or exchanging an item",
+   "Customer Service: general account or service questions",
+   "General Inquiry: anything else",
+   "Billing and Payments: invoices, charges, refunds, payment methods"
+  ]
+ }
+}

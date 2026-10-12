@@ -1,0 +1,71 @@
+load before: {"gpu_util_pct": 2, "mps_fp32_matmul_tflops": 6.73, "cotenant": ["/bin/zsh -c source /Users/banhun/.claude/shell-snapshots/snapshot-zsh-1791356222128-5vm37w.sh 2>/dev/null || true && setopt NO_EXTENDED_GLOB NO_BARE_GLOB_QUAL 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin unset -f -- 'unsetenv'; } >/dev/null 2>&1 || true && eval 'rm -f results/ovqk_tying_2026-10-08/_debug_paths.log && uv run python experiments/ovqk_tying.py > results/ovqk_tying_2026-10-08/run_full.log 2>&1; tail -3 results/ovqk_tying_2026-10-08/run_full.log' < /dev/null && pwd -P >| /tmp/claude-64e8-cwd", "uv run python experiments/ovqk_tying.py", "/Users/banhun/banhun28/lab/metastable-ood/.venv/bin/python3 experiments/ovqk_tying.py"], "sys_mem_used_gb": 19.4}
+[     2.8s] Using legacy cached training items without metadata: poc/finetune/data/t3arm/T4_english.pt
+[     3.6s] Device: mps
+[     3.6s] Training items: 5000; calibration items: 400
+[     3.6s] micro_batch=8; grad_accum=4; epochs=2
+[    60.3s] epoch 1/2, step 100, loss=0.2655
+[   116.5s] epoch 1/2, step 200, loss=0.1731
+[   172.7s] epoch 1/2, step 300, loss=2.1152
+[   228.4s] epoch 1/2, step 400, loss=-0.1648
+[   284.6s] epoch 1/2, step 500, loss=-0.3093
+[   341.3s] epoch 1/2, step 600, loss=-0.1611
+[   355.8s] Epoch 1/2 complete; avg_loss=0.6255
+[   412.8s] epoch 2/2, step 100, loss=0.0342
+[   469.9s] epoch 2/2, step 200, loss=1.1667
+[   525.8s] epoch 2/2, step 300, loss=0.0000
+[   580.7s] epoch 2/2, step 400, loss=0.0000
+[   635.7s] epoch 2/2, step 500, loss=0.0000
+[   691.6s] epoch 2/2, step 600, loss=0.0000
+[   706.4s] Epoch 2/2 complete; avg_loss=0.4892
+[   707.7s] Running temperature calibration ...
+[   714.2s] Model saved to poc/finetune/ckpt_t3arm_rep_s14/T4_run
+[   714.2s] Temperatures: [3.9626314640045166, 1.2, 1.2]
+{
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 0.82,
+  "train_loop": 701.07,
+  "epoch_checkpoint_saves": 2.08,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 0.93,
+  "calibration (forward + fit_temperature)": 6.12,
+  "export (final save + configs)": 0.37,
+  "train() total": 711.41
+ },
+ "throughput": {
+  "train_items_per_s": 14.264,
+  "s_per_optimizer_step": 2.233,
+  "s_per_micro_batch_mean": 0.5609
+ },
+ "micro_batch_s": {
+  "median_all": 0.3845,
+  "median_repeat_shape_no_step": 0.3648,
+  "median_repeat_shape_with_step": 1.1001,
+  "optimizer_step_overhead": 0.7353,
+  "median_first_shape": 0.457,
+  "first_shape_count": 63,
+  "repeat_shape_count": 1187,
+  "first_shape_extra_total_s": 12.8
+ },
+ "memory_gb": {
+  "ru_maxrss": 3.19,
+  "rss_peak_sampled": 1.95,
+  "mps_current_allocated_peak": 10.09,
+  "mps_driver_allocated_peak": 18.38,
+  "mps_recommended_max": 40.2
+ },
+ "calibration_rows": {
+  "n": 400,
+  "ce_before_T": 0.6975,
+  "accuracy": 0.955
+ },
+ "item_sources": {
+  "train": {
+   "train": 10000
+  },
+  "calibration": {
+   "calib": 400
+  }
+ }
+}
+report: results/T3arm/rep_s14/T4/train_timing.json (wall 714.4s, status ok)

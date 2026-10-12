@@ -1,0 +1,49 @@
+{
+ "script": "third_party/laya/notebooks/laya_finetune_typed_decisions_mps.py",
+ "script_args": [
+  "models/laya-multilingual",
+  "results/P4/smoke_full/ckpt_20261003-1146",
+  "--items",
+  "results/P4/smoke_full/smoke_20261003-1146_items.pt",
+  "--calib-max",
+  "7",
+  "--epochs",
+  "1",
+  "--micro-batch",
+  "8",
+  "--grad-accum",
+  "4",
+  "--no-checkpointing",
+  "--device",
+  "mps",
+  "--bogus-flag-failtest"
+ ],
+ "seed": 13,
+ "keep_epoch_checkpoints": true,
+ "started_at": "2026-10-03T11:46:23+0900",
+ "versions": {
+  "torch": "2.14.1",
+  "python": "3.12.12",
+  "laya": "0.3.23"
+ },
+ "threads": {
+  "intra": 10,
+  "interop": 14
+ },
+ "load_before": {
+  "gpu_util_pct": 2,
+  "mps_fp32_matmul_tflops": 6.85,
+  "cotenant": [],
+  "sys_mem_used_gb": 19.2
+ },
+ "traceback": "Traceback (most recent call last):\n  File \"/Users/banhun/banhun28/lab/benchmarkforLaya/poc/finetune/run_ft.py\", line 286, in main\n    ft.main()\n  File \"/Users/banhun/banhun28/lab/benchmarkforLaya/third_party/laya/notebooks/laya_finetune_typed_decisions_mps.py\", line 385, in main\n    args = parser.parse_args()\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.12/3.12.12/Frameworks/Python.framework/Versions/3.12/lib/python3.12/argparse.py\", line 1908, in parse_args\n    self.error(msg)\n  File \"/opt/homebrew/Cellar/python@3.12/3.12.12/Frameworks/Python.framework/Versions/3.12/lib/python3.12/argparse.py\", line 2650, in error\n    self.exit(2, _('%(prog)s: error: %(message)s\\n') % args)\n  File \"/opt/homebrew/Cellar/python@3.12/3.12.12/Frameworks/Python.framework/Versions/3.12/lib/python3.12/argparse.py\", line 2637, in exit\n    _sys.exit(status)\nSystemExit: 2\n",
+ "status": "failed",
+ "wall_s": 2.25,
+ "load_after": {
+  "gpu_util_pct": 0,
+  "mps_fp32_matmul_tflops": 6.89
+ },
+ "load_series": [],
+ "events": [],
+ "micro_batch_trace": []
+}

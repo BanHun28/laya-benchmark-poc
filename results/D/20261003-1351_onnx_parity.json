@@ -1,0 +1,142 @@
+{
+ "run_card": {
+  "tool": "scripts/metrics_extra.py",
+  "argv": [
+   "parity",
+   "results/D/20261003-1347_torch_cpu_ynat.json",
+   "results/D/20261003-1347_onnx_fp32_ynat.json",
+   "results/D/20261003-1347_onnx_int8_ynat.json",
+   "results/D/20261003-1350_onnx_fp32_t10_ynat.json",
+   "results/D/20261003-1350_onnx_int8_t10_ynat.json",
+   "--out",
+   "results/D/20261003-1351_onnx_parity.md",
+   "--json",
+   "results/D/20261003-1351_onnx_parity.json"
+  ],
+  "generated_at": "2026-10-03T13:51:44+0900",
+  "reports": [
+   {
+    "report": "results/D/20261003-1347_torch_cpu_ynat.json",
+    "dataset": "data/evals/ko_klue_ynat_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "52c1af160c0433405763a919c593afea3d4f62c51c3d893a84b6ea2610da991f",
+    "questions_sha256": "2eec39b823fd3a6eec8d54cb1bfb8caafccd93375fe2ef33c608d232ad37f260",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 255,
+     "dev": 245
+    }
+   },
+   {
+    "report": "results/D/20261003-1347_onnx_fp32_ynat.json",
+    "dataset": "data/evals/ko_klue_ynat_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "52c1af160c0433405763a919c593afea3d4f62c51c3d893a84b6ea2610da991f",
+    "questions_sha256": "2eec39b823fd3a6eec8d54cb1bfb8caafccd93375fe2ef33c608d232ad37f260",
+    "revisions": null,
+    "model": "models/laya-multilingual",
+    "device": null,
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 255,
+     "dev": 245
+    }
+   },
+   {
+    "report": "results/D/20261003-1347_onnx_int8_ynat.json",
+    "dataset": "data/evals/ko_klue_ynat_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "52c1af160c0433405763a919c593afea3d4f62c51c3d893a84b6ea2610da991f",
+    "questions_sha256": "2eec39b823fd3a6eec8d54cb1bfb8caafccd93375fe2ef33c608d232ad37f260",
+    "revisions": null,
+    "model": "models/laya-multilingual",
+    "device": null,
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 255,
+     "dev": 245
+    }
+   },
+   {
+    "report": "results/D/20261003-1350_onnx_fp32_t10_ynat.json",
+    "dataset": "data/evals/ko_klue_ynat_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "52c1af160c0433405763a919c593afea3d4f62c51c3d893a84b6ea2610da991f",
+    "questions_sha256": "2eec39b823fd3a6eec8d54cb1bfb8caafccd93375fe2ef33c608d232ad37f260",
+    "revisions": null,
+    "model": "models/laya-multilingual",
+    "device": null,
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 255,
+     "dev": 245
+    }
+   },
+   {
+    "report": "results/D/20261003-1350_onnx_int8_t10_ynat.json",
+    "dataset": "data/evals/ko_klue_ynat_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "52c1af160c0433405763a919c593afea3d4f62c51c3d893a84b6ea2610da991f",
+    "questions_sha256": "2eec39b823fd3a6eec8d54cb1bfb8caafccd93375fe2ef33c608d232ad37f260",
+    "revisions": null,
+    "model": "models/laya-multilingual",
+    "device": null,
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 255,
+     "dev": 245
+    }
+   }
+  ]
+ },
+ "reference": "results/D/20261003-1347_torch_cpu_ynat.json",
+ "results": [
+  {
+   "other": "results/D/20261003-1347_onnx_fp32_ynat.json",
+   "n": 500,
+   "agreement": 1.0,
+   "flips": 0,
+   "max_abs_dp": 0.00010000000000001674,
+   "mean_abs_dconf": 3.9999999999995594e-07
+  },
+  {
+   "other": "results/D/20261003-1347_onnx_int8_ynat.json",
+   "n": 500,
+   "agreement": 0.93,
+   "flips": 35,
+   "max_abs_dp": 0.6458999999999999,
+   "mean_abs_dconf": 0.0568446
+  },
+  {
+   "other": "results/D/20261003-1350_onnx_fp32_t10_ynat.json",
+   "n": 500,
+   "agreement": 1.0,
+   "flips": 0,
+   "max_abs_dp": 0.00010000000000001674,
+   "mean_abs_dconf": 3.9999999999995594e-07
+  },
+  {
+   "other": "results/D/20261003-1350_onnx_int8_t10_ynat.json",
+   "n": 500,
+   "agreement": 0.93,
+   "flips": 35,
+   "max_abs_dp": 0.6458999999999999,
+   "mean_abs_dconf": 0.0568446
+  }
+ ]
+}

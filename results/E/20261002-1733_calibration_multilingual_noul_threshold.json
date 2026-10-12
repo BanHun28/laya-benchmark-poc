@@ -1,0 +1,248 @@
+{
+ "run_card": {
+  "tool": "scripts/calibrate_ko.py",
+  "argv": [
+   "scripts/calibrate_ko.py",
+   "--sets",
+   "data/evals/ko_massive_domain_8.jsonl,data/evals/ko_klue_ynat_7.jsonl",
+   "--splits",
+   "results/B/B_splits.json",
+   "--model",
+   "models/laya-multilingual",
+   "--device",
+   "cpu",
+   "--per-task",
+   "--pooled",
+   "--min-bucket-n",
+   "100",
+   "--seed",
+   "13",
+   "--reports",
+   "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+   "results/B/20261002-1645_multilingual_ko_klue_ynat_7.json",
+   "results/B/20261002-1654_multilingual_ko_nsmc_sentiment.json",
+   "--noul-report",
+   "results/B/20261002-1654_multilingual_ko_nsmc_sentiment.json",
+   "--payload-fit",
+   "pooled",
+   "--out-payload",
+   "poc/calibration/ko_v1.json",
+   "--out",
+   "results/E/20261002-1733_calibration_multilingual.json"
+  ],
+  "generated_at": "2026-10-02T17:33:21+0900",
+  "laya_version": "0.3.23",
+  "torch": "2.14.1",
+  "threads": [
+   10,
+   1
+  ],
+  "model": "models/laya-multilingual",
+  "model_realpath": "/Users/banhun/.cache/huggingface/hub/models--convaiinnovations--laya/snapshots/55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851/multilingual",
+  "device": "cpu",
+  "min_bucket_n": 100,
+  "seed": 13,
+  "grid": [
+   0.5,
+   0.55,
+   0.6,
+   0.65,
+   0.7,
+   0.75,
+   0.8,
+   0.85,
+   0.9,
+   0.95,
+   0.99
+  ],
+  "budgets": [
+   0.05,
+   0.1,
+   0.15
+  ],
+  "reports": [
+   {
+    "report": "results/B/20261002-1643_multilingual_ko_massive_domain_8.json",
+    "dataset": "data/evals/ko_massive_domain_8.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "edf33079033640fa9656c3b583a422c1ededc4bcd75eaafbfb84c5adf613f46b",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "index parity",
+    "rows": 500,
+    "split_rows": {
+     "dev": 250,
+     "test": 250
+    }
+   },
+   {
+    "report": "results/B/20261002-1645_multilingual_ko_klue_ynat_7.json",
+    "dataset": "data/evals/ko_klue_ynat_7.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "52c1af160c0433405763a919c593afea3d4f62c51c3d893a84b6ea2610da991f",
+    "questions_sha256": "2eec39b823fd3a6eec8d54cb1bfb8caafccd93375fe2ef33c608d232ad37f260",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 255,
+     "dev": 245
+    }
+   },
+   {
+    "report": "results/B/20261002-1654_multilingual_ko_nsmc_sentiment.json",
+    "dataset": "data/evals/ko_nsmc_sentiment.jsonl",
+    "laya_version": "0.3.23",
+    "dataset_sha256": "68efeccdcbcc93d8856be721af93e4275e344293b00ef8eb6646b12e40639f1d",
+    "questions_sha256": "c76e85a04f5bbbc4d45f27a81ec2d7a6bdf76cfc958d27be0ef78c0f07668a98",
+    "revisions": {
+     "multilingual": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+    },
+    "model": "multilingual",
+    "device": "cpu",
+    "batch_size": 16,
+    "split_rule": "state sha256 % 2",
+    "rows": 500,
+    "split_rows": {
+     "test": 251,
+     "dev": 249
+    }
+   }
+  ],
+  "sets": [
+   {
+    "name": "ko_massive_domain_8",
+    "path": "data/evals/ko_massive_domain_8.jsonl",
+    "rule": "index parity",
+    "dataset_sha256": "edf33079033640fa9656c3b583a422c1ededc4bcd75eaafbfb84c5adf613f46b",
+    "questions_sha256": "a7f2f6b88db01ec297afb64da2434f0b2376fa46d341b2c8fec18998b719ec54",
+    "dev": 250,
+    "test": 250
+   },
+   {
+    "name": "ko_klue_ynat_7",
+    "path": "data/evals/ko_klue_ynat_7.jsonl",
+    "rule": "state sha256 % 2",
+    "dataset_sha256": "52c1af160c0433405763a919c593afea3d4f62c51c3d893a84b6ea2610da991f",
+    "questions_sha256": "2eec39b823fd3a6eec8d54cb1bfb8caafccd93375fe2ef33c608d232ad37f260",
+    "dev": 245,
+    "test": 255
+   }
+  ],
+  "timing_s": {
+   "load": 4.320927143096924,
+   "records": 71.19204378128052,
+   "rows": 1000,
+   "e4": 37.84629774093628
+  },
+  "payload_fit": "pooled",
+  "wall_s": 113.8403251171112
+ },
+ "e6": {
+  "report": "results/B/20261002-1654_multilingual_ko_nsmc_sentiment.json",
+  "qid": "sentiment_noul",
+  "auroc": {
+   "dev": 0.8596638655462185,
+   "test": 0.8218193384223919,
+   "all": 0.840752
+  },
+  "always_no": {
+   "dev": 0.47791164658634533,
+   "test": 0.5219123505976095,
+   "all": 0.5
+  },
+  "choice_variant": {
+   "dev": 0.7751004016064257,
+   "test": 0.7729083665338645,
+   "all": 0.774
+  },
+  "rules": {
+   "default 0.5": {
+    "threshold": 0.5,
+    "dev": {
+     "accuracy": 0.6345381526104418,
+     "pos_rate": 0.1566265060240964,
+     "gold_pos_rate": 0.5220883534136547,
+     "precision": 1.0,
+     "recall": 0.3
+    },
+    "test": {
+     "accuracy": 0.6414342629482072,
+     "pos_rate": 0.13545816733067728,
+     "gold_pos_rate": 0.47808764940239046,
+     "precision": 0.9411764705882353,
+     "recall": 0.26666666666666666
+    },
+    "all": {
+     "accuracy": 0.638,
+     "pos_rate": 0.146,
+     "gold_pos_rate": 0.5,
+     "precision": 0.9726027397260274,
+     "recall": 0.284
+    }
+   },
+   "Youden J (dev)": {
+    "threshold": 0.0073,
+    "dev": {
+     "accuracy": 0.7751004016064257,
+     "pos_rate": 0.5301204819277109,
+     "gold_pos_rate": 0.5220883534136547,
+     "precision": 0.7803030303030303,
+     "recall": 0.7923076923076923
+    },
+    "test": {
+     "accuracy": 0.7250996015936255,
+     "pos_rate": 0.5059760956175299,
+     "gold_pos_rate": 0.47808764940239046,
+     "precision": 0.7007874015748031,
+     "recall": 0.7416666666666667
+    },
+    "all": {
+     "accuracy": 0.75,
+     "pos_rate": 0.518,
+     "gold_pos_rate": 0.5,
+     "precision": 0.7413127413127413,
+     "recall": 0.768
+    }
+   },
+   "max accuracy (dev)": {
+    "threshold": 0.0068,
+    "dev": {
+     "accuracy": 0.7751004016064257,
+     "pos_rate": 0.5461847389558233,
+     "gold_pos_rate": 0.5220883534136547,
+     "precision": 0.7720588235294118,
+     "recall": 0.8076923076923077
+    },
+    "test": {
+     "accuracy": 0.7290836653386454,
+     "pos_rate": 0.5179282868525896,
+     "gold_pos_rate": 0.47808764940239046,
+     "precision": 0.7,
+     "recall": 0.7583333333333333
+    },
+    "all": {
+     "accuracy": 0.752,
+     "pos_rate": 0.532,
+     "gold_pos_rate": 0.5,
+     "precision": 0.7368421052631579,
+     "recall": 0.784
+    }
+   }
+  },
+  "accept_03_E6": {
+   "youden_test_acc_above_always_no": true,
+   "youden_test_pos_rate_within_5pt": true
+  }
+ }
+}

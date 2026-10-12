@@ -1,0 +1,30 @@
+/Users/banhun/banhun28/lab/benchmarkforLaya/third_party/laya/scripts/export_onnx.py:116: UserWarning: # 'dynamic_axes' is not recommended when dynamo=True, and may lead to 'torch._dynamo.exc.UserError: Constraints violated.' Supply the 'dynamic_shapes' argument instead if export is unsuccessful.
+  torch.onnx.export(
+W1003 13:47:31.278000 92274 torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::nms
+W1003 13:47:31.278000 92274 torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::roi_align
+W1003 13:47:31.278000 92274 torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::roi_pool
+W1003 13:47:31.279000 92274 torch/onnx/_internal/exporter/_registration.py:107] torchvision is not installed. Skipping torchvision::deform_conv2d
+Skipping constant folding for op Split with multiple outputs.
+Skipping constant folding for op Split with multiple outputs.
+Skipping constant folding for op Split with multiple outputs.
+Skipping constant folding for op Split with multiple outputs.
+/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/torch/onnx/_internal/exporter/_onnx_program.py:486: UserWarning: # The axis name: batch_size will not be used, since it shares the same shape constraints with another axis: batch_size.
+  rename_mapping = _dynamic_shapes.create_rename_mapping(
+/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/torch/onnx/_internal/exporter/_onnx_program.py:486: UserWarning: # The axis name: seq_len will not be used, since it shares the same shape constraints with another axis: seq_len.
+  rename_mapping = _dynamic_shapes.create_rename_mapping(
+/Users/banhun/banhun28/lab/benchmarkforLaya/.venv/lib/python3.12/site-packages/torch/onnx/_internal/exporter/_onnx_program.py:486: UserWarning: # The axis name: num_markers will not be used, since it shares the same shape constraints with another axis: num_markers.
+  rename_mapping = _dynamic_shapes.create_rename_mapping(
+WARNING:root:Please consider to run pre-processing before quantization. Refer to example: https://github.com/microsoft/onnxruntime-inference-examples/blob/main/quantization/image_classification/cpu/ReadMe.md 
+Loading PyTorch Agent from: models/laya-multilingual
+Creating dummy input tensors...
+Exporting to models/onnx/laya-multilingual.onnx (this may take a minute)...
+[torch.onnx] Obtain model graph for `DecisionModel([...]` with `torch.export.export(..., strict=False)`...
+[torch.onnx] Obtain model graph for `DecisionModel([...]` with `torch.export.export(..., strict=False)`... ✅
+[torch.onnx] Run decompositions...
+[torch.onnx] Run decompositions... ✅
+[torch.onnx] Translate the graph into ONNX...
+[torch.onnx] Translate the graph into ONNX... ✅
+[torch.onnx] Optimize the ONNX graph...
+[torch.onnx] Optimize the ONNX graph... ✅
+Successfully exported ONNX model to: models/onnx/laya-multilingual.onnx
+Successfully wrote INT8 quantized model to: models/onnx/laya-multilingual.int8.onnx

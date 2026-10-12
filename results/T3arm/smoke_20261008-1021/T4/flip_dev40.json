@@ -1,0 +1,1750 @@
+{
+ "run_card": {
+  "tool": "scripts/probe_option_order.py",
+  "argv": [
+   "/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.E01Th9/evals/T4/T4_dev40.jsonl",
+   "--model",
+   "/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.E01Th9/ckpt/T4_run",
+   "--device",
+   "cpu",
+   "--permutations",
+   "5",
+   "--seed",
+   "13",
+   "--split",
+   "all",
+   "--splits",
+   "",
+   "--out",
+   "results/T3arm/smoke_20261008-1021/T4/flip_dev40.json"
+  ],
+  "started_at": "2026-10-08T10:26:59+0900",
+  "laya_version": "0.3.23",
+  "torch": "2.14.1",
+  "transformers": "5.18.0",
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "amp_enabled": false,
+  "threads_intra_inter": [
+   10,
+   1
+  ],
+  "checkpoint": {
+   "path": "/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T/t3arm_smoke.E01Th9/ckpt/T4_run",
+   "realpath": "/private/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T/t3arm_smoke.E01Th9/ckpt/T4_run",
+   "snapshot_sha": null,
+   "weights_blob": null,
+   "head_max_len": 192,
+   "max_len": 512
+  },
+  "power": "Now drawing from 'AC Power' |  -InternalBattery-0 (id=22085731)\t100%; charged; 0:00 remaining present: true",
+  "git_sha": null,
+  "load_seconds": 2.8,
+  "warnings": [],
+  "finished_at": "2026-10-08T10:27:09+0900",
+  "total_seconds": 9.7
+ },
+ "params": {
+  "files": [
+   "/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.E01Th9/evals/T4/T4_dev40.jsonl"
+  ],
+  "model": "/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.E01Th9/ckpt/T4_run",
+  "device": "cpu",
+  "permutations": 5,
+  "seed": 13,
+  "split": "all",
+  "splits": "",
+  "reference": [],
+  "bootstrap": 1000,
+  "threads": 10,
+  "interop": 1,
+  "out": "results/T3arm/smoke_20261008-1021/T4/flip_dev40.json"
+ },
+ "sets": [
+  {
+   "file": "/var/folders/rr/m9ffhdw52t55qph5_8kf12200000gn/T//t3arm_smoke.E01Th9/evals/T4/T4_dev40.jsonl",
+   "set": "T4_dev40",
+   "dataset_sha256": "39b0c89241bf1af12a955dab2c74423b6f0e1bff129e7247393cdd1a7da81e6b",
+   "split": "all",
+   "split_rule": "state sha256 % 2",
+   "split_check": null,
+   "seconds": 6.9,
+   "items": [
+    {
+     "row": 0,
+     "qid": "intent",
+     "gold": "card linking",
+     "options": [
+      "verify source of funds",
+      "verify top up",
+      "disposable card limits",
+      "pending card payment",
+      "compromised card",
+      "top up by card charge",
+      "card payment not recognised",
+      "why verify identity",
+      "card linking",
+      "lost or stolen phone"
+     ],
+     "tags": [
+      "banking77",
+      "id:165",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "card linking",
+      "conf": 1.0,
+      "probs": {
+       "verify source of funds": 0.0,
+       "verify top up": 0.0,
+       "disposable card limits": 0.0,
+       "pending card payment": 0.0,
+       "compromised card": 0.0,
+       "top up by card charge": 0.0,
+       "card payment not recognised": 0.0,
+       "why verify identity": 0.0,
+       "card linking": 1.0,
+       "lost or stolen phone": 0.0
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "pending card payment",
+        "verify source of funds",
+        "why verify identity",
+        "card linking",
+        "card payment not recognised",
+        "verify top up",
+        "top up by card charge",
+        "disposable card limits",
+        "lost or stolen phone",
+        "compromised card"
+       ],
+       "pred": "card linking",
+       "conf": 1.0,
+       "probs": {
+        "pending card payment": 0.0,
+        "verify source of funds": 0.0,
+        "why verify identity": 0.0,
+        "card linking": 1.0,
+        "card payment not recognised": 0.0,
+        "verify top up": 0.0,
+        "top up by card charge": 0.0,
+        "disposable card limits": 0.0,
+        "lost or stolen phone": 0.0,
+        "compromised card": 0.0
+       }
+      },
+      {
+       "order": [
+        "card linking",
+        "card payment not recognised",
+        "compromised card",
+        "why verify identity",
+        "verify source of funds",
+        "lost or stolen phone",
+        "top up by card charge",
+        "pending card payment",
+        "verify top up",
+        "disposable card limits"
+       ],
+       "pred": "card linking",
+       "conf": 1.0,
+       "probs": {
+        "card linking": 1.0,
+        "card payment not recognised": 0.0,
+        "compromised card": 0.0,
+        "why verify identity": 0.0,
+        "verify source of funds": 0.0,
+        "lost or stolen phone": 0.0,
+        "top up by card charge": 0.0,
+        "pending card payment": 0.0,
+        "verify top up": 0.0,
+        "disposable card limits": 0.0
+       }
+      },
+      {
+       "order": [
+        "top up by card charge",
+        "why verify identity",
+        "verify source of funds",
+        "lost or stolen phone",
+        "pending card payment",
+        "card linking",
+        "card payment not recognised",
+        "verify top up",
+        "disposable card limits",
+        "compromised card"
+       ],
+       "pred": "card linking",
+       "conf": 1.0,
+       "probs": {
+        "top up by card charge": 0.0,
+        "why verify identity": 0.0,
+        "verify source of funds": 0.0,
+        "lost or stolen phone": 0.0,
+        "pending card payment": 0.0,
+        "card linking": 1.0,
+        "card payment not recognised": 0.0,
+        "verify top up": 0.0,
+        "disposable card limits": 0.0,
+        "compromised card": 0.0
+       }
+      },
+      {
+       "order": [
+        "verify source of funds",
+        "verify top up",
+        "disposable card limits",
+        "card linking",
+        "lost or stolen phone",
+        "compromised card",
+        "card payment not recognised",
+        "why verify identity",
+        "pending card payment",
+        "top up by card charge"
+       ],
+       "pred": "card linking",
+       "conf": 1.0,
+       "probs": {
+        "verify source of funds": 0.0,
+        "verify top up": 0.0,
+        "disposable card limits": 0.0,
+        "card linking": 1.0,
+        "lost or stolen phone": 0.0,
+        "compromised card": 0.0,
+        "card payment not recognised": 0.0,
+        "why verify identity": 0.0,
+        "pending card payment": 0.0,
+        "top up by card charge": 0.0
+       }
+      },
+      {
+       "order": [
+        "why verify identity",
+        "verify source of funds",
+        "card linking",
+        "pending card payment",
+        "lost or stolen phone",
+        "compromised card",
+        "disposable card limits",
+        "verify top up",
+        "top up by card charge",
+        "card payment not recognised"
+       ],
+       "pred": "card linking",
+       "conf": 1.0,
+       "probs": {
+        "why verify identity": 0.0,
+        "verify source of funds": 0.0,
+        "card linking": 1.0,
+        "pending card payment": 0.0,
+        "lost or stolen phone": 0.0,
+        "compromised card": 0.0,
+        "disposable card limits": 0.0,
+        "verify top up": 0.0,
+        "top up by card charge": 0.0,
+        "card payment not recognised": 0.0
+       }
+      }
+     ]
+    },
+    {
+     "row": 1,
+     "qid": "intent",
+     "gold": "exchange rate",
+     "options": [
+      "card payment wrong exchange rate",
+      "unable to verify identity",
+      "transfer fee charged",
+      "declined transfer",
+      "verify top up",
+      "transaction charged twice",
+      "exchange rate",
+      "order physical card",
+      "card about to expire",
+      "automatic top up"
+     ],
+     "tags": [
+      "banking77",
+      "id:324",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "exchange rate",
+      "conf": 0.9971,
+      "probs": {
+       "card payment wrong exchange rate": 0.0001,
+       "unable to verify identity": 0.0003,
+       "transfer fee charged": 0.0001,
+       "declined transfer": 0.0005,
+       "verify top up": 0.0004,
+       "transaction charged twice": 0.0002,
+       "exchange rate": 0.9971,
+       "order physical card": 0.0001,
+       "card about to expire": 0.0002,
+       "automatic top up": 0.0011
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "card payment wrong exchange rate",
+        "declined transfer",
+        "verify top up",
+        "exchange rate",
+        "transaction charged twice",
+        "unable to verify identity",
+        "card about to expire",
+        "transfer fee charged",
+        "automatic top up",
+        "order physical card"
+       ],
+       "pred": "exchange rate",
+       "conf": 0.9984,
+       "probs": {
+        "card payment wrong exchange rate": 0.0001,
+        "declined transfer": 0.0001,
+        "verify top up": 0.0004,
+        "exchange rate": 0.9984,
+        "transaction charged twice": 0.0,
+        "unable to verify identity": 0.0002,
+        "card about to expire": 0.0001,
+        "transfer fee charged": 0.0001,
+        "automatic top up": 0.0006,
+        "order physical card": 0.0
+       }
+      },
+      {
+       "order": [
+        "transaction charged twice",
+        "card payment wrong exchange rate",
+        "transfer fee charged",
+        "exchange rate",
+        "automatic top up",
+        "unable to verify identity",
+        "declined transfer",
+        "card about to expire",
+        "verify top up",
+        "order physical card"
+       ],
+       "pred": "exchange rate",
+       "conf": 0.9998,
+       "probs": {
+        "transaction charged twice": 0.0,
+        "card payment wrong exchange rate": 0.0,
+        "transfer fee charged": 0.0,
+        "exchange rate": 0.9998,
+        "automatic top up": 0.0,
+        "unable to verify identity": 0.0,
+        "declined transfer": 0.0,
+        "card about to expire": 0.0,
+        "verify top up": 0.0001,
+        "order physical card": 0.0
+       }
+      },
+      {
+       "order": [
+        "order physical card",
+        "exchange rate",
+        "verify top up",
+        "card payment wrong exchange rate",
+        "unable to verify identity",
+        "transfer fee charged",
+        "transaction charged twice",
+        "card about to expire",
+        "declined transfer",
+        "automatic top up"
+       ],
+       "pred": "exchange rate",
+       "conf": 0.9979,
+       "probs": {
+        "order physical card": 0.0,
+        "exchange rate": 0.9979,
+        "verify top up": 0.0003,
+        "card payment wrong exchange rate": 0.0001,
+        "unable to verify identity": 0.0001,
+        "transfer fee charged": 0.0001,
+        "transaction charged twice": 0.0001,
+        "card about to expire": 0.0001,
+        "declined transfer": 0.0003,
+        "automatic top up": 0.001
+       }
+      },
+      {
+       "order": [
+        "transaction charged twice",
+        "transfer fee charged",
+        "declined transfer",
+        "verify top up",
+        "unable to verify identity",
+        "card about to expire",
+        "order physical card",
+        "automatic top up",
+        "card payment wrong exchange rate",
+        "exchange rate"
+       ],
+       "pred": "exchange rate",
+       "conf": 1.0,
+       "probs": {
+        "transaction charged twice": 0.0,
+        "transfer fee charged": 0.0,
+        "declined transfer": 0.0,
+        "verify top up": 0.0,
+        "unable to verify identity": 0.0,
+        "card about to expire": 0.0,
+        "order physical card": 0.0,
+        "automatic top up": 0.0,
+        "card payment wrong exchange rate": 0.0,
+        "exchange rate": 1.0
+       }
+      },
+      {
+       "order": [
+        "card payment wrong exchange rate",
+        "declined transfer",
+        "automatic top up",
+        "unable to verify identity",
+        "order physical card",
+        "card about to expire",
+        "transaction charged twice",
+        "exchange rate",
+        "transfer fee charged",
+        "verify top up"
+       ],
+       "pred": "exchange rate",
+       "conf": 0.9932,
+       "probs": {
+        "card payment wrong exchange rate": 0.0002,
+        "declined transfer": 0.0002,
+        "automatic top up": 0.0012,
+        "unable to verify identity": 0.0003,
+        "order physical card": 0.0001,
+        "card about to expire": 0.0002,
+        "transaction charged twice": 0.0003,
+        "exchange rate": 0.9932,
+        "transfer fee charged": 0.0005,
+        "verify top up": 0.0039
+       }
+      }
+     ]
+    },
+    {
+     "row": 2,
+     "qid": "intent",
+     "gold": "pending cash withdrawal",
+     "options": [
+      "top up limits",
+      "direct debit payment not recognised",
+      "pending cash withdrawal",
+      "apple pay or google pay",
+      "transfer fee charged",
+      "top up by bank transfer charge",
+      "virtual card not working",
+      "card arrival",
+      "passcode forgotten",
+      "wrong amount of cash received"
+     ],
+     "tags": [
+      "banking77",
+      "id:810",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "pending cash withdrawal",
+      "conf": 1.0,
+      "probs": {
+       "top up limits": 0.0,
+       "direct debit payment not recognised": 0.0,
+       "pending cash withdrawal": 1.0,
+       "apple pay or google pay": 0.0,
+       "transfer fee charged": 0.0,
+       "top up by bank transfer charge": 0.0,
+       "virtual card not working": 0.0,
+       "card arrival": 0.0,
+       "passcode forgotten": 0.0,
+       "wrong amount of cash received": 0.0
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "transfer fee charged",
+        "virtual card not working",
+        "wrong amount of cash received",
+        "top up limits",
+        "direct debit payment not recognised",
+        "card arrival",
+        "top up by bank transfer charge",
+        "apple pay or google pay",
+        "pending cash withdrawal",
+        "passcode forgotten"
+       ],
+       "pred": "pending cash withdrawal",
+       "conf": 1.0,
+       "probs": {
+        "transfer fee charged": 0.0,
+        "virtual card not working": 0.0,
+        "wrong amount of cash received": 0.0,
+        "top up limits": 0.0,
+        "direct debit payment not recognised": 0.0,
+        "card arrival": 0.0,
+        "top up by bank transfer charge": 0.0,
+        "apple pay or google pay": 0.0,
+        "pending cash withdrawal": 1.0,
+        "passcode forgotten": 0.0
+       }
+      },
+      {
+       "order": [
+        "transfer fee charged",
+        "virtual card not working",
+        "apple pay or google pay",
+        "top up limits",
+        "passcode forgotten",
+        "direct debit payment not recognised",
+        "card arrival",
+        "pending cash withdrawal",
+        "wrong amount of cash received",
+        "top up by bank transfer charge"
+       ],
+       "pred": "pending cash withdrawal",
+       "conf": 1.0,
+       "probs": {
+        "transfer fee charged": 0.0,
+        "virtual card not working": 0.0,
+        "apple pay or google pay": 0.0,
+        "top up limits": 0.0,
+        "passcode forgotten": 0.0,
+        "direct debit payment not recognised": 0.0,
+        "card arrival": 0.0,
+        "pending cash withdrawal": 1.0,
+        "wrong amount of cash received": 0.0,
+        "top up by bank transfer charge": 0.0
+       }
+      },
+      {
+       "order": [
+        "top up by bank transfer charge",
+        "wrong amount of cash received",
+        "passcode forgotten",
+        "transfer fee charged",
+        "card arrival",
+        "pending cash withdrawal",
+        "apple pay or google pay",
+        "top up limits",
+        "virtual card not working",
+        "direct debit payment not recognised"
+       ],
+       "pred": "pending cash withdrawal",
+       "conf": 1.0,
+       "probs": {
+        "top up by bank transfer charge": 0.0,
+        "wrong amount of cash received": 0.0,
+        "passcode forgotten": 0.0,
+        "transfer fee charged": 0.0,
+        "card arrival": 0.0,
+        "pending cash withdrawal": 1.0,
+        "apple pay or google pay": 0.0,
+        "top up limits": 0.0,
+        "virtual card not working": 0.0,
+        "direct debit payment not recognised": 0.0
+       }
+      },
+      {
+       "order": [
+        "apple pay or google pay",
+        "passcode forgotten",
+        "wrong amount of cash received",
+        "top up limits",
+        "top up by bank transfer charge",
+        "card arrival",
+        "pending cash withdrawal",
+        "transfer fee charged",
+        "virtual card not working",
+        "direct debit payment not recognised"
+       ],
+       "pred": "pending cash withdrawal",
+       "conf": 1.0,
+       "probs": {
+        "apple pay or google pay": 0.0,
+        "passcode forgotten": 0.0,
+        "wrong amount of cash received": 0.0,
+        "top up limits": 0.0,
+        "top up by bank transfer charge": 0.0,
+        "card arrival": 0.0,
+        "pending cash withdrawal": 1.0,
+        "transfer fee charged": 0.0,
+        "virtual card not working": 0.0,
+        "direct debit payment not recognised": 0.0
+       }
+      },
+      {
+       "order": [
+        "card arrival",
+        "virtual card not working",
+        "passcode forgotten",
+        "transfer fee charged",
+        "apple pay or google pay",
+        "direct debit payment not recognised",
+        "pending cash withdrawal",
+        "top up by bank transfer charge",
+        "wrong amount of cash received",
+        "top up limits"
+       ],
+       "pred": "pending cash withdrawal",
+       "conf": 1.0,
+       "probs": {
+        "card arrival": 0.0,
+        "virtual card not working": 0.0,
+        "passcode forgotten": 0.0,
+        "transfer fee charged": 0.0,
+        "apple pay or google pay": 0.0,
+        "direct debit payment not recognised": 0.0,
+        "pending cash withdrawal": 1.0,
+        "top up by bank transfer charge": 0.0,
+        "wrong amount of cash received": 0.0,
+        "top up limits": 0.0
+       }
+      }
+     ]
+    },
+    {
+     "row": 3,
+     "qid": "intent",
+     "gold": "fiat currency support",
+     "options": [
+      "direct debit payment not recognised",
+      "pending transfer",
+      "transfer fee charged",
+      "disposable card limits",
+      "country support",
+      "cash withdrawal not recognised",
+      "order physical card",
+      "card payment not recognised",
+      "fiat currency support",
+      "beneficiary not allowed"
+     ],
+     "tags": [
+      "banking77",
+      "id:972",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "fiat currency support",
+      "conf": 0.9412,
+      "probs": {
+       "direct debit payment not recognised": 0.0009,
+       "pending transfer": 0.0128,
+       "transfer fee charged": 0.001,
+       "disposable card limits": 0.0014,
+       "country support": 0.0325,
+       "cash withdrawal not recognised": 0.0023,
+       "order physical card": 0.0012,
+       "card payment not recognised": 0.0034,
+       "fiat currency support": 0.9412,
+       "beneficiary not allowed": 0.0033
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "fiat currency support",
+        "transfer fee charged",
+        "disposable card limits",
+        "card payment not recognised",
+        "pending transfer",
+        "cash withdrawal not recognised",
+        "beneficiary not allowed",
+        "order physical card",
+        "direct debit payment not recognised",
+        "country support"
+       ],
+       "pred": "fiat currency support",
+       "conf": 0.938,
+       "probs": {
+        "fiat currency support": 0.938,
+        "transfer fee charged": 0.0009,
+        "disposable card limits": 0.0014,
+        "card payment not recognised": 0.0041,
+        "pending transfer": 0.013,
+        "cash withdrawal not recognised": 0.0036,
+        "beneficiary not allowed": 0.0028,
+        "order physical card": 0.0015,
+        "direct debit payment not recognised": 0.0039,
+        "country support": 0.0307
+       }
+      },
+      {
+       "order": [
+        "direct debit payment not recognised",
+        "beneficiary not allowed",
+        "card payment not recognised",
+        "cash withdrawal not recognised",
+        "transfer fee charged",
+        "pending transfer",
+        "fiat currency support",
+        "order physical card",
+        "country support",
+        "disposable card limits"
+       ],
+       "pred": "fiat currency support",
+       "conf": 0.9441,
+       "probs": {
+        "direct debit payment not recognised": 0.0005,
+        "beneficiary not allowed": 0.0015,
+        "card payment not recognised": 0.001,
+        "cash withdrawal not recognised": 0.0017,
+        "transfer fee charged": 0.0006,
+        "pending transfer": 0.025,
+        "fiat currency support": 0.9441,
+        "order physical card": 0.0006,
+        "country support": 0.0244,
+        "disposable card limits": 0.0007
+       }
+      },
+      {
+       "order": [
+        "country support",
+        "card payment not recognised",
+        "pending transfer",
+        "beneficiary not allowed",
+        "transfer fee charged",
+        "direct debit payment not recognised",
+        "fiat currency support",
+        "cash withdrawal not recognised",
+        "disposable card limits",
+        "order physical card"
+       ],
+       "pred": "fiat currency support",
+       "conf": 0.9739,
+       "probs": {
+        "country support": 0.0183,
+        "card payment not recognised": 0.0005,
+        "pending transfer": 0.0036,
+        "beneficiary not allowed": 0.0006,
+        "transfer fee charged": 0.0005,
+        "direct debit payment not recognised": 0.0006,
+        "fiat currency support": 0.9739,
+        "cash withdrawal not recognised": 0.0011,
+        "disposable card limits": 0.0005,
+        "order physical card": 0.0005
+       }
+      },
+      {
+       "order": [
+        "card payment not recognised",
+        "order physical card",
+        "country support",
+        "disposable card limits",
+        "beneficiary not allowed",
+        "transfer fee charged",
+        "cash withdrawal not recognised",
+        "fiat currency support",
+        "direct debit payment not recognised",
+        "pending transfer"
+       ],
+       "pred": "fiat currency support",
+       "conf": 0.9734,
+       "probs": {
+        "card payment not recognised": 0.0004,
+        "order physical card": 0.0003,
+        "country support": 0.0141,
+        "disposable card limits": 0.0003,
+        "beneficiary not allowed": 0.0007,
+        "transfer fee charged": 0.0004,
+        "cash withdrawal not recognised": 0.001,
+        "fiat currency support": 0.9734,
+        "direct debit payment not recognised": 0.0006,
+        "pending transfer": 0.0086
+       }
+      },
+      {
+       "order": [
+        "beneficiary not allowed",
+        "transfer fee charged",
+        "fiat currency support",
+        "order physical card",
+        "pending transfer",
+        "disposable card limits",
+        "card payment not recognised",
+        "country support",
+        "direct debit payment not recognised",
+        "cash withdrawal not recognised"
+       ],
+       "pred": "fiat currency support",
+       "conf": 0.9235,
+       "probs": {
+        "beneficiary not allowed": 0.0032,
+        "transfer fee charged": 0.0009,
+        "fiat currency support": 0.9235,
+        "order physical card": 0.0013,
+        "pending transfer": 0.0212,
+        "disposable card limits": 0.0012,
+        "card payment not recognised": 0.0031,
+        "country support": 0.0369,
+        "direct debit payment not recognised": 0.0021,
+        "cash withdrawal not recognised": 0.0065
+       }
+      }
+     ]
+    },
+    {
+     "row": 4,
+     "qid": "intent",
+     "gold": "exchange via app",
+     "options": [
+      "beneficiary not allowed",
+      "top up failed",
+      "apple pay or google pay",
+      "card delivery estimate",
+      "atm support",
+      "contactless not working",
+      "direct debit payment not recognised",
+      "card payment wrong exchange rate",
+      "why verify identity",
+      "exchange via app"
+     ],
+     "tags": [
+      "banking77",
+      "id:1356",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "exchange via app",
+      "conf": 0.9982,
+      "probs": {
+       "beneficiary not allowed": 0.0001,
+       "top up failed": 0.0001,
+       "apple pay or google pay": 0.0,
+       "card delivery estimate": 0.0,
+       "atm support": 0.0007,
+       "contactless not working": 0.0001,
+       "direct debit payment not recognised": 0.0001,
+       "card payment wrong exchange rate": 0.0006,
+       "why verify identity": 0.0001,
+       "exchange via app": 0.9982
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "exchange via app",
+        "beneficiary not allowed",
+        "top up failed",
+        "card payment wrong exchange rate",
+        "atm support",
+        "direct debit payment not recognised",
+        "why verify identity",
+        "card delivery estimate",
+        "apple pay or google pay",
+        "contactless not working"
+       ],
+       "pred": "exchange via app",
+       "conf": 0.8351,
+       "probs": {
+        "exchange via app": 0.8351,
+        "beneficiary not allowed": 0.0065,
+        "top up failed": 0.0048,
+        "card payment wrong exchange rate": 0.0208,
+        "atm support": 0.1164,
+        "direct debit payment not recognised": 0.0041,
+        "why verify identity": 0.0031,
+        "card delivery estimate": 0.0017,
+        "apple pay or google pay": 0.0035,
+        "contactless not working": 0.0042
+       }
+      },
+      {
+       "order": [
+        "direct debit payment not recognised",
+        "card payment wrong exchange rate",
+        "beneficiary not allowed",
+        "atm support",
+        "exchange via app",
+        "card delivery estimate",
+        "why verify identity",
+        "top up failed",
+        "apple pay or google pay",
+        "contactless not working"
+       ],
+       "pred": "exchange via app",
+       "conf": 0.7953,
+       "probs": {
+        "direct debit payment not recognised": 0.0065,
+        "card payment wrong exchange rate": 0.0365,
+        "beneficiary not allowed": 0.0101,
+        "atm support": 0.1312,
+        "exchange via app": 0.7953,
+        "card delivery estimate": 0.0019,
+        "why verify identity": 0.0024,
+        "top up failed": 0.0067,
+        "apple pay or google pay": 0.0036,
+        "contactless not working": 0.0059
+       }
+      },
+      {
+       "order": [
+        "card delivery estimate",
+        "contactless not working",
+        "exchange via app",
+        "top up failed",
+        "card payment wrong exchange rate",
+        "beneficiary not allowed",
+        "direct debit payment not recognised",
+        "apple pay or google pay",
+        "atm support",
+        "why verify identity"
+       ],
+       "pred": "exchange via app",
+       "conf": 0.9043,
+       "probs": {
+        "card delivery estimate": 0.0009,
+        "contactless not working": 0.0014,
+        "exchange via app": 0.9043,
+        "top up failed": 0.002,
+        "card payment wrong exchange rate": 0.0201,
+        "beneficiary not allowed": 0.0047,
+        "direct debit payment not recognised": 0.0033,
+        "apple pay or google pay": 0.0029,
+        "atm support": 0.056,
+        "why verify identity": 0.0045
+       }
+      },
+      {
+       "order": [
+        "contactless not working",
+        "atm support",
+        "top up failed",
+        "direct debit payment not recognised",
+        "card payment wrong exchange rate",
+        "why verify identity",
+        "exchange via app",
+        "apple pay or google pay",
+        "card delivery estimate",
+        "beneficiary not allowed"
+       ],
+       "pred": "exchange via app",
+       "conf": 0.8701,
+       "probs": {
+        "contactless not working": 0.0023,
+        "atm support": 0.0547,
+        "top up failed": 0.0067,
+        "direct debit payment not recognised": 0.0033,
+        "card payment wrong exchange rate": 0.0404,
+        "why verify identity": 0.0054,
+        "exchange via app": 0.8701,
+        "apple pay or google pay": 0.0042,
+        "card delivery estimate": 0.0032,
+        "beneficiary not allowed": 0.0097
+       }
+      },
+      {
+       "order": [
+        "apple pay or google pay",
+        "direct debit payment not recognised",
+        "why verify identity",
+        "card payment wrong exchange rate",
+        "atm support",
+        "top up failed",
+        "contactless not working",
+        "exchange via app",
+        "beneficiary not allowed",
+        "card delivery estimate"
+       ],
+       "pred": "exchange via app",
+       "conf": 0.9654,
+       "probs": {
+        "apple pay or google pay": 0.0004,
+        "direct debit payment not recognised": 0.0007,
+        "why verify identity": 0.0006,
+        "card payment wrong exchange rate": 0.011,
+        "atm support": 0.0148,
+        "top up failed": 0.0013,
+        "contactless not working": 0.0008,
+        "exchange via app": 0.9654,
+        "beneficiary not allowed": 0.0032,
+        "card delivery estimate": 0.0018
+       }
+      }
+     ]
+    },
+    {
+     "row": 5,
+     "qid": "intent",
+     "gold": "exchange via app",
+     "options": [
+      "pending top up",
+      "top up failed",
+      "declined card payment",
+      "virtual card not working",
+      "exchange via app",
+      "failed transfer",
+      "balance not updated after cheque or cash deposit",
+      "transfer not received by recipient",
+      "declined cash withdrawal",
+      "card acceptance"
+     ],
+     "tags": [
+      "banking77",
+      "id:1390",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "exchange via app",
+      "conf": 0.99,
+      "probs": {
+       "pending top up": 0.0002,
+       "top up failed": 0.0008,
+       "declined card payment": 0.0005,
+       "virtual card not working": 0.0005,
+       "exchange via app": 0.99,
+       "failed transfer": 0.0025,
+       "balance not updated after cheque or cash deposit": 0.0009,
+       "transfer not received by recipient": 0.0029,
+       "declined cash withdrawal": 0.0008,
+       "card acceptance": 0.0008
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "balance not updated after cheque or cash deposit",
+        "failed transfer",
+        "virtual card not working",
+        "declined card payment",
+        "top up failed",
+        "exchange via app",
+        "transfer not received by recipient",
+        "declined cash withdrawal",
+        "pending top up",
+        "card acceptance"
+       ],
+       "pred": "exchange via app",
+       "conf": 0.8886,
+       "probs": {
+        "balance not updated after cheque or cash deposit": 0.007,
+        "failed transfer": 0.036,
+        "virtual card not working": 0.0109,
+        "declined card payment": 0.0033,
+        "top up failed": 0.0045,
+        "exchange via app": 0.8886,
+        "transfer not received by recipient": 0.0231,
+        "declined cash withdrawal": 0.0081,
+        "pending top up": 0.0067,
+        "card acceptance": 0.0119
+       }
+      },
+      {
+       "order": [
+        "top up failed",
+        "transfer not received by recipient",
+        "virtual card not working",
+        "failed transfer",
+        "balance not updated after cheque or cash deposit",
+        "pending top up",
+        "declined cash withdrawal",
+        "card acceptance",
+        "declined card payment",
+        "exchange via app"
+       ],
+       "pred": "exchange via app",
+       "conf": 0.9972,
+       "probs": {
+        "top up failed": 0.0001,
+        "transfer not received by recipient": 0.0004,
+        "virtual card not working": 0.0002,
+        "failed transfer": 0.0009,
+        "balance not updated after cheque or cash deposit": 0.0002,
+        "pending top up": 0.0001,
+        "declined cash withdrawal": 0.0002,
+        "card acceptance": 0.0004,
+        "declined card payment": 0.0001,
+        "exchange via app": 0.9972
+       }
+      },
+      {
+       "order": [
+        "transfer not received by recipient",
+        "declined cash withdrawal",
+        "failed transfer",
+        "virtual card not working",
+        "declined card payment",
+        "card acceptance",
+        "balance not updated after cheque or cash deposit",
+        "exchange via app",
+        "top up failed",
+        "pending top up"
+       ],
+       "pred": "exchange via app",
+       "conf": 0.9794,
+       "probs": {
+        "transfer not received by recipient": 0.0014,
+        "declined cash withdrawal": 0.0006,
+        "failed transfer": 0.0122,
+        "virtual card not working": 0.0011,
+        "declined card payment": 0.0007,
+        "card acceptance": 0.0015,
+        "balance not updated after cheque or cash deposit": 0.001,
+        "exchange via app": 0.9794,
+        "top up failed": 0.0006,
+        "pending top up": 0.0014
+       }
+      },
+      {
+       "order": [
+        "card acceptance",
+        "balance not updated after cheque or cash deposit",
+        "transfer not received by recipient",
+        "exchange via app",
+        "failed transfer",
+        "virtual card not working",
+        "declined card payment",
+        "declined cash withdrawal",
+        "top up failed",
+        "pending top up"
+       ],
+       "pred": "exchange via app",
+       "conf": 0.9827,
+       "probs": {
+        "card acceptance": 0.0014,
+        "balance not updated after cheque or cash deposit": 0.0009,
+        "transfer not received by recipient": 0.0022,
+        "exchange via app": 0.9827,
+        "failed transfer": 0.0067,
+        "virtual card not working": 0.0016,
+        "declined card payment": 0.0006,
+        "declined cash withdrawal": 0.0017,
+        "top up failed": 0.0009,
+        "pending top up": 0.0013
+       }
+      },
+      {
+       "order": [
+        "virtual card not working",
+        "top up failed",
+        "balance not updated after cheque or cash deposit",
+        "failed transfer",
+        "exchange via app",
+        "pending top up",
+        "declined cash withdrawal",
+        "transfer not received by recipient",
+        "card acceptance",
+        "declined card payment"
+       ],
+       "pred": "exchange via app",
+       "conf": 0.9832,
+       "probs": {
+        "virtual card not working": 0.0008,
+        "top up failed": 0.0006,
+        "balance not updated after cheque or cash deposit": 0.0014,
+        "failed transfer": 0.0047,
+        "exchange via app": 0.9832,
+        "pending top up": 0.0004,
+        "declined cash withdrawal": 0.0011,
+        "transfer not received by recipient": 0.0051,
+        "card acceptance": 0.0019,
+        "declined card payment": 0.0008
+       }
+      }
+     ]
+    },
+    {
+     "row": 6,
+     "qid": "intent",
+     "gold": "lost or stolen card",
+     "options": [
+      "pin blocked",
+      "top up by cash or cheque",
+      "getting virtual card",
+      "why verify identity",
+      "pending card payment",
+      "disposable card limits",
+      "card arrival",
+      "transfer fee charged",
+      "unable to verify identity",
+      "lost or stolen card"
+     ],
+     "tags": [
+      "banking77",
+      "id:1522",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "lost or stolen card",
+      "conf": 1.0,
+      "probs": {
+       "pin blocked": 0.0,
+       "top up by cash or cheque": 0.0,
+       "getting virtual card": 0.0,
+       "why verify identity": 0.0,
+       "pending card payment": 0.0,
+       "disposable card limits": 0.0,
+       "card arrival": 0.0,
+       "transfer fee charged": 0.0,
+       "unable to verify identity": 0.0,
+       "lost or stolen card": 1.0
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "pin blocked",
+        "unable to verify identity",
+        "lost or stolen card",
+        "card arrival",
+        "transfer fee charged",
+        "getting virtual card",
+        "top up by cash or cheque",
+        "why verify identity",
+        "disposable card limits",
+        "pending card payment"
+       ],
+       "pred": "lost or stolen card",
+       "conf": 1.0,
+       "probs": {
+        "pin blocked": 0.0,
+        "unable to verify identity": 0.0,
+        "lost or stolen card": 1.0,
+        "card arrival": 0.0,
+        "transfer fee charged": 0.0,
+        "getting virtual card": 0.0,
+        "top up by cash or cheque": 0.0,
+        "why verify identity": 0.0,
+        "disposable card limits": 0.0,
+        "pending card payment": 0.0
+       }
+      },
+      {
+       "order": [
+        "pin blocked",
+        "unable to verify identity",
+        "disposable card limits",
+        "top up by cash or cheque",
+        "why verify identity",
+        "card arrival",
+        "lost or stolen card",
+        "transfer fee charged",
+        "getting virtual card",
+        "pending card payment"
+       ],
+       "pred": "lost or stolen card",
+       "conf": 1.0,
+       "probs": {
+        "pin blocked": 0.0,
+        "unable to verify identity": 0.0,
+        "disposable card limits": 0.0,
+        "top up by cash or cheque": 0.0,
+        "why verify identity": 0.0,
+        "card arrival": 0.0,
+        "lost or stolen card": 1.0,
+        "transfer fee charged": 0.0,
+        "getting virtual card": 0.0,
+        "pending card payment": 0.0
+       }
+      },
+      {
+       "order": [
+        "card arrival",
+        "getting virtual card",
+        "transfer fee charged",
+        "disposable card limits",
+        "top up by cash or cheque",
+        "pending card payment",
+        "lost or stolen card",
+        "unable to verify identity",
+        "pin blocked",
+        "why verify identity"
+       ],
+       "pred": "lost or stolen card",
+       "conf": 1.0,
+       "probs": {
+        "card arrival": 0.0,
+        "getting virtual card": 0.0,
+        "transfer fee charged": 0.0,
+        "disposable card limits": 0.0,
+        "top up by cash or cheque": 0.0,
+        "pending card payment": 0.0,
+        "lost or stolen card": 1.0,
+        "unable to verify identity": 0.0,
+        "pin blocked": 0.0,
+        "why verify identity": 0.0
+       }
+      },
+      {
+       "order": [
+        "unable to verify identity",
+        "top up by cash or cheque",
+        "disposable card limits",
+        "card arrival",
+        "transfer fee charged",
+        "why verify identity",
+        "pin blocked",
+        "pending card payment",
+        "getting virtual card",
+        "lost or stolen card"
+       ],
+       "pred": "lost or stolen card",
+       "conf": 1.0,
+       "probs": {
+        "unable to verify identity": 0.0,
+        "top up by cash or cheque": 0.0,
+        "disposable card limits": 0.0,
+        "card arrival": 0.0,
+        "transfer fee charged": 0.0,
+        "why verify identity": 0.0,
+        "pin blocked": 0.0,
+        "pending card payment": 0.0,
+        "getting virtual card": 0.0,
+        "lost or stolen card": 1.0
+       }
+      },
+      {
+       "order": [
+        "pending card payment",
+        "transfer fee charged",
+        "why verify identity",
+        "getting virtual card",
+        "top up by cash or cheque",
+        "disposable card limits",
+        "card arrival",
+        "lost or stolen card",
+        "unable to verify identity",
+        "pin blocked"
+       ],
+       "pred": "lost or stolen card",
+       "conf": 1.0,
+       "probs": {
+        "pending card payment": 0.0,
+        "transfer fee charged": 0.0,
+        "why verify identity": 0.0,
+        "getting virtual card": 0.0,
+        "top up by cash or cheque": 0.0,
+        "disposable card limits": 0.0,
+        "card arrival": 0.0,
+        "lost or stolen card": 1.0,
+        "unable to verify identity": 0.0,
+        "pin blocked": 0.0
+       }
+      }
+     ]
+    },
+    {
+     "row": 7,
+     "qid": "intent",
+     "gold": "contactless not working",
+     "options": [
+      "exchange rate",
+      "balance not updated after bank transfer",
+      "pending transfer",
+      "declined transfer",
+      "card payment not recognised",
+      "transfer timing",
+      "receiving money",
+      "contactless not working",
+      "card payment fee charged",
+      "request refund"
+     ],
+     "tags": [
+      "banking77",
+      "id:1806",
+      "t3arm:dev"
+     ],
+     "orig": {
+      "pred": "contactless not working",
+      "conf": 1.0,
+      "probs": {
+       "exchange rate": 0.0,
+       "balance not updated after bank transfer": 0.0,
+       "pending transfer": 0.0,
+       "declined transfer": 0.0,
+       "card payment not recognised": 0.0,
+       "transfer timing": 0.0,
+       "receiving money": 0.0,
+       "contactless not working": 1.0,
+       "card payment fee charged": 0.0,
+       "request refund": 0.0
+      }
+     },
+     "perms": [
+      {
+       "order": [
+        "card payment not recognised",
+        "transfer timing",
+        "request refund",
+        "declined transfer",
+        "balance not updated after bank transfer",
+        "pending transfer",
+        "contactless not working",
+        "receiving money",
+        "card payment fee charged",
+        "exchange rate"
+       ],
+       "pred": "contactless not working",
+       "conf": 1.0,
+       "probs": {
+        "card payment not recognised": 0.0,
+        "transfer timing": 0.0,
+        "request refund": 0.0,
+        "declined transfer": 0.0,
+        "balance not updated after bank transfer": 0.0,
+        "pending transfer": 0.0,
+        "contactless not working": 1.0,
+        "receiving money": 0.0,
+        "card payment fee charged": 0.0,
+        "exchange rate": 0.0
+       }
+      },
+      {
+       "order": [
+        "card payment fee charged",
+        "contactless not working",
+        "receiving money",
+        "balance not updated after bank transfer",
+        "pending transfer",
+        "request refund",
+        "card payment not recognised",
+        "exchange rate",
+        "transfer timing",
+        "declined transfer"
+       ],
+       "pred": "contactless not working",
+       "conf": 1.0,
+       "probs": {
+        "card payment fee charged": 0.0,
+        "contactless not working": 1.0,
+        "receiving money": 0.0,
+        "balance not updated after bank transfer": 0.0,
+        "pending transfer": 0.0,
+        "request refund": 0.0,
+        "card payment not recognised": 0.0,
+        "exchange rate": 0.0,
+        "transfer timing": 0.0,
+        "declined transfer": 0.0
+       }
+      },
+      {
+       "order": [
+        "pending transfer",
+        "contactless not working",
+        "balance not updated after bank transfer",
+        "request refund",
+        "exchange rate",
+        "transfer timing",
+        "card payment not recognised",
+        "declined transfer",
+        "receiving money",
+        "card payment fee charged"
+       ],
+       "pred": "contactless not working",
+       "conf": 1.0,
+       "probs": {
+        "pending transfer": 0.0,
+        "contactless not working": 1.0,
+        "balance not updated after bank transfer": 0.0,
+        "request refund": 0.0,
+        "exchange rate": 0.0,
+        "transfer timing": 0.0,
+        "card payment not recognised": 0.0,
+        "declined transfer": 0.0,
+        "receiving money": 0.0,
+        "card payment fee charged": 0.0
+       }
+      },
+      {
+       "order": [
+        "card payment not recognised",
+        "exchange rate",
+        "declined transfer",
+        "receiving money",
+        "balance not updated after bank transfer",
+        "request refund",
+        "card payment fee charged",
+        "pending transfer",
+        "transfer timing",
+        "contactless not working"
+       ],
+       "pred": "contactless not working",
+       "conf": 1.0,
+       "probs": {
+        "card payment not recognised": 0.0,
+        "exchange rate": 0.0,
+        "declined transfer": 0.0,
+        "receiving money": 0.0,
+        "balance not updated after bank transfer": 0.0,
+        "request refund": 0.0,
+        "card payment fee charged": 0.0,
+        "pending transfer": 0.0,
+        "transfer timing": 0.0,
+        "contactless not working": 1.0
+       }
+      },
+      {
+       "order": [
+        "receiving money",
+        "contactless not working",
+        "declined transfer",
+        "exchange rate",
+        "request refund",
+        "balance not updated after bank transfer",
+        "transfer timing",
+        "card payment fee charged",
+        "pending transfer",
+        "card payment not recognised"
+       ],
+       "pred": "contactless not working",
+       "conf": 1.0,
+       "probs": {
+        "receiving money": 0.0,
+        "contactless not working": 1.0,
+        "declined transfer": 0.0,
+        "exchange rate": 0.0,
+        "request refund": 0.0,
+        "balance not updated after bank transfer": 0.0,
+        "transfer timing": 0.0,
+        "card payment fee charged": 0.0,
+        "pending transfer": 0.0,
+        "card payment not recognised": 0.0
+       }
+      }
+     ]
+    }
+   ],
+   "questions_sha256": "c2b4e5cd0076fd0ae1f29ab34e44f1386df4ca7f13a4a56ac1025250f3f54f02",
+   "metrics": {
+    "n_items": 8,
+    "n_options": 10,
+    "permutations": 5,
+    "identity_permutations": 0,
+    "orig_accuracy": 1.0,
+    "flip_rate_per_perm": 0.0,
+    "flip_rate_per_perm_ci": [
+     0.0,
+     0.0
+    ],
+    "flip_rate_by_perm": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "any_flip_rate": 0.0,
+    "any_flip_rate_ci": [
+     0.0,
+     0.0
+    ],
+    "accuracy_by_perm": [
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0
+    ],
+    "perm_accuracy_mean": 1.0,
+    "perm_accuracy_min": 1.0,
+    "perm_accuracy_max": 1.0,
+    "mean_abs_delta_answer_confidence": 0.02136,
+    "slots": {
+     "chosen_slot_share": [
+      0.075,
+      0.1,
+      0.1,
+      0.125,
+      0.05,
+      0.075,
+      0.2,
+      0.15,
+      0.025,
+      0.1
+     ],
+     "uniform": 0.1,
+     "chi2": 9.0,
+     "df": 9,
+     "p": 0.43727418891386727,
+     "accuracy_by_gold_slot": [
+      [
+       1.0,
+       3
+      ],
+      [
+       1.0,
+       4
+      ],
+      [
+       1.0,
+       4
+      ],
+      [
+       1.0,
+       5
+      ],
+      [
+       1.0,
+       2
+      ],
+      [
+       1.0,
+       3
+      ],
+      [
+       1.0,
+       8
+      ],
+      [
+       1.0,
+       6
+      ],
+      [
+       1.0,
+       1
+      ],
+      [
+       1.0,
+       4
+      ]
+     ]
+    },
+    "pred_counts_orig": {
+     "exchange via app": 2,
+     "card linking": 1,
+     "exchange rate": 1,
+     "pending cash withdrawal": 1,
+     "fiat currency support": 1,
+     "lost or stolen card": 1,
+     "contactless not working": 1
+    },
+    "pred_counts_perm_mean": {
+     "exchange via app": 2.0,
+     "card linking": 1.0,
+     "exchange rate": 1.0,
+     "pending cash withdrawal": 1.0,
+     "fiat currency support": 1.0,
+     "lost or stolen card": 1.0,
+     "contactless not working": 1.0
+    },
+    "gold_counts": {
+     "exchange via app": 2,
+     "card linking": 1,
+     "exchange rate": 1,
+     "pending cash withdrawal": 1,
+     "fiat currency support": 1,
+     "lost or stolen card": 1,
+     "contactless not working": 1
+    },
+    "by_gold": {
+     "card linking": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "contactless not working": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "exchange rate": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "exchange via app": {
+      "n": 2,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "fiat currency support": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "lost or stolen card": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "pending cash withdrawal": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     }
+    },
+    "by_orig_pred": {
+     "card linking": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "contactless not working": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "exchange rate": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "exchange via app": {
+      "n": 2,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "fiat currency support": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "lost or stolen card": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     },
+     "pending cash withdrawal": {
+      "n": 1,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     }
+    },
+    "by_orig_conf": {
+     "[0.9, 1.0]": {
+      "n": 8,
+      "flip_rate_per_perm": 0.0,
+      "any_flip_rate": 0.0,
+      "orig_accuracy": 1.0,
+      "perm_accuracy": 1.0
+     }
+    }
+   }
+  }
+ ]
+}

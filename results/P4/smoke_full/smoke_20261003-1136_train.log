@@ -1,0 +1,58 @@
+load before: {"gpu_util_pct": 2, "mps_fp32_matmul_tflops": 6.84, "cotenant": [], "sys_mem_used_gb": 18.8}
+[     2.6s] Using legacy cached training items without metadata: results/P4/smoke_full/smoke_20261003-1136_items.pt
+[     4.0s] Device: mps
+[     4.0s] Training items: 64; calibration items: 7
+[     4.0s] micro_batch=8; grad_accum=4; epochs=1
+[    11.6s] Epoch 1/1 complete; avg_loss=1.0674
+[    12.9s] Running temperature calibration ...
+[    14.0s] Model saved to results/P4/smoke_full/ckpt_20261003-1136
+[    14.0s] Temperatures: [1.0, 1.2, 1.2]
+{
+ "phases_s": {
+  "prepare_model": 0.0,
+  "prepare_items (script; items prebuilt by make_domain8_items.py)": 0.0,
+  "setup (config, tokenizer, build+load model, load items, optimizer)": 1.44,
+  "train_loop": 7.58,
+  "epoch_checkpoint_saves": 0.92,
+  "epoch_copies (runner --keep-epoch-checkpoints)": 0.42,
+  "calibration (forward + fit_temperature)": 0.17,
+  "export (final save + configs)": 0.87,
+  "train() total": 11.4
+ },
+ "throughput": {
+  "train_items_per_s": 8.447,
+  "s_per_optimizer_step": 3.788,
+  "s_per_micro_batch_mean": 0.9471
+ },
+ "micro_batch_s": {
+  "median_all": 0.7271,
+  "median_repeat_shape_no_step": 0.3758,
+  "median_repeat_shape_with_step": null,
+  "optimizer_step_overhead": null,
+  "median_first_shape": 0.9516,
+  "first_shape_count": 7,
+  "repeat_shape_count": 1,
+  "first_shape_extra_total_s": 4.6
+ },
+ "memory_gb": {
+  "ru_maxrss": 2.97,
+  "rss_peak_sampled": 1.97,
+  "mps_current_allocated_peak": 7.77,
+  "mps_driver_allocated_peak": 10.45,
+  "mps_recommended_max": 40.2
+ },
+ "calibration_rows": {
+  "n": 7,
+  "ce_before_T": 1.0492,
+  "accuracy": 0.5714
+ },
+ "item_sources": {
+  "train": {
+   "train": 64
+  },
+  "calibration": {
+   "validation": 7
+  }
+ }
+}
+report: results/P4/smoke_full/smoke_20261003-1136_timing.json (wall 14.0s, status ok)

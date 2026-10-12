@@ -1,0 +1,916 @@
+{
+ "set": "T4_banking77_10opt_40.jsonl",
+ "dataset_sha256": "df700caa098332eaaf6bd6fc4c0609413db85656fc96dd13bb5f43fda804786c",
+ "questions_sha256": "a3ef71c9cbdb5ac7a79571d1efa5c7bfe22ab4863204d7d674ffda409366a34a",
+ "limits": {
+  "options": 10,
+  "state_chars": 8000,
+  "choice_input_chars": 80
+ },
+ "items": [
+  {
+   "id": "T4_banking77_10opt_40/38/intent",
+   "row": 0,
+   "qid": "intent",
+   "state_text": "{\"message\": \"What is the tracking number for the card you sent?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "get_disposable_virtual_card: get disposable virtual card",
+    "card_swallowed: card swallowed",
+    "why_verify_identity: why verify identity",
+    "direct_debit_payment_not_recognised: direct debit payment not recognised",
+    "exchange_via_app: exchange via app",
+    "cancel_transfer: cancel transfer",
+    "card_arrival: card arrival",
+    "disposable_card_limits: disposable card limits",
+    "contactless_not_working: contactless not working",
+    "card_payment_not_recognised: card payment not recognised"
+   ],
+   "gold": "card_arrival",
+   "gold_option": "card_arrival: card arrival"
+  },
+  {
+   "id": "T4_banking77_10opt_40/294/intent",
+   "row": 1,
+   "qid": "intent",
+   "state_text": "{\"message\": \"Can it be delivered by a specific date?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "transaction_charged_twice: transaction charged twice",
+    "top_up_by_bank_transfer_charge: top up by bank transfer charge",
+    "card_about_to_expire: card about to expire",
+    "card_delivery_estimate: card delivery estimate",
+    "exchange_via_app: exchange via app",
+    "pending_card_payment: pending card payment",
+    "top_up_by_cash_or_cheque: top up by cash or cheque",
+    "card_payment_wrong_exchange_rate: card payment wrong exchange rate",
+    "exchange_rate: exchange rate",
+    "disposable_card_limits: disposable card limits"
+   ],
+   "gold": "card_delivery_estimate",
+   "gold_option": "card_delivery_estimate: card delivery estimate"
+  },
+  {
+   "id": "T4_banking77_10opt_40/364/intent",
+   "row": 2,
+   "qid": "intent",
+   "state_text": "{\"message\": \"My card broke.\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "card_not_working: card not working",
+    "top_up_by_cash_or_cheque: top up by cash or cheque",
+    "top_up_by_card_charge: top up by card charge",
+    "compromised_card: compromised card",
+    "card_payment_wrong_exchange_rate: card payment wrong exchange rate",
+    "verify_my_identity: verify my identity",
+    "declined_card_payment: declined card payment",
+    "visa_or_mastercard: visa or mastercard",
+    "get_disposable_virtual_card: get disposable virtual card",
+    "verify_top_up: verify top up"
+   ],
+   "gold": "card_not_working",
+   "gold_option": "card_not_working: card not working"
+  },
+  {
+   "id": "T4_banking77_10opt_40/427/intent",
+   "row": 3,
+   "qid": "intent",
+   "state_text": "{\"message\": \"What currency's can i exchange for?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "pending_cash_withdrawal: pending cash withdrawal",
+    "contactless_not_working: contactless not working",
+    "exchange_via_app: exchange via app",
+    "transaction_charged_twice: transaction charged twice",
+    "why_verify_identity: why verify identity",
+    "virtual_card_not_working: virtual card not working",
+    "verify_top_up: verify top up",
+    "disposable_card_limits: disposable card limits",
+    "receiving_money: receiving money",
+    "card_payment_fee_charged: card payment fee charged"
+   ],
+   "gold": "exchange_via_app",
+   "gold_option": "exchange_via_app: exchange via app"
+  },
+  {
+   "id": "T4_banking77_10opt_40/452/intent",
+   "row": 4,
+   "qid": "intent",
+   "state_text": "{\"message\": \"Is a copy of the police report necessary for completing the report process?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "lost_or_stolen_card: lost or stolen card",
+    "reverted_card_payment?: reverted card payment?",
+    "declined_transfer: declined transfer",
+    "exchange_charge: exchange charge",
+    "automatic_top_up: automatic top up",
+    "cash_withdrawal_charge: cash withdrawal charge",
+    "transfer_fee_charged: transfer fee charged",
+    "verify_top_up: verify top up",
+    "card_payment_wrong_exchange_rate: card payment wrong exchange rate",
+    "top_up_by_card_charge: top up by card charge"
+   ],
+   "gold": "lost_or_stolen_card",
+   "gold_option": "lost_or_stolen_card: lost or stolen card"
+  },
+  {
+   "id": "T4_banking77_10opt_40/506/intent",
+   "row": 5,
+   "qid": "intent",
+   "state_text": "{\"message\": \"How old do you have to be to be able to open an account?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "pending_card_payment: pending card payment",
+    "balance_not_updated_after_bank_transfer: balance not updated after bank transfer",
+    "contactless_not_working: contactless not working",
+    "order_physical_card: order physical card",
+    "get_disposable_virtual_card: get disposable virtual card",
+    "age_limit: age limit",
+    "change_pin: change pin",
+    "automatic_top_up: automatic top up",
+    "declined_transfer: declined transfer",
+    "country_support: country support"
+   ],
+   "gold": "age_limit",
+   "gold_option": "age_limit: age limit"
+  },
+  {
+   "id": "T4_banking77_10opt_40/577/intent",
+   "row": 6,
+   "qid": "intent",
+   "state_text": "{\"message\": \"My contactless is not working\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "Refund_not_showing_up: Refund not showing up",
+    "getting_spare_card: getting spare card",
+    "get_physical_card: get physical card",
+    "card_not_working: card not working",
+    "contactless_not_working: contactless not working",
+    "unable_to_verify_identity: unable to verify identity",
+    "card_payment_fee_charged: card payment fee charged",
+    "reverted_card_payment?: reverted card payment?",
+    "card_acceptance: card acceptance",
+    "extra_charge_on_statement: extra charge on statement"
+   ],
+   "gold": "contactless_not_working",
+   "gold_option": "contactless_not_working: contactless not working"
+  },
+  {
+   "id": "T4_banking77_10opt_40/621/intent",
+   "row": 7,
+   "qid": "intent",
+   "state_text": "{\"message\": \"How much am I charged for a SEPA transfer?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "declined_card_payment: declined card payment",
+    "fiat_currency_support: fiat currency support",
+    "verify_my_identity: verify my identity",
+    "virtual_card_not_working: virtual card not working",
+    "declined_transfer: declined transfer",
+    "card_swallowed: card swallowed",
+    "transfer_timing: transfer timing",
+    "transfer_fee_charged: transfer fee charged",
+    "top_up_reverted: top up reverted",
+    "top_up_by_bank_transfer_charge: top up by bank transfer charge"
+   ],
+   "gold": "top_up_by_bank_transfer_charge",
+   "gold_option": "top_up_by_bank_transfer_charge: top up by bank transfer charge"
+  },
+  {
+   "id": "T4_banking77_10opt_40/719/intent",
+   "row": 8,
+   "qid": "intent",
+   "state_text": "{\"message\": \"can you limit my top up?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "exchange_rate: exchange rate",
+    "supported_cards_and_currencies: supported cards and currencies",
+    "wrong_amount_of_cash_received: wrong amount of cash received",
+    "passcode_forgotten: passcode forgotten",
+    "declined_card_payment: declined card payment",
+    "order_physical_card: order physical card",
+    "disposable_card_limits: disposable card limits",
+    "edit_personal_details: edit personal details",
+    "top_up_limits: top up limits",
+    "failed_transfer: failed transfer"
+   ],
+   "gold": "top_up_limits",
+   "gold_option": "top_up_limits: top up limits"
+  },
+  {
+   "id": "T4_banking77_10opt_40/856/intent",
+   "row": 9,
+   "qid": "intent",
+   "state_text": "{\"message\": \"I've just moved address from a place in Durham to a place in Walton-On-The-Naze.  I have a new landlord at my new house and they haven't got my payment but I know I sent it on time, can you check they got it please?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "fiat_currency_support: fiat currency support",
+    "top_up_by_card_charge: top up by card charge",
+    "top_up_reverted: top up reverted",
+    "lost_or_stolen_card: lost or stolen card",
+    "verify_top_up: verify top up",
+    "transfer_not_received_by_recipient: transfer not received by recipient",
+    "get_physical_card: get physical card",
+    "contactless_not_working: contactless not working",
+    "pending_transfer: pending transfer",
+    "balance_not_updated_after_cheque_or_cash_deposit: balance not updated after cheque or cash deposit"
+   ],
+   "gold": "transfer_not_received_by_recipient",
+   "gold_option": "transfer_not_received_by_recipient: transfer not received by recipient",
+   "options_over_choice_input_chars": [
+    "balance_not_updated_after_cheque_or_cash_deposit: balance not updated after cheque or cash deposit"
+   ]
+  },
+  {
+   "id": "T4_banking77_10opt_40/898/intent",
+   "row": 10,
+   "qid": "intent",
+   "state_text": "{\"message\": \"When adding money, what are the currencies you take?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "get_physical_card: get physical card",
+    "pending_transfer: pending transfer",
+    "card_arrival: card arrival",
+    "atm_support: atm support",
+    "fiat_currency_support: fiat currency support",
+    "get_disposable_virtual_card: get disposable virtual card",
+    "supported_cards_and_currencies: supported cards and currencies",
+    "order_physical_card: order physical card",
+    "pending_card_payment: pending card payment",
+    "card_payment_fee_charged: card payment fee charged"
+   ],
+   "gold": "supported_cards_and_currencies",
+   "gold_option": "supported_cards_and_currencies: supported cards and currencies"
+  },
+  {
+   "id": "T4_banking77_10opt_40/936/intent",
+   "row": 11,
+   "qid": "intent",
+   "state_text": "{\"message\": \"Where is the virtual card located?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "verify_source_of_funds: verify source of funds",
+    "card_payment_fee_charged: card payment fee charged",
+    "edit_personal_details: edit personal details",
+    "card_swallowed: card swallowed",
+    "getting_virtual_card: getting virtual card",
+    "card_acceptance: card acceptance",
+    "cash_withdrawal_not_recognised: cash withdrawal not recognised",
+    "topping_up_by_card: topping up by card",
+    "lost_or_stolen_card: lost or stolen card",
+    "Refund_not_showing_up: Refund not showing up"
+   ],
+   "gold": "getting_virtual_card",
+   "gold_option": "getting_virtual_card: getting virtual card"
+  },
+  {
+   "id": "T4_banking77_10opt_40/986/intent",
+   "row": 12,
+   "qid": "intent",
+   "state_text": "{\"message\": \"Where should my card work?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "country_support: country support",
+    "card_acceptance: card acceptance",
+    "card_payment_wrong_exchange_rate: card payment wrong exchange rate",
+    "virtual_card_not_working: virtual card not working",
+    "receiving_money: receiving money",
+    "transfer_timing: transfer timing",
+    "top_up_by_card_charge: top up by card charge",
+    "verify_top_up: verify top up",
+    "balance_not_updated_after_bank_transfer: balance not updated after bank transfer",
+    "card_not_working: card not working"
+   ],
+   "gold": "card_acceptance",
+   "gold_option": "card_acceptance: card acceptance"
+  },
+  {
+   "id": "T4_banking77_10opt_40/1007/intent",
+   "row": 13,
+   "qid": "intent",
+   "state_text": "{\"message\": \"My top-up was reverted, why did this happen?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "pending_cash_withdrawal: pending cash withdrawal",
+    "exchange_via_app: exchange via app",
+    "apple_pay_or_google_pay: apple pay or google pay",
+    "top_up_reverted: top up reverted",
+    "unable_to_verify_identity: unable to verify identity",
+    "card_acceptance: card acceptance",
+    "cash_withdrawal_not_recognised: cash withdrawal not recognised",
+    "balance_not_updated_after_bank_transfer: balance not updated after bank transfer",
+    "card_delivery_estimate: card delivery estimate",
+    "activate_my_card: activate my card"
+   ],
+   "gold": "top_up_reverted",
+   "gold_option": "top_up_reverted: top up reverted"
+  },
+  {
+   "id": "T4_banking77_10opt_40/1076/intent",
+   "row": 14,
+   "qid": "intent",
+   "state_text": "{\"message\": \"I tired to deposit some cash into my account but it's not there\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "getting_spare_card: getting spare card",
+    "pin_blocked: pin blocked",
+    "cash_withdrawal_charge: cash withdrawal charge",
+    "extra_charge_on_statement: extra charge on statement",
+    "why_verify_identity: why verify identity",
+    "request_refund: request refund",
+    "top_up_by_cash_or_cheque: top up by cash or cheque",
+    "verify_source_of_funds: verify source of funds",
+    "balance_not_updated_after_cheque_or_cash_deposit: balance not updated after cheque or cash deposit",
+    "top_up_reverted: top up reverted"
+   ],
+   "gold": "balance_not_updated_after_cheque_or_cash_deposit",
+   "gold_option": "balance_not_updated_after_cheque_or_cash_deposit: balance not updated after cheque or cash deposit",
+   "options_over_choice_input_chars": [
+    "balance_not_updated_after_cheque_or_cash_deposit: balance not updated after cheque or cash deposit"
+   ]
+  },
+  {
+   "id": "T4_banking77_10opt_40/1274/intent",
+   "row": 15,
+   "qid": "intent",
+   "state_text": "{\"message\": \"Why can't I find my PIN?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "supported_cards_and_currencies: supported cards and currencies",
+    "verify_my_identity: verify my identity",
+    "reverted_card_payment?: reverted card payment?",
+    "topping_up_by_card: topping up by card",
+    "get_physical_card: get physical card",
+    "pending_top_up: pending top up",
+    "top_up_limits: top up limits",
+    "card_swallowed: card swallowed",
+    "exchange_rate: exchange rate",
+    "cash_withdrawal_charge: cash withdrawal charge"
+   ],
+   "gold": "get_physical_card",
+   "gold_option": "get_physical_card: get physical card"
+  },
+  {
+   "id": "T4_banking77_10opt_40/1289/intent",
+   "row": 16,
+   "qid": "intent",
+   "state_text": "{\"message\": \"I'd rather get a Mastercard\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "transfer_not_received_by_recipient: transfer not received by recipient",
+    "get_physical_card: get physical card",
+    "balance_not_updated_after_cheque_or_cash_deposit: balance not updated after cheque or cash deposit",
+    "card_delivery_estimate: card delivery estimate",
+    "card_payment_fee_charged: card payment fee charged",
+    "transaction_charged_twice: transaction charged twice",
+    "card_payment_not_recognised: card payment not recognised",
+    "visa_or_mastercard: visa or mastercard",
+    "card_about_to_expire: card about to expire",
+    "Refund_not_showing_up: Refund not showing up"
+   ],
+   "gold": "visa_or_mastercard",
+   "gold_option": "visa_or_mastercard: visa or mastercard",
+   "options_over_choice_input_chars": [
+    "balance_not_updated_after_cheque_or_cash_deposit: balance not updated after cheque or cash deposit"
+   ]
+  },
+  {
+   "id": "T4_banking77_10opt_40/1363/intent",
+   "row": 17,
+   "qid": "intent",
+   "state_text": "{\"message\": \"what is the disposable cards limit?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "exchange_charge: exchange charge",
+    "age_limit: age limit",
+    "transaction_charged_twice: transaction charged twice",
+    "balance_not_updated_after_bank_transfer: balance not updated after bank transfer",
+    "transfer_into_account: transfer into account",
+    "terminate_account: terminate account",
+    "exchange_rate: exchange rate",
+    "disposable_card_limits: disposable card limits",
+    "card_arrival: card arrival",
+    "declined_transfer: declined transfer"
+   ],
+   "gold": "disposable_card_limits",
+   "gold_option": "disposable_card_limits: disposable card limits"
+  },
+  {
+   "id": "T4_banking77_10opt_40/1449/intent",
+   "row": 18,
+   "qid": "intent",
+   "state_text": "{\"message\": \"What ATMs is the card okay to use at?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "transfer_not_received_by_recipient: transfer not received by recipient",
+    "edit_personal_details: edit personal details",
+    "card_delivery_estimate: card delivery estimate",
+    "atm_support: atm support",
+    "card_swallowed: card swallowed",
+    "unable_to_verify_identity: unable to verify identity",
+    "pending_top_up: pending top up",
+    "top_up_limits: top up limits",
+    "terminate_account: terminate account",
+    "activate_my_card: activate my card"
+   ],
+   "gold": "atm_support",
+   "gold_option": "atm_support: atm support"
+  },
+  {
+   "id": "T4_banking77_10opt_40/1539/intent",
+   "row": 19,
+   "qid": "intent",
+   "state_text": "{\"message\": \"Where can I reset the passcode?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "change_pin: change pin",
+    "card_payment_fee_charged: card payment fee charged",
+    "passcode_forgotten: passcode forgotten",
+    "card_delivery_estimate: card delivery estimate",
+    "top_up_limits: top up limits",
+    "balance_not_updated_after_cheque_or_cash_deposit: balance not updated after cheque or cash deposit",
+    "apple_pay_or_google_pay: apple pay or google pay",
+    "transfer_not_received_by_recipient: transfer not received by recipient",
+    "card_payment_wrong_exchange_rate: card payment wrong exchange rate",
+    "verify_source_of_funds: verify source of funds"
+   ],
+   "gold": "passcode_forgotten",
+   "gold_option": "passcode_forgotten: passcode forgotten",
+   "options_over_choice_input_chars": [
+    "balance_not_updated_after_cheque_or_cash_deposit: balance not updated after cheque or cash deposit"
+   ]
+  },
+  {
+   "id": "T4_banking77_10opt_40/1604/intent",
+   "row": 20,
+   "qid": "intent",
+   "state_text": "{\"message\": \"I recently made a payment, and it is showing up in my account as \\\"pending\\\". What does that mean?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "card_not_working: card not working",
+    "extra_charge_on_statement: extra charge on statement",
+    "unable_to_verify_identity: unable to verify identity",
+    "cancel_transfer: cancel transfer",
+    "lost_or_stolen_phone: lost or stolen phone",
+    "pending_card_payment: pending card payment",
+    "visa_or_mastercard: visa or mastercard",
+    "pending_transfer: pending transfer",
+    "declined_card_payment: declined card payment",
+    "getting_virtual_card: getting virtual card"
+   ],
+   "gold": "pending_card_payment",
+   "gold_option": "pending_card_payment: pending card payment"
+  },
+  {
+   "id": "T4_banking77_10opt_40/1805/intent",
+   "row": 21,
+   "qid": "intent",
+   "state_text": "{\"message\": \"Can you look at my account ans see why my card was declined\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "visa_or_mastercard: visa or mastercard",
+    "declined_transfer: declined transfer",
+    "Refund_not_showing_up: Refund not showing up",
+    "declined_card_payment: declined card payment",
+    "balance_not_updated_after_cheque_or_cash_deposit: balance not updated after cheque or cash deposit",
+    "lost_or_stolen_card: lost or stolen card",
+    "card_payment_wrong_exchange_rate: card payment wrong exchange rate",
+    "card_about_to_expire: card about to expire",
+    "verify_my_identity: verify my identity",
+    "exchange_rate: exchange rate"
+   ],
+   "gold": "declined_card_payment",
+   "gold_option": "declined_card_payment: declined card payment",
+   "options_over_choice_input_chars": [
+    "balance_not_updated_after_cheque_or_cash_deposit: balance not updated after cheque or cash deposit"
+   ]
+  },
+  {
+   "id": "T4_banking77_10opt_40/1864/intent",
+   "row": 22,
+   "qid": "intent",
+   "state_text": "{\"message\": \"How long does a transfer take to be confirmed?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "declined_cash_withdrawal: declined cash withdrawal",
+    "verify_top_up: verify top up",
+    "cash_withdrawal_charge: cash withdrawal charge",
+    "pin_blocked: pin blocked",
+    "beneficiary_not_allowed: beneficiary not allowed",
+    "card_linking: card linking",
+    "getting_spare_card: getting spare card",
+    "pending_transfer: pending transfer",
+    "age_limit: age limit",
+    "card_payment_fee_charged: card payment fee charged"
+   ],
+   "gold": "pending_transfer",
+   "gold_option": "pending_transfer: pending transfer"
+  },
+  {
+   "id": "T4_banking77_10opt_40/1932/intent",
+   "row": 23,
+   "qid": "intent",
+   "state_text": "{\"message\": \"The ATM won't give me my card back.\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "cash_withdrawal_charge: cash withdrawal charge",
+    "card_swallowed: card swallowed",
+    "passcode_forgotten: passcode forgotten",
+    "balance_not_updated_after_bank_transfer: balance not updated after bank transfer",
+    "transfer_timing: transfer timing",
+    "transfer_not_received_by_recipient: transfer not received by recipient",
+    "card_linking: card linking",
+    "card_about_to_expire: card about to expire",
+    "transaction_charged_twice: transaction charged twice",
+    "verify_top_up: verify top up"
+   ],
+   "gold": "card_swallowed",
+   "gold_option": "card_swallowed: card swallowed"
+  },
+  {
+   "id": "T4_banking77_10opt_40/2031/intent",
+   "row": 24,
+   "qid": "intent",
+   "state_text": "{\"message\": \"How can I check the source of my fund?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "card_arrival: card arrival",
+    "verify_top_up: verify top up",
+    "wrong_amount_of_cash_received: wrong amount of cash received",
+    "reverted_card_payment?: reverted card payment?",
+    "declined_cash_withdrawal: declined cash withdrawal",
+    "card_about_to_expire: card about to expire",
+    "extra_charge_on_statement: extra charge on statement",
+    "exchange_rate: exchange rate",
+    "verify_source_of_funds: verify source of funds",
+    "failed_transfer: failed transfer"
+   ],
+   "gold": "verify_source_of_funds",
+   "gold_option": "verify_source_of_funds: verify source of funds"
+  },
+  {
+   "id": "T4_banking77_10opt_40/2210/intent",
+   "row": 25,
+   "qid": "intent",
+   "state_text": "{\"message\": \"Hi,  Please help me, as i have transferred some amount but receiver did not get the same amount. He received a bit less. Due to this again i need to transfer the difference.   I have transferred money but beneficiary's account is credited with less amount. Now i have transfer the difference of the amount. I think there is some issue, could you please look into this.\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "reverted_card_payment?: reverted card payment?",
+    "card_arrival: card arrival",
+    "wrong_amount_of_cash_received: wrong amount of cash received",
+    "top_up_by_bank_transfer_charge: top up by bank transfer charge",
+    "transfer_fee_charged: transfer fee charged",
+    "automatic_top_up: automatic top up",
+    "card_delivery_estimate: card delivery estimate",
+    "card_payment_not_recognised: card payment not recognised",
+    "transaction_charged_twice: transaction charged twice",
+    "verify_source_of_funds: verify source of funds"
+   ],
+   "gold": "transfer_fee_charged",
+   "gold_option": "transfer_fee_charged: transfer fee charged"
+  },
+  {
+   "id": "T4_banking77_10opt_40/2350/intent",
+   "row": 26,
+   "qid": "intent",
+   "state_text": "{\"message\": \"I checked my account today and it said I was out of money. How do I transfer money into my account?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "top_up_by_card_charge: top up by card charge",
+    "transfer_timing: transfer timing",
+    "reverted_card_payment?: reverted card payment?",
+    "transfer_into_account: transfer into account",
+    "card_payment_not_recognised: card payment not recognised",
+    "Refund_not_showing_up: Refund not showing up",
+    "card_acceptance: card acceptance",
+    "activate_my_card: activate my card",
+    "exchange_via_app: exchange via app",
+    "card_arrival: card arrival"
+   ],
+   "gold": "transfer_into_account",
+   "gold_option": "transfer_into_account: transfer into account"
+  },
+  {
+   "id": "T4_banking77_10opt_40/2424/intent",
+   "row": 27,
+   "qid": "intent",
+   "state_text": "{\"message\": \"May I have a second card?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "passcode_forgotten: passcode forgotten",
+    "card_payment_wrong_exchange_rate: card payment wrong exchange rate",
+    "getting_spare_card: getting spare card",
+    "cash_withdrawal_not_recognised: cash withdrawal not recognised",
+    "card_delivery_estimate: card delivery estimate",
+    "terminate_account: terminate account",
+    "contactless_not_working: contactless not working",
+    "lost_or_stolen_phone: lost or stolen phone",
+    "cash_withdrawal_charge: cash withdrawal charge",
+    "balance_not_updated_after_cheque_or_cash_deposit: balance not updated after cheque or cash deposit"
+   ],
+   "gold": "getting_spare_card",
+   "gold_option": "getting_spare_card: getting spare card",
+   "options_over_choice_input_chars": [
+    "balance_not_updated_after_cheque_or_cash_deposit: balance not updated after cheque or cash deposit"
+   ]
+  },
+  {
+   "id": "T4_banking77_10opt_40/2467/intent",
+   "row": 28,
+   "qid": "intent",
+   "state_text": "{\"message\": \"Why can't I top up with a cheque?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "lost_or_stolen_phone: lost or stolen phone",
+    "age_limit: age limit",
+    "card_about_to_expire: card about to expire",
+    "failed_transfer: failed transfer",
+    "supported_cards_and_currencies: supported cards and currencies",
+    "wrong_amount_of_cash_received: wrong amount of cash received",
+    "edit_personal_details: edit personal details",
+    "top_up_by_cash_or_cheque: top up by cash or cheque",
+    "pin_blocked: pin blocked",
+    "receiving_money: receiving money"
+   ],
+   "gold": "top_up_by_cash_or_cheque",
+   "gold_option": "top_up_by_cash_or_cheque: top up by cash or cheque"
+  },
+  {
+   "id": "T4_banking77_10opt_40/2511/intent",
+   "row": 29,
+   "qid": "intent",
+   "state_text": "{\"message\": \"Where can cards be delivered?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "contactless_not_working: contactless not working",
+    "why_verify_identity: why verify identity",
+    "top_up_by_bank_transfer_charge: top up by bank transfer charge",
+    "automatic_top_up: automatic top up",
+    "card_payment_wrong_exchange_rate: card payment wrong exchange rate",
+    "virtual_card_not_working: virtual card not working",
+    "order_physical_card: order physical card",
+    "apple_pay_or_google_pay: apple pay or google pay",
+    "wrong_amount_of_cash_received: wrong amount of cash received",
+    "disposable_card_limits: disposable card limits"
+   ],
+   "gold": "order_physical_card",
+   "gold_option": "order_physical_card: order physical card"
+  },
+  {
+   "id": "T4_banking77_10opt_40/2524/intent",
+   "row": 30,
+   "qid": "intent",
+   "state_text": "{\"message\": \"I was at the store earlier and my virtual card didn't work. What's the solution for this problem?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "visa_or_mastercard: visa or mastercard",
+    "top_up_by_bank_transfer_charge: top up by bank transfer charge",
+    "declined_card_payment: declined card payment",
+    "verify_top_up: verify top up",
+    "pin_blocked: pin blocked",
+    "receiving_money: receiving money",
+    "virtual_card_not_working: virtual card not working",
+    "declined_transfer: declined transfer",
+    "balance_not_updated_after_cheque_or_cash_deposit: balance not updated after cheque or cash deposit",
+    "terminate_account: terminate account"
+   ],
+   "gold": "virtual_card_not_working",
+   "gold_option": "virtual_card_not_working: virtual card not working",
+   "options_over_choice_input_chars": [
+    "balance_not_updated_after_cheque_or_cash_deposit: balance not updated after cheque or cash deposit"
+   ]
+  },
+  {
+   "id": "T4_banking77_10opt_40/2579/intent",
+   "row": 31,
+   "qid": "intent",
+   "state_text": "{\"message\": \"I need the right foreign money, at the right rate, at ATMs, when I go abroad.\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "top_up_by_cash_or_cheque: top up by cash or cheque",
+    "transfer_fee_charged: transfer fee charged",
+    "transaction_charged_twice: transaction charged twice",
+    "receiving_money: receiving money",
+    "card_payment_fee_charged: card payment fee charged",
+    "card_acceptance: card acceptance",
+    "topping_up_by_card: topping up by card",
+    "wrong_exchange_rate_for_cash_withdrawal: wrong exchange rate for cash withdrawal",
+    "card_about_to_expire: card about to expire",
+    "top_up_by_card_charge: top up by card charge"
+   ],
+   "gold": "wrong_exchange_rate_for_cash_withdrawal",
+   "gold_option": "wrong_exchange_rate_for_cash_withdrawal: wrong exchange rate for cash withdrawal"
+  },
+  {
+   "id": "T4_banking77_10opt_40/2650/intent",
+   "row": 32,
+   "qid": "intent",
+   "state_text": "{\"message\": \"Why caused my top up to not work?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "automatic_top_up: automatic top up",
+    "top_up_failed: top up failed",
+    "reverted_card_payment?: reverted card payment?",
+    "topping_up_by_card: topping up by card",
+    "top_up_limits: top up limits",
+    "apple_pay_or_google_pay: apple pay or google pay",
+    "wrong_amount_of_cash_received: wrong amount of cash received",
+    "atm_support: atm support",
+    "declined_card_payment: declined card payment",
+    "virtual_card_not_working: virtual card not working"
+   ],
+   "gold": "top_up_failed",
+   "gold_option": "top_up_failed: top up failed"
+  },
+  {
+   "id": "T4_banking77_10opt_40/2692/intent",
+   "row": 33,
+   "qid": "intent",
+   "state_text": "{\"message\": \"Could you please check one of my transfer which i made few hours ago from my UK bank account, as its not showing yet.\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "visa_or_mastercard: visa or mastercard",
+    "top_up_reverted: top up reverted",
+    "country_support: country support",
+    "get_disposable_virtual_card: get disposable virtual card",
+    "change_pin: change pin",
+    "balance_not_updated_after_bank_transfer: balance not updated after bank transfer",
+    "transfer_fee_charged: transfer fee charged",
+    "compromised_card: compromised card",
+    "cancel_transfer: cancel transfer",
+    "Refund_not_showing_up: Refund not showing up"
+   ],
+   "gold": "balance_not_updated_after_bank_transfer",
+   "gold_option": "balance_not_updated_after_bank_transfer: balance not updated after bank transfer"
+  },
+  {
+   "id": "T4_banking77_10opt_40/2743/intent",
+   "row": 34,
+   "qid": "intent",
+   "state_text": "{\"message\": \"There is an error, the app says I made an ATM withdrawal and I didn't.\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "balance_not_updated_after_cheque_or_cash_deposit: balance not updated after cheque or cash deposit",
+    "pending_transfer: pending transfer",
+    "card_payment_wrong_exchange_rate: card payment wrong exchange rate",
+    "cash_withdrawal_not_recognised: cash withdrawal not recognised",
+    "apple_pay_or_google_pay: apple pay or google pay",
+    "country_support: country support",
+    "declined_cash_withdrawal: declined cash withdrawal",
+    "lost_or_stolen_phone: lost or stolen phone",
+    "visa_or_mastercard: visa or mastercard",
+    "top_up_by_cash_or_cheque: top up by cash or cheque"
+   ],
+   "gold": "cash_withdrawal_not_recognised",
+   "gold_option": "cash_withdrawal_not_recognised: cash withdrawal not recognised",
+   "options_over_choice_input_chars": [
+    "balance_not_updated_after_cheque_or_cash_deposit: balance not updated after cheque or cash deposit"
+   ]
+  },
+  {
+   "id": "T4_banking77_10opt_40/2772/intent",
+   "row": 35,
+   "qid": "intent",
+   "state_text": "{\"message\": \"How much is a cross currency exchange, and can I check to see if I have any discounts available?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "request_refund: request refund",
+    "reverted_card_payment?: reverted card payment?",
+    "exchange_charge: exchange charge",
+    "cash_withdrawal_not_recognised: cash withdrawal not recognised",
+    "getting_spare_card: getting spare card",
+    "edit_personal_details: edit personal details",
+    "Refund_not_showing_up: Refund not showing up",
+    "top_up_by_cash_or_cheque: top up by cash or cheque",
+    "fiat_currency_support: fiat currency support",
+    "transfer_not_received_by_recipient: transfer not received by recipient"
+   ],
+   "gold": "exchange_charge",
+   "gold_option": "exchange_charge: exchange charge"
+  },
+  {
+   "id": "T4_banking77_10opt_40/2845/intent",
+   "row": 36,
+   "qid": "intent",
+   "state_text": "{\"message\": \"How do I activate a card I received?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "failed_transfer: failed transfer",
+    "edit_personal_details: edit personal details",
+    "verify_my_identity: verify my identity",
+    "Refund_not_showing_up: Refund not showing up",
+    "declined_transfer: declined transfer",
+    "lost_or_stolen_phone: lost or stolen phone",
+    "virtual_card_not_working: virtual card not working",
+    "card_payment_not_recognised: card payment not recognised",
+    "activate_my_card: activate my card",
+    "terminate_account: terminate account"
+   ],
+   "gold": "activate_my_card",
+   "gold_option": "activate_my_card: activate my card"
+  },
+  {
+   "id": "T4_banking77_10opt_40/2892/intent",
+   "row": 37,
+   "qid": "intent",
+   "state_text": "{\"message\": \"What is the reason for this fee I got after a simple cash withdrawal?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "card_about_to_expire: card about to expire",
+    "apple_pay_or_google_pay: apple pay or google pay",
+    "wrong_amount_of_cash_received: wrong amount of cash received",
+    "cancel_transfer: cancel transfer",
+    "transaction_charged_twice: transaction charged twice",
+    "pending_cash_withdrawal: pending cash withdrawal",
+    "card_linking: card linking",
+    "compromised_card: compromised card",
+    "cash_withdrawal_charge: cash withdrawal charge",
+    "top_up_limits: top up limits"
+   ],
+   "gold": "cash_withdrawal_charge",
+   "gold_option": "cash_withdrawal_charge: cash withdrawal charge"
+  },
+  {
+   "id": "T4_banking77_10opt_40/2924/intent",
+   "row": 38,
+   "qid": "intent",
+   "state_text": "{\"message\": \"What do I do if my card is expiring soon?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "cash_withdrawal_charge: cash withdrawal charge",
+    "verify_source_of_funds: verify source of funds",
+    "card_about_to_expire: card about to expire",
+    "card_payment_fee_charged: card payment fee charged",
+    "reverted_card_payment?: reverted card payment?",
+    "wrong_amount_of_cash_received: wrong amount of cash received",
+    "declined_cash_withdrawal: declined cash withdrawal",
+    "wrong_exchange_rate_for_cash_withdrawal: wrong exchange rate for cash withdrawal",
+    "order_physical_card: order physical card",
+    "card_acceptance: card acceptance"
+   ],
+   "gold": "card_about_to_expire",
+   "gold_option": "card_about_to_expire: card about to expire"
+  },
+  {
+   "id": "T4_banking77_10opt_40/3037/intent",
+   "row": 39,
+   "qid": "intent",
+   "state_text": "{\"message\": \"Are your cards available in Europe?\"}",
+   "question": "Which banking intent does `message` express?",
+   "decision_type": "choice",
+   "options": [
+    "contactless_not_working: contactless not working",
+    "verify_my_identity: verify my identity",
+    "card_delivery_estimate: card delivery estimate",
+    "cancel_transfer: cancel transfer",
+    "get_physical_card: get physical card",
+    "pin_blocked: pin blocked",
+    "country_support: country support",
+    "getting_spare_card: getting spare card",
+    "why_verify_identity: why verify identity",
+    "automatic_top_up: automatic top up"
+   ],
+   "gold": "country_support",
+   "gold_option": "country_support: country support"
+  }
+ ]
+}

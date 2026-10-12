@@ -1,0 +1,22 @@
+--- third_party/laya/notebooks/laya_finetune_typed_decisions_mps.py	2026-10-02 13:24:11
++++ poc/finetune/laya_finetune_mps_patched.py	2026-10-08 08:58:27
+@@ -237,7 +237,9 @@
+ def train(args, model_dir, items_path, device):
+     with open(Path(model_dir) / "rl_agent_config.json") as f:
+         cfg = json.load(f)
+-    cfg.update({"max_tokens_per_batch": 2048, "max_len": 1024, "head_max_len": 256})
++    # T3arm patch: keep the base checkpoint's sequence budget (english 512/192, multilingual 1024/256)
++    cfg.update({"max_tokens_per_batch": 2048, "max_len": cfg.get("max_len", 1024),
++                "head_max_len": cfg.get("head_max_len", 256)})
+     if not args.no_checkpointing:
+         cfg["gradient_checkpointing"] = True
+ 
+@@ -355,7 +357,7 @@
+     save_checkpoint(model, tokenizer, cfg, args.output_dir, args.epochs, final=True)
+     cfg.update({
+         "fine_tuned": True,
+-        "model_name": "laya-typed-decisions",
++        "model_name": cfg.get("model_name", "laya-typed-decisions"),  # T3arm patch: the base's name
+         "temperature": temperatures,
+     })
+     cfg.pop("temperature_by_options", None)

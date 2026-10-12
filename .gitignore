@@ -1,0 +1,44 @@
+.venv/
+.env
+models/
+third_party/
+data/raw/
+__pycache__/
+*.pyc
+.DS_Store
+.gstack/
+poc/finetune/ckpt_*/
+*.pdf
+# Jev playground captures that are not published: screenshots, page/accessibility snapshots, page JS excerpts,
+# network/console dumps and the injected JS.
+results/F/jev_shots/
+docs/assets/reference/jevplayground_*.jpeg
+results/F/jev_cmp/sessions/*/shots/
+results/F/jev_cmp/sessions/*/raw/mcp/
+results/F/jev_cmp/sessions/*/raw/js/
+results/F/jev_cmp/sessions/*/raw/network_requests*.txt
+results/F/jev_cmp/sessions/*/raw/console.log
+results/F/jev_cmp/sessions/*/raw/explore_js_*.json
+results/F/jev_raw/*.snapshot.yml
+results/F/jev_raw/console_session*.log
+results/F/jev_raw/network_requests_session*.txt
+# AG News (T2) derived files are not published (owner decision 2026-10-12): the corpus terms allow non-commercial use
+# only and forbid redistributing (part of) it under a different name. See DATA_LICENSES.md.
+data/evals/jev_cmp/T2_ag_news_40*
+data/evals/jev_cmp_ext/T2_ag_news_ext500.jsonl
+poc/finetune/data/t3arm/T2_*
+results/F/jev_cmp/sessions/S1_20261006/raw/r*_T2_*.json
+results/F/jev_cmp/sessions/S1b_20261006/raw/r[0-9]*.json
+# Jev raw records are not published either (owner decision 2026-10-12): per-request responses, request logs, master
+# logs, per-request timing and the per-item analysis tables of the playground sessions. Documents keep the aggregated
+# results and the method descriptions.
+results/F/jev_cmp/sessions/*/raw/r[0-9]*.json
+results/F/jev_cmp/sessions/*/S*_requests.jsonl
+results/F/jev_cmp/sessions/*/raw/evaluate_timing_all.json
+results/F/jev_cmp/sessions/*/raw/analyze/
+results/F/jev_cmp/jev_runs_all.jsonl
+results/F/jev_runs_raw.jsonl
+results/F/jev_raw/p1_*.json
+# Local tool state
+.claude/
+.playwright-mcp/
